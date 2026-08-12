@@ -15,7 +15,7 @@ window.DAF_DATA = {
     }
   },
   works: Array.from({length: 20}, (_, i) => ({
-    id: i + 1, number: String(i + 1).padStart(2, "0"), title: `作品名稱${i + 1}`,
+    id: i + 1, type: "work", number: String(i + 1).padStart(2, "0"), title: `作品名稱${i + 1}`,
     year: "2026", medium: "複合媒材", dimensions: "尺寸待定", location: "臺北植物園",
     description: "作品介紹文字預留。作品透過數位媒材與環境之間的關係，回應「灰色自動體」的策展主題。",
     images: Array.from({length: 4}, (_, imageIndex) => ({
@@ -32,7 +32,26 @@ window.DAF_DATA = {
     {workId: 4, x: 69, y: 60},
     {workId: 5, x: 39, y: 48}
   ],
-  soundArtists: Array.from({length: 4}, (_, i) => ({id: i + 1, name: `聲響藝術家${i + 1}`})),
+  soundArtists: Array.from({length: 4}, (_, i) => ({
+    id: 21 + i,
+    type: "sound",
+    number: String(i + 1).padStart(2, "0"),
+    title: `聲響作品／演出名稱${i + 1}`,
+    year: "2026",
+    medium: "聲響演出",
+    dimensions: "",
+    location: "臺北植物園",
+    description: "聲響作品／演出介紹文字預留。實際內容將由後台資料提供。",
+    images: Array.from({length: 4}, (_, imageIndex) => ({
+      id: `sound-${i + 1}-${imageIndex + 1}`,
+      src: "",
+      alt: `聲響作品／演出名稱${i + 1} 圖片 ${imageIndex + 1}`
+    })),
+    creators: [{
+      name: `聲響藝術家${i + 1}`,
+      bio: "聲響藝術家／創作團隊介紹文字預留，實際內容將由後台資料提供。"
+    }]
+  })),
   news: Array.from({length: 5}, (_, i) => ({id: i + 1, date: `2026.09.${String(20-i).padStart(2,"0")}`, title: i === 0 ? "「2026 臺北數位藝術節」將於 10.31-11.15 展開序幕！" : `最新消息標題${i + 1}`, body: "詳細資訊內文。此處為第一版 Prototype 的內容預留，後續將由 WordPress 後台管理。"})),
   events: [
     {label:"展覽時間", detail:"2026.10.31–11.15"}, {label:"開放時間", detail:"09:00–17:00（週一休館）"},

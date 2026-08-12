@@ -13,7 +13,13 @@ window.DAF_COMPONENTS = (() => {
   }
   const placeholder = (label="圖片 Placeholder", cls="") => `<div class="placeholder ${cls}"><span>${label}</span></div>`;
   const icon = (name, label, cls="") => `<img class="icon ${cls}" src="assets/icons/${name}.svg" alt="${label}"${label ? "" : ' aria-hidden="true"'}>`;
-  const crumb = (text) => `<div class="breadcrumb">首頁 &gt; ${text}</div>`;
+  const crumb = (items) => {
+    const trail = [{label: "首頁", href: "index.html"}, ...(Array.isArray(items) ? items : [{label: items}])];
+    return `<nav class="breadcrumb" aria-label="Breadcrumb"><ol>${trail.map((item, index) => {
+      const current = index === trail.length - 1;
+      return `<li>${current ? `<span aria-current="page">${item.label}</span>` : `<a href="${item.href}">${item.label}</a>`}</li>`;
+    }).join("")}</ol></nav>`;
+  };
   const button = (label, href="index.html") => `<a class="button" href="${href}">${label}</a>`;
   return {header, footer, placeholder, icon, crumb, button};
 })();

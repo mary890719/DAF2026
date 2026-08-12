@@ -6,7 +6,7 @@
   const externalLinkAttrs = `target="_blank" rel="noopener noreferrer"`;
   const facebookPluginUrl = `https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(D.social.facebook.url)}&tabs=timeline&width=328&height=430&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true`;
   const pages = {
-    home: () => `<main><section class="hero"><div class="hero-media"><img src="${D.assets.hero}" alt="2026 臺北數位藝術節主視覺"></div><div class="hero-ui"><a class="hero-scroll" href="#intro">SCROLL</a></div></section><section class="section" id="intro"><div class="container home-intro"><p>2026臺北數位藝術節以「灰色自動體」（GRAY AUTONOMOUS ENTITY）為主題，關注數位藝術如何在人工智慧的快速發展中，重新思考那些難以清楚認識、持續發展且無可迴避的新型態能動性、環境關係和藝術議題。</p><p>當人工智慧作為一種新的存在者（ENTITY），成為影響藝術家的日常經驗乃至創作時，數位藝術應如何回應這種不同於工具、媒介所構成的存在？</p></div></section><section class="section"><div class="container"><h2 class="section-title">最新消息</h2><div class="news-list">${newsRows(5)}</div><div class="back-wrap">${C.button("查看全部 →","news.html")}</div></div></section><section class="section"><div class="container"><h2 class="section-title">社群</h2><div class="social-grid"><article class="social-box"><header class="social-card-header">${C.icon("instagram", "")}<strong>${D.social.instagram.label}</strong></header><div class="social-embed social-embed-instagram" aria-label="Instagram 官方內容嵌入預留區"><div class="social-fallback"><strong>${D.social.instagram.handle}</strong><a class="button" href="${D.social.instagram.url}" ${externalLinkAttrs} aria-label="前往臺北數位藝術節官方 Instagram（另開新分頁）">前往 Instagram</a></div></div></article><article class="social-box"><header class="social-card-header">${C.icon("facebook", "")}<strong>${D.social.facebook.label}</strong></header><div class="social-embed social-embed-facebook"><iframe src="${facebookPluginUrl}" title="臺北數位藝術節 Facebook 官方粉絲專頁" width="500" height="430" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe></div><div class="social-fallback social-fallback-inline"><strong>${D.social.facebook.name}</strong><a class="button" href="${D.social.facebook.url}" ${externalLinkAttrs} aria-label="前往臺北數位藝術節官方 Facebook（另開新分頁）">前往 Facebook</a></div></article></div></div></section></main>`,
+    home: () => `<main><section class="hero"><div class="hero-media"><img src="${D.assets.hero}" alt="2026 臺北數位藝術節主視覺"></div><div class="hero-ui"><a class="hero-scroll" href="#intro">SCROLL</a></div></section><section class="section" id="intro"><div class="container home-intro"><p>2026臺北數位藝術節以「灰色自動體」（GRAY AUTONOMOUS ENTITY）為主題，關注數位藝術如何在人工智慧的快速發展中，重新思考那些難以清楚認識、持續發展且無可迴避的新型態能動性、環境關係和藝術議題。</p><p>當人工智慧作為一種新的存在者（ENTITY），成為影響藝術家的日常經驗乃至創作時，數位藝術應如何回應這種不同於工具、媒介所構成的存在？</p><nav class="quick-links" aria-label="首頁主要入口"><a href="about.html">關於展覽 →</a><a href="map.html">探索地圖 →</a><a href="transport.html">交通資訊 →</a><a href="timeline.html">活動時程 →</a></nav></div></section><section class="section"><div class="container"><h2 class="section-title">最新消息</h2><div class="news-list">${newsRows(5)}</div><div class="back-wrap">${C.button("查看全部 →","news.html")}</div></div></section><section class="section"><div class="container"><h2 class="section-title">社群</h2><div class="social-grid"><article class="social-box"><header class="social-card-header">${C.icon("instagram", "")}<strong>${D.social.instagram.label}</strong></header><div class="social-embed social-embed-instagram" aria-label="Instagram 官方內容嵌入預留區"><div class="social-fallback"><strong>${D.social.instagram.handle}</strong><a class="button" href="${D.social.instagram.url}" ${externalLinkAttrs} aria-label="前往臺北數位藝術節官方 Instagram（另開新分頁）">前往 Instagram</a></div></div></article><article class="social-box"><header class="social-card-header">${C.icon("facebook", "")}<strong>${D.social.facebook.label}</strong></header><div class="social-embed social-embed-facebook"><iframe src="${facebookPluginUrl}" title="臺北數位藝術節 Facebook 官方粉絲專頁" width="500" height="430" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe></div><div class="social-fallback social-fallback-inline"><strong>${D.social.facebook.name}</strong><a class="button" href="${D.social.facebook.url}" ${externalLinkAttrs} aria-label="前往臺北數位藝術節官方 Facebook（另開新分頁）">前往 Facebook</a></div></article></div></div></section></main>`,
     about: () => `<main class="container">${C.crumb("關於")}<h1 class="page-title">關於數位藝術節</h1><article class="about-copy"><p>在人工智慧和資訊技術迅速發展的當代，浮現出一種尚未被完全指認的存在形式，它在資訊海洋中運作，在大的資料流和演算法間生成出未曾見的樣態，並悄然嵌合進我們所處的世界。</p><p>2026臺北數位藝術節以「灰色自動體」（Gray Autonomous Entity）為主題，關注數位藝術如何在人工智慧的快速發展中，重新思考那些難以清楚認識、持續發展且無可迴避的新型態能動性、環境關係和藝術議題。</p><p>當人工智慧作為一種新的存在者（entity），成為影響藝術家的日常經驗乃至創作時，數位藝術應如何回應這種不同於工具、媒介所構成的存在？</p><p>它產生出另人感到既熟悉又陌生的經驗：熟悉，是因為它調用了人類共同累積的資料與記憶；陌生，則來自於自動性的湧現。</p><p>當資料經由編碼被壓縮進入模型，轉換為高維向量空間，影像、語言、聲音彼此建立新的鄰近關係，系統也在龐大的運算過程中形成自身的生成能力。每一次生成，都重新組織集體經驗；然而，模型承載著資料、記憶、文化，當中卻也存有權力結構、偏見與倫理問題。</p><p>如同植物、土壤、菌絲、動物、人類、機器一般，它如今也成為構成環境的一部分，與各種有機生命和非人行動者共同形成複雜的網絡，並成為當中的一個節點，重新定義生命、技術和環境間的關係。</p><p>這也成為當代數位藝術不得不面對課題：當藝術涉及資料的取樣、模型訓練與潛空間的運作和生成演算法，它是否仍然以人為中心？藝術世界又該如何面對？另外，有關藝術中的作者性、創造力、原創性與藝術形式等長久以來的概念，也因而重新被探討。</p><p>透過生成影像、機器學習、互動裝置和人機系統，關注那些重新思考資訊、生態、生命與非人存在的藝術實踐，並試圖描繪一個由人類、人工智慧與各種生命共同構成的新生態，便是2026台北數位藝術節「灰色自動體」的聚焦所在。</p></article><div class="back-wrap">${C.button("< 返回首頁")}</div></main>`,
     works: () => `<main class="container">${C.crumb("展覽資訊")}<h1 class="page-title">參展作品</h1><div class="works-grid">${workCards(D.works)}</div><section class="section"><h2 class="section-title">聲響藝術家</h2><div class="works-grid">${D.soundArtists.map(a=>`<article class="work-card">${C.placeholder()}<div class="work-label"><span class="work-no">${String(a.id).padStart(2,"0")}</span>${a.name}</div></article>`).join("")}</div></section></main>`,
     "work-detail": () => { const w=D.works[(queryId()-1)%D.works.length], prev=w.id===1?D.works.length:w.id-1, next=w.id===D.works.length?1:w.id+1; return `<main class="container">${C.crumb(`展覽資訊 &gt; 參展作品 &gt; ${w.number} ${w.title}`)}<article class="detail-shell"><section class="detail-left"><h1 class="detail-title">${w.number}　${w.title}</h1><dl><dt>創作年份</dt><dd>${w.year}</dd><dt>使用媒材</dt><dd>${w.medium}</dd><dt>作品尺寸</dt><dd>${w.dimensions}</dd><dt class="location-label">${C.icon("location", "")}展出地點</dt><dd>${w.location}</dd><dt>作品介紹</dt><dd>${w.description}</dd></dl><div class="gallery">${w.images.map(image => C.placeholder(image.alt)).join("")}</div></section><section><div class="placeholder detail-main"><span>主要圖片</span></div><div class="artist-copy"><h2>${w.creators.map(c=>c.name).join("／")}</h2>${w.creators.map(c=>`<p>${c.bio}</p>`).join("")}</div></section><div class="share"><span>分享至</span><a href="#" aria-label="分享到 Instagram">${C.icon("instagram", "")}</a><a href="#" aria-label="分享到 Facebook">${C.icon("facebook", "")}</a><button class="copy-link" type="button" aria-label="複製作品連結">${C.icon("link", "")}</button></div><nav class="pager"><a href="work-detail.html?id=${prev}">←　上一件作品<br>${D.works[prev-1].title}</a><a href="work-detail.html?id=${next}">下一件作品　→<br>${D.works[next-1].title}</a></nav></article></main>`; },
@@ -20,6 +20,55 @@
   root.innerHTML = (pages[page] || pages.home)();
   document.querySelector("#site-footer").innerHTML = C.footer();
   document.querySelector(".menu-toggle").addEventListener("click", e => { const nav=document.querySelector(".header-nav"), open=nav.classList.toggle("open"); e.currentTarget.setAttribute("aria-expanded",open); });
-  if(page === "map") document.querySelectorAll(".marker").forEach(marker => marker.addEventListener("click", () => { const w=D.works[Number(marker.dataset.id)-1], card=document.querySelector("#marker-card"); card.innerHTML=`${C.placeholder()}<strong><span class="work-no">${w.number}</span>${w.title}</strong><p>${w.creators.map(c=>c.name).join("／")}<br>${w.medium}</p>${C.button("作品詳細資訊 >",`work-detail.html?id=${w.id}`)}`; card.hidden=false; }));
+  if(page === "map") {
+    const map = document.querySelector("#map"), card = document.querySelector("#marker-card"), uiLayer = document.querySelector(".map-ui-layer");
+    let activeMarker = null;
+    const isCompactMap = () => window.matchMedia("(max-width: 900px)").matches;
+    const syncMapCardMode = () => {
+      document.body.classList.toggle("map-modal-open", !card.hidden && isCompactMap());
+      if (!card.hidden && !isCompactMap()) positionMarkerCard();
+    };
+    const closeMarkerCard = () => {
+      card.hidden = true;
+      uiLayer.classList.remove("is-open");
+      document.body.classList.remove("map-modal-open");
+      if (activeMarker) activeMarker.setAttribute("aria-expanded", "false");
+      activeMarker = null;
+    };
+    const positionMarkerCard = () => {
+      if (!activeMarker || card.hidden || isCompactMap()) return;
+      card.classList.remove("arrow-left", "arrow-right");
+      const mapRect = map.getBoundingClientRect(), markerRect = activeMarker.getBoundingClientRect();
+      const markerX = markerRect.left + markerRect.width / 2 - mapRect.left;
+      const markerBottom = markerRect.bottom - mapRect.top;
+      const isLeft = markerX < mapRect.width / 2;
+      card.classList.add(isLeft ? "arrow-left" : "arrow-right");
+      const cardWidth = card.offsetWidth, cardHeight = card.offsetHeight, edge = 12, arrowInset = 30;
+      const preferredLeft = isLeft ? markerX - arrowInset : markerX - cardWidth + arrowInset;
+      const maxLeft = Math.max(edge, mapRect.width - cardWidth - edge);
+      const left = Math.min(Math.max(preferredLeft, edge), maxLeft);
+      const preferredTop = markerBottom + 14;
+      const maxTop = Math.max(edge, mapRect.height - cardHeight - edge);
+      const top = Math.min(Math.max(preferredTop, edge), maxTop);
+      const arrowX = Math.min(Math.max(markerX - left, 18), cardWidth - 18);
+      card.style.left = `${left}px`;
+      card.style.top = `${top}px`;
+      card.style.setProperty("--marker-arrow-x", `${arrowX}px`);
+    };
+    document.querySelectorAll(".marker").forEach(marker => marker.addEventListener("click", () => {
+      const w=D.works[Number(marker.dataset.id)-1];
+      activeMarker = marker;
+      document.querySelectorAll(".marker[aria-expanded='true']").forEach(item => item.setAttribute("aria-expanded", "false"));
+      marker.setAttribute("aria-expanded", "true");
+      card.innerHTML=`<button class="marker-card-close" type="button" aria-label="關閉作品資訊卡">×</button>${C.placeholder()}<strong><span class="work-no">${w.number}</span>${w.title}</strong><p>${w.creators.map(c=>c.name).join("／")}<br>${w.medium}</p><p class="marker-card-description">${w.description}</p>${C.button("作品詳細資訊 >",`work-detail.html?id=${w.id}`)}`;
+      card.hidden=false;
+      uiLayer.classList.add("is-open");
+      card.querySelector(".marker-card-close").addEventListener("click", closeMarkerCard);
+      requestAnimationFrame(syncMapCardMode);
+    }));
+    uiLayer.addEventListener("click", event => { if (event.target === uiLayer) closeMarkerCard(); });
+    document.addEventListener("keydown", event => { if (event.key === "Escape" && !card.hidden) closeMarkerCard(); });
+    window.addEventListener("resize", syncMapCardMode);
+  }
   document.querySelectorAll(".copy-link").forEach(button => button.addEventListener("click", async () => { try { await navigator.clipboard.writeText(location.href); button.setAttribute("aria-label", "連結已複製"); } catch (_) { /* Clipboard may require a secure context; visual control remains available. */ } }));
 })();

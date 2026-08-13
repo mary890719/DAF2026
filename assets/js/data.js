@@ -1,7 +1,4 @@
 window.DAF_DATA = {
-  assets: {
-    hero: "assets/images/hero/daf2026-key-visual.jpg"
-  },
   social: {
     instagram: {
       url: "https://www.instagram.com/daf_taipei/",
@@ -14,7 +11,7 @@ window.DAF_DATA = {
       label: "Facebook"
     }
   },
-  works: Array.from({length: 20}, (_, i) => ({
+  works: Array.from({length: 18}, (_, i) => ({
     id: i + 1, type: "work", number: String(i + 1).padStart(2, "0"), title: `作品名稱${i + 1}`,
     year: "2026", medium: "複合媒材", dimensions: "尺寸待定", location: "臺北植物園",
     description: "作品介紹文字預留。作品透過數位媒材與環境之間的關係，回應「灰色自動體」的策展主題。",
@@ -52,10 +49,19 @@ window.DAF_DATA = {
       bio: "聲響藝術家／創作團隊介紹文字預留，實際內容將由後台資料提供。"
     }]
   })),
-  news: Array.from({length: 5}, (_, i) => ({id: i + 1, date: `2026.09.${String(20-i).padStart(2,"0")}`, title: i === 0 ? "「2026 臺北數位藝術節」將於 10.31-11.15 展開序幕！" : `最新消息標題${i + 1}`, body: "詳細資訊內文。此處為第一版 Prototype 的內容預留，後續將由 WordPress 後台管理。"})),
   events: [
-    {label:"展覽時間", detail:"2026.10.31–11.15"}, {label:"開放時間", detail:"09:00–17:00（週一休館）"},
-    {label:"導覽時間", detail:"（待定）"}, {label:"藝術家講座 I", detail:"（待定）"}, {label:"藝術家講座 II", detail:"（待定）"}, {label:"其他活動", detail:"（待定）"}
+    ...Array.from({length: 4}, (_, i) => ({
+      id: i + 1, type: "講座", title: `講座 ${String(i + 1).padStart(2, "0")}`,
+      date: "日期待定", time: "時間待定", location: "地點待定",
+      speaker: "講者待定", instructor: "", description: "活動介紹待定。",
+      images: [{id: `event-${i + 1}-1`, src: "", alt: `講座 ${String(i + 1).padStart(2, "0")} 活動紀錄 Placeholder`}]
+    })),
+    ...Array.from({length: 2}, (_, i) => ({
+      id: i + 5, type: "工作坊", title: `工作坊 ${String(i + 1).padStart(2, "0")}`,
+      date: "日期待定", time: "時間待定", location: "地點待定",
+      speaker: "", instructor: "帶領者待定", description: "活動介紹待定。",
+      images: [{id: `event-${i + 5}-1`, src: "", alt: `工作坊 ${String(i + 1).padStart(2, "0")} 活動紀錄 Placeholder`}]
+    }))
   ],
   organizations: [
     {type:"主辦單位", names:["臺北市文化局"]}, {type:"協辦單位", names:["文創技研有限公司"]},

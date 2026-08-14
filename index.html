@@ -4,14 +4,79 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>2026 臺北數位藝術節</title>
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/style.css?v=20260815-network-grid">
     </head>
     <body data-page="home">
         <div id="site-header"></div>
-        <div id="app"></div>
+        <main id="app">
+            <section class="hero hero-text hero-sequence-active" id="hero-observation" aria-labelledby="hero-title">
+                <div class="hero-copy">
+                    <p class="hero-kicker hero-observation-target" data-observation-id="festival">2026 臺北數位藝術節</p>
+                    <h1 id="hero-title" class="hero-observation-target" data-observation-id="title">
+                        <span class="hero-scramble" lang="en">GRAY AUTONOMOUS ENTITY</span>
+                        <span class="hero-scramble">灰色自動體</span>
+                    </h1>
+                    <div class="hero-meta hero-observation-target" data-observation-id="details">
+                        <span>時間｜2026.10.31–11.15（週一休館）</span>
+                        <span>地點｜臺北典藏植物園</span>
+                    </div>
+                    <div class="hero-system hero-observation-target" data-observation-id="navigation">
+                        <div class="hero-system-messages" aria-label="系統訊息">
+                            <p>&gt; 正在建立連線……</p>
+                            <p>&gt; 偵測到新的觀察者。</p>
+                            <p>&gt; 你想從哪裡開始？</p>
+                        </div>
+                        <nav class="hero-system-links" aria-label="首頁系統導覽">
+                            <a href="about.html">年度主題</a>
+                            <a href="works.html">探索作品</a>
+                            <a href="timeline.html">活動時程</a>
+                            <a href="transport.html">交通資訊</a>
+                        </nav>
+                    </div>
+                </div>
+                <div class="hero-ui"><a class="hero-scroll" href="#intro">SCROLL</a></div>
+            </section>
+            <section class="section" id="intro">
+                <div class="container home-intro">
+                    <p>2026臺北數位藝術節以「灰色自動體」（GRAY AUTONOMOUS ENTITY）為主題，關注數位藝術如何在人工智慧的快速發展中，重新思考那些難以清楚認識、持續發展且無可迴避的新型態能動性、環境關係和藝術議題。</p>
+                    <p>當人工智慧作為一種新的存在者（ENTITY），成為影響藝術家的日常經驗乃至創作時，數位藝術應如何回應這種不同於工具、媒介所構成的存在？</p>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">與會藝術家</h2>
+                    <div class="artist-layout-preview">
+                        <p class="artist-layout-label">方案 A｜Accordion</p>
+                        <div class="artist-accordion" id="home-artist-accordion" aria-label="與會藝術家方案 A Accordion"></div>
+                    </div>
+                    <div class="artist-layout-preview artist-layout-preview-grid">
+                        <p class="artist-layout-label">方案 B｜Grid</p>
+                        <div class="artist-grid" id="home-artist-grid" aria-label="與會藝術家方案 B Grid"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="section">
+                <div class="container">
+                    <h2 class="section-title">社群</h2>
+                    <div class="social-grid">
+                        <article class="social-box">
+                            <header class="social-card-header"><img class="icon" src="assets/icons/instagram.svg" alt="" aria-hidden="true"><strong id="instagram-label"></strong></header>
+                            <div class="social-embed social-embed-instagram" aria-label="Instagram 官方內容嵌入預留區">
+                                <div class="social-fallback"><strong id="instagram-handle"></strong><a class="button" id="instagram-link" target="_blank" rel="noopener noreferrer" aria-label="前往臺北數位藝術節官方 Instagram（另開新分頁）">前往 Instagram</a></div>
+                            </div>
+                        </article>
+                        <article class="social-box">
+                            <header class="social-card-header"><img class="icon" src="assets/icons/facebook.svg" alt="" aria-hidden="true"><strong id="facebook-label"></strong></header>
+                            <div class="social-embed social-embed-facebook"><iframe id="facebook-embed" title="臺北數位藝術節 Facebook 官方粉絲專頁" width="500" height="430" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" loading="lazy"></iframe></div>
+                            <div class="social-fallback social-fallback-inline"><strong id="facebook-name"></strong><a class="button" id="facebook-link" target="_blank" rel="noopener noreferrer" aria-label="前往臺北數位藝術節官方 Facebook（另開新分頁）">前往 Facebook</a></div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
         <div id="site-footer"></div>
-        <script src="assets/js/data.js"></script>
-        <script src="assets/js/components.js"></script>
-        <script src="assets/js/app.js"></script>
+        <script src="assets/js/data.js?v=20260815-network-grid"></script>
+        <script src="assets/js/components.js?v=20260815-network-grid"></script>
+        <script src="assets/js/app.js?v=20260815-network-grid"></script>
     </body>
 </html>

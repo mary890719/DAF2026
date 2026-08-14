@@ -4,14 +4,24 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>探索地圖｜2026 臺北數位藝術節</title>
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/style.css?v=20260815-network-grid">
     </head>
     <body data-page="map">
         <div id="site-header"></div>
-        <div id="app"></div>
+        <main id="app" class="container">
+            <div id="breadcrumb"></div>
+            <h1 class="page-title">探索地圖</h1>
+            <div class="map-shell" id="map">
+                <div class="map-base-layer"><img class="map-base" src="assets/images/map/botanical-garden-map.png" alt="臺北植物園展區暫定地圖"></div>
+                <div class="map-overlay-layer" id="map-markers"></div>
+                <div class="map-ui-layer"><article class="marker-card" id="marker-card" hidden></article></div>
+            </div>
+            <div class="map-work-list" id="map-work-list"><strong>作品一覽</strong></div>
+            <div class="back-wrap"><a class="button" href="works.html">詳細資訊 &gt;</a></div>
+        </main>
         <div id="site-footer"></div>
-        <script src="assets/js/data.js"></script>
-        <script src="assets/js/components.js"></script>
-        <script src="assets/js/app.js"></script>
+        <script src="assets/js/data.js?v=20260815-network-grid"></script>
+        <script src="assets/js/components.js?v=20260815-network-grid"></script>
+        <script src="assets/js/app.js?v=20260815-network-grid"></script>
     </body>
 </html>

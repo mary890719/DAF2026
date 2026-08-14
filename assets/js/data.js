@@ -1,4 +1,7 @@
 window.DAF_DATA = {
+  settings: {
+    homeArtistLayout: "accordion"
+  },
   social: {
     instagram: {
       url: "https://www.instagram.com/daf_taipei/",
@@ -11,6 +14,24 @@ window.DAF_DATA = {
       label: "Facebook"
     }
   },
+  artists: [
+    ...Array.from({length: 20}, (_, i) => ({
+      id: `artist-${i + 1}`,
+      name: `藝術家 ${String(i + 1).padStart(2, "0")}`,
+      type: "work",
+      workTitle: "作品名稱待提供",
+      workId: i < 18 ? i + 1 : null,
+      image: null
+    })),
+    ...Array.from({length: 4}, (_, i) => ({
+      id: `sound-artist-${i + 1}`,
+      name: `聲響藝術家 ${String(i + 1).padStart(2, "0")}`,
+      type: "sound",
+      workTitle: "作品名稱待提供",
+      workId: 21 + i,
+      image: null
+    }))
+  ],
   works: Array.from({length: 18}, (_, i) => ({
     id: i + 1, type: "work", number: String(i + 1).padStart(2, "0"), title: `作品名稱${i + 1}`,
     year: "2026", medium: "複合媒材", dimensions: "尺寸待定", location: "臺北植物園",
@@ -64,8 +85,10 @@ window.DAF_DATA = {
     }))
   ],
   organizations: [
-    {type:"主辦單位", names:["臺北市文化局"]}, {type:"協辦單位", names:["文創技研有限公司"]},
-    {type:"場地合作", names:["臺北典藏植物園"]}, {type:"合作單位", names:["臺灣當代文化實驗場", "噪流"]},
-    {type:"贊助", names:["C2x3", "十銓科技"], sponsor:true}
+    {type:"主辦單位", names:["臺北市政府文化局"], images:["assets/images/台北市政府文化局.png"], urls:["https://culture.gov.taipei/"]},
+    {type:"協辦單位", names:["文創技研有限公司"], images:["assets/images/文創技研Logo_06.png"], urls:["https://artecture-tw.com/"]},
+    {type:"場地合作", names:["臺北典藏植物園"], images:["assets/images/臺北典藏植物園LOGO.png"], urls:["https://www.future.url.tw/"]},
+    {type:"合作單位", names:["臺灣當代文化實驗場", "噪流"], images:["assets/images/cLab_LOGO.png", "assets/images/噪流.png"], urls:["https://clab.org.tw/", "https://fluidnoise.com/"]},
+    {type:"贊助", names:["C2x3", "十銓科技"], images:["assets/images/C2x3.JPG", "assets/images/十銓科技.JPG"], urls:["https://linktr.ee/c2x3", "https://www.teamgroupinc.com/tw/"], sponsor:true}
   ]
 };

@@ -1,10 +1,9 @@
 (() => {
   const D = DAF_DATA;
   const C = DAF_COMPONENTS;
-  const root = document.querySelector("#app");
   const page = document.body.dataset.page;
   const workCatalog = [...D.works, ...D.soundArtists];
-  const queryId = () => Math.max(1, Number(new URLSearchParams(location.search).get("id")) || 1);
+  const queryId = () => new URLSearchParams(location.search).get("id");
   const observationState = {x: window.innerWidth / 2, y: window.innerHeight / 2, active: false, mode: "idle"};
   const siteResizeHandlers = new Set();
   window.addEventListener("resize", () => siteResizeHandlers.forEach(handler => handler()), {passive: true});
@@ -12,11 +11,37 @@
   const workCards = works => works.map(work => `
     <a class="work-card" href="work-detail.html?id=${work.id}">
       <div class="work-card-media">
-        ${C.placeholder(work.images?.[0]?.alt || "作品圖片")}
+        ${work.images?.[0]?.src ? `<img src="${work.images[0].src}" alt="${work.images[0].alt || work.title}">` : C.placeholder(work.images?.[0]?.alt || "作品圖片")}
         <div class="work-card-overlay"><span>${[work.creators?.map(creator => creator.name).join("／"), work.medium].filter(Boolean).join("<br>")}</span></div>
       </div>
       <div class="work-label"><span class="work-no">${work.number}</span>${work.title}</div>
     </a>`).join("");
+
+  const featuredMedia = (image, fallbackLabel) => image?.src
+    ? `<img src="${image.src}" alt="${image.alt || fallbackLabel}">`
+    : C.placeholder(image?.alt || fallbackLabel);
+
+  const featuredWorkCards = works => works.map(work => `
+    <a class="home-featured-card" href="work-detail.html?id=${work.id}">
+      <div class="home-featured-card-media">${featuredMedia(work.images?.[0], `${work.title} 作品圖片`)}</div>
+      <div class="home-featured-card-body">
+        <p class="home-featured-card-meta"><span class="work-no">${work.number}</span></p>
+        <h3>${work.title}</h3>
+        <p>${work.creators?.map(creator => creator.name).join("／") || ""}</p>
+      </div>
+    </a>
+  `).join("");
+
+  const featuredProgramCards = events => events.map(event => `
+    <a class="home-featured-card" href="event-detail.html?id=${event.id}">
+      <div class="home-featured-card-media">${featuredMedia(event.images?.[0], `${event.title} 活動圖片`)}</div>
+      <div class="home-featured-card-body">
+        <p class="home-featured-card-meta">${event.type}</p>
+        <h3>${event.title}</h3>
+        <p>${event.date}</p>
+      </div>
+    </a>
+  `).join("");
 
   const artistViewData = artist => {
     const linkedWork = workCatalog.find(work => work.id === artist.workId);
@@ -59,52 +84,97 @@
       </div>
     </article>`).join("");
 
-  const workFacts = work => [
-    ["創作年份", work.year], ["使用媒材", work.medium], ["作品尺寸", work.dimensions],
-    ["展出地點", work.location], ["作品介紹", work.description]
-  ].filter(([, value]) => value).map(([label, value]) => `
-    <dt class="${label === "展出地點" ? "location-label" : ""}">${label === "展出地點" ? C.icon("location", "") : ""}${label}</dt>
-    <dd>${value}</dd>`).join("");
+  const setDetailText = (selector, value) => {
+    const element = document.querySelector(selector);
+    if (element) element.textContent = value ?? "";
+  };
+
+  const setDetailField = (field, value, prefix) => {
+    const row = document.querySelector(`[data-${prefix}-field="${field}"]`);
+    const slot = document.querySelector(`[data-${prefix}-${field}]`);
+    const available = value !== undefined && value !== null && value !== "";
+    if (row) row.hidden = !available;
+    if (slot) slot.textContent = available ? value : "";
+  };
+
+  const detailImage = (image, fallbackLabel, cls = "") => image?.src
+    ? `<img class="${cls}" src="${image.src}" alt="${image.alt || fallbackLabel}">`
+    : C.placeholder(image?.alt || fallbackLabel, cls);
 
   const renderWorkDetail = () => {
-    const foundIndex = workCatalog.findIndex(item => item.id === queryId());
-    const currentIndex = Math.max(0, foundIndex);
+    const foundIndex = workCatalog.findIndex(item => String(item.id) === queryId());
+    const article = document.querySelector("[data-work-detail]");
+    const error = document.querySelector("[data-work-error]");
+    if (foundIndex < 0) {
+      article.remove();
+      error.hidden = false;
+      document.querySelector("#breadcrumb").innerHTML = C.crumb("找不到此作品");
+      document.title = "找不到此作品｜2026 臺北數位藝術節";
+      return;
+    }
+    const currentIndex = foundIndex;
     const work = workCatalog[currentIndex];
     const previous = workCatalog[(currentIndex - 1 + workCatalog.length) % workCatalog.length];
     const next = workCatalog[(currentIndex + 1) % workCatalog.length];
-    root.innerHTML = `
-      <main class="container">
-        ${C.crumb([{label: "展覽資訊", href: "works.html"}, {label: `${work.number} ${work.title}`}])}
-        <article class="detail-shell">
-          <section class="detail-left">
-            <h1 class="detail-title">${work.number}　${work.title}</h1>
-            <dl>${workFacts(work)}</dl>
-            <div class="gallery">${(work.images || []).map(image => C.placeholder(image.alt)).join("")}</div>
-          </section>
-          <section>
-            ${C.placeholder(work.images?.[0]?.alt || "主要圖片", "detail-main")}
-            <div class="artist-copy">${(work.creators || []).filter(creator => creator.name || creator.bio).map(creator => `${creator.name ? `<h2>${creator.name}</h2>` : ""}${creator.bio ? `<p>${creator.bio}</p>` : ""}`).join("")}</div>
-          </section>
-          <div class="share"><span>分享至</span><a href="#" aria-label="分享到 Instagram">${C.icon("instagram", "")}</a><a href="#" aria-label="分享到 Facebook">${C.icon("facebook", "")}</a><button class="copy-link" type="button" aria-label="複製作品連結">${C.icon("link", "")}</button></div>
-          <nav class="pager"><a href="work-detail.html?id=${previous.id}">←　上一件作品<br>${previous.title}</a><a href="work-detail.html?id=${next.id}">下一件作品　→<br>${next.title}</a></nav>
-        </article>
-      </main>`;
+    const creatorNames = (work.creators || []).map(creator => creator.name).filter(Boolean).join("／");
+    document.title = `${work.title}｜2026 臺北數位藝術節`;
+    document.querySelector("#breadcrumb").innerHTML = C.crumb([{label: "藝術家與作品", href: "works.html"}, {label: work.title}]);
+    setDetailText("[data-work-number]", work.number ? `作品編號 ${work.number}` : "");
+    setDetailText("[data-work-title]", work.title);
+    setDetailText("[data-work-creator-names]", creatorNames);
+    setDetailField("year", work.year, "work");
+    setDetailField("medium", work.medium, "work");
+    setDetailField("dimensions", work.dimensions, "work");
+    setDetailField("location", work.location, "work");
+    setDetailText("[data-work-description]", work.description);
+    document.querySelector("[data-work-description-section]").hidden = !work.description;
+    const images = work.images || [];
+    document.querySelector("[data-work-gallery]").innerHTML = images.map(image => detailImage(image, "作品圖片")).join("");
+    document.querySelector("[data-work-gallery-section]").hidden = images.length === 0;
+    document.querySelector("[data-work-primary-media]").innerHTML = detailImage(images[0], "主要圖片", "detail-main");
+    const artists = (work.creators || []).filter(creator => creator.name || creator.bio);
+    document.querySelector("[data-work-artists]").innerHTML = artists.length
+      ? artists.map(creator => `<article>${creator.name ? `<h3>${creator.name}</h3>` : ""}${creator.bio ? `<p>${creator.bio}</p>` : ""}</article>`).join("")
+      : `<p class="data-pending">資料待提供</p>`;
+    const previousLink = document.querySelector("[data-work-previous]");
+    const nextLink = document.querySelector("[data-work-next]");
+    previousLink.href = `work-detail.html?id=${previous.id}`;
+    nextLink.href = `work-detail.html?id=${next.id}`;
+    setDetailText("[data-work-previous-title]", previous.title);
+    setDetailText("[data-work-next-title]", next.title);
   };
 
   const renderEventDetail = () => {
-    const event = D.events.find(item => item.id === queryId()) || D.events[0];
+    const event = D.events.find(item => String(item.id) === queryId());
+    const article = document.querySelector("[data-event-detail]");
+    const error = document.querySelector("[data-event-error]");
+    if (!event) {
+      article.remove();
+      error.hidden = false;
+      document.querySelector("#breadcrumb").innerHTML = C.crumb("找不到此活動");
+      document.title = "找不到此活動｜2026 臺北數位藝術節";
+      return;
+    }
     const leader = event.speaker || event.instructor;
-    root.innerHTML = `
-      <main class="container">
-        ${C.crumb([{label: "活動時程", href: "timeline.html"}, {label: event.title}])}
-        <article class="event-detail">
-          <p class="event-detail-type">${event.type}</p>
-          <h1>${event.title}</h1>
-          <dl>${[["日期", event.date], ["時間", event.time], ["地點", event.location], [event.type === "講座" ? "講者" : "帶領者", leader]].filter(([, value]) => value).map(([label, value]) => `<dt>${label}</dt><dd>${value}</dd>`).join("")}</dl>
-          <section><h2>活動介紹</h2><p>${event.description}</p></section>
-          <section><h2>活動紀錄</h2><div class="event-gallery">${event.images.map(image => C.placeholder(image.alt)).join("")}</div></section>
-        </article>
-      </main>`;
+    document.title = `${event.title}｜2026 臺北數位藝術節`;
+    document.querySelector("#breadcrumb").innerHTML = C.crumb([{label: "活動節目", href: "program.html"}, {label: event.title}]);
+    setDetailText("[data-event-type]", event.type);
+    setDetailText("[data-event-title]", event.title);
+    setDetailField("date", event.date, "event");
+    setDetailField("time", event.time, "event");
+    setDetailField("location", event.location, "event");
+    const leaderRow = document.querySelector("[data-event-leader-row]");
+    leaderRow.hidden = !leader;
+    setDetailText("[data-event-leader-label]", event.type === "講座" ? "講者" : "帶領者");
+    setDetailText("[data-event-leader]", leader);
+    const registrationRow = document.querySelector("[data-event-registration-row]");
+    registrationRow.hidden = !event.registration;
+    setDetailText("[data-event-registration]", event.registration);
+    setDetailText("[data-event-description]", event.description);
+    document.querySelector("[data-event-description-section]").hidden = !event.description;
+    const recordImages = (event.images || []).filter(image => image.src);
+    document.querySelector("[data-event-gallery]").innerHTML = recordImages.map(image => detailImage(image, "活動紀錄圖片")).join("");
+    document.querySelector("[data-event-gallery-section]").hidden = recordImages.length === 0;
   };
 
   const networkProfile = {
@@ -489,7 +559,7 @@
     const scramble = (element, delay = 0) => new Promise(resolve => {
       const finalText = element.textContent;
       const characters = [...finalText];
-      const duration = 720;
+      const duration = 2160;
       const frame = 40;
       const randomize = resolved => characters.map((character, index) => character === " " || index < resolved ? character : glyphs[Math.floor(Math.random() * glyphs.length)]).join("");
       element.setAttribute("aria-label", finalText);
@@ -517,7 +587,7 @@
       }
     };
 
-    await Promise.all(titleElements.map((element, index) => scramble(element, index * 140)));
+    await Promise.all(titleElements.map((element, index) => scramble(element, index * 180)));
     await wait(240);
     for (let index = 0; index < messageLines.length; index += 1) {
       await typeLine(messageLines[index], finalMessages[index]);
@@ -531,7 +601,8 @@
 
   const hydrateHome = () => {
     document.querySelector("#home-artist-accordion").innerHTML = artistAccordionItems(D.artists);
-    document.querySelector("#home-artist-grid").innerHTML = artistGridItems(D.artists);
+    document.querySelector("#home-featured-works").innerHTML = featuredWorkCards(D.works.slice(0, 4));
+    document.querySelector("#home-featured-programs").innerHTML = featuredProgramCards(D.events.slice(0, 4));
     const instagram = D.social.instagram;
     const facebook = D.social.facebook;
     document.querySelector("#instagram-label").textContent = instagram.label;
@@ -543,8 +614,47 @@
     document.querySelector("#facebook-embed").src = `https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(facebook.url)}&tabs=timeline&width=328&height=430&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true`;
 
     initializeArtistAccordion();
-    initializeArtistGrid();
     runHeroSequence();
+  };
+
+  const initializeFolderTabs = () => {
+    document.querySelectorAll("[data-folder-tabs]").forEach(widget => {
+      const tabs = [...widget.querySelectorAll('[role="tab"]')];
+      const panels = [...widget.querySelectorAll('[role="tabpanel"]')];
+      if (!tabs.length || !panels.length) return;
+
+      const activate = (tab, {focus = false, updateHash = true} = {}) => {
+        tabs.forEach(item => {
+          const active = item === tab;
+          item.setAttribute("aria-selected", String(active));
+          item.tabIndex = active ? 0 : -1;
+        });
+        panels.forEach(panel => { panel.hidden = panel.id !== tab.dataset.tabTarget; });
+        if (focus) tab.focus();
+        if (updateHash && history.replaceState) history.replaceState(null, "", `#${tab.dataset.tabTarget}`);
+      };
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => activate(tab));
+        tab.addEventListener("keydown", event => {
+          const keys = {ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1};
+          let nextIndex = keys[event.key] == null ? index : (index + keys[event.key] + tabs.length) % tabs.length;
+          if (event.key === "Home") nextIndex = 0;
+          if (event.key === "End") nextIndex = tabs.length - 1;
+          if (nextIndex === index && !["Home", "End"].includes(event.key)) return;
+          event.preventDefault();
+          activate(tabs[nextIndex], {focus: true});
+        });
+      });
+
+      const activateFromHash = () => {
+        const target = location.hash.slice(1);
+        const tab = tabs.find(item => item.dataset.tabTarget === target);
+        if (tab) activate(tab, {updateHash: false});
+      };
+      activateFromHash();
+      window.addEventListener("hashchange", activateFromHash);
+    });
   };
 
   const initializeBackToTop = () => {
@@ -645,7 +755,7 @@
   document.querySelector("#site-footer").innerHTML = C.footer();
   initializeBackToTop();
 
-  const breadcrumbLabels = {about: "年度主題", map: "探索地圖", works: "展覽資訊", timeline: "活動時程", transport: "交通資訊"};
+  const breadcrumbLabels = {about: "關於", map: "探索地圖", works: "藝術家與作品", program: "活動節目", visit: "參觀"};
   if (breadcrumbLabels[page]) document.querySelector("#breadcrumb").innerHTML = C.crumb(breadcrumbLabels[page]);
 
   if (page === "home") hydrateHome();
@@ -653,21 +763,82 @@
     document.querySelector("#works-grid").innerHTML = workCards(D.works);
     document.querySelector("#sound-grid").innerHTML = workCards(D.soundArtists);
   }
-  if (page === "timeline") document.querySelector("#events-list").innerHTML = D.events.map(event => `<a class="event-row" href="event-detail.html?id=${event.id}"><span class="event-type">${event.type}</span><strong>${event.title}</strong><span>${event.date}・${event.time}</span></a>`).join("");
+  if (page === "program") {
+    const eventRows = events => events.map(event => `<a class="event-row" href="event-detail.html?id=${event.id}"><span class="event-type">${event.type}</span><strong>${event.title}</strong><span>${event.date}・${event.time}</span></a>`).join("");
+    document.querySelector("#events-list").innerHTML = eventRows(D.events);
+    document.querySelector("#talks-list").innerHTML = eventRows(D.events.filter(event => event.type === "講座"));
+    document.querySelector("#workshops-list").innerHTML = eventRows(D.events.filter(event => event.type === "工作坊"));
+  }
   if (page === "map") {
     renderMap();
     initializeMapInteraction();
   }
   if (page === "work-detail") renderWorkDetail();
   if (page === "event-detail") renderEventDetail();
+  initializeFolderTabs();
   initializeSiteObservation();
   initializeSiteNetwork();
 
-  document.querySelector(".menu-toggle").addEventListener("click", event => {
-    const navigation = document.querySelector(".header-nav");
-    const open = navigation.classList.toggle("open");
-    event.currentTarget.setAttribute("aria-expanded", open);
+  const menuToggle = document.querySelector(".menu-toggle");
+  const menuClose = document.querySelector(".mobile-menu-close");
+  const navigation = document.querySelector(".header-nav");
+  const mobileMenuMedia = window.matchMedia("(max-width: 900px)");
+  const pageContent = [document.querySelector("#app"), document.querySelector("#site-footer"), document.querySelector(".back-to-top")].filter(Boolean);
+  let menuReturnFocus = null;
+
+  const setPageInert = inert => pageContent.forEach(element => {
+    if (inert) element.setAttribute("inert", "");
+    else element.removeAttribute("inert");
   });
+
+  const closeMobileMenu = ({restoreFocus = true} = {}) => {
+    const wasOpen = navigation.classList.contains("open");
+    navigation.classList.remove("open");
+    document.body.classList.remove("mobile-menu-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    if (mobileMenuMedia.matches) navigation.setAttribute("aria-hidden", "true");
+    else navigation.removeAttribute("aria-hidden");
+    setPageInert(false);
+    if (wasOpen && restoreFocus && menuReturnFocus) menuReturnFocus.focus();
+  };
+
+  const openMobileMenu = () => {
+    if (!mobileMenuMedia.matches) return;
+    menuReturnFocus = document.activeElement;
+    navigation.classList.add("open");
+    document.body.classList.add("mobile-menu-open");
+    menuToggle.setAttribute("aria-expanded", "true");
+    navigation.setAttribute("aria-hidden", "false");
+    setPageInert(true);
+    menuClose.focus();
+  };
+
+  menuToggle.addEventListener("click", () => navigation.classList.contains("open") ? closeMobileMenu() : openMobileMenu());
+  menuClose.addEventListener("click", () => closeMobileMenu());
+  navigation.querySelectorAll("a").forEach(link => link.addEventListener("click", () => closeMobileMenu({restoreFocus: false})));
+  document.addEventListener("keydown", event => {
+    if (!navigation.classList.contains("open")) return;
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeMobileMenu();
+      return;
+    }
+    if (event.key !== "Tab") return;
+    const focusable = [...navigation.querySelectorAll("a, button")].filter(element => !element.disabled);
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  });
+  const syncMobileMenuMode = () => {
+    if (!mobileMenuMedia.matches) {
+      if (navigation.contains(document.activeElement)) document.activeElement.blur();
+      closeMobileMenu({restoreFocus: false});
+    }
+    else if (!navigation.classList.contains("open")) navigation.setAttribute("aria-hidden", "true");
+  };
+  window.addEventListener("resize", syncMobileMenuMode, {passive: true});
+  syncMobileMenuMode();
 
   document.querySelectorAll(".copy-link").forEach(button => button.addEventListener("click", async () => {
     try {

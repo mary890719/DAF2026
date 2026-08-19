@@ -4,24 +4,36 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>探索地圖｜2026 臺北數位藝術節</title>
-        <link rel="stylesheet" href="assets/css/style.css?v=20260815-network-grid">
+        <link rel="stylesheet" href="assets/css/style.css?v=20260817-ia-v3">
     </head>
     <body data-page="map">
         <div id="site-header"></div>
         <main id="app" class="container">
             <div id="breadcrumb"></div>
             <h1 class="page-title">探索地圖</h1>
-            <div class="map-shell" id="map">
-                <div class="map-base-layer"><img class="map-base" src="assets/images/map/botanical-garden-map.png" alt="臺北植物園展區暫定地圖"></div>
-                <div class="map-overlay-layer" id="map-markers"></div>
-                <div class="map-ui-layer"><article class="marker-card" id="marker-card" hidden></article></div>
+            <nav class="page-section-nav" aria-label="探索地圖章節">
+                <a href="#garden-map">臺北典藏植物園</a>
+                <a href="#district-map">街區地圖</a>
+                <a href="#partner-stores">合作店家</a>
+            </nav>
+            <div class="page-sections map-contexts">
+                <section class="ia-section map-context" id="garden-map" data-map-context="garden">
+                    <h2>臺北典藏植物園展場平面圖</h2>
+                    <div class="map-shell" id="map">
+                        <div class="map-base-layer"><img class="map-base" src="assets/images/map/botanical-garden-map.png" alt="臺北植物園展區暫定地圖"></div>
+                        <div class="map-overlay-layer" id="map-markers" data-marker-context="work"></div>
+                        <div class="map-ui-layer"><article class="marker-card" id="marker-card" hidden></article></div>
+                    </div>
+                    <div class="map-work-list" id="map-work-list"><strong>作品一覽</strong></div>
+                </section>
+                <section class="ia-section map-context" id="district-map" data-map-context="district"><h2>街區地圖</h2><p class="data-pending">地圖與作品位置資料待提供</p></section>
+                <section class="ia-section" id="partner-stores" data-marker-context="partner"><h2>合作店家</h2><p class="data-pending">資料待提供</p></section>
             </div>
-            <div class="map-work-list" id="map-work-list"><strong>作品一覽</strong></div>
             <div class="back-wrap"><a class="button" href="works.html">詳細資訊 &gt;</a></div>
         </main>
         <div id="site-footer"></div>
-        <script src="assets/js/data.js?v=20260815-network-grid"></script>
-        <script src="assets/js/components.js?v=20260815-network-grid"></script>
-        <script src="assets/js/app.js?v=20260815-network-grid"></script>
+        <script src="assets/js/data.js?v=20260817-ia-v3"></script>
+        <script src="assets/js/components.js?v=20260817-ia-v3"></script>
+        <script src="assets/js/app.js?v=20260817-ia-v3"></script>
     </body>
 </html>

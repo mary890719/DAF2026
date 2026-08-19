@@ -4,21 +4,26 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>2026 臺北數位藝術節</title>
-        <link rel="stylesheet" href="assets/css/style.css?v=20260815-network-grid">
+        <link rel="stylesheet" href="assets/css/style.css?v=20260819-home-featured-v1">
     </head>
     <body data-page="home">
         <div id="site-header"></div>
         <main id="app">
             <section class="hero hero-text hero-sequence-active" id="hero-observation" aria-labelledby="hero-title">
+                <div class="hero-background" aria-hidden="true"></div>
                 <div class="hero-copy">
                     <p class="hero-kicker hero-observation-target" data-observation-id="festival">2026 臺北數位藝術節</p>
-                    <h1 id="hero-title" class="hero-observation-target" data-observation-id="title">
-                        <span class="hero-scramble" lang="en">GRAY AUTONOMOUS ENTITY</span>
-                        <span class="hero-scramble">灰色自動體</span>
-                    </h1>
+                    <div class="hero-title-stage hero-observation-target" data-observation-id="title">
+                        <h1 id="hero-title" class="hero-title-text">
+                            <span class="hero-scramble" lang="en">GRAY AUTONOMOUS ENTITY</span>
+                            <span class="hero-scramble">灰色自動體</span>
+                        </h1>
+                        <div class="hero-title-mark" aria-hidden="true"></div>
+                    </div>
                     <div class="hero-meta hero-observation-target" data-observation-id="details">
-                        <span>時間｜2026.10.31–11.15（週一休館）</span>
-                        <span>地點｜臺北典藏植物園</span>
+                        <span><span class="hero-meta-label">展覽日期｜</span><span class="hero-meta-value">2026.10.31–11.15</span></span>
+                        <span><span class="hero-meta-label">展覽時間｜</span><span class="hero-meta-value">週二至週日 9:00–17:00（週一休館）</span></span>
+                        <span><span class="hero-meta-label">展覽地點｜</span><span class="hero-meta-value">臺北典藏植物園</span></span>
                     </div>
                     <div class="hero-system hero-observation-target" data-observation-id="navigation">
                         <div class="hero-system-messages" aria-label="系統訊息">
@@ -27,10 +32,10 @@
                             <p>&gt; 你想從哪裡開始？</p>
                         </div>
                         <nav class="hero-system-links" aria-label="首頁系統導覽">
-                            <a href="about.html">年度主題</a>
+                                <a href="about.html">關於</a>
                             <a href="works.html">探索作品</a>
-                            <a href="timeline.html">活動時程</a>
-                            <a href="transport.html">交通資訊</a>
+                            <a href="program.html">活動節目</a>
+                                <a href="visit.html">參觀</a>
                         </nav>
                     </div>
                 </div>
@@ -45,14 +50,21 @@
             <section class="section">
                 <div class="container">
                     <h2 class="section-title">與會藝術家</h2>
-                    <div class="artist-layout-preview">
-                        <p class="artist-layout-label">方案 A｜Accordion</p>
-                        <div class="artist-accordion" id="home-artist-accordion" aria-label="與會藝術家方案 A Accordion"></div>
-                    </div>
-                    <div class="artist-layout-preview artist-layout-preview-grid">
-                        <p class="artist-layout-label">方案 B｜Grid</p>
-                        <div class="artist-grid" id="home-artist-grid" aria-label="與會藝術家方案 B Grid"></div>
-                    </div>
+                    <div class="artist-accordion" id="home-artist-accordion" aria-label="與會藝術家"></div>
+                </div>
+            </section>
+            <section class="section home-featured-section" id="featured-works">
+                <div class="container">
+                    <h2 class="section-title home-featured-title">精選作品 <span lang="en">/ Featured Works</span></h2>
+                    <div class="home-featured-track" id="home-featured-works" aria-label="精選作品"></div>
+                    <p class="home-featured-more"><a href="works.html">查看全部作品 →</a></p>
+                </div>
+            </section>
+            <section class="section home-featured-section" id="featured-programs">
+                <div class="container">
+                    <h2 class="section-title home-featured-title">精選活動 <span lang="en">/ Featured Programs</span></h2>
+                    <div class="home-featured-track" id="home-featured-programs" aria-label="精選活動"></div>
+                    <p class="home-featured-more"><a href="program.html">查看全部活動 →</a></p>
                 </div>
             </section>
             <section class="section">
@@ -75,8 +87,8 @@
             </section>
         </main>
         <div id="site-footer"></div>
-        <script src="assets/js/data.js?v=20260815-network-grid"></script>
-        <script src="assets/js/components.js?v=20260815-network-grid"></script>
-        <script src="assets/js/app.js?v=20260815-network-grid"></script>
+        <script src="assets/js/data.js?v=20260817-ia-v3"></script>
+        <script src="assets/js/components.js?v=20260817-ia-v3"></script>
+        <script src="assets/js/app.js?v=20260819-home-featured-v1"></script>
     </body>
 </html>

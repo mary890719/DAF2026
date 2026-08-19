@@ -4,14 +4,33 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>作品詳細｜2026 臺北數位藝術節</title>
-        <link rel="stylesheet" href="assets/css/style.css?v=20260815-network-grid">
+        <meta name="description" content="2026 臺北數位藝術節參展作品資訊。">
+        <meta name="theme-color" content="#000000">
+        <link rel="stylesheet" href="assets/css/style.css?v=20260817-detail-slots-v2">
     </head>
     <body data-page="work-detail">
         <div id="site-header"></div>
-        <div id="app"></div>
+        <main class="container detail-page work-detail" id="main-content">
+            <div id="breadcrumb"></div>
+            <section class="detail-not-found" data-work-error hidden><h2>找不到此作品</h2><p><a class="button" href="works.html">返回藝術家與作品</a></p></section>
+            <article class="detail-shell" data-work-detail>
+                <section class="detail-left">
+                    <header class="detail-header"><p class="detail-number" data-work-number></p><h1 class="detail-title" data-work-title></h1><p class="detail-creators" data-work-creator-names></p></header>
+                    <section class="detail-information" aria-labelledby="work-information-title"><h2 id="work-information-title">作品資訊</h2><dl class="detail-meta"><div data-work-field="year"><dt>年份</dt><dd data-work-year></dd></div><div data-work-field="medium"><dt>媒材</dt><dd data-work-medium></dd></div><div data-work-field="dimensions"><dt>尺寸</dt><dd data-work-dimensions></dd></div><div data-work-field="location"><dt>展出地點</dt><dd data-work-location></dd></div></dl></section>
+                    <section class="detail-content" data-work-description-section><h2>作品介紹</h2><div data-work-description></div></section>
+                    <section class="detail-media" data-work-gallery-section><h2>作品圖片</h2><div class="gallery" data-work-gallery></div></section>
+                </section>
+                <section class="detail-media" aria-labelledby="work-artists-title"><div data-work-primary-media></div><h2 id="work-artists-title">藝術家</h2><div class="artist-copy" data-work-artists></div></section>
+                <div class="share"><span>分享至</span><a href="#" aria-label="分享到 Instagram"><img class="icon" src="assets/icons/instagram.svg" alt="" aria-hidden="true"></a><a href="#" aria-label="分享到 Facebook"><img class="icon" src="assets/icons/facebook.svg" alt="" aria-hidden="true"></a><button class="copy-link" type="button" aria-label="複製作品連結"><img class="icon" src="assets/icons/link.svg" alt="" aria-hidden="true"></button></div>
+                <nav class="detail-navigation pager" aria-label="作品導覽"><a data-work-previous><span>←　上一件作品</span><br><span data-work-previous-title></span></a><a data-work-next><span>下一件作品　→</span><br><span data-work-next-title></span></a></nav>
+                <div data-work-map-slot hidden></div>
+            </article>
+            <nav class="detail-return-navigation back-wrap" aria-label="返回導覽"><a class="button" href="index.html">&lt; 返回首頁</a><a class="button" href="works.html">返回藝術家與作品</a></nav>
+            <noscript><p class="container detail-page-noscript">本頁需要啟用 JavaScript 才能顯示作品資訊。</p></noscript>
+        </main>
         <div id="site-footer"></div>
-        <script src="assets/js/data.js?v=20260815-network-grid"></script>
-        <script src="assets/js/components.js?v=20260815-network-grid"></script>
-        <script src="assets/js/app.js?v=20260815-network-grid"></script>
+        <script src="assets/js/data.js?v=20260817-detail-slots-v2"></script>
+        <script src="assets/js/components.js?v=20260817-detail-slots-v2"></script>
+        <script src="assets/js/app.js?v=20260817-detail-slots-v2"></script>
     </body>
 </html>

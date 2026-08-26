@@ -8,22 +8,43 @@
   const siteResizeHandlers = new Set();
   window.addEventListener("resize", () => siteResizeHandlers.forEach(handler => handler()), {passive: true});
 
+  const normalizeImage = (image, fallbackLabel, allowEmpty = false) => {
+    if (typeof image === "string") return image || allowEmpty ? {src: image, alt: fallbackLabel} : null;
+    if (!image || typeof image !== "object") return null;
+    const src = image.src || image.url || "";
+    if (!src && !allowEmpty) return null;
+    return {src, alt: image.alt || fallbackLabel};
+  };
+
+  const coverImageFor = (item, fallbackLabel) => normalizeImage(item?.coverImage, fallbackLabel)
+    || normalizeImage(item?.image, fallbackLabel)
+    || normalizeImage(item?.images?.[0], fallbackLabel);
+
+  const galleryImagesFor = (item, fallbackLabel, preservePlaceholders = false) => {
+    const images = Array.isArray(item?.images)
+      ? item.images.map(image => normalizeImage(image, fallbackLabel, preservePlaceholders)).filter(Boolean)
+      : [];
+    if (images.length) return images;
+    const fallback = normalizeImage(item?.coverImage, fallbackLabel) || normalizeImage(item?.image, fallbackLabel);
+    return fallback ? [fallback] : [];
+  };
+
+  const imageMarkup = (image, fallbackLabel, cls = "") => image?.src
+    ? `<img class="${cls}" src="${image.src}" alt="${image.alt || fallbackLabel}">`
+    : C.placeholder(image?.alt || fallbackLabel, cls);
+
   const workCards = works => works.map(work => `
     <a class="work-card" href="work-detail.html?id=${work.id}">
       <div class="work-card-media">
-        ${work.images?.[0]?.src ? `<img src="${work.images[0].src}" alt="${work.images[0].alt || work.title}">` : C.placeholder(work.images?.[0]?.alt || "作品圖片")}
+        ${imageMarkup(coverImageFor(work, `${work.title} 作品圖片`), `${work.title} 作品圖片`)}
         <div class="work-card-overlay"><span>${[work.creators?.map(creator => creator.name).join("／"), work.medium].filter(Boolean).join("<br>")}</span></div>
       </div>
       <div class="work-label"><span class="work-no">${work.number}</span>${work.title}</div>
     </a>`).join("");
 
-  const featuredMedia = (image, fallbackLabel) => image?.src
-    ? `<img src="${image.src}" alt="${image.alt || fallbackLabel}">`
-    : C.placeholder(image?.alt || fallbackLabel);
-
   const featuredWorkCards = works => works.map(work => `
     <a class="home-featured-card" href="work-detail.html?id=${work.id}">
-      <div class="home-featured-card-media">${featuredMedia(work.images?.[0], `${work.title} 作品圖片`)}</div>
+      <div class="home-featured-card-media">${imageMarkup(coverImageFor(work, `${work.title} 作品圖片`), `${work.title} 作品圖片`)}</div>
       <div class="home-featured-card-body">
         <p class="home-featured-card-meta"><span class="work-no">${work.number}</span></p>
         <h3>${work.title}</h3>
@@ -34,7 +55,7 @@
 
   const featuredProgramCards = events => events.map(event => `
     <a class="home-featured-card" href="event-detail.html?id=${event.id}">
-      <div class="home-featured-card-media">${featuredMedia(event.images?.[0], `${event.title} 活動圖片`)}</div>
+      <div class="home-featured-card-media">${imageMarkup(coverImageFor(event, `${event.title} 活動圖片`), `${event.title} 活動圖片`)}</div>
       <div class="home-featured-card-body">
         <p class="home-featured-card-meta">${event.type}</p>
         <h3>${event.title}</h3>
@@ -97,10 +118,6 @@
     if (slot) slot.textContent = available ? value : "";
   };
 
-  const detailImage = (image, fallbackLabel, cls = "") => image?.src
-    ? `<img class="${cls}" src="${image.src}" alt="${image.alt || fallbackLabel}">`
-    : C.placeholder(image?.alt || fallbackLabel, cls);
-
   const renderWorkDetail = () => {
     const foundIndex = workCatalog.findIndex(item => String(item.id) === queryId());
     const article = document.querySelector("[data-work-detail]");
@@ -128,10 +145,10 @@
     setDetailField("location", work.location, "work");
     setDetailText("[data-work-description]", work.description);
     document.querySelector("[data-work-description-section]").hidden = !work.description;
-    const images = work.images || [];
-    document.querySelector("[data-work-gallery]").innerHTML = images.map(image => detailImage(image, "作品圖片")).join("");
+    const images = galleryImagesFor(work, "作品圖片", true);
+    document.querySelector("[data-work-gallery]").innerHTML = images.map(image => imageMarkup(image, "作品圖片")).join("");
     document.querySelector("[data-work-gallery-section]").hidden = images.length === 0;
-    document.querySelector("[data-work-primary-media]").innerHTML = detailImage(images[0], "主要圖片", "detail-main");
+    document.querySelector("[data-work-primary-media]").innerHTML = imageMarkup(coverImageFor(work, "主要圖片") || images[0], "主要圖片", "detail-main");
     const artists = (work.creators || []).filter(creator => creator.name || creator.bio);
     document.querySelector("[data-work-artists]").innerHTML = artists.length
       ? artists.map(creator => `<article>${creator.name ? `<h3>${creator.name}</h3>` : ""}${creator.bio ? `<p>${creator.bio}</p>` : ""}</article>`).join("")
@@ -172,20 +189,20 @@
     setDetailText("[data-event-registration]", event.registration);
     setDetailText("[data-event-description]", event.description);
     document.querySelector("[data-event-description-section]").hidden = !event.description;
-    const recordImages = (event.images || []).filter(image => image.src);
-    document.querySelector("[data-event-gallery]").innerHTML = recordImages.map(image => detailImage(image, "活動紀錄圖片")).join("");
+    const recordImages = galleryImagesFor(event, "活動紀錄圖片");
+    document.querySelector("[data-event-gallery]").innerHTML = recordImages.map(image => imageMarkup(image, "活動紀錄圖片")).join("");
     document.querySelector("[data-event-gallery-section]").hidden = recordImages.length === 0;
   };
 
   const networkProfile = {
-    nodeBaseAlpha: .20,
-    nodeObservationAlpha: .28,
-    connectionBaseAlpha: .06,
-    connectionProximityAlpha: .055,
-    connectionObservationAlpha: .205,
+    nodeBaseAlpha: .24,
+    nodeObservationAlpha: .34,
+    connectionBaseAlpha: .075,
+    connectionProximityAlpha: .07,
+    connectionObservationAlpha: .25,
     observationConnectionDistance: 60,
-    lightCenterAlpha: .033,
-    lightEdgeAlpha: .01
+    lightCenterAlpha: .042,
+    lightEdgeAlpha: .013
   };
 
   const initializeSiteObservation = () => {
@@ -599,6 +616,56 @@
     scrollLink.classList.add("is-visible");
   };
 
+  const initializeFeaturedPagination = () => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const paginations = [...document.querySelectorAll("[data-featured-pagination]")].map(pagination => {
+      const track = document.querySelector(`#${pagination.dataset.featuredPagination}`);
+      let buttons = [];
+      let scrollFrame = 0;
+
+      const updateActiveDot = () => {
+        const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+        const activeIndex = buttons.length > 1 && maxScroll > 0
+          ? Math.round((track.scrollLeft / maxScroll) * (buttons.length - 1))
+          : 0;
+        buttons.forEach((button, index) => {
+          button.classList.toggle("is-active", index === activeIndex);
+          if (index === activeIndex) button.setAttribute("aria-current", "true");
+          else button.removeAttribute("aria-current");
+        });
+        scrollFrame = 0;
+      };
+
+      const rebuild = () => {
+        const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+        const pageCount = maxScroll > 1 ? Math.ceil(maxScroll / track.clientWidth) + 1 : 1;
+        pagination.hidden = pageCount <= 1;
+        pagination.innerHTML = Array.from({length: pageCount}, (_, index) => `<button type="button" aria-label="前往第 ${index + 1} 個精選區段"></button>`).join("");
+        buttons = [...pagination.querySelectorAll("button")];
+        buttons.forEach((button, index) => button.addEventListener("click", () => {
+          const left = buttons.length > 1 ? maxScroll * index / (buttons.length - 1) : 0;
+          track.scrollTo({left, behavior: reducedMotion.matches ? "auto" : "smooth"});
+        }));
+        updateActiveDot();
+      };
+
+      track.addEventListener("scroll", () => {
+        if (!scrollFrame) scrollFrame = requestAnimationFrame(updateActiveDot);
+      }, {passive: true});
+      rebuild();
+      return rebuild;
+    });
+
+    let resizeFrame = 0;
+    siteResizeHandlers.add(() => {
+      if (resizeFrame) cancelAnimationFrame(resizeFrame);
+      resizeFrame = requestAnimationFrame(() => {
+        paginations.forEach(rebuild => rebuild());
+        resizeFrame = 0;
+      });
+    });
+  };
+
   const hydrateHome = () => {
     document.querySelector("#home-artist-accordion").innerHTML = artistAccordionItems(D.artists);
     document.querySelector("#home-featured-works").innerHTML = featuredWorkCards(D.works.slice(0, 4));
@@ -614,6 +681,7 @@
     document.querySelector("#facebook-embed").src = `https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(facebook.url)}&tabs=timeline&width=328&height=430&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true`;
 
     initializeArtistAccordion();
+    initializeFeaturedPagination();
     runHeroSequence();
   };
 
@@ -736,7 +804,7 @@
       activeMarker = marker;
       document.querySelectorAll(".marker[aria-expanded='true']").forEach(item => item.setAttribute("aria-expanded", "false"));
       marker.setAttribute("aria-expanded", "true");
-      card.innerHTML = `<button class="marker-card-close" type="button" aria-label="關閉作品資訊卡">×</button>${C.placeholder()}<strong><span class="work-no">${work.number}</span>${work.title}</strong><p>${work.creators.map(creator => creator.name).join("／")}<br>${work.medium}</p><p class="marker-card-description">${work.description}</p>${C.button("作品詳細資訊 >", `work-detail.html?id=${work.id}`)}`;
+      card.innerHTML = `<button class="marker-card-close" type="button" aria-label="關閉作品資訊卡">×</button>${imageMarkup(coverImageFor(work, `${work.title} 作品圖片`), `${work.title} 作品圖片`)}<strong><span class="work-no">${work.number}</span>${work.title}</strong><p>${work.creators.map(creator => creator.name).join("／")}<br>${work.medium}</p><p class="marker-card-description">${work.description}</p>${C.button("作品詳細資訊 >", `work-detail.html?id=${work.id}`)}`;
       card.hidden = false;
       uiLayer.classList.add("is-open");
       card.querySelector(".marker-card-close").addEventListener("click", closeMarkerCard);
@@ -782,6 +850,7 @@
   const menuToggle = document.querySelector(".menu-toggle");
   const menuClose = document.querySelector(".mobile-menu-close");
   const navigation = document.querySelector(".header-nav");
+  const submenuToggles = [...navigation.querySelectorAll(".nav-submenu-toggle")];
   const mobileMenuMedia = window.matchMedia("(max-width: 900px)");
   const pageContent = [document.querySelector("#app"), document.querySelector("#site-footer"), document.querySelector(".back-to-top")].filter(Boolean);
   let menuReturnFocus = null;
@@ -815,6 +884,15 @@
 
   menuToggle.addEventListener("click", () => navigation.classList.contains("open") ? closeMobileMenu() : openMobileMenu());
   menuClose.addEventListener("click", () => closeMobileMenu());
+  submenuToggles.forEach(button => button.addEventListener("click", () => {
+    if (!mobileMenuMedia.matches) return;
+    const item = button.closest(".nav-item");
+    const expanded = !item.classList.contains("is-expanded");
+    item.classList.toggle("is-expanded", expanded);
+    button.setAttribute("aria-expanded", String(expanded));
+    const label = item.querySelector(".nav-main-link").textContent.trim();
+    button.setAttribute("aria-label", `${expanded ? "收合" : "展開"}${label}第二層選單`);
+  }));
   navigation.querySelectorAll("a").forEach(link => link.addEventListener("click", () => closeMobileMenu({restoreFocus: false})));
   document.addEventListener("keydown", event => {
     if (!navigation.classList.contains("open")) return;

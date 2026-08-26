@@ -1,12 +1,44 @@
 window.DAF_COMPONENTS = (() => {
   const nav = [
-    ["home","首頁","index.html"],["about","關於","about.html"],["map","探索地圖","map.html"],
-    ["works","藝術家與作品","works.html"],["program","活動節目","program.html"],["visit","參觀","visit.html"]
+    {id: "home", label: "首頁", url: "index.html"},
+    {id: "about", label: "關於", url: "about.html", children: [
+      ["關於台北數位藝術節", "about.html#festival"], ["年度策展主題", "about.html#theme"],
+      ["策展人", "about.html#curators"], ["執行單位", "about.html#organizations"],
+      ["合作單位", "about.html#partners"], ["贊助單位", "about.html#sponsors"]
+    ]},
+    {id: "map", label: "探索地圖", url: "map.html", children: [
+      ["臺北典藏植物園", "map.html#garden-map"], ["街區地圖", "map.html#district-map"],
+      ["合作店家", "map.html#partner-stores"]
+    ]},
+    {id: "works", label: "藝術家與作品", url: "works.html", children: [
+      ["臺北典藏植物園", "works.html#garden"], ["街區", "works.html#district"], ["表演", "works.html#performance"]
+    ]},
+    {id: "program", label: "活動節目", url: "program.html", children: [
+      ["節目總覽", "program.html#program-overview"], ["日程表", "program.html#schedule"],
+      ["講座", "program.html#talks"], ["工作坊", "program.html#workshops"],
+      ["表演", "program.html#performances"], ["導覽", "program.html#tours"]
+    ]},
+    {id: "visit", label: "參觀", url: "visit.html", children: [
+      ["展覽時間", "visit.html#visit-hours"], ["展覽地點", "visit.html#visit-location"],
+      ["交通方式", "visit.html#transportation"], ["場館地圖", "visit.html#venue-map"],
+      ["無障礙資訊", "visit.html#accessibility"]
+    ]}
   ];
   function header(active) {
     const key = active === "work-detail" ? "works" : active === "event-detail" ? "program" : active;
     const social = DAF_DATA.social;
-    return `<header class="site-header"><a class="logo" href="index.html"><span>LOGO</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">MENU</button><nav class="header-nav" id="main-nav" aria-label="主要導覽"><div class="mobile-menu-header"><a class="logo mobile-menu-logo" href="index.html"><span>LOGO</span></a><button class="mobile-menu-close" type="button" aria-label="關閉主要導覽">CLOSE</button></div><div class="header-nav-links">${nav.map(([id,label,url]) => `<a href="${url}" class="${key===id?"active":""}" ${key===id?'aria-current="page"':''}>${label}</a>`).join("")}</div></nav><div class="header-tools"><span>EN</span><a href="${social.instagram.url}" target="_blank" rel="noopener noreferrer" aria-label="前往臺北數位藝術節官方 Instagram（另開新分頁）">${icon("instagram", "")}</a><a href="${social.facebook.url}" target="_blank" rel="noopener noreferrer" aria-label="前往臺北數位藝術節官方 Facebook（另開新分頁）">${icon("facebook", "")}</a><span aria-label="Search">${icon("magnifying", "")}</span></div></header>`;
+    const currentHash = location.hash;
+    const navigation = nav.map(item => {
+      const active = key === item.id;
+      const submenuId = `submenu-${item.id}`;
+      const activeChild = active && item.children?.some(([, url]) => currentHash && url.endsWith(currentHash));
+      const submenu = item.children ? `<ul class="nav-submenu" id="${submenuId}">${item.children.map(([label, url]) => {
+        const current = active && currentHash && url.endsWith(currentHash);
+        return `<li><a class="nav-submenu-link${current ? " active" : ""}" href="${url}"${current ? ' aria-current="location"' : ""}>${label}</a></li>`;
+      }).join("")}</ul>` : "";
+      return `<div class="nav-item${item.children ? " has-submenu" : ""}${activeChild ? " is-expanded" : ""}"><div class="nav-primary-row"><a href="${item.url}" class="nav-main-link${active ? " active" : ""}"${active ? ' aria-current="page"' : ""}>${item.label}</a>${item.children ? `<button class="nav-submenu-toggle" type="button" aria-expanded="${activeChild ? "true" : "false"}" aria-controls="${submenuId}" aria-label="${activeChild ? "收合" : "展開"}${item.label}第二層選單"><span aria-hidden="true">＋</span></button>` : ""}</div>${submenu}</div>`;
+    }).join("");
+    return `<header class="site-header"><a class="logo" href="index.html"><span>LOGO</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">MENU</button><nav class="header-nav" id="main-nav" aria-label="主要導覽"><div class="mobile-menu-header"><a class="logo mobile-menu-logo" href="index.html"><span>LOGO</span></a><button class="mobile-menu-close" type="button" aria-label="關閉主要導覽">CLOSE</button></div><div class="header-nav-links">${navigation}</div></nav><div class="header-tools"><span>EN</span><a href="${social.instagram.url}" target="_blank" rel="noopener noreferrer" aria-label="前往臺北數位藝術節官方 Instagram（另開新分頁）">${icon("instagram", "")}</a><a href="${social.facebook.url}" target="_blank" rel="noopener noreferrer" aria-label="前往臺北數位藝術節官方 Facebook（另開新分頁）">${icon("facebook", "")}</a><span aria-label="Search">${icon("magnifying", "")}</span></div></header>`;
   }
   function footer() {
     return `<footer class="site-footer"><div class="container org-grid">${DAF_DATA.organizations.map(org => `<section class="org-group ${org.sponsor?"sponsor":""}"><strong>${org.type}</strong><div class="org-logos">${org.names.map((name,index)=>{const image=`<img src="${org.images[index]}" alt="${name} Logo">`;const url=org.urls?.[index];return `<div class="org-logo">${url?`<a href="${url}" target="_blank" rel="noopener noreferrer" aria-label="前往${name}官方網站（另開新分頁）">${image}</a>`:image}</div>`;}).join("")}</div></section>`).join("")}</div><p class="copyright">© 2026 臺北數位藝術節 Taipei Digital Art Festival. All Rights Reserved.</p></footer>`;

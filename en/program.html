@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>PROGRAM｜2026 Taipei Digital Art Festival</title>
+        <link rel="alternate" hreflang="zh-Hant" href="../program.html">
+        <link rel="alternate" hreflang="en" href="program.html">
+        <link rel="stylesheet" href="../assets/css/style.css?v=20260828-store-gallery-v1">
+    </head>
+    <body data-page="program">
+        <div id="site-header"></div>
+        <main id="app" class="container">
+            <div id="breadcrumb"></div>
+            <p class="page-label" lang="en">PROGRAM</p>
+            <h1 class="page-title">PROGRAM</h1>
+            <div class="page-sections program-sections">
+                <section class="ia-section program-overview" id="program-overview" aria-labelledby="program-overview-title">
+                    <header class="program-section-heading"><span aria-hidden="true">01</span><h2 id="program-overview-title" data-program-label="overview">PROGRAM OVERVIEW</h2></header>
+                    <div class="program-filter" role="group" aria-label="活動類型篩選">
+                        <button type="button" class="is-active" data-program-filter="all" data-program-label="filterAll" aria-pressed="true">全部</button>
+                        <button type="button" data-program-filter="講座" data-program-label="filterTalks" aria-pressed="false">講座</button>
+                        <button type="button" data-program-filter="工作坊" data-program-label="filterWorkshops" aria-pressed="false">工作坊</button>
+                        <button type="button" data-program-filter="導覽" data-program-label="filterTours" aria-pressed="false">導覽</button>
+                    </div>
+                    <div class="program-card-list" id="program-card-list" aria-live="polite"></div>
+                </section>
+                <section class="ia-section program-schedule" id="schedule" aria-labelledby="schedule-title">
+                    <header class="program-section-heading"><span aria-hidden="true">02</span><h2 id="schedule-title" data-program-label="schedule">SCHEDULE</h2></header>
+                    <div class="program-calendar-layout">
+                        <div class="program-calendar" aria-label="2026 年 10 月 31 日至 11 月 15 日活動日曆">
+                            <p class="program-calendar-range">2026.10–11</p>
+                            <div class="program-calendar-weekdays" id="program-calendar-weekdays" aria-hidden="true"></div>
+                            <div class="program-calendar-grid" id="program-calendar-grid"></div>
+                        </div>
+                        <aside class="program-selected-date" id="program-selected-date" aria-live="polite"></aside>
+                    </div>
+                </section>
+                <section class="ia-section opening-performance" id="opening-performance" aria-labelledby="opening-performance-title">
+                    <header class="program-section-heading"><span aria-hidden="true">03</span><h2 id="opening-performance-title" data-program-label="opening">OPENING PERFORMANCE</h2></header>
+                    <dl class="opening-performance-information">
+                        <div><dt data-program-label="date">日期</dt><dd data-opening-date></dd></div>
+                        <div><dt data-program-label="performanceTime">表演時間</dt><dd data-opening-time></dd></div>
+                        <div><dt data-program-label="performanceLocation">表演地點</dt><dd data-opening-location></dd></div>
+                        <div class="opening-performance-description"><dt data-program-label="introduction">介紹</dt><dd data-opening-description></dd></div>
+                    </dl>
+                    <section class="opening-performance-works" aria-labelledby="opening-performance-works-title">
+                        <h3 id="opening-performance-works-title" data-program-label="performanceWorks">演出作品</h3>
+                        <div class="opening-work-grid" id="opening-work-grid"></div>
+                    </section>
+                </section>
+            </div>
+        </main>
+        <div id="site-footer"></div>
+        <script src="../assets/js/data.js?v=20260828-store-gallery-v1"></script>
+        <script src="../assets/js/components.js?v=20260827-logos-v5"></script>
+        <script src="../assets/js/app.js?v=20260828-store-gallery-v1"></script>
+    </body>
+</html>

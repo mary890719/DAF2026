@@ -88,9 +88,11 @@
     </a>
   `).join("");
 
-  const artistImageMarkup = (artist, {priority = false} = {}) => artist.image?.src
-    ? `<img src="${C.assetRoute(artist.image.src)}" alt="${textFor(artist, "name")} 圖片" loading="${priority ? "eager" : "lazy"}" decoding="async" fetchpriority="${priority ? "high" : "low"}">`
-    : C.placeholder("藝術家圖片待提供");
+  const artistImageMarkup = (artist, {priority = false, thumbnail = false} = {}) => {
+    if (!artist.image?.src) return C.placeholder("藝術家圖片待提供");
+    const source = thumbnail ? `assets/images/artists/thumbs/${artist.id}.webp` : artist.image.src;
+    return `<img src="${C.assetRoute(source)}" alt="${textFor(artist, "name")} 圖片" loading="${priority ? "eager" : "lazy"}" decoding="async" fetchpriority="${priority ? "high" : "low"}">`;
+  };
 
   const artistViewData = artist => {
     const linkedWork = workCatalog.find(work => work.id === artist.workId);
@@ -112,7 +114,7 @@
     return artists.map(artistViewData).map((artist, index) => `
     <article class="artist-accordion-item" data-artist-id="${artist.id}" data-accordion-index="${index}">
       <div class="artist-accordion-media">
-        ${artistImageMarkup(artist, {priority: index === defaultIndex})}
+        ${artistImageMarkup(artist, {priority: index === defaultIndex, thumbnail: true})}
       </div>
       <div class="artist-accordion-info">
         <h3>${artist.name}</h3>

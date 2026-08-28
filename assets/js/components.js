@@ -84,5 +84,69 @@ window.DAF_COMPONENTS = (() => {
   const button = (label, href="index.html") => `<a class="button" href="${href}">${label}</a>`;
   const siteBackground = () => `<canvas class="site-network-canvas" id="site-network-canvas" aria-hidden="true"></canvas><div class="site-observation-light" aria-hidden="true"></div>`;
   const backToTop = () => `<button class="back-to-top" type="button" aria-label="${ui().backToTop}"><img class="icon" src="${assetRoute("assets/icons/chevron-up.svg")}" alt="" aria-hidden="true"><span aria-hidden="true">TOP</span></button>`;
-  return {header, footer, placeholder, icon, crumb, button, siteBackground, backToTop, getCurrentLanguage, localizedRoute, localizedText, assetRoute, languageSwitchRoute};
+  const taipeiTime = now => {
+    const date = now instanceof Date ? now : new Date(now ?? Date.now());
+    if (Number.isNaN(date.getTime())) return null;
+    const parts = new Intl.DateTimeFormat("en-US", {
+      timeZone: "Asia/Taipei", weekday: "short", hour: "2-digit", minute: "2-digit", hourCycle: "h23"
+    }).formatToParts(date).reduce((values, part) => ({...values, [part.type]: part.value}), {});
+    const day = {Sun:0, Mon:1, Tue:2, Wed:3, Thu:4, Fri:5, Sat:6}[parts.weekday];
+    const hour = Number(parts.hour);
+    const minute = Number(parts.minute);
+    return Number.isInteger(day) && Number.isFinite(hour) && Number.isFinite(minute)
+      ? {day, minutes: hour * 60 + minute}
+      : null;
+  };
+  const timeToMinutes = value => {
+    const match = /^(\d{1,2}):(\d{2})$/.exec(value || "");
+    if (!match) return null;
+    const hour = Number(match[1]);
+    const minute = Number(match[2]);
+    return hour >= 0 && hour <= 24 && minute >= 0 && minute < 60 && (hour < 24 || minute === 0)
+      ? hour * 60 + minute
+      : null;
+  };
+  const normalizedPeriods = periods => {
+    if (!Array.isArray(periods)) return null;
+    const normalized = periods.map(period => ({...period, openMinutes: timeToMinutes(period?.open), closeMinutes: timeToMinutes(period?.close)}));
+    return normalized.every(period => period.openMinutes != null && period.closeMinutes != null)
+      ? normalized.sort((a, b) => a.openMinutes - b.openMinutes)
+      : null;
+  };
+  const getStoreOpenStatus = (store, now = new Date()) => {
+    const schedule = store?.businessHoursSchedule;
+    const current = taipeiTime(now);
+    if (!schedule || !current) return {status:"unknown", label:"unknown", nextTime:null};
+
+    const previousPeriods = normalizedPeriods(schedule[(current.day + 6) % 7]);
+    if (previousPeriods === null && schedule[(current.day + 6) % 7] != null) return {status:"unknown", label:"unknown", nextTime:null};
+    const overnight = previousPeriods?.find(period => period.closeMinutes <= period.openMinutes && current.minutes < period.closeMinutes);
+    if (overnight) return {status:"open", label:"open", nextTime:overnight.close};
+
+    const rawPeriods = schedule[current.day];
+    if (rawPeriods == null || (Array.isArray(rawPeriods) && rawPeriods.length === 0)) return {status:"day_off", label:"day_off", nextTime:null};
+    const periods = normalizedPeriods(rawPeriods);
+    if (!periods) return {status:"unknown", label:"unknown", nextTime:null};
+    for (const period of periods) {
+      const closesNextDay = period.closeMinutes <= period.openMinutes;
+      if (current.minutes >= period.openMinutes && (closesNextDay || current.minutes < period.closeMinutes)) {
+        return {status:"open", label:"open", nextTime:period.close};
+      }
+      if (current.minutes < period.openMinutes) return {status:"before_open", label:"before_open", nextTime:period.open};
+    }
+    return {status:"closed", label:"closed", nextTime:null};
+  };
+  const storeOpenStatusText = (result, {language = getCurrentLanguage(), compact = false} = {}) => {
+    if (language === "en") {
+      return result.status === "open" ? compact ? "Open" : `Open · Until ${result.nextTime}`
+        : result.status === "before_open" ? compact ? "Not open yet" : `Opens at ${result.nextTime}`
+        : result.status === "day_off" ? "Closed today"
+        : result.status === "closed" ? "Closed" : "Hours unavailable";
+    }
+    return result.status === "open" ? compact ? "營業中" : `營業中 · ${result.nextTime} 結束營業`
+      : result.status === "before_open" ? compact ? "尚未營業" : `尚未營業 · ${result.nextTime} 開始營業`
+      : result.status === "day_off" ? "今日公休"
+      : result.status === "closed" ? "已打烊" : "營業時間未提供";
+  };
+  return {header, footer, placeholder, icon, crumb, button, siteBackground, backToTop, getCurrentLanguage, localizedRoute, localizedText, assetRoute, languageSwitchRoute, getStoreOpenStatus, storeOpenStatusText};
 })();

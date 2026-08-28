@@ -485,8 +485,11 @@ button.program-calendar-day { cursor: pointer; }
 .marker-card-media img,
 .marker-card-media .placeholder { display: block; width: 100%; height: 100%; object-fit: cover; }
 .marker-card-media .placeholder { aspect-ratio: auto; }
-.marker-card-location { display: flex; align-items: center; gap: 12px; min-width: 0; min-height: 42px; margin-bottom: var(--space-2); padding-right: 44px; }
+.marker-card-location { display: grid; grid-template-columns: 38px minmax(0, 1fr) auto; align-items: center; gap: 12px; min-width: 0; min-height: 42px; margin-bottom: var(--space-2); padding-right: 44px; }
 .marker-card-location strong { min-width: 0; overflow-wrap: anywhere; }
+.store-open-status { display: inline-flex; align-items: center; justify-self: end; gap: 7px; min-width: 0; max-width: 180px; color: var(--color-text-secondary); font-size: var(--fs-sm); line-height: 1.45; text-align: right; overflow-wrap: anywhere; }
+.store-open-status::before { content: ""; flex: 0 0 7px; width: 7px; height: 7px; background: currentColor; border-radius: 50%; }
+.store-open-status.is-open { color: var(--map-marker-main); }
 .venue-number { display: inline-grid; flex: 0 0 38px; width: 38px; aspect-ratio: 1; place-items: center; border: 1px solid var(--color-border-strong); font-size: var(--fs-sm); }
 .marker-card-works { display: grid; border-top: var(--border); }
 .marker-card-work { display: grid; grid-template-columns: 52px minmax(0, 1fr) 18px; align-items: center; gap: 12px; min-width: 0; padding: var(--space-2) 0; color: var(--color-text); border-bottom: var(--border); text-decoration: none; }
@@ -527,6 +530,8 @@ button.program-calendar-day { cursor: pointer; }
 .shop-list-content { display: grid; align-content: start; gap: var(--space-2); padding: var(--space-3); }
 .shop-list-content > p,
 .shop-list-description p { margin: 0; color: var(--color-text-secondary); line-height: 1.7; overflow-wrap: anywhere; }
+.shop-list-status { justify-self: start; max-width: 100%; color: var(--color-text-secondary); text-align: left; }
+.shop-list-status.is-open { color: var(--map-marker-main); }
 .shop-list-description { display: grid; gap: var(--space-1); }
 .shop-detail-trigger { justify-self: start; margin-top: var(--space-1); }
 .shop-list-content .shop-gallery { width: 100%; margin-top: var(--space-1); }
@@ -672,6 +677,8 @@ body.shop-modal-open { overflow: hidden; }
   .shop-gallery { min-height: 0; aspect-ratio: 16 / 9; }
 }
 @media (max-width: 600px) {
+  .marker-card-location { grid-template-columns: 38px minmax(0, 1fr); }
+  .store-open-status { grid-column: 1 / -1; justify-self: start; max-width: 100%; padding-left: 50px; text-align: left; }
   .container { width: min(calc(100% - 28px), var(--container)); } .logo { width: 170px; }
   .site-logo-image { height: 40px; }
   .header-nav { padding: 14px; }

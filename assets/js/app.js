@@ -42,6 +42,29 @@
     ? `<img class="${cls}" src="${C.assetRoute(image.src)}" alt="${image.alt || fallbackLabel}">`
     : C.placeholder(image?.alt || fallbackLabel, cls);
 
+  const storeRecordForStatus = (id, source) => (source === "shop" ? D.shops : D.venues).find(item => item.id === id);
+  const storeStatusMarkup = (store, {compact = false, source = "venue", className = ""} = {}) => {
+    if (!store || (source === "venue" && store.type !== "district")) return "";
+    const result = C.getStoreOpenStatus(store);
+    return `<span class="store-open-status is-${result.status}${className ? ` ${className}` : ""}" data-store-open-status data-store-id="${store.id}" data-store-source="${source}" data-store-status-format="${compact ? "compact" : "full"}">${C.storeOpenStatusText(result, {compact})}</span>`;
+  };
+  const updateStoreStatusElements = (scope = document) => {
+    scope.querySelectorAll("[data-store-open-status]").forEach(element => {
+      const store = storeRecordForStatus(element.dataset.storeId, element.dataset.storeSource);
+      if (!store) return;
+      const result = C.getStoreOpenStatus(store);
+      const compact = element.dataset.storeStatusFormat === "compact";
+      element.classList.remove("is-open", "is-before_open", "is-closed", "is-day_off", "is-unknown");
+      element.classList.add(`is-${result.status}`);
+      element.textContent = C.storeOpenStatusText(result, {compact});
+    });
+  };
+  const initializeStoreStatusUpdates = () => {
+    updateStoreStatusElements();
+    const timer = window.setInterval(updateStoreStatusElements, 60000);
+    window.addEventListener("pagehide", () => window.clearInterval(timer), {once: true});
+  };
+
   const closeDismissiblePanel = ({panel, layer, bodyClass, hideLayer = false, afterClose}) => {
     if (panel) panel.hidden = true;
     if (layer) {
@@ -1139,7 +1162,6 @@
     let activeCard = null;
     let activeMarker = null;
     let activeUiLayer = null;
-
     const closeMarkerCard = () => {
       closeDismissiblePanel({
         panel: activeCard,
@@ -1211,7 +1233,7 @@
           ${imageMarkup(galleryImages[0], galleryImages[0].alt)}
           ${galleryImages.length > 1 ? `<button class="marker-card-media-arrow is-previous" type="button" data-marker-gallery-direction="-1" aria-label="${isEnglish ? "Previous image" : "上一張圖片"}">‹</button><button class="marker-card-media-arrow is-next" type="button" data-marker-gallery-direction="1" aria-label="${isEnglish ? "Next image" : "下一張圖片"}">›</button><div class="gallery-dots" aria-label="${isEnglish ? "Image pagination" : "圖片分頁"}">${galleryImages.map((_, index) => `<button type="button" data-marker-gallery-index="${index}" aria-label="${isEnglish ? `View image ${index + 1}` : `查看第 ${index + 1} 張圖片`}" aria-current="${index === 0 ? "true" : "false"}"></button>`).join("")}</div>` : ""}
         </div>` : `<div class="marker-card-media">${C.placeholder(isEnglish ? "Work image pending" : "作品圖片待提供")}</div>`;
-        card.innerHTML = `<div class="marker-card-controls"><button class="marker-card-close" type="button" aria-label="${isEnglish ? "Close location information" : "關閉位置資訊卡"}">×</button></div>${mediaMarkup}<header class="marker-card-location"><span class="venue-number">${venue?.displayNumber || "00"}</span><strong>${venueName(venue)}</strong></header><div class="marker-card-works">${workMarkup}</div>`;
+        card.innerHTML = `<div class="marker-card-controls"><button class="marker-card-close" type="button" aria-label="${isEnglish ? "Close location information" : "關閉位置資訊卡"}">×</button></div>${mediaMarkup}<header class="marker-card-location"><span class="venue-number">${venue?.displayNumber || "00"}</span><strong>${venueName(venue)}</strong>${storeStatusMarkup(venue, {compact:true})}</header><div class="marker-card-works">${workMarkup}</div>`;
         card.hidden = false;
         uiLayer.classList.add("is-open");
         card.querySelector(".marker-card-close").addEventListener("click", closeMarkerCard);
@@ -1281,6 +1303,7 @@
         <span class="shop-list-name"><strong>${shop.nameZh}</strong>${shop.nameEn ? `<span>${shop.nameEn}</span>` : ""}</span>
         ${shop.address ? `<p>${shop.address}</p>` : ""}
         ${shop.phone ? `<p>${shop.phone}</p>` : ""}
+        ${storeStatusMarkup(shop, {source:shop.recordType === "partner" ? "shop" : "venue", className:"shop-list-status"})}
         ${galleryMarkup(shop)}
         <button class="button shop-detail-trigger" type="button" data-shop-id="${shop.id}" aria-haspopup="dialog">${labels.detail}</button>
       </div>
@@ -1405,6 +1428,7 @@
     renderMap();
     initializeMapInteraction();
     initializeShops();
+    initializeStoreStatusUpdates();
   }
   if (page === "work-detail") renderWorkDetail();
   if (page === "event-detail") renderEventDetail();

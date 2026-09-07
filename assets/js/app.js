@@ -4,7 +4,7 @@
   const page = document.body.dataset.page;
   const isEnglish = C.getCurrentLanguage() === "en";
   const textFor = (item, field) => C.localizedText(item, field);
-  const workCatalog = [...D.works, ...D.soundArtists.filter(work => work.title)];
+  const workCatalog = [...D.works];
   const artistsForWork = work => (work.artistIds || []).map(id => D.artists.find(artist => artist.id === id)).filter(Boolean);
   const artistNamesForWork = work => artistsForWork(work).map(artist => textFor(artist, "name")).filter(Boolean).join("／");
   const venueById = id => D.venues.find(venue => venue.id === id);
@@ -78,7 +78,7 @@
   const workCards = works => works.map(work => `
     <a class="work-card" href="${C.localizedRoute(`work-detail.html?id=${work.id}`)}">
       <div class="work-card-media">
-        ${imageMarkup(coverImageFor(work, `${work.title} 作品圖片`), `${work.title} 作品圖片`)}
+        ${imageMarkup(coverImageFor(work, `${textFor(work, "title")} ${isEnglish ? "work image" : "作品圖片"}`), `${textFor(work, "title")} ${isEnglish ? "work image" : "作品圖片"}`)}
         <span class="work-card-number">${work.number}</span>
         <div class="work-card-overlay"><span>${[artistNamesForWork(work), work.medium].filter(Boolean).join("<br>")}</span></div>
       </div>
@@ -91,7 +91,7 @@
 
   const featuredWorkCards = works => works.map(work => `
     <a class="home-featured-card" href="${C.localizedRoute(`work-detail.html?id=${work.id}`)}">
-      <div class="home-featured-card-media">${imageMarkup(coverImageFor(work, `${work.title} 作品圖片`), `${work.title} 作品圖片`)}</div>
+      <div class="home-featured-card-media">${imageMarkup(coverImageFor(work, `${textFor(work, "title")} ${isEnglish ? "work image" : "作品圖片"}`), `${textFor(work, "title")} ${isEnglish ? "work image" : "作品圖片"}`)}</div>
       <div class="home-featured-card-body">
         <p class="home-featured-card-meta"><span class="work-no">${work.number}</span></p>
         <h3>${textFor(work, "title")}</h3>
@@ -102,7 +102,7 @@
 
   const featuredProgramCards = events => events.map(event => `
     <a class="home-featured-card" href="${C.localizedRoute(`event-detail.html?id=${event.id}`)}">
-      <div class="home-featured-card-media">${imageMarkup(coverImageFor(event, `${event.title} 活動圖片`), `${event.title} 活動圖片`)}</div>
+      <div class="home-featured-card-media">${imageMarkup(coverImageFor(event, `${textFor(event, "title")} ${isEnglish ? "program image" : "活動圖片"}`), `${textFor(event, "title")} ${isEnglish ? "program image" : "活動圖片"}`)}</div>
       <div class="home-featured-card-body">
         <p class="home-featured-card-meta">${isEnglish ? event.typeEn || event.type : event.type}</p>
         <h3>${textFor(event, "title")}</h3>
@@ -112,7 +112,7 @@
   `).join("");
 
   const artistImageMarkup = (artist, {priority = false, thumbnail = false} = {}) => {
-    if (!artist.image?.src) return C.placeholder("藝術家圖片待提供");
+    if (!artist.image?.src) return C.placeholder(isEnglish ? "Artist image pending" : "藝術家圖片待提供");
     const source = thumbnail ? `assets/images/artists/thumbs/${artist.id}.webp` : artist.image.src;
     return `<img src="${C.assetRoute(source)}" alt="${textFor(artist, "name")} 圖片" loading="${priority ? "eager" : "lazy"}" decoding="async" fetchpriority="${priority ? "high" : "low"}">`;
   };
@@ -181,26 +181,41 @@
     if (foundIndex < 0) {
       article.remove();
       error.hidden = false;
-      document.querySelector("#breadcrumb").innerHTML = C.crumb("找不到此作品");
-      document.title = "找不到此作品｜2026 臺北數位藝術節";
+      document.querySelector("#breadcrumb").innerHTML = C.crumb(isEnglish ? "Work not found" : "找不到此作品");
+      document.title = isEnglish ? "Work not found｜2026 Taipei Digital Art Festival" : "找不到此作品｜2026 臺北數位藝術節";
       return;
     }
     const currentIndex = foundIndex;
     const work = workCatalog[currentIndex];
-    const previous = workCatalog[(currentIndex - 1 + workCatalog.length) % workCatalog.length];
-    const next = workCatalog[(currentIndex + 1) % workCatalog.length];
+    const previous = currentIndex > 0 ? workCatalog[currentIndex - 1] : null;
+    const next = currentIndex < workCatalog.length - 1 ? workCatalog[currentIndex + 1] : null;
     const creatorNames = artistNamesForWork(work);
-    document.title = `${textFor(work, "title")}｜2026 臺北數位藝術節`;
-    document.querySelector("#breadcrumb").innerHTML = C.crumb([{label: isEnglish ? "ARTISTS & WORKS" : "藝術家與作品", href: "works.html"}, {label: textFor(work, "title")}]);
+    document.title = `${textFor(work, "title")}｜${isEnglish ? "2026 Taipei Digital Art Festival" : "2026 臺北數位藝術節"}`;
+    const areaCrumbs = work.category === "main"
+      ? [
+          {label: isEnglish ? "TAIPEI COLLECTIBLE BOTANICAL GARDEN" : "臺北典藏植物園", href: "works.html#garden"},
+          {label: isEnglish ? "MAIN VENUE" : "主展場", href: "works.html#main-venue"}
+        ]
+      : work.category === "outdoor"
+        ? [
+            {label: isEnglish ? "TAIPEI COLLECTIBLE BOTANICAL GARDEN" : "臺北典藏植物園", href: "works.html#garden"},
+            {label: isEnglish ? "OUTDOOR WORKS" : "戶外作品", href: "works.html#outdoor-works"}
+          ]
+        : [{label: isEnglish ? "ART IN STORES" : "藝術入店", href: "works.html#art-in-stores"}];
+    document.querySelector("#breadcrumb").innerHTML = C.crumb([
+      {label: isEnglish ? "ARTISTS & WORKS" : "藝術家與作品", href: "works.html"},
+      ...areaCrumbs,
+      {label: textFor(work, "title")}
+    ]);
     setDetailText("[data-work-number]", work.number ? `${isEnglish ? "WORK NO." : "作品編號"} ${work.number}` : "");
     setDetailText("[data-work-title]", textFor(work, "title"));
     setDetailText("[data-work-creator-names]", creatorNames);
     setDetailField("year", work.year, "work");
-    setDetailField("workType", work.workType, "work");
-    setDetailField("medium", work.medium, "work");
+    setDetailField("workType", textFor(work, "workType"), "work");
+    setDetailField("medium", textFor(work, "medium"), "work");
     setDetailField("location", workLocationName(work), "work");
     setDetailText("[data-work-description]", textFor(work, "description"));
-    document.querySelector("[data-work-description-section]").hidden = !work.description;
+    document.querySelector("[data-work-description-section]").hidden = !textFor(work, "description");
     const images = galleryImagesFor(work, "作品圖片", true);
     const galleryElement = document.querySelector("[data-work-gallery]");
     const gallerySection = document.querySelector("[data-work-gallery-section]");
@@ -316,7 +331,7 @@
         else if (event.key === "ArrowRight") updateGallery(activeIndex + 1);
       });
     }
-    const artists = artistsForWork(work).filter(creator => textFor(creator, "name") || creator.bio);
+    const artists = artistsForWork(work).filter(creator => textFor(creator, "name") || textFor(creator, "bio"));
     const primaryArtist = artists[0];
     const artistImageLabel = primaryArtist
       ? `${textFor(primaryArtist, "name")} ${isEnglish ? "artist portrait" : "藝術家照片"}`
@@ -327,17 +342,27 @@
       "detail-main"
     );
     const workLinks = document.querySelector("[data-work-links]");
-    workLinks.innerHTML = work.videoUrl ? `<a href="${work.videoUrl}" target="_blank" rel="noopener noreferrer" aria-label="${isEnglish ? "Open work video" : "開啟作品影片／影像連結"}">${C.icon("video", "")}<span>${isEnglish ? "VIDEO / MOVING IMAGE" : "作品影片／影像連結"}</span></a>` : "";
-    workLinks.hidden = !work.videoUrl;
+    const videoUrls = (work.videoUrls?.length ? work.videoUrls : [work.videoUrl]).filter(Boolean);
+    workLinks.innerHTML = videoUrls.map((url, index) => `<a href="${url}" target="_blank" rel="noopener noreferrer" aria-label="${isEnglish ? `Open work video ${index + 1}` : `開啟作品影片／影像連結 ${index + 1}`}">${C.icon("video", "")}<span>${isEnglish ? "VIDEO / MOVING IMAGE" : "作品影片／影像連結"}${videoUrls.length > 1 ? ` ${index + 1}` : ""}</span></a>`).join("");
+    workLinks.hidden = videoUrls.length === 0;
     document.querySelector("[data-work-artists]").innerHTML = artists.length
-      ? artists.map(creator => `<article>${textFor(creator, "name") ? `<h3>${textFor(creator, "name")}</h3>` : ""}${creator.nationality ? `<p class="artist-nationality">${creator.nationality}</p>` : ""}${creator.bio ? `<p>${creator.bio}</p>` : ""}${creator.career ? `<section class="artist-career"><h4>${isEnglish ? "EXPERIENCE" : "經歷"}</h4><p>${creator.career}</p></section>` : ""}${creatorLinks(creator) ? `<div class="artist-links">${creatorLinks(creator)}</div>` : ""}</article>`).join("")
-      : `<p class="data-pending">(待補)</p>`;
+      ? artists.map(creator => {
+        const nationality = textFor(creator, "nationality");
+        const biography = textFor(creator, "bio");
+        const career = textFor(creator, "career");
+        return `<article>${textFor(creator, "name") ? `<h3>${textFor(creator, "name")}</h3>` : ""}${nationality ? `<p class="artist-nationality">${nationality}</p>` : ""}${biography ? `<p class="artist-biography">${biography}</p>` : ""}${career ? `<section class="artist-career"><h4>${isEnglish ? "EXPERIENCE" : "經歷"}</h4><p>${career}</p></section>` : ""}${creatorLinks(creator) ? `<div class="artist-links">${creatorLinks(creator)}</div>` : ""}</article>`;
+      }).join("")
+      : `<p class="data-pending">${isEnglish ? "(Information pending)" : "(待補)"}</p>`;
     const previousLink = document.querySelector("[data-work-previous]");
     const nextLink = document.querySelector("[data-work-next]");
-    previousLink.href = C.localizedRoute(`work-detail.html?id=${previous.id}`);
-    nextLink.href = C.localizedRoute(`work-detail.html?id=${next.id}`);
-    setDetailText("[data-work-previous-title]", textFor(previous, "title"));
-    setDetailText("[data-work-next-title]", textFor(next, "title"));
+    previousLink.hidden = !previous;
+    nextLink.hidden = !next;
+    if (previous) previousLink.href = C.localizedRoute(`work-detail.html?id=${previous.id}`);
+    else previousLink.removeAttribute("href");
+    if (next) nextLink.href = C.localizedRoute(`work-detail.html?id=${next.id}`);
+    else nextLink.removeAttribute("href");
+    setDetailText("[data-work-previous-title]", previous ? textFor(previous, "title") : "");
+    setDetailText("[data-work-next-title]", next ? textFor(next, "title") : "");
   };
 
   const renderEventDetail = () => {
@@ -347,30 +372,46 @@
     if (!event) {
       article.remove();
       error.hidden = false;
-      document.querySelector("#breadcrumb").innerHTML = C.crumb("找不到此活動");
-      document.title = "找不到此活動｜2026 臺北數位藝術節";
+      document.querySelector("#breadcrumb").innerHTML = C.crumb(isEnglish ? "Program not found" : "找不到此活動");
+      document.title = isEnglish ? "Program not found｜2026 Taipei Digital Art Festival" : "找不到此活動｜2026 臺北數位藝術節";
       return;
     }
     const leader = event.speaker || event.instructor;
     const isOpeningPerformance = event.id === "opening-performance";
     article.classList.toggle("is-opening-performance", isOpeningPerformance);
     article.querySelector(".detail-meta")?.classList.toggle("opening-performance-information", isOpeningPerformance);
-    document.title = `${textFor(event, "title")}｜2026 臺北數位藝術節`;
+    document.title = `${textFor(event, "title")}｜${isEnglish ? "2026 Taipei Digital Art Festival" : "2026 臺北數位藝術節"}`;
     document.querySelector("#breadcrumb").innerHTML = C.crumb([{label: isEnglish ? "PROGRAM" : "活動節目", href: "program.html"}, {label: textFor(event, "title")}]);
-    setDetailText("[data-event-type]", [event.number, isEnglish ? event.typeEn || event.type : event.type].filter(Boolean).join("｜"));
+    setDetailText("[data-event-type]", [isOpeningPerformance ? "" : event.number, isEnglish ? event.typeEn || event.type : event.type].filter(Boolean).join("｜"));
     setDetailText("[data-event-title]", textFor(event, "title"));
     setDetailField("date", event.date, "event");
     setDetailField("time", event.time, "event");
-    setDetailField("location", event.location, "event");
+    setDetailField("location", textFor(event, "location"), "event");
+    if (isOpeningPerformance) {
+      const timeLabel = document.querySelector('[data-event-field="time"] dt');
+      const locationLabel = document.querySelector('[data-event-field="location"] dt');
+      if (timeLabel) timeLabel.textContent = isEnglish ? "Performance Time" : "表演時間";
+      if (locationLabel) locationLabel.textContent = isEnglish ? "Location" : "表演地點";
+    }
     const leaderRow = document.querySelector("[data-event-leader-row]");
-    leaderRow.hidden = !leader;
-    setDetailText("[data-event-leader-label]", event.type === "講座" ? "講者" : "帶領者");
-    setDetailText("[data-event-leader]", leader);
+    if (isOpeningPerformance) leaderRow.remove();
+    else {
+      leaderRow.hidden = !leader;
+      setDetailText("[data-event-leader-label]", isEnglish ? (event.type === "講座" ? "Speaker" : "Instructor") : (event.type === "講座" ? "講者" : "帶領者"));
+      setDetailText("[data-event-leader]", leader);
+    }
     const registrationRow = document.querySelector("[data-event-registration-row]");
-    registrationRow.hidden = !event.registration;
-    setDetailText("[data-event-registration]", event.registration);
-    setDetailText("[data-event-description]", textFor(event, "description"));
-    document.querySelector("[data-event-description-section]").hidden = !event.description;
+    if (isOpeningPerformance) registrationRow.remove();
+    else {
+      registrationRow.hidden = !event.registration;
+      setDetailText("[data-event-registration]", event.registration);
+    }
+    const descriptionSection = document.querySelector("[data-event-description-section]");
+    if (isOpeningPerformance) descriptionSection.remove();
+    else {
+      setDetailText("[data-event-description]", textFor(event, "description"));
+      descriptionSection.hidden = !textFor(event, "description");
+    }
     const recordImages = galleryImagesFor(event, "活動紀錄圖片");
     document.querySelector("[data-event-gallery]").innerHTML = recordImages.map(image => imageMarkup(image, "活動紀錄圖片")).join("");
     document.querySelector("[data-event-gallery-section]").hidden = recordImages.length === 0;
@@ -397,14 +438,14 @@
         overview: "節目總覽", schedule: "日程表", opening: "開幕表演",
         filterAll: "全部", filterTalks: "講座", filterWorkshops: "工作坊", filterTours: "導覽",
         date: "日期", performanceTime: "表演時間", performanceLocation: "表演地點",
-        introduction: "介紹", performanceWorks: "演出作品", noEvents: "活動資料待提供", eventCountSuffix: "場活動",
+        performanceWorks: "演出作品", noEvents: "活動資料待提供", eventCountSuffix: "場活動",
         weekdays: ["日", "一", "二", "三", "四", "五", "六"]
       },
       en: {
         overview: "Program Overview", schedule: "Schedule", opening: "Opening Performance",
         filterAll: "All", filterTalks: "Talks", filterWorkshops: "Workshops", filterTours: "Tours",
         date: "Date", performanceTime: "Performance Time", performanceLocation: "Location",
-        introduction: "Introduction", performanceWorks: "Works", noEvents: "Program information pending", eventCountSuffix: "events",
+        performanceWorks: "Works", noEvents: "Program information pending", eventCountSuffix: "events",
         weekdays: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
       }
     }[locale];
@@ -476,22 +517,41 @@
     };
     dateButtons.forEach(button => button.addEventListener("click", () => selectDate(button.dataset.programDate)));
     if (dateButtons.length) selectDate(dateButtons[0].dataset.programDate);
-    else selectedPanel.innerHTML = '<p class="data-pending">活動日期資料待提供</p>';
+    else selectedPanel.innerHTML = `<p class="data-pending">${isEnglish ? "Program dates pending" : "活動日期資料待提供"}</p>`;
 
     const opening = events.find(event => event.featured && event.type === "表演") || events.find(event => event.id === "opening-performance");
-    [["[data-opening-date]", opening?.date], ["[data-opening-time]", opening?.startTime || opening?.endTime ? programTime(opening) : opening?.time], ["[data-opening-location]", opening?.location], ["[data-opening-description]", opening?.description]].forEach(([selector, value]) => {
+    [["[data-opening-date]", opening?.date], ["[data-opening-time]", opening?.startTime || opening?.endTime ? programTime(opening) : opening?.time], ["[data-opening-location]", textFor(opening, "location")]].forEach(([selector, value]) => {
       const slot = document.querySelector(selector);
       if (!slot) return;
       slot.textContent = value || "";
       slot.closest("div")?.toggleAttribute("hidden", !value);
     });
     document.querySelector("#opening-work-grid").innerHTML = D.soundArtists.map(work => {
-      const creatorNames = artistNamesForWork(work);
-      const cover = coverImageFor(work, `${work.title || creatorNames || "演出"} 圖片`);
-      const content = `<span class="opening-work-card-copy"><span class="work-no">${work.number}</span>${creatorNames ? `<strong>${creatorNames}</strong>` : ""}${work.title ? `<span>${work.title}</span>` : ""}${work.title ? `<i aria-hidden="true">&gt;</i>` : ""}</span>${cover ? `<span class="opening-work-card-media">${imageMarkup(cover, cover.alt)}</span>` : ""}`;
-      return work.title
-        ? `<a class="opening-work-card" href="${C.localizedRoute(`work-detail.html?id=${work.id}`)}">${content}</a>`
-        : `<article class="opening-work-card">${content}</article>`;
+      const artist = artistsForWork(work)[0];
+      const name = textFor(artist, "name");
+      const openingText = (item, field) => isEnglish ? item?.[`${field}En`] || item?.[field] || "" : item?.[`${field}Zh`] || item?.[field] || "";
+      const nationality = openingText(artist, "nationality");
+      const bio = openingText(artist, "bio");
+      const career = openingText(artist, "career");
+      const members = openingText(artist, "members");
+      const performanceDescription = textFor(work, "title");
+      const performanceType = textFor(work, "workType");
+      const cover = coverImageFor(work, `${name || performanceDescription || (isEnglish ? "Performance" : "演出")} ${isEnglish ? "image pending" : "圖片待提供"}`);
+      const links = artist ? creatorLinks(artist) : "";
+      return `<article class="opening-performer-card">
+        <div class="opening-performer-media">${imageMarkup(cover, cover?.alt || (isEnglish ? "Performance image pending" : "演出圖片待提供"))}</div>
+        <div class="opening-performer-copy">
+          <p class="opening-performer-number">${work.number}</p>
+          <h4>${name}</h4>
+          ${nationality ? `<p class="opening-performer-meta">${nationality}</p>` : ""}
+          ${performanceType ? `<p class="opening-performer-type">${performanceType}</p>` : ""}
+          ${work.id === "performance-02" && performanceDescription ? `<p class="opening-performer-description">${performanceDescription}</p>` : ""}
+          ${members ? `<div class="opening-performer-section"><h5>${isEnglish ? "Members" : "參與成員"}</h5><p>${members}</p></div>` : ""}
+          ${bio ? `<div class="opening-performer-section"><h5>${isEnglish ? "Biography" : "簡介"}</h5>${bio.split("\n").map(paragraph => `<p>${paragraph}</p>`).join("")}</div>` : ""}
+          ${career ? `<div class="opening-performer-section"><h5>${isEnglish ? "Career" : "經歷"}</h5>${career.split("\n").map(line => line ? `<p>${line}</p>` : "").join("")}</div>` : ""}
+          ${links ? `<div class="opening-performer-links">${links}</div>` : ""}
+        </div>
+      </article>`;
     }).join("");
   };
 
@@ -871,13 +931,55 @@
     scheduleObservationCheck();
   };
 
+  let heroSequenceHasCompleted = false;
+  let heroScrollPosition = 0;
+  let heroScrollSafetyTimer = 0;
+  let heroBodyInlineStyles = null;
+
+  const lockHeroScroll = () => {
+    if (page !== "home" || heroSequenceHasCompleted || document.documentElement.classList.contains("hero-scroll-locked")) return;
+    heroScrollPosition = window.scrollY;
+    const scrollbarWidth = Math.max(0, window.innerWidth - document.documentElement.clientWidth);
+    heroBodyInlineStyles = {
+      position: document.body.style.position,
+      top: document.body.style.top,
+      left: document.body.style.left,
+      right: document.body.style.right,
+      width: document.body.style.width,
+      paddingRight: document.body.style.paddingRight
+    };
+    document.documentElement.classList.add("hero-scroll-locked");
+    document.body.classList.add("hero-scroll-locked");
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${heroScrollPosition}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+    if (scrollbarWidth) document.body.style.paddingRight = `${scrollbarWidth}px`;
+  };
+
+  const unlockHeroScroll = () => {
+    if (heroSequenceHasCompleted) return;
+    heroSequenceHasCompleted = true;
+    window.clearTimeout(heroScrollSafetyTimer);
+    document.documentElement.classList.remove("hero-scroll-locked");
+    document.body.classList.remove("hero-scroll-locked");
+    if (heroBodyInlineStyles) Object.assign(document.body.style, heroBodyInlineStyles);
+    window.scrollTo({top: heroScrollPosition, left: 0, behavior: "auto"});
+  };
+
   const runHeroSequence = async () => {
     const hero = document.querySelector("#hero-observation");
     const titleStage = hero.querySelector(".hero-title-stage");
+    const completeSequence = () => window.dispatchEvent(new CustomEvent("heroSequenceComplete"));
+    window.addEventListener("heroSequenceComplete", unlockHeroScroll, {once: true});
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       titleStage.classList.add("is-mark-visible");
+      completeSequence();
       return;
     }
+    lockHeroScroll();
+    heroScrollSafetyTimer = window.setTimeout(unlockHeroScroll, 8000);
 
     const titleElements = [...hero.querySelectorAll(".hero-scramble")];
     const messageGroup = hero.querySelector(".hero-system-messages");
@@ -911,7 +1013,7 @@
           document.fonts.load('400 1em "Germania One"')
         ]),
         wait(1200)
-      ]);
+      ]).catch(() => {});
     }
     hero.classList.add("hero-sequence-running");
 
@@ -994,6 +1096,8 @@
     navigation.classList.add("is-visible");
     await wait(540);
     scrollLink.classList.add("is-visible");
+    await wait(320);
+    completeSequence();
   };
 
   const initializeFeaturedPagination = () => {
@@ -1020,7 +1124,7 @@
         const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
         const pageCount = maxScroll > 1 ? Math.ceil(maxScroll / track.clientWidth) + 1 : 1;
         pagination.hidden = pageCount <= 1;
-        pagination.innerHTML = Array.from({length: pageCount}, (_, index) => `<button type="button" aria-label="前往第 ${index + 1} 個精選區段"></button>`).join("");
+        pagination.innerHTML = Array.from({length: pageCount}, (_, index) => `<button type="button" aria-label="${isEnglish ? `Go to featured section ${index + 1}` : `前往第 ${index + 1} 個精選區段`}"></button>`).join("");
         buttons = [...pagination.querySelectorAll("button")];
         buttons.forEach((button, index) => button.addEventListener("click", () => {
           const left = buttons.length > 1 ? maxScroll * index / (buttons.length - 1) : 0;
@@ -1272,6 +1376,10 @@
     let returnFocus = null;
     let activeGalleryIndex = 0;
     let activeShop = null;
+    const shopName = shop => isEnglish ? shop.nameEn || shop.nameZh : shop.nameZh || shop.nameEn;
+    const shopSecondaryName = shop => !isEnglish && shop.nameEn && shop.nameEn !== shop.nameZh ? shop.nameEn : "";
+    const shopAddress = shop => isEnglish ? shop.addressEn || shop.addressZh || shop.address : shop.addressZh || shop.address;
+    const shopDescription = shop => isEnglish ? shop.descriptionEn || shop.descriptionZh || shop.description : shop.descriptionZh || shop.description;
     const labels = isEnglish ? {
       address: "ADDRESS", hours: "BUSINESS HOURS", phone: "PHONE", description: "ABOUT",
       close: "Close partner store details", previous: "Previous image", next: "Next image", detail: "View details"
@@ -1284,14 +1392,14 @@
       if (!url) return "";
       const iconName = type === "website" ? "home" : type;
       const channel = type === "website" ? (isEnglish ? "official website" : "官方網站") : type === "instagram" ? "Instagram" : "Facebook";
-      return `<a class="shop-external-link" href="${url}" target="_blank" rel="noopener noreferrer" aria-label="${isEnglish ? `Visit ${shop.nameEn} ${channel}` : `前往${shop.nameZh}${channel}`}">${C.icon(iconName, "")}</a>`;
+      return `<a class="shop-external-link" href="${url}" target="_blank" rel="noopener noreferrer" aria-label="${isEnglish ? `Visit ${shopName(shop)} ${channel}` : `前往${shopName(shop)}${channel}`}">${C.icon(iconName, "")}</a>`;
     }).join("");
 
     const galleryMarkup = shop => {
       const images = Array.isArray(shop.images) ? shop.images : [];
       if (!images.length) return "";
       return `<div class="shop-gallery" data-shop-list-gallery data-gallery-index="0">
-        <img src="${C.assetRoute(images[0])}" alt="${shop.nameZh} ${isEnglish ? "image" : "圖片"} 1">
+        <img src="${C.assetRoute(images[0])}" alt="${shopName(shop)} ${isEnglish ? "image" : "圖片"} 1">
         ${images.length > 1 ? `<button class="shop-gallery-arrow is-previous" type="button" data-shop-list-gallery-direction="-1" aria-label="${labels.previous}" data-shop-id="${shop.id}">‹</button><button class="shop-gallery-arrow is-next" type="button" data-shop-list-gallery-direction="1" aria-label="${labels.next}" data-shop-id="${shop.id}">›</button>` : ""}
         ${images.length > 1 ? `<div class="gallery-dots" aria-label="${isEnglish ? "Image pagination" : "圖片分頁"}">${images.map((_, index) => `<button type="button" data-shop-list-gallery-index="${index}" data-shop-id="${shop.id}" aria-label="${isEnglish ? `View image ${index + 1}` : `查看第 ${index + 1} 張圖片`}" aria-current="${index === 0 ? "true" : "false"}"></button>`).join("")}</div>` : ""}
       </div>`;
@@ -1300,8 +1408,8 @@
     const listCard = shop => `<article class="shop-list-item">
       <div class="shop-list-content">
         <span class="shop-number">${shop.displayNumber}</span>
-        <span class="shop-list-name"><strong>${shop.nameZh}</strong>${shop.nameEn ? `<span>${shop.nameEn}</span>` : ""}</span>
-        ${shop.address ? `<p>${shop.address}</p>` : ""}
+        <span class="shop-list-name"><strong>${shopName(shop)}</strong>${shopSecondaryName(shop) ? `<span>${shopSecondaryName(shop)}</span>` : ""}</span>
+        ${shopAddress(shop) ? `<p>${shopAddress(shop)}</p>` : ""}
         ${shop.phone ? `<p>${shop.phone}</p>` : ""}
         ${storeStatusMarkup(shop, {source:shop.recordType === "partner" ? "shop" : "venue", className:"shop-list-status"})}
         ${galleryMarkup(shop)}
@@ -1309,7 +1417,7 @@
       </div>
     </article>`;
 
-    const partnerShops = D.shops.filter(shop => shop.id !== "shop-03").map((shop, index) => ({...shop, displayNumber: String(index + 1).padStart(2, "0"), recordType: "partner"}));
+    const partnerShops = D.shops.map((shop, index) => ({...shop, displayNumber: String(index + 1).padStart(2, "0"), recordType: "partner"}));
     const artVenues = D.venues.filter(venue => venue.type === "district").map(venue => ({...venue, recordType: "venue"}));
     const records = [...partnerShops, ...artVenues];
     lists.forEach(list => {
@@ -1331,7 +1439,7 @@
       const image = panel.querySelector("[data-shop-gallery-image]");
       const count = panel.querySelector("[data-shop-gallery-count]");
       image.src = C.assetRoute(images[activeGalleryIndex]);
-      image.alt = `${activeShop.nameZh} ${isEnglish ? "image" : "圖片"} ${activeGalleryIndex + 1}`;
+      image.alt = `${shopName(activeShop)} ${isEnglish ? "image" : "圖片"} ${activeGalleryIndex + 1}`;
       count.textContent = `${activeGalleryIndex + 1} / ${images.length}`;
     };
 
@@ -1343,7 +1451,7 @@
       panel.classList.toggle("has-gallery", images.length > 0);
       const gallery = images.length ? `
         <div class="shop-gallery">
-          <img data-shop-gallery-image src="${C.assetRoute(images[0])}" alt="${shop.nameZh} ${isEnglish ? "image" : "圖片"} 1">
+          <img data-shop-gallery-image src="${C.assetRoute(images[0])}" alt="${shopName(shop)} ${isEnglish ? "image" : "圖片"} 1">
           ${images.length > 1 ? `<button class="shop-gallery-arrow is-previous" type="button" data-shop-gallery-direction="-1" aria-label="${labels.previous}">‹</button><button class="shop-gallery-arrow is-next" type="button" data-shop-gallery-direction="1" aria-label="${labels.next}">›</button>` : ""}
           <span class="shop-gallery-count" data-shop-gallery-count>1 / ${images.length}</span>
         </div>` : "";
@@ -1352,14 +1460,14 @@
         ${gallery}
         <div class="shop-detail-content">
           <p class="shop-number">${shop.displayNumber}</p>
-          <h3 id="shop-detail-title">${shop.nameZh}</h3>
-          ${shop.nameEn ? `<p class="shop-name-en">${shop.nameEn}</p>` : ""}
+          <h3 id="shop-detail-title">${shopName(shop)}</h3>
+          ${shopSecondaryName(shop) ? `<p class="shop-name-en">${shopSecondaryName(shop)}</p>` : ""}
           <dl class="shop-meta">
-            ${shop.address ? `<div><dt>${labels.address}</dt><dd>${shop.address}</dd></div>` : ""}
+            ${shopAddress(shop) ? `<div><dt>${labels.address}</dt><dd>${shopAddress(shop)}</dd></div>` : ""}
             ${shop.businessHours?.length ? `<div><dt>${labels.hours}</dt><dd>${shop.businessHours.map(line => `<span>${line}</span>`).join("")}</dd></div>` : ""}
             ${shop.phone ? `<div><dt>${labels.phone}</dt><dd>${shop.phone}</dd></div>` : ""}
           </dl>
-          ${shop.description ? `<section class="shop-description"><h4>${labels.description}</h4>${shop.description.split("\n").map(paragraph => `<p>${paragraph}</p>`).join("")}</section>` : ""}
+          ${shopDescription(shop) ? `<section class="shop-description"><h4>${labels.description}</h4>${shopDescription(shop).split("\n").map(paragraph => `<p>${paragraph}</p>`).join("")}</section>` : ""}
           ${linkMarkup(shop) ? `<div class="shop-links">${linkMarkup(shop)}</div>` : ""}
           ${shop.recordType === "venue" && shop.workIds?.length ? `<div class="shop-venue-works">${shop.workIds.map(id => workCatalog.find(work => String(work.id) === String(id))).filter(Boolean).map(work => `<a href="${C.localizedRoute(`work-detail.html?id=${work.id}`)}"><span>${work.number}</span>${textFor(work, "title")}</a>`).join("")}</div>` : ""}
         </div>`;
@@ -1387,7 +1495,7 @@
         gallery.dataset.galleryIndex = String(nextIndex);
         const image = gallery.querySelector("img");
         image.src = C.assetRoute(images[nextIndex]);
-        image.alt = `${shop.nameZh} ${isEnglish ? "image" : "圖片"} ${nextIndex + 1}`;
+        image.alt = `${shopName(shop)} ${isEnglish ? "image" : "圖片"} ${nextIndex + 1}`;
         gallery.querySelectorAll("[data-shop-list-gallery-index]").forEach((dot, index) => dot.setAttribute("aria-current", String(index === nextIndex)));
         return;
       }
@@ -1412,7 +1520,7 @@
   document.querySelector("#site-footer").innerHTML = C.footer();
   initializeBackToTop();
 
-  const breadcrumbLabels = isEnglish ? {about:"ABOUT", map:"MAP", works:"ARTISTS & WORKS", program:"PROGRAM", visit:"VISIT"} : {about:"關於", map:"探索地圖", works:"藝術家與作品", program:"活動節目", visit:"參觀"};
+  const breadcrumbLabels = isEnglish ? {about:"ABOUT", map:"MAP", works:"ARTISTS & WORKS", program:"PROGRAM", visit:"Main Venue"} : {about:"關於", map:"探索地圖", works:"藝術家與作品", program:"活動節目", visit:"主展場參觀"};
   if (breadcrumbLabels[page]) document.querySelector("#breadcrumb").innerHTML = C.crumb(breadcrumbLabels[page]);
 
   if (page === "home") hydrateHome();
@@ -1455,11 +1563,11 @@
     document.body.classList.remove("mobile-menu-open");
     menuToggle.setAttribute("aria-expanded", "false");
     submenuToggles.forEach(button => {
-      const item = button.closest(".nav-item");
+      const item = button.closest("[data-submenu-container]");
       item.classList.remove("is-expanded");
       button.setAttribute("aria-expanded", "false");
-      const label = item.querySelector(".nav-main-link").textContent.trim();
-      button.setAttribute("aria-label", `展開${label}第二層選單`);
+      const label = button.dataset.submenuLabel || "";
+      button.setAttribute("aria-label", `${isEnglish ? "Expand " : "展開"}${label}${isEnglish ? " submenu" : "第二層選單"}`);
     });
     if (mobileMenuMedia.matches) navigation.setAttribute("aria-hidden", "true");
     else navigation.removeAttribute("aria-hidden");
@@ -1482,12 +1590,12 @@
   menuClose.addEventListener("click", () => closeMobileMenu());
   submenuToggles.forEach(button => button.addEventListener("click", () => {
     if (!mobileMenuMedia.matches) return;
-    const item = button.closest(".nav-item");
+    const item = button.closest("[data-submenu-container]");
     const expanded = !item.classList.contains("is-expanded");
     item.classList.toggle("is-expanded", expanded);
     button.setAttribute("aria-expanded", String(expanded));
-    const label = item.querySelector(".nav-main-link").textContent.trim();
-    button.setAttribute("aria-label", `${expanded ? "收合" : "展開"}${label}第二層選單`);
+    const label = button.dataset.submenuLabel || "";
+    button.setAttribute("aria-label", `${isEnglish ? (expanded ? "Collapse " : "Expand ") : (expanded ? "收合" : "展開")}${label}${isEnglish ? " submenu" : "第二層選單"}`);
   }));
   navigation.querySelectorAll("a").forEach(link => link.addEventListener("click", () => closeMobileMenu({restoreFocus: false})));
   document.addEventListener("keydown", event => {
@@ -1511,12 +1619,143 @@
   mobileMenuMedia.addEventListener("change", resetMobileMenuForBreakpoint);
   resetMobileMenuForBreakpoint();
 
-  document.querySelectorAll(".copy-link").forEach(button => button.addEventListener("click", async () => {
+  const fallbackCopy = value => {
+    const field = document.createElement("textarea");
+    const previousFocus = document.activeElement;
+    field.value = value;
+    field.setAttribute("readonly", "");
+    field.style.position = "fixed";
+    field.style.opacity = "0";
+    document.body.append(field);
+    let copied = false;
     try {
-      await navigator.clipboard.writeText(location.href);
-      button.setAttribute("aria-label", "連結已複製");
-    } catch (_) {
-      // Clipboard may require a secure context; the visual control remains available.
+      field.focus();
+      field.select();
+      copied = document.execCommand("copy");
+    } finally {
+      field.remove();
+      previousFocus?.focus?.({preventScroll: true});
     }
-  }));
+    return copied;
+  };
+  const copyCurrentPage = async () => {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(window.location.href);
+        return true;
+      }
+      return fallbackCopy(window.location.href);
+    } catch (_) {
+      return fallbackCopy(window.location.href);
+    }
+  };
+  const showCopyToast = (button, copied) => {
+    const toast = button.closest(".share")?.querySelector(".copy-link-toast");
+    if (!toast) return;
+    const message = copied
+      ? (isEnglish ? "Link copied" : "連結已複製")
+      : (isEnglish ? "Unable to copy link" : "無法複製連結");
+    const messageSlot = toast.querySelector("span");
+    window.clearTimeout(toast._hideTimer);
+    cancelAnimationFrame(toast._showFrame);
+    messageSlot.textContent = "";
+    toast.classList.remove("is-visible");
+    toast._showFrame = requestAnimationFrame(() => {
+      messageSlot.textContent = message;
+      toast.classList.add("is-visible");
+      toast._hideTimer = window.setTimeout(() => toast.classList.remove("is-visible"), 1500);
+    });
+  };
+
+  let activeShareMenu = null;
+  const closeShareMenu = (restoreFocus = false) => {
+    if (!activeShareMenu) return;
+    const {button, menu} = activeShareMenu;
+    menu.hidden = true;
+    button.setAttribute("aria-expanded", "false");
+    activeShareMenu = null;
+    if (restoreFocus) button.focus({preventScroll: true});
+  };
+  const positionShareMenu = menu => {
+    menu.classList.remove("opens-below");
+    menu.style.setProperty("--share-menu-shift-x", "0px");
+    if (menu.getBoundingClientRect().top < 12) menu.classList.add("opens-below");
+    const rect = menu.getBoundingClientRect();
+    const safeEdge = 12;
+    const shift = rect.left < safeEdge
+      ? safeEdge - rect.left
+      : rect.right > window.innerWidth - safeEdge
+        ? window.innerWidth - safeEdge - rect.right
+        : 0;
+    menu.style.setProperty("--share-menu-shift-x", `${Math.round(shift)}px`);
+  };
+  document.querySelectorAll("[data-share-native]").forEach((button, index) => {
+    const wrap = button.closest(".share-native-wrap");
+    if (!wrap) return;
+    const pageUrl = encodeURIComponent(window.location.href);
+    const pageTitle = encodeURIComponent(document.title);
+    const menu = document.createElement("div");
+    menu.className = "share-menu";
+    menu.id = `share-menu-${index + 1}`;
+    menu.setAttribute("role", "menu");
+    menu.hidden = true;
+    menu.innerHTML = `
+      <a role="menuitem" href="https://www.facebook.com/sharer/sharer.php?u=${pageUrl}" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a role="menuitem" href="https://social-plugins.line.me/lineit/share?url=${pageUrl}" target="_blank" rel="noopener noreferrer">LINE</a>
+      <a role="menuitem" href="https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}" target="_blank" rel="noopener noreferrer">X</a>
+      <a role="menuitem" href="mailto:?subject=${pageTitle}&body=${pageUrl}">${isEnglish ? "Email" : "電子郵件"}</a>
+      <button type="button" role="menuitem" data-share-menu-copy>${isEnglish ? "Copy Link" : "複製連結"}</button>`;
+    wrap.append(menu);
+    button.setAttribute("aria-controls", menu.id);
+    const items = [...menu.querySelectorAll('[role="menuitem"]')];
+    const openMenu = () => {
+      closeShareMenu();
+      menu.hidden = false;
+      button.setAttribute("aria-expanded", "true");
+      activeShareMenu = {button, menu};
+      positionShareMenu(menu);
+      items[0]?.focus({preventScroll: true});
+    };
+    button.addEventListener("click", async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({title: document.title, url: window.location.href});
+          return;
+        } catch (error) {
+          if (error?.name === "AbortError") return;
+        }
+      }
+      if (activeShareMenu?.menu === menu) closeShareMenu(true);
+      else openMenu();
+    });
+    menu.addEventListener("keydown", event => {
+      const current = items.indexOf(document.activeElement);
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeShareMenu(true);
+      } else if (["ArrowDown", "ArrowUp", "Home", "End"].includes(event.key)) {
+        event.preventDefault();
+        const target = event.key === "Home" ? 0 : event.key === "End" ? items.length - 1 : (current + (event.key === "ArrowDown" ? 1 : -1) + items.length) % items.length;
+        items[target]?.focus();
+      }
+    });
+    menu.querySelector("[data-share-menu-copy]").addEventListener("click", async () => {
+      const copied = await copyCurrentPage();
+      closeShareMenu(true);
+      showCopyToast(button, copied);
+    });
+    menu.querySelectorAll("a").forEach(item => item.addEventListener("click", () => closeShareMenu(true)));
+  });
+  document.addEventListener("pointerdown", event => {
+    if (activeShareMenu && !activeShareMenu.menu.contains(event.target) && event.target !== activeShareMenu.button) closeShareMenu();
+  });
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && activeShareMenu) {
+      event.preventDefault();
+      closeShareMenu(true);
+    }
+  });
+  window.addEventListener("resize", () => {
+    if (activeShareMenu) positionShareMenu(activeShareMenu.menu);
+  }, {passive: true});
 })();

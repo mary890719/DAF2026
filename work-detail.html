@@ -8,7 +8,7 @@
         <meta name="theme-color" content="#000000">
         <link rel="alternate" hreflang="zh-Hant" href="work-detail.html">
         <link rel="alternate" hreflang="en" href="en/work-detail.html">
-        <link rel="stylesheet" href="assets/css/style.css?v=20260828-work-carousel-v1">
+        <link rel="stylesheet" href="assets/css/style.css?v=20260907-share-scroll-v1">
     </head>
     <body data-page="work-detail">
         <div id="site-header"></div>
@@ -60,15 +60,12 @@
                 </section>
                 <div class="share">
                     <span>分享至</span>
-                    <a href="#" aria-label="分享到 Instagram">
-                        <img class="icon" src="assets/icons/instagram.svg" alt="" aria-hidden="true">
-                    </a>
-                    <a href="#" aria-label="分享到 Facebook">
-                        <img class="icon" src="assets/icons/facebook.svg" alt="" aria-hidden="true">
-                    </a>
-                    <button class="copy-link" type="button" aria-label="複製作品連結">
-                        <img class="icon" src="assets/icons/link.svg" alt="" aria-hidden="true">
-                    </button>
+                    <span class="share-native-wrap">
+                        <button type="button" data-share-native aria-label="分享此頁" aria-haspopup="menu" aria-expanded="false">
+                            <img class="icon" src="assets/icons/share.svg" alt="" aria-hidden="true">
+                        </button>
+                        <span class="copy-link-toast" role="status" aria-live="polite" aria-atomic="true"><img class="icon" src="assets/icons/link.svg" alt="" aria-hidden="true"><span></span></span>
+                    </span>
                 </div>
                 <nav class="detail-navigation pager" aria-label="作品導覽">
                     <a data-work-previous>
@@ -88,8 +85,8 @@
             <noscript><p class="container detail-page-noscript">本頁需要啟用 JavaScript 才能顯示作品資訊。</p></noscript>
         </main>
         <div id="site-footer"></div>
-        <script src="assets/js/data.js?v=20260828-store-gallery-v1"></script>
-        <script src="assets/js/components.js?v=20260827-logos-v5"></script>
-        <script src="assets/js/app.js?v=20260828-artist-portrait-v1"></script>
+        <script src="assets/js/data.js?v=20260907-work-artist-v2"></script>
+        <script src="assets/js/components.js?v=20260907-main-venue-v1"></script>
+        <script src="assets/js/app.js?v=20260907-share-scroll-v1"></script>
     </body>
 </html>

@@ -26,25 +26,27 @@ window.DAF_COMPONENTS = (() => {
       ["合作店家", "map.html#partner-stores"]
     ]},
     {id: "works", label: "藝術家與作品", url: "works.html", children: [
-      ["主展場", "works.html#garden"], ["街區", "works.html#district"]
+      {label: "臺北典藏植物園", url: "works.html#garden", children: [
+        ["主展場", "works.html#main-venue"], ["戶外作品", "works.html#outdoor-works"]
+      ]},
+      ["藝術入店", "works.html#art-in-stores"]
     ]},
     {id: "program", label: "活動節目", url: "program.html", children: [
       ["節目總覽", "program.html#program-overview"], ["日程表", "program.html#schedule"],
       ["開幕表演", "program.html#opening-performance"]
     ]},
-    {id: "visit", label: "參觀", url: "visit.html", children: [
+    {id: "visit", label: "主展場參觀", url: "visit.html", children: [
       ["展覽時間", "visit.html#visit-hours"], ["展覽地點", "visit.html#visit-location"],
-      ["交通方式", "visit.html#transportation"], ["場館地圖", "visit.html#venue-map"],
-      ["無障礙資訊", "visit.html#accessibility"]
+      ["交通方式", "visit.html#transportation"], ["場館地圖", "visit.html#venue-map"]
     ]}
   ];
   const navEn = [
     {id:"home",label:"HOME",url:"index.html"},
     {id:"about",label:"ABOUT",url:"about.html",children:[["ABOUT THE FESTIVAL","about.html#festival"],["ANNUAL THEME","about.html#theme"],["CURATORS","about.html#curators"],["ORGANIZERS","about.html#organizations"],["PARTNERS","about.html#partners"],["SPONSORS","about.html#sponsors"]]},
     {id:"map",label:"MAP",url:"map.html",children:[["BOTANICAL GARDEN","map.html#garden-map"],["DISTRICT MAP","map.html#district-map"],["PARTNER STORES","map.html#partner-stores"]]},
-    {id:"works",label:"ARTISTS &amp; WORKS",url:"works.html",children:[["BOTANICAL GARDEN","works.html#garden"],["DISTRICT","works.html#district"]]},
+    {id:"works",label:"ARTISTS &amp; WORKS",url:"works.html",children:[{label:"TAIPEI COLLECTIBLE BOTANICAL GARDEN",url:"works.html#garden",children:[["MAIN VENUE","works.html#main-venue"],["OUTDOOR WORKS","works.html#outdoor-works"]]},["ART IN STORES","works.html#art-in-stores"]]},
     {id:"program",label:"PROGRAM",url:"program.html",children:[["PROGRAM OVERVIEW","program.html#program-overview"],["SCHEDULE","program.html#schedule"],["OPENING PERFORMANCE","program.html#opening-performance"]]},
-    {id:"visit",label:"VISIT",url:"visit.html",children:[["OPENING HOURS","visit.html#visit-hours"],["VENUE","visit.html#visit-location"],["TRANSPORTATION","visit.html#transportation"],["VENUE MAP","visit.html#venue-map"],["ACCESSIBILITY","visit.html#accessibility"]]}
+    {id:"visit",label:"MAIN VENUE",url:"visit.html",children:[["OPENING HOURS","visit.html#visit-hours"],["VENUE","visit.html#visit-location"],["TRANSPORTATION","visit.html#transportation"],["VENUE MAP","visit.html#venue-map"]]}
   ];
   const ui = () => getCurrentLanguage() === "en"
     ? {nav:navEn,home:"HOME",language:"中文",mainNav:"Main navigation",backToTop:"Back to top",expand:"Expand ",collapse:"Collapse ",submenu:" submenu",closeNav:"Close main navigation"}
@@ -55,20 +57,34 @@ window.DAF_COMPONENTS = (() => {
     const navigation = ui().nav.map(item => {
       const active = key === item.id;
       const submenuId = `submenu-${item.id}`;
-      const activeChild = active && item.children?.some(([, url]) => currentHash && url.endsWith(currentHash));
-      const submenu = item.children ? `<ul class="nav-submenu" id="${submenuId}">${item.children.map(([label, url]) => {
-        const current = active && currentHash && url.endsWith(currentHash);
-        return `<li><a class="nav-submenu-link${current ? " active" : ""}" href="${url}"${current ? ' aria-current="location"' : ""}>${label}</a></li>`;
-      }).join("")}</ul>` : "";
-      return `<div class="nav-item${item.children ? " has-submenu" : ""}${activeChild ? " is-expanded" : ""}"><div class="nav-primary-row"><a href="${item.url}" class="nav-main-link${active ? " active" : ""}"${active ? ' aria-current="page"' : ""}>${item.label}</a>${item.children ? `<button class="nav-submenu-toggle" type="button" aria-expanded="${activeChild ? "true" : "false"}" aria-controls="${submenuId}" aria-label="${activeChild ? ui().collapse : ui().expand}${item.label}${ui().submenu}"><span aria-hidden="true">＋</span></button>` : ""}</div>${submenu}</div>`;
+      const childData = child => Array.isArray(child) ? {label: child[0], url: child[1]} : child;
+      const hasCurrentHash = child => {
+        const data = childData(child);
+        return Boolean(currentHash && (data.url?.endsWith(currentHash) || data.children?.some(hasCurrentHash)));
+      };
+      const renderChildren = (children, id, nested = false) => `<ul class="nav-submenu${nested ? " nav-submenu-nested" : ""}" id="${id}">${children.map((child, index) => {
+        const data = childData(child);
+        const current = active && currentHash && data.url?.endsWith(currentHash);
+        const branchActive = active && hasCurrentHash(data);
+        const childId = `${id}-${index}`;
+        return `<li class="nav-submenu-item${data.children ? " has-children" : ""}${branchActive ? " is-expanded" : ""}"${data.children ? ' data-submenu-container' : ""}><div class="nav-submenu-row"><a class="nav-submenu-link${current ? " active" : ""}" href="${data.url}"${current ? ' aria-current="location"' : ""}>${data.label}</a>${data.children ? `<button class="nav-submenu-toggle nav-nested-toggle" type="button" data-submenu-label="${data.label}" aria-expanded="${branchActive ? "true" : "false"}" aria-controls="${childId}" aria-label="${branchActive ? ui().collapse : ui().expand}${data.label}${ui().submenu}"><span aria-hidden="true">＋</span></button>` : ""}</div>${data.children ? renderChildren(data.children, childId, true) : ""}</li>`;
+      }).join("")}</ul>`;
+      const activeChild = active && item.children?.some(hasCurrentHash);
+      const submenu = item.children ? renderChildren(item.children, submenuId) : "";
+      return `<div class="nav-item${item.children ? " has-submenu" : ""}${activeChild ? " is-expanded" : ""}"${item.children ? ' data-submenu-container' : ""}><div class="nav-primary-row"><a href="${item.url}" class="nav-main-link${active ? " active" : ""}"${active ? ' aria-current="page"' : ""}>${item.label}</a>${item.children ? `<button class="nav-submenu-toggle" type="button" data-submenu-label="${item.label}" aria-expanded="${activeChild ? "true" : "false"}" aria-controls="${submenuId}" aria-label="${activeChild ? ui().collapse : ui().expand}${item.label}${ui().submenu}"><span aria-hidden="true">＋</span></button>` : ""}</div>${submenu}</div>`;
     }).join("");
-    const brandLogo = `<img class="site-logo-image" src="${assetRoute("assets/images/logos/DAF26LOGO_menu.png")}" alt="2026 臺北數位藝術節－灰色自動體 Gray Autonomous Entity">`;
-    return `<header class="site-header"><a class="logo" href="${localizedRoute("index.html")}">${brandLogo}</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">MENU</button><nav class="header-nav" id="main-nav" aria-label="${ui().mainNav}"><div class="mobile-menu-header"><a class="logo mobile-menu-logo" href="${localizedRoute("index.html")}">${brandLogo}</a><div class="mobile-menu-tools"><a class="language-switch" href="${languageSwitchRoute()}" hreflang="${getCurrentLanguage() === "en" ? "zh-Hant" : "en"}">${ui().language}</a><button class="mobile-menu-close" type="button" aria-label="${ui().closeNav}">CLOSE</button></div></div><div class="header-nav-links">${navigation}</div></nav><div class="header-tools"><a class="language-switch" href="${languageSwitchRoute()}" hreflang="${getCurrentLanguage() === "en" ? "zh-Hant" : "en"}">${ui().language}</a><span aria-label="Search">${icon("magnifying", "")}</span></div></header>`;
+    const brandLogo = `<img class="site-logo-image" src="${assetRoute("assets/images/logos/DAF26LOGO_menu.png")}" alt="${getCurrentLanguage() === "en" ? "2026 Taipei Digital Art Festival — Gray Autonomous Entity" : "2026 臺北數位藝術節－灰色自動體 Gray Autonomous Entity"}">`;
+    return `<header class="site-header"><a class="logo" href="${localizedRoute("index.html")}">${brandLogo}</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">MENU</button><nav class="header-nav" id="main-nav" aria-label="${ui().mainNav}"><div class="mobile-menu-header"><a class="logo mobile-menu-logo" href="${localizedRoute("index.html")}">${brandLogo}</a><div class="mobile-menu-tools"><a class="language-switch" href="${languageSwitchRoute()}" hreflang="${getCurrentLanguage() === "en" ? "zh-Hant" : "en"}">${ui().language}</a><button class="mobile-menu-close" type="button" aria-label="${ui().closeNav}">CLOSE</button></div></div><div class="header-nav-links">${navigation}</div></nav><div class="header-tools"><a class="language-switch" href="${languageSwitchRoute()}" hreflang="${getCurrentLanguage() === "en" ? "zh-Hant" : "en"}">${ui().language}</a></div></header>`;
   }
   function footer() {
     const social = DAF_DATA.social;
+    const organizationTypeEn = {"主辦單位":"Organizer", "協辦單位":"Co-organizer", "場地合作":"Venue Partner", "合作單位":"Partners", "贊助":"Sponsors"};
     const socialLinks = `<div class="container footer-social"><a href="${social.instagram.url}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">${icon("instagram", "")}</a><a href="${social.facebook.url}" target="_blank" rel="noopener noreferrer" aria-label="Facebook">${icon("facebook", "")}</a></div>`;
-    const organizationGroup = org => `<section class="org-group ${org.sponsor?"sponsor":""}"><strong>${org.type}</strong><div class="org-logos">${org.names.map((name,index)=>{const image=`<img src="${assetRoute(org.images[index])}" alt="${name}">`;const url=org.urls?.[index];const surface=org.surfaces?.[index]==="light"?" org-logo-light":"";return `<div class="org-logo${surface}">${url?`<a href="${url}" target="_blank" rel="noopener noreferrer" aria-label="前往${name}官方網站（另開新分頁）">${image}</a>`:image}</div>`;}).join("")}</div></section>`;
+    const organizationGroup = org => {
+      const englishType = organizationTypeEn[org.type] || org.type;
+      const heading = getCurrentLanguage() === "en" ? englishType : `${org.type}<small lang="en">/ ${englishType}</small>`;
+      return `<section class="org-group ${org.sponsor?"sponsor":""}"><strong>${heading}</strong><div class="org-logos">${org.names.map((name,index)=>{const image=`<img src="${assetRoute(org.images[index])}" alt="${name}">`;const url=org.urls?.[index];const surface=org.surfaces?.[index]==="light"?" org-logo-light":"";const linkLabel=getCurrentLanguage() === "en" ? `Visit the official website of ${name} (opens in a new tab)` : `前往${name}官方網站（另開新分頁）`;return `<div class="org-logo${surface}">${url?`<a href="${url}" target="_blank" rel="noopener noreferrer" aria-label="${linkLabel}">${image}</a>`:image}</div>`;}).join("")}</div></section>`;
+    };
     const organizationRows = `<div class="container org-grid"><div class="org-row org-row-primary">${DAF_DATA.organizations.slice(0, 3).map(organizationGroup).join("")}</div><div class="org-row org-row-secondary">${DAF_DATA.organizations.slice(3).map(organizationGroup).join("")}</div></div>`;
     return `<footer class="site-footer">${organizationRows}${socialLinks}<p class="copyright">© 2026 臺北數位藝術節 Taipei Digital Art Festival. All Rights Reserved.</p></footer>`;
   }

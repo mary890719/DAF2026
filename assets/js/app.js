@@ -75,6 +75,29 @@
     afterClose?.();
   };
 
+  let modalScrollPosition = 0;
+  const lockModalPageScroll = bodyClass => {
+    modalScrollPosition = window.scrollY;
+    document.body.classList.add(bodyClass);
+    document.body.style.position = "fixed";
+    document.body.style.inset = `${-modalScrollPosition}px 0 auto`;
+    document.body.style.width = "100%";
+  };
+  const unlockModalPageScroll = bodyClass => {
+    const savedScrollY = modalScrollPosition;
+    const root = document.documentElement;
+    const previousScrollBehavior = root.style.scrollBehavior;
+    root.style.scrollBehavior = "auto";
+    document.body.classList.remove(bodyClass);
+    document.body.style.position = "";
+    document.body.style.inset = "";
+    document.body.style.width = "";
+    window.scrollTo(0, savedScrollY);
+    window.requestAnimationFrame(() => {
+      root.style.scrollBehavior = previousScrollBehavior;
+    });
+  };
+
   const workCards = works => works.map(work => `
     <a class="work-card" href="${C.localizedRoute(`work-detail.html?id=${work.id}`)}">
       <div class="work-card-media">
@@ -89,27 +112,69 @@
     .map(([field, icon, label]) => creator[field] ? `<a href="${creator[field]}" target="_blank" rel="noopener noreferrer" aria-label="${textFor(creator, "name")} ${label}">${C.icon(icon, "")}</a>` : "")
     .join("");
 
-  const featuredWorkCards = works => works.map(work => `
-    <a class="home-featured-card" href="${C.localizedRoute(`work-detail.html?id=${work.id}`)}">
-      <div class="home-featured-card-media">${imageMarkup(coverImageFor(work, `${textFor(work, "title")} ${isEnglish ? "work image" : "作品圖片"}`), `${textFor(work, "title")} ${isEnglish ? "work image" : "作品圖片"}`)}</div>
-      <div class="home-featured-card-body">
-        <p class="home-featured-card-meta"><span class="work-no">${work.number}</span></p>
-        <h3>${textFor(work, "title")}</h3>
-        <p>${artistNamesForWork(work)}</p>
-      </div>
-    </a>
-  `).join("");
+  const taipeiProgramDate = value => {
+    if (!value) return null;
+    if (value instanceof Date) return Number.isNaN(value.getTime()) ? null : value;
+    const source = String(value).trim();
+    if (/[zZ]$|[+-]\d{2}:?\d{2}$/.test(source)) {
+      const date = new Date(source);
+      return Number.isNaN(date.getTime()) ? null : date;
+    }
+    const match = /^(\d{4})[.\/-](\d{1,2})[.\/-](\d{1,2})(?:[T\s](\d{1,2}):(\d{2}))?$/.exec(source);
+    if (!match) return null;
+    const [, year, month, day, hour = "0", minute = "0"] = match;
+    return new Date(Date.UTC(Number(year), Number(month) - 1, Number(day), Number(hour) - 8, Number(minute)));
+  };
 
-  const featuredProgramCards = events => events.map(event => `
-    <a class="home-featured-card" href="${C.localizedRoute(`event-detail.html?id=${event.id}`)}">
-      <div class="home-featured-card-media">${imageMarkup(coverImageFor(event, `${textFor(event, "title")} ${isEnglish ? "program image" : "活動圖片"}`), `${textFor(event, "title")} ${isEnglish ? "program image" : "活動圖片"}`)}</div>
+  const programTimeRange = event => {
+    const start = taipeiProgramDate(event.startDateTime || `${event.date} ${event.startTime || "00:00"}`);
+    let end = taipeiProgramDate(event.endDateTime || `${event.date} ${event.endTime || event.startTime || "23:59"}`);
+    if (!start || !end) return null;
+    if (end <= start && event.endTime) end = new Date(end.getTime() + 86400000);
+    return {start, end};
+  };
+
+  const programKind = event => {
+    if (event.id === "opening-performance") return "opening";
+    const type = `${event.type || ""} ${event.typeEn || ""}`.toLowerCase();
+    if (event.type === "導覽" || /\btours?\b/.test(type)) return "tour";
+    if (event.type === "工作坊" || /\bworkshops?\b/.test(type)) return "workshop";
+    if (event.type === "講座" || /\b(?:talks?|lectures?)\b/.test(type)) return "talk";
+    return "other";
+  };
+
+  const getNextProgramByType = (events, kind, now = new Date()) => events
+    .filter(event => programKind(event) === kind)
+    .map(event => ({event, range: programTimeRange(event)}))
+    .filter(({event, range}) => range && range.end > now && textFor(event, "title") && (event.route || event.detailId != null || event.id != null))
+    .map(item => ({...item, ongoing: item.range.start <= now, kind}))
+    .sort((a, b) => Number(b.ongoing) - Number(a.ongoing) || a.range.start - b.range.start)[0] || null;
+
+  const homeProgramSlotsAt = (events, now = new Date()) => {
+    const opening = getNextProgramByType(events, "opening", now);
+    const firstSlot = opening || getNextProgramByType(events, "tour", now);
+    return [
+      firstSlot,
+      getNextProgramByType(events, "workshop", now),
+      getNextProgramByType(events, "talk", now)
+    ].filter(Boolean);
+  };
+
+  const featuredProgramCards = entries => entries.map(({event, ongoing, kind}) => {
+    const image = coverImageFor(event, `${textFor(event, "title")} ${isEnglish ? "program image" : "活動圖片"}`);
+    const route = event.route || `event-detail.html?id=${event.detailId ?? event.id}`;
+    return `
+    <a class="home-featured-card" href="${C.localizedRoute(route)}">
+      ${image ? `<div class="home-featured-card-media">${imageMarkup(image, `${textFor(event, "title")} ${isEnglish ? "program image" : "活動圖片"}`)}</div>` : ""}
       <div class="home-featured-card-body">
-        <p class="home-featured-card-meta">${isEnglish ? event.typeEn || event.type : event.type}</p>
+        <p class="home-featured-card-meta">${isEnglish ? ({opening:"Performance", tour:"Tour", workshop:"Workshop", talk:"Talk"}[kind] || event.typeEn || event.type) : event.type}${ongoing ? ` · <strong>${isEnglish ? "Now" : "進行中"}</strong>` : ""}</p>
         <h3>${textFor(event, "title")}</h3>
-        <p>${event.date}</p>
+        <p>${[event.date, event.time || [event.startTime, event.endTime].filter(Boolean).join("–")].filter(Boolean).join(" · ")}</p>
+        ${textFor(event, "location") ? `<p>${textFor(event, "location")}</p>` : ""}
+        <span class="home-featured-card-action">&gt; ${isEnglish ? "VIEW DETAILS" : "查看詳細資訊"}</span>
       </div>
     </a>
-  `).join("");
+  `;}).join("");
 
   const artistImageMarkup = (artist, {priority = false, thumbnail = false} = {}) => {
     if (!artist.image?.src) return C.placeholder(isEnglish ? "Artist image pending" : "藝術家圖片待提供");
@@ -201,9 +266,9 @@
             {label: isEnglish ? "TAIPEI COLLECTIBLE BOTANICAL GARDEN" : "臺北典藏植物園", href: "works.html#garden"},
             {label: isEnglish ? "OUTDOOR WORKS" : "戶外作品", href: "works.html#outdoor-works"}
           ]
-        : [{label: isEnglish ? "ART IN STORES" : "藝術入店", href: "works.html#art-in-stores"}];
+        : [{label: isEnglish ? "TAIPEI YUANSHAN DISTRICT" : "臺北圓山街區", href: "works.html#art-in-stores"}];
     document.querySelector("#breadcrumb").innerHTML = C.crumb([
-      {label: isEnglish ? "ARTISTS & WORKS" : "藝術家與作品", href: "works.html"},
+      {label: isEnglish ? "WORKS" : "作品介紹", href: "works.html"},
       ...areaCrumbs,
       {label: textFor(work, "title")}
     ]);
@@ -339,7 +404,7 @@
     document.querySelector("[data-work-primary-media]").innerHTML = imageMarkup(
       normalizeImage(primaryArtist?.image, artistImageLabel),
       isEnglish ? "Artist image pending" : "藝術家圖片待提供",
-      "detail-main"
+      `detail-main${primaryArtist?.id === "artist-26" ? " is-logo" : ""}`
     );
     const workLinks = document.querySelector("[data-work-links]");
     const videoUrls = (work.videoUrls?.length ? work.videoUrls : [work.videoUrl]).filter(Boolean);
@@ -365,6 +430,178 @@
     setDetailText("[data-work-next-title]", next ? textFor(next, "title") : "");
   };
 
+  const openingText = (item, field) => isEnglish
+    ? item?.[`${field}En`] || item?.[field] || ""
+    : item?.[`${field}Zh`] || item?.[field] || "";
+
+  const openingLinks = item => {
+    if (!item) return "";
+    return creatorLinks(item);
+  };
+
+  const renderOpeningPerformers = container => {
+    if (!container) return;
+    const paragraphMarkup = value => value
+      ? value.split("\n").map(paragraph => paragraph ? `<p>${paragraph}</p>` : "").join("")
+      : "";
+    const performerRecord = work => {
+      const artist = artistsForWork(work)[0];
+      const name = openingText(artist, "name");
+      const alternateName = isEnglish ? artist?.nameZh : artist?.nameEn;
+      const nationality = openingText(artist, "nationality");
+      const bio = openingText(artist, "bio");
+      const career = openingText(artist, "career");
+      const members = openingText(artist, "members");
+      const performanceDescription = openingText(work, "description");
+      const performanceType = openingText(work, "workType");
+      const links = openingLinks(artist);
+      return {work, artist, name, alternateName: alternateName && alternateName !== name ? alternateName : "", nationality, bio, career, members, performanceDescription, performanceType, links};
+    };
+    const performanceDetailMarkup = (performance, parentId) => {
+      const performanceName = openingText(performance, "name");
+      const alternatePerformanceName = isEnglish ? performance.nameZh : performance.nameEn;
+      const performanceTitle = openingText(performance, "title");
+      const alternateTitle = isEnglish ? performance.titleZh : performance.titleEn;
+      const performanceNationality = openingText(performance, "nationality");
+      const performanceBio = openingText(performance, "bio");
+      const performanceCareer = openingText(performance, "career");
+      const performanceWorkType = openingText(performance, "workType");
+      const performanceCopy = openingText(performance, "description");
+      const performanceLinks = openingLinks(performance);
+      const performerImage = normalizeImage(performance.performerImage, performanceName);
+      const performerImageMarkup = performerImage
+        ? `<div class="opening-performance-media is-artist">${imageMarkup(performerImage, performanceName)}</div>`
+        : "";
+      const workImages = Array.isArray(performance.workImages)
+        ? performance.workImages.map(image => normalizeImage(image, performanceTitle || performanceName)).filter(Boolean)
+        : [];
+      const workGallery = workImages.length ? `<section class="opening-detail-section"><h4>${isEnglish ? "Performance Images" : "本次演出"}</h4><div class="shop-gallery" data-opening-performance-gallery data-gallery-index="0">
+        <img data-opening-performance-gallery-image src="${C.assetRoute(workImages[0].src)}" alt="${performanceTitle || performanceName} ${isEnglish ? "performance image" : "演出作品圖片"} 1">
+        ${workImages.length > 1 ? `<button class="shop-gallery-arrow is-previous" type="button" data-opening-performance-gallery-direction="-1" aria-label="${isEnglish ? "Previous image" : "上一張圖片"}">‹</button><button class="shop-gallery-arrow is-next" type="button" data-opening-performance-gallery-direction="1" aria-label="${isEnglish ? "Next image" : "下一張圖片"}">›</button><span class="shop-gallery-count" data-opening-performance-gallery-count>1 / ${workImages.length}</span>` : ""}
+      </div></section>` : "";
+      return `<div class="opening-detail-content">
+        <button class="opening-detail-back" type="button" data-opening-detail-back="${parentId}">&lt; ${isEnglish ? "Back to team" : "返回演出團隊"}</button>
+        <header class="opening-detail-header">
+          <p class="opening-subperformance-artist">${performanceName}</p>
+          ${alternatePerformanceName && alternatePerformanceName !== performanceName ? `<p class="opening-detail-name-en">${alternatePerformanceName}</p>` : ""}
+          ${performanceTitle ? `<h3 id="opening-detail-title">${performanceTitle}</h3>` : `<h3 id="opening-detail-title">${performanceName}</h3>`}
+          ${alternateTitle && alternateTitle !== performanceTitle ? `<p class="opening-detail-name-en">${alternateTitle}</p>` : ""}
+          ${(performance.year || performanceWorkType || performanceNationality) ? `<p class="opening-performer-meta">${[performance.year, performanceWorkType, performanceNationality].filter(Boolean).join("｜")}</p>` : ""}
+        </header>
+        ${performerImageMarkup}
+        ${performanceCopy ? `<section class="opening-detail-section"><h4>${isEnglish ? "Performance Description" : "演出介紹"}</h4>${paragraphMarkup(performanceCopy)}</section>` : ""}
+        ${performanceBio ? `<section class="opening-detail-section"><h4>${isEnglish ? "Biography" : "藝術家簡介"}</h4>${paragraphMarkup(performanceBio)}</section>` : ""}
+        ${performanceCareer ? `<section class="opening-detail-section"><h4>${isEnglish ? "Experience" : "藝術家經歷"}</h4>${paragraphMarkup(performanceCareer)}</section>` : ""}
+        ${performanceLinks ? `<div class="opening-performer-links">${performanceLinks}</div>` : ""}
+        ${workGallery}
+      </div>`;
+    };
+    const detailMarkup = record => {
+      const {work, artist, name, alternateName, nationality, bio, career, performanceDescription, performanceType, links} = record;
+      const performanceList = (work.performances || []).map(performance => `<button class="opening-performance-list-item" type="button" data-opening-performance-id="${performance.id}"><span>${openingText(performance, "name")}</span><strong>《${openingText(performance, "title")}》</strong><i aria-hidden="true">&gt;</i></button>`).join("");
+      const collaborators = (work.collaborators || []).map(collaborator => `<li><strong>${openingText(collaborator, "name")}</strong>${openingText(collaborator, "role") ? `<span>${openingText(collaborator, "role")}</span>` : ""}</li>`).join("");
+      const artistMedia = artist?.image?.src
+        ? `<div class="opening-performance-media ${artist.id === "artist-26" ? "is-logo" : "is-artist"}">${imageMarkup(normalizeImage(artist.image, name), name, artist.id === "artist-26" ? "is-logo" : "")}</div>`
+        : "";
+      return `<div class="opening-detail-content">
+        <header class="opening-detail-header">
+          <p class="opening-performer-number">${work.number}</p>
+          <h3 id="opening-detail-title">${name}</h3>
+          ${alternateName ? `<p class="opening-detail-name-en">${alternateName}</p>` : ""}
+          ${nationality ? `<p class="opening-performer-meta">${nationality}</p>` : ""}
+        </header>
+        ${artistMedia}
+        ${bio ? `<section class="opening-detail-section"><h4>${isEnglish ? "Biography" : "簡介"}</h4>${paragraphMarkup(bio)}</section>` : ""}
+        ${career ? `<section class="opening-detail-section"><h4>${isEnglish ? "Career" : "經歷"}</h4>${paragraphMarkup(career)}</section>` : ""}
+        ${links ? `<div class="opening-performer-links">${links}</div>` : ""}
+        ${performanceList ? `<section class="opening-detail-section"><h4>${isEnglish ? "Performances" : "本次演出"}</h4><div class="opening-performance-list">${performanceList}</div></section>` : ""}
+        ${!performanceList && (work.year || performanceType || performanceDescription) ? `<section class="opening-detail-section"><h4>${isEnglish ? "This Performance" : "本次演出資訊"}</h4>${(work.year || performanceType) ? `<p class="opening-performer-type">${[work.year, performanceType].filter(Boolean).join("｜")}</p>` : ""}${performanceDescription ? `<p class="opening-performer-description">${performanceDescription}</p>` : ""}</section>` : ""}
+        ${collaborators ? `<section class="opening-detail-section"><h4>${isEnglish ? "Collaborating Artist" : "合作藝術家"}</h4><ul class="opening-collaborators">${collaborators}</ul></section>` : ""}
+      </div>`;
+    };
+    const records = D.soundArtists.map(performerRecord);
+    container.innerHTML = records.map(record => {
+      const {work, name, alternateName, bio, career} = record;
+      const isTeam = (work.performances || []).length > 0;
+      return `<article class="opening-performer-card opening-performer-summary">
+        <div class="opening-performer-copy">
+          <p class="opening-performer-number">${work.number}</p>
+          <h3>${name}</h3>
+          ${alternateName ? `<p class="opening-detail-name-en">${alternateName}</p>` : ""}
+          ${bio ? `<div class="opening-team-summary"><h4>${isEnglish ? (isTeam ? "Team Introduction" : "Biography") : (isTeam ? "團隊簡介" : "簡介")}</h4>${paragraphMarkup(bio)}</div>` : ""}
+          ${career ? `<div class="opening-team-summary opening-team-career"><h4>${isEnglish ? "Experience" : (isTeam ? "團隊經歷" : "經歷")}</h4>${paragraphMarkup(career)}</div>` : ""}
+          <button class="button opening-detail-trigger" type="button" data-opening-detail-id="${work.id}" aria-haspopup="dialog">${isEnglish ? "View details" : "查看詳細資訊"}</button>
+        </div>
+      </article>`;
+    }).join("");
+
+    const section = container.closest(".opening-performance-works");
+    const layer = section?.querySelector("[data-opening-detail-layer]");
+    const panel = layer?.querySelector(".opening-detail-panel");
+    if (!layer || !panel) return;
+    document.body.append(layer);
+    let returnFocus = null;
+    const closeDetail = () => {
+      closeDismissiblePanel({panel, layer, hideLayer: true});
+      unlockModalPageScroll("opening-detail-open");
+      returnFocus?.focus({preventScroll: true});
+      returnFocus = null;
+    };
+    const openDetail = (record, trigger) => {
+      returnFocus = trigger;
+      let activePerformanceId = "";
+      const renderPanel = content => {
+        panel.innerHTML = `<button class="marker-card-close opening-detail-close" type="button" aria-label="${isEnglish ? "Close performing artist details" : "關閉演出團隊詳細資訊"}">×</button>${content}`;
+        panel.querySelector(".opening-detail-close").addEventListener("click", closeDetail);
+      };
+      renderPanel(detailMarkup(record));
+      layer.hidden = false;
+      panel.hidden = false;
+      layer.scrollTop = 0;
+      lockModalPageScroll("opening-detail-open");
+      panel.querySelector(".opening-detail-close").focus();
+      panel.onclick = event => {
+        const performanceTrigger = event.target.closest("[data-opening-performance-id]");
+        const backTrigger = event.target.closest("[data-opening-detail-back]");
+        const galleryDirection = event.target.closest("[data-opening-performance-gallery-direction]");
+        if (galleryDirection) {
+          const performance = (record.work.performances || []).find(item => item.id === activePerformanceId);
+          const images = Array.isArray(performance?.workImages) ? performance.workImages : [];
+          const gallery = galleryDirection.closest("[data-opening-performance-gallery]");
+          if (!images.length || !gallery) return;
+          const nextIndex = (Number(gallery.dataset.galleryIndex || 0) + Number(galleryDirection.dataset.openingPerformanceGalleryDirection) + images.length) % images.length;
+          gallery.dataset.galleryIndex = String(nextIndex);
+          const image = gallery.querySelector("[data-opening-performance-gallery-image]");
+          image.src = C.assetRoute(images[nextIndex]);
+          image.alt = `${openingText(performance, "title") || openingText(performance, "name")} ${isEnglish ? "performance image" : "演出作品圖片"} ${nextIndex + 1}`;
+          gallery.querySelector("[data-opening-performance-gallery-count]").textContent = `${nextIndex + 1} / ${images.length}`;
+        } else if (performanceTrigger) {
+          const performance = (record.work.performances || []).find(item => item.id === performanceTrigger.dataset.openingPerformanceId);
+          if (performance) {
+            activePerformanceId = performance.id;
+            renderPanel(performanceDetailMarkup(performance, record.work.id));
+            layer.scrollTop = 0;
+            panel.querySelector(".opening-detail-back")?.focus();
+          }
+        } else if (backTrigger) {
+          renderPanel(detailMarkup(record));
+          layer.scrollTop = 0;
+          panel.querySelector(`[data-opening-performance-id="${activePerformanceId}"]`)?.focus();
+        }
+      };
+    };
+    container.addEventListener("click", event => {
+      const trigger = event.target.closest("[data-opening-detail-id]");
+      if (!trigger) return;
+      const record = records.find(item => item.work.id === trigger.dataset.openingDetailId);
+      if (record) openDetail(record, trigger);
+    });
+    layer.addEventListener("click", event => { if (event.target === layer) closeDetail(); });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && !layer.hidden) closeDetail();
+    });
+  };
+
   const renderEventDetail = () => {
     const event = D.events.find(item => String(item.id) === queryId());
     const article = document.querySelector("[data-event-detail]");
@@ -379,10 +616,11 @@
     const leader = event.speaker || event.instructor;
     const isOpeningPerformance = event.id === "opening-performance";
     article.classList.toggle("is-opening-performance", isOpeningPerformance);
-    article.querySelector(".detail-meta")?.classList.toggle("opening-performance-information", isOpeningPerformance);
     document.title = `${textFor(event, "title")}｜${isEnglish ? "2026 Taipei Digital Art Festival" : "2026 臺北數位藝術節"}`;
     document.querySelector("#breadcrumb").innerHTML = C.crumb([{label: isEnglish ? "PROGRAM" : "活動節目", href: "program.html"}, {label: textFor(event, "title")}]);
-    setDetailText("[data-event-type]", [isOpeningPerformance ? "" : event.number, isEnglish ? event.typeEn || event.type : event.type].filter(Boolean).join("｜"));
+    setDetailText("[data-event-type]", isOpeningPerformance
+      ? (isEnglish ? "Performance" : "表演")
+      : [event.number, isEnglish ? event.typeEn || event.type : event.type].filter(Boolean).join("｜"));
     setDetailText("[data-event-title]", textFor(event, "title"));
     setDetailField("date", event.date, "event");
     setDetailField("time", event.time, "event");
@@ -392,6 +630,11 @@
       const locationLabel = document.querySelector('[data-event-field="location"] dt');
       if (timeLabel) timeLabel.textContent = isEnglish ? "Performance Time" : "表演時間";
       if (locationLabel) locationLabel.textContent = isEnglish ? "Location" : "表演地點";
+      const performersSection = document.querySelector("[data-opening-performers-section]");
+      if (performersSection) {
+        performersSection.hidden = false;
+        renderOpeningPerformers(performersSection.querySelector("[data-opening-performer-list]"));
+      }
     }
     const leaderRow = document.querySelector("[data-event-leader-row]");
     if (isOpeningPerformance) leaderRow.remove();
@@ -430,22 +673,38 @@
 
   const initializeProgramPage = () => {
     const events = D.events;
+    const orderField = event => ["displayOrder", "order", "sort", "sequence"]
+      .map(field => Number(event[field]))
+      .find(Number.isFinite);
+    const openingIndex = events.findIndex(event => event.id === "opening-performance");
+    const openingEvent = openingIndex >= 0 ? events[openingIndex] : null;
+    const orderedEvents = events
+      .map((event, index) => ({event, index, order: orderField(event)}))
+      .filter(item => item.event !== openingEvent)
+      .sort((a, b) => {
+        if (a.order != null && b.order != null && a.order !== b.order) return a.order - b.order;
+        if (a.order != null && b.order == null) return -1;
+        if (a.order == null && b.order != null) return 1;
+        const aStart = programTimeRange(a.event)?.start?.getTime() ?? Number.POSITIVE_INFINITY;
+        const bStart = programTimeRange(b.event)?.start?.getTime() ?? Number.POSITIVE_INFINITY;
+        return aStart - bStart || a.index - b.index;
+      })
+      .map(item => item.event);
+    if (openingEvent) orderedEvents.unshift(openingEvent);
     const list = document.querySelector("#program-card-list");
     const filters = [...document.querySelectorAll("[data-program-filter]")];
     const locale = document.documentElement.lang.toLowerCase().startsWith("en") ? "en" : "zh-Hant";
     const labels = {
       "zh-Hant": {
-        overview: "節目總覽", schedule: "日程表", opening: "開幕表演",
+        overview: "節目總覽", schedule: "日程表",
         filterAll: "全部", filterTalks: "講座", filterWorkshops: "工作坊", filterTours: "導覽",
-        date: "日期", performanceTime: "表演時間", performanceLocation: "表演地點",
-        performanceWorks: "演出作品", noEvents: "活動資料待提供", eventCountSuffix: "場活動",
+        noEvents: "活動資料待提供", eventCountSuffix: "場活動",
         weekdays: ["日", "一", "二", "三", "四", "五", "六"]
       },
       en: {
-        overview: "Program Overview", schedule: "Schedule", opening: "Opening Performance",
+        overview: "Program Overview", schedule: "Schedule",
         filterAll: "All", filterTalks: "Talks", filterWorkshops: "Workshops", filterTours: "Tours",
-        date: "Date", performanceTime: "Performance Time", performanceLocation: "Location",
-        performanceWorks: "Works", noEvents: "Program information pending", eventCountSuffix: "events",
+        noEvents: "Program information pending", eventCountSuffix: "events",
         weekdays: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
       }
     }[locale];
@@ -459,9 +718,9 @@
       .map(index => `<span>${labels.weekdays[index]}</span>`).join("");
 
     const renderOverview = filter => {
-      const filtered = filter === "all" ? events : events.filter(event => event.type === filter);
+      const filtered = filter === "all" ? orderedEvents : orderedEvents.filter(event => event.type === filter);
       list.innerHTML = filtered.length ? filtered.map(event => {
-        const index = events.indexOf(event) + 1;
+        const index = orderedEvents.indexOf(event) + 1;
         const date = programDate(event.date);
         return `<a class="program-card" href="${programRoute(event)}">
           <span class="program-card-number">${String(index).padStart(2, "0")}</span>
@@ -519,40 +778,6 @@
     if (dateButtons.length) selectDate(dateButtons[0].dataset.programDate);
     else selectedPanel.innerHTML = `<p class="data-pending">${isEnglish ? "Program dates pending" : "活動日期資料待提供"}</p>`;
 
-    const opening = events.find(event => event.featured && event.type === "表演") || events.find(event => event.id === "opening-performance");
-    [["[data-opening-date]", opening?.date], ["[data-opening-time]", opening?.startTime || opening?.endTime ? programTime(opening) : opening?.time], ["[data-opening-location]", textFor(opening, "location")]].forEach(([selector, value]) => {
-      const slot = document.querySelector(selector);
-      if (!slot) return;
-      slot.textContent = value || "";
-      slot.closest("div")?.toggleAttribute("hidden", !value);
-    });
-    document.querySelector("#opening-work-grid").innerHTML = D.soundArtists.map(work => {
-      const artist = artistsForWork(work)[0];
-      const name = textFor(artist, "name");
-      const openingText = (item, field) => isEnglish ? item?.[`${field}En`] || item?.[field] || "" : item?.[`${field}Zh`] || item?.[field] || "";
-      const nationality = openingText(artist, "nationality");
-      const bio = openingText(artist, "bio");
-      const career = openingText(artist, "career");
-      const members = openingText(artist, "members");
-      const performanceDescription = textFor(work, "title");
-      const performanceType = textFor(work, "workType");
-      const cover = coverImageFor(work, `${name || performanceDescription || (isEnglish ? "Performance" : "演出")} ${isEnglish ? "image pending" : "圖片待提供"}`);
-      const links = artist ? creatorLinks(artist) : "";
-      return `<article class="opening-performer-card">
-        <div class="opening-performer-media">${imageMarkup(cover, cover?.alt || (isEnglish ? "Performance image pending" : "演出圖片待提供"))}</div>
-        <div class="opening-performer-copy">
-          <p class="opening-performer-number">${work.number}</p>
-          <h4>${name}</h4>
-          ${nationality ? `<p class="opening-performer-meta">${nationality}</p>` : ""}
-          ${performanceType ? `<p class="opening-performer-type">${performanceType}</p>` : ""}
-          ${work.id === "performance-02" && performanceDescription ? `<p class="opening-performer-description">${performanceDescription}</p>` : ""}
-          ${members ? `<div class="opening-performer-section"><h5>${isEnglish ? "Members" : "參與成員"}</h5><p>${members}</p></div>` : ""}
-          ${bio ? `<div class="opening-performer-section"><h5>${isEnglish ? "Biography" : "簡介"}</h5>${bio.split("\n").map(paragraph => `<p>${paragraph}</p>`).join("")}</div>` : ""}
-          ${career ? `<div class="opening-performer-section"><h5>${isEnglish ? "Career" : "經歷"}</h5>${career.split("\n").map(line => line ? `<p>${line}</p>` : "").join("")}</div>` : ""}
-          ${links ? `<div class="opening-performer-links">${links}</div>` : ""}
-        </div>
-      </article>`;
-    }).join("");
   };
 
   const networkProfile = {
@@ -1148,12 +1373,19 @@
         resizeFrame = 0;
       });
     });
+    return () => paginations.forEach(rebuild => rebuild());
   };
 
   const hydrateHome = () => {
     document.querySelector("#home-artist-accordion").innerHTML = artistAccordionItems(D.artists.filter(artist => textFor(artist, "name")));
-    document.querySelector("#home-featured-works").innerHTML = featuredWorkCards(D.works.slice(0, 4));
-    document.querySelector("#home-featured-programs").innerHTML = featuredProgramCards(D.events.slice(0, 4));
+    const upcomingSection = document.querySelector("#upcoming-programs");
+    const upcomingTrack = document.querySelector("#home-upcoming-programs");
+    const renderUpcomingPrograms = () => {
+      const upcoming = homeProgramSlotsAt(D.events);
+      upcomingSection.hidden = upcoming.length === 0;
+      upcomingTrack.innerHTML = featuredProgramCards(upcoming);
+    };
+    renderUpcomingPrograms();
     const instagram = D.social.instagram;
     const facebook = D.social.facebook;
     document.querySelector("#instagram-label").textContent = instagram.label;
@@ -1165,7 +1397,12 @@
     document.querySelector("#facebook-embed").src = `https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(facebook.url)}&tabs=timeline&width=328&height=430&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true`;
 
     initializeArtistAccordion();
-    initializeFeaturedPagination();
+    const rebuildFeaturedPagination = initializeFeaturedPagination();
+    const upcomingTimer = window.setInterval(() => {
+      renderUpcomingPrograms();
+      rebuildFeaturedPagination();
+    }, 60000);
+    window.addEventListener("pagehide", () => window.clearInterval(upcomingTimer), {once: true});
     runHeroSequence();
   };
 
@@ -1372,6 +1609,7 @@
     const layer = document.querySelector("[data-shop-detail-layer]");
     const panel = layer?.querySelector(".shop-detail-panel");
     if (!lists.length || !layer || !panel || !Array.isArray(D.shops)) return;
+    document.body.append(layer);
 
     let returnFocus = null;
     let activeGalleryIndex = 0;
@@ -1380,6 +1618,7 @@
     const shopSecondaryName = shop => !isEnglish && shop.nameEn && shop.nameEn !== shop.nameZh ? shop.nameEn : "";
     const shopAddress = shop => isEnglish ? shop.addressEn || shop.addressZh || shop.address : shop.addressZh || shop.address;
     const shopDescription = shop => isEnglish ? shop.descriptionEn || shop.descriptionZh || shop.description : shop.descriptionZh || shop.description;
+    const shopBusinessHours = shop => isEnglish && shop.businessHoursEn?.length ? shop.businessHoursEn : shop.businessHours;
     const labels = isEnglish ? {
       address: "ADDRESS", hours: "BUSINESS HOURS", phone: "PHONE", description: "ABOUT",
       close: "Close partner store details", previous: "Previous image", next: "Next image", detail: "View details"
@@ -1426,9 +1665,10 @@
     });
 
     const closeShopPanel = ({restoreFocus = true} = {}) => {
-      closeDismissiblePanel({panel, layer, bodyClass: "shop-modal-open", hideLayer: true});
+      closeDismissiblePanel({panel, layer, hideLayer: true});
+      unlockModalPageScroll("shop-modal-open");
       activeShop = null;
-      if (restoreFocus && returnFocus) returnFocus.focus();
+      if (restoreFocus && returnFocus) returnFocus.focus({preventScroll: true});
       returnFocus = null;
     };
 
@@ -1440,7 +1680,7 @@
       const count = panel.querySelector("[data-shop-gallery-count]");
       image.src = C.assetRoute(images[activeGalleryIndex]);
       image.alt = `${shopName(activeShop)} ${isEnglish ? "image" : "圖片"} ${activeGalleryIndex + 1}`;
-      count.textContent = `${activeGalleryIndex + 1} / ${images.length}`;
+      if (count) count.textContent = `${activeGalleryIndex + 1} / ${images.length}`;
     };
 
     const openShopPanel = (shop, trigger) => {
@@ -1453,7 +1693,7 @@
         <div class="shop-gallery">
           <img data-shop-gallery-image src="${C.assetRoute(images[0])}" alt="${shopName(shop)} ${isEnglish ? "image" : "圖片"} 1">
           ${images.length > 1 ? `<button class="shop-gallery-arrow is-previous" type="button" data-shop-gallery-direction="-1" aria-label="${labels.previous}">‹</button><button class="shop-gallery-arrow is-next" type="button" data-shop-gallery-direction="1" aria-label="${labels.next}">›</button>` : ""}
-          <span class="shop-gallery-count" data-shop-gallery-count>1 / ${images.length}</span>
+          ${images.length > 1 ? `<span class="shop-gallery-count" data-shop-gallery-count>1 / ${images.length}</span>` : ""}
         </div>` : "";
       panel.innerHTML = `
         <div class="shop-detail-controls"><button class="marker-card-close" type="button" aria-label="${labels.close}">×</button></div>
@@ -1464,7 +1704,7 @@
           ${shopSecondaryName(shop) ? `<p class="shop-name-en">${shopSecondaryName(shop)}</p>` : ""}
           <dl class="shop-meta">
             ${shopAddress(shop) ? `<div><dt>${labels.address}</dt><dd>${shopAddress(shop)}</dd></div>` : ""}
-            ${shop.businessHours?.length ? `<div><dt>${labels.hours}</dt><dd>${shop.businessHours.map(line => `<span>${line}</span>`).join("")}</dd></div>` : ""}
+            ${shopBusinessHours(shop)?.length ? `<div><dt>${labels.hours}</dt><dd>${shopBusinessHours(shop).map(line => `<span>${line}</span>`).join("")}</dd></div>` : ""}
             ${shop.phone ? `<div><dt>${labels.phone}</dt><dd>${shop.phone}</dd></div>` : ""}
           </dl>
           ${shopDescription(shop) ? `<section class="shop-description"><h4>${labels.description}</h4>${shopDescription(shop).split("\n").map(paragraph => `<p>${paragraph}</p>`).join("")}</section>` : ""}
@@ -1473,8 +1713,9 @@
         </div>`;
       layer.hidden = false;
       panel.hidden = false;
+      layer.scrollTop = 0;
       layer.classList.add("is-open");
-      document.body.classList.add("shop-modal-open");
+      lockModalPageScroll("shop-modal-open");
       panel.querySelector(".marker-card-close").addEventListener("click", () => closeShopPanel());
       panel.querySelectorAll("[data-shop-gallery-direction]").forEach(button => button.addEventListener("click", () => updateGallery(Number(button.dataset.shopGalleryDirection))));
       panel.querySelector(".marker-card-close").focus();
@@ -1520,8 +1761,16 @@
   document.querySelector("#site-footer").innerHTML = C.footer();
   initializeBackToTop();
 
-  const breadcrumbLabels = isEnglish ? {about:"ABOUT", map:"MAP", works:"ARTISTS & WORKS", program:"PROGRAM", visit:"Main Venue"} : {about:"關於", map:"探索地圖", works:"藝術家與作品", program:"活動節目", visit:"主展場參觀"};
-  if (breadcrumbLabels[page]) document.querySelector("#breadcrumb").innerHTML = C.crumb(breadcrumbLabels[page]);
+  const breadcrumbLabels = isEnglish ? {about:"ABOUT", map:"MAP", works:"WORKS", program:"PROGRAM", visit:"Main Venue"} : {about:"關於", map:"探索地圖", works:"作品介紹", program:"活動節目", visit:"主展場參觀"};
+  if (breadcrumbLabels[page]) {
+    const breadcrumb = page === "works" && location.hash === "#art-in-stores"
+      ? [
+          {label: breadcrumbLabels.works, href: "works.html"},
+          {label: isEnglish ? "TAIPEI YUANSHAN DISTRICT" : "臺北圓山街區"}
+        ]
+      : breadcrumbLabels[page];
+    document.querySelector("#breadcrumb").innerHTML = C.crumb(breadcrumb);
+  }
 
   if (page === "home") hydrateHome();
   if (page === "works") {

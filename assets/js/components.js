@@ -1,11 +1,13 @@
 window.DAF_COMPONENTS = (() => {
   const getCurrentLanguage = () => document.documentElement.lang.toLowerCase().startsWith("en") || /(^|\/)en(\/|$)/.test(location.pathname) ? "en" : "zh-Hant";
   const isExternal = value => /^(?:[a-z]+:|\/\/|#)/i.test(value || "");
-  const assetRoute = path => !path || isExternal(path) || path.startsWith("../") ? path : `${getCurrentLanguage() === "en" ? "../" : ""}${path}`;
+  const isTestMap = () => /(^|\/)test_MAP(\/|$)/i.test(location.pathname);
+  const assetRoute = path => !path || isExternal(path) || path.startsWith("../") ? path : `${getCurrentLanguage() === "en" || isTestMap() ? "../" : ""}${path}`;
   const localizedRoute = (route, targetLanguage = getCurrentLanguage()) => {
     if (!route || isExternal(route)) return route;
     const normalized = route.replace(/^\.\.\//, "").replace(/^en\//, "");
     if (targetLanguage === getCurrentLanguage()) return normalized;
+    if (isTestMap()) return targetLanguage === "en" ? `../en/${normalized}` : normalized;
     return targetLanguage === "en" ? `en/${normalized}` : `../${normalized}`;
   };
   const localizedText = (item, field) => getCurrentLanguage() === "en" && item?.[`${field}En`] ? item[`${field}En`] : item?.[field] || "";
@@ -17,23 +19,22 @@ window.DAF_COMPONENTS = (() => {
   const navZh = [
     {id: "home", label: "首頁", url: "index.html"},
     {id: "about", label: "關於", url: "about.html", children: [
-      ["關於台北數位藝術節", "about.html#festival"], ["年度策展主題", "about.html#theme"],
-      ["策展人", "about.html#curators"], ["執行單位", "about.html#organizations"],
-      ["合作單位", "about.html#partners"], ["贊助單位", "about.html#sponsors"]
+      ["關於台北數位藝術節", "about.html#festival"], ["策展論述", "about.html#theme"],
+      {label: "策展執行", url: "about.html#curatorial-execution", children: [["策展人", "about.html#curators"], ["執行單位", "about.html#organizations"]]},
+      {label: "合作單位", url: "about.html#partners", children: [["合作單位", "about.html#partner-organizations"], ["贊助單位", "about.html#sponsors"]]}
     ]},
     {id: "map", label: "探索地圖", url: "map.html", children: [
       ["主展場", "map.html#garden-map"], ["街區地圖", "map.html#district-map"],
       ["合作店家", "map.html#partner-stores"]
     ]},
-    {id: "works", label: "藝術家與作品", url: "works.html", children: [
+    {id: "works", label: "作品介紹", url: "works.html", children: [
       {label: "臺北典藏植物園", url: "works.html#garden", children: [
         ["主展場", "works.html#main-venue"], ["戶外作品", "works.html#outdoor-works"]
       ]},
-      ["藝術入店", "works.html#art-in-stores"]
+      ["臺北圓山街區", "works.html#art-in-stores"]
     ]},
     {id: "program", label: "活動節目", url: "program.html", children: [
-      ["節目總覽", "program.html#program-overview"], ["日程表", "program.html#schedule"],
-      ["開幕表演", "program.html#opening-performance"]
+      ["節目總覽", "program.html#program-overview"], ["日程表", "program.html#schedule"]
     ]},
     {id: "visit", label: "主展場參觀", url: "visit.html", children: [
       ["展覽時間", "visit.html#visit-hours"], ["展覽地點", "visit.html#visit-location"],
@@ -42,10 +43,10 @@ window.DAF_COMPONENTS = (() => {
   ];
   const navEn = [
     {id:"home",label:"HOME",url:"index.html"},
-    {id:"about",label:"ABOUT",url:"about.html",children:[["ABOUT THE FESTIVAL","about.html#festival"],["ANNUAL THEME","about.html#theme"],["CURATORS","about.html#curators"],["ORGANIZERS","about.html#organizations"],["PARTNERS","about.html#partners"],["SPONSORS","about.html#sponsors"]]},
+    {id:"about",label:"ABOUT",url:"about.html",children:[["ABOUT TAIPEI DIGITAL ART FESTIVAL","about.html#festival"],["CURATORIAL STATEMENT","about.html#theme"],{label:"CURATORIAL TEAM",url:"about.html#curatorial-execution",children:[["CURATORS","about.html#curators"],["EXECUTIVE UNIT","about.html#organizations"]]},{label:"PARTNERS",url:"about.html#partners",children:[["PARTNERS","about.html#partner-organizations"],["SPONSORS","about.html#sponsors"]]}]},
     {id:"map",label:"MAP",url:"map.html",children:[["BOTANICAL GARDEN","map.html#garden-map"],["DISTRICT MAP","map.html#district-map"],["PARTNER STORES","map.html#partner-stores"]]},
-    {id:"works",label:"ARTISTS &amp; WORKS",url:"works.html",children:[{label:"TAIPEI COLLECTIBLE BOTANICAL GARDEN",url:"works.html#garden",children:[["MAIN VENUE","works.html#main-venue"],["OUTDOOR WORKS","works.html#outdoor-works"]]},["ART IN STORES","works.html#art-in-stores"]]},
-    {id:"program",label:"PROGRAM",url:"program.html",children:[["PROGRAM OVERVIEW","program.html#program-overview"],["SCHEDULE","program.html#schedule"],["OPENING PERFORMANCE","program.html#opening-performance"]]},
+    {id:"works",label:"WORKS",url:"works.html",children:[{label:"TAIPEI COLLECTIBLE BOTANICAL GARDEN",url:"works.html#garden",children:[["MAIN VENUE","works.html#main-venue"],["OUTDOOR WORKS","works.html#outdoor-works"]]},["TAIPEI YUANSHAN DISTRICT","works.html#art-in-stores"]]},
+    {id:"program",label:"PROGRAM",url:"program.html",children:[["PROGRAM OVERVIEW","program.html#program-overview"],["SCHEDULE","program.html#schedule"]]},
     {id:"visit",label:"MAIN VENUE",url:"visit.html",children:[["OPENING HOURS","visit.html#visit-hours"],["VENUE","visit.html#visit-location"],["TRANSPORTATION","visit.html#transportation"],["VENUE MAP","visit.html#venue-map"]]}
   ];
   const ui = () => getCurrentLanguage() === "en"
@@ -78,15 +79,22 @@ window.DAF_COMPONENTS = (() => {
   }
   function footer() {
     const social = DAF_DATA.social;
-    const organizationTypeEn = {"主辦單位":"Organizer", "協辦單位":"Co-organizer", "場地合作":"Venue Partner", "合作單位":"Partners", "贊助":"Sponsors"};
-    const socialLinks = `<div class="container footer-social"><a href="${social.instagram.url}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">${icon("instagram", "")}</a><a href="${social.facebook.url}" target="_blank" rel="noopener noreferrer" aria-label="Facebook">${icon("facebook", "")}</a></div>`;
+    const organizationTypeLabels = {
+      "主辦單位": {zh: "主辦單位", en: "Organizer"},
+      "協辦單位": {zh: "協辦單位", en: "Co-organizer"},
+      "場地合作": {zh: "場地合作", en: "Venue Partner"},
+      "合作單位": {zh: "合作單位", en: "Partners"},
+      "贊助": {zh: "贊助", en: "Sponsors"}
+    };
+    const socialLinks = `<div class="footer-social"><a href="${social.instagram.url}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">${icon("instagram", "")}</a><a href="${social.facebook.url}" target="_blank" rel="noopener noreferrer" aria-label="Facebook">${icon("facebook", "")}</a></div>`;
     const organizationGroup = org => {
-      const englishType = organizationTypeEn[org.type] || org.type;
-      const heading = getCurrentLanguage() === "en" ? englishType : `${org.type}<small lang="en">/ ${englishType}</small>`;
+      const labels = organizationTypeLabels[org.type] || {zh: org.type, en: org.type};
+      const heading = getCurrentLanguage() === "en" ? labels.en : labels.zh;
       return `<section class="org-group ${org.sponsor?"sponsor":""}"><strong>${heading}</strong><div class="org-logos">${org.names.map((name,index)=>{const image=`<img src="${assetRoute(org.images[index])}" alt="${name}">`;const url=org.urls?.[index];const surface=org.surfaces?.[index]==="light"?" org-logo-light":"";const linkLabel=getCurrentLanguage() === "en" ? `Visit the official website of ${name} (opens in a new tab)` : `前往${name}官方網站（另開新分頁）`;return `<div class="org-logo${surface}">${url?`<a href="${url}" target="_blank" rel="noopener noreferrer" aria-label="${linkLabel}">${image}</a>`:image}</div>`;}).join("")}</div></section>`;
     };
     const organizationRows = `<div class="container org-grid"><div class="org-row org-row-primary">${DAF_DATA.organizations.slice(0, 3).map(organizationGroup).join("")}</div><div class="org-row org-row-secondary">${DAF_DATA.organizations.slice(3).map(organizationGroup).join("")}</div></div>`;
-    return `<footer class="site-footer">${organizationRows}${socialLinks}<p class="copyright">© 2026 臺北數位藝術節 Taipei Digital Art Festival. All Rights Reserved.</p></footer>`;
+    const organizationLabel = getCurrentLanguage() === "en" ? "Festival organizations" : "藝術節單位資訊";
+    return `<section class="site-organizations" aria-label="${organizationLabel}">${organizationRows}</section><footer class="site-footer"><div class="container site-footer-inner"><p class="copyright">© 2026 臺北數位藝術節 Taipei Digital Art Festival. All Rights Reserved.</p>${socialLinks}</div></footer>`;
   }
   const placeholder = (label="圖片 Placeholder", cls="") => `<div class="placeholder ${cls}"><span>${label}</span></div>`;
   const icon = (name, label, cls="") => `<img class="icon ${cls}" src="${assetRoute(`assets/icons/${name}.svg`)}" alt="${label}"${label ? "" : ' aria-hidden="true"'}>`;
@@ -104,13 +112,14 @@ window.DAF_COMPONENTS = (() => {
     const date = now instanceof Date ? now : new Date(now ?? Date.now());
     if (Number.isNaN(date.getTime())) return null;
     const parts = new Intl.DateTimeFormat("en-US", {
-      timeZone: "Asia/Taipei", weekday: "short", hour: "2-digit", minute: "2-digit", hourCycle: "h23"
+      timeZone: "Asia/Taipei", year: "numeric", month: "2-digit", day: "2-digit",
+      weekday: "short", hour: "2-digit", minute: "2-digit", hourCycle: "h23"
     }).formatToParts(date).reduce((values, part) => ({...values, [part.type]: part.value}), {});
     const day = {Sun:0, Mon:1, Tue:2, Wed:3, Thu:4, Fri:5, Sat:6}[parts.weekday];
     const hour = Number(parts.hour);
     const minute = Number(parts.minute);
     return Number.isInteger(day) && Number.isFinite(hour) && Number.isFinite(minute)
-      ? {day, minutes: hour * 60 + minute}
+      ? {day, date: `${parts.year}-${parts.month}-${parts.day}`, minutes: hour * 60 + minute}
       : null;
   };
   const timeToMinutes = value => {
@@ -129,17 +138,30 @@ window.DAF_COMPONENTS = (() => {
       ? normalized.sort((a, b) => a.openMinutes - b.openMinutes)
       : null;
   };
+  const previousDate = value => {
+    const date = new Date(`${value}T00:00:00+08:00`);
+    date.setUTCDate(date.getUTCDate() - 1);
+    return new Intl.DateTimeFormat("en-CA", {timeZone:"Asia/Taipei", year:"numeric", month:"2-digit", day:"2-digit"}).format(date);
+  };
   const getStoreOpenStatus = (store, now = new Date()) => {
     const schedule = store?.businessHoursSchedule;
     const current = taipeiTime(now);
     if (!schedule || !current) return {status:"unknown", label:"unknown", nextTime:null};
 
-    const previousPeriods = normalizedPeriods(schedule[(current.day + 6) % 7]);
-    if (previousPeriods === null && schedule[(current.day + 6) % 7] != null) return {status:"unknown", label:"unknown", nextTime:null};
+    const previousDay = (current.day + 6) % 7;
+    const previousDateKey = previousDate(current.date);
+    const previousWasSpecial = Object.prototype.hasOwnProperty.call(store.specialHours || {}, previousDateKey);
+    const previousRawPeriods = previousWasSpecial
+      ? store.specialHours[previousDateKey]
+      : schedule[previousDay];
+    const previousPeriods = normalizedPeriods(previousRawPeriods);
+    if (previousPeriods === null && previousRawPeriods != null) return {status:"unknown", label:"unknown", nextTime:null};
     const overnight = previousPeriods?.find(period => period.closeMinutes <= period.openMinutes && current.minutes < period.closeMinutes);
     if (overnight) return {status:"open", label:"open", nextTime:overnight.close};
 
-    const rawPeriods = schedule[current.day];
+    const rawPeriods = Object.prototype.hasOwnProperty.call(store.specialHours || {}, current.date)
+      ? store.specialHours[current.date]
+      : schedule[current.day];
     if (rawPeriods == null || (Array.isArray(rawPeriods) && rawPeriods.length === 0)) return {status:"day_off", label:"day_off", nextTime:null};
     const periods = normalizedPeriods(rawPeriods);
     if (!periods) return {status:"unknown", label:"unknown", nextTime:null};
@@ -148,7 +170,12 @@ window.DAF_COMPONENTS = (() => {
       if (current.minutes >= period.openMinutes && (closesNextDay || current.minutes < period.closeMinutes)) {
         return {status:"open", label:"open", nextTime:period.close};
       }
-      if (current.minutes < period.openMinutes) return {status:"before_open", label:"before_open", nextTime:period.open};
+      if (current.minutes < period.openMinutes) {
+        const specialOvernightEnded = previousWasSpecial && previousPeriods?.some(previous => previous.closeMinutes <= previous.openMinutes && current.minutes >= previous.closeMinutes);
+        return specialOvernightEnded
+          ? {status:"closed", label:"closed", nextTime:null}
+          : {status:"before_open", label:"before_open", nextTime:period.open};
+      }
     }
     return {status:"closed", label:"closed", nextTime:null};
   };

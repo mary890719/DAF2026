@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="robots" content="noindex, nofollow">
+        <title>探索地圖｜2026 臺北數位藝術節</title>
+        <link rel="alternate" hreflang="zh-Hant" href="map.html">
+        <link rel="alternate" hreflang="en" href="../en/map.html">
+        <link rel="stylesheet" href="../assets/css/style.css?v=20260908-modal-scroll-v1">
+    </head>
+    <body data-page="map">
+        <div id="site-header"></div>
+        <main id="app" class="container">
+            <nav class="map-mode-switch" aria-label="探索模式">
+                <button type="button" data-perception-mode="map" aria-pressed="true">地圖</button>
+                <button type="button" data-perception-mode="perception" aria-pressed="false">感知</button>
+            </nav>
+            <div data-map-view>
+            <div id="breadcrumb"></div>
+            <h1 class="page-title">探索地圖</h1>
+            <div class="map-legend" aria-label="地圖圖例">
+                <span data-location-type="main"><i aria-hidden="true"></i>主展場</span>
+                <span data-location-type="outdoor"><i aria-hidden="true"></i>主展場戶外</span>
+                <span data-location-type="district"><i aria-hidden="true"></i>街區</span>
+            </div>
+            <div class="page-sections map-contexts">
+                <section class="ia-section map-context" id="garden-map" data-map-context="garden">
+                    <h2>主展場</h2>
+                    <div class="map-shell map-shell-garden" data-map-id="main">
+                        <div class="map-base-layer"><img class="map-base" src="../assets/images/map/主展場MAP.png" alt="臺北典藏植物園主展場地圖，包含廁所、服務台、出入口與緊急逃生口資訊"></div>
+                        <div class="map-overlay-layer" data-map-markers></div>
+                        <div class="map-ui-layer"><article class="marker-card" hidden></article></div>
+                    </div>
+                    <div class="map-work-list" data-map-list="main"><strong>作品及藝術家一覽</strong></div>
+                </section>
+                <section class="ia-section map-context" id="district-map" data-map-context="district">
+                    <h2>活動街區</h2>
+                    <div class="map-shell map-shell-district" data-map-id="district">
+                        <div class="map-base-layer"><img class="map-base" src="../assets/images/map/活動場域MAP_Noroad.png" alt="活動街區場域地圖"></div>
+                        <div class="map-overlay-layer" data-map-markers></div>
+                        <div class="map-ui-layer"><article class="marker-card" hidden></article></div>
+                    </div>
+                    <div class="map-work-list" data-map-list="district" data-map-list-type="outdoor"><strong>戶外作品</strong></div>
+                    <div class="map-work-list" data-map-list="district" data-map-list-type="district"><strong>臺北圓山街區</strong></div>
+                </section>
+                <section class="ia-section shop-section" id="partner-stores">
+                    <h2>合作店家</h2>
+                    <div class="shop-list" data-shop-list="partners"></div>
+                </section>
+                <section class="ia-section shop-section" id="art-in-stores">
+                    <h2>臺北圓山街區</h2>
+                    <div class="shop-list" data-shop-list="venues"></div>
+                    <div class="shop-detail-layer" data-shop-detail-layer hidden>
+                        <article class="shop-detail-panel" role="dialog" aria-modal="true" aria-labelledby="shop-detail-title" hidden></article>
+                    </div>
+                </section>
+            </div>
+            <div class="back-wrap"><a class="button" href="works.html#art-in-stores">藝術入店作品資訊 &gt;</a></div>
+            </div>
+            <section class="perception-view" data-perception-view hidden aria-label="感知模式">
+                <video class="perception-camera" data-perception-camera playsinline muted aria-hidden="true"></video>
+                <div class="perception-shade" aria-hidden="true"></div>
+                <div class="perception-intro" data-perception-intro>
+                    <p>PERCEPTION</p><h1>感知</h1>
+                    <p>這個視野並不理解所有事物。</p>
+                    <p class="perception-permission-note">開始後僅會要求使用相機，不會存取位置、麥克風或動作感測器。</p>
+                    <button class="button" type="button" data-perception-start>開始感知</button>
+                </div>
+                <div class="perception-runtime" data-perception-runtime hidden>
+                    <p class="perception-state" data-perception-state aria-live="polite">IDLE</p>
+                    <div class="perception-unresolved" aria-hidden="true"><i>·</i><i>+</i><i>0_</i><i>?</i></div>
+                    <svg class="perception-line" data-perception-line viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50 50 L78 50"/></svg>
+                    <article class="perception-entity" data-perception-entity hidden></article>
+                    <div class="perception-error" data-perception-error hidden></div>
+                </div>
+                <button class="perception-map-return" type="button" data-perception-return>返回地圖</button>
+                <div class="perception-debug" data-perception-debug hidden aria-label="感知模式測試控制器"></div>
+            </section>
+        </main>
+        <div id="site-footer"></div>
+        <script src="../assets/js/data.js?v=20260910-sponsors-perception-split-v1"></script>
+        <script src="../assets/js/components.js?v=20260910-sponsors-perception-split-v1"></script>
+        <script src="../assets/js/app.js?v=20260908-modal-scroll-v3"></script>
+        <script src="../assets/js/perception-targets.js?v=20260907-perception-v1"></script>
+        <script src="../assets/js/perception.js?v=20260907-perception-v1"></script>
+    </body>
+</html>

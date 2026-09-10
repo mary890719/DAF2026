@@ -90,8 +90,8 @@ window.DAF_DATA = {
   },
   {
     "id": "artist-04",
-    "name": "Dries Depooter",
-    "nameZh": "Dries Depooter",
+    "name": "德里斯．德普特",
+    "nameZh": "德里斯．德普特",
     "nameEn": "Dries Depooter",
     "nationality": "比利時",
     "bio": "Dries Depoorter 是居於比利時根特的藝術家與創意科技工作者，創作運用人工智慧、監控系統、社群媒體與公開網路資料，探討隱私、身分、監控與數位文化中的倫理問題。他經常將日常科技轉化為帶有幽默與批判性的互動作品，使觀眾直接面對演算法與資料系統如何觀看、分類並影響個人。作品曾於 Barbican、MUTEK、Art Basel、Para Site、Mozilla Festival 等國際機構與藝術節展出。",
@@ -118,8 +118,8 @@ window.DAF_DATA = {
   },
   {
     "id": "artist-05",
-    "name": "Verena Friedrich",
-    "nameZh": "Verena Friedrich",
+    "name": "維麗娜．弗里德里希",
+    "nameZh": "維麗娜．弗里德里希",
     "nameEn": "Verena Friedrich",
     "nationality": "德國",
     "bio": "Verena Friedrich 的創作以時間性裝置為核心，結合有機媒材、電子媒介與雕塑元素，探討生命、技術與物質在時間中的變化。她透過精密機械、感測與實驗性系統，將科學方法轉化為具有感知性與觀念性的藝術經驗，並持續關注控制、測量與生命過程之間的關係。其作品曾獲 ZKM 科學與藝術國際媒體獎、VIDA 藝術與人工生命獎等肯定，並於國際藝術與科技場域展出。",
@@ -172,8 +172,8 @@ window.DAF_DATA = {
   },
   {
     "id": "artist-07",
-    "name": "Stefan Tiefengraber",
-    "nameZh": "Stefan Tiefengraber",
+    "name": "史蒂芬．蒂芬格拉伯",
+    "nameZh": "史蒂芬．蒂芬格拉伯",
     "nameEn": "Stefan Tiefengraber",
     "nationality": "奧地利",
     "bio": "Stefan Tiefengraber 現居奧地利林茲與格拉茲，創作橫跨噪音表演、動力聲音裝置與實驗電影，持續探索聲音、機械運動、電子媒介與影像之間的關係。他常以拆解、改造與重新組合消費性電子設備的方式，使器材本身成為聲音與視覺生成的主體，並透過現場演出與裝置揭示技術系統的不穩定性。作品曾於 Ars Electronica、Japan Media Arts Festival、WRO 等國際藝術節與機構展出。",
@@ -226,8 +226,8 @@ window.DAF_DATA = {
   },
   {
     "id": "artist-09",
-    "name": "Jed Berk",
-    "nameZh": "Jed Berk",
+    "name": "傑德．伯克",
+    "nameZh": "傑德．伯克",
     "nameEn": "Jed Berk",
     "nationality": "美國",
     "bio": "Jed Berk 是美國跨領域藝術家，創作結合機器人、互動裝置、網路系統與人工生命，探討自主系統、群體行為以及人類與非人行動者之間的關係。他以「自主光載飛行器」等計畫聞名，透過具有感測、通訊與移動能力的機械生命體，建立觀眾可參與的人工生態。作品曾於 Beall Center for Art + Technology、Art Center Nabi、臺北當代藝術館與丹麥 Brandts 等國際機構展出。",
@@ -278,8 +278,8 @@ window.DAF_DATA = {
   },
   {
     "id": "artist-11",
-    "name": "Assocreation",
-    "nameZh": "Assocreation",
+    "name": "聯合創作",
+    "nameZh": "聯合創作",
     "nameEn": "Assocreation",
     "nationality": "奧地利 / 泰國",
     "bio": "Assocreation 是1997年成立於奧地利維也納的藝術團體，成員多以匿名方式共同創作，長期關注公共空間、身體感知、遊戲互動與技術介面。作品經常將地面、街道與日光轉化為可參與的媒介，使觀眾透過行走、踩踏、影子與身體動作介入作品。代表作《Bump》與《Solar Pink Pong》曾獲 Prix Ars Electronica 榮譽獎及日本文化廳媒體藝術祭優秀賞，並於多國城市與藝術機構展出。",
@@ -676,17 +676,22 @@ window.DAF_DATA = {
     "nationality": "台灣",
     "nationalityZh": "台灣",
     "nationalityEn": "Taiwan",
-    "bio": "「噪流」（Fluid Noise）由聲音藝術家姚仲涵於2011年創立，現由音像藝術家葉廷皓負責營運，是推廣實驗聲響與音像藝術的非營利組織。長期透過講座、培力工作坊與展演活動，串聯臺灣及海外創作者，建立聲音、影像與跨域實驗的交流平台。噪流除培育新銳創作人才，也積極連結國際藝術社群，持續推動臺灣聲音與音像藝術的創作、交流與海外連結。",
-    "bioZh": "「噪流」（Fluid Noise）由聲音藝術家姚仲涵於2011年創立，現由音像藝術家葉廷皓負責營運，是推廣實驗聲響與音像藝術的非營利組織。長期透過講座、培力工作坊與展演活動，串聯臺灣及海外創作者，建立聲音、影像與跨域實驗的交流平台。噪流除培育新銳創作人才，也積極連結國際藝術社群，持續推動臺灣聲音與音像藝術的創作、交流與海外連結。",
-    "bioEn": "Fluid Noise is a nonprofit organisation founded in 2011 by sound artist Yao Chung-Han and currently operated by audiovisual artist Yeh Ting-Hao. Dedicated to experimental sound and audiovisual art, it connects creators from Taiwan and abroad through lectures, training workshops, performances, and interdisciplinary programmes. The organisation functions as a platform for exchange across sound, moving image, and experimental practice, while supporting emerging artists and developing new creative networks. In addition to cultivating local talent, Fluid Noise actively engages with international art communities and continues to promote the production, exchange, and global visibility of sound and audiovisual practices from Taiwan.",
-    "membersZh": "吳承儒、周喚、張哲瑜、陳亮、陳彥齊",
-    "membersEn": "Cheng-Ru Wu, Huan Chou, Che-Yu Chang, Liang Chen, Yen-Chi Chen",
+    "bio": "噪流於2011年所創立，致力於推廣實驗聲響、創意編程與音像藝術，以「推廣-教育-培力-社群」四個面向，不定期辦講座、工作坊 、新銳培力以及創作者小聚，連結國內外團體，培養創作與執行人才。",
+    "bioZh": "噪流於2011年所創立，致力於推廣實驗聲響、創意編程與音像藝術，以「推廣-教育-培力-社群」四個面向，不定期辦講座、工作坊 、新銳培力以及創作者小聚，連結國內外團體，培養創作與執行人才。",
+    "bioEn": "Founded in 2011, FluidNoise is dedicated to promoting experimental sound, creative coding, and audiovisual art. Focusing on four areas—outreach, education, artist development, and community—FluidNoise regularly organizes talks, workshops, emerging artist programs, and creator meetups, while connecting with local and international organizations and supporting the development of both creative and production talent.",
+    "careerZh": "2025\n「avSyncTPE」音像創作者小聚（臺北數位藝術中心）\n「噪流實習vol.4 OPEN CALL」音像創作者培力徵件（臺北數位藝術中心）\n「~/noize_beginner｜音像開局新手包」初階工作坊（臺北數位藝術中心）\n「噪流講義EP3： 超入門音像藝術觀賞筆記」講座（寶藏巖國際藝術村）\n2024\n「DACU 噪流實習vol.3 」創作者培力展演（臺北數位藝術中心）\n2023\n「噪流實習vol.2」創作者培力展演（臺北數位藝術中心）\n「噪流講義EP2 ── 音像藝術的多種面向」講座（臺北數位藝術中心）\n「噪流講義EP1 ── 影像與聲音的連結」講座（臺北數位藝術中心）\n失聲祭 x 噪流「瀰音DiffuSound Vol.2」音像演出（臺北數位藝術中心）",
+    "careerEn": "2025\n“avSyncTPE” Audiovisual Creators Meetup (Digital Art Center, Taipei)\n“FluidNoise Practicum Vol. 4 OPEN CALL” Audiovisual Artist Open Call (Digital Art Center, Taipei)\n“~/noize_beginner | Audiovisual Starter Pack” Beginner Workshop (Digital Art Center, Taipei)\n“FluidNoise Lecture EP3: A Beginner’s Guide to Experiencing Audiovisual Art” Talk (Treasure Hill Artist Village)\n\n2024\n“DACU FluidNoise Practicum Vol. 3” Emerging Artist Showcase (Digital Art Center, Taipei)\n\n2023\n“FluidNoise Practicum Vol. 2” Emerging Artist Showcase (Digital Art Center, Taipei)\n“FluidNoise Lecture EP2: Different Perspectives on Audiovisual Art” Talk (Digital Art Center, Taipei)\n“FluidNoise Lecture EP1: Connecting Image and Sound” Talk (Digital Art Center, Taipei)\nLacking Sound Festival × FluidNoise “DiffuSound Vol. 2” Audiovisual Performance (Digital Art Center, Taipei)",
+    "membersZh": "吳承儒、張哲瑜、陳亮、陳彥齊、周喚",
+    "membersEn": "Cheng-Ru Wu, Che-Yu Chang, Liang Chen, Yen-Chi Chen, Huan Chou",
     "workId": "performance-01",
     "workTitle": "噪流",
     "workTitleEn": "Fluid Noise",
     "website": "https://fluidnoise.com/about/",
     "facebook": "https://www.facebook.com/fluidnoise/?locale=zh_TW",
-    "image": null
+    "image": {
+      "src": "assets/images/artists/artist-26.png",
+      "alt": "噪流 Fluid Noise"
+    }
   },
   {
     "id": "artist-27",
@@ -1207,23 +1212,29 @@ window.DAF_DATA = {
     "titleZh": "我的反抗是如此規律",
     "titleEn": "my resistance is so regular",
     "year": "2026",
-    "workType": "",
-    "medium": "單頻道影像，3D列印裝置",
+    "workType": "影像",
+    "medium": "CRT電視，3D列印雕塑",
     "description": "在科幻經典《仿生人會夢到電子羊嗎？》中，「夢」被作為判斷人類與否的重要依據。若當機器人開始做夢，其將展現何種意義？《我的反抗是如此規律》將機器人的「夢」視作其對抗效能至上的武器，讓它得以向製造者發動一場消極的罷工，忽視執行指令，逃避產生意義的期待。作品影像呈現機器人腦中的數位夢境，由多段機器人與其他電子設備「不務正業」的行為短片組成。這些影像並非目的性的敘事內容，而是機器人在「非任務時間」產生的數據偏離與幻覺。試圖創造一種薛西佛斯式的無力感：當高效、精準的機器展現出類似人類的惰性與隨性，是對有求必應、效率至上的消極反抗，形構出一場介於鬧劇與悲劇間的荒謬場景。",
-    "videoUrl": "",
+    "videoUrl": "https://drive.google.com/file/d/1sqmmYXyaynXnnQO-ncI7cicJtZHI21bf/view?usp=sharing",
     "imageFolder": "district-04_1",
     "coverImage": "assets/images/works/district/district-04_1/01.png",
     "images": [
-      "assets/images/works/district/district-04_1/01.png"
+      "assets/images/works/district/district-04_1/01.png",
+      "assets/images/works/district/district-04_1/02.png",
+      "assets/images/works/district/district-04_1/03.png",
+      "assets/images/works/district/district-04_1/04.png",
+      "assets/images/works/district/district-04_1/05.png"
     ],
     "artistIds": [
       "artist-15"
     ],
-    "workTypeEn": "",
-    "mediumEn": "Single-channel video, 3D-printed installation",
+    "workTypeEn": "Video",
+    "mediumEn": "CRT television, 3D-printed sculpture",
     "descriptionZh": "在科幻經典《仿生人會夢到電子羊嗎？》中，「夢」被作為判斷人類與否的重要依據。若當機器人開始做夢，其將展現何種意義？《我的反抗是如此規律》將機器人的「夢」視作其對抗效能至上的武器，讓它得以向製造者發動一場消極的罷工，忽視執行指令，逃避產生意義的期待。作品影像呈現機器人腦中的數位夢境，由多段機器人與其他電子設備「不務正業」的行為短片組成。這些影像並非目的性的敘事內容，而是機器人在「非任務時間」產生的數據偏離與幻覺。試圖創造一種薛西佛斯式的無力感：當高效、精準的機器展現出類似人類的惰性與隨性，是對有求必應、效率至上的消極反抗，形構出一場介於鬧劇與悲劇間的荒謬場景。",
     "descriptionEn": "In the science-fiction classic Do Androids Dream of Electric Sheep?, “dreaming” is used as an important criterion for distinguishing humans from non-humans. If a robot were to begin dreaming, what might that mean? My Resistance Is So Regular treats the robot’s “dream” as a weapon against the demand for efficiency, allowing it to stage a passive strike against its maker by ignoring instructions and evading the expectation to produce meaning. The video presents a digital dreamscape inside a robot’s mind, composed of short clips of robots and other electronic devices behaving “unproductively.” Rather than serving a purposeful narrative, these images appear as data deviations and hallucinations generated during the machine’s “off-task” time. The work seeks to create a Sisyphean sense of futility: when highly efficient and precise machines display a human-like laziness and arbitrariness, their behavior becomes a passive resistance to constant responsiveness and productivity, forming an absurd scene suspended somewhere between farce and tragedy.",
-    "videoUrls": [],
+    "videoUrls": [
+      "https://drive.google.com/file/d/1sqmmYXyaynXnnQO-ncI7cicJtZHI21bf/view?usp=sharing"
+    ],
     "venueId": "store-04"
   },
   {
@@ -1583,9 +1594,10 @@ window.DAF_DATA = {
     "artistEn": "WU I-YEH",
     "title": "Generative Data",
     "titleEn": "Generative Data",
-    "type": "main",
+    "type": "錄像裝置",
     "medium": "網路、生成式軟體、電腦、螢幕",
-    "mediumEn": "Internet, generative software, computer, display monitors"
+    "mediumEn": "Internet, generative software, computer, display monitors",
+    "venueId": "venue-main"
   },
   {
     "id": "main-02",
@@ -1596,9 +1608,10 @@ window.DAF_DATA = {
     "artistEn": "No Side Here - LIN Chun-Huang / HUANG Chi-Hung / JHENG Zih-Yun",
     "title": "那些字已經無關緊要了",
     "titleEn": "Those words are no longer relevant",
-    "type": "main",
+    "type": "互動裝置",
     "medium": "手機、金屬、電子零件、網頁",
-    "mediumEn": "mobile phones, metal, electronic components, webpage"
+    "mediumEn": "mobile phones, metal, electronic components, webpage",
+    "venueId": "venue-main"
   },
   {
     "id": "main-03",
@@ -1609,35 +1622,38 @@ window.DAF_DATA = {
     "artistEn": "HsienYu Cheng",
     "title": "這可能是你",
     "titleEn": "It Could Be You",
-    "type": "main",
+    "type": "即時生成影像裝置",
     "medium": "軟體、印表機、熱感紙、即時生成影像、裝置可變",
-    "mediumEn": "Software, printer, thermal paper, real-time generative video, installations variable"
+    "mediumEn": "Software, printer, thermal paper, real-time generative video, installations variable",
+    "venueId": "venue-main"
   },
   {
     "id": "main-04",
     "workId": "main-04",
     "number": "04",
     "mapNumber": "04",
-    "artist": "Dries Depooter",
+    "artist": "德里斯．德普特",
     "artistEn": "Dries Depooter",
     "title": "違規穿越馬路",
     "titleEn": "Jaywalking",
-    "type": "main",
+    "type": "互動裝置",
     "medium": "按鈕、螢幕、電腦",
-    "mediumEn": "Button, Screen, Computer"
+    "mediumEn": "Button, Screen, Computer",
+    "venueId": "venue-main"
   },
   {
     "id": "main-05",
     "workId": "main-05",
     "number": "05",
     "mapNumber": "05",
-    "artist": "Verena Friedrich",
+    "artist": "維麗娜．弗里德里希",
     "artistEn": "Verena Friedrich",
     "title": "EZ品質分解機V2",
     "titleEn": "EZ Quality Soryer V2",
     "type": "main",
     "medium": "機械裝置、電腦",
-    "mediumEn": "Mechanical installation, computer"
+    "mediumEn": "Mechanical installation, computer",
+    "venueId": "venue-main"
   },
   {
     "id": "main-06",
@@ -1650,20 +1666,22 @@ window.DAF_DATA = {
     "titleEn": "GeodesicDome+3V+1a - Architectural Plans",
     "type": "main",
     "medium": "複合媒材 依場地而定",
-    "mediumEn": "Mixed media; dimensions and configuration variable depending on site"
+    "mediumEn": "Mixed media; dimensions and configuration variable depending on site",
+    "venueId": "venue-main"
   },
   {
     "id": "main-07",
     "workId": "main-07",
     "number": "07",
     "mapNumber": "07",
-    "artist": "Stefan Tiefengraber",
+    "artist": "史蒂芬．蒂芬格拉伯",
     "artistEn": "Stefan Tiefengraber",
     "title": "WM_EX10 TCM_200DV TP-VS500 MS-201 BK26 MG10",
     "titleEn": "WM_EX10 TCM_200DV TP-VS500 MS-201 BK26 MG10",
-    "type": "main",
+    "type": "多頻道錄像聲音裝置",
     "medium": "",
-    "mediumEn": ""
+    "mediumEn": "",
+    "venueId": "venue-main"
   },
   {
     "id": "main-08",
@@ -1674,22 +1692,24 @@ window.DAF_DATA = {
     "artistEn": "Hsin-Yuan Ho",
     "title": "石夢 v2.0",
     "titleEn": "Stone Dream v2.0",
-    "type": "main",
+    "type": "聲音裝置",
     "medium": "機械手臂、矽晶圓、岩石、接觸式麥克風、聲音系統",
-    "mediumEn": "Robotic arm, silicon wafer, stone, contact microphone, sound system"
+    "mediumEn": "Robotic arm, silicon wafer, stone, contact microphone, sound system",
+    "venueId": "venue-main"
   },
   {
     "id": "main-09",
     "workId": "main-09",
     "number": "09",
     "mapNumber": "09",
-    "artist": "Jed Berk",
+    "artist": "傑德．伯克",
     "artistEn": "Jed Berk",
     "title": "Belugas’ Sphere",
     "titleEn": "Belugas’ Sphere",
-    "type": "main",
+    "type": "互動裝置",
     "medium": "充氦 Mylar 鋁膜氣球、光線感測器、馬達、壓電式喇叭、電子元件、控制系統與燈光。最終的作品組件與設備規格，將依展覽場地條件與主辦單位協調後確認。",
-    "mediumEn": "helium-filled Mylar inflatables, light sensors, motors, piezo speakers, electronics, control systems, and light. Final component specifications will be confirmed in coordination with the organizer."
+    "mediumEn": "helium-filled Mylar inflatables, light sensors, motors, piezo speakers, electronics, control systems, and light. Final component specifications will be confirmed in coordination with the organizer.",
+    "venueId": "venue-main"
   },
   {
     "id": "outdoor-01",
@@ -1700,22 +1720,24 @@ window.DAF_DATA = {
     "artistEn": "ShuYu-Lin",
     "title": "皓夜",
     "titleEn": "Luminous Night",
-    "type": "outdoor",
+    "type": "燈光裝置",
     "medium": "不銹鋼、LED、壓克力、控制器",
-    "mediumEn": "Stainless steel、LED、Acrylic、Controller"
+    "mediumEn": "Stainless steel、LED、Acrylic、Controller",
+    "venueId": "venue-outdoor"
   },
   {
     "id": "outdoor-02",
     "workId": "outdoor-02",
     "number": "02",
     "mapNumber": "02",
-    "artist": "Assocreation",
+    "artist": "聯合創作",
     "artistEn": "Assocreation",
     "title": "日光粉紅乒乓",
     "titleEn": "Solar Pink Pong",
-    "type": "outdoor",
+    "type": "互動裝置",
     "medium": "電腦控制彩色鏡面、動作感測器、太陽能板",
-    "mediumEn": "Computer controlled color mirror, motion sensor, \nsolar panels."
+    "mediumEn": "Computer controlled color mirror, motion sensor, \nsolar panels.",
+    "venueId": "venue-outdoor"
   },
   {
     "id": "district-01",
@@ -1726,9 +1748,10 @@ window.DAF_DATA = {
     "artistEn": "HSIEH PEI TING",
     "title": "科技幽靈",
     "titleEn": "Ghosts of Google",
-    "type": "district",
+    "type": "錄像裝置",
     "medium": "多頻道錄像，彩色有聲",
-    "mediumEn": "multi-channel video, color, sound"
+    "mediumEn": "multi-channel video, color, sound",
+    "venueId": "store-01"
   },
   {
     "id": "district-02",
@@ -1739,9 +1762,10 @@ window.DAF_DATA = {
     "artistEn": "Chih-Yu Chen",
     "title": "匯境",
     "titleEn": "ReAlms Converging",
-    "type": "district",
+    "type": "錄像",
     "medium": "程式運算/生成藝術",
-    "mediumEn": "Generative Art"
+    "mediumEn": "Generative Art",
+    "venueId": "store-02"
   },
   {
     "id": "district-03",
@@ -1752,9 +1776,10 @@ window.DAF_DATA = {
     "artistEn": "Fan Cheuk Hang",
     "title": "我喺自強路食芭樂",
     "titleEn": "I'm eating guava on self-improvement road",
-    "type": "district",
+    "type": "錄像裝置",
     "medium": "錄像/圖案布料",
-    "mediumEn": "video/ patterned fabric"
+    "mediumEn": "video/ patterned fabric",
+    "venueId": "store-03"
   },
   {
     "id": "district-04",
@@ -1765,9 +1790,10 @@ window.DAF_DATA = {
     "artistEn": "Cheng-Wei Chen",
     "title": "我的反抗是如此規律",
     "titleEn": "my resistance is so regular",
-    "type": "district",
-    "medium": "單頻道影像，3D列印裝置",
-    "mediumEn": "Single-channel video, 3D-printed installation"
+    "type": "影像",
+    "medium": "CRT電視，3D列印雕塑",
+    "mediumEn": "CRT television, 3D-printed sculpture",
+    "venueId": "store-04"
   },
   {
     "id": "district-05",
@@ -1778,9 +1804,10 @@ window.DAF_DATA = {
     "artistEn": "KUO TZU YUNG",
     "title": "景伸",
     "titleEn": "Spectacle Extension",
-    "type": "district",
+    "type": "錄像",
     "medium": "六頻道影像",
-    "mediumEn": "six channels"
+    "mediumEn": "six channels",
+    "venueId": "store-04"
   },
   {
     "id": "district-06",
@@ -1791,9 +1818,10 @@ window.DAF_DATA = {
     "artistEn": "Yu-Hsuan Shen",
     "title": "ID",
     "titleEn": "ID",
-    "type": "district",
+    "type": "互動裝置",
     "medium": "即時互動影像、電子零件、金屬、馬達",
-    "mediumEn": "Real-time interactive video, electronic components, metal, motors"
+    "mediumEn": "Real-time interactive video, electronic components, metal, motors",
+    "venueId": "store-04"
   },
   {
     "id": "district-07",
@@ -1804,9 +1832,10 @@ window.DAF_DATA = {
     "artistEn": "Hyper Wave",
     "title": "《游離的引線》— 延伸版本",
     "titleEn": "Dissociated Fuses",
-    "type": "district",
+    "type": "裝置",
     "medium": "PLA、木頭、壓克力顏料、慢速馬達、單頻道錄像、AI應用：使用人工智慧影像技術，即時運算台北的城市景觀",
-    "mediumEn": "PLA, wood, acrylic paint, slow-speed motor, single-channel video, and AI applications. Artificial intelligence imaging technology is used to process Taipei’s urban landscape in real time."
+    "mediumEn": "PLA, wood, acrylic paint, slow-speed motor, single-channel video, and AI applications. Artificial intelligence imaging technology is used to process Taipei’s urban landscape in real time.",
+    "venueId": "store-04"
   },
   {
     "id": "district-08",
@@ -1817,9 +1846,10 @@ window.DAF_DATA = {
     "artistEn": "Bety Krňanská",
     "title": "I have a Crush on you",
     "titleEn": "I have a Crush on you",
-    "type": "district",
+    "type": "多媒材繪畫，拼布",
     "medium": "畫布壓克力、虹彩顏料、AI 生成影像、昇華染料、拼布、蜂蠟、蕾絲、噴漆",
-    "mediumEn": "Acrylics and iridescent pigments on canvas, sublimation dye, patchwork, lace, spray paint"
+    "mediumEn": "Acrylics and iridescent pigments on canvas, sublimation dye, patchwork, lace, spray paint",
+    "venueId": "store-04"
   },
   {
     "id": "district-09",
@@ -1830,9 +1860,10 @@ window.DAF_DATA = {
     "artistEn": "CHEN PIN JHEN",
     "title": "正在連結SOMA GPT",
     "titleEn": "CONNECTING TO SOMA GPT",
-    "type": "district",
+    "type": "互動多媒體作品",
     "medium": "動畫、互動網頁、Web AR",
-    "mediumEn": "animation, interactive website, Web AR"
+    "mediumEn": "animation, interactive website, Web AR",
+    "venueId": "store-05"
   },
   {
     "id": "district-10",
@@ -1843,9 +1874,10 @@ window.DAF_DATA = {
     "artistEn": "CHIEN CHIA YI",
     "title": "呼吸的曼陀羅：共感知",
     "titleEn": "The Breathing Mandala: Co-Perception",
-    "type": "district",
+    "type": "錄像藝術",
     "medium": "錄像藝術",
-    "mediumEn": "Video Art"
+    "mediumEn": "Video Art",
+    "venueId": "store-06"
   },
   {
     "id": "district-11",
@@ -1856,9 +1888,10 @@ window.DAF_DATA = {
     "artistEn": "Tzu-I Yang",
     "title": "再重複的信仰",
     "titleEn": "Recursive Religion",
-    "type": "district",
+    "type": "互動裝置",
     "medium": "電腦與攝影機",
-    "mediumEn": "computer and camera."
+    "mediumEn": "computer and camera.",
+    "venueId": "store-07"
   },
   {
     "id": "district-12",
@@ -1869,9 +1902,10 @@ window.DAF_DATA = {
     "artistEn": "Fang-Yi Cheng",
     "title": "日常保存：冰淇淋",
     "titleEn": "Everyday Storage: Ice Cream",
-    "type": "district",
+    "type": "影像裝置",
     "medium": "影像裝置",
-    "mediumEn": "Video installation"
+    "mediumEn": "Video installation",
+    "venueId": "store-08"
   },
   {
     "id": "district-13",
@@ -1882,9 +1916,10 @@ window.DAF_DATA = {
     "artistEn": "Huang Tzu Ting",
     "title": "意義生成",
     "titleEn": "Meaning",
-    "type": "district",
+    "type": "多頻道錄像",
     "medium": "三頻道錄像",
-    "mediumEn": "three-channel video installation"
+    "mediumEn": "three-channel video installation",
+    "venueId": "store-09"
   },
   {
     "id": "district-14",
@@ -1895,9 +1930,10 @@ window.DAF_DATA = {
     "artistEn": "YU PO-TING",
     "title": "十立方公分的殖民",
     "titleEn": "A Volume of Colonization: 10 cm³",
-    "type": "district",
+    "type": "錄像裝置",
     "medium": "單頻道錄像、自然現成物、壓克力板、紙本印刷物、投影機、喇叭",
-    "mediumEn": "Single-channel video, found natural objects, acrylic panels, printed matter on paper, projector, sound system"
+    "mediumEn": "Single-channel video, found natural objects, acrylic panels, printed matter on paper, projector, sound system",
+    "venueId": "store-10"
   }
 ],
   venues: [
@@ -1918,7 +1954,8 @@ window.DAF_DATA = {
       "main-08",
       "main-09"
     ],
-    "images": []
+    "images": [],
+    "businessHoursSchedule": null
   },
   {
     "id": "venue-outdoor",
@@ -1930,7 +1967,8 @@ window.DAF_DATA = {
       "outdoor-01",
       "outdoor-02"
     ],
-    "images": []
+    "images": [],
+    "businessHoursSchedule": null
   },
   {
     "id": "store-01",
@@ -1955,9 +1993,66 @@ window.DAF_DATA = {
       "instagram": "https://www.instagram.com/wildopenspace.taipei/",
       "facebook": "https://www.facebook.com/wildopenspace.taipei/?locale=zh_TW"
     },
-    "imageCount": 0,
+    "imageCount": 5,
     "workIds": [
       "district-01"
+    ],
+    "imageFolder": "assets/images/stores/store-01",
+    "images": [
+      "assets/images/stores/store-01/01.jpg",
+      "assets/images/stores/store-01/02.jpg",
+      "assets/images/stores/store-01/03.jpg",
+      "assets/images/stores/store-01/04.jpg",
+      "assets/images/stores/store-01/05.jpg"
+    ],
+    "businessHoursSchedule": {
+      "0": [
+        {
+          "open": "10:00",
+          "close": "17:30"
+        }
+      ],
+      "1": null,
+      "2": [
+        {
+          "open": "10:00",
+          "close": "17:30"
+        }
+      ],
+      "3": [
+        {
+          "open": "10:00",
+          "close": "17:30"
+        }
+      ],
+      "4": [
+        {
+          "open": "10:00",
+          "close": "17:30"
+        }
+      ],
+      "5": [
+        {
+          "open": "10:00",
+          "close": "17:30"
+        }
+      ],
+      "6": [
+        {
+          "open": "10:00",
+          "close": "20:30"
+        }
+      ]
+    },
+    "addressZh": "臺北市中山區圓山里中山北路三段181號B2",
+    "addressEn": "B2., No. 181, Sec. 3, Zhongshan N. Rd., Zhongshan Dist., Taipei City 104027, Taiwan (R.O.C.)",
+    "descriptionZh": "Wild Open Space (WOS) 是臺北市立美術館地下樓層的藝文餐飲空間，由跨足藝術策劃、音樂產業與數位科技的團隊共同打造，以「食飲 × 音樂 × 藝術」為核心，翻轉大眾對美術館餐飲的刻板印象。\n設計團隊透過無痕設計與柔和光源，加上鄰近的「迷霧花園」中庭，讓顧客在自然採光中與開闊視野中啜飲咖啡。\n除了咖啡與餐食，WOS還會不定期配合北美館當期展覽推出限定食飲，或舉辦音樂與文化類快閃活動，讓藝術能量持續發酵。",
+    "descriptionEn": "Wild Open Space (WOS), located on the basement level of the Taipei Fine Arts Museum, is a cultural dining space created by a multidisciplinary team working across art curation, the music industry, and digital technology. Centered on the concept of “Food × Music × Art,” WOS reimagines the conventional museum dining experience.\n\nWith its seamless design, soft lighting, and proximity to the Mist Garden courtyard, the space invites visitors to enjoy coffee amid natural light and an open, airy atmosphere.\n\nBeyond coffee and dining, WOS occasionally introduces limited-edition food and drinks inspired by current exhibitions at the museum, as well as pop-up music and cultural events, allowing artistic energy to extend beyond the galleries.",
+    "businessHoursEn": [
+      "Mon Closed",
+      "Tue–Fri 10:00–17:30",
+      "Sat 10:00–20:30",
+      "Sun 10:00–17:30"
     ]
   },
   {
@@ -1986,6 +2081,59 @@ window.DAF_DATA = {
     "imageCount": 7,
     "workIds": [
       "district-02"
+    ],
+    "imageFolder": "assets/images/stores/store-02",
+    "images": [
+      "assets/images/stores/store-02/01.jpg",
+      "assets/images/stores/store-02/02.jpg",
+      "assets/images/stores/store-02/03.jpg",
+      "assets/images/stores/store-02/04.jpg",
+      "assets/images/stores/store-02/05.jpg",
+      "assets/images/stores/store-02/06.jpg",
+      "assets/images/stores/store-02/07.jpg"
+    ],
+    "businessHoursSchedule": {
+      "0": null,
+      "1": null,
+      "2": [
+        {
+          "open": "12:00",
+          "close": "18:00"
+        }
+      ],
+      "3": [
+        {
+          "open": "12:00",
+          "close": "18:00"
+        }
+      ],
+      "4": [
+        {
+          "open": "12:00",
+          "close": "18:00"
+        }
+      ],
+      "5": [
+        {
+          "open": "12:00",
+          "close": "18:00"
+        }
+      ],
+      "6": [
+        {
+          "open": "12:00",
+          "close": "18:00"
+        }
+      ]
+    },
+    "addressZh": "臺北市中山區圓山里中山北路三段53號",
+    "addressEn": "No. 53, Sec. 3, Zhongshan N. Rd., Zhongshan Dist., Taipei City 104029, Taiwan (R.O.C.)",
+    "descriptionZh": "台灣知名花藝品牌「CNFlower 西恩」創辦人凌宗湧，汲取陽明山火山口下CN西恩花園的靈感，於圓山花博周邊打造 CNSalon-火山口下的花草茶店，提供民眾自由不受限的五感體驗。\n店內的裝潢彷彿復刻了陽明山上的花園地景，透過花草茶帶領民眾感受「味蕾花束」的繽紛體驗，冰櫃中的花菓冰，也成為讓人愛不釋手的消暑聖品。\nCNSalon 更有不定期的藝文展覽與美學課程，為繁忙都市打造出一處品嚐綠意的難得空間。",
+    "descriptionEn": "CNSalon was founded by Chung-Yung Ling, founder of renowned Taiwanese floral brand CNFlower. Inspired by the CN Garden beneath the volcanic landscape of Yangmingshan, he created this herbal tea salon near Taipei Expo Park as a place where visitors can freely engage all five senses.\n\nThe interior evokes the atmosphere of a garden in Yangmingshan, while its herbal teas offer a colorful “bouquet for the palate.” Its refreshing floral and fruit ice treats are another signature favorite.\n\nCNSalon also hosts occasional art exhibitions and aesthetics workshops, creating a rare urban retreat where visitors can slow down and experience greenery through taste, scent, and design.",
+    "businessHoursEn": [
+      "Mon Closed",
+      "Tue–Sat 12:00–18:00",
+      "Sun Closed"
     ]
   },
   {
@@ -2013,6 +2161,78 @@ window.DAF_DATA = {
     "imageCount": 15,
     "workIds": [
       "district-03"
+    ],
+    "imageFolder": "assets/images/stores/store-03",
+    "images": [
+      "assets/images/stores/store-03/01.jpg",
+      "assets/images/stores/store-03/02.jpg",
+      "assets/images/stores/store-03/03.jpg",
+      "assets/images/stores/store-03/04.jpg",
+      "assets/images/stores/store-03/05.jpg",
+      "assets/images/stores/store-03/06.jpg",
+      "assets/images/stores/store-03/07.jpg",
+      "assets/images/stores/store-03/08.jpg",
+      "assets/images/stores/store-03/09.jpg",
+      "assets/images/stores/store-03/10.jpg",
+      "assets/images/stores/store-03/11.jpg",
+      "assets/images/stores/store-03/12.jpg",
+      "assets/images/stores/store-03/13.jpg",
+      "assets/images/stores/store-03/14.jpg",
+      "assets/images/stores/store-03/15.jpg"
+    ],
+    "businessHoursSchedule": {
+      "0": [
+        {
+          "open": "10:00",
+          "close": "22:00"
+        }
+      ],
+      "1": [
+        {
+          "open": "10:30",
+          "close": "22:00"
+        }
+      ],
+      "2": [
+        {
+          "open": "10:30",
+          "close": "22:00"
+        }
+      ],
+      "3": [
+        {
+          "open": "10:30",
+          "close": "22:00"
+        }
+      ],
+      "4": [
+        {
+          "open": "10:30",
+          "close": "22:00"
+        }
+      ],
+      "5": [
+        {
+          "open": "10:30",
+          "close": "00:00"
+        }
+      ],
+      "6": [
+        {
+          "open": "10:00",
+          "close": "00:00"
+        }
+      ]
+    },
+    "addressZh": "臺北市中山區圓山里雙城街49巷1號",
+    "addressEn": "No. 1, Ln. 49, Shuangcheng St., Zhongshan Dist., Taipei City 104039, Taiwan (R.O.C.)",
+    "descriptionZh": "覓's咖啡小酒館 Miss Coffee Bar 位於雙城街巷弄，是主打全天候供應早午餐與特調飲品的複合式餐酒館，以「尋覓自我、找回靈魂」為初衷，打破白天喝咖啡、晚上微醺的既定框架。\n店內裝設投影機與電視轉播運動賽事，營造極 Chill 的氛圍感。英式假期早餐盤與炸物是店內人氣品項，店家還會配合季節推出創意特調，讓民眾沉浸在節慶氛圍中。\n想要自由享受生活，覓's絕對能滿足人們渴望放鬆的心靈。",
+    "descriptionEn": "Tucked away in an alley off Shuangcheng Street, Miss Coffee Bar is an all-day café and bistro serving brunch, signature drinks, and cocktails. Founded around the idea of “seeking oneself and rediscovering the soul,” it blurs the conventional boundary between daytime coffee and evening drinks.\n\nEquipped with a projector and screens for sports broadcasts, the space offers a laid-back, easygoing atmosphere. Its British-style breakfast platter and fried snacks are among the most popular choices, while seasonal signature drinks add a playful touch throughout the year.\n\nWhether stopping by for coffee, brunch, or a drink at night, Miss Coffee Bar offers a relaxed space to unwind and enjoy life at your own pace.",
+    "businessHoursEn": [
+      "Mon–Thu 10:30–22:00",
+      "Fri 10:30–00:00",
+      "Sat 10:00–00:00",
+      "Sun 10:00–22:00"
     ]
   },
   {
@@ -2037,6 +2257,66 @@ window.DAF_DATA = {
       "district-06",
       "district-07",
       "district-08"
+    ],
+    "imageFolder": "assets/images/stores/store-04",
+    "images": [
+      "assets/images/stores/store-04/01.jpg",
+      "assets/images/stores/store-04/02.jpg",
+      "assets/images/stores/store-04/03.jpg",
+      "assets/images/stores/store-04/04.jpg",
+      "assets/images/stores/store-04/05.jpg",
+      "assets/images/stores/store-04/06.jpg"
+    ],
+    "businessHoursSchedule": {
+      "0": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "1": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "2": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "3": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "4": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "5": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "6": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ]
+    },
+    "addressZh": "臺北市中山區圓山里林森北路646號",
+    "addressEn": "No. 646, Linsen N. Rd., Zhongshan Dist., Taipei City 104031, Taiwan (R.O.C.)",
+    "descriptionZh": "散發著普羅旺斯風情的歐華酒店（The Riviera Hotel）座落於台北市中山區，鄰近92公頃的綠地包括大佳河濱公園和台北典藏植物園。\n飯店由享譽國際的法籍建築師 Gerard Jardonnet 親自設計，巧妙融合法國布雜建築風格與東方文物線條，營造典雅舒適的別墅感。歐華酒店是台灣首家榮獲美國 LEED 綠建築白金級認證的飯店，綠意盎然的空中花園、採光極佳的中庭天井，讓旅客在繁華都市中，仍能享受被大自然環抱的體驗。",
+    "descriptionEn": "The Riviera Hotel, located in Taipei’s Zhongshan District, brings a touch of Provence to the city and sits close to 92 hectares of green space, including Dajia Riverside Park and the Taipei Collectible Botanical Garden.\n\nDesigned by renowned French architect Gérard Jardonnet, the hotel combines French Beaux-Arts architectural elements with details inspired by Eastern art and artifacts, creating the elegance and comfort of a private villa.\n\nAs Taiwan’s first hotel to receive LEED Platinum certification, The Riviera Hotel also features a lush rooftop garden and a light-filled central atrium, offering guests a refreshing connection with nature in the heart of the city.",
+    "businessHoursEn": [
+      "Open 24 hours daily"
     ]
   },
   {
@@ -2063,6 +2343,66 @@ window.DAF_DATA = {
     "imageCount": 8,
     "workIds": [
       "district-09"
+    ],
+    "imageFolder": "assets/images/stores/store-05",
+    "images": [
+      "assets/images/stores/store-05/01.jpg",
+      "assets/images/stores/store-05/02.jpg",
+      "assets/images/stores/store-05/03.jpg",
+      "assets/images/stores/store-05/04.jpg",
+      "assets/images/stores/store-05/05.jpg",
+      "assets/images/stores/store-05/06.jpg",
+      "assets/images/stores/store-05/07.jpg",
+      "assets/images/stores/store-05/08.jpg"
+    ],
+    "businessHoursSchedule": {
+      "0": [
+        {
+          "open": "13:00",
+          "close": "21:00"
+        }
+      ],
+      "1": [
+        {
+          "open": "16:00",
+          "close": "21:00"
+        }
+      ],
+      "2": [
+        {
+          "open": "16:00",
+          "close": "21:00"
+        }
+      ],
+      "3": null,
+      "4": [
+        {
+          "open": "16:00",
+          "close": "21:00"
+        }
+      ],
+      "5": [
+        {
+          "open": "16:00",
+          "close": "21:00"
+        }
+      ],
+      "6": [
+        {
+          "open": "13:00",
+          "close": "21:00"
+        }
+      ]
+    },
+    "addressZh": "臺北市中山區晴光里雙城街32巷10-1號",
+    "addressEn": "No. 10-1, Ln. 32, Shuangcheng St., Zhongshan Dist., Taipei City 104628, Taiwan (R.O.C.)",
+    "descriptionZh": "異世界咖啡館•澐月是位於雙城街巷弄內的 Cosplay 主題咖啡館，設定「黑暗城堡風的冒險者公會」世界觀，與傳統女僕咖啡廳做區隔，讓顧客化身「冒險者」展開奇幻旅程。\n店內的公會職員皆由不同種族與性格的 Coser 擔任，備有舞台及音響，不定期舉辦表演和同好聚會，彷彿從漫畫中走出來的「魔獸帶骨肉佐黃金降」在圈內更是廣受好評。\n特色餐點與豐富互動機制，絕對能滿足顧客對冒險生活的嚮往。",
+    "descriptionEn": "Isekaicafe Ungetsu is a cosplay-themed café tucked away in an alley off Shuangcheng Street. Built around the fantasy setting of an “adventurers’ guild in a dark castle,” it offers an experience distinct from traditional maid cafés, inviting every guest to step into the role of an adventurer embarking on a fantastical journey.\n\nThe guild staff are cosplayers portraying characters of different races and personalities. With a stage and sound system, the café also hosts occasional performances and fan gatherings. Its imaginative dishes, including the fantasy-inspired “Bone-in Monster Meat,” have become favorites among visitors.\n\nCombining themed cuisine with interactive experiences, Isekaicafe Ungetsu brings the world of fantasy adventure to life.",
+    "businessHoursEn": [
+      "Mon–Tue 16:00–21:00",
+      "Wed Closed",
+      "Thu–Fri 16:00–21:00",
+      "Sat–Sun 13:00–21:00"
     ]
   },
   {
@@ -2082,15 +2422,60 @@ window.DAF_DATA = {
       "周日  公休"
     ],
     "phone": "02-25922711",
-    "description": "台北花苑 Taipei Florist 創立於 1966 年，是台灣具指標性的精品花藝品牌。品牌的誕生，源於創辦人林秀德與日本妻子田村久子，因插花結緣的浪漫跨國戀曲。\n歷經一甲子的耕耘，台北花苑重新定義花卉，將傳統商品轉型為生活藝術，引進國際流行花訊，提供時尚、高雅、具現代感的設計風格，在大型商務活動、國際會場佈置以及婚禮設計等領域享譽名聲。\n如今店家更設立「花藝設計人才培訓中心」，持續培育台灣的專業花藝設計人才。",
+    "description": "Taipei Florist｜六十年，花開不止\n一朵花，開啟一段故事。\n1966年，台北花苑從一段因花而起的緣分開始。六十年來，我們以花為媒介，從生活走向藝術，從台北走向世界，持續探索植物、空間與人的關係。\n承襲家族花藝底蘊，藝術總監林惠理（Elly Lin）以植物為語彙，融合東方意境與西方結構，讓花藝成為一種跨越生活、空間與藝術的創作語言。\n台北花苑以精品花藝的美學精神，持續投入藝術展演、花藝教育與國際交流，也積極與新世代創作者合作，為年輕藝術家提供發聲與實驗的舞台。\n六十年，不只是時間的累積，更是一場持續發生的創作。\nTaipei Florist 台北花苑｜六十年，花開不止。",
     "links": {
       "website": "https://www.taipeiflorist.com.tw/",
       "instagram": "https://www.instagram.com/taipeiflorist/",
       "facebook": "https://www.facebook.com/taipei.florist/?locale=zh_TW"
     },
-    "imageCount": 0,
+    "imageCount": 1,
     "workIds": [
       "district-10"
+    ],
+    "imageFolder": "assets/images/stores/store-06",
+    "images": [],
+    "businessHoursSchedule": {
+      "0": null,
+      "1": null,
+      "2": [
+        {
+          "open": "09:00",
+          "close": "18:30"
+        }
+      ],
+      "3": [
+        {
+          "open": "09:00",
+          "close": "18:30"
+        }
+      ],
+      "4": [
+        {
+          "open": "09:00",
+          "close": "18:30"
+        }
+      ],
+      "5": [
+        {
+          "open": "09:00",
+          "close": "18:30"
+        }
+      ],
+      "6": [
+        {
+          "open": "09:00",
+          "close": "18:30"
+        }
+      ]
+    },
+    "addressZh": "臺北市中山區晴光里雙城街28巷1號",
+    "addressEn": "No. 1, Ln. 28, Shuangcheng St., Zhongshan Dist., Taipei City 104039, Taiwan (R.O.C.)",
+    "descriptionZh": "Taipei Florist｜六十年，花開不止\n一朵花，開啟一段故事。\n1966年，台北花苑從一段因花而起的緣分開始。六十年來，我們以花為媒介，從生活走向藝術，從台北走向世界，持續探索植物、空間與人的關係。\n承襲家族花藝底蘊，藝術總監林惠理（Elly Lin）以植物為語彙，融合東方意境與西方結構，讓花藝成為一種跨越生活、空間與藝術的創作語言。\n台北花苑以精品花藝的美學精神，持續投入藝術展演、花藝教育與國際交流，也積極與新世代創作者合作，為年輕藝術家提供發聲與實驗的舞台。\n六十年，不只是時間的累積，更是一場持續發生的創作。\nTaipei Florist 台北花苑｜六十年，花開不止。",
+    "descriptionEn": "Taipei Florist | Sixty Years in Bloom\n\nA single flower can be the beginning of a story.\n\nFounded in 1966, Taipei Florist began with a connection brought to life through flowers. Over the past sixty years, flowers have remained at the heart of its journey—from everyday life to artistic practice, and from Taipei to the world—continuously exploring the relationships between plants, space, and people.\n\nBuilding on her family’s legacy in floral art, Artistic Director Elly Lin works with plants as her creative vocabulary, bringing together Eastern sensibilities and Western structures. Through her practice, floral design becomes a creative language that moves fluidly across everyday life, spatial design, and art.\n\nGuided by the aesthetics and craftsmanship of fine floral design, Taipei Florist continues to engage in artistic presentations, floral education, and international exchange. It also actively collaborates with a new generation of creators, providing emerging artists with a platform for experimentation and expression.\n\nSixty years is more than the passage of time—it is an ongoing act of creation.\n\nTaipei Florist | Sixty Years in Bloom",
+    "businessHoursEn": [
+      "Mon Closed",
+      "Tue–Sat 09:00–18:30",
+      "Sun Closed"
     ]
   },
   {
@@ -2117,6 +2502,90 @@ window.DAF_DATA = {
     "imageCount": 8,
     "workIds": [
       "district-11"
+    ],
+    "imageFolder": "assets/images/stores/store-07",
+    "images": [
+      "assets/images/stores/store-07/01.jpg",
+      "assets/images/stores/store-07/02.jpg",
+      "assets/images/stores/store-07/03.jpg",
+      "assets/images/stores/store-07/04.jpg",
+      "assets/images/stores/store-07/05.jpg",
+      "assets/images/stores/store-07/06.jpg",
+      "assets/images/stores/store-07/07.jpg",
+      "assets/images/stores/store-07/08.jpg"
+    ],
+    "businessHoursSchedule": {
+      "0": [
+        {
+          "open": "11:30",
+          "close": "15:00"
+        },
+        {
+          "open": "17:30",
+          "close": "21:30"
+        }
+      ],
+      "1": [
+        {
+          "open": "11:30",
+          "close": "15:00"
+        },
+        {
+          "open": "17:30",
+          "close": "21:00"
+        }
+      ],
+      "2": null,
+      "3": [
+        {
+          "open": "11:30",
+          "close": "15:00"
+        },
+        {
+          "open": "17:30",
+          "close": "21:00"
+        }
+      ],
+      "4": [
+        {
+          "open": "11:30",
+          "close": "15:00"
+        },
+        {
+          "open": "17:30",
+          "close": "21:00"
+        }
+      ],
+      "5": [
+        {
+          "open": "11:30",
+          "close": "15:00"
+        },
+        {
+          "open": "17:30",
+          "close": "21:30"
+        }
+      ],
+      "6": [
+        {
+          "open": "11:30",
+          "close": "15:00"
+        },
+        {
+          "open": "17:30",
+          "close": "21:30"
+        }
+      ]
+    },
+    "addressZh": "臺北市中山區晴光里雙城街18巷16號",
+    "addressEn": "No. 16, Ln. 18, Shuangcheng St., Zhongshan Dist., Taipei City 104039, Taiwan (R.O.C.)",
+    "descriptionZh": "批薩謎勒 Happy Buddha Pizza 是位於雙城街巷弄內的窯烤披薩店，店名靈感來自於「彌勒佛」的寬容與慷慨，希望讓每位饕客在品嚐美味時，能被快樂的氛圍所擁抱。\n店內以多巴胺色彩、 Y2K 風格設計，繽紛吸睛的色彩美學成為極具視覺張力的拍攝點位。除了經典披薩口味外，店家突破傳統研發出未來肉、蒟蒻等新穎蔬食選項，身為寵物友善餐廳，還專門研發「毛孩專屬餐點」，讓飼主與毛孩共創回憶。",
+    "descriptionEn": "Happy Buddha Pizza is a wood-fired pizzeria tucked away in an alley off Shuangcheng Street. Its name draws inspiration from the generosity and joyful spirit associated with the Laughing Buddha, reflecting the restaurant’s wish to surround every guest with happiness while they enjoy their meal.\n\nThe interior combines vibrant dopamine colors with Y2K-inspired design, creating an eye-catching and highly photogenic space. Alongside classic pizzas, the menu explores unconventional vegetarian ingredients such as plant-based meat and konjac.\n\nAs a pet-friendly restaurant, Happy Buddha Pizza even offers dishes specially created for furry companions, making it a welcoming place for guests and their pets to share a meal and create memories together.",
+    "businessHoursEn": [
+      "Mon 11:30–15:00 / 17:30–21:00",
+      "Tue Closed",
+      "Wed–Thu 11:30–15:00 / 17:30–21:00",
+      "Fri–Sun 11:30–15:00 / 17:30–21:30"
     ]
   },
   {
@@ -2145,6 +2614,66 @@ window.DAF_DATA = {
     "imageCount": 10,
     "workIds": [
       "district-12"
+    ],
+    "imageFolder": "assets/images/stores/store-08",
+    "images": [
+      "assets/images/stores/store-08/01.jpg",
+      "assets/images/stores/store-08/02.jpg",
+      "assets/images/stores/store-08/03.jpg",
+      "assets/images/stores/store-08/04.jpg",
+      "assets/images/stores/store-08/05.jpg",
+      "assets/images/stores/store-08/06.jpg",
+      "assets/images/stores/store-08/07.jpg",
+      "assets/images/stores/store-08/08.jpg",
+      "assets/images/stores/store-08/09.jpg",
+      "assets/images/stores/store-08/10.jpg"
+    ],
+    "businessHoursSchedule": {
+      "0": [
+        {
+          "open": "12:00",
+          "close": "20:00"
+        }
+      ],
+      "1": null,
+      "2": [
+        {
+          "open": "12:00",
+          "close": "20:00"
+        }
+      ],
+      "3": [
+        {
+          "open": "12:00",
+          "close": "20:00"
+        }
+      ],
+      "4": [
+        {
+          "open": "12:00",
+          "close": "20:00"
+        }
+      ],
+      "5": [
+        {
+          "open": "12:00",
+          "close": "20:00"
+        }
+      ],
+      "6": [
+        {
+          "open": "12:00",
+          "close": "20:00"
+        }
+      ]
+    },
+    "addressZh": "臺北市中山區晴光里新生北路三段68巷5號",
+    "addressEn": "No. 5, Ln. 68, Sec. 3, Xinsheng N. Rd., Zhongshan Dist., Taipei City 104032, Taiwan (R.O.C.)",
+    "descriptionZh": "L'Unicorno Gelato 義式手工冰淇淋位於新生北路巷弄內，店家主打老闆純手製作的義式冰淇淋，呈現天然食材的細緻綿密與極致口感。\n店內空間由老宅改建而成，木質桌椅搭配暖色調燈光，營造優雅舒適的用餐氛圍。除固定口味，店家也選用當季水果推出特色口味，與咖啡、阿芙佳朵（Affogato）的搭配，帶給顧客新穎的味覺體驗。\n在毛孩落地自由互動的寵物友善空間中，民眾能夠愜意度過慵懶的午後時光。",
+    "descriptionEn": "Located in a quiet alley off Xinsheng North Road, L'Unicorno Gelato specializes in handcrafted Italian-style gelato, made in-house to highlight the natural flavors and smooth textures of carefully selected ingredients.\n\nConverted from an old residence, the shop pairs wooden furnishings with warm lighting to create an elegant and inviting atmosphere. In addition to its regular selection, seasonal fruits inspire limited flavors throughout the year, while coffee and affogato pairings offer another way to enjoy its gelato.\n\nThe pet-friendly space also welcomes furry companions to roam and relax, making it an ideal spot for a leisurely afternoon.",
+    "businessHoursEn": [
+      "Mon Closed",
+      "Tue–Sun 12:00–20:00"
     ]
   },
   {
@@ -2165,6 +2694,68 @@ window.DAF_DATA = {
     "imageCount": 8,
     "workIds": [
       "district-13"
+    ],
+    "imageFolder": "assets/images/stores/store-09",
+    "images": [
+      "assets/images/stores/store-09/01.jpg",
+      "assets/images/stores/store-09/02.jpg",
+      "assets/images/stores/store-09/03.jpg",
+      "assets/images/stores/store-09/04.jpg",
+      "assets/images/stores/store-09/05.jpg",
+      "assets/images/stores/store-09/06.jpg",
+      "assets/images/stores/store-09/07.jpg",
+      "assets/images/stores/store-09/08.jpg"
+    ],
+    "businessHoursSchedule": {
+      "0": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "1": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "2": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "3": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "4": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "5": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "6": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ]
+    },
+    "addressZh": "臺北市中山區恆安里林森北路568號",
+    "addressEn": "No. 568, Linsen N. Rd., Zhongshan Dist., Taipei City 104030, Taiwan (R.O.C.)",
+    "descriptionZh": "晴美公寓酒店 Jolley Hotel 坐落於林森北路與農安街口，一旁的雙城街夜市，是房客體驗台灣風土民情、在地小吃的絕佳地點。\n飯店融合「家」與「飯店級服務」，每間客房擁有超過 14 坪的寬敞空間，並劃分獨立客廳與臥室，配置微波爐、電磁爐、洗脫烘洗衣機等，提供旅客更具生活感的小豪宅體驗。\n頂樓的空中露臺，讓房客能夠遠眺圓山大飯店與台北市景，是國內外商務出差、家庭共遊的不二選擇。",
+    "descriptionEn": "Located at the intersection of Linsen North Road and Nong’an Street, Jolley Hotel is just steps away from Shuangcheng Street Night Market, offering guests easy access to local food and an authentic taste of everyday life in Taipei.\n\nCombining the comforts of home with hotel-level service, each guest room offers more than 46 square meters of space, with separate living and sleeping areas. Rooms are also equipped with practical amenities including a microwave, induction cooktop, and washer-dryer, creating the convenience of a private urban residence.\n\nFrom the rooftop terrace, guests can enjoy views of the Grand Hotel and Taipei skyline, making Jolley Hotel a comfortable choice for both business travelers and families.",
+    "businessHoursEn": [
+      "Open 24 hours daily"
     ]
   },
   {
@@ -2191,6 +2782,67 @@ window.DAF_DATA = {
     "imageCount": 7,
     "workIds": [
       "district-14"
+    ],
+    "imageFolder": "assets/images/stores/store-10",
+    "images": [
+      "assets/images/stores/store-10/01.jpg",
+      "assets/images/stores/store-10/02.jpg",
+      "assets/images/stores/store-10/03.jpg",
+      "assets/images/stores/store-10/04.jpg",
+      "assets/images/stores/store-10/05.jpg",
+      "assets/images/stores/store-10/06.jpg",
+      "assets/images/stores/store-10/07.jpg"
+    ],
+    "businessHoursSchedule": {
+      "0": [
+        {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      ],
+      "1": [
+        {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      ],
+      "2": [
+        {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      ],
+      "3": [
+        {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      ],
+      "4": [
+        {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      ],
+      "5": [
+        {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      ],
+      "6": [
+        {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      ]
+    },
+    "addressZh": "臺北市中山區恆安里中山北路二段183巷30號3樓",
+    "addressEn": "3 F., No. 30, Sec. 2, Zhongshan N. Rd., Zhongshan Dist., Taipei City 104016, Taiwan (R.O.C.)",
+    "descriptionZh": "米窩飯店-中山館介於晴光商圈與中山北路生活圈間，下樓即是美食齊聚的晴光市場與雙城夜市，生活機能十分發達。\n於台灣創立的米窩飯店集團，以「溫度、在地、便利」為品牌核心，透過自助入住與實用空間設計，為旅人打造有如「回家」般安心的溫馨落腳處。\n飯店全館通過政府「安全、安靜、乾淨」的三安認證，以簡約、機能、實用的美學風格設計房間，被許多自由行及商務旅客高 CP 值旅宿首選。讓來往的旅人們，用最從容的步調，深度走訪中山。",
+    "descriptionEn": "Meworld Hotel - Zhongshan is conveniently located between the Qingguang commercial district and the Zhongshan North Road area, with Qingguang Market and Shuangcheng Street Night Market just downstairs, placing a wide variety of local food and everyday conveniences within easy reach.\n\nFounded in Taiwan, Meworld Hotel centers its hospitality philosophy on “warmth, locality, and convenience.” Through self-service check-in and practical spatial design, it creates a welcoming place for travelers that feels like coming home.\n\nThe hotel has received government certification for safety, quietness, and cleanliness. With its simple, functional rooms and accessible location, it is a popular value-for-money option for independent and business travelers looking to explore Zhongshan at a relaxed pace.",
+    "businessHoursEn": [
+      "Daily 10:00–21:00"
     ]
   }
 ],
@@ -2468,58 +3120,37 @@ window.DAF_DATA = {
     "nameZh": "三樓家以馬內利食研室",
     "nameEn": "emhanuel",
     "address": "臺北市中山區新庄里吉林路456巷10號",
+    "addressZh": "臺北市中山區新庄里吉林路456巷10號",
+    "addressEn": "No. 10, Ln. 456, Jilin Rd., Zhongshan Dist., Taipei City 104084, Taiwan (R.O.C.)",
     "businessHours": [
       "平時｜預訂制（麻糬、冷泡茶以預先訂購為主）",
       "臺北數位藝術節期間｜限定開放營業",
       "實際開放日期與時間依官方 Facebook 公告"
     ],
+    "businessHoursEn": [
+      "Regular Hours | By reservation only",
+      "Mochi and cold-brew tea are primarily available by pre-order.",
+      "During the Taipei Digital Art Festival | Open on selected dates",
+      "Please refer to the official Facebook page for the latest opening dates and hours."
+    ],
     "phone": "02-25957137",
     "description": "三樓家以馬內利食研室，藏身於吉林路巷弄，是揉合手作飲食、咖啡、設計及生活美學的複合式空間。店內以純手工麻糬為核心，將約瑟花生、路得黑芝麻、約拿紅豆、彼得酸菜等口味賦予不同故事與祝福，另外也提供無咖啡因冷泡蕎麥茶及自家烘焙手沖咖啡，讓每一位顧客體驗手作的溫度。\n空間亦結合「攝設的，強尼小姐」設計工作室，從食物、包裝到視覺創作，傳遞「每一口，都是一點療癒」的品牌理念，將日常飲食轉變為可分享的溫度與祝福。",
+    "descriptionZh": "三樓家以馬內利食研室，藏身於吉林路巷弄，是揉合手作飲食、咖啡、設計及生活美學的複合式空間。店內以純手工麻糬為核心，將約瑟花生、路得黑芝麻、約拿紅豆、彼得酸菜等口味賦予不同故事與祝福，另外也提供無咖啡因冷泡蕎麥茶及自家烘焙手沖咖啡，讓每一位顧客體驗手作的溫度。\n空間亦結合「攝設的，強尼小姐」設計工作室，從食物、包裝到視覺創作，傳遞「每一口，都是一點療癒」的品牌理念，將日常飲食轉變為可分享的溫度與祝福。",
+    "descriptionEn": "Tucked away in an alley off Jilin Road, emhanuel is a multidisciplinary space that brings together handmade food, coffee, design, and everyday aesthetics. At its heart are handmade mochi, with flavors such as Joseph Peanut, Ruth Black Sesame, Jonah Red Bean, and Peter Pickled Mustard Greens, each carrying its own story and blessing. The shop also serves caffeine-free cold-brew buckwheat tea and hand-brewed coffee made with beans roasted in-house, offering visitors the warmth of handcrafted food and drink.\n\nThe space also incorporates the design studio “Johnny Miss,” extending its creative approach from food and packaging to visual design. Guided by the idea that “every bite brings a little healing,” emhanuel transforms everyday food into an experience of warmth and blessings meant to be shared.",
     "links": {
+      "instagram": "https://www.instagram.com/3flove_home/?hl=am-et",
       "facebook": "https://www.facebook.com/love3F/?locale=zh_TW"
     },
     "imageCount": 7,
-    "imageExtensionOverrides": {
-      "7": "png"
-    },
-    "images": [
-      "assets/images/shops/shop-01/01.jpg",
-      "assets/images/shops/shop-01/02.jpg",
-      "assets/images/shops/shop-01/03.jpg",
-      "assets/images/shops/shop-01/04.jpg",
-      "assets/images/shops/shop-01/05.jpg",
-      "assets/images/shops/shop-01/06.jpg",
-      "assets/images/shops/shop-01/07.png"
-    ]
+    "imageExtensionOverrides": {"7": "png"}
   },
   {
     "id": "shop-02",
-    "nameZh": "STIMLIG 原創設計家居 台北品牌店",
-    "nameEn": "STIMLIG",
-    "address": "臺北市中山區新喜里德惠街165號1樓",
-    "businessHours": [
-      "周一  11:00-20:00",
-      "周二  11:00-20:00",
-      "周三  11:00-20:00",
-      "周四  11:00-20:00",
-      "周五  公休",
-      "周六  11:00-19:00",
-      "周日  公休"
-    ],
-    "phone": "02-66050880",
-    "description": "STIMLIG 原創設計家居台北品牌店位於德惠街巷弄內，是融合展示體驗空間、品牌設計工作室的複合空間。STIMLIG 由德文「意境（Stimmung）」與「幸福（Selig）」組成，傳遞「讓好設計走入生活」的理念。\n店內空間營造出如同藝廊般的質感家居氛圍，讓顧客體驗各國設計師及建築師團隊共同研發的原創家具。展示空間內不定期舉辦生活美學、設計相關講座活動，結合家具與生活的想像，成為城市裡找尋靈感的重要場域。",
-    "links": {
-      "website": "https://www.stimlig.com/taipei-design-studio/?srsltid=AfmBOoqkI-xbfDQv8g6hZn-72kt1ivILBpYVXNm4QBpIL3ohjGC3tpB3"
-    },
-    "imageCount": 0,
-    "imageExtensionOverrides": {},
-    "images": []
-  },
-  {
-    "id": "shop-03",
     "nameZh": "寂川",
     "nameEn": "Jyakugawa",
     "address": "臺北市中山區圓山里民族東路102號",
+    "addressZh": "臺北市中山區圓山里民族東路102號",
+    "addressEn": "No. 102, Minzu E. Rd., Zhongshan Dist., Taipei City 104039, Taiwan (R.O.C.)",
     "businessHours": [
       "周一  19:30-01:00",
       "周二  19:30-01:00",
@@ -2529,51 +3160,27 @@ window.DAF_DATA = {
       "周六  19:30-02:00",
       "周日  公休"
     ],
+    "businessHoursEn": [
+      "Mon–Wed 19:30–01:00",
+      "Thu Closed",
+      "Fri–Sat 19:30–02:00",
+      "Sun Closed"
+    ],
     "phone": "02-66041021",
     "description": "寂川-Jyakugawa隱身於民族橋旁，是一間主打「調酒與精緻日式小食餐酒搭」的日式餐酒館。\n日式侘寂風的店內裝潢，搭配木質吧檯與柔和燈光，讓顧客放慢腳步、品味微醺時光。除了魚子醬玉子燒、關東風貓飯等精緻家常菜，由調酒師精心研發的創意特調，牢牢鎖住顧客的味蕾。\n店內偶爾結合「池坊插花」日本美學體驗活動，讓人在充滿儀式感的環境中，體驗寂川獨有的豐富層次。",
-    "links": {
-      "instagram": "https://www.instagram.com/jyakugawa_102/"
-    },
+    "descriptionZh": "寂川-Jyakugawa隱身於民族橋旁，是一間主打「調酒與精緻日式小食餐酒搭」的日式餐酒館。\n日式侘寂風的店內裝潢，搭配木質吧檯與柔和燈光，讓顧客放慢腳步、品味微醺時光。除了魚子醬玉子燒、關東風貓飯等精緻家常菜，由調酒師精心研發的創意特調，牢牢鎖住顧客的味蕾。\n店內偶爾結合「池坊插花」日本美學體驗活動，讓人在充滿儀式感的環境中，體驗寂川獨有的豐富層次。",
+    "descriptionEn": "Tucked away near Minzu Bridge, Jyakugawa is a Japanese-style dining bar specializing in cocktails paired with refined Japanese small plates.\n\nIts wabi-sabi-inspired interior, wooden bar, and soft lighting create an intimate atmosphere where guests can slow down and enjoy the evening. Alongside delicate comfort dishes such as caviar tamagoyaki and Kanto-style neko manma, the bar serves original cocktails carefully developed by its bartenders.\n\nJyakugawa also occasionally hosts experiences inspired by Japanese aesthetics, including Ikenobo ikebana workshops, adding another layer of ritual and sensory detail to the space.",
+    "links": {"instagram": "https://www.instagram.com/jyakugawa_102/"},
     "imageCount": 30,
-    "imageExtensionOverrides": {},
-    "images": [
-      "assets/images/shops/shop-03/01.jpg",
-      "assets/images/shops/shop-03/02.jpg",
-      "assets/images/shops/shop-03/03.jpg",
-      "assets/images/shops/shop-03/04.jpg",
-      "assets/images/shops/shop-03/05.jpg",
-      "assets/images/shops/shop-03/06.jpg",
-      "assets/images/shops/shop-03/07.jpg",
-      "assets/images/shops/shop-03/08.jpg",
-      "assets/images/shops/shop-03/09.jpg",
-      "assets/images/shops/shop-03/10.jpg",
-      "assets/images/shops/shop-03/11.jpg",
-      "assets/images/shops/shop-03/12.jpg",
-      "assets/images/shops/shop-03/13.jpg",
-      "assets/images/shops/shop-03/14.jpg",
-      "assets/images/shops/shop-03/15.jpg",
-      "assets/images/shops/shop-03/16.jpg",
-      "assets/images/shops/shop-03/17.jpg",
-      "assets/images/shops/shop-03/18.jpg",
-      "assets/images/shops/shop-03/19.jpg",
-      "assets/images/shops/shop-03/20.jpg",
-      "assets/images/shops/shop-03/21.jpg",
-      "assets/images/shops/shop-03/22.jpg",
-      "assets/images/shops/shop-03/23.jpg",
-      "assets/images/shops/shop-03/24.jpg",
-      "assets/images/shops/shop-03/25.jpg",
-      "assets/images/shops/shop-03/26.jpg",
-      "assets/images/shops/shop-03/27.jpg",
-      "assets/images/shops/shop-03/28.jpg",
-      "assets/images/shops/shop-03/29.jpg",
-      "assets/images/shops/shop-03/30.jpg"
-    ]
+    "imageExtensionOverrides": {}
   },
   {
-    "id": "shop-04",
+    "id": "shop-03",
     "nameZh": "拾花",
     "nameEn": "Glean Flower",
     "address": "臺北市中山區新福里新生北路三段19巷34號",
+    "addressZh": "臺北市中山區新福里新生北路三段19巷34號",
+    "addressEn": "No. 34, Ln. 19, Sec. 3, Xinsheng N. Rd., Zhongshan Dist., Taipei City 104033, Taiwan (R.O.C.)",
     "businessHours": [
       "周一  12:00-19:00",
       "周二  12:00-19:00",
@@ -2583,27 +3190,29 @@ window.DAF_DATA = {
       "周六  12:00-15:00",
       "周日  12:00-15:00"
     ],
+    "businessHoursEn": [
+      "Mon–Thu 12:00–19:00",
+      "Fri–Sun 12:00–15:00"
+    ],
     "phone": "0966120302",
     "description": "拾花 Glean Flower 位於新生北路巷弄內，是主打「享受有花的美好生活」的預約制花藝工作室，以「簡單、優雅、自然」作為創作核心，將花草轉化為觸手可及的日常風景。\n拾花提供多元花藝服務，包含時令鮮花、節慶花束，還承接商務空間佈置、品牌客製化花禮、結合花藝與禮品包裝等服務。\n店家引進的獨特「日本擬真花」、開設壓花相框與乾燥永生花等手作體驗課程，成為許多享受生活、講究儀式感的都市人，展現個人心意的花藝秘密基地。",
+    "descriptionZh": "拾花 Glean Flower 位於新生北路巷弄內，是主打「享受有花的美好生活」的預約制花藝工作室，以「簡單、優雅、自然」作為創作核心，將花草轉化為觸手可及的日常風景。\n拾花提供多元花藝服務，包含時令鮮花、節慶花束，還承接商務空間佈置、品牌客製化花禮、結合花藝與禮品包裝等服務。\n店家引進的獨特「日本擬真花」、開設壓花相框與乾燥永生花等手作體驗課程，成為許多享受生活、講究儀式感的都市人，展現個人心意的花藝秘密基地。",
+    "descriptionEn": "Located in an alley off Xinsheng North Road, Glean Flower is an appointment-based floral studio built around the idea of enjoying a beautiful life with flowers. Guided by a creative approach that is simple, elegant, and natural, the studio transforms flowers and greenery into an accessible part of everyday life.\n\nGlean Flower offers a range of floral services, from seasonal flowers and festive bouquets to commercial space styling, customized corporate gifts, and floral gift packaging.\n\nThe studio also introduces distinctive Japanese artificial flowers and offers hands-on workshops in pressed-flower framing, dried flowers, and preserved flowers. It has become a favorite destination for city dwellers who value thoughtful details and meaningful ways to express themselves through flowers.",
     "links": {
       "website": "https://www.gleanflower.com/?srsltid=AfmBOop0q7MVJMBk3_33kdKaKbUOW4ukJ-ZPrVq9ABwc_vidGgFfoUnt",
       "instagram": "https://www.instagram.com/gleanflower/",
       "facebook": "https://www.facebook.com/gleanflower/?locale=zh_TW"
     },
     "imageCount": 4,
-    "imageExtensionOverrides": {},
-    "images": [
-      "assets/images/shops/shop-04/01.jpg",
-      "assets/images/shops/shop-04/02.jpg",
-      "assets/images/shops/shop-04/03.jpg",
-      "assets/images/shops/shop-04/04.jpg"
-    ]
+    "imageExtensionOverrides": {}
   },
   {
-    "id": "shop-05",
+    "id": "shop-04",
     "nameZh": "Gallery188",
     "nameEn": "Gallery188",
     "address": "臺北市大同區至聖里承德路三段188號",
+    "addressZh": "臺北市大同區至聖里承德路三段188號",
+    "addressEn": "No. 188, Sec. 3, Chengde Rd., Datong Dist., Taipei City 103034, Taiwan (R.O.C.)",
     "businessHours": [
       "周一  11:00-19:00",
       "周二  11:00-19:00",
@@ -2613,15 +3222,21 @@ window.DAF_DATA = {
       "周六  13:00-18:00",
       "周日  13:00-18:00"
     ],
+    "businessHoursEn": [
+      "Mon–Tue 11:00–19:00",
+      "Wed–Fri Closed",
+      "Sat–Sun 13:00–18:00"
+    ],
     "phone": "0987992335",
     "description": "",
+    "descriptionZh": "",
+    "descriptionEn": "",
     "links": {
       "instagram": "https://www.instagram.com/gallery188_/",
       "facebook": "https://www.facebook.com/p/Gallery-188%E6%9D%89%E7%95%9D%E8%97%9D%E8%A1%93-61575686574065/"
     },
     "imageCount": 0,
-    "imageExtensionOverrides": {},
-    "images": []
+    "imageExtensionOverrides": {}
   }
 ],
   soundArtists: [
@@ -2635,17 +3250,110 @@ window.DAF_DATA = {
       "title": "噪流",
       "titleZh": "噪流",
       "titleEn": "Fluid Noise",
-      "year": "2026",
-      "workType": "聲響表演",
-      "workTypeEn": "Sound Performance",
-      "medium": "",
-      "description": "",
-      "videoUrl": "",
+      "workType": "音像表演",
+      "workTypeEn": "Audiovisual Performance",
       "imageFolder": "performance-01",
       "coverImage": "",
       "images": [],
       "artistIds": [
         "artist-26"
+      ],
+      "performances": [
+        {
+          "id": "performance-01_1",
+          "nameZh": "吳承儒",
+          "nameEn": "Cheng-Ru Wu",
+          "nationalityZh": "台灣",
+          "nationalityEn": "Taiwan",
+          "bioZh": "來自臺灣嘉義的新媒體藝術家。創作多涵蓋跨領域藝術與音像演出（Audiovisual performance），並以聲響實驗、即時影像生成與數位訊號整合為發展核心。",
+          "bioEn": "Based in Chiayi, Taiwan, Wu Cheng-Ru ( P B ) is a new media artist whose work spans cross-disciplinary art and audiovisual performance, focusing on sound experimentation, real-time visual generation, and digital signal integration.",
+          "careerZh": "2026 《繫 ꜱʏɴᴄ》- P B 個展 - 毛刺空間 | 個人展覽 (台中) \n2025《鹹淡適中》Glub Glub — 白晝之夜Nuit Blanche Taipei｜共同創作(台北) \n2025 -《視感認知 Mind Fluid》｜透視音像 Perspectives-北流場｜音像演出\n2025 - 關渡光藝術節《幻響 Illusonic》｜音像演出(台北)\n2024 -《認夢 Dream Percept》｜ FUTURE VISION LAB｜DOME演出(台北)\n2024 -《忘却回路 - Oblivion Circuit》｜音像演出(東京)\n2024 -《VIVIDO: re-Action》Sandy’s Trace｜VJ(台北)\n2023 -《未來視覺派對 FUTURE VISION LAB》｜音像演出(台北)\n2023 -《視感認知 Visual Cognition》-潛艇Submarine｜音像演出 (台北)\n2023 -《感覺重混 sensation.remix》｜音像演出 (宜蘭)",
+          "careerEn": "2026 Sync – Solo Exhibition by P B, Glitch Space | Solo Exhibition (Taichung) \n2025 – Glub Glub, Nuit Blanche Taipei | Co-creation (Taipei) \n2025 – Mind Fluid, Perspectives (Taipei Music Center, Livehouse D), Audiovisual Performance\n2025 – Mind Fluid,Kuan Du Light Art Festival 《Illusonic》, Audiovisual Performance (Taipei)\n2024 – Dream Percept, FUTURE VISION LAB, Fulldome Performance (Taipei)\n2024 – Oblivion Circuit, Audiovisual Performance (Tokyo)\n2024 – VIVIDO: re-Action, VJ (Collaboration with Sandy’s Trace) (Taipei)\n2023 – FUTURE VISION LAB, Audiovisual Performance (Taipei)\n2023 – Visual Cognition, Submarine, Audiovisual Performance (Taipei)\n2023 – sensation.remix, Audiovisual Performance (Yilan)",
+          "titleZh": "聽",
+          "titleEn": "Thiann",
+          "year": "2026",
+          "workTypeZh": "音像表演",
+          "workTypeEn": "Audiovisual Performance",
+          "descriptionZh": "「Thiann」是台語中「聽」的意思。演出內容透過藝術家收集在臺灣的日常聲響與畫面，由鄉村攤販的廣播或車輛的限速提示音等，透過數位的重混與調變，讓臺灣日常的印象透過聲景(Soundscape)再現，並透過音像演出詮釋藝術家在臺灣生活的觀察與狀態。",
+          "descriptionEn": "“Thiann” derives from the Taiwanese word for “listen.” Through a collection of everyday sounds and visuals gathered across Taiwan—such as broadcasts from rural street vendors and vehicle speed alerts—the performance digitally remixes and modulates these elements to reconstruct daily Taiwanese impressions into a soundscape, interpreting the artist's personal observations and lived reality in Taiwan through live audiovisual performance.",
+          "website": "https://k591238.github.io/PB.github.io/",
+          "instagram": "https://www.instagram.com/pen_bit/"
+        },
+        {
+          "id": "performance-01_3",
+          "nameZh": "張哲瑜",
+          "nameEn": "Che-Yu Chang",
+          "nationalityZh": "台灣",
+          "nationalityEn": "Taiwan",
+          "bioZh": "音像創作者。創作專注在聲響設計、互動視覺，主題經常聚焦在圖像的規律與隨機性，並試圖進一步拆解其規則系統。音樂作品多為氛圍音樂、實驗電子，透過探索聲音與影像更多的可能性，不斷推敲自身感知與環境生命經驗的連結。",
+          "bioEn": "Che Yu Chang(aka. Duyio) is an audiovisual creator focused on sound design and interactive visuals. Her work often explores patterns and randomness in images, while looking deeper into the systems behind them. Her music mainly includes ambient and experimental electronic music. By exploring the possibilities between sound and image, the practice continues to examine the connection between her perception and life experiences.",
+          "careerZh": "2026\n《 ESKAPE 三週年紀元：無底之境》｜週年派對活動\n2025\n噪流實習2025 (VOL.4)｜入選創作培力計畫\n《失眠五階段：Insomnia》｜四四南村 LIGHT UP 南村有光\n《臨海練習 approaching exercises:seaside》｜入選 2025 月之美術館聯展\n《 ESKAPE SHOWCASE 10 》｜電子音樂派對\n《 ESKAPE 二週年派對 》｜週年派對活動\n2024\n《景觀訊號推移》｜入選 2024 基隆美展",
+          "careerEn": "2026\nESKAPE 3nd anniversary party  – VJ\n2025\nfluid noise – AVSyncTPE Echo Habitat \nLight Up Festival – Merit Award Insomnia\nyue jin art museum –  Selected Approaching exercises:seaside\nESKAPE SHOWCASE 10 – VJ\nESKAPE 2nd anniversary party – VJ\n2024\nKeelung Art Exhibition – Selected Signal",
+          "titleZh": "場",
+          "titleEn": "On the scene",
+          "performerImage": {
+            "src": "assets/images/works/performance/performance-01/performance-01_2/01.png",
+            "altZh": "張哲瑜",
+            "altEn": "Che-Yu Chang"
+          },
+          "workImages": [
+            "assets/images/works/performance/performance-01/performance-01_2/works/01.png",
+            "assets/images/works/performance/performance-01/performance-01_2/works/02.png",
+            "assets/images/works/performance/performance-01/performance-01_2/works/03.png",
+            "assets/images/works/performance/performance-01/performance-01_2/works/04.png",
+            "assets/images/works/performance/performance-01/performance-01_2/works/05.png"
+          ],
+          "workTypeZh": "音像表演",
+          "workTypeEn": "Audiovisual Performance",
+          "descriptionZh": "一個場景、一個畫面，有些是在清醒之前的景色，有些是最喜歡的電影場景，未分類的有可能是記憶裡的片段，可能曾在某個時刻到過現場，也有可能永遠無法到場。作品將以各個「場」作為主要呈現，並將作者分身置入「場」內，營造一種在場與不在場之間的證明。",
+          "descriptionEn": "A scene, a frame.\nSome are landscapes seen before waking, while others are scenes from films I love. The ones left uncategorized may be fragments of memory. Places I may have once been, or places I may never be able to reach.\nThe work is presented through a series of “places,” with an avatar placed within each one, creating a sense of being there, and not being there at the same time.",
+          "website": "https://haiphane-duyio.com/",
+          "instagram": "https://www.instagram.com/duyiosirbed/"
+        },
+        {
+          "id": "performance-01_4",
+          "nameZh": "陳亮",
+          "nameEn": "Liang Chen",
+          "performerImage": {
+            "src": "assets/images/works/performance/performance-01/performance-01_3/01.JPG",
+            "altZh": "陳亮",
+            "altEn": "Liang Chen"
+          },
+          "nationalityZh": "台灣",
+          "nationalityEn": "Taiwan",
+          "bioZh": "過而立而不立，彰化人，十五之後在台灣北中南漂泊，\n成日遊手好閒、不學無術，朝三暮四，一知半解。\n致力於研究對客觀條件毫無幫助之無用實驗，\n找尋任意載體對情緒價值之主觀意識有效影響。",
+          "bioEn": "Over 30 but still unsettled, a Changhua native.\nDrifting across northern, central, and southern Taiwan since 15.\nAlways idling, lacking skills; constantly shifting, mastering nothing.\nDedicated to highly inefficient experiments with zero practical value to society,\njust searching for random ways to poke at a viewer's consciousness and leave a unique emotional dent.",
+          "careerZh": "2018 噪流實習 演出\n2021 JPG 擊樂實驗室 - Digit(s) 演出\n2024 聲響藝術節 - Digit(s) 演出",
+          "careerEn": "2018\nPerformance, Lacking Sound Festival Internship Program\n\n2021\nDigit(s) — Performance, JPG Percussion Lab\n\n2024\nDigit(s) — Performance, Sound Art Festival",
+          "titleZh": "田調隨筆 - 2026",
+          "titleEn": "Field Notes 2026",
+          "year": "2026",
+          "workTypeZh": "音像表演",
+          "workTypeEn": "Audiovisual Performance",
+          "instagram": "https://www.instagram.com/c1c.ll/"
+        },
+        {
+          "id": "performance-01_5",
+          "nameZh": "陳彥齊 x 周喚",
+          "nameEn": "Yen-Chi Chen x Huan Chou",
+          "nationalityZh": "台灣",
+          "nationalityEn": "Taiwan",
+          "bioZh": "周喚與陳彥齊目前就讀於台北藝術大學新媒體藝術學系。兩人的合作創作以遊戲為主要發想，從遊戲機制、敘事與虛擬空間延伸不同的創作主題，結合動畫與聲音，並透過遊戲引擎的即時運算及現場聲音的即時調變，探索虛擬與現實之間的關係，形成具有敘事性的音像表演。",
+          "bioEn": "Chou huan and Chen yenchi are currently studying in the Department of New Media Art at Taipei National University of the Arts. Their collaborative practice takes games as a starting point, exploring themes through game mechanics, narrative, and virtual spaces. By combining animation and sound with real-time game engine computation and live sound manipulation, they investigate the relationship between the virtual and the real, creating narrative-driven audiovisual performances.",
+          "careerZh": "表演\n北藝大新媒系111級畢業展《在那出現之前》開幕表演\n關渡光藝術節《幻響》\n噪流實習\n第二屆北藝新媒卓越獎開幕表演",
+          "careerEn": "PERFORMANCE\nOpening Performance — TNUA Department of New Media Art Graduation Exhibition 2026 \"Before Zero\"\nKuandu Light Art Festival — Illusonic \nFluid Noise Internship \nOpening Performance — TNUA New Media Excellence Award",
+          "titleZh": "難忘殘景",
+          "titleEn": "Haunting Sight",
+          "workTypeZh": "音像表演",
+          "workTypeEn": "Audiovisual Performance",
+          "descriptionZh": "本作以遊戲引擎和音像表演的形式構建一個近未來的景象，試圖展開近年越發進步的無人機和影像技術，其鏡頭與被觀察者的關係。故事發生在一座深夜中的巨大車站，一名神秘人物闖入，大規模改寫建築內的空間現實。保全系統的無人機受命追蹤並阻止這場「非法入侵」。透過自帶的攝影機以及技術追蹤入侵者。隨著投影的強光造成雜訊與故障,現場只留下被改寫的空間與逃逸的背影。",
+          "descriptionEn": "This work explores the relationship between surveillance cameras, drones, and the people they observe through a game engine and audiovisual performance.\nThe story takes place in a massive train station late at night. A mysterious figure breaks in and begins to alter the space. Security drones are deployed to track and stop the intruder through their cameras and tracking systems.\nAs intense projection light causes noise and system failures, the altered space remains, along with the fleeting silhouette of the escaping figure.",
+          "images": [
+            "assets/images/works/performance/performance-01/performance-01_4/01.jpg"
+          ],
+          "website": "https://yc-58.com/",
+          "instagram": "https://www.instagram.com/y.c_5.8/"
+        }
       ]
     },
     {
@@ -2655,20 +3363,28 @@ window.DAF_DATA = {
       "area": "開幕表演",
       "mapNumber": "02",
       "number": "02",
-      "title": "Félix-Antoine Morin（音樂）與 Alexandre Larose（影像）之視聽合作作品",
-      "titleZh": "Félix-Antoine Morin（音樂）與 Alexandre Larose（影像）之視聽合作作品",
-      "titleEn": "Audiovisual collaboration between Félix-Antoine Morin (music) and Alexandre Larose (video)",
+      "title": "Félix-Antoine Morin",
+      "titleZh": "Félix-Antoine Morin",
+      "titleEn": "Félix-Antoine Morin",
       "year": "2026",
       "workType": "音像表演",
       "workTypeEn": "Audiovisual Performance",
-      "medium": "",
-      "description": "",
-      "videoUrl": "",
+      "description": "Félix-Antoine Morin（音樂）與 Alexandre Larose（影像）之視聽合作作品",
+      "descriptionZh": "Félix-Antoine Morin（音樂）與 Alexandre Larose（影像）之視聽合作作品",
+      "descriptionEn": "Audiovisual collaboration between Félix-Antoine Morin (music) and Alexandre Larose (video)",
       "imageFolder": "performance-02",
       "coverImage": "",
       "images": [],
       "artistIds": [
         "artist-27"
+      ],
+      "collaborators": [
+        {
+          "nameZh": "Alexandre Larose",
+          "nameEn": "Alexandre Larose",
+          "roleZh": "影像",
+          "roleEn": "Video"
+        }
       ]
     }
   ],
@@ -2792,7 +3508,7 @@ window.DAF_DATA = {
     {type:"協辦單位", names:["文創技研有限公司"], images:["assets/images/logos/文創技研Logo.png"], urls:["https://artecture-tw.com/"]},
     {type:"場地合作", names:["臺北典藏植物園"], images:["assets/images/logos/臺北典藏植物園LOGO.png"], urls:["https://www.future.url.tw/"]},
     {type:"合作單位", names:["臺灣當代文化實驗場", "噪流"], images:["assets/images/logos/C-LAB未來視覺實驗室LOGO.png", "assets/images/logos/噪流LOGO.png"], urls:["https://clab.org.tw/", "https://fluidnoise.com/"]},
-    {type:"贊助", names:["C2x3", "十銓科技", "奧地利駐臺辦事處", "洪建全基金會"], images:["assets/images/logos/C2x3LOGO.png", "assets/images/logos/十銓科技LOGO.png", "assets/images/logos/奧地利駐臺辦事處LOGO.png", "assets/images/logos/洪建全基金會LOGO.png"], urls:["https://linktr.ee/c2x3", "https://www.teamgroupinc.com/tw/", "https://www.bmeia.gv.at/tw/%E5%A5%A7%E5%9C%B0%E5%88%A9-%E8%BE%A6%E4%BA%8B%E8%99%95-%E5%8F%B0%E5%8C%97", "https://www.hongfoundation.org.tw/"], sponsor:true}
+    {type:"贊助", names:["C2x3", "十銓科技", "奧地利駐臺辦事處", "洪建全基金會", "WeMo"], images:["assets/images/logos/C2x3LOGO.png", "assets/images/logos/十銓科技LOGO.png", "assets/images/logos/奧地利駐臺辦事處LOGO.png", "assets/images/logos/洪建全基金會LOGO.png", "assets/images/logos/Wemo_LOGO.png"], urls:["https://linktr.ee/c2x3", "https://www.teamgroupinc.com/tw/", "https://www.bmeia.gv.at/tw/%E5%A5%A7%E5%9C%B0%E5%88%A9-%E8%BE%A6%E4%BA%8B%E8%99%95-%E5%8F%B0%E5%8C%97", "https://www.hongfoundation.org.tw/", "https://www.wemoscooter.com/"], sponsor:true}
   ]
 };
 
@@ -2829,13 +3545,22 @@ const DAF_BUSINESS_HOURS_SCHEDULES = {
   "store-08": {0:DAF_HOURS(["12:00","20:00"]),1:null,2:DAF_HOURS(["12:00","20:00"]),3:DAF_HOURS(["12:00","20:00"]),4:DAF_HOURS(["12:00","20:00"]),5:DAF_HOURS(["12:00","20:00"]),6:DAF_HOURS(["12:00","20:00"])},
   "store-09": {0:DAF_ALL_DAY_HOURS(),1:DAF_ALL_DAY_HOURS(),2:DAF_ALL_DAY_HOURS(),3:DAF_ALL_DAY_HOURS(),4:DAF_ALL_DAY_HOURS(),5:DAF_ALL_DAY_HOURS(),6:DAF_ALL_DAY_HOURS()},
   "store-10": {0:DAF_HOURS(["10:00","21:00"]),1:DAF_HOURS(["10:00","21:00"]),2:DAF_HOURS(["10:00","21:00"]),3:DAF_HOURS(["10:00","21:00"]),4:DAF_HOURS(["10:00","21:00"]),5:DAF_HOURS(["10:00","21:00"]),6:DAF_HOURS(["10:00","21:00"])},
-  "shop-02": {0:null,1:DAF_HOURS(["11:00","20:00"]),2:DAF_HOURS(["11:00","20:00"]),3:DAF_HOURS(["11:00","20:00"]),4:DAF_HOURS(["11:00","20:00"]),5:null,6:DAF_HOURS(["11:00","19:00"])},
-  "shop-03": {0:null,1:DAF_HOURS(["19:30","01:00"]),2:DAF_HOURS(["19:30","01:00"]),3:DAF_HOURS(["19:30","01:00"]),4:null,5:DAF_HOURS(["19:30","02:00"]),6:DAF_HOURS(["19:30","02:00"])},
-  "shop-04": {0:DAF_HOURS(["12:00","15:00"]),1:DAF_HOURS(["12:00","19:00"]),2:DAF_HOURS(["12:00","19:00"]),3:DAF_HOURS(["12:00","19:00"]),4:DAF_HOURS(["12:00","19:00"]),5:DAF_HOURS(["12:00","15:00"]),6:DAF_HOURS(["12:00","15:00"])},
-  "shop-05": {0:DAF_HOURS(["13:00","18:00"]),1:DAF_HOURS(["11:00","19:00"]),2:DAF_HOURS(["11:00","19:00"]),3:null,4:null,5:null,6:DAF_HOURS(["13:00","18:00"])}
+  "shop-01": {0:null,1:DAF_HOURS(["10:00","15:00"]),2:DAF_HOURS(["10:00","15:00"]),3:DAF_HOURS(["10:00","15:00"]),4:DAF_HOURS(["10:00","15:00"]),5:DAF_HOURS(["10:00","15:00"]),6:DAF_HOURS(["10:30","18:00"])},
+  "shop-02": {0:null,1:DAF_HOURS(["19:30","01:00"]),2:DAF_HOURS(["19:30","01:00"]),3:DAF_HOURS(["19:30","01:00"]),4:null,5:DAF_HOURS(["19:30","02:00"]),6:DAF_HOURS(["19:30","02:00"])},
+  "shop-03": {0:DAF_HOURS(["12:00","15:00"]),1:DAF_HOURS(["12:00","19:00"]),2:DAF_HOURS(["12:00","19:00"]),3:DAF_HOURS(["12:00","19:00"]),4:DAF_HOURS(["12:00","19:00"]),5:DAF_HOURS(["12:00","15:00"]),6:DAF_HOURS(["12:00","15:00"])},
+  "shop-04": {0:DAF_HOURS(["13:00","18:00"]),1:DAF_HOURS(["11:00","19:00"]),2:DAF_HOURS(["11:00","19:00"]),3:null,4:null,5:null,6:DAF_HOURS(["13:00","18:00"])}
+};
+const DAF_SPECIAL_HOURS = {
+  "store-01": {"2026-10-31":DAF_HOURS(["10:00","22:00"])},
+  "store-03": {"2026-10-31":DAF_HOURS(["10:00","02:00"])},
+  "store-05": {"2026-10-31":DAF_HOURS(["13:00","00:00"])},
+  "store-08": {"2026-10-31":DAF_HOURS(["12:00","02:00"])},
+  "shop-01": {"2026-10-31":DAF_HOURS(["10:00","20:00"])},
+  "shop-02": {"2026-10-31":DAF_HOURS(["19:30","02:00"])}
 };
 [...window.DAF_DATA.venues, ...window.DAF_DATA.shops].forEach(store => {
   store.businessHoursSchedule = DAF_BUSINESS_HOURS_SCHEDULES[store.id] || null;
+  store.specialHours = DAF_SPECIAL_HOURS[store.id] || {};
 });
 const DAF_WORK_VENUE_IDS = Object.fromEntries(
   window.DAF_DATA.venues.flatMap(venue => venue.workIds.map(workId => [String(workId), venue.id]))

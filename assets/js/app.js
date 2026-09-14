@@ -182,6 +182,13 @@
     return `<img src="${C.assetRoute(source)}" alt="${textFor(artist, "name")} 圖片" loading="${priority ? "eager" : "lazy"}" decoding="async" fetchpriority="${priority ? "high" : "low"}">`;
   };
 
+  const homeArtworkImageMarkup = (artist, {priority = false} = {}) => {
+    const source = D.homeArtworkImages?.[artist.workId];
+    if (!source) return C.placeholder(isEnglish ? "Artwork image pending" : "作品圖片待提供");
+    const thumbnail = source.replace("/home/", "/home/thumbs/").replace(/\.[^.]+$/, ".webp");
+    return `<img src="${C.assetRoute(thumbnail)}" alt="${textFor(artist, "workTitle")} ${isEnglish ? "artwork image" : "作品圖片"}" loading="${priority ? "eager" : "lazy"}" decoding="async" fetchpriority="${priority ? "high" : "low"}">`;
+  };
+
   const artistViewData = artist => {
     const linkedWork = workCatalog.find(work => work.id === artist.workId);
     return {
@@ -202,7 +209,7 @@
     return artists.map(artistViewData).map((artist, index) => `
     <article class="artist-accordion-item" data-artist-id="${artist.id}" data-accordion-index="${index}">
       <div class="artist-accordion-media">
-        ${artistImageMarkup(artist, {priority: index === defaultIndex, thumbnail: true})}
+        ${homeArtworkImageMarkup(artist, {priority: index === defaultIndex})}
       </div>
       <div class="artist-accordion-info">
         <h3>${artist.name}</h3>
@@ -1209,7 +1216,6 @@
     const titleElements = [...hero.querySelectorAll(".hero-scramble")];
     const messageGroup = hero.querySelector(".hero-system-messages");
     const messageLines = [...messageGroup.querySelectorAll("p")];
-    const navigation = hero.querySelector(".hero-system-links");
     const scrollLink = hero.querySelector(".hero-scroll");
     const finalMessages = messageLines.map(line => line.textContent);
     const wait = duration => new Promise(resolve => window.setTimeout(resolve, duration));
@@ -1318,7 +1324,6 @@
       if (index < messageLines.length - 1) await wait(transitions[index].delay);
     }
     await wait(230);
-    navigation.classList.add("is-visible");
     await wait(540);
     scrollLink.classList.add("is-visible");
     await wait(320);
@@ -1377,7 +1382,7 @@
   };
 
   const hydrateHome = () => {
-    document.querySelector("#home-artist-accordion").innerHTML = artistAccordionItems(D.artists.filter(artist => textFor(artist, "name")));
+    document.querySelector("#home-artist-accordion").innerHTML = artistAccordionItems(D.artists.filter(artist => textFor(artist, "name") && D.homeArtworkImages?.[artist.workId]));
     const upcomingSection = document.querySelector("#upcoming-programs");
     const upcomingTrack = document.querySelector("#home-upcoming-programs");
     const renderUpcomingPrograms = () => {
@@ -1386,16 +1391,6 @@
       upcomingTrack.innerHTML = featuredProgramCards(upcoming);
     };
     renderUpcomingPrograms();
-    const instagram = D.social.instagram;
-    const facebook = D.social.facebook;
-    document.querySelector("#instagram-label").textContent = instagram.label;
-    document.querySelector("#instagram-handle").textContent = instagram.handle;
-    document.querySelector("#instagram-link").href = instagram.url;
-    document.querySelector("#facebook-label").textContent = facebook.label;
-    document.querySelector("#facebook-name").textContent = facebook.name;
-    document.querySelector("#facebook-link").href = facebook.url;
-    document.querySelector("#facebook-embed").src = `https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(facebook.url)}&tabs=timeline&width=328&height=430&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true`;
-
     initializeArtistAccordion();
     const rebuildFeaturedPagination = initializeFeaturedPagination();
     const upcomingTimer = window.setInterval(() => {
@@ -1761,7 +1756,7 @@
   document.querySelector("#site-footer").innerHTML = C.footer();
   initializeBackToTop();
 
-  const breadcrumbLabels = isEnglish ? {about:"ABOUT", map:"MAP", works:"WORKS", program:"PROGRAM", visit:"Main Venue"} : {about:"關於", map:"探索地圖", works:"作品介紹", program:"活動節目", visit:"主展場參觀"};
+  const breadcrumbLabels = isEnglish ? {about:"ABOUT", map:"MAP", works:"WORKS", program:"PROGRAM", visit:"Visit"} : {about:"關於", map:"探索地圖", works:"作品介紹", program:"活動節目", visit:"參觀資訊"};
   if (breadcrumbLabels[page]) {
     const breadcrumb = page === "works" && location.hash === "#art-in-stores"
       ? [

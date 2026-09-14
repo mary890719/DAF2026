@@ -36,7 +36,7 @@ window.DAF_COMPONENTS = (() => {
     {id: "program", label: "活動節目", url: "program.html", children: [
       ["節目總覽", "program.html#program-overview"], ["日程表", "program.html#schedule"]
     ]},
-    {id: "visit", label: "主展場參觀", url: "visit.html", children: [
+    {id: "visit", label: "參觀資訊", url: "visit.html", children: [
       ["展覽時間", "visit.html#visit-hours"], ["展覽地點", "visit.html#visit-location"],
       ["交通方式", "visit.html#transportation"], ["場館地圖", "visit.html#venue-map"]
     ]}
@@ -47,7 +47,7 @@ window.DAF_COMPONENTS = (() => {
     {id:"map",label:"MAP",url:"map.html",children:[["BOTANICAL GARDEN","map.html#garden-map"],["DISTRICT MAP","map.html#district-map"],["PARTNER STORES","map.html#partner-stores"]]},
     {id:"works",label:"WORKS",url:"works.html",children:[{label:"TAIPEI COLLECTIBLE BOTANICAL GARDEN",url:"works.html#garden",children:[["MAIN VENUE","works.html#main-venue"],["OUTDOOR WORKS","works.html#outdoor-works"]]},["TAIPEI YUANSHAN DISTRICT","works.html#art-in-stores"]]},
     {id:"program",label:"PROGRAM",url:"program.html",children:[["PROGRAM OVERVIEW","program.html#program-overview"],["SCHEDULE","program.html#schedule"]]},
-    {id:"visit",label:"MAIN VENUE",url:"visit.html",children:[["OPENING HOURS","visit.html#visit-hours"],["VENUE","visit.html#visit-location"],["TRANSPORTATION","visit.html#transportation"],["VENUE MAP","visit.html#venue-map"]]}
+    {id:"visit",label:"VISIT",url:"visit.html",children:[["OPENING HOURS","visit.html#visit-hours"],["VENUE","visit.html#visit-location"],["TRANSPORTATION","visit.html#transportation"],["VENUE MAP","visit.html#venue-map"]]}
   ];
   const ui = () => getCurrentLanguage() === "en"
     ? {nav:navEn,home:"HOME",language:"中文",mainNav:"Main navigation",backToTop:"Back to top",expand:"Expand ",collapse:"Collapse ",submenu:" submenu",closeNav:"Close main navigation"}
@@ -84,17 +84,18 @@ window.DAF_COMPONENTS = (() => {
       "協辦單位": {zh: "協辦單位", en: "Co-organizer"},
       "場地合作": {zh: "場地合作", en: "Venue Partner"},
       "合作單位": {zh: "合作單位", en: "Partners"},
-      "贊助": {zh: "贊助", en: "Sponsors"}
+      "贊助": {zh: "贊助", en: "Sponsors"},
+      "多媒體設備贊助": {zh: "多媒體設備贊助", en: "Supporting Partner"}
     };
     const socialLinks = `<div class="footer-social"><a href="${social.instagram.url}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">${icon("instagram", "")}</a><a href="${social.facebook.url}" target="_blank" rel="noopener noreferrer" aria-label="Facebook">${icon("facebook", "")}</a></div>`;
     const organizationGroup = org => {
       const labels = organizationTypeLabels[org.type] || {zh: org.type, en: org.type};
       const heading = getCurrentLanguage() === "en" ? labels.en : labels.zh;
-      return `<section class="org-group ${org.sponsor?"sponsor":""}"><strong>${heading}</strong><div class="org-logos">${org.names.map((name,index)=>{const image=`<img src="${assetRoute(org.images[index])}" alt="${name}">`;const url=org.urls?.[index];const surface=org.surfaces?.[index]==="light"?" org-logo-light":"";const linkLabel=getCurrentLanguage() === "en" ? `Visit the official website of ${name} (opens in a new tab)` : `前往${name}官方網站（另開新分頁）`;return `<div class="org-logo${surface}">${url?`<a href="${url}" target="_blank" rel="noopener noreferrer" aria-label="${linkLabel}">${image}</a>`:image}</div>`;}).join("")}</div></section>`;
+      return `<section class="org-group ${org.sponsor?"sponsor":""}"><strong>${heading}</strong><div class="org-logos">${org.names.map((name,index)=>{const displayName=getCurrentLanguage() === "en" ? (org.namesEn?.[index] || name) : name;const image=`<img src="${assetRoute(org.images[index])}" alt="${displayName}">`;const url=org.urls?.[index];const surface=org.surfaces?.[index]==="light"?" org-logo-light":"";const linkLabel=getCurrentLanguage() === "en" ? `Visit the official website of ${displayName} (opens in a new tab)` : `前往${displayName}官方網站（另開新分頁）`;return `<div class="org-logo${surface}">${url?`<a href="${url}" target="_blank" rel="noopener noreferrer" aria-label="${linkLabel}">${image}</a>`:image}</div>`;}).join("")}</div></section>`;
     };
     const organizationRows = `<div class="container org-grid"><div class="org-row org-row-primary">${DAF_DATA.organizations.slice(0, 3).map(organizationGroup).join("")}</div><div class="org-row org-row-secondary">${DAF_DATA.organizations.slice(3).map(organizationGroup).join("")}</div></div>`;
     const organizationLabel = getCurrentLanguage() === "en" ? "Festival organizations" : "藝術節單位資訊";
-    return `<section class="site-organizations" aria-label="${organizationLabel}">${organizationRows}</section><footer class="site-footer"><div class="container site-footer-inner"><p class="copyright">© 2026 臺北數位藝術節 Taipei Digital Art Festival. All Rights Reserved.</p>${socialLinks}</div></footer>`;
+    return `<section class="site-organizations" aria-label="${organizationLabel}">${organizationRows}</section><footer class="site-footer"><div class="container site-footer-inner"><div class="footer-info"><p class="copyright">© 2026 臺北數位藝術節 Taipei Digital Art Festival. All Rights Reserved.</p></div>${socialLinks}</div></footer>`;
   }
   const placeholder = (label="圖片 Placeholder", cls="") => `<div class="placeholder ${cls}"><span>${label}</span></div>`;
   const icon = (name, label, cls="") => `<img class="icon ${cls}" src="${assetRoute(`assets/icons/${name}.svg`)}" alt="${label}"${label ? "" : ' aria-hidden="true"'}>`;

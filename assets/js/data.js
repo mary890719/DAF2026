@@ -2,6 +2,33 @@ window.DAF_DATA = {
   settings: {
     homeArtistLayout: "accordion"
   },
+  homeArtworkImages: {
+    "main-01": "assets/images/works/home/main-01.png",
+    "main-02": "assets/images/works/home/main-02.png",
+    "main-03": "assets/images/works/home/main-03.png",
+    "main-04": "assets/images/works/home/main-04.png",
+    "main-05": "assets/images/works/home/main-05.png",
+    "main-06": "assets/images/works/home/main-06.png",
+    "main-07": "assets/images/works/home/main-07.jpg",
+    "main-08": "assets/images/works/home/main-08.jpg",
+    "main-09": "assets/images/works/home/main-09.jpg",
+    "outdoor-01": "assets/images/works/home/outdoor-01.png",
+    "outdoor-02": "assets/images/works/home/outdoor-02.png",
+    "district-01": "assets/images/works/home/district-01.jpg",
+    "district-02": "assets/images/works/home/district-02.jpg",
+    "district-03": "assets/images/works/home/district-03.png",
+    "district-04": "assets/images/works/home/district-04_1.png",
+    "district-05": "assets/images/works/home/district-04_2.jpg",
+    "district-06": "assets/images/works/home/district-04_3.jpg",
+    "district-07": "assets/images/works/home/district-04_4.jpg",
+    "district-08": "assets/images/works/home/district-04_5.jpg",
+    "district-09": "assets/images/works/home/district-05.png",
+    "district-10": "assets/images/works/home/district-06.png",
+    "district-11": "assets/images/works/home/district-07.png",
+    "district-12": "assets/images/works/home/district-08.png",
+    "district-13": "assets/images/works/home/district-09.jpg",
+    "district-14": "assets/images/works/home/district-10.jpg"
+  },
   social: {
     instagram: {
       url: "https://www.instagram.com/daf_taipei/",
@@ -1294,7 +1321,7 @@ window.DAF_DATA = {
     "images": [
       "assets/images/works/district/district-04_3/01.jpg",
       "assets/images/works/district/district-04_3/02.jpg",
-      "assets/images/works/district/district-04_3/03.jpg",
+      "assets/images/works/district/district-04_3/03.png",
       "assets/images/works/district/district-04_3/04.jpg",
       "assets/images/works/district/district-04_3/05.png"
     ],
@@ -1356,9 +1383,9 @@ window.DAF_DATA = {
     "description": "《CRUSH》探討女性身體、科技、慾望，以及汽車戀物化之間的關係。作品靈感來自大衛・柯能堡（David Cronenberg）的電影《慾望號快車》（Crash，1996），藉此思考碰撞、吸引、轉化，以及身體與機器之間不斷演變的關係。\n作品運用 AI 生成影像，質疑當代數位文化如何呈現、定型並快速複製女性身體。AI 經常在生成過程中出現錯誤與扭曲，產生三條腿的人物、破碎的肢體，以及近似人類身體卻又不完全成人形的詭異形態。這些錯誤揭示了演算法視覺的限制與偏見，同時也開啟了一個想像空間，使女性身體得以超越既有的再現框架。\n作品透過繪畫、拼布、熱昇華染色與蜂蠟等方式，轉化這些不穩定的數位影像，並以緩慢且具觸感的手工製作過程，對比 AI 影像生成的速度。在作品中，女性身體成為一種自主且持續變化的存在。",
     "videoUrl": "",
     "imageFolder": "district-04_5",
-    "coverImage": "assets/images/works/district/district-04_5/01.jpg",
+    "coverImage": "assets/images/works/district/district-04_5/01.png",
     "images": [
-      "assets/images/works/district/district-04_5/01.jpg"
+      "assets/images/works/district/district-04_5/01.png"
     ],
     "artistIds": [
       "artist-19"
@@ -1494,7 +1521,8 @@ window.DAF_DATA = {
       "assets/images/works/district/district-08/01.png",
       "assets/images/works/district/district-08/02.jpg",
       "assets/images/works/district/district-08/03.jpg",
-      "assets/images/works/district/district-08/04.jpg"
+      "assets/images/works/district/district-08/04.jpg",
+      "assets/images/works/district/district-08/05.jpg"
     ],
     "artistIds": [
       "artist-23"
@@ -3508,7 +3536,8 @@ window.DAF_DATA = {
     {type:"協辦單位", names:["文創技研有限公司"], images:["assets/images/logos/文創技研Logo.png"], urls:["https://artecture-tw.com/"]},
     {type:"場地合作", names:["臺北典藏植物園"], images:["assets/images/logos/臺北典藏植物園LOGO.png"], urls:["https://www.future.url.tw/"]},
     {type:"合作單位", names:["臺灣當代文化實驗場", "噪流"], images:["assets/images/logos/C-LAB未來視覺實驗室LOGO.png", "assets/images/logos/噪流LOGO.png"], urls:["https://clab.org.tw/", "https://fluidnoise.com/"]},
-    {type:"贊助", names:["C2x3", "十銓科技", "奧地利駐臺辦事處", "洪建全基金會", "WeMo"], images:["assets/images/logos/C2x3LOGO.png", "assets/images/logos/十銓科技LOGO.png", "assets/images/logos/奧地利駐臺辦事處LOGO.png", "assets/images/logos/洪建全基金會LOGO.png", "assets/images/logos/Wemo_LOGO.png"], urls:["https://linktr.ee/c2x3", "https://www.teamgroupinc.com/tw/", "https://www.bmeia.gv.at/tw/%E5%A5%A7%E5%9C%B0%E5%88%A9-%E8%BE%A6%E4%BA%8B%E8%99%95-%E5%8F%B0%E5%8C%97", "https://www.hongfoundation.org.tw/", "https://www.wemoscooter.com/"], sponsor:true}
+    {type:"贊助", names:["十銓科技", "奧地利台北辦事處", "飛利浦顯示器", "c2x3", "wemo", "民偉視訊工程有限公司", "捷克中心台北"], namesEn:["TEAMGROUP", "Austrian Office Taipei", "Philips", "c2x3", "wemo", "Meway", "Czech Center Taipei"], images:["assets/images/logos/十銓科技LOGO-2.png", "assets/images/logos/奧地利駐臺辦事處LOGO.png", "assets/images/logos/Philips logo.png", "assets/images/logos/C2x3LOGO.png", "assets/images/logos/Wemo_LOGO-2.png", "assets/images/logos/民偉_LOGO.png", "assets/images/logos/捷克中心台北_LOGO.png"], urls:["https://www.teamgroupinc.com/tw/", "https://www.bmeia.gv.at/tw/%E5%A5%A7%E5%9C%B0%E5%88%A9-%E8%BE%A6%E4%BA%8B%E8%99%95-%E5%8F%B0%E5%8C%97", "https://www.philips.com.tw/c-m-so/monitors", "https://linktr.ee/c2x3", "https://www.wemoscooter.com/", "https://www.meway.com.tw/", "https://taipei.czechcentres.gov.cz/zh"], sponsor:true},
+    {type:"多媒體設備贊助", names:["洪建全基金會", "台灣松下電器"], namesEn:["Hong Foundation", "Panasonic Taiwan"], images:["assets/images/logos/洪建全基金會LOGO.png", "assets/images/logos/Panasonic LOGO.png"], urls:["https://www.hongfoundation.org.tw/", "https://www.panasonic.com/tw/"], sponsor:true}
   ]
 };
 

@@ -486,8 +486,9 @@
         <img data-opening-performance-gallery-image src="${C.assetRoute(workImages[0].src)}" alt="${performanceTitle || performanceName} ${isEnglish ? "performance image" : "演出作品圖片"} 1">
         ${workImages.length > 1 ? `<button class="shop-gallery-arrow is-previous" type="button" data-opening-performance-gallery-direction="-1" aria-label="${isEnglish ? "Previous image" : "上一張圖片"}">‹</button><button class="shop-gallery-arrow is-next" type="button" data-opening-performance-gallery-direction="1" aria-label="${isEnglish ? "Next image" : "下一張圖片"}">›</button><span class="shop-gallery-count" data-opening-performance-gallery-count>1 / ${workImages.length}</span>` : ""}
       </div></section>` : "";
+      const backButton = `<button class="opening-detail-back" type="button" data-opening-detail-back="${parentId}">&lt; ${isEnglish ? "Back to Performance Team" : "返回演出團隊"}</button>`;
       return `<div class="opening-detail-content">
-        <button class="opening-detail-back" type="button" data-opening-detail-back="${parentId}">&lt; ${isEnglish ? "Back to team" : "返回演出團隊"}</button>
+        ${backButton}
         <header class="opening-detail-header">
           <p class="opening-subperformance-artist">${performanceName}</p>
           ${alternatePerformanceName && alternatePerformanceName !== performanceName ? `<p class="opening-detail-name-en">${alternatePerformanceName}</p>` : ""}
@@ -501,6 +502,7 @@
         ${performanceCareer ? `<section class="opening-detail-section"><h4>${isEnglish ? "Experience" : "藝術家經歷"}</h4>${paragraphMarkup(performanceCareer)}</section>` : ""}
         ${performanceLinks ? `<div class="opening-performer-links">${performanceLinks}</div>` : ""}
         ${workGallery}
+        ${backButton}
       </div>`;
     };
     const detailMarkup = record => {

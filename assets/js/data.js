@@ -149,19 +149,19 @@ window.DAF_DATA = {
     "nameZh": "維麗娜．弗里德里希",
     "nameEn": "Verena Friedrich",
     "nationality": "德國",
-    "bio": "Verena Friedrich 的創作以時間性裝置為核心，結合有機媒材、電子媒介與雕塑元素，探討生命、技術與物質在時間中的變化。她透過精密機械、感測與實驗性系統，將科學方法轉化為具有感知性與觀念性的藝術經驗，並持續關注控制、測量與生命過程之間的關係。其作品曾獲 ZKM 科學與藝術國際媒體獎、VIDA 藝術與人工生命獎等肯定，並於國際藝術與科技場域展出。",
+    "bio": "Verena Friedrich 的創作主要以時間性裝置為核心，結合有機媒材、電子媒介與雕塑性元素，發展出兼具感知經驗與觀念性的作品。她的計畫曾於國際間多個展覽、媒體藝術節與學術研討會中發表。",
     "workId": "main-05",
     "workTitle": "EZ品質分解機V2",
     "workTitleEn": "EZ Quality Soryer V2",
     "career": "獲獎\n2005｜ZKM Karlsruhe「科學與藝術國際媒體獎」，VIDA 13.2 Art and Artificial Life Award 特別提名。\n2015、2023｜Prix Ars Electronica 榮譽提名。",
     "image": {
       "src": "assets/images/artists/artist-05.png",
-      "alt": "Verena Friedrich"
+      "alt": "維麗娜．弗里德里希"
     },
     "nationalityZh": "德國",
     "nationalityEn": "Germany",
-    "bioZh": "Verena Friedrich 的創作以時間性裝置為核心，結合有機媒材、電子媒介與雕塑元素，探討生命、技術與物質在時間中的變化。她透過精密機械、感測與實驗性系統，將科學方法轉化為具有感知性與觀念性的藝術經驗，並持續關注控制、測量與生命過程之間的關係。其作品曾獲 ZKM 科學與藝術國際媒體獎、VIDA 藝術與人工生命獎等肯定，並於國際藝術與科技場域展出。",
-    "bioEn": "Verena Friedrich creates time-based installations that combine organic materials, electronic media, and sculptural elements. Through precise mechanisms, sensing technologies, and experimental systems, she transforms scientific methods into perceptual and conceptual experiences. Her practice examines how life, technology, and matter change over time, with particular attention to relationships among control, measurement, and biological processes. Friedrich’s work has received recognition including the ZKM International Media Award for Science and Art and the VIDA Art and Artificial Life Award, and has been presented internationally in contexts spanning contemporary art, media art, and technological experimentation.",
+    "bioZh": "Verena Friedrich 的創作主要以時間性裝置為核心，結合有機媒材、電子媒介與雕塑性元素，發展出兼具感知經驗與觀念性的作品。她的計畫曾於國際間多個展覽、媒體藝術節與學術研討會中發表。",
+    "bioEn": "Verena Friedrich’s artistic practice centers on time-based installations that combine organic materials, electronic media, and sculptural elements. Her works bring together perceptual experience and conceptual inquiry, exploring the intersections between material processes, technology, and temporality.\nHer projects have been presented internationally at exhibitions, media art festivals, and academic conferences.",
     "careerZh": "獲獎\n2005｜ZKM Karlsruhe「科學與藝術國際媒體獎」，VIDA 13.2 Art and Artificial Life Award 特別提名。\n2015、2023｜Prix Ars Electronica 榮譽提名。",
     "careerEn": "AWARDS\n2005 | ZKM Karlsruhe International Media Award for Science and Art, VIDA 13.2 Art and Artificial Life Awards Special Mention.\n2015, 2023 | Honorary Mention, Prix Ars Electronica.",
     "website": "https://heavythinking.org/",
@@ -176,7 +176,7 @@ window.DAF_DATA = {
     "nameZh": "C-LAB未來視覺實驗室",
     "nameEn": "C-LAB’s Future Vision Lab",
     "nationality": "台灣",
-    "bio": "「未來視覺實驗室」為臺灣當代文化實驗場 C-LAB 推動的科技媒體實驗平台，聚焦沉浸式影像、空間運算與新型態視覺技術的研究與創作。平台透過實驗製作、跨域合作與展演，串聯藝術家、技術團隊與研究者，探索影像、聲音、空間與觀眾之間的新關係，並建立大型沉浸式內容的創作與測試環境，推動臺灣在未來影像與科技藝術領域的實驗發展。",
+    "bio": "「未來視覺實驗室」在台灣 context 下主要指由臺灣當代文化實驗場（C-LAB）所推動的科技媒體實驗平台，特別是其專注於沉浸式影像的「FUTURE VISION LAB」。該平台打造了穹頂劇場（DOME），利用球形投影技術探索未來視覺與科技藝術的極限，具備R＆D的能量，整合影像運算、拼接、軟硬體系統、環繞音場及建築結構設計等技術，除策劃展演及陪伴創作者以外，亦進行各項跨域實驗，持續開創未來視覺及創新科技的新視野。",
     "workId": "main-06",
     "workTitle": "GeodesicDome+3V+1a - Architectural Plans",
     "workTitleEn": "GeodesicDome+3V+1a - Architectural Plans",
@@ -186,8 +186,8 @@ window.DAF_DATA = {
     },
     "nationalityZh": "台灣",
     "nationalityEn": "Taiwan",
-    "bioZh": "「未來視覺實驗室」為臺灣當代文化實驗場 C-LAB 推動的科技媒體實驗平台，聚焦沉浸式影像、空間運算與新型態視覺技術的研究與創作。平台透過實驗製作、跨域合作與展演，串聯藝術家、技術團隊與研究者，探索影像、聲音、空間與觀眾之間的新關係，並建立大型沉浸式內容的創作與測試環境，推動臺灣在未來影像與科技藝術領域的實驗發展。",
-    "bioEn": "Future Vision Lab is a technology and media experimentation platform initiated by Taiwan Contemporary Culture Lab (C-LAB). It focuses on immersive imaging, spatial computing, and emerging forms of visual technology, bringing together artists, technical teams, and researchers through experimental production, interdisciplinary collaboration, and public presentation. The platform investigates new relationships among image, sound, space, and audiences while providing an environment for developing and testing large-scale immersive content. Through these activities, Future Vision Lab supports experimentation in future-oriented visual culture and advances the development of technology-based artistic practices in Taiwan.",
+    "bioZh": "「未來視覺實驗室」在台灣 context 下主要指由臺灣當代文化實驗場（C-LAB）所推動的科技媒體實驗平台，特別是其專注於沉浸式影像的「FUTURE VISION LAB」。該平台打造了穹頂劇場（DOME），利用球形投影技術探索未來視覺與科技藝術的極限，具備R＆D的能量，整合影像運算、拼接、軟硬體系統、環繞音場及建築結構設計等技術，除策劃展演及陪伴創作者以外，亦進行各項跨域實驗，持續開創未來視覺及創新科技的新視野。",
+    "bioEn": "FUTURE VISION LAB is a technology and media experimentation platform initiated by the Taiwan Contemporary Culture Lab (C-LAB), with a particular focus on immersive moving-image practices. At its core is DOME, a dome theater that uses spherical projection technology to explore new possibilities in future visual culture and technological art.\nWith strong R&D capabilities, the platform integrates technologies including image processing, projection stitching, hardware and software systems, surround sound, and architectural design. In addition to presenting exhibitions and performances and supporting creators in developing new works, FUTURE VISION LAB facilitates a wide range of interdisciplinary experiments, continually expanding new horizons for future visual practices and innovative technologies.",
     "career": "",
     "careerZh": "",
     "careerEn": "",
@@ -465,24 +465,25 @@ window.DAF_DATA = {
     "nameZh": "沈宇軒",
     "nameEn": "Yu-Hsuan Shen",
     "nationality": "台灣",
-    "bio": "沈宇軒1999年生，畢業於國立中興大學資訊工程學系，曾任職工研院資通所，現就讀國立臺北藝術大學新媒體藝術學系碩士班。擅長程式設計、軟硬體整合與互動裝置，創作著重技術系統與藝術經驗的結合。曾任德國威瑪藝術節《演算法和諧》技術指導，負責程式開發與電路設計，並參與 C-LAB 聲響藝術節及 Ars Electronica 等展演，持續發展互動科技與藝術之間的實踐。",
+    "bio": "沈宇軒，1999年生，畢業於國立中興大學資工系，目前就讀於臺北藝術大學新媒體藝術學系碩士班，專長於各項程式設計、軟硬體整合及互動裝置領域。創作中擅長技術與藝術的結合，為觀眾帶來新穎的觀賞體驗。",
     "workId": "district-06",
     "workTitle": "ID",
     "workTitleEn": "ID",
-    "career": "聯展\n2025｜C-LAB 聲響藝術節《回聲室》互動程式設計、AI 語音製作\n2025｜2025 林茲電子藝術節作品 《碰》參展\n2025｜2025 林茲電子藝術節作品 《囂》參展\n2024｜德國威瑪藝術節《演算法和諧》技術指導\n2024｜北藝新媒卓越獎 《囂》首獎\n2024｜《阿特三特》藝術聯展參展",
+    "career": "展覽\n2025｜C-LAB 聲響藝術節《回聲室》互動程式設計、AI 語音製作\n2025｜2025 林茲電子藝術節作品 《碰》參展\n2025｜2025 林茲電子藝術節作品 《囂》參展\n2024｜德國威瑪藝術節《演算法和諧》技術指導\n2024｜北藝新媒卓越獎 《囂》首獎\n2024｜《阿特三特》藝術聯展參展",
     "image": {
       "src": "assets/images/artists/artist-17.png",
       "alt": "沈宇軒"
     },
     "nationalityZh": "台灣",
     "nationalityEn": "Taiwan",
-    "bioZh": "沈宇軒1999年生，畢業於國立中興大學資訊工程學系，曾任職工研院資通所，現就讀國立臺北藝術大學新媒體藝術學系碩士班。擅長程式設計、軟硬體整合與互動裝置，創作著重技術系統與藝術經驗的結合。曾任德國威瑪藝術節《演算法和諧》技術指導，負責程式開發與電路設計，並參與 C-LAB 聲響藝術節及 Ars Electronica 等展演，持續發展互動科技與藝術之間的實踐。",
-    "bioEn": "Shen Yu-Hsuan, born in 1999, studied computer science at National Chung Hsing University and previously worked at the Information and Communications Research Laboratories of ITRI. He is currently pursuing a master’s degree in New Media Art at Taipei National University of the Arts. His expertise includes programming, hardware-software integration, and interactive installation, with a practice focused on combining technical systems with artistic experience. Shen served as technical director for Algorithmic Harmony at Kunstfest Weimar, developing software and electronic circuits, and has contributed to projects presented at the C-LAB Sound Festival and Ars Electronica. His work continues to explore interactions between technology, space, and audiences.",
-    "careerZh": "聯展\n2025｜C-LAB 聲響藝術節《回聲室》互動程式設計、AI 語音製作\n2025｜2025 林茲電子藝術節作品 《碰》參展\n2025｜2025 林茲電子藝術節作品 《囂》參展\n2024｜德國威瑪藝術節《演算法和諧》技術指導\n2024｜北藝新媒卓越獎 《囂》首獎\n2024｜《阿特三特》藝術聯展參展",
-    "careerEn": "GROUP EXHIBITIONS\n2025 | C-LAB Sound Festival, Echo Chamber – Interactive Programming & AI Voice Production\n2025 | Ars Electronica – Exhibited Work: Bouncing\n2025 | Ars Electronica – Exhibited Work: Clamor\n2024 | Kunstfest Weimar (Weimar Arts Festival), Algorithmic Harmony – Technical Director\n2024 | TNUA New Media Art Excellence Award – First Prize for Clamor\n2024 | Art Center Group Art Exhibition – Exhibiting Artist",
+    "bioZh": "沈宇軒，1999年生，畢業於國立中興大學資工系，目前就讀於臺北藝術大學新媒體藝術學系碩士班，專長於各項程式設計、軟硬體整合及互動裝置領域。創作中擅長技術與藝術的結合，為觀眾帶來新穎的觀賞體驗。",
+    "bioEn": "Shen Yu-Hsuan, born in 1999, graduated from the Department of Computer Science and Engineering at National Chung Hsing University and is currently pursuing a master's degree in New Media Art at Taipei National University of the Arts. His practice focuses on programming, hardware-software integration, and interactive installations, combining technology and art to create innovative and engaging experiences for audiences.",
+    "careerZh": "展覽\n2025｜C-LAB 聲響藝術節《回聲室》互動程式設計、AI 語音製作\n2025｜2025 林茲電子藝術節作品 《碰》參展\n2025｜2025 林茲電子藝術節作品 《囂》參展\n2024｜德國威瑪藝術節《演算法和諧》技術指導\n2024｜北藝新媒卓越獎 《囂》首獎\n2024｜《阿特三特》藝術聯展參展",
+    "careerEn": "EXHIBITIONS\n2025 | C-LAB Sound Festival, Echo Chamber – Interactive Programming & AI Voice Production\n2025 | Ars Electronica – Exhibited Work: Bouncing\n2025 | Ars Electronica – Exhibited Work: Clamor\n2024 | Kunstfest Weimar (Weimar Arts Festival), Algorithmic Harmony – Technical Director\n2024 | TNUA New Media Art Excellence Award – First Prize for Clamor\n2024 | Art Center Group Art Exhibition – Exhibiting Artist",
     "socialUrls": [
       "https://www.instagram.com/crazy.curly17"
     ],
+    "website": "",
     "instagram": "https://www.instagram.com/crazy.curly17"
   },
   {
@@ -524,7 +525,7 @@ window.DAF_DATA = {
     "workTitleEn": "I have a Crush on you",
     "career": "個展\n2025｜CRUSH，George Benias Gallery，雅典，希臘。\n2025｜I Want You to See It，Alkinois，雅典，希臘。\n2024｜Unexpected Encounters，GAMU，布拉格，捷克。\n\n聯展\n2025｜Inaugural，George Benias Gallery，雅典，希臘。\n2025｜Escapism，SG Gallery，雅典，希臘。\n2024｜In Margine，8smička Gallery，洪波萊茨，捷克。\n2023｜A Scattering of Salts，ACG Collection，Deree－The American College of Greece，希臘。\n2023｜Looking with the Eyes of Love，The Breeder Gallery，雅典，希臘。\n2023｜EFFIMISMS，與 Penny Key 雙人展，MISC Gallery，雅典，希臘。",
     "image": {
-      "src": "assets/images/artists/artist-19.jpg",
+      "src": "assets/images/artists/artist-19.png",
       "alt": "Bety Krňanská"
     },
     "nationalityZh": "德國",
@@ -620,21 +621,21 @@ window.DAF_DATA = {
     "nameZh": "鄭芳宜",
     "nameEn": "Fang-Yi Cheng",
     "nationality": "台灣",
-    "bio": "鄭芳宜畢業於英國皇家藝術學院當代藝術創作所，現就讀國立臺北藝術大學新媒體藝術創作研究所。創作以錄像與裝置為主，經常運用重複性結構與現成影像，關注影像在不同觀看情境中如何被重新組織與理解。她透過日常素材、既有影像與空間配置，探索觀看、時間與影像記憶之間的關係。近年作品於臺灣、奧地利、英國、立陶宛、泰國等地展出與放映。",
+    "bio": "畢業於英國皇家藝術學院的當代藝術創作所，目前就讀國立臺北藝術大學的新媒體藝術創作研究所。主要製作錄像與裝置，常常使用現成影像在作品中。近期在台灣、奧地利、英國展出。",
     "workId": "district-12",
     "workTitle": "日常保存：冰淇淋",
     "workTitleEn": "Everyday Storage: Ice Cream",
-    "career": "個展\n2026｜24/7 全年無休，台北當代藝術館，台北，台灣（錄像游擊隊）\n2024｜截圖的影像，靜慮藝術，台北，台灣\n\n聯展\n2026｜收拾收拾，窯座，台中，台灣\n2025｜PANIC – yes/no，林茲電子藝術節，林茲，奧地利\n2025｜UPĖ 河流藝術節，普倫蓋地區市立公共圖書館，普倫蓋，立陶宛\n2025｜超級藝術總動員，台北，台灣\n\n展演\n2025｜@@川藝術季，毛刺，台中，台灣\n2025｜Video Art Guerrilla film screening and artists’ talk，East Street Arts，里茲，英國\n2024｜南海路臨時音樂會，台北，台灣\n2024｜KAR藝術聚落戶外放映計畫，Khontemporary，孔敬，泰國",
+    "career": "個展\n2026｜24/7 全年無休，台北當代藝術館，台北，台灣（錄像游擊隊）\n2024｜截圖的影像，靜慮藝術，台北，台灣\n\n聯展\n2026｜收拾收拾，窯座，台中，台灣\n2025｜PANIC – yes/no，林茲電子藝術節，林茲，奧地利\n2025｜UPĖ 河流藝術節，普倫蓋地區市立公共圖書館，普倫蓋，立陶宛\n2025｜超級藝術總動員，台北，台灣\n2025｜Mushboom，科技藝術館，台北，台灣\n2024｜讀我像本書，白鹿洞書坊，台北，台灣\n\n放映\n2025｜@@川藝術季，毛刺，台中，台灣\n2025｜Video Art Guerrilla film screening and artists’ talk，East Street Arts，里茲，英國\n2024｜南海路臨時音樂會，台北，台灣\n2024｜KAR藝術聚落戶外放映計畫，Khontemporary，孔敬，泰國\n2024｜Baannoorg AIR Open Studio 戶外放映，Nongpho 夜市，曼谷，泰國\n2024｜錄像游擊隊 — 福德廟廟屋 竹圍放映行動，竹圍福德宮，台北，臺灣\n2024｜錄像游擊隊 — 沙崙海灘放映行動 ，沙崙海水浴場，新北，台灣",
     "image": {
       "src": "assets/images/artists/artist-23.jpg",
       "alt": "鄭芳宜"
     },
     "nationalityZh": "台灣",
     "nationalityEn": "Taiwan",
-    "bioZh": "鄭芳宜畢業於英國皇家藝術學院當代藝術創作所，現就讀國立臺北藝術大學新媒體藝術創作研究所。創作以錄像與裝置為主，經常運用重複性結構與現成影像，關注影像在不同觀看情境中如何被重新組織與理解。她透過日常素材、既有影像與空間配置，探索觀看、時間與影像記憶之間的關係。近年作品於臺灣、奧地利、英國、立陶宛、泰國等地展出與放映。",
-    "bioEn": "Fang-Yi Cheng holds an MA in Contemporary Art Practice from the Royal College of Art and is currently pursuing an MFA in New Media Art at Taipei National University of the Arts. Her practice centres on video and installation, frequently using repetition and ready-made images to examine how moving images are reorganised and understood across different viewing situations. Through everyday materials, existing footage, and spatial arrangements, she explores relationships among looking, time, and image-based memory. Her recent work has been presented through exhibitions and screenings in Taiwan, Austria, the United Kingdom, Lithuania, and Thailand, including projects at Ars Electronica and independent art spaces.",
-    "careerZh": "個展\n2026｜24/7 全年無休，台北當代藝術館，台北，台灣（錄像游擊隊）\n2024｜截圖的影像，靜慮藝術，台北，台灣\n\n聯展\n2026｜收拾收拾，窯座，台中，台灣\n2025｜PANIC – yes/no，林茲電子藝術節，林茲，奧地利\n2025｜UPĖ 河流藝術節，普倫蓋地區市立公共圖書館，普倫蓋，立陶宛\n2025｜超級藝術總動員，台北，台灣\n\n展演\n2025｜@@川藝術季，毛刺，台中，台灣\n2025｜Video Art Guerrilla film screening and artists’ talk，East Street Arts，里茲，英國\n2024｜南海路臨時音樂會，台北，台灣\n2024｜KAR藝術聚落戶外放映計畫，Khontemporary，孔敬，泰國",
-    "careerEn": "SOLO EXHIBITIONS\n2026 | 24/7 Ever-Opening Hours, Museum of Contemporary Art Taipei, Taipei, Taiwan (Video Art Guerrilla)\n2024 | Images of Screenshots, JingLü Art Gallery, Taipei, Taiwan\n\nGROUP EXHIBITIONS\n2026 | Tidy Up, Tidy Down, Yáo Alternative Space, Taichung, Taiwan\n2025 | PANIC – yes/no, Ars Electronica Festival, Linz, Austria\n2025 | Pause, Plungė Public Library, Plungė, Lithuania\n2025 | Art’s Finest, Taipei, Taiwan\n\nPERFORMANCES / SCREENINGS\n2025 | Tshuan Festival, Glitch, Taichung, Taiwan\n2025 | Video Art Guerrilla film screening and artists’ talk, East Street Arts, Leeds, The United Kingdom\n2024 | Nanhai Rd. POP UP！, Taipei, Taiwan\n2024 | Khontemporary Outdoor Screening, Khontemporary, Khon Kaen, Thailand",
+    "bioZh": "畢業於英國皇家藝術學院的當代藝術創作所，目前就讀國立臺北藝術大學的新媒體藝術創作研究所。主要製作錄像與裝置，常常使用現成影像在作品中。近期在台灣、奧地利、英國展出。",
+    "bioEn": "With an MA in Contemporary Art Practice from the Royal College of Art, Fang-Yi Cheng is currently pursuing an MFA at the Taipei National University of the Arts. Her practice centers on video and installation, frequently incorporating ready-made images. Her work has recently been exhibited in Taiwan, Austria, and the United Kingdom.",
+    "careerZh": "個展\n2026｜24/7 全年無休，台北當代藝術館，台北，台灣（錄像游擊隊）\n2024｜截圖的影像，靜慮藝術，台北，台灣\n\n聯展\n2026｜收拾收拾，窯座，台中，台灣\n2025｜PANIC – yes/no，林茲電子藝術節，林茲，奧地利\n2025｜UPĖ 河流藝術節，普倫蓋地區市立公共圖書館，普倫蓋，立陶宛\n2025｜超級藝術總動員，台北，台灣\n2025｜Mushboom，科技藝術館，台北，台灣\n2024｜讀我像本書，白鹿洞書坊，台北，台灣\n\n放映\n2025｜@@川藝術季，毛刺，台中，台灣\n2025｜Video Art Guerrilla film screening and artists’ talk，East Street Arts，里茲，英國\n2024｜南海路臨時音樂會，台北，台灣\n2024｜KAR藝術聚落戶外放映計畫，Khontemporary，孔敬，泰國\n2024｜Baannoorg AIR Open Studio 戶外放映，Nongpho 夜市，曼谷，泰國\n2024｜錄像游擊隊 — 福德廟廟屋 竹圍放映行動，竹圍福德宮，台北，臺灣\n2024｜錄像游擊隊 — 沙崙海灘放映行動 ，沙崙海水浴場，新北，台灣",
+    "careerEn": "SOLO EXHIBITIONS\n2026 | 24/7 Ever-Opening Hours, Museum of Contemporary Art Taipei, Taipei, Taiwan (Video Art Guerrilla)\n2024 | Images of Screenshots, JingLü Art Gallery, Taipei, Taiwan\n\nGROUP EXHIBITIONS\n2026 | Tidy Up, Tidy Down, Yáo Alternative Space, Taichung, Taiwan\n2025 | PANIC – yes/no, Ars Electronica Festival, Linz, Austria\n2025 | Pause, Plungė Public Library, Plungė, Lithuania\n2025 | Art’s Finest, Taipei, Taiwan\n2025 | Mushboom, Center for Art and Technology, Taipei, Taiwan\n2024 | Read Me Like a Book, Moose, Taipei, Taiwan\n\nSCREENINGS\n2025 | Tshuan Festival, Glitch, Taichung, Taiwan\n2025 | Video Art Guerrilla film screening and artists’ talk, East Street Arts, Leeds, The United Kingdom\n2024 | Nanhai Rd. POP UP！, Taipei, Taiwan\n2024 | Khontemporary Outdoor Screening, Khontemporary, Khon Kaen, Thailand\n2024 | Baannoorg AIR Open Studio \"Open AIR Screening\", Nongpho Night Market, Bangkok, Thailand\n2024 | Video Art Guerrilla: Fude Temple House, New Taipei, Taiwan\n2024 | Video Art Guerrilla: Shalun Beach Screening Project, New Taipei, Taiwan\n",
     "website": "https://www.chengfangyi.com/",
     "socialUrls": [
       "https://www.instagram.com/tiffanytiffyfanny"
@@ -711,14 +712,18 @@ window.DAF_DATA = {
     "membersZh": "吳承儒、張哲瑜、陳亮、陳彥齊、周喚",
     "membersEn": "Cheng-Ru Wu, Che-Yu Chang, Liang Chen, Yen-Chi Chen, Huan Chou",
     "workId": "performance-01",
-    "workTitle": "噪流",
-    "workTitleEn": "Fluid Noise",
+    "workTitle": "",
+    "workTitleEn": "",
     "website": "https://fluidnoise.com/about/",
-    "facebook": "https://www.facebook.com/fluidnoise/?locale=zh_TW",
     "image": {
       "src": "assets/images/artists/artist-26.png",
-      "alt": "噪流 Fluid Noise"
-    }
+      "alt": "噪流"
+    },
+    "career": "2025\n「avSyncTPE」音像創作者小聚（臺北數位藝術中心）\n「噪流實習vol.4 OPEN CALL」音像創作者培力徵件（臺北數位藝術中心）\n「~/noize_beginner｜音像開局新手包」初階工作坊（臺北數位藝術中心）\n「噪流講義EP3： 超入門音像藝術觀賞筆記」講座（寶藏巖國際藝術村）\n2024\n「DACU 噪流實習vol.3 」創作者培力展演（臺北數位藝術中心）\n2023\n「噪流實習vol.2」創作者培力展演（臺北數位藝術中心）\n「噪流講義EP2 ── 音像藝術的多種面向」講座（臺北數位藝術中心）\n「噪流講義EP1 ── 影像與聲音的連結」講座（臺北數位藝術中心）\n失聲祭 x 噪流「瀰音DiffuSound Vol.2」音像演出（臺北數位藝術中心）",
+    "socialUrls": [
+      "https://www.facebook.com/fluidnoise/?locale=zh_TW"
+    ],
+    "facebook": "https://www.facebook.com/fluidnoise/?locale=zh_TW"
   },
   {
     "id": "artist-27",
@@ -734,13 +739,15 @@ window.DAF_DATA = {
     "careerZh": "個展\n2022｜由 Melis Bektaş 策展——Karşı Sanat，伊斯坦堡，土耳其。\n2022｜Salihara 藝術中心（Salihara Arts Center），雅加達，印尼。\n\n聯展\n2025｜與 Alexandre Larose 合作 A/V 視聽獨奏演出——關渡光藝術節（KDLAF），國立臺北藝術大學藝術與科技中心，臺北，臺灣。\n2024｜以《Triangle of Darkness》電影配樂獲「Wojciech Juszczak 最佳音樂獎」——ANIMATOR 國際動畫影展，波茲南，波蘭。\n2024｜為 Ivanie Aubin-Malo 舞蹈創作《Wahsipekuk: Au-delà des montagnes》擔任音樂創作——Agora de la danse，蒙特婁，加拿大。\n2023–2024｜每月為 Radio Bloc Oral 創作三小時原創音樂——國際線上／廣播節目。\n2023｜《Symphonie Odonata》——沉浸式聲音裝置，Tunnel Pédestre Boulet，蒙特婁，加拿大。\n2023｜Félix-Antoine Morin 圖像樂譜音樂會，由斯洛維尼亞即興音樂家以雙人組合演出，Zavod Sploh 策劃——康卡爾中心（Cankar Centre），盧比安納，斯洛維尼亞。\n2022｜《Cathartic Quest》——與 Benoît Lachambre 雙人演出——ImPulsTanz 維也納國際舞蹈節，維也納，奧地利。\n2022｜《Asemic Sound Mappings》展覽——利奧波德博物館（Leopold Museum）／ImPulsTanz，維也納，奧地利。\n2021｜沉浸式電聲音樂會——Akousma 藝術節，蒙特婁，加拿大。\n2021｜《Plateforme》，由 Totem Contemporain 演出——NOW! 藝術節，埃森，德國。",
     "careerEn": "SOLO EXHIBITIONS\n2022 | Solo exhibition, curated by Melis Bektaş — Karşı Sanat, Istanbul, Türkiye.\n2022 | Solo exhibition — Salihara Arts Center, Jakarta, Indonesia.\n\nGROUP EXHIBITIONS\n2025 | A/V solo performance in collaboration with Alexandre Larose — Kuan Du Light Art Festival (KDLAF), TNUA Center for Art & Technology, Taipei, Taiwan.\n2024 | Winner of the Wojciech Juszczak Award for Best Music for the soundtrack of Triangle of Darkness — ANIMATOR International Animated Film Festival, Poznań, Poland.\n2024 | Music composition for Ivanie Aubin-Malo’s dance creation Wahsipekuk: Au-delà des montagnes — Agora de la danse, Montréal, Canada.\n2023–2024 | Creation of three hours of original music every month for Radio Bloc Oral — international online/radio broadcast.\n2023 | Symphonie Odonata — immersive sound installation, Tunnel Pédestre Boulet, Montréal, Canada.\n2023 | Concert featuring Félix-Antoine Morin’s graphic scores, performed by duets of Slovenian improvisers and organized by Zavod Sploh — Cankar Centre, Ljubljana, Slovenia.\n2022 | Cathartic Quest — duet performance with Benoît Lachambre — ImPulsTanz – Vienna International Dance Festival, Vienna, Austria.\n2022 | Asemic Sound Mappings — exhibition — Leopold Museum / ImPulsTanz, Vienna, Austria.\n2021 | Immersive electroacoustic concert — Akousma Festival, Montréal, Canada.\n2021 | Plateforme, performed by Totem Contemporain — NOW! Festival, Essen, Germany.\n2020 | Coextensive Ubiquity – Mise en abyme Live — radio performance — Tsonami Festival, Valparaíso, Chile.\n2019 | Solo performance with Chihei Hatakeyama, organized by Toshimaru Nakamura — Ftarri, Tokyo, Japan.\n2019 | Solo performance with VELTZ, Naoki Nomoto and Atsuhiro Ito — KAGURANE, Tokyo, Japan.",
     "workId": "performance-02",
-    "workTitle": "Félix-Antoine Morin（音樂）與 Alexandre Larose（影像）之視聽合作作品",
-    "workTitleEn": "Audiovisual collaboration between Félix-Antoine Morin (music) and Alexandre Larose (video)",
+    "workTitle": "",
+    "workTitleEn": "",
     "website": "https://felixantoinemorin.com/",
     "image": {
       "src": "assets/images/artists/artist-27.png",
       "alt": "Félix-Antoine Morin"
-    }
+    },
+    "career": "個展\n2022｜由 Melis Bektaş 策展——Karşı Sanat，伊斯坦堡，土耳其。\n2022｜Salihara 藝術中心（Salihara Arts Center），雅加達，印尼。\n\n聯展\n2025｜與 Alexandre Larose 合作 A/V 視聽獨奏演出——關渡光藝術節（KDLAF），國立臺北藝術大學藝術與科技中心，臺北，臺灣。\n2024｜以《Triangle of Darkness》電影配樂獲「Wojciech Juszczak 最佳音樂獎」——ANIMATOR 國際動畫影展，波茲南，波蘭。\n2024｜為 Ivanie Aubin-Malo 舞蹈創作《Wahsipekuk: Au-delà des montagnes》擔任音樂創作——Agora de la danse，蒙特婁，加拿大。\n2023–2024｜每月為 Radio Bloc Oral 創作三小時原創音樂——國際線上／廣播節目。\n2023｜《Symphonie Odonata》——沉浸式聲音裝置，Tunnel Pédestre Boulet，蒙特婁，加拿大。\n2023｜Félix-Antoine Morin 圖像樂譜音樂會，由斯洛維尼亞即興音樂家以雙人組合演出，Zavod Sploh 策劃——康卡爾中心（Cankar Centre），盧比安納，斯洛維尼亞。\n2022｜《Cathartic Quest》——與 Benoît Lachambre 雙人演出——ImPulsTanz 維也納國際舞蹈節，維也納，奧地利。\n2022｜《Asemic Sound Mappings》展覽——利奧波德博物館（Leopold Museum）／ImPulsTanz，維也納，奧地利。\n2021｜沉浸式電聲音樂會——Akousma 藝術節，蒙特婁，加拿大。\n2021｜《Plateforme》，由 Totem Contemporain 演出——NOW! 藝術節，埃森，德國。",
+    "socialUrls": []
   }
 ],
   works: [
@@ -930,7 +937,7 @@ window.DAF_DATA = {
     "titleEn": "GeodesicDome+3V+1a - Architectural Plans",
     "year": "",
     "workType": "",
-    "medium": "複合媒材 依場地而定",
+    "medium": "複合媒材",
     "description": "這個小型的DOME球形骨架設計上使用金屬鋼管作為支撐，一共有7種不同長度的白色烤漆鋼管組成，每一隻白色鋼管上為了方便辨識，進行了字母的標籤記號，設計以M10內六角螺絲將每一支鋼管進行連接並固定，達到穩定的結構。",
     "videoUrl": "",
     "imageFolder": "main-06",
@@ -1314,7 +1321,7 @@ window.DAF_DATA = {
     "year": "2026",
     "workType": "互動裝置",
     "medium": "即時互動影像、電子零件、金屬、馬達",
-    "description": "本作品源自入境某國辦理落地簽時，被高度自動化證件照機台強制鎖定臉部所引發的「數位身分剝奪感」。展場將設置證件照相機與電視螢幕。當觀者進入機台拍照，系統將透過AI即時運算，強制提取其面部特徵生成超擬真3D頭像，並使其如無機數據般「掉落」至一旁的投影畫面中。作品將臉孔數據化的過程具象化，反思現代監控系統如何冷酷地收編個體的數位身分。",
+    "description": "在當代社會，許多情境都伴隨著生物特徵的交出。作品的靈感直指這種交出權利的瞬間，當帶有辨識技術的鏡頭為了對準人臉而自動上下移動時，攝影機不再是紀錄的工具，而成為一種主動辨識、定位與觀看個體的技術介面。在此過程中，個體失去了主體性，淪為等待被掃描、被測量、被歸檔的客體。這種數位身分被迫剝奪、甚至被數位建檔系統吞噬的不適感，正是本作品欲探討的核心。",
     "videoUrl": "https://drive.google.com/file/d/1LFIEck_1-",
     "imageFolder": "district-04_3",
     "coverImage": "assets/images/works/district/district-04_3/01.jpg",
@@ -1330,8 +1337,8 @@ window.DAF_DATA = {
     ],
     "workTypeEn": "Interactive installations",
     "mediumEn": "Real-time interactive video, electronic components, metal, motors",
-    "descriptionZh": "本作品源自入境某國辦理落地簽時，被高度自動化證件照機台強制鎖定臉部所引發的「數位身分剝奪感」。展場將設置證件照相機與電視螢幕。當觀者進入機台拍照，系統將透過AI即時運算，強制提取其面部特徵生成超擬真3D頭像，並使其如無機數據般「掉落」至一旁的投影畫面中。作品將臉孔數據化的過程具象化，反思現代監控系統如何冷酷地收編個體的數位身分。",
-    "descriptionEn": "This artwork is inspired by the sense of \"digital identity deprivation\" triggered by the experience of having one's face forcibly locked onto by a highly automated ID photo booth while applying for a visa on arrival in a foreign country.\nThe exhibition space will feature an ID photo booth alongside a television screen. When viewers enter the booth to take a photo, the system utilizes real-time AI processing to forcibly extract their facial features and generate a hyper-realistic 3D avatar. This avatar then \"drops\" onto the adjacent television screen like a piece of inorganic data.\nBy materializing the process of facial datafication, the work reflects on how modern surveillance systems coldly appropriate the digital identities of individuals.",
+    "descriptionZh": "在當代社會，許多情境都伴隨著生物特徵的交出。作品的靈感直指這種交出權利的瞬間，當帶有辨識技術的鏡頭為了對準人臉而自動上下移動時，攝影機不再是紀錄的工具，而成為一種主動辨識、定位與觀看個體的技術介面。在此過程中，個體失去了主體性，淪為等待被掃描、被測量、被歸檔的客體。這種數位身分被迫剝奪、甚至被數位建檔系統吞噬的不適感，正是本作品欲探討的核心。",
+    "descriptionEn": "In contemporary society, many situations involve the surrender of biometric data. This work draws inspiration from the moment when individuals relinquish control over such information. As a camera equipped with recognition technology automatically moves up and down to align with a person’s face, it is no longer merely a tool for documentation, but becomes a technological interface that actively identifies, locates, and observes the individual. In this process, the individual loses their subjectivity and is reduced to an object waiting to be scanned, measured, and archived. The discomfort of having one’s digital identity forcibly stripped away, or even consumed by a digital profiling system, lies at the core of this work.",
     "videoUrls": [
       "https://drive.google.com/file/d/1LFIEck_1-"
     ],
@@ -1513,7 +1520,7 @@ window.DAF_DATA = {
     "year": "2026",
     "workType": "影像裝置",
     "medium": "影像裝置",
-    "description": "影像裝置系列《日常保存》使用人工智慧系統，從影像資料庫中提取與展出條件對應的片段，於現地播放。\n本次作品以 1950 年代以後的電影作為主要的影像來源。這一時期，冰淇淋店逐漸成為消費與休閒的一部分，也在大眾文化中形成熟悉的意象。電影將這些日常行為轉化為可以被觀看與記憶的生活場景。\n《日常保存：冰淇淋》集合來自不同時間、人物與敘事的影像，關注影像如何保存與共享日常經驗。",
+    "description": "影像裝置系列《日常保存》使用人工智慧影像分類系統，在影像資料庫內提取與展出條件對應的片段，經過選擇與編排後於現地播放。\n本次展出作品《日常保存：冰淇淋》以 1950 年代以後的劇情電影作為主要影像來源。在這個時期，冰淇淋逐漸成為消費與休閒文化的一部分，也自然地出現於電影中的生活場景。\n作品集合來自不同年代、人物與敘事中的冰淇淋相關影像，試著將電影視為一種保存日常經驗的形式。這些被記錄與反覆觀看的片段，形塑了日常的想像。",
     "videoUrl": "https://youtu.be/ECsMa6HxrOY",
     "imageFolder": "district-08",
     "coverImage": "assets/images/works/district/district-08/01.png",
@@ -1529,8 +1536,8 @@ window.DAF_DATA = {
     ],
     "workTypeEn": "Video installation",
     "mediumEn": "Video installation",
-    "descriptionZh": "影像裝置系列《日常保存》使用人工智慧系統，從影像資料庫中提取與展出條件對應的片段，於現地播放。\n本次作品以 1950 年代以後的電影作為主要的影像來源。這一時期，冰淇淋店逐漸成為消費與休閒的一部分，也在大眾文化中形成熟悉的意象。電影將這些日常行為轉化為可以被觀看與記憶的生活場景。\n《日常保存：冰淇淋》集合來自不同時間、人物與敘事的影像，關注影像如何保存與共享日常經驗。",
-    "descriptionEn": "veryday Storage is a series of video installations that uses an artificial intelligence system to extract fragments from an image database corresponding to the conditions of the exhibition site, and presents them on site.\nThis work primarily draws from films made after the 1950s. During this period, ice cream shops gradually became part of consumer and leisure culture, while also forming a familiar image in popular culture. Films transformed these everyday activities into scenes of life that could be viewed and remembered.\nEveryday Storage: Ice Cream brings together images from different times, people, and narratives, exploring how images preserve and share everyday experiences.",
+    "descriptionZh": "影像裝置系列《日常保存》使用人工智慧影像分類系統，在影像資料庫內提取與展出條件對應的片段，經過選擇與編排後於現地播放。\n本次展出作品《日常保存：冰淇淋》以 1950 年代以後的劇情電影作為主要影像來源。在這個時期，冰淇淋逐漸成為消費與休閒文化的一部分，也自然地出現於電影中的生活場景。\n作品集合來自不同年代、人物與敘事中的冰淇淋相關影像，試著將電影視為一種保存日常經驗的形式。這些被記錄與反覆觀看的片段，形塑了日常的想像。",
+    "descriptionEn": "Everyday Storage is a series of video installations that uses an AI image classification system to extract fragments from an image database according to exhibition-specific criteria. These fragments are then selected, arranged, and presented on site.\nEveryday Storage: Ice Cream draws primarily from narrative films made after the 1950s. During this period, ice cream gradually became part of consumer and leisure culture, naturally appearing in the everyday scenes portrayed in film.\nBringing together ice cream–related images from different periods, characters, and narratives, the work approaches film as a form of preserving everyday experience. These recorded and repeatedly viewed fragments contribute to an imagination of the everyday.",
     "videoUrls": [
       "https://youtu.be/ECsMa6HxrOY"
     ],
@@ -3268,154 +3275,182 @@ window.DAF_DATA = {
   }
 ],
   soundArtists: [
-    {
-      "id": "performance-01",
-      "type": "sound",
-      "category": "performance",
-      "area": "開幕表演",
-      "mapNumber": "01",
-      "number": "01",
-      "title": "噪流",
-      "titleZh": "噪流",
-      "titleEn": "Fluid Noise",
-      "workType": "音像表演",
-      "workTypeEn": "Audiovisual Performance",
-      "imageFolder": "performance-01",
-      "coverImage": "",
-      "images": [],
-      "artistIds": [
-        "artist-26"
-      ],
-      "performances": [
-        {
-          "id": "performance-01_1",
-          "nameZh": "吳承儒",
-          "nameEn": "Cheng-Ru Wu",
-          "nationalityZh": "台灣",
-          "nationalityEn": "Taiwan",
-          "bioZh": "來自臺灣嘉義的新媒體藝術家。創作多涵蓋跨領域藝術與音像演出（Audiovisual performance），並以聲響實驗、即時影像生成與數位訊號整合為發展核心。",
-          "bioEn": "Based in Chiayi, Taiwan, Wu Cheng-Ru ( P B ) is a new media artist whose work spans cross-disciplinary art and audiovisual performance, focusing on sound experimentation, real-time visual generation, and digital signal integration.",
-          "careerZh": "2026 《繫 ꜱʏɴᴄ》- P B 個展 - 毛刺空間 | 個人展覽 (台中) \n2025《鹹淡適中》Glub Glub — 白晝之夜Nuit Blanche Taipei｜共同創作(台北) \n2025 -《視感認知 Mind Fluid》｜透視音像 Perspectives-北流場｜音像演出\n2025 - 關渡光藝術節《幻響 Illusonic》｜音像演出(台北)\n2024 -《認夢 Dream Percept》｜ FUTURE VISION LAB｜DOME演出(台北)\n2024 -《忘却回路 - Oblivion Circuit》｜音像演出(東京)\n2024 -《VIVIDO: re-Action》Sandy’s Trace｜VJ(台北)\n2023 -《未來視覺派對 FUTURE VISION LAB》｜音像演出(台北)\n2023 -《視感認知 Visual Cognition》-潛艇Submarine｜音像演出 (台北)\n2023 -《感覺重混 sensation.remix》｜音像演出 (宜蘭)",
-          "careerEn": "2026 Sync – Solo Exhibition by P B, Glitch Space | Solo Exhibition (Taichung) \n2025 – Glub Glub, Nuit Blanche Taipei | Co-creation (Taipei) \n2025 – Mind Fluid, Perspectives (Taipei Music Center, Livehouse D), Audiovisual Performance\n2025 – Mind Fluid,Kuan Du Light Art Festival 《Illusonic》, Audiovisual Performance (Taipei)\n2024 – Dream Percept, FUTURE VISION LAB, Fulldome Performance (Taipei)\n2024 – Oblivion Circuit, Audiovisual Performance (Tokyo)\n2024 – VIVIDO: re-Action, VJ (Collaboration with Sandy’s Trace) (Taipei)\n2023 – FUTURE VISION LAB, Audiovisual Performance (Taipei)\n2023 – Visual Cognition, Submarine, Audiovisual Performance (Taipei)\n2023 – sensation.remix, Audiovisual Performance (Yilan)",
-          "titleZh": "聽",
-          "titleEn": "Thiann",
-          "year": "2026",
-          "workTypeZh": "音像表演",
-          "workTypeEn": "Audiovisual Performance",
-          "descriptionZh": "「Thiann」是台語中「聽」的意思。演出內容透過藝術家收集在臺灣的日常聲響與畫面，由鄉村攤販的廣播或車輛的限速提示音等，透過數位的重混與調變，讓臺灣日常的印象透過聲景(Soundscape)再現，並透過音像演出詮釋藝術家在臺灣生活的觀察與狀態。",
-          "descriptionEn": "“Thiann” derives from the Taiwanese word for “listen.” Through a collection of everyday sounds and visuals gathered across Taiwan—such as broadcasts from rural street vendors and vehicle speed alerts—the performance digitally remixes and modulates these elements to reconstruct daily Taiwanese impressions into a soundscape, interpreting the artist's personal observations and lived reality in Taiwan through live audiovisual performance.",
-          "website": "https://k591238.github.io/PB.github.io/",
-          "instagram": "https://www.instagram.com/pen_bit/"
+  {
+    "id": "performance-01",
+    "type": "sound",
+    "category": "performance",
+    "area": "開幕表演",
+    "mapNumber": "01",
+    "number": "01",
+    "title": "噪流",
+    "titleZh": "噪流",
+    "titleEn": "Fluid Noise",
+    "workType": "音像表演",
+    "workTypeEn": "Audiovisual Performance",
+    "imageFolder": "performance-01",
+    "coverImage": "",
+    "images": [],
+    "artistIds": [
+      "artist-26"
+    ],
+    "performances": [
+      {
+        "id": "performance-01_1",
+        "nameZh": "吳承儒 ( P B )",
+        "nameEn": "Cheng-Ru Wu ( P B )",
+        "nationalityZh": "台灣",
+        "nationalityEn": "Taiwan",
+        "bioZh": "來自臺灣嘉義的新媒體藝術家。\n創作多涵蓋跨領域藝術與音像演出（Audiovisual performance），並以聲響實驗、即時影像生成與數位訊號整合為發展核心。  ",
+        "bioEn": "Based in Chiayi, Taiwan, Wu Cheng-Ru ( P B ) is a new media artist whose work spans cross-disciplinary art and audiovisual performance, focusing on sound experimentation, real-time visual generation, and digital signal integration.",
+        "careerZh": "2026 《繫 ꜱʏɴᴄ》- P B 個展 - 毛刺空間 | 個人展覽 (台中) \n2025《鹹淡適中》Glub Glub — 白晝之夜Nuit Blanche Taipei｜共同創作(台北) \n2025 -《視感認知 Mind Fluid》｜透視音像 Perspectives-北流場｜音像演出\n2025 - 關渡光藝術節《幻響 Illusonic》｜音像演出(台北)\n2024 -《認夢 Dream Percept》｜ FUTURE VISION LAB｜DOME演出(台北)\n2024 -《忘却回路 - Oblivion Circuit》｜音像演出(東京)\n2024 -《VIVIDO: re-Action》Sandy’s Trace｜VJ(台北)\n2023 -《未來視覺派對 FUTURE VISION LAB》｜音像演出(台北)\n2023 -《視感認知 Visual Cognition》-潛艇Submarine｜音像演出 (台北)\n2023 -《感覺重混 sensation.remix》｜音像演出 (宜蘭)",
+        "careerEn": "2026 Sync – Solo Exhibition by P B, Glitch Space | Solo Exhibition (Taichung) \n2025 – Glub Glub, Nuit Blanche Taipei | Co-creation (Taipei) \n2025 – Mind Fluid, Perspectives (Taipei Music Center, Livehouse D), Audiovisual Performance\n2025 – Mind Fluid,Kuan Du Light Art Festival 《Illusonic》, Audiovisual Performance (Taipei)\n2024 – Dream Percept, FUTURE VISION LAB, Fulldome Performance (Taipei)\n2024 – Oblivion Circuit, Audiovisual Performance (Tokyo)\n2024 – VIVIDO: re-Action, VJ (Collaboration with Sandy’s Trace) (Taipei)\n2023 – FUTURE VISION LAB, Audiovisual Performance (Taipei)\n2023 – Visual Cognition, Submarine, Audiovisual Performance (Taipei)\n2023 – sensation.remix, Audiovisual Performance (Yilan)",
+        "titleZh": "聽",
+        "titleEn": "Thiann",
+        "year": "2026",
+        "workTypeZh": "音像表演",
+        "workTypeEn": "Audiovisual Performance",
+        "mediumZh": "現場即時音像",
+        "mediumEn": "live audiovisual performance ",
+        "descriptionZh": "「Thiann」是台語中「聽」的意思。演出內容透過藝術家收集在臺灣的日常聲響與畫面，由鄉村攤販的廣播或車輛的限速提示音等，透過數位的重混與調變，讓臺灣日常的印象透過聲景(Soundscape)再現，並透過音像演出詮釋藝術家在臺灣生活的觀察與狀態。",
+        "descriptionEn": "“Thiann” derives from the Taiwanese word for “listen.” Through a collection of everyday sounds and visuals gathered across Taiwan—such as broadcasts from rural street vendors and vehicle speed alerts—the performance digitally remixes and modulates these elements to reconstruct daily Taiwanese impressions into a soundscape, interpreting the artist's personal observations and lived reality in Taiwan through live audiovisual performance. ",
+        "website": "https://k591238.github.io/PB.github.io/",
+        "performerImage": {
+          "src": "assets/images/works/performance/performance-01/performance-01_1/01.jpg",
+          "altZh": "吳承儒 ( P B )",
+          "altEn": "Cheng-Ru Wu ( P B )"
         },
-        {
-          "id": "performance-01_3",
-          "nameZh": "張哲瑜",
-          "nameEn": "Che-Yu Chang",
-          "nationalityZh": "台灣",
-          "nationalityEn": "Taiwan",
-          "bioZh": "音像創作者。創作專注在聲響設計、互動視覺，主題經常聚焦在圖像的規律與隨機性，並試圖進一步拆解其規則系統。音樂作品多為氛圍音樂、實驗電子，透過探索聲音與影像更多的可能性，不斷推敲自身感知與環境生命經驗的連結。",
-          "bioEn": "Che Yu Chang(aka. Duyio) is an audiovisual creator focused on sound design and interactive visuals. Her work often explores patterns and randomness in images, while looking deeper into the systems behind them. Her music mainly includes ambient and experimental electronic music. By exploring the possibilities between sound and image, the practice continues to examine the connection between her perception and life experiences.",
-          "careerZh": "2026\n《 ESKAPE 三週年紀元：無底之境》｜週年派對活動\n2025\n噪流實習2025 (VOL.4)｜入選創作培力計畫\n《失眠五階段：Insomnia》｜四四南村 LIGHT UP 南村有光\n《臨海練習 approaching exercises:seaside》｜入選 2025 月之美術館聯展\n《 ESKAPE SHOWCASE 10 》｜電子音樂派對\n《 ESKAPE 二週年派對 》｜週年派對活動\n2024\n《景觀訊號推移》｜入選 2024 基隆美展",
-          "careerEn": "2026\nESKAPE 3nd anniversary party  – VJ\n2025\nfluid noise – AVSyncTPE Echo Habitat \nLight Up Festival – Merit Award Insomnia\nyue jin art museum –  Selected Approaching exercises:seaside\nESKAPE SHOWCASE 10 – VJ\nESKAPE 2nd anniversary party – VJ\n2024\nKeelung Art Exhibition – Selected Signal",
-          "titleZh": "場",
-          "titleEn": "On the scene",
-          "performerImage": {
-            "src": "assets/images/works/performance/performance-01/performance-01_2/01.png",
-            "altZh": "張哲瑜",
-            "altEn": "Che-Yu Chang"
-          },
-          "workImages": [
-            "assets/images/works/performance/performance-01/performance-01_2/works/01.png",
-            "assets/images/works/performance/performance-01/performance-01_2/works/02.png",
-            "assets/images/works/performance/performance-01/performance-01_2/works/03.png",
-            "assets/images/works/performance/performance-01/performance-01_2/works/04.png",
-            "assets/images/works/performance/performance-01/performance-01_2/works/05.png"
-          ],
-          "workTypeZh": "音像表演",
-          "workTypeEn": "Audiovisual Performance",
-          "descriptionZh": "一個場景、一個畫面，有些是在清醒之前的景色，有些是最喜歡的電影場景，未分類的有可能是記憶裡的片段，可能曾在某個時刻到過現場，也有可能永遠無法到場。作品將以各個「場」作為主要呈現，並將作者分身置入「場」內，營造一種在場與不在場之間的證明。",
-          "descriptionEn": "A scene, a frame.\nSome are landscapes seen before waking, while others are scenes from films I love. The ones left uncategorized may be fragments of memory. Places I may have once been, or places I may never be able to reach.\nThe work is presented through a series of “places,” with an avatar placed within each one, creating a sense of being there, and not being there at the same time.",
-          "website": "https://haiphane-duyio.com/",
-          "instagram": "https://www.instagram.com/duyiosirbed/"
+        "workImages": [
+          "assets/images/works/performance/performance-01/performance-01_1/works/01.jpg",
+          "assets/images/works/performance/performance-01/performance-01_1/works/02.jpg",
+          "assets/images/works/performance/performance-01/performance-01_1/works/03.jpg",
+          "assets/images/works/performance/performance-01/performance-01_1/works/04.jpg",
+          "assets/images/works/performance/performance-01/performance-01_1/works/05.jpg",
+          "assets/images/works/performance/performance-01/performance-01_1/works/06.jpg"
+        ],
+        "instagram": "https://www.instagram.com/pen_bit/"
+      },
+      {
+        "id": "performance-01_2",
+        "nameZh": "張哲瑜",
+        "nameEn": "Che-Yu Chang",
+        "nationalityZh": "台灣",
+        "nationalityEn": "Taiwan",
+        "bioZh": "音像創作者。創作專注在聲響設計、互動視覺，主題經常聚焦在圖像的規律與隨機性，並試圖進一步拆解其規則系統。音樂作品多為氛圍音樂、實驗電子，透過探索聲音與影像更多的可能性，不斷推敲自身感知與環境生命經驗的連結。",
+        "bioEn": "Che Yu Chang(aka. Duyio) is an audiovisual creator focused on sound design and interactive visuals. Her work often explores patterns and randomness in images, while looking deeper into the systems behind them. Her music mainly includes ambient and experimental electronic music. By exploring the possibilities between sound and image, the practice continues to examine the connection between her perception and life experiences.",
+        "careerZh": "2026\n《 ESKAPE 三週年紀元：無底之境》｜週年派對活動\n2025\n噪流實習2025 (VOL.4)｜入選創作培力計畫\n《失眠五階段：Insomnia》｜四四南村 LIGHT UP 南村有光\n《臨海練習 approaching exercises:seaside》｜入選 2025 月之美術館聯展\n《 ESKAPE SHOWCASE 10 》｜電子音樂派對\n《 ESKAPE 二週年派對 》｜週年派對活動\n2024\n《景觀訊號推移》｜入選 2024 基隆美展",
+        "careerEn": "2026\nESKAPE 3nd anniversary party  – VJ\n2025\nfluid noise – AVSyncTPE Echo Habitat \nLight Up Festival – Merit Award Insomnia\nyue jin art museum –  Selected Approaching exercises:seaside\nESKAPE SHOWCASE 10 – VJ\nESKAPE 2nd anniversary party – VJ\n2024\nKeelung Art Exhibition – Selected Signal",
+        "titleZh": "場",
+        "titleEn": "On the scene",
+        "year": "",
+        "workTypeZh": "音像表演",
+        "workTypeEn": "Audiovisual Performance",
+        "mediumZh": "",
+        "mediumEn": "",
+        "descriptionZh": "一個場景、一個畫面，有些是在清醒之前的景色，有些是最喜歡的電影場景，未分類的有可能是記憶裡的片段，可能曾在某個時刻到過現場，也有可能永遠無法到場。作品將以各個「場」作為主要呈現，並將作者分身置入「場」內，營造一種在場與不在場之間的證明。 ",
+        "descriptionEn": "A scene, a frame.\nSome are landscapes seen before waking, while others are scenes from films I love. The ones left uncategorized may be fragments of memory. Places I may have once been, or places I may never be able to reach.\nThe work is presented through a series of “places,” with an avatar placed within each one, creating a sense of being there, and not being there at the same time.",
+        "website": "https://haiphane-duyio.com/",
+        "performerImage": {
+          "src": "assets/images/works/performance/performance-01/performance-01_2/01.png",
+          "altZh": "張哲瑜",
+          "altEn": "Che-Yu Chang"
         },
-        {
-          "id": "performance-01_4",
-          "nameZh": "陳亮",
-          "nameEn": "Liang Chen",
-          "performerImage": {
-            "src": "assets/images/works/performance/performance-01/performance-01_3/01.JPG",
-            "altZh": "陳亮",
-            "altEn": "Liang Chen"
-          },
-          "nationalityZh": "台灣",
-          "nationalityEn": "Taiwan",
-          "bioZh": "過而立而不立，彰化人，十五之後在台灣北中南漂泊，\n成日遊手好閒、不學無術，朝三暮四，一知半解。\n致力於研究對客觀條件毫無幫助之無用實驗，\n找尋任意載體對情緒價值之主觀意識有效影響。",
-          "bioEn": "Over 30 but still unsettled, a Changhua native.\nDrifting across northern, central, and southern Taiwan since 15.\nAlways idling, lacking skills; constantly shifting, mastering nothing.\nDedicated to highly inefficient experiments with zero practical value to society,\njust searching for random ways to poke at a viewer's consciousness and leave a unique emotional dent.",
-          "careerZh": "2018 噪流實習 演出\n2021 JPG 擊樂實驗室 - Digit(s) 演出\n2024 聲響藝術節 - Digit(s) 演出",
-          "careerEn": "2018\nPerformance, Lacking Sound Festival Internship Program\n\n2021\nDigit(s) — Performance, JPG Percussion Lab\n\n2024\nDigit(s) — Performance, Sound Art Festival",
-          "titleZh": "田調隨筆 - 2026",
-          "titleEn": "Field Notes 2026",
-          "year": "2026",
-          "workTypeZh": "音像表演",
-          "workTypeEn": "Audiovisual Performance",
-          "instagram": "https://www.instagram.com/c1c.ll/"
+        "workImages": [
+          "assets/images/works/performance/performance-01/performance-01_2/works/01.png",
+          "assets/images/works/performance/performance-01/performance-01_2/works/02.png",
+          "assets/images/works/performance/performance-01/performance-01_2/works/03.png",
+          "assets/images/works/performance/performance-01/performance-01_2/works/04.png",
+          "assets/images/works/performance/performance-01/performance-01_2/works/05.png"
+        ],
+        "instagram": "https://www.instagram.com/duyiosirbed/"
+      },
+      {
+        "id": "performance-01_3",
+        "nameZh": "陳亮",
+        "nameEn": "Liang Chen",
+        "nationalityZh": "台灣",
+        "nationalityEn": "Taiwan",
+        "bioZh": "過而立而不立，彰化人，十五之後在台灣北中南漂泊，\n成日遊手好閒、不學無術，朝三暮四，一知半解。\n致力於研究對客觀條件毫無幫助之無用實驗，\n找尋任意載體對情緒價值之主觀意識有效影響。",
+        "bioEn": "Over 30 but still unsettled, a Changhua native.\nDrifting across northern, central, and southern Taiwan since 15.\nAlways idling, lacking skills; constantly shifting, mastering nothing.\nDedicated to highly inefficient experiments with zero practical value to society,\njust searching for random ways to poke at a viewer's consciousness and leave a unique emotional dent.",
+        "careerZh": "2018 噪流實習 演出\n2021 JPG 擊樂實驗室 - Digit(s) 演出\n2024 聲響藝術節 - Digit(s) 演出",
+        "careerEn": "2018\nPerformance, Lacking Sound Festival Internship Program\n\n2021\nDigit(s) — Performance, JPG Percussion Lab\n\n2024\nDigit(s) — Performance, Sound Art Festival",
+        "titleZh": "田調隨筆 - 2026",
+        "titleEn": "Field Notes 2026",
+        "year": "2026",
+        "workTypeZh": "音像表演",
+        "workTypeEn": "Audiovisual Performance",
+        "mediumZh": "",
+        "mediumEn": "",
+        "descriptionZh": "",
+        "descriptionEn": "",
+        "website": "",
+        "performerImage": {
+          "src": "assets/images/works/performance/performance-01/performance-01_3/01.JPG",
+          "altZh": "陳亮",
+          "altEn": "Liang Chen"
         },
-        {
-          "id": "performance-01_5",
-          "nameZh": "陳彥齊 x 周喚",
-          "nameEn": "Yen-Chi Chen x Huan Chou",
-          "nationalityZh": "台灣",
-          "nationalityEn": "Taiwan",
-          "bioZh": "周喚與陳彥齊目前就讀於台北藝術大學新媒體藝術學系。兩人的合作創作以遊戲為主要發想，從遊戲機制、敘事與虛擬空間延伸不同的創作主題，結合動畫與聲音，並透過遊戲引擎的即時運算及現場聲音的即時調變，探索虛擬與現實之間的關係，形成具有敘事性的音像表演。",
-          "bioEn": "Chou huan and Chen yenchi are currently studying in the Department of New Media Art at Taipei National University of the Arts. Their collaborative practice takes games as a starting point, exploring themes through game mechanics, narrative, and virtual spaces. By combining animation and sound with real-time game engine computation and live sound manipulation, they investigate the relationship between the virtual and the real, creating narrative-driven audiovisual performances.",
-          "careerZh": "表演\n北藝大新媒系111級畢業展《在那出現之前》開幕表演\n關渡光藝術節《幻響》\n噪流實習\n第二屆北藝新媒卓越獎開幕表演",
-          "careerEn": "PERFORMANCE\nOpening Performance — TNUA Department of New Media Art Graduation Exhibition 2026 \"Before Zero\"\nKuandu Light Art Festival — Illusonic \nFluid Noise Internship \nOpening Performance — TNUA New Media Excellence Award",
-          "titleZh": "難忘殘景",
-          "titleEn": "Haunting Sight",
-          "workTypeZh": "音像表演",
-          "workTypeEn": "Audiovisual Performance",
-          "descriptionZh": "本作以遊戲引擎和音像表演的形式構建一個近未來的景象，試圖展開近年越發進步的無人機和影像技術，其鏡頭與被觀察者的關係。故事發生在一座深夜中的巨大車站，一名神秘人物闖入，大規模改寫建築內的空間現實。保全系統的無人機受命追蹤並阻止這場「非法入侵」。透過自帶的攝影機以及技術追蹤入侵者。隨著投影的強光造成雜訊與故障,現場只留下被改寫的空間與逃逸的背影。",
-          "descriptionEn": "This work explores the relationship between surveillance cameras, drones, and the people they observe through a game engine and audiovisual performance.\nThe story takes place in a massive train station late at night. A mysterious figure breaks in and begins to alter the space. Security drones are deployed to track and stop the intruder through their cameras and tracking systems.\nAs intense projection light causes noise and system failures, the altered space remains, along with the fleeting silhouette of the escaping figure.",
-          "images": [
-            "assets/images/works/performance/performance-01/performance-01_4/01.jpg"
-          ],
-          "website": "https://yc-58.com/",
-          "instagram": "https://www.instagram.com/y.c_5.8/"
-        }
-      ]
-    },
-    {
-      "id": "performance-02",
-      "type": "sound",
-      "category": "performance",
-      "area": "開幕表演",
-      "mapNumber": "02",
-      "number": "02",
-      "title": "Félix-Antoine Morin",
-      "titleZh": "Félix-Antoine Morin",
-      "titleEn": "Félix-Antoine Morin",
-      "year": "2026",
-      "workType": "音像表演",
-      "workTypeEn": "Audiovisual Performance",
-      "description": "Félix-Antoine Morin（音樂）與 Alexandre Larose（影像）之視聽合作作品",
-      "descriptionZh": "Félix-Antoine Morin（音樂）與 Alexandre Larose（影像）之視聽合作作品",
-      "descriptionEn": "Audiovisual collaboration between Félix-Antoine Morin (music) and Alexandre Larose (video)",
-      "imageFolder": "performance-02",
-      "coverImage": "",
-      "images": [],
-      "artistIds": [
-        "artist-27"
-      ],
-      "collaborators": [
-        {
-          "nameZh": "Alexandre Larose",
-          "nameEn": "Alexandre Larose",
-          "roleZh": "影像",
-          "roleEn": "Video"
-        }
-      ]
-    }
-  ],
+        "instagram": "https://www.instagram.com/c1c.ll/"
+      },
+      {
+        "id": "performance-01_4",
+        "nameZh": "陳彥齊 x 周喚",
+        "nameEn": "Yen-Chi Chen x Huan Chou",
+        "nationalityZh": "台灣",
+        "nationalityEn": "Taiwan",
+        "bioZh": "周喚與陳彥齊目前就讀於台北藝術大學新媒體藝術學系。兩人的合作創作以遊戲為主要發想，從遊戲機制、敘事與虛擬空間延伸不同的創作主題，結合動畫與聲音，並透過遊戲引擎的即時運算及現場聲音的即時調變，探索虛擬與現實之間的關係，形成具有敘事性的音像表演。",
+        "bioEn": "Chou huan and Chen yenchi are currently studying in the Department of New Media Art at Taipei National University of the Arts. Their collaborative practice takes games as a starting point, exploring themes through game mechanics, narrative, and virtual spaces. By combining animation and sound with real-time game engine computation and live sound manipulation, they investigate the relationship between the virtual and the real, creating narrative-driven audiovisual performances.",
+        "careerZh": "表演\n北藝大新媒系111級畢業展《在那出現之前》開幕表演\n關渡光藝術節《幻響》\n噪流實習\n第二屆北藝新媒卓越獎開幕表演",
+        "careerEn": "PERFORMANCE\nOpening Performance — TNUA Department of New Media Art Graduation Exhibition 2026 \"Before Zero\"\nKuandu Light Art Festival — Illusonic \nFluid Noise Internship \nOpening Performance — TNUA New Media Excellence Award ",
+        "titleZh": "難忘殘景",
+        "titleEn": "Haunting Sight",
+        "year": "",
+        "workTypeZh": "音像表演",
+        "workTypeEn": "Audiovisual Performance",
+        "mediumZh": "",
+        "mediumEn": "",
+        "descriptionZh": "本作以遊戲引擎和音像表演的形式構建一個近未來的景象，試圖展開近年越發進步的無人機和影像技術，其鏡頭與被觀察者的關係。故事發生在一座深夜中的巨大車站，一名神秘人物闖入，大規模改寫建築內的空間現實。保全系統的無人機受命追蹤並阻止這場「非法入侵」。透過自帶的攝影機以及技術追蹤入侵者。隨著投影的強光造成雜訊與故障,現場只留下被改寫的空間與逃逸的背影。",
+        "descriptionEn": "This work explores the relationship between surveillance cameras, drones, and the people they observe through a game engine and audiovisual performance.\nThe story takes place in a massive train station late at night. A mysterious figure breaks in and begins to alter the space. Security drones are deployed to track and stop the intruder through their cameras and tracking systems.\nAs intense projection light causes noise and system failures, the altered space remains, along with the fleeting silhouette of the escaping figure.",
+        "website": "https://yc-58.com/",
+        "performerImage": {
+          "src": "assets/images/works/performance/performance-01/performance-01_4/01.jpg",
+          "altZh": "陳彥齊 x 周喚",
+          "altEn": "Yen-Chi Chen x Huan Chou"
+        },
+        "instagram": "https://www.instagram.com/y.c_5.8/"
+      }
+    ]
+  },
+  {
+    "id": "performance-02",
+    "type": "sound",
+    "category": "performance",
+    "area": "開幕表演",
+    "mapNumber": "02",
+    "number": "02",
+    "title": "Félix-Antoine Morin",
+    "titleZh": "Félix-Antoine Morin",
+    "titleEn": "Félix-Antoine Morin",
+    "year": "2026",
+    "workType": "音像表演",
+    "workTypeEn": "Audiovisual Performance",
+    "description": "Félix-Antoine Morin（音樂）與 Alexandre Larose（影像）之視聽合作作品",
+    "descriptionZh": "Félix-Antoine Morin（音樂）與 Alexandre Larose（影像）之視聽合作作品",
+    "descriptionEn": "Audiovisual collaboration between Félix-Antoine Morin (music) and Alexandre Larose (video)",
+    "imageFolder": "performance-02",
+    "coverImage": "",
+    "images": [],
+    "artistIds": [
+      "artist-27"
+    ],
+    "collaborators": [
+      {
+        "nameZh": "Alexandre Larose",
+        "nameEn": "Alexandre Larose",
+        "roleZh": "影像",
+        "roleEn": "Video"
+      }
+    ]
+  }
+],
   events: [
     {
       "id": 1,
@@ -3532,12 +3567,132 @@ window.DAF_DATA = {
     }
   ],
   organizations: [
-    {type:"主辦單位", names:["臺北市政府文化局"], images:["assets/images/logos/台北市文化局LOGO.png"], urls:["https://culture.gov.taipei/"]},
-    {type:"協辦單位", names:["文創技研有限公司"], images:["assets/images/logos/文創技研Logo.png"], urls:["https://artecture-tw.com/"]},
-    {type:"場地合作", names:["臺北典藏植物園"], images:["assets/images/logos/臺北典藏植物園LOGO.png"], urls:["https://www.future.url.tw/"]},
-    {type:"合作單位", names:["C-LAB未來視覺實驗室", "噪流"], namesEn:["C-LAB’s Future Vision Lab", "Fluid Noise"], images:["assets/images/logos/C-LAB未來視覺實驗室LOGO.png", "assets/images/logos/噪流LOGO.png"], urls:["https://clab.org.tw/unit/future-vision-lab/", "https://fluidnoise.com/about/"]},
-    {type:"贊助", names:["十銓科技", "奧地利台北辦事處", "飛利浦顯示器", "c2x3", "wemo", "民偉視訊工程有限公司", "捷克中心台北"], namesEn:["TEAMGROUP", "Austrian Office Taipei", "Philips", "c2x3", "wemo", "Meway", "Czech Center Taipei"], images:["assets/images/logos/十銓科技LOGO-2.png", "assets/images/logos/奧地利駐臺辦事處LOGO.png", "assets/images/logos/Philips logo.png", "assets/images/logos/C2x3LOGO.png", "assets/images/logos/Wemo_LOGO-2.png", "assets/images/logos/民偉_LOGO.png", "assets/images/logos/捷克中心台北_LOGO.png"], urls:["https://www.teamgroupinc.com/tw/", "https://www.bmeia.gv.at/tw/%E5%A5%A7%E5%9C%B0%E5%88%A9-%E8%BE%A6%E4%BA%8B%E8%99%95-%E5%8F%B0%E5%8C%97", "https://www.philips.com.tw/c-m-so/monitors", "https://linktr.ee/c2x3", "https://www.wemoscooter.com/", "https://www.meway.com.tw/", "https://taipei.czechcentres.gov.cz/zh"], sponsor:true},
-    {type:"多媒體設備贊助", names:["洪建全基金會", "台灣松下電器"], namesEn:["Hong Foundation", "Panasonic Taiwan"], images:["assets/images/logos/洪建全基金會LOGO.png", "assets/images/logos/Panasonic LOGO.png"], urls:["https://www.hongfoundation.org.tw/", "https://www.panasonic.com/tw/"], sponsor:true}
+    {
+      "type": "主辦單位",
+      "names": [
+        "臺北市政府文化局"
+      ],
+      "images": [
+        "assets/images/logos/台北市文化局LOGO.png"
+      ],
+      "urls": [
+        "https://culture.gov.taipei/"
+      ]
+    },
+    {
+      "type": "協辦單位",
+      "names": [
+        "文創技研有限公司"
+      ],
+      "images": [
+        "assets/images/logos/文創技研Logo.png"
+      ],
+      "urls": [
+        "https://artecture-tw.com/"
+      ]
+    },
+    {
+      "type": "場地合作",
+      "names": [
+        "臺北典藏植物園",
+        "財團法人臺北市會展產業發展基金會"
+      ],
+      "namesEn": [
+        "Taipei Collectible Botanical Garden",
+        "TAIPEI EXPO FOUNDATION"
+      ],
+      "images": [
+        "assets/images/logos/臺北典藏植物園LOGO.png",
+        "assets/images/logos/財團法人臺北市會展產業發展基金會 LOGO.png"
+      ],
+      "urls": [
+        "https://www.future.url.tw/",
+        "https://www.expopark.taipei/"
+      ]
+    },
+    {
+      "type": "合作單位",
+      "names": [
+        "C-LAB未來視覺實驗室",
+        "噪流"
+      ],
+      "namesEn": [
+        "C-LAB’s Future Vision Lab",
+        "Fluid Noise"
+      ],
+      "images": [
+        "assets/images/logos/C-LAB未來視覺實驗室LOGO.png",
+        "assets/images/logos/噪流LOGO.png"
+      ],
+      "urls": [
+        "https://clab.org.tw/unit/future-vision-lab/",
+        "https://fluidnoise.com/about/"
+      ]
+    },
+    {
+      "type": "贊助",
+      "names": [
+        "十銓科技股份有限公司",
+        "c2x3 區塊鏈藝術媒體",
+        "奧地利台北辦事處",
+        "捷克中心台北",
+        "wemo",
+        "台灣互動體驗設計協會",
+        "民偉視訊工程有限公司",
+        "飛利浦顯示器"
+      ],
+      "namesEn": [
+        "Team Group Inc.",
+        "c2x3",
+        "Austrian Office Taipei",
+        "Czech Centre Taipei",
+        "wemo",
+        "TIEDA",
+        "MEWAY VISION",
+        "Philips Monitors"
+      ],
+      "images": [
+        "assets/images/logos/十銓科技LOGO.png",
+        "assets/images/logos/C2x3LOGO.png",
+        "assets/images/logos/奧地利駐臺辦事處LOGO.png",
+        "assets/images/logos/捷克中心台北_LOGO.png",
+        "assets/images/logos/Wemo_LOGO.png",
+        "assets/images/logos/TIEDA Logo.png",
+        "assets/images/logos/民偉_LOGO.png",
+        "assets/images/logos/Philips logo.png"
+      ],
+      "urls": [
+        "https://www.teamgroupinc.com/tw/",
+        "https://linktr.ee/c2x3",
+        "https://www.bmeia.gv.at/tw/%E5%A5%A7%E5%9C%B0%E5%88%A9-%E8%BE%A6%E4%BA%8B%E8%99%95-%E5%8F%B0%E5%8C%97",
+        "https://taipei.czechcentres.gov.cz/zh",
+        "https://www.wemoscooter.com/",
+        "https://tieda-ixd.com/",
+        "https://www.meway.com.tw/",
+        "https://www.philips.com.tw/c-m-so/monitors"
+      ],
+      "sponsor": true
+    },
+    {
+      "type": "多媒體設備贊助",
+      "names": [
+        "財團法人洪建全教育文化基金會",
+        "台灣松下電器股份有限公司"
+      ],
+      "namesEn": [
+        "Hong Foundation",
+        "Panasonic Taiwan"
+      ],
+      "images": [
+        "assets/images/logos/洪建全基金會LOGO.png",
+        "assets/images/logos/Panasonic LOGO.png"
+      ],
+      "urls": [
+        "https://www.hongfoundation.org.tw/",
+        "https://www.panasonic.com/tw/"
+      ],
+      "sponsor": true
+    }
   ]
 };
 

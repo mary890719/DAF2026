@@ -123,6 +123,7 @@ body > #app { padding-top: 150px; }
 .execution-unit .button { margin-top: 0; }
 .about-organization-list { display: grid; gap: clamp(48px, 7vw, 88px); }
 .about-organization-profile { display: grid; grid-template-columns: minmax(180px, 280px) minmax(0, 1fr); align-items: start; gap: clamp(24px, 4vw, 48px); }
+.about-organization-profile.is-text-only { grid-template-columns: minmax(0, 1fr); }
 .about-organization-logo { display: block; width: 100%; height: 110px; object-fit: contain; object-position: left center; }
 .about-organization-profile h4 { margin: 0 0 var(--space-2); font-size: var(--fs-lg); }
 .about-organization-profile p { max-width: 880px; margin: 0 0 var(--space-2); line-height: 1.9; }
@@ -510,6 +511,7 @@ button.program-calendar-day { cursor: pointer; }
 .opening-performance-list-item:hover,
 .opening-performance-list-item:focus-visible { background: var(--color-surface); outline: 1px solid var(--color-border-strong); outline-offset: -1px; }
 .opening-detail-back { margin: 0 0 var(--space-4); padding: 0; color: var(--color-text-secondary); background: transparent; border: 0; cursor: pointer; }
+.opening-detail-content > .opening-detail-back:last-child { margin: var(--space-5) 0 0; }
 .opening-detail-back:hover,
 .opening-detail-back:focus-visible { color: var(--color-text); text-decoration: underline; }
 .opening-collaborators { display: grid; gap: var(--space-2); margin: 0; padding: 0; list-style: none; }
@@ -863,6 +865,10 @@ body.shop-modal-open { overflow: hidden; }
 }
 @media (min-width: 701px) and (max-width: 1024px) {
   .org-row { column-gap: clamp(48px, 6vw, 64px); }
+}
+@media (min-width: 901px) {
+  .hero-title-language-zh .hero-scramble { font-size: 1.80em; }
+  .hero-title-language-en { font-size: .57em; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

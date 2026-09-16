@@ -1064,11 +1064,17 @@
 
   const initializeArtistAccordion = () => {
     const accordion = document.querySelector("#home-artist-accordion");
+    if (!accordion) return;
     const items = [...accordion.querySelectorAll(".artist-accordion-item")];
     const hoverInput = window.matchMedia("(min-width: 901px) and (hover: hover) and (pointer: fine)");
+    const touchInput = window.matchMedia("(hover: none), (pointer: coarse)");
+    const section = accordion.closest(".home-accordion-section");
     const defaultIndex = Math.floor((items.length - 1) / 2);
     let activeIndex = -1;
     let observationFrame = 0;
+    let transitionLocked = false;
+    let pendingIndex = -1;
+    let lockTimer = 0;
 
     const setActive = index => {
       if (index < 0 || index >= items.length || index === activeIndex) return;
@@ -1080,7 +1086,7 @@
     };
 
     const activateNearestToObservation = () => {
-      if (hoverInput.matches || !items.length) return;
+      if (hoverInput.matches || touchInput.matches || !items.length) return;
       const observedElement = document.elementFromPoint(observationState.x, observationState.y);
       const observedItem = observedElement?.closest(".artist-accordion-item");
       if (observedItem && accordion.contains(observedItem)) setActive(Number(observedItem.dataset.accordionIndex));
@@ -1094,6 +1100,38 @@
       });
     };
 
+    const syncSequentialLayout = () => {
+      if (!section) return;
+      const enabled = touchInput.matches && !hoverInput.matches;
+      section.classList.toggle("is-touch-sequential", enabled);
+      if (!enabled) {
+        section.style.removeProperty("--accordion-scroll-range");
+        return;
+      }
+      const step = Math.max(240, Math.round(window.innerHeight * .42));
+      section.dataset.accordionStep = String(step);
+      section.style.setProperty("--accordion-scroll-range", `${Math.max(0, items.length - 1) * step}px`);
+    };
+
+    const updateSequentialAccordion = () => {
+      if (!touchInput.matches || hoverInput.matches || !section || !items.length) return;
+      const step = Number(section.dataset.accordionStep) || 280;
+      const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+      const progress = Math.max(0, window.scrollY - sectionTop);
+      const desired = Math.min(items.length - 1, Math.max(0, Math.round(progress / step)));
+      if (desired === activeIndex) return;
+      pendingIndex = desired;
+      if (transitionLocked) return;
+      const direction = desired > activeIndex ? 1 : -1;
+      setActive(Math.max(0, Math.min(items.length - 1, activeIndex + direction)));
+      transitionLocked = true;
+      window.clearTimeout(lockTimer);
+      lockTimer = window.setTimeout(() => {
+        transitionLocked = false;
+        if (pendingIndex !== activeIndex) updateSequentialAccordion();
+      }, 460);
+    };
+
     accordion.addEventListener("pointerover", event => {
       if (!hoverInput.matches) return;
       const item = event.target.closest(".artist-accordion-item");
@@ -1104,11 +1142,13 @@
       const item = event.target.closest(".artist-accordion-item");
       if (item && accordion.contains(item)) setActive(Number(item.dataset.accordionIndex));
     });
-    window.addEventListener("scroll", scheduleObservationCheck, {passive: true});
-    siteResizeHandlers.add(scheduleObservationCheck);
-    hoverInput.addEventListener("change", scheduleObservationCheck);
+    window.addEventListener("scroll", () => touchInput.matches ? updateSequentialAccordion() : scheduleObservationCheck(), {passive: true});
+    siteResizeHandlers.add(() => { syncSequentialLayout(); touchInput.matches ? updateSequentialAccordion() : scheduleObservationCheck(); });
+    hoverInput.addEventListener("change", () => { syncSequentialLayout(); scheduleObservationCheck(); });
+    touchInput.addEventListener("change", syncSequentialLayout);
 
-    setActive(defaultIndex);
+    syncSequentialLayout();
+    setActive(touchInput.matches ? 0 : defaultIndex);
     scheduleObservationCheck();
   };
 
@@ -1257,6 +1297,7 @@
       const fromRatio = options.fromRatio ?? .25;
       const toRatio = options.toRatio ?? .94;
       const volatility = options.volatility || 0;
+      const useEnglishFontMix = options.englishFontMix || false;
       const prototypeTiming = Object.keys(options).length > 0;
       const legacyTimeline = [
         {start: 0, end: 900, from: .25, to: .35},
@@ -1277,15 +1318,42 @@
         const slots = characters.map((character, index) => character === " " ? -1 : index).filter(index => index >= 0);
         const isEnglishTitle = element.matches(".hero-logo-recognition-en") || element.closest(".hero-title-language-en");
         if (!element.dataset.finalText) element.setAttribute("aria-label", element.textContent);
-        return {
+        const state = {
           element,
           characters,
           slots,
           resolutionOrder: shuffle(slots),
           resolved: new Set(),
-          glyphs: [...(isEnglishTitle ? "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?#%+-/\\01▒▓" : "灰色自動體未識別中?#%+/\\01▒▓")]
+          glyphs: [...(isEnglishTitle ? "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?#%+-/\\01▒▓" : "灰色自動體未識別中?#%+/\\01▒▓")],
+          isEnglishTitle
         };
+        if (isEnglishTitle && useEnglishFontMix) {
+          state.glyphNodes = [];
+          state.currentGlyphs = [];
+          state.currentResolved = [];
+          element.textContent = "";
+          state.glyphLine = document.createElement("span");
+          state.glyphLine.className = "hero-logo-glyph-line";
+          element.append(state.glyphLine);
+          characters.forEach((character, index) => {
+            if (character === " ") {
+              state.glyphLine.append(document.createTextNode(" "));
+              return;
+            }
+            const glyph = document.createElement("span");
+            glyph.className = "hero-logo-glyph is-togetoge";
+            state.glyphLine.append(glyph);
+            state.glyphNodes[index] = glyph;
+          });
+        }
+        return state;
       });
+      const chooseEnglishFont = mixProgress => {
+        const togetogeChance = 1 / 3 + (2 / 3 * mixProgress);
+        const random = Math.random();
+        if (random < togetogeChance) return "is-togetoge";
+        return random < togetogeChance + (1 - togetogeChance) / 2 ? "is-turret" : "is-serif";
+      };
       const startedAt = performance.now();
       const tick = now => {
         const elapsed = Math.min(now - startedAt, duration);
@@ -1295,72 +1363,38 @@
         const ratio = prototypeTiming
           ? fromRatio + ((toRatio - fromRatio) * progress)
           : legacyStage.from + ((legacyStage.to - legacyStage.from) * legacyProgress);
+        const mixProgress = useEnglishFontMix && options.fontMixRecognition ? progress : 0;
         if (!prototypeTiming) titleStage.dataset.decodeStage = String(legacyTimeline.indexOf(legacyStage) + 1);
         states.forEach(state => {
           const maxResolved = prototypeTiming ? state.slots.length : state.slots.length - 1;
           const target = Math.min(maxResolved, Math.max(prototypeTiming ? 0 : 1, Math.round(state.slots.length * ratio)));
           while (state.resolved.size < target) state.resolved.add(state.resolutionOrder[state.resolved.size]);
-          state.element.textContent = state.characters.map((character, index) => {
+          const glyphs = state.characters.map((character, index) => {
             if (character === " ") return character;
-            if (state.resolved.has(index) && !(volatility && Math.random() < volatility * (1 - progress))) return character;
+            const isResolved = state.resolved.has(index) && !(volatility && Math.random() < volatility * (1 - progress));
+            if (isResolved) return character;
             const unresolvedGlyphs = state.glyphs.filter(glyph => glyph !== character);
             return unresolvedGlyphs[Math.floor(Math.random() * unresolvedGlyphs.length)];
-          }).join("");
+          });
+          if (state.glyphNodes) {
+            glyphs.forEach((glyph, index) => {
+              if (state.characters[index] === " ") return;
+              const isResolved = glyph === state.characters[index] && state.resolved.has(index);
+              if (state.currentGlyphs[index] !== glyph || state.currentResolved[index] !== isResolved) {
+                const node = state.glyphNodes[index];
+                node.textContent = glyph;
+                node.className = `hero-logo-glyph ${chooseEnglishFont(mixProgress)}`;
+                state.currentGlyphs[index] = glyph;
+                state.currentResolved[index] = isResolved;
+              }
+            });
+          } else state.element.textContent = glyphs.join("");
         });
         if (elapsed < duration) window.setTimeout(() => requestAnimationFrame(tick), frame);
-        else resolve();
+        else resolve(states);
       };
       requestAnimationFrame(tick);
     });
-
-    const runPrototypeLogo = async () => {
-      const signal = titleStage.querySelector(".hero-logo-signal");
-      const blocks = titleStage.querySelector(".hero-logo-blocks");
-      const recognitionTitles = [...titleStage.querySelectorAll(".hero-logo-scramble")];
-      const points = [
-        [70, 90], [155, 218], [238, 68], [320, 176], [405, 112], [478, 238], [548, 62],
-        [622, 183], [704, 94], [770, 231], [846, 142], [930, 64], [905, 260], [510, 148]
-      ];
-      const links = [[0,2], [1,3], [2,3], [2,4], [3,5], [4,6], [4,13], [5,13], [6,7], [6,8], [7,9], [7,10], [8,10], [8,11], [9,12], [10,12]];
-      signal.innerHTML = [
-        ...links.map(([from, to], index) => `<line x1="${points[from][0]}" y1="${points[from][1]}" x2="${points[to][0]}" y2="${points[to][1]}" style="--signal-delay:${index * 9}ms"></line>`),
-        ...points.map(([x, y], index) => `<circle cx="${x}" cy="${y}" r="${index % 4 === 0 ? 2.6 : 1.8}" data-glow="${index % 4 === 0}" style="--signal-delay:${index * 12}ms"></circle>`)
-      ].join("");
-      blocks.innerHTML = Array.from({length: 34}, (_, index) => {
-        const column = index % 10;
-        const row = Math.floor(index / 10);
-        const x = 2 + column * 10 + ((row * 3 + index) % 4);
-        const y = 7 + row * 24 + ((column * 5) % 9);
-        const width = 3 + ((index * 7) % 8);
-        const height = 4 + ((index * 5) % 11);
-        const dx = ((index % 2 ? 1 : -1) * (35 + ((index * 13) % 90)));
-        const dy = ((index % 3 ? 1 : -1) * (20 + ((index * 9) % 55)));
-        return `<i class="hero-logo-block" style="--block-x:${x}%;--block-y:${y}%;--block-w:${width}%;--block-h:${height}%;--block-alpha:${(.22 + (index % 5) * .1).toFixed(2)};--block-delay:${(index % 9) * 12}ms;--block-dx:${dx}px;--block-dy:${dy}px"></i>`;
-      }).join("");
-      const phases = ["is-signal-points", "is-signal-links", "is-blocks", "is-scrambling", "is-recognizing", "is-glitching", "is-flashing"];
-      const setPhase = phase => {
-        titleStage.classList.remove(...phases);
-        if (phase) titleStage.classList.add(phase);
-      };
-
-      setPhase("is-signal-points");
-      await wait(290);
-      setPhase("is-signal-links");
-      await wait(290);
-      setPhase("is-blocks");
-      await wait(290);
-      setPhase("is-scrambling");
-      await scrambleTitles(recognitionTitles, {duration: 500, fromRatio: 0, toRatio: .18});
-      setPhase("is-recognizing");
-      await scrambleTitles(recognitionTitles, {duration: 400, fromRatio: .18, toRatio: .94, volatility: .24});
-      recognitionTitles.forEach(element => { element.textContent = element.dataset.finalText; });
-      setPhase("is-glitching");
-      await wait(180);
-      setPhase("is-flashing");
-      await wait(90);
-      setPhase("");
-      titleStage.classList.add("is-mark-visible");
-    };
 
     const typeLine = async (element, text) => {
       for (const character of [...text]) {
@@ -1370,7 +1404,7 @@
     };
 
     try {
-      if (logoPrototype) await runPrototypeLogo();
+      if (logoPrototype) await window.DAFHeroLogoAnimation.run(titleStage);
       else {
         await scrambleTitles(titleElements);
         titleStage.classList.add("is-final-transition");
@@ -1542,7 +1576,8 @@
       markerLayer.innerHTML = locations.map(location => {
         const works = location.workIds.map(workById).filter(Boolean);
         const label = location.name || works.map(work => `${mapArtist(work)} ${mapTitle(work)}`).join("、");
-        return `<button class="marker" style="left:${location.x}%;top:${location.y}%" data-location-id="${location.id}" data-location-type="${location.type}" aria-label="${isEnglish ? "View" : "查看"} ${label}" aria-expanded="false"><span class="marker-symbol" aria-hidden="true"></span><span class="marker-number">${location.number}</span></button>`;
+        const stack = 2 + (Number(location.number) % 5);
+        return `<button class="marker" style="left:${location.x}%;top:${location.y}%;--marker-stack:${stack}" data-location-id="${location.id}" data-location-type="${location.type}" aria-label="${isEnglish ? "View" : "查看"} ${label}" aria-expanded="false"><span class="marker-symbol" aria-hidden="true"></span><span class="marker-number">${location.number}</span></button>`;
       }).join("");
     });
 
@@ -1673,6 +1708,14 @@
     const panel = layer?.querySelector(".shop-detail-panel");
     if (!lists.length || !layer || !panel || !Array.isArray(D.shops)) return;
     document.body.append(layer);
+    const syncShopVisualViewport = () => {
+      const viewport = window.visualViewport;
+      layer.style.setProperty("--visual-viewport-top", `${viewport?.offsetTop || 0}px`);
+      layer.style.setProperty("--visual-viewport-height", `${viewport?.height || window.innerHeight}px`);
+    };
+    syncShopVisualViewport();
+    window.visualViewport?.addEventListener("resize", syncShopVisualViewport);
+    window.visualViewport?.addEventListener("scroll", syncShopVisualViewport);
 
     let returnFocus = null;
     let activeGalleryIndex = 0;
@@ -1776,7 +1819,8 @@
         </div>`;
       layer.hidden = false;
       panel.hidden = false;
-      layer.scrollTop = 0;
+      syncShopVisualViewport();
+      panel.scrollTop = 0;
       layer.classList.add("is-open");
       lockModalPageScroll("shop-modal-open");
       panel.querySelector(".marker-card-close").addEventListener("click", () => closeShopPanel());
@@ -1816,6 +1860,14 @@
     });
   };
 
+  const renderVisitDistrictMap = () => {
+    const map = document.querySelector("[data-visit-district-map]");
+    const markerLayer = map?.querySelector("[data-visit-map-markers]");
+    if (!map || !markerLayer || !Array.isArray(D.mapLocations)) return;
+    const locations = D.mapLocations.filter(item => item.map === "district" && item.type === "district");
+    markerLayer.innerHTML = locations.map(location => `<a class="marker" style="left:${location.x}%;top:${location.y}%;--marker-stack:${2 + (Number(location.number) % 5)}" data-location-type="district" href="${C.localizedRoute("map.html#art-in-stores")}" aria-label="${isEnglish ? "View Art-in-Store location" : "查看藝術入店位置"} ${location.number}"><span class="marker-symbol" aria-hidden="true"></span><span class="marker-number">${location.number}</span></a>`).join("");
+  };
+
   document.body.insertAdjacentHTML("afterbegin", C.siteBackground());
   document.body.dataset.networkProfile = "site";
   document.documentElement.style.setProperty("--observation-light-center", String(networkProfile.lightCenterAlpha));
@@ -1850,6 +1902,7 @@
     initializeShops();
     initializeStoreStatusUpdates();
   }
+  if (page === "visit") renderVisitDistrictMap();
   if (page === "work-detail") renderWorkDetail();
   if (page === "event-detail") renderEventDetail();
   initializeFolderTabs();
@@ -1860,7 +1913,7 @@
   const menuClose = document.querySelector(".mobile-menu-close");
   const navigation = document.querySelector(".header-nav");
   const submenuToggles = [...navigation.querySelectorAll(".nav-submenu-toggle")];
-  const mobileMenuMedia = window.matchMedia("(max-width: 900px)");
+  const mobileMenuMedia = window.matchMedia("(max-width: 900px), (hover: none), (pointer: coarse)");
   const pageContent = [document.querySelector("#app"), document.querySelector("#site-footer"), document.querySelector(".back-to-top")].filter(Boolean);
   let menuReturnFocus = null;
 

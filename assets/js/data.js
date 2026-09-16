@@ -3614,19 +3614,23 @@ window.DAF_DATA = {
       "type": "合作單位",
       "names": [
         "C-LAB未來視覺實驗室",
-        "噪流"
+        "噪流",
+        "超級浪台北空間"
       ],
       "namesEn": [
         "C-LAB’s Future Vision Lab",
-        "Fluid Noise"
+        "Fluid Noise",
+        "Hyper Wave Taipei Space"
       ],
       "images": [
         "assets/images/logos/C-LAB未來視覺實驗室LOGO.png",
-        "assets/images/logos/噪流LOGO.png"
+        "assets/images/logos/噪流LOGO.png",
+        "assets/images/logos/超級浪LOGO.png"
       ],
       "urls": [
         "https://clab.org.tw/unit/future-vision-lab/",
-        "https://fluidnoise.com/about/"
+        "https://fluidnoise.com/about/",
+        "https://www.hyperwavemit.com/"
       ]
     },
     {

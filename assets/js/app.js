@@ -1205,6 +1205,7 @@
   const runHeroSequence = async () => {
     const hero = document.querySelector("#hero-observation");
     const titleStage = hero.querySelector(".hero-title-stage");
+    const logoPrototype = titleStage.classList.contains("hero-logo-prototype");
     const completeSequence = () => window.dispatchEvent(new CustomEvent("heroSequenceComplete"));
     window.addEventListener("heroSequenceComplete", unlockHeroScroll, {once: true});
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -1249,9 +1250,15 @@
       ]).catch(() => {});
     }
     hero.classList.add("hero-sequence-running");
+    titleStage.classList.add("hero-sequence-running");
 
-    const scrambleTitles = elements => new Promise(resolve => {
-      const stageTimeline = [
+    const scrambleTitles = (elements, options = {}) => new Promise(resolve => {
+      const duration = options.duration || 2060;
+      const fromRatio = options.fromRatio ?? .25;
+      const toRatio = options.toRatio ?? .94;
+      const volatility = options.volatility || 0;
+      const prototypeTiming = Object.keys(options).length > 0;
+      const legacyTimeline = [
         {start: 0, end: 900, from: .25, to: .35},
         {start: 900, end: 1700, from: .65, to: .78},
         {start: 1700, end: 2060, from: .9, to: .94}
@@ -1266,44 +1273,94 @@
         return result;
       };
       const states = elements.map(element => {
-        const characters = [...element.textContent];
+        const characters = [...(element.dataset.finalText || element.textContent)];
         const slots = characters.map((character, index) => character === " " ? -1 : index).filter(index => index >= 0);
-        const isEnglish = element.closest(".hero-title-language-en");
-        element.setAttribute("aria-label", element.textContent);
+        const isEnglishTitle = element.matches(".hero-logo-recognition-en") || element.closest(".hero-title-language-en");
+        if (!element.dataset.finalText) element.setAttribute("aria-label", element.textContent);
         return {
           element,
           characters,
           slots,
           resolutionOrder: shuffle(slots),
           resolved: new Set(),
-          glyphs: [...(isEnglish ? "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%&+-/<>[]" : "灰色自動體未識別中▒▓█")]
+          glyphs: [...(isEnglishTitle ? "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?#%+-/\\01▒▓" : "灰色自動體未識別中?#%+/\\01▒▓")]
         };
       });
-      const ratioAt = elapsed => {
-        const current = stageTimeline.find(stage => elapsed <= stage.end) || stageTimeline.at(-1);
-        const progress = Math.min(1, Math.max(0, (elapsed - current.start) / (current.end - current.start)));
-        return current.from + ((current.to - current.from) * progress);
-      };
       const startedAt = performance.now();
       const tick = now => {
-        const elapsed = Math.min(now - startedAt, stageTimeline.at(-1).end);
-        const ratio = ratioAt(elapsed);
-        const stageIndex = stageTimeline.findIndex(stage => elapsed <= stage.end);
-        titleStage.dataset.decodeStage = String((stageIndex < 0 ? stageTimeline.length - 1 : stageIndex) + 1);
+        const elapsed = Math.min(now - startedAt, duration);
+        const progress = elapsed / duration;
+        const legacyStage = legacyTimeline.find(stage => elapsed <= stage.end) || legacyTimeline.at(-1);
+        const legacyProgress = Math.min(1, Math.max(0, (elapsed - legacyStage.start) / (legacyStage.end - legacyStage.start)));
+        const ratio = prototypeTiming
+          ? fromRatio + ((toRatio - fromRatio) * progress)
+          : legacyStage.from + ((legacyStage.to - legacyStage.from) * legacyProgress);
+        if (!prototypeTiming) titleStage.dataset.decodeStage = String(legacyTimeline.indexOf(legacyStage) + 1);
         states.forEach(state => {
-          const target = Math.min(state.slots.length - 1, Math.max(1, Math.round(state.slots.length * ratio)));
+          const maxResolved = prototypeTiming ? state.slots.length : state.slots.length - 1;
+          const target = Math.min(maxResolved, Math.max(prototypeTiming ? 0 : 1, Math.round(state.slots.length * ratio)));
           while (state.resolved.size < target) state.resolved.add(state.resolutionOrder[state.resolved.size]);
           state.element.textContent = state.characters.map((character, index) => {
-            if (character === " " || state.resolved.has(index)) return character;
+            if (character === " ") return character;
+            if (state.resolved.has(index) && !(volatility && Math.random() < volatility * (1 - progress))) return character;
             const unresolvedGlyphs = state.glyphs.filter(glyph => glyph !== character);
             return unresolvedGlyphs[Math.floor(Math.random() * unresolvedGlyphs.length)];
           }).join("");
         });
-        if (elapsed < stageTimeline.at(-1).end) window.setTimeout(() => requestAnimationFrame(tick), frame);
+        if (elapsed < duration) window.setTimeout(() => requestAnimationFrame(tick), frame);
         else resolve();
       };
       requestAnimationFrame(tick);
     });
+
+    const runPrototypeLogo = async () => {
+      const signal = titleStage.querySelector(".hero-logo-signal");
+      const blocks = titleStage.querySelector(".hero-logo-blocks");
+      const recognitionTitles = [...titleStage.querySelectorAll(".hero-logo-scramble")];
+      const points = [
+        [70, 90], [155, 218], [238, 68], [320, 176], [405, 112], [478, 238], [548, 62],
+        [622, 183], [704, 94], [770, 231], [846, 142], [930, 64], [905, 260], [510, 148]
+      ];
+      const links = [[0,2], [1,3], [2,3], [2,4], [3,5], [4,6], [4,13], [5,13], [6,7], [6,8], [7,9], [7,10], [8,10], [8,11], [9,12], [10,12]];
+      signal.innerHTML = [
+        ...links.map(([from, to], index) => `<line x1="${points[from][0]}" y1="${points[from][1]}" x2="${points[to][0]}" y2="${points[to][1]}" style="--signal-delay:${index * 9}ms"></line>`),
+        ...points.map(([x, y], index) => `<circle cx="${x}" cy="${y}" r="${index % 4 === 0 ? 2.6 : 1.8}" data-glow="${index % 4 === 0}" style="--signal-delay:${index * 12}ms"></circle>`)
+      ].join("");
+      blocks.innerHTML = Array.from({length: 34}, (_, index) => {
+        const column = index % 10;
+        const row = Math.floor(index / 10);
+        const x = 2 + column * 10 + ((row * 3 + index) % 4);
+        const y = 7 + row * 24 + ((column * 5) % 9);
+        const width = 3 + ((index * 7) % 8);
+        const height = 4 + ((index * 5) % 11);
+        const dx = ((index % 2 ? 1 : -1) * (35 + ((index * 13) % 90)));
+        const dy = ((index % 3 ? 1 : -1) * (20 + ((index * 9) % 55)));
+        return `<i class="hero-logo-block" style="--block-x:${x}%;--block-y:${y}%;--block-w:${width}%;--block-h:${height}%;--block-alpha:${(.22 + (index % 5) * .1).toFixed(2)};--block-delay:${(index % 9) * 12}ms;--block-dx:${dx}px;--block-dy:${dy}px"></i>`;
+      }).join("");
+      const phases = ["is-signal-points", "is-signal-links", "is-blocks", "is-scrambling", "is-recognizing", "is-glitching", "is-flashing"];
+      const setPhase = phase => {
+        titleStage.classList.remove(...phases);
+        if (phase) titleStage.classList.add(phase);
+      };
+
+      setPhase("is-signal-points");
+      await wait(290);
+      setPhase("is-signal-links");
+      await wait(290);
+      setPhase("is-blocks");
+      await wait(290);
+      setPhase("is-scrambling");
+      await scrambleTitles(recognitionTitles, {duration: 500, fromRatio: 0, toRatio: .18});
+      setPhase("is-recognizing");
+      await scrambleTitles(recognitionTitles, {duration: 400, fromRatio: .18, toRatio: .94, volatility: .24});
+      recognitionTitles.forEach(element => { element.textContent = element.dataset.finalText; });
+      setPhase("is-glitching");
+      await wait(180);
+      setPhase("is-flashing");
+      await wait(90);
+      setPhase("");
+      titleStage.classList.add("is-mark-visible");
+    };
 
     const typeLine = async (element, text) => {
       for (const character of [...text]) {
@@ -1312,15 +1369,24 @@
       }
     };
 
-    await scrambleTitles(titleElements);
-    titleStage.classList.add("is-final-transition");
-    await wait(80);
-    titleStage.classList.add("is-final-flicker");
-    await wait(60);
-    titleStage.classList.add("is-final-resolved");
-    await wait(120);
-    titleStage.classList.add("is-mark-visible");
-    titleStage.classList.remove("is-final-transition", "is-final-flicker", "is-final-resolved");
+    try {
+      if (logoPrototype) await runPrototypeLogo();
+      else {
+        await scrambleTitles(titleElements);
+        titleStage.classList.add("is-final-transition");
+        await wait(80);
+        titleStage.classList.add("is-final-flicker");
+        await wait(60);
+        titleStage.classList.add("is-final-resolved");
+        await wait(120);
+        titleStage.classList.add("is-mark-visible");
+        titleStage.classList.remove("is-final-transition", "is-final-flicker", "is-final-resolved");
+      }
+    } catch (error) {
+      console.error("Hero logo animation fallback:", error);
+      titleStage.className = titleStage.className.replace(/\bis-[\w-]+\b/g, "").replace(/\s+/g, " ").trim();
+      titleStage.classList.add("is-mark-visible");
+    }
     for (let index = 0; index < messageLines.length; index += 1) {
       await typeLine(messageLines[index], finalMessages[index]);
       if (index < messageLines.length - 1) await wait(transitions[index].delay);

@@ -2371,7 +2371,7 @@ window.DAF_DATA = {
       "周日  13:00-21:00"
     ],
     "phone": "02-25981498",
-    "description": "異世界咖啡館•澐月是位於雙城街巷弄內的 Cosplay 主題咖啡館，設定「黑暗城堡風的冒險者公會」世界觀，與傳統女僕咖啡廳做區隔，讓顧客化身「冒險者」展開奇幻旅程。\n店內的公會職員皆由不同種族與性格的 Coser 擔任，備有舞台及音響，不定期舉辦表演和同好聚會，彷彿從漫畫中走出來的「魔獸帶骨肉佐黃金降」在圈內更是廣受好評。\n特色餐點與豐富互動機制，絕對能滿足顧客對冒險生活的嚮往。",
+    "description": "「異世界咖啡館・澐月」是一間隱身於雙城街巷弄，以劍與魔法世界為背景、黑暗城堡風「冒險者公會」為舞台打造的沉浸式主題咖啡廳。\n來訪的顧客將化身踏入異世界的「冒險者」，由不同種族與性格的公會職員接待，透過場景佈置、角色設定、特色餐飲、任務與互動，共同展開一段奇幻旅程。\n店內亦設有舞台與音響，不定期舉辦表演、同好聚會與主題活動；從象徵討伐強敵的「炙燒歐克將軍蓋飯」到以傳說魔物為靈感打造的牛舌料理「米陶洛斯之吻」及各式異世界料理，希望讓每一次來訪不只是用餐，更像是在旅途中短暫踏入另一個世界，留下屬於自己的冒險故事。",
     "links": {
       "website": "https://linktr.ee/isekaicafe_ungetsu"
     },
@@ -2431,8 +2431,8 @@ window.DAF_DATA = {
     },
     "addressZh": "臺北市中山區晴光里雙城街32巷10-1號",
     "addressEn": "No. 10-1, Ln. 32, Shuangcheng St., Zhongshan Dist., Taipei City 104628, Taiwan (R.O.C.)",
-    "descriptionZh": "異世界咖啡館•澐月是位於雙城街巷弄內的 Cosplay 主題咖啡館，設定「黑暗城堡風的冒險者公會」世界觀，與傳統女僕咖啡廳做區隔，讓顧客化身「冒險者」展開奇幻旅程。\n店內的公會職員皆由不同種族與性格的 Coser 擔任，備有舞台及音響，不定期舉辦表演和同好聚會，彷彿從漫畫中走出來的「魔獸帶骨肉佐黃金降」在圈內更是廣受好評。\n特色餐點與豐富互動機制，絕對能滿足顧客對冒險生活的嚮往。",
-    "descriptionEn": "Isekaicafe Ungetsu is a cosplay-themed café tucked away in an alley off Shuangcheng Street. Built around the fantasy setting of an “adventurers’ guild in a dark castle,” it offers an experience distinct from traditional maid cafés, inviting every guest to step into the role of an adventurer embarking on a fantastical journey.\n\nThe guild staff are cosplayers portraying characters of different races and personalities. With a stage and sound system, the café also hosts occasional performances and fan gatherings. Its imaginative dishes, including the fantasy-inspired “Bone-in Monster Meat,” have become favorites among visitors.\n\nCombining themed cuisine with interactive experiences, Isekaicafe Ungetsu brings the world of fantasy adventure to life.",
+    "descriptionZh": "「異世界咖啡館・澐月」是一間隱身於雙城街巷弄，以劍與魔法世界為背景、黑暗城堡風「冒險者公會」為舞台打造的沉浸式主題咖啡廳。\n來訪的顧客將化身踏入異世界的「冒險者」，由不同種族與性格的公會職員接待，透過場景佈置、角色設定、特色餐飲、任務與互動，共同展開一段奇幻旅程。\n店內亦設有舞台與音響，不定期舉辦表演、同好聚會與主題活動；從象徵討伐強敵的「炙燒歐克將軍蓋飯」到以傳說魔物為靈感打造的牛舌料理「米陶洛斯之吻」及各式異世界料理，希望讓每一次來訪不只是用餐，更像是在旅途中短暫踏入另一個世界，留下屬於自己的冒險故事。",
+    "descriptionEn": "Isekaicafe Ungetsu is an immersive themed café tucked away in the alleys of Shuangcheng Street. Set in a world of swords and magic, the café takes the form of an “Adventurers’ Guild” housed within a dark castle.\nVisitors step into this otherworld as “adventurers,” welcomed by guild staff portraying characters of different races and personalities. Through immersive settings, character-driven interactions, themed food and drinks, quests, and other interactive experiences, guests are invited to embark on a fantasy journey of their own.\nThe café also features a stage and sound system, hosting occasional performances, fan gatherings, and themed events. Its otherworldly menu ranges from the “Flame-Seared General Orc Rice Bowl,” inspired by the triumph over a formidable foe, to “Kiss of the Minotaur,” a beef tongue dish inspired by the legendary creature, alongside a variety of fantasy-themed creations.\nAt Isekaicafe Ungetsu, each visit is designed to be more than a meal—it is a brief passage into another world, where every guest can leave with an adventure story of their own.",
     "businessHoursEn": [
       "Mon–Tue 16:00–21:00",
       "Wed Closed",
@@ -3158,15 +3158,24 @@ window.DAF_DATA = {
     "addressZh": "臺北市中山區新庄里吉林路456巷10號",
     "addressEn": "No. 10, Ln. 456, Jilin Rd., Zhongshan Dist., Taipei City 104084, Taiwan (R.O.C.)",
     "businessHours": [
-      "平時｜預訂制（麻糬、冷泡茶以預先訂購為主）",
       "臺北數位藝術節期間｜限定開放營業",
-      "實際開放日期與時間依官方 Facebook 公告"
+      "10/31（六）12:00–20:00",
+      "11/01（日）14:00–17:00",
+      "11/07（六）10:30–16:30",
+      "11/08（日）10:30–16:30",
+      "11/14（六）10:30–16:30",
+      "11/15（日）10:30–16:30",
+      "平日｜採揪團預訂，不固定開放現場營業。"
     ],
     "businessHoursEn": [
-      "Regular Hours | By reservation only",
-      "Mochi and cold-brew tea are primarily available by pre-order.",
-      "During the Taipei Digital Art Festival | Open on selected dates",
-      "Please refer to the official Facebook page for the latest opening dates and hours."
+      "During the Taipei Digital Art Festival | Special opening hours",
+      "10/31 (Sat) 12:00–20:00",
+      "11/01 (Sun) 14:00–17:00",
+      "11/07 (Sat) 10:30–16:30",
+      "11/08 (Sun) 10:30–16:30",
+      "11/14 (Sat) 10:30–16:30",
+      "11/15 (Sun) 10:30–16:30",
+      "Weekdays | Group reservations only; no fixed walk-in opening hours."
     ],
     "phone": "02-25957137",
     "description": "三樓家以馬內利食研室，藏身於吉林路巷弄，是揉合手作飲食、咖啡、設計及生活美學的複合式空間。店內以純手工麻糬為核心，將約瑟花生、路得黑芝麻、約拿紅豆、彼得酸菜等口味賦予不同故事與祝福，另外也提供無咖啡因冷泡蕎麥茶及自家烘焙手沖咖啡，讓每一位顧客體驗手作的溫度。\n空間亦結合「攝設的，強尼小姐」設計工作室，從食物、包裝到視覺創作，傳遞「每一口，都是一點療癒」的品牌理念，將日常飲食轉變為可分享的溫度與祝福。",
@@ -3263,9 +3272,9 @@ window.DAF_DATA = {
       "Sat–Sun 13:00–18:00"
     ],
     "phone": "0987992335",
-    "description": "",
-    "descriptionZh": "",
-    "descriptionEn": "",
+    "description": "Gallery 188座落於台北市大同區承德路三段188號，從捷運圓山站1號出口步行即可抵達。以當代藝術為核心，持續邀請新銳藝術家、設計師及跨領域創作者展出，也透過策展、品牌合作、講座與工作坊，讓作品走進城市日常。\n空間保留親近而安靜的觀看尺度，觀眾可以放慢腳步，細看影像、繪畫與裝置中的情感線索。邀請大家將這裡納入城市漫遊路線，在熱鬧活動之間，留一段時間給藝術與自己。\n《在記憶折返以前》，由台北雙人創作團體Fina與Tony共同展出。Fina以散文式數位影像收集街道、人物與生活片刻；Tony透過翻轉、鏡像與重組，將城市燈火化為影像詩。兩人的作品游移於具象與抽象之間，沿著光線、記憶與時間交會，邀請觀眾辨認那些尚未說完、仍在心中折返的感受。",
+    "descriptionZh": "Gallery 188座落於台北市大同區承德路三段188號，從捷運圓山站1號出口步行即可抵達。以當代藝術為核心，持續邀請新銳藝術家、設計師及跨領域創作者展出，也透過策展、品牌合作、講座與工作坊，讓作品走進城市日常。\n空間保留親近而安靜的觀看尺度，觀眾可以放慢腳步，細看影像、繪畫與裝置中的情感線索。邀請大家將這裡納入城市漫遊路線，在熱鬧活動之間，留一段時間給藝術與自己。\n《在記憶折返以前》，由台北雙人創作團體Fina與Tony共同展出。Fina以散文式數位影像收集街道、人物與生活片刻；Tony透過翻轉、鏡像與重組，將城市燈火化為影像詩。兩人的作品游移於具象與抽象之間，沿著光線、記憶與時間交會，邀請觀眾辨認那些尚未說完、仍在心中折返的感受。",
+    "descriptionEn": "Gallery 188 is located at No. 188, Sec. 3, Chengde Rd., Datong District, Taipei, within walking distance of Exit 1 of Yuanshan MRT Station. With a focus on contemporary art, the gallery regularly presents works by emerging artists, designers, and interdisciplinary creators. Through curated exhibitions, brand collaborations, talks, and workshops, Gallery 188 brings art into the fabric of everyday urban life.\nThe space offers an intimate and quiet setting for viewing, inviting visitors to slow down and discover the emotional threads woven through moving images, paintings, and installations. Gallery 188 welcomes visitors to make the space part of their journey through the city—to set aside a moment amid the bustle and spend some time with art and themselves.\nBefore Memory Turns Back is a joint exhibition by Taipei-based artist duo Fina and Tony. Fina gathers fragments of streets, people, and everyday life through essayistic digital imagery, while Tony transforms the lights of the city into visual poetry through inversion, mirroring, and recomposition. Moving between the figurative and the abstract, their works trace intersections of light, memory, and time, inviting viewers to recognize feelings that remain unfinished and continue to return within.",
     "links": {
       "instagram": "https://www.instagram.com/gallery188_/",
       "facebook": "https://www.facebook.com/p/Gallery-188%E6%9D%89%E7%95%9D%E8%97%9D%E8%A1%93-61575686574065/"
@@ -3615,22 +3624,26 @@ window.DAF_DATA = {
       "names": [
         "C-LAB未來視覺實驗室",
         "噪流",
-        "超級浪台北空間"
+        "超級浪台北空間",
+        "中山社區大學"
       ],
       "namesEn": [
         "C-LAB’s Future Vision Lab",
         "Fluid Noise",
-        "Hyper Wave Taipei Space"
+        "Hyper Wave Taipei Space",
+        "Zhongshan Community College"
       ],
       "images": [
         "assets/images/logos/C-LAB未來視覺實驗室LOGO.png",
         "assets/images/logos/噪流LOGO.png",
-        "assets/images/logos/超級浪LOGO.png"
+        "assets/images/logos/超級浪LOGO.png",
+        "assets/images/logos/中山社大Logo.png"
       ],
       "urls": [
         "https://clab.org.tw/unit/future-vision-lab/",
         "https://fluidnoise.com/about/",
-        "https://www.hyperwavemit.com/"
+        "https://www.hyperwavemit.com/",
+        "http://www.zscc.tp.edu.tw/"
       ]
     },
     {
@@ -3643,7 +3656,8 @@ window.DAF_DATA = {
         "wemo",
         "台灣互動體驗設計協會",
         "民偉視訊工程有限公司",
-        "飛利浦顯示器"
+        "飛利浦顯示器",
+        "達明機器人股份有限公司"
       ],
       "namesEn": [
         "Team Group Inc.",
@@ -3653,7 +3667,8 @@ window.DAF_DATA = {
         "wemo",
         "TIEDA",
         "MEWAY VISION",
-        "Philips Monitors"
+        "Philips Monitors",
+        "TECHMAN ROBOT INC."
       ],
       "images": [
         "assets/images/logos/十銓科技LOGO.png",
@@ -3663,7 +3678,8 @@ window.DAF_DATA = {
         "assets/images/logos/Wemo_LOGO.png",
         "assets/images/logos/TIEDA Logo.png",
         "assets/images/logos/民偉_LOGO.png",
-        "assets/images/logos/Philips logo.png"
+        "assets/images/logos/Philips logo.png",
+        "assets/images/logos/達明LOGO.png"
       ],
       "urls": [
         "https://www.teamgroupinc.com/tw/",
@@ -3673,7 +3689,8 @@ window.DAF_DATA = {
         "https://www.wemoscooter.com/",
         "https://tieda-ixd.com/",
         "https://www.meway.com.tw/",
-        "https://www.philips.com.tw/c-m-so/monitors"
+        "https://www.philips.com.tw/c-m-so/monitors",
+        "https://www.tm-robot.com/zh-hant"
       ],
       "sponsor": true
     },
@@ -3733,7 +3750,7 @@ const DAF_BUSINESS_HOURS_SCHEDULES = {
   "store-08": {0:DAF_HOURS(["12:00","20:00"]),1:null,2:DAF_HOURS(["12:00","20:00"]),3:DAF_HOURS(["12:00","20:00"]),4:DAF_HOURS(["12:00","20:00"]),5:DAF_HOURS(["12:00","20:00"]),6:DAF_HOURS(["12:00","20:00"])},
   "store-09": {0:DAF_ALL_DAY_HOURS(),1:DAF_ALL_DAY_HOURS(),2:DAF_ALL_DAY_HOURS(),3:DAF_ALL_DAY_HOURS(),4:DAF_ALL_DAY_HOURS(),5:DAF_ALL_DAY_HOURS(),6:DAF_ALL_DAY_HOURS()},
   "store-10": {0:DAF_HOURS(["10:00","21:00"]),1:DAF_HOURS(["10:00","21:00"]),2:DAF_HOURS(["10:00","21:00"]),3:DAF_HOURS(["10:00","21:00"]),4:DAF_HOURS(["10:00","21:00"]),5:DAF_HOURS(["10:00","21:00"]),6:DAF_HOURS(["10:00","21:00"])},
-  "shop-01": {0:null,1:DAF_HOURS(["10:00","15:00"]),2:DAF_HOURS(["10:00","15:00"]),3:DAF_HOURS(["10:00","15:00"]),4:DAF_HOURS(["10:00","15:00"]),5:DAF_HOURS(["10:00","15:00"]),6:DAF_HOURS(["10:30","18:00"])},
+  "shop-01": {0:null,1:null,2:null,3:null,4:null,5:null,6:null},
   "shop-02": {0:null,1:DAF_HOURS(["19:30","01:00"]),2:DAF_HOURS(["19:30","01:00"]),3:DAF_HOURS(["19:30","01:00"]),4:null,5:DAF_HOURS(["19:30","02:00"]),6:DAF_HOURS(["19:30","02:00"])},
   "shop-03": {0:DAF_HOURS(["12:00","15:00"]),1:DAF_HOURS(["12:00","19:00"]),2:DAF_HOURS(["12:00","19:00"]),3:DAF_HOURS(["12:00","19:00"]),4:DAF_HOURS(["12:00","19:00"]),5:DAF_HOURS(["12:00","15:00"]),6:DAF_HOURS(["12:00","15:00"])},
   "shop-04": {0:DAF_HOURS(["13:00","18:00"]),1:DAF_HOURS(["11:00","19:00"]),2:DAF_HOURS(["11:00","19:00"]),3:null,4:null,5:null,6:DAF_HOURS(["13:00","18:00"])}
@@ -3743,7 +3760,14 @@ const DAF_SPECIAL_HOURS = {
   "store-03": {"2026-10-31":DAF_HOURS(["10:00","02:00"])},
   "store-05": {"2026-10-31":DAF_HOURS(["13:00","00:00"])},
   "store-08": {"2026-10-31":DAF_HOURS(["12:00","02:00"])},
-  "shop-01": {"2026-10-31":DAF_HOURS(["10:00","20:00"])},
+  "shop-01": {
+    "2026-10-31": DAF_HOURS(["12:00","20:00"]),
+    "2026-11-01": DAF_HOURS(["14:00","17:00"]),
+    "2026-11-07": DAF_HOURS(["10:30","16:30"]),
+    "2026-11-08": DAF_HOURS(["10:30","16:30"]),
+    "2026-11-14": DAF_HOURS(["10:30","16:30"]),
+    "2026-11-15": DAF_HOURS(["10:30","16:30"])
+  },
   "shop-02": {"2026-10-31":DAF_HOURS(["19:30","02:00"])}
 };
 [...window.DAF_DATA.venues, ...window.DAF_DATA.shops].forEach(store => {

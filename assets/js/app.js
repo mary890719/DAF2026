@@ -1072,7 +1072,7 @@
     if (!accordion) return;
     const items = [...accordion.querySelectorAll(".artist-accordion-item")];
     const hoverInput = window.matchMedia("(hover: hover) and (pointer: fine)");
-    const touchInput = window.matchMedia("(hover: none), (pointer: coarse)");
+    const touchInput = window.matchMedia("(any-pointer: coarse)");
     const section = accordion.closest(".home-accordion-section");
     const defaultIndex = Math.floor((items.length - 1) / 2);
     let activeIndex = -1;
@@ -1082,6 +1082,7 @@
     let touchStartY = 0;
     let touchCurrentY = 0;
     let trackingTouch = false;
+    let gestureReleased = false;
 
     const setActive = index => {
       if (index < 0 || index >= items.length || index === activeIndex) return;
@@ -1109,30 +1110,33 @@
 
     const syncSequentialLayout = () => {
       if (!section) return;
-      const enabled = touchInput.matches && !hoverInput.matches;
-      section.classList.toggle("is-touch-sequential", enabled);
+      if (!touchInput.matches) section.classList.remove("is-touch-sequential");
     };
 
-    const releaseSequentialSection = direction => {
-      const target = direction > 0 ? section?.nextElementSibling : section?.previousElementSibling;
-      target?.scrollIntoView({block: direction > 0 ? "start" : "end", behavior: "auto"});
+    const pinSequentialSection = () => {
+      if (!section) return;
+      const root = document.documentElement;
+      const previousScrollBehavior = root.style.scrollBehavior;
+      const headerHeight = document.querySelector(".site-header")?.getBoundingClientRect().height || 0;
+      const targetY = window.scrollY + section.getBoundingClientRect().top - headerHeight;
+      root.style.scrollBehavior = "auto";
+      window.scrollTo(0, Math.max(0, targetY));
+      requestAnimationFrame(() => { root.style.scrollBehavior = previousScrollBehavior; });
     };
 
     const finishSequentialSwipe = () => {
-      if (!trackingTouch || transitionLocked) return;
+      if (!trackingTouch) return;
       trackingTouch = false;
+      if (gestureReleased || transitionLocked) return;
       const delta = touchStartY - touchCurrentY;
       if (Math.abs(delta) < 36) return;
       const direction = delta > 0 ? 1 : -1;
       const nextIndex = activeIndex + direction;
-      if (nextIndex < 0 || nextIndex >= items.length) {
-        releaseSequentialSection(direction);
-        return;
-      }
+      if (nextIndex < 0 || nextIndex >= items.length) return;
       setActive(nextIndex);
       transitionLocked = true;
       window.clearTimeout(lockTimer);
-      lockTimer = window.setTimeout(() => { transitionLocked = false; }, 220);
+      lockTimer = window.setTimeout(() => { transitionLocked = false; }, 420);
     };
 
     accordion.addEventListener("pointerover", event => {
@@ -1150,18 +1154,30 @@
     });
     section?.addEventListener("touchstart", event => {
       if (event.touches.length !== 1) return;
-      section.classList.add("is-touch-sequential");
+      if (!section.classList.contains("is-touch-sequential")) {
+        section.classList.add("is-touch-sequential");
+        pinSequentialSection();
+      }
       trackingTouch = true;
+      gestureReleased = false;
       touchStartY = event.touches[0].clientY;
       touchCurrentY = touchStartY;
     }, {passive: true});
     section?.addEventListener("touchmove", event => {
       if (!trackingTouch || event.touches.length !== 1) return;
       touchCurrentY = event.touches[0].clientY;
+      const delta = touchStartY - touchCurrentY;
+      const leavingAfterLast = delta > 0 && activeIndex === items.length - 1;
+      const leavingBeforeFirst = delta < 0 && activeIndex === 0;
+      if (leavingAfterLast || leavingBeforeFirst) {
+        gestureReleased = true;
+        section.classList.remove("is-touch-sequential");
+        return;
+      }
       event.preventDefault();
     }, {passive: false});
     section?.addEventListener("touchend", finishSequentialSwipe, {passive: true});
-    section?.addEventListener("touchcancel", () => { trackingTouch = false; }, {passive: true});
+    section?.addEventListener("touchcancel", () => { trackingTouch = false; gestureReleased = false; }, {passive: true});
     window.addEventListener("scroll", scheduleObservationCheck, {passive: true});
     siteResizeHandlers.add(() => { syncSequentialLayout(); scheduleObservationCheck(); });
     hoverInput.addEventListener("change", () => { syncSequentialLayout(); scheduleObservationCheck(); });
@@ -1637,7 +1653,7 @@
       markerLayer.innerHTML = locations.map(location => {
         const works = location.workIds.map(workById).filter(Boolean);
         const label = location.name || works.map(work => `${mapArtist(work)} ${mapTitle(work)}`).join("、");
-        return `<button class="marker" style="left:${location.x}%;top:${location.y}%" data-location-id="${location.id}" data-location-type="${location.type}" aria-label="${isEnglish ? "View" : "查看"} ${label}" aria-expanded="false"><svg class="marker-symbol" viewBox="0 0 385.5 515.9" aria-hidden="true"><path d="M.1,188.9C.1,84.5,86.4,0,192.8,0s192.7,84.5,192.7,188.9-120.6,262.8-171,317.4c-5.9,6.4-13.8,9.6-21.7,9.6-7.9,0-15.8-3.2-21.7-9.6C120.6,451.7,0,308.4,0,188.9h.1Z"/></svg><span class="marker-number">${location.number}</span></button>`;
+        return `<button class="marker" style="left:${location.x}%;top:${location.y}%" data-location-id="${location.id}" data-location-type="${location.type}" aria-label="${isEnglish ? "View" : "查看"} ${label}" aria-expanded="false"><svg class="marker-symbol" viewBox="0 0 385.5 680.3" aria-hidden="true"><path d="M.1,353.3C.1,248.9,86.4,164.4,192.8,164.4s192.7,84.5,192.7,188.9-120.6,262.8-171,317.4c-5.9,6.4-13.8,9.6-21.7,9.6s-15.8-3.2-21.7-9.6C120.6,616.1,0,472.8,0,353.3h.1Z"/></svg><span class="marker-number">${location.number}</span></button>`;
       }).join("");
     });
 
@@ -1709,8 +1725,14 @@
         if (!card.hidden && !isCompactMap()) positionMarkerCard();
       };
       const markers = [...map.querySelectorAll(".marker")];
+      const spreadGroups = [
+        {id: "district-03-04", markerIds: ["district-03", "district-04"], offsets: {"district-04": {x: 40, y: -24}}},
+        {id: "district-05-07", markerIds: ["district-05", "district-06", "district-07"], offsets: {"district-05": {x: -56, y: -28}, "district-07": {x: -56, y: 28}}},
+        {id: "outdoor-01-02", markerIds: ["outdoor-01", "outdoor-02"], offsets: {"outdoor-01": {x: -18, y: 0}, "outdoor-02": {x: 0, y: -48}}}
+      ];
+      const movableMarkerIds = new Set(spreadGroups.flatMap(group => Object.keys(group.offsets)));
       let collisionGroups = [];
-      let spreadGroup = null;
+      let activeSpreadGroupId = null;
       const collisionPadding = 6;
       const rebuildCollisionGroups = () => {
         const parent = markers.map((_, index) => index);
@@ -1718,11 +1740,13 @@
         const join = (a, b) => { const ra = find(a); const rb = find(b); if (ra !== rb) parent[rb] = ra; };
         const rects = markers.map(marker => marker.getBoundingClientRect());
         rects.forEach((source, i) => rects.slice(i + 1).forEach((target, offset) => {
+          const targetIndex = i + offset + 1;
+          if (markers[i].dataset.locationType !== markers[targetIndex].dataset.locationType) return;
           const overlaps = source.right + collisionPadding > target.left
             && source.left - collisionPadding < target.right
             && source.bottom + collisionPadding > target.top
             && source.top - collisionPadding < target.bottom;
-          if (overlaps) join(i, i + offset + 1);
+          if (overlaps) join(i, targetIndex);
         }));
         const groups = new Map();
         markers.forEach((marker, index) => { const root = find(index); if (!groups.has(root)) groups.set(root, []); groups.get(root).push(marker); });
@@ -1731,14 +1755,23 @@
           console.debug("[MapCollision] groups:", collisionGroups.map(group => group.map(marker => ({id: marker.dataset.locationId, rect: (() => { const r = marker.getBoundingClientRect(); return {left: Math.round(r.left), top: Math.round(r.top), right: Math.round(r.right), bottom: Math.round(r.bottom)}; })()}))));
         }
       };
-      const groupFor = marker => collisionGroups.find(group => group.includes(marker));
+      const spreadGroupFor = marker => spreadGroups.find(group => group.markerIds.includes(marker.dataset.locationId));
+      const isSpreadGroupColliding = spreadGroup => collisionGroups.some(collisionGroup => {
+        const collidingMembers = collisionGroup.filter(marker => spreadGroup.markerIds.includes(marker.dataset.locationId));
+        return collidingMembers.length > 1;
+      });
       const clearSpread = () => {
         markerLayer?.querySelector("[data-marker-spread-layer]")?.remove();
-        markers.forEach(marker => { marker.style.removeProperty("--spread-x"); marker.style.removeProperty("--spread-y"); marker.style.removeProperty("z-index"); });
-        spreadGroup = null;
+        markers.filter(marker => movableMarkerIds.has(marker.dataset.locationId)).forEach(marker => {
+          marker.style.removeProperty("--spread-x");
+          marker.style.removeProperty("--spread-y");
+          marker.style.removeProperty("z-index");
+        });
+        activeSpreadGroupId = null;
       };
-      const spread = group => {
+      const spread = spreadGroup => {
         clearSpread();
+        const group = spreadGroup.markerIds.map(id => markers.find(marker => marker.dataset.locationId === id)).filter(Boolean);
         const layer = document.createElement("div");
         layer.dataset.markerSpreadLayer = "";
         layer.className = "marker-spread-layer";
@@ -1749,27 +1782,23 @@
           return {marker, x: rect.left + rect.width / 2 - layerRect.left, y: rect.bottom - layerRect.top};
         });
         const minX = 28; const maxX = Math.max(minX, layerRect.width - 28); const minY = 34; const maxY = Math.max(minY, layerRect.height - 34);
-        anchors.forEach(({marker, x: anchorX, y: anchorY}, index) => {
+        anchors.forEach(({marker, x: anchorX, y: anchorY}) => {
           const rect = marker.getBoundingClientRect();
           const halfWidth = rect.width / 2;
           const markerHeight = rect.height;
-          const ids = group.map(item => item.dataset.locationId);
-          const outdoor = ids.includes("outdoor-01") && ids.includes("outdoor-02");
-          const artStores = ["district-05", "district-06", "district-07"].every(id => ids.includes(id));
-          const hint = outdoor
-            ? ({"outdoor-01": {x: -18, y: 0}, "outdoor-02": {x: 0, y: -48}}[marker.dataset.locationId] || {x: 0, y: 0})
-            : artStores
-              ? ({"district-05": {x: -56, y: -28}, "district-07": {x: -56, y: 28}}[marker.dataset.locationId] || {x: 0, y: 0})
-              : {x: 0, y: 0};
+          const hint = spreadGroup.offsets[marker.dataset.locationId] || {x: 0, y: 0};
           const targetX = Math.min(maxX, Math.max(minX, anchorX + hint.x));
           const targetY = Math.min(maxY, Math.max(minY, anchorY + hint.y));
           const dx = targetX - anchorX; const dy = targetY - anchorY;
           if (dx || dy) {
             marker.style.setProperty("--spread-x", `${dx}px`); marker.style.setProperty("--spread-y", `${dy}px`);
             marker.style.zIndex = "21";
-            const line = document.createElement("span"); line.className = "marker-spread-line";
-            line.style.left = `${anchorX}px`; line.style.top = `${anchorY}px`; line.style.width = `${Math.hypot(dx, dy)}px`; line.style.transform = `rotate(${Math.atan2(dy, dx)}rad)`;
-            const anchor = document.createElement("span"); anchor.className = "marker-spread-anchor"; anchor.style.left = `${anchorX}px`; anchor.style.top = `${anchorY}px`; anchor.style.background = marker.dataset.locationType === "outdoor" ? "var(--map-marker-outdoor)" : "var(--map-marker-district)";
+            const spreadColor = marker.dataset.locationType === "outdoor" ? "var(--map-marker-outdoor)" : "var(--map-marker-district)";
+            const line = document.createElement("span"); line.className = "marker-spread-line"; line.style.background = spreadColor;
+            const lineEndX = dx;
+            const lineEndY = dy - 2;
+            line.style.left = `${anchorX}px`; line.style.top = `${anchorY}px`; line.style.width = `${Math.hypot(lineEndX, lineEndY)}px`; line.style.transform = `rotate(${Math.atan2(lineEndY, lineEndX)}rad)`;
+            const anchor = document.createElement("span"); anchor.className = "marker-spread-anchor"; anchor.style.left = `${anchorX}px`; anchor.style.top = `${anchorY}px`; anchor.style.background = spreadColor;
             layer.append(line, anchor);
             if (window.__DEBUG_MAP_ANCHOR__ && marker.dataset.locationId === "district-05") {
               requestAnimationFrame(() => {
@@ -1791,7 +1820,7 @@
             }
           }
         });
-        spreadGroup = group;
+        activeSpreadGroupId = spreadGroup.id;
       };
       rebuildCollisionGroups();
       const recalcCollision = () => { clearSpread(); rebuildCollisionGroups(); };
@@ -1807,11 +1836,16 @@
         });
       };
       markers.forEach(marker => marker.addEventListener("click", () => {
-        const alreadySpread = spreadGroup?.includes(marker);
-        if (!alreadySpread) rebuildCollisionGroups();
-        let collisionGroup = alreadySpread ? spreadGroup : groupFor(marker);
-        if (collisionGroup && !((collisionGroup.some(item => item.dataset.locationId === "outdoor-01") && collisionGroup.some(item => item.dataset.locationId === "outdoor-02")) || ["district-05", "district-06", "district-07"].every(id => collisionGroup.some(item => item.dataset.locationId === id)))) collisionGroup = null;
-        if (collisionGroup && spreadGroup !== collisionGroup) { spread(collisionGroup); return; }
+        const requestedSpreadGroup = spreadGroupFor(marker);
+        const isInActiveSpreadGroup = requestedSpreadGroup?.id === activeSpreadGroupId;
+        if (!isInActiveSpreadGroup) {
+          if (activeSpreadGroupId) clearSpread();
+          rebuildCollisionGroups();
+          if (requestedSpreadGroup && isSpreadGroupColliding(requestedSpreadGroup)) {
+            spread(requestedSpreadGroup);
+            return;
+          }
+        }
         let selectedMarker = marker;
         if (activeCard === card && !card.hidden) {
           const overlaps = overlappingMarkers(marker);

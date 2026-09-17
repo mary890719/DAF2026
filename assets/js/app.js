@@ -1576,8 +1576,7 @@
       markerLayer.innerHTML = locations.map(location => {
         const works = location.workIds.map(workById).filter(Boolean);
         const label = location.name || works.map(work => `${mapArtist(work)} ${mapTitle(work)}`).join("、");
-        const stack = 2 + (Number(location.number) % 5);
-        return `<button class="marker" style="left:${location.x}%;top:${location.y}%;--marker-stack:${stack}" data-location-id="${location.id}" data-location-type="${location.type}" aria-label="${isEnglish ? "View" : "查看"} ${label}" aria-expanded="false"><span class="marker-symbol" aria-hidden="true"></span><span class="marker-number">${location.number}</span></button>`;
+        return `<button class="marker" style="left:${location.x}%;top:${location.y}%" data-location-id="${location.id}" data-location-type="${location.type}" aria-label="${isEnglish ? "View" : "查看"} ${label}" aria-expanded="false"><svg class="marker-symbol" viewBox="0 0 385.5 515.9" aria-hidden="true"><path d="M.1,188.9C.1,84.5,86.4,0,192.8,0s192.7,84.5,192.7,188.9-120.6,262.8-171,317.4c-5.9,6.4-13.8,9.6-21.7,9.6-7.9,0-15.8-3.2-21.7-9.6C120.6,451.7,0,308.4,0,188.9h.1Z"/></svg><span class="marker-number">${location.number}</span></button>`;
       }).join("");
     });
 
@@ -1616,6 +1615,7 @@
     };
 
     document.querySelectorAll(".map-shell[data-map-id]").forEach(map => {
+      const markerLayer = map.querySelector("[data-map-markers]");
       const card = map.querySelector(".marker-card");
       const uiLayer = map.querySelector(".map-ui-layer");
       const positionMarkerCard = () => {
@@ -1647,19 +1647,130 @@
         document.body.classList.toggle("map-modal-open", !card.hidden && isCompactMap());
         if (!card.hidden && !isCompactMap()) positionMarkerCard();
       };
-      map.querySelectorAll(".marker").forEach(marker => marker.addEventListener("click", () => {
-        if (activeMarker === marker && activeCard === card && !card.hidden) {
-          closeMarkerCard();
-          return;
+      const markers = [...map.querySelectorAll(".marker")];
+      let collisionGroups = [];
+      let spreadGroup = null;
+      const collisionPadding = 6;
+      const rebuildCollisionGroups = () => {
+        const parent = markers.map((_, index) => index);
+        const find = index => parent[index] === index ? index : (parent[index] = find(parent[index]));
+        const join = (a, b) => { const ra = find(a); const rb = find(b); if (ra !== rb) parent[rb] = ra; };
+        const rects = markers.map(marker => marker.getBoundingClientRect());
+        rects.forEach((source, i) => rects.slice(i + 1).forEach((target, offset) => {
+          const overlaps = source.right + collisionPadding > target.left
+            && source.left - collisionPadding < target.right
+            && source.bottom + collisionPadding > target.top
+            && source.top - collisionPadding < target.bottom;
+          if (overlaps) join(i, i + offset + 1);
+        }));
+        const groups = new Map();
+        markers.forEach((marker, index) => { const root = find(index); if (!groups.has(root)) groups.set(root, []); groups.get(root).push(marker); });
+        collisionGroups = [...groups.values()].filter(group => group.length > 1);
+        if (window.__DEBUG_MAP_COLLISION__) {
+          console.debug("[MapCollision] groups:", collisionGroups.map(group => group.map(marker => ({id: marker.dataset.locationId, rect: (() => { const r = marker.getBoundingClientRect(); return {left: Math.round(r.left), top: Math.round(r.top), right: Math.round(r.right), bottom: Math.round(r.bottom)}; })()}))));
+        }
+      };
+      const groupFor = marker => collisionGroups.find(group => group.includes(marker));
+      const clearSpread = () => {
+        markerLayer?.querySelector("[data-marker-spread-layer]")?.remove();
+        markers.forEach(marker => { marker.style.removeProperty("--spread-x"); marker.style.removeProperty("--spread-y"); marker.style.removeProperty("z-index"); });
+        spreadGroup = null;
+      };
+      const spread = group => {
+        clearSpread();
+        const layer = document.createElement("div");
+        layer.dataset.markerSpreadLayer = "";
+        layer.className = "marker-spread-layer";
+        markerLayer?.prepend(layer);
+        const layerRect = layer.getBoundingClientRect();
+        const anchors = group.map(marker => {
+          const rect = marker.getBoundingClientRect();
+          return {marker, x: rect.left + rect.width / 2 - layerRect.left, y: rect.bottom - layerRect.top};
+        });
+        const minX = 28; const maxX = Math.max(minX, layerRect.width - 28); const minY = 34; const maxY = Math.max(minY, layerRect.height - 34);
+        anchors.forEach(({marker, x: anchorX, y: anchorY}, index) => {
+          const rect = marker.getBoundingClientRect();
+          const halfWidth = rect.width / 2;
+          const markerHeight = rect.height;
+          const ids = group.map(item => item.dataset.locationId);
+          const outdoor = ids.includes("outdoor-01") && ids.includes("outdoor-02");
+          const artStores = ["district-05", "district-06", "district-07"].every(id => ids.includes(id));
+          const hint = outdoor
+            ? ({"outdoor-01": {x: -18, y: 0}, "outdoor-02": {x: 0, y: -48}}[marker.dataset.locationId] || {x: 0, y: 0})
+            : artStores
+              ? ({"district-05": {x: -56, y: -28}, "district-07": {x: -56, y: 28}}[marker.dataset.locationId] || {x: 0, y: 0})
+              : {x: 0, y: 0};
+          const targetX = Math.min(maxX, Math.max(minX, anchorX + hint.x));
+          const targetY = Math.min(maxY, Math.max(minY, anchorY + hint.y));
+          const dx = targetX - anchorX; const dy = targetY - anchorY;
+          if (dx || dy) {
+            marker.style.setProperty("--spread-x", `${dx}px`); marker.style.setProperty("--spread-y", `${dy}px`);
+            marker.style.zIndex = "21";
+            const line = document.createElement("span"); line.className = "marker-spread-line";
+            line.style.left = `${anchorX}px`; line.style.top = `${anchorY}px`; line.style.width = `${Math.hypot(dx, dy)}px`; line.style.transform = `rotate(${Math.atan2(dy, dx)}rad)`;
+            const anchor = document.createElement("span"); anchor.className = "marker-spread-anchor"; anchor.style.left = `${anchorX}px`; anchor.style.top = `${anchorY}px`; anchor.style.background = marker.dataset.locationType === "outdoor" ? "var(--map-marker-outdoor)" : "var(--map-marker-district)";
+            layer.append(line, anchor);
+            if (window.__DEBUG_MAP_ANCHOR__ && marker.dataset.locationId === "district-05") {
+              requestAnimationFrame(() => {
+                const markerRect = marker.getBoundingClientRect();
+                const anchorRect = anchor.getBoundingClientRect();
+                console.debug("[MapAnchorDebug]", {
+                  markerRect: {left: markerRect.left - dx, top: markerRect.top - dy, width: markerRect.width, height: markerRect.height},
+                  tipViewportX: anchorX + layerRect.left,
+                  tipViewportY: anchorY + layerRect.top,
+                  anchorContainingBlockRect: {left: layerRect.left, top: layerRect.top},
+                  anchorLocalX: anchorX,
+                  anchorLocalY: anchorY,
+                  anchorViewportCenterX: anchorRect.left + anchorRect.width / 2,
+                  anchorViewportCenterY: anchorRect.top + anchorRect.height / 2,
+                  dx: anchorRect.left + anchorRect.width / 2 - (anchorX + layerRect.left),
+                  dy: anchorRect.top + anchorRect.height / 2 - (anchorY + layerRect.top)
+                });
+              });
+            }
+          }
+        });
+        spreadGroup = group;
+      };
+      rebuildCollisionGroups();
+      const recalcCollision = () => { clearSpread(); rebuildCollisionGroups(); };
+      window.addEventListener("resize", recalcCollision, {passive: true});
+      window.addEventListener("orientationchange", recalcCollision, {passive: true});
+      const overlappingMarkers = marker => {
+        const source = marker.getBoundingClientRect();
+        const sourceX = source.left + source.width / 2;
+        const sourceY = source.top + source.height / 2;
+        return markers.filter(candidate => {
+          const rect = candidate.getBoundingClientRect();
+          return Math.hypot(rect.left + rect.width / 2 - sourceX, rect.top + rect.height / 2 - sourceY) < 34;
+        });
+      };
+      markers.forEach(marker => marker.addEventListener("click", () => {
+        const alreadySpread = spreadGroup?.includes(marker);
+        if (!alreadySpread) rebuildCollisionGroups();
+        let collisionGroup = alreadySpread ? spreadGroup : groupFor(marker);
+        if (collisionGroup && !((collisionGroup.some(item => item.dataset.locationId === "outdoor-01") && collisionGroup.some(item => item.dataset.locationId === "outdoor-02")) || ["district-05", "district-06", "district-07"].every(id => collisionGroup.some(item => item.dataset.locationId === id)))) collisionGroup = null;
+        if (collisionGroup && spreadGroup !== collisionGroup) { spread(collisionGroup); return; }
+        let selectedMarker = marker;
+        if (activeCard === card && !card.hidden) {
+          const overlaps = overlappingMarkers(marker);
+          if (overlaps.length > 1 && overlaps.includes(activeMarker)) {
+            selectedMarker = overlaps[(overlaps.indexOf(activeMarker) + 1) % overlaps.length];
+          } else if (activeMarker !== marker) {
+            selectedMarker = marker;
+          } else {
+            closeMarkerCard();
+            return;
+          }
         }
         closeMarkerCard();
-        const location = D.mapLocations.find(item => item.id === marker.dataset.locationId);
+        const location = D.mapLocations.find(item => item.id === selectedMarker.dataset.locationId);
         const works = location.workIds.map(workById).filter(Boolean);
         const venue = venueById(location.venueId);
-        activeMarker = marker;
+        activeMarker = selectedMarker;
         activeCard = card;
         activeUiLayer = uiLayer;
-        marker.setAttribute("aria-expanded", "true");
+        selectedMarker.setAttribute("aria-expanded", "true");
         const workMarkup = works.map(work => {
           const catalogWork = catalogWorkFor(work);
           const content = `<span class="marker-work-number">${work.number}</span><span class="marker-work-copy"><span class="marker-work-title-line"><span class="marker-work-artist">${mapArtist(work)}</span>${mapTitle(work) ? `<span aria-hidden="true">｜</span><strong>${mapTitle(work)}</strong>` : ""}</span>${catalogWork?.year ? `<span class="marker-work-year">${catalogWork.year}</span>` : ""}</span><span class="marker-work-arrow" aria-hidden="true">&gt;</span>`;
@@ -1690,6 +1801,7 @@
         card.querySelectorAll("[data-marker-gallery-index]").forEach(button => button.addEventListener("click", () => showGalleryImage(Number(button.dataset.markerGalleryIndex))));
         syncMapCardMode();
       }));
+      map.addEventListener("click", event => { if (!event.target.closest(".marker, .marker-card")) clearSpread(); });
       window.addEventListener("resize", syncMapCardMode);
     });
 

@@ -37,8 +37,9 @@ window.DAF_COMPONENTS = (() => {
       ["節目總覽", "program.html#program-overview"], ["日程表", "program.html#schedule"]
     ]},
     {id: "visit", label: "參觀資訊", url: "visit.html", children: [
-      ["展覽時間", "visit.html#visit-hours"], ["展覽地點", "visit.html#visit-location"],
-      ["交通方式", "visit.html#transportation"], ["場館地圖", "visit.html#venue-map"]
+      ["主展場時間", "visit.html#visit-hours"], ["主展場地點", "visit.html#visit-location"],
+      ["主展場交通", "visit.html#transportation"], ["主展場地圖", "visit.html#venue-map"],
+      ["藝術入店", "visit.html#art-in-store"]
     ]}
   ];
   const navEn = [
@@ -47,11 +48,11 @@ window.DAF_COMPONENTS = (() => {
     {id:"map",label:"MAP",url:"map.html",children:[["BOTANICAL GARDEN","map.html#garden-map"],["DISTRICT MAP","map.html#district-map"],["PARTNER STORES","map.html#partner-stores"]]},
     {id:"works",label:"WORKS",url:"works.html",children:[{label:"TAIPEI COLLECTIBLE BOTANICAL GARDEN",url:"works.html#garden",children:[["MAIN VENUE","works.html#main-venue"],["OUTDOOR WORKS","works.html#outdoor-works"]]},["TAIPEI YUANSHAN DISTRICT","works.html#art-in-stores"]]},
     {id:"program",label:"PROGRAM",url:"program.html",children:[["PROGRAM OVERVIEW","program.html#program-overview"],["SCHEDULE","program.html#schedule"]]},
-    {id:"visit",label:"VISIT",url:"visit.html",children:[["OPENING HOURS","visit.html#visit-hours"],["VENUE","visit.html#visit-location"],["TRANSPORTATION","visit.html#transportation"],["VENUE MAP","visit.html#venue-map"]]}
+    {id:"visit",label:"VISIT",url:"visit.html",children:[["MAIN VENUE HOURS","visit.html#visit-hours"],["MAIN VENUE LOCATION","visit.html#visit-location"],["MAIN VENUE TRANSPORTATION","visit.html#transportation"],["MAIN VENUE MAP","visit.html#venue-map"],["ART-IN-STORE","visit.html#art-in-store"]]}
   ];
   const ui = () => getCurrentLanguage() === "en"
-    ? {nav:navEn,home:"HOME",language:"中文",mainNav:"Main navigation",backToTop:"Back to top",expand:"Expand ",collapse:"Collapse ",submenu:" submenu",closeNav:"Close main navigation"}
-    : {nav:navZh,home:"首頁",language:"EN",mainNav:"主要導覽",backToTop:"回到頁面頂端",expand:"展開",collapse:"收合",submenu:"第二層選單",closeNav:"關閉主要導覽"};
+    ? {nav:navEn,home:"HOME",language:"中文",mainNav:"Main navigation",backToTop:"Back to top",expand:"Expand ",collapse:"Collapse ",submenu:" submenu",openNav:"Open main navigation",closeNav:"Close main navigation"}
+    : {nav:navZh,home:"首頁",language:"EN",mainNav:"主要導覽",backToTop:"回到頁面頂端",expand:"展開",collapse:"收合",submenu:"第二層選單",openNav:"開啟主要導覽",closeNav:"關閉主要導覽"};
   function header(active) {
     const key = active === "work-detail" ? "works" : active === "event-detail" ? "program" : active;
     const currentHash = location.hash;
@@ -75,7 +76,7 @@ window.DAF_COMPONENTS = (() => {
       return `<div class="nav-item${item.children ? " has-submenu" : ""}${activeChild ? " is-expanded" : ""}"${item.children ? ' data-submenu-container' : ""}><div class="nav-primary-row"><a href="${item.url}" class="nav-main-link${active ? " active" : ""}"${active ? ' aria-current="page"' : ""}>${item.label}</a>${item.children ? `<button class="nav-submenu-toggle" type="button" data-submenu-label="${item.label}" aria-expanded="${activeChild ? "true" : "false"}" aria-controls="${submenuId}" aria-label="${activeChild ? ui().collapse : ui().expand}${item.label}${ui().submenu}"><span aria-hidden="true">＋</span></button>` : ""}</div>${submenu}</div>`;
     }).join("");
     const brandLogo = `<img class="site-logo-image" src="${assetRoute("assets/images/logos/DAF26LOGO.svg")}" alt="${getCurrentLanguage() === "en" ? "2026 Taipei Digital Art Festival — Gray Autonomous Entity" : "2026 臺北數位藝術節－灰色自動體 Gray Autonomous Entity"}">`;
-    return `<header class="site-header"><a class="logo" href="${localizedRoute("index.html")}">${brandLogo}</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">MENU</button><nav class="header-nav" id="main-nav" aria-label="${ui().mainNav}"><div class="mobile-menu-header"><a class="logo mobile-menu-logo" href="${localizedRoute("index.html")}">${brandLogo}</a><div class="mobile-menu-tools"><a class="language-switch" href="${languageSwitchRoute()}" hreflang="${getCurrentLanguage() === "en" ? "zh-Hant" : "en"}">${ui().language}</a><button class="mobile-menu-close" type="button" aria-label="${ui().closeNav}">CLOSE</button></div></div><div class="header-nav-links">${navigation}</div></nav><div class="header-tools"><a class="language-switch" href="${languageSwitchRoute()}" hreflang="${getCurrentLanguage() === "en" ? "zh-Hant" : "en"}">${ui().language}</a></div></header>`;
+    return `<header class="site-header"><a class="logo" href="${localizedRoute("index.html")}">${brandLogo}</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="${ui().openNav}" data-open-label="${ui().openNav}" data-close-label="${ui().closeNav}"><img src="${assetRoute("assets/icons/menu.svg")}" data-menu-icon data-open-icon="${assetRoute("assets/icons/menu.svg")}" data-close-icon="${assetRoute("assets/icons/x.svg")}" alt="" aria-hidden="true"></button><nav class="header-nav" id="main-nav" aria-label="${ui().mainNav}"><div class="mobile-menu-header"><a class="logo mobile-menu-logo" href="${localizedRoute("index.html")}">${brandLogo}</a><div class="mobile-menu-tools"><a class="language-switch" href="${languageSwitchRoute()}" hreflang="${getCurrentLanguage() === "en" ? "zh-Hant" : "en"}">${ui().language}</a></div></div><div class="header-nav-links">${navigation}</div></nav><div class="header-tools"><a class="language-switch" href="${languageSwitchRoute()}" hreflang="${getCurrentLanguage() === "en" ? "zh-Hant" : "en"}">${ui().language}</a></div></header>`;
   }
   function footer() {
     const social = DAF_DATA.social;

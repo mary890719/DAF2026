@@ -83,10 +83,10 @@ input, select, textarea { color: var(--color-text); background: var(--color-bg-s
   .nav-submenu-link { text-align: left; }
 }
 .header-tools { display: flex; align-items: center; gap: 20px; white-space: nowrap; }
-.menu-toggle { display: none; border: var(--border); padding: 8px 12px; }
+.menu-toggle { display: none; width: 48px; height: 48px; padding: 0; place-items: center; border: var(--border); cursor: pointer; }
+.menu-toggle img { display: block; width: 24px; height: 24px; filter: invert(1); }
 .mobile-menu-header { display: none; }
 .mobile-menu-tools { display: flex; align-items: center; gap: var(--space-2); }
-.mobile-menu-close { border: var(--border); padding: 8px 12px; cursor: pointer; }
 body.mobile-menu-open { overflow: hidden; }
 body.mobile-menu-open[data-page] > #site-header { z-index: 90; }
 body.mobile-menu-open .back-to-top { opacity: 0; visibility: hidden; pointer-events: none; }
@@ -166,6 +166,10 @@ html[lang="zh-Hant"] body[data-page="home"] .hero-ui { padding-bottom: calc(clam
 .hero-copy { position: relative; z-index: 3; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: var(--space-4) var(--space-4) 110px; text-align: center; }
 .hero-kicker { margin: 0 0 var(--space-2); color: var(--color-text-secondary); font-size: var(--fs-base); }
 .hero-title-stage { --hero-logo-width: 740px; position: relative; width: min(100%, 1040px); }
+.hero-title-video { position: absolute; z-index: 2; top: 50%; left: 50%; display: block; width: calc(var(--hero-logo-width) * 2.5946); max-width: none; height: auto; opacity: 0; pointer-events: none; transform: translate(-50%, -50%); }
+.hero-title-stage.is-video-active { overflow: hidden; }
+.hero-title-stage.is-video-active .hero-title-video { opacity: 1; }
+.hero-title-stage.is-video-active .hero-title-text { opacity: 0; }
 .hero-title-text { display: grid; justify-items: center; gap: 8px; margin: 0; font-size: clamp(2.5rem, 5vw, 5.25rem); font-weight: 500; line-height: 1.05; letter-spacing: -.03em; }
 .hero-title-language { display: grid; width: min(100%, var(--hero-logo-width)); place-items: center; }
 .hero-title-language > * { grid-area: 1 / 1; }
@@ -782,7 +786,10 @@ body.shop-modal-open { overflow: hidden; }
 @media (max-width: 900px) {
   .site-header { height: 86px; padding: 0 20px; } .logo { max-width: none; width: 220px; height: 52px; font-size: 1.8rem; }
   .site-logo-image { height: 44px; }
-  .menu-toggle { display: block; margin-left: auto; } .header-tools { display:none; }
+  .menu-toggle { display: grid; margin-left: auto; } .header-tools { display:none; }
+  body.mobile-menu-open .menu-toggle { position: fixed; z-index: 91; top: 19px; right: 20px; color: #000; border-color: #000; }
+  body.mobile-menu-open .menu-toggle img { filter: none; }
+  body.mobile-menu-open .mobile-menu-tools { padding-right: 64px; }
   .header-nav { display: flex; position: fixed; z-index: 50; inset: 0; margin: 0; padding: 20px; color: #000; background: #fff; border: 0; flex-direction: column; overflow: hidden; overscroll-behavior: contain; visibility: hidden; pointer-events: none; transform: translateY(-8px); transition: visibility .22s ease, transform .22s ease; }
   .header-nav.open { visibility: visible; pointer-events: auto; transform: translateY(0); }
   .mobile-menu-header { display: flex; flex: 0 0 auto; align-items: center; justify-content: space-between; gap: var(--space-3); }
@@ -931,14 +938,18 @@ body.shop-modal-open { overflow: hidden; }
 .visit-venue-info p { margin: 0; }
 .visit-venue-info h3:not(:first-child) { margin-top: var(--space-2); }
 .visit-venue-info a { text-decoration: underline; text-underline-offset: .22em; }
-.visit-map-note { color: var(--color-text-secondary); }
-.visit-district-map .marker { --marker-stack: 2; }
+#art-in-store a,
+#art-in-store a:hover,
+#art-in-store a:focus-visible { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .22em; }
 
-@media (hover: none), (pointer: coarse) {
+@media (any-hover: none), (any-pointer: coarse) {
   .site-header { height: 86px; padding: 0 20px; gap: 12px; }
   .logo { width: 220px; max-width: none; height: 52px; }
   .site-logo-image { height: 44px; }
-  .menu-toggle { display: block; margin-left: auto; }
+  .menu-toggle { display: grid; margin-left: auto; }
+  body.mobile-menu-open .menu-toggle { position: fixed; z-index: 91; top: 19px; right: 20px; color: #000; border-color: #000; }
+  body.mobile-menu-open .menu-toggle img { filter: none; }
+  body.mobile-menu-open .mobile-menu-tools { padding-right: 64px; }
   .header-tools { display: none; }
   body > #app { padding-top: 86px; }
   .ia-section,
@@ -968,14 +979,52 @@ body.shop-modal-open { overflow: hidden; }
   .nav-submenu-item.is-expanded > .nav-submenu-nested { max-height: 180px; padding-block: var(--space-1); visibility: visible; pointer-events: auto; }
   .nav-submenu-link { color: #000; white-space: normal; }
   .header-nav :focus-visible { outline-color: #000; }
-  .home-accordion-section.is-touch-sequential { height: calc(100svh + var(--accordion-scroll-range, 0px)); padding-block: 0; }
+  .home-accordion-section.is-touch-sequential { min-height: calc(100svh - 86px); padding-block: 0; overscroll-behavior: contain; }
   .home-accordion-section.is-touch-sequential > .container { position: sticky; top: 86px; display: grid; height: calc(100svh - 86px); grid-template-rows: auto minmax(0, 1fr); align-content: center; padding-block: 18px; }
   .home-accordion-section.is-touch-sequential .section-title { margin-bottom: 16px; }
   .home-accordion-section.is-touch-sequential .artist-accordion { height: 100%; min-height: 0; }
 }
 
-@media (orientation: landscape) and (max-height: 720px) and (hover: none),
-       (orientation: landscape) and (max-height: 720px) and (pointer: coarse) {
+/* Touch navigation fallback for devices that expose a desktop-like primary pointer. */
+html.touch-navigation .site-header { height: 86px; padding: 0 20px; gap: 12px; }
+html.touch-navigation .site-header > .logo { width: 220px; max-width: none; height: 52px; }
+html.touch-navigation .site-logo-image { height: 44px; }
+html.touch-navigation .menu-toggle { display: grid; margin-left: auto; }
+html.touch-navigation .header-tools { display: none; }
+html.touch-navigation body > #app { padding-top: 86px; }
+html.touch-navigation .header-nav { display: flex; position: fixed; z-index: 50; inset: 0; margin: 0; padding: 20px; color: #000; background: #fff; border: 0; flex-direction: column; overflow: hidden; overscroll-behavior: contain; visibility: hidden; pointer-events: none; transform: translateY(-8px); transition: visibility .22s ease, transform .22s ease; }
+html.touch-navigation .header-nav.open { visibility: visible; pointer-events: auto; transform: translateY(0); }
+html.touch-navigation .mobile-menu-header { display: flex; flex: 0 0 auto; align-items: center; justify-content: space-between; gap: var(--space-3); }
+html.touch-navigation .mobile-menu-logo { width: 220px; height: 52px; margin: 0; }
+html.touch-navigation .header-nav-links { display: flex; min-height: 0; flex: 1 1 auto; flex-direction: column; align-items: stretch; justify-content: flex-start; overflow-y: auto; padding-block: var(--space-4); }
+html.touch-navigation .nav-item { display: block; flex: 0 0 auto; }
+html.touch-navigation .nav-primary-row,
+html.touch-navigation .nav-submenu-row { position: relative; display: block; }
+html.touch-navigation .nav-main-link { min-width: 0; min-height: 48px; padding: 12px 56px; color: #000; white-space: normal; text-align: center; font-size: clamp(1.25rem, 4vh, 2rem); line-height: 1.25; }
+html.touch-navigation .nav-main-link:hover,
+html.touch-navigation .nav-main-link:focus-visible,
+html.touch-navigation .nav-main-link.active { color: #fff; background: #000; }
+html.touch-navigation .nav-main-link::after { display: none; }
+html.touch-navigation .nav-submenu-toggle { position: absolute; z-index: 2; top: 0; right: 0; display: grid; width: 48px; min-height: 48px; place-items: center; border: 0; cursor: pointer; }
+html.touch-navigation .nav-submenu { position: static; width: auto; min-width: 0; max-height: 0; margin: 0; padding: 0 var(--space-2); overflow: hidden; color: #000; background: #fff; border: 0; opacity: 1; visibility: hidden; pointer-events: none; transform: none; transition: max-height .24s ease, visibility .24s ease, padding .24s ease; }
+html.touch-navigation .nav-item:hover > .nav-submenu,
+html.touch-navigation .nav-item:focus-within > .nav-submenu,
+html.touch-navigation .nav-submenu-item:hover > .nav-submenu-nested,
+html.touch-navigation .nav-submenu-item:focus-within > .nav-submenu-nested { visibility: hidden; pointer-events: none; transform: none; }
+html.touch-navigation .nav-item.is-expanded > .nav-submenu { max-height: 420px; padding-block: var(--space-1) var(--space-2); visibility: visible; pointer-events: auto; }
+html.touch-navigation .nav-submenu-item.is-expanded > .nav-submenu-nested { max-height: 180px; padding-block: var(--space-1); visibility: visible; pointer-events: auto; }
+html.touch-navigation .nav-submenu-row > .nav-submenu-link { min-height: 44px; padding-right: 56px; padding-left: 56px; color: #000; white-space: normal; text-align: center; }
+html.touch-navigation .header-nav :focus-visible { outline-color: #000; }
+html.touch-navigation body.mobile-menu-open .menu-toggle { position: fixed; z-index: 91; top: 19px; right: 20px; color: #000; border-color: #000; }
+html.touch-navigation body.mobile-menu-open .menu-toggle img { filter: none; }
+html.touch-navigation body.mobile-menu-open .mobile-menu-tools { padding-right: 64px; }
+html.touch-navigation .home-accordion-section.is-touch-sequential { min-height: calc(100svh - 86px); padding-block: 0; overscroll-behavior: contain; }
+html.touch-navigation .home-accordion-section.is-touch-sequential > .container { position: sticky; top: 86px; display: grid; height: calc(100svh - 86px); grid-template-rows: auto minmax(0, 1fr); align-content: center; padding-block: 18px; }
+html.touch-navigation .home-accordion-section.is-touch-sequential .section-title { margin-bottom: 16px; }
+html.touch-navigation .home-accordion-section.is-touch-sequential .artist-accordion { height: 100%; min-height: 0; }
+
+@media (orientation: landscape) and (max-height: 720px) and (any-hover: none),
+       (orientation: landscape) and (max-height: 720px) and (any-pointer: coarse) {
   .site-header { height: 78px; padding-block: 0; }
   body > #app { padding-top: 78px; }
   .ia-section,
@@ -988,9 +1037,25 @@ body.shop-modal-open { overflow: hidden; }
   .hero-system { margin-top: 8px; }
   .hero-system-messages { min-height: 5.1em; font-size: .82rem; }
   .hero-ui,
-  html[lang="zh-Hant"] body[data-page="home"] .hero-ui { padding-bottom: 8px; }
+  html[lang="zh-Hant"] body[data-page="home"] .hero-ui { padding-bottom: clamp(40px, 8svh, 64px); }
   .hero-scroll { width: 64px; }
   .home-accordion-section.is-touch-sequential > .container { top: 78px; height: calc(100svh - 78px); padding-block: 10px; }
+}
+@media (orientation: landscape) and (max-height: 720px) {
+  html.touch-navigation .site-header { height: 78px; padding-block: 0; }
+  html.touch-navigation body.mobile-menu-open .menu-toggle { top: 15px; }
+  html.touch-navigation body > #app { padding-top: 78px; }
+  html.touch-navigation .hero { min-height: calc(100svh - 78px); }
+  html.touch-navigation .hero-copy { min-height: inherit; padding: 8px 18px 76px; }
+  html.touch-navigation .hero-kicker { margin-bottom: 6px; }
+  html.touch-navigation .hero-title-stage { --hero-logo-width: 430px; }
+  html.touch-navigation .hero-meta { margin-top: 10px; }
+  html.touch-navigation .hero-system { margin-top: 8px; }
+  html.touch-navigation .hero-system-messages { min-height: 5.1em; font-size: .82rem; }
+  html.touch-navigation .hero-ui,
+  html.touch-navigation[lang="zh-Hant"] body[data-page="home"] .hero-ui { padding-bottom: clamp(40px, 8svh, 64px); }
+  html.touch-navigation .hero-scroll { width: 64px; }
+  html.touch-navigation .home-accordion-section.is-touch-sequential > .container { top: 78px; height: calc(100svh - 78px); padding-block: 10px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

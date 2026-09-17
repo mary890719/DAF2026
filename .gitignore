@@ -13,4 +13,9 @@
 
 	# Python 本機快取
 	__pycache__/
-	*.pyc
+*.pyc
+
+# Generated Hero logo video masters and temporary PNG frames
+output/
+node_modules/
+.pnpm-store/

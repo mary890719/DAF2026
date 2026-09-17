@@ -15,6 +15,11 @@
   const queryId = () => new URLSearchParams(location.search).get("id");
   const observationState = {x: window.innerWidth / 2, y: window.innerHeight / 2, active: false, mode: "idle"};
   const siteResizeHandlers = new Set();
+  const narrowNavigationMedia = window.matchMedia("(max-width: 900px)");
+  const touchNavigationMedia = window.matchMedia("(any-pointer: coarse), (any-hover: none)");
+  const usesTouchNavigation = () => narrowNavigationMedia.matches || navigator.maxTouchPoints > 0 || touchNavigationMedia.matches;
+  const syncTouchNavigationClass = () => document.documentElement.classList.toggle("touch-navigation", usesTouchNavigation());
+  syncTouchNavigationClass();
   window.addEventListener("resize", () => siteResizeHandlers.forEach(handler => handler()), {passive: true});
 
   const normalizeImage = (image, fallbackLabel, allowEmpty = false) => {
@@ -1066,15 +1071,17 @@
     const accordion = document.querySelector("#home-artist-accordion");
     if (!accordion) return;
     const items = [...accordion.querySelectorAll(".artist-accordion-item")];
-    const hoverInput = window.matchMedia("(min-width: 901px) and (hover: hover) and (pointer: fine)");
+    const hoverInput = window.matchMedia("(hover: hover) and (pointer: fine)");
     const touchInput = window.matchMedia("(hover: none), (pointer: coarse)");
     const section = accordion.closest(".home-accordion-section");
     const defaultIndex = Math.floor((items.length - 1) / 2);
     let activeIndex = -1;
     let observationFrame = 0;
     let transitionLocked = false;
-    let pendingIndex = -1;
     let lockTimer = 0;
+    let touchStartY = 0;
+    let touchCurrentY = 0;
+    let trackingTouch = false;
 
     const setActive = index => {
       if (index < 0 || index >= items.length || index === activeIndex) return;
@@ -1086,7 +1093,7 @@
     };
 
     const activateNearestToObservation = () => {
-      if (hoverInput.matches || touchInput.matches || !items.length) return;
+      if (hoverInput.matches || touchInput.matches || section?.classList.contains("is-touch-sequential") || !items.length) return;
       const observedElement = document.elementFromPoint(observationState.x, observationState.y);
       const observedItem = observedElement?.closest(".artist-accordion-item");
       if (observedItem && accordion.contains(observedItem)) setActive(Number(observedItem.dataset.accordionIndex));
@@ -1104,51 +1111,64 @@
       if (!section) return;
       const enabled = touchInput.matches && !hoverInput.matches;
       section.classList.toggle("is-touch-sequential", enabled);
-      if (!enabled) {
-        section.style.removeProperty("--accordion-scroll-range");
-        return;
-      }
-      const step = Math.max(240, Math.round(window.innerHeight * .42));
-      section.dataset.accordionStep = String(step);
-      section.style.setProperty("--accordion-scroll-range", `${Math.max(0, items.length - 1) * step}px`);
     };
 
-    const updateSequentialAccordion = () => {
-      if (!touchInput.matches || hoverInput.matches || !section || !items.length) return;
-      const step = Number(section.dataset.accordionStep) || 280;
-      const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-      const progress = Math.max(0, window.scrollY - sectionTop);
-      const desired = Math.min(items.length - 1, Math.max(0, Math.round(progress / step)));
-      if (desired === activeIndex) return;
-      pendingIndex = desired;
-      if (transitionLocked) return;
-      const direction = desired > activeIndex ? 1 : -1;
-      setActive(Math.max(0, Math.min(items.length - 1, activeIndex + direction)));
+    const releaseSequentialSection = direction => {
+      const target = direction > 0 ? section?.nextElementSibling : section?.previousElementSibling;
+      target?.scrollIntoView({block: direction > 0 ? "start" : "end", behavior: "auto"});
+    };
+
+    const finishSequentialSwipe = () => {
+      if (!trackingTouch || transitionLocked) return;
+      trackingTouch = false;
+      const delta = touchStartY - touchCurrentY;
+      if (Math.abs(delta) < 36) return;
+      const direction = delta > 0 ? 1 : -1;
+      const nextIndex = activeIndex + direction;
+      if (nextIndex < 0 || nextIndex >= items.length) {
+        releaseSequentialSection(direction);
+        return;
+      }
+      setActive(nextIndex);
       transitionLocked = true;
       window.clearTimeout(lockTimer);
-      lockTimer = window.setTimeout(() => {
-        transitionLocked = false;
-        if (pendingIndex !== activeIndex) updateSequentialAccordion();
-      }, 460);
+      lockTimer = window.setTimeout(() => { transitionLocked = false; }, 220);
     };
 
     accordion.addEventListener("pointerover", event => {
-      if (!hoverInput.matches) return;
+      if (event.pointerType === "touch") return;
       const item = event.target.closest(".artist-accordion-item");
       const previousItem = event.relatedTarget?.closest?.(".artist-accordion-item");
-      if (item && accordion.contains(item) && item !== previousItem) setActive(Number(item.dataset.accordionIndex));
+      if (item && accordion.contains(item) && item !== previousItem) {
+        section?.classList.remove("is-touch-sequential");
+        setActive(Number(item.dataset.accordionIndex));
+      }
     });
     accordion.addEventListener("focusin", event => {
       const item = event.target.closest(".artist-accordion-item");
       if (item && accordion.contains(item)) setActive(Number(item.dataset.accordionIndex));
     });
-    window.addEventListener("scroll", () => touchInput.matches ? updateSequentialAccordion() : scheduleObservationCheck(), {passive: true});
-    siteResizeHandlers.add(() => { syncSequentialLayout(); touchInput.matches ? updateSequentialAccordion() : scheduleObservationCheck(); });
+    section?.addEventListener("touchstart", event => {
+      if (event.touches.length !== 1) return;
+      section.classList.add("is-touch-sequential");
+      trackingTouch = true;
+      touchStartY = event.touches[0].clientY;
+      touchCurrentY = touchStartY;
+    }, {passive: true});
+    section?.addEventListener("touchmove", event => {
+      if (!trackingTouch || event.touches.length !== 1) return;
+      touchCurrentY = event.touches[0].clientY;
+      event.preventDefault();
+    }, {passive: false});
+    section?.addEventListener("touchend", finishSequentialSwipe, {passive: true});
+    section?.addEventListener("touchcancel", () => { trackingTouch = false; }, {passive: true});
+    window.addEventListener("scroll", scheduleObservationCheck, {passive: true});
+    siteResizeHandlers.add(() => { syncSequentialLayout(); scheduleObservationCheck(); });
     hoverInput.addEventListener("change", () => { syncSequentialLayout(); scheduleObservationCheck(); });
     touchInput.addEventListener("change", syncSequentialLayout);
 
     syncSequentialLayout();
-    setActive(touchInput.matches ? 0 : defaultIndex);
+    setActive(touchInput.matches && !hoverInput.matches ? 0 : defaultIndex);
     scheduleObservationCheck();
   };
 
@@ -1245,10 +1265,12 @@
   const runHeroSequence = async () => {
     const hero = document.querySelector("#hero-observation");
     const titleStage = hero.querySelector(".hero-title-stage");
+    const titleVideo = titleStage.querySelector(".hero-title-video");
     const logoPrototype = titleStage.classList.contains("hero-logo-prototype");
     const completeSequence = () => window.dispatchEvent(new CustomEvent("heroSequenceComplete"));
     window.addEventListener("heroSequenceComplete", unlockHeroScroll, {once: true});
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      titleVideo?.pause();
       titleStage.classList.add("is-mark-visible");
       completeSequence();
       return;
@@ -1403,9 +1425,32 @@
       }
     };
 
+    const playHeroVideo = async () => {
+      if (!titleVideo || !titleVideo.canPlayType('video/webm; codecs="vp9"')) return false;
+      try {
+        titleVideo.pause();
+        titleVideo.currentTime = 0;
+        titleVideo.muted = true;
+        const completion = new Promise((resolve, reject) => {
+          titleVideo.addEventListener("ended", resolve, {once: true});
+          titleVideo.addEventListener("error", reject, {once: true});
+        });
+        titleStage.classList.add("is-video-active");
+        await titleVideo.play();
+        await completion;
+        return true;
+      } catch (error) {
+        titleVideo.pause();
+        titleStage.classList.remove("is-video-active");
+        console.warn("Hero video unavailable; using DOM animation fallback.", error);
+        return false;
+      }
+    };
+
     try {
-      if (logoPrototype) await window.DAFHeroLogoAnimation.run(titleStage);
-      else {
+      const videoPlayed = await playHeroVideo();
+      if (!videoPlayed && logoPrototype) await window.DAFHeroLogoAnimation.run(titleStage);
+      else if (!videoPlayed) {
         await scrambleTitles(titleElements);
         titleStage.classList.add("is-final-transition");
         await wait(80);
@@ -1540,6 +1585,22 @@
       };
       activateFromHash();
       window.addEventListener("hashchange", activateFromHash);
+    });
+  };
+
+  const initializeAboutWebsiteLinks = () => {
+    if (page !== "about") return;
+    document.querySelectorAll(".about-organization-profile").forEach(profile => {
+      const logoLink = profile.querySelector(":scope > a[href]");
+      const content = profile.querySelector(":scope > div");
+      if (!logoLink || !content || content.querySelector("a.button[href]")) return;
+      const websiteButton = document.createElement("a");
+      websiteButton.className = "button";
+      websiteButton.href = logoLink.href;
+      websiteButton.target = "_blank";
+      websiteButton.rel = "noopener noreferrer";
+      websiteButton.textContent = isEnglish ? "WEBSITE" : "官方網站";
+      content.append(websiteButton);
     });
   };
 
@@ -1972,14 +2033,6 @@
     });
   };
 
-  const renderVisitDistrictMap = () => {
-    const map = document.querySelector("[data-visit-district-map]");
-    const markerLayer = map?.querySelector("[data-visit-map-markers]");
-    if (!map || !markerLayer || !Array.isArray(D.mapLocations)) return;
-    const locations = D.mapLocations.filter(item => item.map === "district" && item.type === "district");
-    markerLayer.innerHTML = locations.map(location => `<a class="marker" style="left:${location.x}%;top:${location.y}%;--marker-stack:${2 + (Number(location.number) % 5)}" data-location-type="district" href="${C.localizedRoute("map.html#art-in-stores")}" aria-label="${isEnglish ? "View Art-in-Store location" : "查看藝術入店位置"} ${location.number}"><span class="marker-symbol" aria-hidden="true"></span><span class="marker-number">${location.number}</span></a>`).join("");
-  };
-
   document.body.insertAdjacentHTML("afterbegin", C.siteBackground());
   document.body.dataset.networkProfile = "site";
   document.documentElement.style.setProperty("--observation-light-center", String(networkProfile.lightCenterAlpha));
@@ -2014,18 +2067,17 @@
     initializeShops();
     initializeStoreStatusUpdates();
   }
-  if (page === "visit") renderVisitDistrictMap();
   if (page === "work-detail") renderWorkDetail();
   if (page === "event-detail") renderEventDetail();
   initializeFolderTabs();
+  initializeAboutWebsiteLinks();
   initializeSiteObservation();
   initializeSiteNetwork();
 
   const menuToggle = document.querySelector(".menu-toggle");
-  const menuClose = document.querySelector(".mobile-menu-close");
+  const menuIcon = menuToggle.querySelector("[data-menu-icon]");
   const navigation = document.querySelector(".header-nav");
   const submenuToggles = [...navigation.querySelectorAll(".nav-submenu-toggle")];
-  const mobileMenuMedia = window.matchMedia("(max-width: 900px), (hover: none), (pointer: coarse)");
   const pageContent = [document.querySelector("#app"), document.querySelector("#site-footer"), document.querySelector(".back-to-top")].filter(Boolean);
   let menuReturnFocus = null;
 
@@ -2039,6 +2091,8 @@
     navigation.classList.remove("open");
     document.body.classList.remove("mobile-menu-open");
     menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", menuToggle.dataset.openLabel);
+    menuIcon.src = menuIcon.dataset.openIcon;
     submenuToggles.forEach(button => {
       const item = button.closest("[data-submenu-container]");
       item.classList.remove("is-expanded");
@@ -2046,27 +2100,28 @@
       const label = button.dataset.submenuLabel || "";
       button.setAttribute("aria-label", `${isEnglish ? "Expand " : "展開"}${label}${isEnglish ? " submenu" : "第二層選單"}`);
     });
-    if (mobileMenuMedia.matches) navigation.setAttribute("aria-hidden", "true");
+    if (usesTouchNavigation()) navigation.setAttribute("aria-hidden", "true");
     else navigation.removeAttribute("aria-hidden");
     setPageInert(false);
     if (wasOpen && restoreFocus && menuReturnFocus) menuReturnFocus.focus();
   };
 
   const openMobileMenu = () => {
-    if (!mobileMenuMedia.matches) return;
+    if (!usesTouchNavigation()) return;
     menuReturnFocus = document.activeElement;
     navigation.classList.add("open");
     document.body.classList.add("mobile-menu-open");
     menuToggle.setAttribute("aria-expanded", "true");
+    menuToggle.setAttribute("aria-label", menuToggle.dataset.closeLabel);
+    menuIcon.src = menuIcon.dataset.closeIcon;
     navigation.setAttribute("aria-hidden", "false");
     setPageInert(true);
-    menuClose.focus();
+    menuToggle.focus({preventScroll: true});
   };
 
   menuToggle.addEventListener("click", () => navigation.classList.contains("open") ? closeMobileMenu() : openMobileMenu());
-  menuClose.addEventListener("click", () => closeMobileMenu());
   submenuToggles.forEach(button => button.addEventListener("click", () => {
-    if (!mobileMenuMedia.matches) return;
+    if (!usesTouchNavigation()) return;
     const item = button.closest("[data-submenu-container]");
     const expanded = !item.classList.contains("is-expanded");
     item.classList.toggle("is-expanded", expanded);
@@ -2083,7 +2138,7 @@
       return;
     }
     if (event.key !== "Tab") return;
-    const focusable = [...navigation.querySelectorAll("a, button")].filter(element => !element.disabled);
+    const focusable = [menuToggle, ...navigation.querySelectorAll("a, button")].filter(element => !element.disabled);
     const first = focusable[0];
     const last = focusable[focusable.length - 1];
     if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
@@ -2093,7 +2148,8 @@
     if (navigation.contains(document.activeElement)) document.activeElement.blur();
     closeMobileMenu({restoreFocus: false});
   };
-  mobileMenuMedia.addEventListener("change", resetMobileMenuForBreakpoint);
+  narrowNavigationMedia.addEventListener("change", resetMobileMenuForBreakpoint);
+  touchNavigationMedia.addEventListener("change", () => { syncTouchNavigationClass(); resetMobileMenuForBreakpoint(); });
   resetMobileMenuForBreakpoint();
 
   const fallbackCopy = value => {

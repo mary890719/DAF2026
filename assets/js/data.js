@@ -2889,7 +2889,7 @@ window.DAF_DATA = {
     "type": "main",
     "number": "01",
     "x": 73,
-    "y": 53,
+    "y": 51,
     "workIds": [
       "main-01"
     ]
@@ -2901,7 +2901,7 @@ window.DAF_DATA = {
     "type": "main",
     "number": "02",
     "x": 32,
-    "y": 49,
+    "y": 48,
     "workIds": [
       "main-02"
     ]
@@ -2913,7 +2913,7 @@ window.DAF_DATA = {
     "type": "main",
     "number": "03",
     "x": 26,
-    "y": 73,
+    "y": 72,
     "workIds": [
       "main-03"
     ]
@@ -2925,7 +2925,7 @@ window.DAF_DATA = {
     "type": "main",
     "number": "04",
     "x": 40,
-    "y": 82,
+    "y": 80,
     "workIds": [
       "main-04"
     ]
@@ -2937,7 +2937,7 @@ window.DAF_DATA = {
     "type": "main",
     "number": "05",
     "x": 50,
-    "y": 82,
+    "y": 80,
     "workIds": [
       "main-05"
     ]
@@ -2949,7 +2949,7 @@ window.DAF_DATA = {
     "type": "main",
     "number": "06",
     "x": 65,
-    "y": 74,
+    "y": 73,
     "workIds": [
       "main-06"
     ]
@@ -2961,7 +2961,7 @@ window.DAF_DATA = {
     "type": "main",
     "number": "07",
     "x": 16,
-    "y": 48,
+    "y": 47,
     "workIds": [
       "main-07"
     ]
@@ -2973,7 +2973,7 @@ window.DAF_DATA = {
     "type": "main",
     "number": "08",
     "x": 45.5,
-    "y": 36,
+    "y": 35,
     "workIds": [
       "main-08"
     ]
@@ -2985,7 +2985,7 @@ window.DAF_DATA = {
     "type": "main",
     "number": "09",
     "x": 66.5,
-    "y": 26,
+    "y": 25,
     "workIds": [
       "main-09"
     ]
@@ -2997,7 +2997,7 @@ window.DAF_DATA = {
     "type": "outdoor",
     "number": "01",
     "x": 64,
-    "y": 50,
+    "y": 48,
     "workIds": [
       "outdoor-01"
     ]
@@ -3009,7 +3009,7 @@ window.DAF_DATA = {
     "type": "outdoor",
     "number": "02",
     "x": 65,
-    "y": 45,
+    "y": 43,
     "workIds": [
       "outdoor-02"
     ]
@@ -3022,7 +3022,7 @@ window.DAF_DATA = {
     "number": "01",
     "name": "Wild Open Space 北美館",
     "x": 44,
-    "y": 25,
+    "y": 24,
     "workIds": [
       "district-01"
     ]
@@ -3035,7 +3035,7 @@ window.DAF_DATA = {
     "number": "02",
     "name": "CNSalon 花草茶店",
     "x": 37,
-    "y": 57,
+    "y": 55,
     "workIds": [
       "district-02"
     ]
@@ -3048,7 +3048,7 @@ window.DAF_DATA = {
     "number": "03",
     "name": "覓’s 咖啡小酒館",
     "x": 43,
-    "y": 55,
+    "y": 53,
     "workIds": [
       "district-03"
     ]
@@ -3061,7 +3061,7 @@ window.DAF_DATA = {
     "number": "04",
     "name": "歐華酒店",
     "x": 46.5,
-    "y": 55,
+    "y": 53,
     "workIds": [
       "district-04",
       "district-05",
@@ -3078,7 +3078,7 @@ window.DAF_DATA = {
     "number": "05",
     "name": "異世界咖啡館．澐月",
     "x": 39,
-    "y": 71,
+    "y": 69,
     "workIds": [
       "district-09"
     ]
@@ -3091,7 +3091,7 @@ window.DAF_DATA = {
     "number": "06",
     "name": "台北花苑",
     "x": 41,
-    "y": 72.5,
+    "y": 71.5,
     "workIds": [
       "district-10"
     ]
@@ -3104,7 +3104,7 @@ window.DAF_DATA = {
     "number": "07",
     "name": "批薩謎勒",
     "x": 38,
-    "y": 77,
+    "y": 75,
     "workIds": [
       "district-11"
     ]
@@ -3117,7 +3117,7 @@ window.DAF_DATA = {
     "number": "08",
     "name": "L'Unicorno Gelato",
     "x": 53,
-    "y": 69.5,
+    "y": 68.5,
     "workIds": [
       "district-12"
     ]
@@ -3130,7 +3130,7 @@ window.DAF_DATA = {
     "number": "09",
     "name": "晴美公寓酒店",
     "x": 46,
-    "y": 81,
+    "y": 79,
     "workIds": [
       "district-13"
     ]
@@ -3143,7 +3143,7 @@ window.DAF_DATA = {
     "number": "10",
     "name": "米窩飯店 - 中山館",
     "x": 41,
-    "y": 90,
+    "y": 88,
     "workIds": [
       "district-14"
     ]

@@ -1075,14 +1075,25 @@
     const touchInput = window.matchMedia("(any-pointer: coarse)");
     const section = accordion.closest(".home-accordion-section");
     const defaultIndex = Math.floor((items.length - 1) / 2);
+    const TOUCH_STATE = Object.freeze({ PASSIVE: "passive", DISCOVER: "discover", ENGAGED: "engaged", RELEASED: "released" });
+    const SWIPE_DISTANCE = 44;
+    const FAST_FLICK_DISTANCE = 140;
+    const FAST_FLICK_DURATION = 280;
+    const FAST_FLICK_VELOCITY = 0.65;
+    const ENGAGE_MIN_DURATION = 120;
+    const TRANSITION_LOCK_DURATION = 420;
     let activeIndex = -1;
     let observationFrame = 0;
     let transitionLocked = false;
     let lockTimer = 0;
     let touchStartY = 0;
     let touchCurrentY = 0;
+    let touchStartTime = 0;
+    let touchCurrentTime = 0;
     let trackingTouch = false;
     let gestureReleased = false;
+    let touchState = TOUCH_STATE.PASSIVE;
+    let armed = false;
 
     const setActive = index => {
       if (index < 0 || index >= items.length || index === activeIndex) return;
@@ -1094,10 +1105,39 @@
     };
 
     const activateNearestToObservation = () => {
-      if (hoverInput.matches || touchInput.matches || section?.classList.contains("is-touch-sequential") || !items.length) return;
-      const observedElement = document.elementFromPoint(observationState.x, observationState.y);
-      const observedItem = observedElement?.closest(".artist-accordion-item");
-      if (observedItem && accordion.contains(observedItem)) setActive(Number(observedItem.dataset.accordionIndex));
+      if (!touchInput.matches || touchState === TOUCH_STATE.ENGAGED || !items.length || !section) return;
+      const viewportHeight = window.innerHeight;
+      const bandTop = viewportHeight * 0.4;
+      const bandBottom = viewportHeight * 0.6;
+      const sectionRect = section.getBoundingClientRect();
+      const intersectsBand = sectionRect.bottom >= bandTop && sectionRect.top <= bandBottom;
+
+      if (touchState === TOUCH_STATE.RELEASED) {
+        if (!intersectsBand) {
+          touchState = TOUCH_STATE.PASSIVE;
+          armed = false;
+        }
+        return;
+      }
+      if (!intersectsBand) {
+        touchState = TOUCH_STATE.PASSIVE;
+        armed = false;
+        return;
+      }
+
+      const bandCenter = viewportHeight / 2;
+      const candidate = items
+        .map((item, index) => {
+          const rect = item.getBoundingClientRect();
+          const center = rect.top + rect.height / 2;
+          return {index, center, inBand: center >= bandTop && center <= bandBottom};
+        })
+        .filter(entry => entry.inBand)
+        .sort((a, b) => Math.abs(a.center - bandCenter) - Math.abs(b.center - bandCenter))[0];
+      if (!candidate) return;
+      setActive(candidate.index);
+      touchState = TOUCH_STATE.DISCOVER;
+      armed = true;
     };
 
     const scheduleObservationCheck = () => {
@@ -1106,11 +1146,6 @@
         activateNearestToObservation();
         observationFrame = 0;
       });
-    };
-
-    const syncSequentialLayout = () => {
-      if (!section) return;
-      if (!touchInput.matches) section.classList.remove("is-touch-sequential");
     };
 
     const pinSequentialSection = () => {
@@ -1124,19 +1159,65 @@
       requestAnimationFrame(() => { root.style.scrollBehavior = previousScrollBehavior; });
     };
 
-    const finishSequentialSwipe = () => {
+    const releaseSequentialSection = direction => {
+      if (!section) return;
+      const root = document.documentElement;
+      const previousScrollBehavior = root.style.scrollBehavior;
+      const headerHeight = document.querySelector(".site-header")?.getBoundingClientRect().height || 0;
+      const sectionRect = section.getBoundingClientRect();
+      const targetY = direction > 0
+        ? window.scrollY + sectionRect.bottom - headerHeight
+        : window.scrollY + sectionRect.top - headerHeight;
+      section.classList.remove("is-touch-sequential");
+      touchState = TOUCH_STATE.RELEASED;
+      armed = false;
+      gestureReleased = true;
+      root.style.scrollBehavior = "auto";
+      window.scrollTo(0, Math.max(0, targetY));
+      requestAnimationFrame(() => { root.style.scrollBehavior = previousScrollBehavior; });
+    };
+
+    const gestureMetrics = eventTime => {
+      const distance = touchStartY - touchCurrentY;
+      const duration = Math.max(1, (eventTime || touchCurrentTime) - touchStartTime);
+      return {distance, duration, velocity: Math.abs(distance) / duration};
+    };
+
+    const isFastFlick = ({distance, duration, velocity}) => (
+      Math.abs(distance) >= FAST_FLICK_DISTANCE
+      && duration <= FAST_FLICK_DURATION
+      && velocity >= FAST_FLICK_VELOCITY
+    );
+
+    const canEngage = () => {
+      if (!armed || touchState === TOUCH_STATE.RELEASED || !section) return false;
+      const rect = section.getBoundingClientRect();
+      const headerHeight = document.querySelector(".site-header")?.getBoundingClientRect().height || 0;
+      return rect.top <= window.innerHeight * 0.35 + headerHeight && rect.bottom >= window.innerHeight * 0.65;
+    };
+
+    const finishSequentialSwipe = event => {
       if (!trackingTouch) return;
       trackingTouch = false;
-      if (gestureReleased || transitionLocked) return;
-      const delta = touchStartY - touchCurrentY;
-      if (Math.abs(delta) < 36) return;
-      const direction = delta > 0 ? 1 : -1;
+      touchCurrentTime = event.timeStamp;
+      const metrics = gestureMetrics(event.timeStamp);
+      if (touchState !== TOUCH_STATE.ENGAGED || gestureReleased) return;
+      if (Math.abs(metrics.distance) < SWIPE_DISTANCE) return;
+      const direction = metrics.distance > 0 ? 1 : -1;
+      if (isFastFlick(metrics)) {
+        releaseSequentialSection(direction);
+        return;
+      }
+      if (transitionLocked) return;
       const nextIndex = activeIndex + direction;
-      if (nextIndex < 0 || nextIndex >= items.length) return;
+      if (nextIndex < 0 || nextIndex >= items.length) {
+        releaseSequentialSection(direction);
+        return;
+      }
       setActive(nextIndex);
       transitionLocked = true;
       window.clearTimeout(lockTimer);
-      lockTimer = window.setTimeout(() => { transitionLocked = false; }, 420);
+      lockTimer = window.setTimeout(() => { transitionLocked = false; }, TRANSITION_LOCK_DURATION);
     };
 
     accordion.addEventListener("pointerover", event => {
@@ -1145,6 +1226,8 @@
       const previousItem = event.relatedTarget?.closest?.(".artist-accordion-item");
       if (item && accordion.contains(item) && item !== previousItem) {
         section?.classList.remove("is-touch-sequential");
+        touchState = TOUCH_STATE.PASSIVE;
+        armed = false;
         setActive(Number(item.dataset.accordionIndex));
       }
     });
@@ -1154,37 +1237,38 @@
     });
     section?.addEventListener("touchstart", event => {
       if (event.touches.length !== 1) return;
-      if (!section.classList.contains("is-touch-sequential")) {
-        section.classList.add("is-touch-sequential");
-        pinSequentialSection();
-      }
       trackingTouch = true;
       gestureReleased = false;
       touchStartY = event.touches[0].clientY;
       touchCurrentY = touchStartY;
+      touchStartTime = event.timeStamp;
+      touchCurrentTime = touchStartTime;
     }, {passive: true});
     section?.addEventListener("touchmove", event => {
       if (!trackingTouch || event.touches.length !== 1) return;
       touchCurrentY = event.touches[0].clientY;
-      const delta = touchStartY - touchCurrentY;
-      const leavingAfterLast = delta > 0 && activeIndex === items.length - 1;
-      const leavingBeforeFirst = delta < 0 && activeIndex === 0;
-      if (leavingAfterLast || leavingBeforeFirst) {
-        gestureReleased = true;
-        section.classList.remove("is-touch-sequential");
+      touchCurrentTime = event.timeStamp;
+      const metrics = gestureMetrics(event.timeStamp);
+      if (touchState === TOUCH_STATE.ENGAGED) {
+        event.preventDefault();
         return;
       }
+      if (touchState === TOUCH_STATE.RELEASED || Math.abs(metrics.distance) < SWIPE_DISTANCE || !canEngage()) return;
+      if (isFastFlick(metrics)) return;
+      if (metrics.duration < ENGAGE_MIN_DURATION && metrics.velocity >= FAST_FLICK_VELOCITY) return;
+      touchState = TOUCH_STATE.ENGAGED;
+      section.classList.add("is-touch-sequential");
+      pinSequentialSection();
       event.preventDefault();
     }, {passive: false});
     section?.addEventListener("touchend", finishSequentialSwipe, {passive: true});
     section?.addEventListener("touchcancel", () => { trackingTouch = false; gestureReleased = false; }, {passive: true});
     window.addEventListener("scroll", scheduleObservationCheck, {passive: true});
-    siteResizeHandlers.add(() => { syncSequentialLayout(); scheduleObservationCheck(); });
-    hoverInput.addEventListener("change", () => { syncSequentialLayout(); scheduleObservationCheck(); });
-    touchInput.addEventListener("change", syncSequentialLayout);
+    siteResizeHandlers.add(scheduleObservationCheck);
+    hoverInput.addEventListener("change", scheduleObservationCheck);
+    touchInput.addEventListener("change", scheduleObservationCheck);
 
-    syncSequentialLayout();
-    setActive(touchInput.matches && !hoverInput.matches ? 0 : defaultIndex);
+    setActive(defaultIndex);
     scheduleObservationCheck();
   };
 

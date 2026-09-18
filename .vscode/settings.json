@@ -18,6 +18,8 @@
         "Krňanská",
         "L'Unicorno",
         "LEED",
+        "MADATAC",
+        "Maison",
         "Meworld",
         "Mohr",
         "MUTEK",
@@ -28,8 +30,18 @@
         "Shen",
         "Soryer",
         "subperformance",
+        "Titanik",
+        "Togetoge",
         "Ungetsu",
+        "YICCA",
         "YUANSHAN",
+        "Zebrastraat",
         "Zhongshan"
+    ],
+    "cSpell.ignorePaths": [
+    "assets/js/data.js",
+    "assets/js/app.js",
+    "about.html",
+    "index.html"
     ]
 }

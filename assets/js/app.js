@@ -110,7 +110,7 @@
         <span class="work-card-number">${work.number}</span>
         <div class="work-card-overlay"><span>${[artistNamesForWork(work), work.medium].filter(Boolean).join("<br>")}</span></div>
       </div>
-      <div class="work-label">${artistNamesForWork(work) ? `<span class="work-card-artist">${artistNamesForWork(work)}</span>` : ""}<strong class="work-card-title">${textFor(work, "title")}</strong></div>
+      <div class="work-label"><strong class="work-card-title">${textFor(work, "title")}</strong>${artistNamesForWork(work) ? `<span class="work-card-artist">${artistNamesForWork(work)}</span>` : ""}</div>
     </a>`).join("");
 
   const creatorLinks = creator => [["website", "home", isEnglish ? "Website" : "官方網站"], ["instagram", "instagram", "Instagram"], ["facebook", "facebook", "Facebook"]]
@@ -270,17 +270,16 @@
     document.title = `${textFor(work, "title")}｜${isEnglish ? "2026 Taipei Digital Art Festival" : "2026 臺北數位藝術節"}`;
     const areaCrumbs = work.category === "main"
       ? [
-          {label: isEnglish ? "TAIPEI COLLECTIBLE BOTANICAL GARDEN" : "臺北典藏植物園", href: "works.html#garden"},
-          {label: isEnglish ? "MAIN VENUE" : "主展場", href: "works.html#main-venue"}
+          {label: isEnglish ? "TAIPEI COLLECTIBLE BOTANICAL GARDEN" : "臺北典藏植物園", href: "works.html"}
         ]
       : work.category === "outdoor"
         ? [
-            {label: isEnglish ? "TAIPEI COLLECTIBLE BOTANICAL GARDEN" : "臺北典藏植物園", href: "works.html#garden"},
+            {label: isEnglish ? "TAIPEI COLLECTIBLE BOTANICAL GARDEN" : "臺北典藏植物園", href: "works.html"},
             {label: isEnglish ? "OUTDOOR WORKS" : "戶外作品", href: "works.html#outdoor-works"}
           ]
-        : [{label: isEnglish ? "TAIPEI YUANSHAN DISTRICT" : "臺北圓山街區", href: "works.html#art-in-stores"}];
+        : [{label: isEnglish ? "TAIPEI YUANSHAN DISTRICT" : "臺北圓山街區", href: "district-works.html"}];
     document.querySelector("#breadcrumb").innerHTML = C.crumb([
-      {label: isEnglish ? "WORKS" : "作品介紹", href: "works.html"},
+      {label: isEnglish ? "WORKS" : "作品介紹"},
       ...areaCrumbs,
       {label: textFor(work, "title")}
     ]);
@@ -419,15 +418,13 @@
       `detail-main${primaryArtist?.id === "artist-26" ? " is-logo" : ""}`
     );
     const workLinks = document.querySelector("[data-work-links]");
-    const videoUrls = (work.videoUrls?.length ? work.videoUrls : [work.videoUrl]).filter(Boolean);
-    workLinks.innerHTML = videoUrls.map((url, index) => `<a href="${url}" target="_blank" rel="noopener noreferrer" aria-label="${isEnglish ? `Open work video ${index + 1}` : `開啟作品影片／影像連結 ${index + 1}`}">${C.icon("video", "")}<span>${isEnglish ? "VIDEO / MOVING IMAGE" : "作品影片／影像連結"}${videoUrls.length > 1 ? ` ${index + 1}` : ""}</span></a>`).join("");
-    workLinks.hidden = videoUrls.length === 0;
+    workLinks.replaceChildren();
+    workLinks.hidden = true;
     document.querySelector("[data-work-artists]").innerHTML = artists.length
       ? artists.map(creator => {
-        const nationality = textFor(creator, "nationality");
         const biography = textFor(creator, "bio");
         const career = textFor(creator, "career");
-        return `<article>${textFor(creator, "name") ? `<h3>${textFor(creator, "name")}</h3>` : ""}${nationality ? `<p class="artist-nationality">${nationality}</p>` : ""}${biography ? `<p class="artist-biography">${biography}</p>` : ""}${career ? `<section class="artist-career"><h4>${isEnglish ? "EXPERIENCE" : "經歷"}</h4><p>${career}</p></section>` : ""}${creatorLinks(creator) ? `<div class="artist-links">${creatorLinks(creator)}</div>` : ""}</article>`;
+        return `<article>${textFor(creator, "name") ? `<h3>${textFor(creator, "name")}</h3>` : ""}${textFor(creator, "nationality") ? `<p class="artist-nationality">${textFor(creator, "nationality")}</p>` : ""}${biography ? `<p class="artist-biography">${biography}</p>` : ""}${career ? `<section class="artist-career"><h4>${isEnglish ? "EXPERIENCE" : "經歷"}</h4><p>${career}</p></section>` : ""}${creatorLinks(creator) ? `<div class="artist-links">${creatorLinks(creator)}</div>` : ""}</article>`;
       }).join("")
       : `<p class="data-pending">${isEnglish ? "(Information pending)" : "(待補)"}</p>`;
     const previousLink = document.querySelector("[data-work-previous]");
@@ -440,6 +437,7 @@
     else nextLink.removeAttribute("href");
     setDetailText("[data-work-previous-title]", previous ? textFor(previous, "title") : "");
     setDetailText("[data-work-next-title]", next ? textFor(next, "title") : "");
+    document.querySelectorAll("[data-work-return]").forEach(link => { link.href = C.localizedRoute(work.category === "main" ? "works.html" : "district-works.html"); });
   };
 
   const openingText = (item, field) => isEnglish
@@ -617,7 +615,8 @@
   };
 
   const renderEventDetail = () => {
-    const event = D.events.find(item => String(item.id) === queryId());
+    const requestedEventId = /(?:^|\/)opening-performance\.html$/i.test(location.pathname) ? "opening-performance" : queryId();
+    const event = D.events.find(item => String(item.id) === requestedEventId);
     const article = document.querySelector("[data-event-detail]");
     const error = document.querySelector("[data-event-error]");
     if (!event) {
@@ -728,9 +727,6 @@
     document.querySelectorAll("[data-program-label]").forEach(node => {
       node.textContent = labels[node.dataset.programLabel] || node.textContent;
     });
-    document.querySelector("#program-calendar-weekdays").innerHTML = [1, 2, 3, 4, 5, 6, 0]
-      .map(index => `<span>${labels.weekdays[index]}</span>`).join("");
-
     const renderOverview = filter => {
       const filtered = filter === "all" ? orderedEvents : orderedEvents.filter(event => event.type === filter);
       list.innerHTML = filtered.length ? filtered.map(event => {
@@ -755,54 +751,17 @@
     }));
     renderOverview("all");
 
-    const datedEvents = events.map(event => ({event, date: programDate(event.date)})).filter(item => item.date).sort((a, b) => a.date.date - b.date.date);
-    const eventsByDate = new Map();
-    datedEvents.forEach(item => {
-      if (!eventsByDate.has(item.date.key)) eventsByDate.set(item.date.key, []);
-      eventsByDate.get(item.date.key).push(item.event);
-    });
-
-    const calendarGrid = document.querySelector("#program-calendar-grid");
-    const start = new Date(Date.UTC(2026, 9, 31));
-    const end = new Date(Date.UTC(2026, 10, 15));
-    const calendarCells = Array.from({length: (start.getUTCDay() + 6) % 7}, () => '<span class="program-calendar-blank" aria-hidden="true"></span>');
-    for (let cursor = new Date(start); cursor <= end; cursor.setUTCDate(cursor.getUTCDate() + 1)) {
-      const key = `${cursor.getUTCFullYear()}.${String(cursor.getUTCMonth() + 1).padStart(2, "0")}.${String(cursor.getUTCDate()).padStart(2, "0")}`;
-      const dayEvents = eventsByDate.get(key) || [];
-      const label = `${cursor.getUTCMonth() + 1}/${cursor.getUTCDate()}`;
-      calendarCells.push(dayEvents.length
-        ? `<button type="button" class="program-calendar-day has-event" data-program-date="${key}" aria-pressed="false" aria-label="${label}，${dayEvents.length} ${labels.eventCountSuffix}"><span>${label}</span><i aria-hidden="true"></i></button>`
-        : `<span class="program-calendar-day"><span>${label}</span></span>`);
-    }
-    calendarGrid.innerHTML = calendarCells.join("");
-
-    const selectedPanel = document.querySelector("#program-selected-date");
-    const dateButtons = [...calendarGrid.querySelectorAll("[data-program-date]")];
-    const selectDate = key => {
-      dateButtons.forEach(button => {
-        const active = button.dataset.programDate === key;
-        button.classList.toggle("is-selected", active);
-        button.setAttribute("aria-pressed", String(active));
-      });
-      const date = programDate(key);
-      const selectedEvents = eventsByDate.get(key) || [];
-      selectedPanel.innerHTML = `<p class="program-selected-date-label">${key} ${displayWeekday(date)}</p>${selectedEvents.map(event => `<a href="${programRoute(event)}"><span>${programTime(event)}</span><strong>${displayTitle(event)}</strong><i aria-hidden="true">&gt;</i></a>`).join("")}`;
-    };
-    dateButtons.forEach(button => button.addEventListener("click", () => selectDate(button.dataset.programDate)));
-    if (dateButtons.length) selectDate(dateButtons[0].dataset.programDate);
-    else selectedPanel.innerHTML = `<p class="data-pending">${isEnglish ? "Program dates pending" : "活動日期資料待提供"}</p>`;
-
   };
 
   const networkProfile = {
     nodeBaseAlpha: .24,
     nodeObservationAlpha: .34,
-    connectionBaseAlpha: .075,
-    connectionProximityAlpha: .07,
-    connectionObservationAlpha: .25,
+    connectionBaseAlpha: .10,
+    connectionProximityAlpha: .08,
+    connectionObservationAlpha: .32,
     observationConnectionDistance: 60,
-    lightCenterAlpha: .042,
-    lightEdgeAlpha: .013
+    lightCenterAlpha: .07,
+    lightEdgeAlpha: .022
   };
 
   const initializeSiteObservation = () => {
@@ -1307,7 +1266,7 @@
 
     const titleElements = [...hero.querySelectorAll(".hero-scramble")];
     const messageGroup = hero.querySelector(".hero-system-messages");
-    const messageLines = [...messageGroup.querySelectorAll("p")];
+    const messageLines = messageGroup ? [...messageGroup.querySelectorAll("p")] : [];
     const scrollLink = hero.querySelector(".hero-scroll");
     const finalMessages = messageLines.map(line => line.textContent);
     const wait = duration => new Promise(resolve => window.setTimeout(resolve, duration));
@@ -1321,13 +1280,13 @@
       };
     });
 
-    messageGroup.style.width = `${Math.ceil(messageGroup.getBoundingClientRect().width)}px`;
+    if (messageGroup) messageGroup.style.width = `${Math.ceil(messageGroup.getBoundingClientRect().width)}px`;
     messageLines.forEach(line => { line.textContent = ""; });
     transitions.forEach((transition, index) => {
       const nextLine = messageLines[index + 1];
       nextLine.dataset.transition = transition.type;
       nextLine.dataset.transitionDelay = String(transition.delay);
-      if (transition.type === "pause") messageGroup.style.setProperty(`--system-gap-${index + 1}`, "var(--space-2)");
+      if (transition.type === "pause") messageGroup?.style.setProperty(`--system-gap-${index + 1}`, "var(--space-2)");
     });
     if (document.fonts?.load) {
       await Promise.race([
@@ -1616,7 +1575,7 @@
   };
 
   const initializeAboutWebsiteLinks = () => {
-    if (page !== "about") return;
+    if (page !== "partners") return;
     document.querySelectorAll(".about-organization-profile").forEach(profile => {
       const logoLink = profile.querySelector(":scope > a[href]");
       const content = profile.querySelector(":scope > div");
@@ -1672,8 +1631,12 @@
       const listType = list.dataset.mapListType;
       const locations = D.mapLocations.filter(item => item.map === list.dataset.mapList && (!listType || item.type === listType));
       const heading = list.querySelector("strong")?.outerHTML || "";
-      const works = locations.flatMap(location => location.workIds.map(workById).filter(Boolean));
-      list.innerHTML = heading + `<div class="map-list-entries">${works.map(work => `<article class="map-list-item"><span class="map-list-number">${work.number}</span><span class="map-list-artist">${mapArtist(work)}</span>${mapTitle(work) ? `<strong class="map-list-title">${mapTitle(work)}</strong>` : ""}</article>`).join("")}</div>`;
+      const entries = locations.flatMap(location => location.workIds.map(workById).filter(Boolean).map(work => ({work, location})));
+      list.innerHTML = heading + `<div class="map-list-entries">${entries.map(({work, location}) => {
+        const venue = venueById(location.venueId);
+        const store = location.type === "district" && venue ? venueName(venue) : "";
+        return `<article class="map-list-item"><span class="map-list-number">${work.number}</span>${mapTitle(work) ? `<strong class="map-list-title">${mapTitle(work)}</strong>` : ""}<span class="map-list-artist">${mapArtist(work)}</span>${store ? `<span class="map-list-store">${store}</span>` : ""}</article>`;
+      }).join("")}</div>`;
     });
   };
 
@@ -1741,6 +1704,7 @@
         {id: "district-05-07", markerIds: ["district-05", "district-06", "district-07"], offsets: {"district-05": {x: -56, y: -28}, "district-07": {x: -56, y: 28}}},
         {id: "outdoor-01-02", markerIds: ["outdoor-01", "outdoor-02"], offsets: {"outdoor-01": {x: -18, y: 0}, "outdoor-02": {x: 0, y: -48}}}
       ];
+      const spreadEnabled = group => window.innerWidth <= (group.id === "district-03-04" ? 586 : 1000);
       const movableMarkerIds = new Set(spreadGroups.flatMap(group => Object.keys(group.offsets)));
       let collisionGroups = [];
       let activeSpreadGroupId = null;
@@ -1852,7 +1816,7 @@
         if (!isInActiveSpreadGroup) {
           if (activeSpreadGroupId) clearSpread();
           rebuildCollisionGroups();
-          if (requestedSpreadGroup && isSpreadGroupColliding(requestedSpreadGroup)) {
+          if (requestedSpreadGroup && spreadEnabled(requestedSpreadGroup) && isSpreadGroupColliding(requestedSpreadGroup)) {
             spread(requestedSpreadGroup);
             return;
           }
@@ -1879,7 +1843,8 @@
         selectedMarker.setAttribute("aria-expanded", "true");
         const workMarkup = works.map(work => {
           const catalogWork = catalogWorkFor(work);
-          const content = `<span class="marker-work-number">${work.number}</span><span class="marker-work-copy"><span class="marker-work-title-line"><span class="marker-work-artist">${mapArtist(work)}</span>${mapTitle(work) ? `<span aria-hidden="true">｜</span><strong>${mapTitle(work)}</strong>` : ""}</span>${catalogWork?.year ? `<span class="marker-work-year">${catalogWork.year}</span>` : ""}</span><span class="marker-work-arrow" aria-hidden="true">&gt;</span>`;
+          const store = location.type === "district" && venue ? venueName(venue) : "";
+          const content = `<span class="marker-work-number">${work.number}</span><span class="marker-work-copy"><span class="marker-work-title-line">${mapTitle(work) ? `<strong>${mapTitle(work)}</strong>` : ""}</span><span class="marker-work-artist">${mapArtist(work)}</span>${store ? `<span class="marker-work-store">${store}</span>` : ""}${catalogWork?.year ? `<span class="marker-work-year">${catalogWork.year}</span>` : ""}</span><span class="marker-work-arrow" aria-hidden="true">&gt;</span>`;
           return catalogWork
             ? `<a class="marker-card-work" href="${C.localizedRoute(`work-detail.html?id=${catalogWork.id}`)}">${content}</a>`
             : `<div class="marker-card-work is-pending">${content}</div>`;
@@ -1958,14 +1923,9 @@
       return `<a class="shop-external-link" href="${url}" target="_blank" rel="noopener noreferrer" aria-label="${isEnglish ? `Visit ${shopName(shop)} ${channel}` : `前往${shopName(shop)}${channel}`}">${C.icon(iconName, "")}</a>`;
     }).join("");
 
-    const galleryMarkup = shop => {
-      const images = Array.isArray(shop.images) ? shop.images : [];
-      if (!images.length) return "";
-      return `<div class="shop-gallery" data-shop-list-gallery data-gallery-index="0">
-        <img src="${C.assetRoute(images[0])}" alt="${shopName(shop)} ${isEnglish ? "image" : "圖片"} 1">
-        ${images.length > 1 ? `<button class="shop-gallery-arrow is-previous" type="button" data-shop-list-gallery-direction="-1" aria-label="${labels.previous}" data-shop-id="${shop.id}">‹</button><button class="shop-gallery-arrow is-next" type="button" data-shop-list-gallery-direction="1" aria-label="${labels.next}" data-shop-id="${shop.id}">›</button>` : ""}
-        ${images.length > 1 ? `<div class="gallery-dots" aria-label="${isEnglish ? "Image pagination" : "圖片分頁"}">${images.map((_, index) => `<button type="button" data-shop-list-gallery-index="${index}" data-shop-id="${shop.id}" aria-label="${isEnglish ? `View image ${index + 1}` : `查看第 ${index + 1} 張圖片`}" aria-current="${index === 0 ? "true" : "false"}"></button>`).join("")}</div>` : ""}
-      </div>`;
+    const previewMarkup = shop => {
+      const image = Array.isArray(shop.images) ? shop.images.find(src => typeof src === "string" && src.trim()) : null;
+      return image ? `<div class="shop-gallery"><img src="${C.assetRoute(image)}" alt="${shopName(shop)} ${isEnglish ? "image" : "圖片"} 1"></div>` : "";
     };
 
     const listCard = shop => `<article class="shop-list-item">
@@ -1975,7 +1935,7 @@
         ${shopAddress(shop) ? `<p>${shopAddress(shop)}</p>` : ""}
         ${shop.phone ? `<p>${shop.phone}</p>` : ""}
         ${storeStatusMarkup(shop, {source:shop.recordType === "partner" ? "shop" : "venue", className:"shop-list-status"})}
-        ${galleryMarkup(shop)}
+        ${previewMarkup(shop)}
         <button class="button shop-detail-trigger" type="button" data-shop-id="${shop.id}" aria-haspopup="dialog">${labels.detail}</button>
       </div>
     </article>`;
@@ -2021,7 +1981,6 @@
         </div>` : "";
       panel.innerHTML = `
         <div class="shop-detail-controls"><button class="marker-card-close" type="button" aria-label="${labels.close}">×</button></div>
-        ${gallery}
         <div class="shop-detail-content">
           <p class="shop-number">${shop.displayNumber}</p>
           <h3 id="shop-detail-title">${shopName(shop)}</h3>
@@ -2034,7 +1993,8 @@
           ${shopDescription(shop) ? `<section class="shop-description"><h4>${labels.description}</h4>${shopDescription(shop).split("\n").map(paragraph => `<p>${paragraph}</p>`).join("")}</section>` : ""}
           ${linkMarkup(shop) ? `<div class="shop-links">${linkMarkup(shop)}</div>` : ""}
           ${shop.recordType === "venue" && shop.workIds?.length ? `<div class="shop-venue-works">${shop.workIds.map(id => workCatalog.find(work => String(work.id) === String(id))).filter(Boolean).map(work => `<a href="${C.localizedRoute(`work-detail.html?id=${work.id}`)}"><span>${work.number}</span>${textFor(work, "title")}</a>`).join("")}</div>` : ""}
-        </div>`;
+        </div>
+        ${gallery}`;
       layer.hidden = false;
       panel.hidden = false;
       syncShopVisualViewport();
@@ -2047,24 +2007,6 @@
     };
 
     lists.forEach(list => list.addEventListener("click", event => {
-      const galleryButton = event.target.closest("[data-shop-list-gallery-direction]");
-      const galleryDot = event.target.closest("[data-shop-list-gallery-index]");
-      if (galleryButton || galleryDot) {
-        const control = galleryButton || galleryDot;
-        const shop = records.find(item => item.id === control.dataset.shopId);
-        const gallery = control.closest("[data-shop-list-gallery]");
-        const images = shop?.images || [];
-        if (!gallery || !images.length) return;
-        const nextIndex = galleryDot
-          ? Number(galleryDot.dataset.shopListGalleryIndex)
-          : (Number(gallery.dataset.galleryIndex) + Number(galleryButton.dataset.shopListGalleryDirection) + images.length) % images.length;
-        gallery.dataset.galleryIndex = String(nextIndex);
-        const image = gallery.querySelector("img");
-        image.src = C.assetRoute(images[nextIndex]);
-        image.alt = `${shopName(shop)} ${isEnglish ? "image" : "圖片"} ${nextIndex + 1}`;
-        gallery.querySelectorAll("[data-shop-list-gallery-index]").forEach((dot, index) => dot.setAttribute("aria-current", String(index === nextIndex)));
-        return;
-      }
       const trigger = event.target.closest("[data-shop-id]");
       if (!trigger) return;
       const shop = records.find(item => item.id === trigger.dataset.shopId);
@@ -2085,15 +2027,25 @@
   document.querySelector("#site-header").innerHTML = C.header(page);
   document.querySelector("#site-footer").innerHTML = C.footer();
   initializeBackToTop();
+  if ("serviceWorker" in navigator && location.protocol === "https:" && !/^(?:localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+    navigator.serviceWorker.register(C.assetRoute("sw.js")).catch(error => console.warn("Offline fallback unavailable.", error));
+  }
 
-  const breadcrumbLabels = isEnglish ? {about:"ABOUT", map:"MAP", works:"WORKS", program:"PROGRAM", visit:"Visit"} : {about:"關於", map:"探索地圖", works:"作品介紹", program:"活動節目", visit:"參觀資訊"};
+  if (page === "about" && location.hash) {
+    const legacyAboutPages = {"#theme": "curatorial.html", "#curatorial-execution": "curatorial.html", "#curators": "curatorial.html#curators", "#organizations": "partners.html#organizations", "#partners": "partners.html#partner-organizations", "#partner-organizations": "partners.html#partner-organizations", "#sponsors": "partners.html#sponsors"};
+    if (legacyAboutPages[location.hash]) location.replace(legacyAboutPages[location.hash]);
+  }
+  if (page === "map" && location.hash) {
+    const legacyMapPages = {"#district-map": "district-map.html#district-map", "#partner-stores": "shops.html#partner-stores", "#art-in-stores": "shops.html#art-in-stores"};
+    if (legacyMapPages[location.hash]) location.replace(legacyMapPages[location.hash]);
+  }
+  if (page === "works" && location.hash === "#art-in-stores") location.replace("district-works.html#art-in-stores");
+  const breadcrumbLabels = isEnglish ? {about:"ABOUT TAIPEI DIGITAL ART FESTIVAL", curatorial:"CURATORIAL STATEMENT", partners:"EXECUTION AND PARTNERS", map:"TAIPEI COLLECTIBLE BOTANICAL GARDEN", "district-map":"TAIPEI YUANSHAN DISTRICT", shops:"PARTNER STORES", works:"TAIPEI COLLECTIBLE BOTANICAL GARDEN", "district-works":"TAIPEI YUANSHAN DISTRICT", program:"PROGRAM"} : {about:"關於臺北數位藝術節", curatorial:"策展論述", partners:"單位介紹", map:"臺北典藏植物園", "district-map":"臺北圓山街區", shops:"合作店家", works:"臺北典藏植物園", "district-works":"臺北圓山街區", program:"活動節目"};
   if (breadcrumbLabels[page]) {
-    const breadcrumb = page === "works" && location.hash === "#art-in-stores"
-      ? [
-          {label: breadcrumbLabels.works, href: "works.html"},
-          {label: isEnglish ? "TAIPEI YUANSHAN DISTRICT" : "臺北圓山街區"}
-        ]
-      : breadcrumbLabels[page];
+    const parent = ["about", "curatorial", "partners"].includes(page) ? (isEnglish ? "ABOUT" : "關於")
+      : ["map", "district-map", "shops"].includes(page) ? (isEnglish ? "MAP" : "探索地圖")
+      : ["works", "district-works"].includes(page) ? (isEnglish ? "WORKS" : "作品介紹") : null;
+    const breadcrumb = parent ? [{label: parent}, {label: breadcrumbLabels[page]}] : breadcrumbLabels[page];
     document.querySelector("#breadcrumb").innerHTML = C.crumb(breadcrumb);
   }
 
@@ -2101,14 +2053,18 @@
   if (page === "works") {
     document.querySelector("#works-grid-main").innerHTML = workCards(D.works.filter(work => work.category === "main"));
     document.querySelector("#works-grid-outdoor").innerHTML = workCards(D.works.filter(work => work.category === "outdoor"));
+  }
+  if (page === "district-works") {
     document.querySelector("#works-grid-district").innerHTML = workCards(D.works.filter(work => work.category === "district"));
   }
   if (page === "program") {
     initializeProgramPage();
   }
-  if (page === "map") {
+  if (page === "map" || page === "district-map") {
     renderMap();
     initializeMapInteraction();
+  }
+  if (page === "shops") {
     initializeShops();
     initializeStoreStatusUpdates();
   }
@@ -2123,6 +2079,7 @@
   const menuIcon = menuToggle.querySelector("[data-menu-icon]");
   const navigation = document.querySelector(".header-nav");
   const submenuToggles = [...navigation.querySelectorAll(".nav-submenu-toggle")];
+  const parentTriggers = [...navigation.querySelectorAll(".nav-parent-trigger")];
   const pageContent = [document.querySelector("#app"), document.querySelector("#site-footer"), document.querySelector(".back-to-top")].filter(Boolean);
   let menuReturnFocus = null;
 
@@ -2145,6 +2102,11 @@
       const label = button.dataset.submenuLabel || "";
       button.setAttribute("aria-label", `${isEnglish ? "Expand " : "展開"}${label}${isEnglish ? " submenu" : "第二層選單"}`);
     });
+    parentTriggers.forEach(button => {
+      button.closest("[data-submenu-container]").classList.remove("is-expanded", "is-collapsed");
+      button.setAttribute("aria-expanded", "false");
+      button.setAttribute("aria-label", `${isEnglish ? "Expand " : "展開"}${button.dataset.submenuLabel}${isEnglish ? " submenu" : "第二層選單"}`);
+    });
     if (usesTouchNavigation()) navigation.setAttribute("aria-hidden", "true");
     else navigation.removeAttribute("aria-hidden");
     setPageInert(false);
@@ -2165,6 +2127,23 @@
   };
 
   menuToggle.addEventListener("click", () => navigation.classList.contains("open") ? closeMobileMenu() : openMobileMenu());
+  parentTriggers.forEach(button => {
+    const item = button.closest("[data-submenu-container]");
+    button.addEventListener("click", () => {
+      const expanded = button.getAttribute("aria-expanded") !== "true";
+      parentTriggers.forEach(other => {
+        if (other === button) return;
+        other.closest("[data-submenu-container]").classList.remove("is-expanded", "is-collapsed");
+        other.setAttribute("aria-expanded", "false");
+        other.setAttribute("aria-label", `${isEnglish ? "Expand " : "展開"}${other.dataset.submenuLabel}${isEnglish ? " submenu" : "第二層選單"}`);
+      });
+      item.classList.toggle("is-expanded", expanded);
+      item.classList.toggle("is-collapsed", !expanded);
+      button.setAttribute("aria-expanded", String(expanded));
+      button.setAttribute("aria-label", `${isEnglish ? (expanded ? "Collapse " : "Expand ") : (expanded ? "收合" : "展開")}${button.dataset.submenuLabel}${isEnglish ? " submenu" : "第二層選單"}`);
+    });
+    item.addEventListener("mouseleave", () => item.classList.remove("is-collapsed"));
+  });
   submenuToggles.forEach(button => button.addEventListener("click", () => {
     if (!usesTouchNavigation()) return;
     const item = button.closest("[data-submenu-container]");

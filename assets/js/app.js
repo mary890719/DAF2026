@@ -13,6 +13,58 @@
   const venueName = venue => isEnglish ? venue?.nameEn || venue?.nameZh : venue?.nameZh || venue?.nameEn;
   const workLocationName = work => venueName(venueForWork(work)) || work?.location || "-";
   const queryId = () => new URLSearchParams(location.search).get("id");
+  const seoBrand = isEnglish ? "2026 Taipei Digital Art Festival" : "2026 臺北數位藝術節";
+  const seoTitle = title => `${title}${isEnglish ? " | " : "｜"}${seoBrand}`;
+  const metadataElement = (attribute, key) => document.head.querySelector(`meta[${attribute}="${key}"]`);
+  const setMetadataContent = (attribute, key, content) => {
+    const element = metadataElement(attribute, key);
+    if (element && content) element.setAttribute("content", content);
+  };
+  const setRobotsDirective = content => {
+    const element = metadataElement("name", "robots");
+    if (content) {
+      if (element) element.setAttribute("content", content);
+      else {
+        const meta = document.createElement("meta");
+        meta.name = "robots";
+        meta.content = content;
+        document.head.append(meta);
+      }
+    } else element?.remove();
+  };
+  const naturalDescription = (value, targetLength = isEnglish ? 180 : 90) => {
+    const normalized = String(value || "").replace(/\s+/g, " ").trim();
+    if (!normalized) return "";
+    const sentences = normalized.match(/[^。！？.!?]+[。！？.!?]+|[^。！？.!?]+$/g) || [normalized];
+    let result = "";
+    for (const sentence of sentences) {
+      const candidate = `${result}${sentence}`.trim();
+      if (result && candidate.length > targetLength) break;
+      result = candidate;
+      if (result.length >= targetLength) break;
+    }
+    return result || normalized;
+  };
+  const updateDetailHreflang = (kind, id) => {
+    const encodedId = encodeURIComponent(id);
+    const zhLink = document.head.querySelector('link[rel="alternate"][hreflang="zh-Hant"]');
+    const enLink = document.head.querySelector('link[rel="alternate"][hreflang="en"]');
+    if (zhLink) zhLink.setAttribute("href", `${isEnglish ? "../" : ""}${kind}-detail.html?id=${encodedId}`);
+    if (enLink) enLink.setAttribute("href", `${isEnglish ? "" : "en/"}${kind}-detail.html?id=${encodedId}`);
+  };
+  const updateDetailMetadata = ({title, description, type, robots = null, kind, id}) => {
+    const fullTitle = seoTitle(title);
+    document.title = fullTitle;
+    setMetadataContent("name", "description", description);
+    setMetadataContent("property", "og:title", fullTitle);
+    setMetadataContent("property", "og:description", description);
+    setMetadataContent("property", "og:type", type);
+    setMetadataContent("name", "twitter:card", "summary");
+    setMetadataContent("name", "twitter:title", fullTitle);
+    setMetadataContent("name", "twitter:description", description);
+    setRobotsDirective(robots);
+    if (kind && id !== undefined && id !== null) updateDetailHreflang(kind, id);
+  };
   const observationState = {x: window.innerWidth / 2, y: window.innerHeight / 2, active: false, mode: "idle"};
   const siteResizeHandlers = new Set();
   const narrowNavigationMedia = window.matchMedia("(max-width: 900px)");
@@ -294,7 +346,7 @@
       <div class="work-card-media">
         ${imageMarkup(coverImageFor(work, `${textFor(work, "title")} ${isEnglish ? "work image" : "作品圖片"}`), `${textFor(work, "title")} ${isEnglish ? "work image" : "作品圖片"}`)}
         <span class="work-card-number">${work.number}</span>
-        <div class="work-card-overlay"><span>${[artistNamesForWork(work), work.medium].filter(Boolean).join("<br>")}</span></div>
+        <div class="work-card-overlay"><span>${[artistNamesForWork(work), textFor(work, "medium")].filter(Boolean).join("<br>")}</span></div>
       </div>
       <div class="work-label"><strong class="work-card-title">${textFor(work, "title")}</strong>${artistNamesForWork(work) ? `<span class="work-card-artist">${artistNamesForWork(work)}</span>` : ""}</div>
     </a>`).join("");
@@ -438,6 +490,18 @@
     if (slot) slot.textContent = available ? value : "";
   };
 
+  const workSeoDescription = work => {
+    const description = textFor(work, "description");
+    if (description) return naturalDescription(description);
+    const facts = [
+      textFor(work, "title"),
+      artistNamesForWork(work) ? `${isEnglish ? "Artist" : "藝術家"}: ${artistNamesForWork(work)}` : "",
+      textFor(work, "medium") ? `${isEnglish ? "Medium" : "媒材"}: ${textFor(work, "medium")}` : "",
+      workLocationName(work) && workLocationName(work) !== "-" ? `${isEnglish ? "Location" : "展出地點"}: ${workLocationName(work)}` : ""
+    ].filter(Boolean);
+    return `${facts.join(isEnglish ? "; " : "；")}${isEnglish ? "." : "。"}`;
+  };
+
   const renderWorkDetail = () => {
     const foundIndex = workCatalog.findIndex(item => String(item.id) === queryId());
     const article = document.querySelector("[data-work-detail]");
@@ -446,7 +510,8 @@
       article.remove();
       error.hidden = false;
       document.querySelector("#breadcrumb").innerHTML = C.crumb(isEnglish ? "Work not found" : "找不到此作品");
-      document.title = isEnglish ? "Work not found｜2026 Taipei Digital Art Festival" : "找不到此作品｜2026 臺北數位藝術節";
+      document.title = seoTitle(isEnglish ? "Work not found" : "找不到此作品");
+      setRobotsDirective("noindex, follow");
       return;
     }
     const currentIndex = foundIndex;
@@ -454,7 +519,13 @@
     const previous = currentIndex > 0 ? workCatalog[currentIndex - 1] : null;
     const next = currentIndex < workCatalog.length - 1 ? workCatalog[currentIndex + 1] : null;
     const creatorNames = artistNamesForWork(work);
-    document.title = `${textFor(work, "title")}｜${isEnglish ? "2026 Taipei Digital Art Festival" : "2026 臺北數位藝術節"}`;
+    updateDetailMetadata({
+      title: textFor(work, "title"),
+      description: workSeoDescription(work),
+      type: "article",
+      kind: "work",
+      id: work.id
+    });
     const areaCrumbs = work.category === "main"
       ? [
           {label: isEnglish ? "TAIPEI COLLECTIBLE BOTANICAL GARDEN" : "臺北典藏植物園", href: "works.html"}
@@ -801,8 +872,30 @@
     });
   };
 
+  const eventSeoDescription = event => {
+    if (event.type === "工作坊" && textFor(event, "description")) return naturalDescription(textFor(event, "description"));
+    const facts = [textFor(event, "title")];
+    if (event.type === "講座") {
+      if (textFor(event, "discussant")) facts.push(`${isEnglish ? "Discussant" : "與談人"}: ${textFor(event, "discussant")}`);
+      if (textFor(event, "artist")) facts.push(`${isEnglish ? "Artist" : "藝術家"}: ${textFor(event, "artist")}`);
+      if (textFor(event, "artistTeam")) facts.push(`${isEnglish ? "Artist Team" : "藝術團隊"}: ${textFor(event, "artistTeam")}`);
+    } else if (event.type === "表演") {
+      const performerRecords = D.soundArtists.map(work => ({work, name: artistNamesForWork(work)})).filter(record => record.name);
+      const teams = performerRecords.filter(record => (record.work.performances || []).length).map(record => record.name);
+      const artists = performerRecords.filter(record => !(record.work.performances || []).length).map(record => record.name);
+      if (artists.length) facts.push(`${isEnglish ? "Artist" : "藝術家"}: ${artists.join(isEnglish ? ", " : "、")}`);
+      if (teams.length) facts.push(`${isEnglish ? "Artist Team" : "藝術團隊"}: ${teams.join(isEnglish ? ", " : "、")}`);
+    }
+    if (event.date) facts.push(`${isEnglish ? "Date" : "日期"}: ${event.date}`);
+    if (event.time) facts.push(`${isEnglish ? "Time" : "時間"}: ${event.time}`);
+    if (textFor(event, "location")) facts.push(`${isEnglish ? "Location" : "地點"}: ${textFor(event, "location")}`);
+    if (event.type === "導覽" && textFor(event, "registration")) facts.push(`${isEnglish ? "Registration" : "報名"}: ${textFor(event, "registration")}`);
+    return `${facts.join(isEnglish ? "; " : "；")}${isEnglish ? "." : "。"}`;
+  };
+
   const renderEventDetail = () => {
-    const requestedEventId = /(?:^|\/)opening-performance\.html$/i.test(location.pathname) ? "opening-performance" : queryId();
+    const isOpeningRoute = /(?:^|\/)opening-performance\.html$/i.test(location.pathname);
+    const requestedEventId = isOpeningRoute ? "opening-performance" : queryId();
     const event = D.events.find(item => String(item.id) === requestedEventId);
     const article = document.querySelector("[data-event-detail]");
     const error = document.querySelector("[data-event-error]");
@@ -810,12 +903,20 @@
       article.remove();
       error.hidden = false;
       document.querySelector("#breadcrumb").innerHTML = C.crumb(isEnglish ? "Program not found" : "找不到此活動");
-      document.title = isEnglish ? "Program not found｜2026 Taipei Digital Art Festival" : "找不到此活動｜2026 臺北數位藝術節";
+      document.title = seoTitle(isEnglish ? "Program not found" : "找不到此活動");
+      setRobotsDirective("noindex, follow");
       return;
     }
     const isOpeningPerformance = event.id === "opening-performance";
     article.classList.toggle("is-opening-performance", isOpeningPerformance);
-    document.title = `${textFor(event, "title")}｜${isEnglish ? "2026 Taipei Digital Art Festival" : "2026 臺北數位藝術節"}`;
+    updateDetailMetadata({
+      title: textFor(event, "title"),
+      description: eventSeoDescription(event),
+      type: "website",
+      robots: !isOpeningRoute && isOpeningPerformance ? "noindex, follow" : null,
+      kind: isOpeningRoute ? null : "event",
+      id: isOpeningRoute ? null : event.id
+    });
     document.querySelector("#breadcrumb").innerHTML = C.crumb([{label: isEnglish ? "PROGRAM" : "活動節目", href: "program.html"}, {label: textFor(event, "title")}]);
     setDetailText("[data-event-type]", isOpeningPerformance
       ? (isEnglish ? "Performance" : "表演")

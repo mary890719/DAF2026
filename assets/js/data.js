@@ -1038,7 +1038,7 @@ window.DAF_DATA = {
     "titleEn": "Belugas’ Sphere",
     "year": "2026",
     "workType": "互動裝置",
-    "medium": "充氦 Mylar 鋁膜氣球、光線感測器、馬達、壓電式喇叭、電子元件、控制系統與燈光。最終的作品組件與設備規格，將依展覽場地條件與主辦單位協調後確認。",
+    "medium": "充氦 Mylar 鋁膜氣球、光線感測器、馬達、壓電式喇叭、電子元件、控制系統與燈光",
     "description": "《Belugas’ Sphere》重新回望 2008 年作品《Beluga Pod》，將其發展為一個由自主機器實體構成的新型生態系。每一隻白鯨皆以光線為感知與行動的依據，追尋光源，並隨著周遭環境的變化而移動。當光線強度發生改變，牠們的活動與群體行為也隨之演變，逐漸形成流動的隊形、群聚與歌唱，而非依循預先設定的固定編舞。\n觀眾可以透過引入光源介入白鯨的行為，但參與並非必要——即使沒有觀眾介入，白鯨仍持續自主地行動。這群將近二十年前最初被構想出的機器生命，如今彷彿成為正在形成的「機器經濟」中的早期居民，圍繞著能量、彼此的距離與環境條件建立自身的秩序與關係。作品同時向過去與未來凝視：它重新召回一個早期關於自主機器的想像，卻也置身於一個日益受到「具自主行動能力的系統（agentic systems）」所形塑的當代。曾經屬於未來想像的機器，如今正逐漸成為我們所處環境的一部分。",
     "videoUrl": "https://www.youtube.com/watch?v=XTPzJ-lzobo",
     "imageFolder": "main-09",
@@ -1050,7 +1050,7 @@ window.DAF_DATA = {
       "artist-09"
     ],
     "workTypeEn": "Interactive installation",
-    "mediumEn": "helium-filled Mylar inflatables, light sensors, motors, piezo speakers, electronics, control systems, and light. Final component specifications will be confirmed in coordination with the organizer.",
+    "mediumEn": "helium-filled Mylar inflatables, light sensors, motors, piezo speakers, electronics, control systems, and light",
     "descriptionZh": "《Belugas’ Sphere》重新回望 2008 年作品《Beluga Pod》，將其發展為一個由自主機器實體構成的新型生態系。每一隻白鯨皆以光線為感知與行動的依據，追尋光源，並隨著周遭環境的變化而移動。當光線強度發生改變，牠們的活動與群體行為也隨之演變，逐漸形成流動的隊形、群聚與歌唱，而非依循預先設定的固定編舞。\n觀眾可以透過引入光源介入白鯨的行為，但參與並非必要——即使沒有觀眾介入，白鯨仍持續自主地行動。這群將近二十年前最初被構想出的機器生命，如今彷彿成為正在形成的「機器經濟」中的早期居民，圍繞著能量、彼此的距離與環境條件建立自身的秩序與關係。作品同時向過去與未來凝視：它重新召回一個早期關於自主機器的想像，卻也置身於一個日益受到「具自主行動能力的系統（agentic systems）」所形塑的當代。曾經屬於未來想像的機器，如今正逐漸成為我們所處環境的一部分。",
     "descriptionEn": "Belugas’ Sphere revisits Beluga Pod (2008) as a new ecology of autonomous robotic entities. Each Beluga seeks light and moves in response to its environment. As light intensity changes, their activity and collective behavior evolve, producing shifting formations, flocking, and song rather than fixed choreography. Visitors may influence these behaviors by introducing light, but participation is not required: the Belugas continue to act on their own. First imagined nearly two decades ago, they now resemble early inhabitants of an emerging machine economy, organizing around energy, proximity, and environmental conditions. The installation looks backward and forward at once, returning to an earlier vision of autonomous machines in a present increasingly shaped by agentic systems.",
     "videoUrls": [
@@ -3252,9 +3252,9 @@ window.DAF_DATA = {
     "id": "shop-04",
     "nameZh": "Gallery 188（杉畝藝術有限公司、OhMyDeer Floral）",
     "nameEn": "Gallery 188（Sam’s Art Co. 、OhMyDeer Floral）",
-    "address": "臺北市中山區圓山里民族東路102號",
-    "addressZh": "臺北市中山區圓山里民族東路102號",
-    "addressEn": "No. 102, Minzu E. Rd., Zhongshan Dist., Taipei City 104039, Taiwan (R.O.C.)",
+    "address": "台北市大同區承德路三段188號",
+    "addressZh": "台北市大同區承德路三段188號",
+    "addressEn": "No. 188, Sec. 3, Chengde Rd., Datong Dist., Taipei City 103034, Taiwan (R.O.C.)",
     "businessHours": [
       "周六  13:00-18:00",
       "周日  13:00-18:00",
@@ -3273,7 +3273,7 @@ window.DAF_DATA = {
     "phone": "0987992335",
     "description": "Gallery 188座落於台北市大同區承德路三段188號，從捷運圓山站1號出口步行即可抵達。以當代藝術為核心，持續邀請新銳藝術家、設計師及跨領域創作者展出，也透過策展、品牌合作、講座與工作坊，讓作品走進城市日常。\n空間保留親近而安靜的觀看尺度，觀眾可以放慢腳步，細看影像、繪畫與裝置中的情感線索。邀請大家將這裡納入城市漫遊路線，在熱鬧活動之間，留一段時間給藝術與自己。\n《在記憶折返以前》，由台北雙人創作團體Fina與Tony共同展出。Fina以散文式數位影像收集街道、人物與生活片刻；Tony透過翻轉、鏡像與重組，將城市燈火化為影像詩。兩人的作品游移於具象與抽象之間，沿著光線、記憶與時間交會，邀請觀眾辨認那些尚未說完、仍在心中折返的感受。",
     "descriptionZh": "Gallery 188座落於台北市大同區承德路三段188號，從捷運圓山站1號出口步行即可抵達。以當代藝術為核心，持續邀請新銳藝術家、設計師及跨領域創作者展出，也透過策展、品牌合作、講座與工作坊，讓作品走進城市日常。\n空間保留親近而安靜的觀看尺度，觀眾可以放慢腳步，細看影像、繪畫與裝置中的情感線索。邀請大家將這裡納入城市漫遊路線，在熱鬧活動之間，留一段時間給藝術與自己。\n《在記憶折返以前》，由台北雙人創作團體Fina與Tony共同展出。Fina以散文式數位影像收集街道、人物與生活片刻；Tony透過翻轉、鏡像與重組，將城市燈火化為影像詩。兩人的作品游移於具象與抽象之間，沿著光線、記憶與時間交會，邀請觀眾辨認那些尚未說完、仍在心中折返的感受。",
-    "descriptionEn": "Gallery 188 is located at No. 102, Minzu E. Rd., Zhongshan Dist., Taipei City 104039, Taiwan (R.O.C.), within walking distance of Exit 1 of Yuanshan MRT Station. With a focus on contemporary art, the gallery regularly presents works by emerging artists, designers, and interdisciplinary creators. Through curated exhibitions, brand collaborations, talks, and workshops, Gallery 188 brings art into the fabric of everyday urban life.\nThe space offers an intimate and quiet setting for viewing, inviting visitors to slow down and discover the emotional threads woven through moving images, paintings, and installations. Gallery 188 welcomes visitors to make the space part of their journey through the city—to set aside a moment amid the bustle and spend some time with art and themselves.\nBefore Memory Turns Back is a joint exhibition by Taipei-based artist duo Fina and Tony. Fina gathers fragments of streets, people, and everyday life through essayistic digital imagery, while Tony transforms the lights of the city into visual poetry through inversion, mirroring, and recomposition. Moving between the figurative and the abstract, their works trace intersections of light, memory, and time, inviting viewers to recognize feelings that remain unfinished and continue to return within.",
+    "descriptionEn": "Gallery 188 is located at No. 188, Sec. 3, Chengde Rd., Datong Dist., Taipei City 103034, Taiwan (R.O.C.), within walking distance of Exit 1 of Yuanshan MRT Station. With a focus on contemporary art, the gallery regularly presents works by emerging artists, designers, and interdisciplinary creators. Through curated exhibitions, brand collaborations, talks, and workshops, Gallery 188 brings art into the fabric of everyday urban life.\nThe space offers an intimate and quiet setting for viewing, inviting visitors to slow down and discover the emotional threads woven through moving images, paintings, and installations. Gallery 188 welcomes visitors to make the space part of their journey through the city—to set aside a moment amid the bustle and spend some time with art and themselves.\nBefore Memory Turns Back is a joint exhibition by Taipei-based artist duo Fina and Tony. Fina gathers fragments of streets, people, and everyday life through essayistic digital imagery, while Tony transforms the lights of the city into visual poetry through inversion, mirroring, and recomposition. Moving between the figurative and the abstract, their works trace intersections of light, memory, and time, inviting viewers to recognize feelings that remain unfinished and continue to return within.",
     "links": {
       "website": "https://www.samsart.net/",
       "instagram": "https://www.instagram.com/gallery188_/",

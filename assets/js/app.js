@@ -22,6 +22,26 @@
   syncTouchNavigationClass();
   window.addEventListener("resize", () => siteResizeHandlers.forEach(handler => handler()), {passive: true});
 
+  const syncMetadataRowAlignment = (root = document) => {
+    root.querySelectorAll(".detail-meta > div, .shop-meta > div").forEach(row => {
+      if (!row.isConnected || !row.getClientRects().length) return;
+      const value = row.querySelector(":scope > dd");
+      if (!value) return;
+      const visibleChildren = [...value.children].filter(child => child.getClientRects().length);
+      const valueStyle = getComputedStyle(value);
+      const lineHeight = parseFloat(valueStyle.lineHeight) || parseFloat(valueStyle.fontSize) * 1.2;
+      const isMultiLine = visibleChildren.length > 1 || value.getBoundingClientRect().height > lineHeight * 1.5;
+      row.classList.toggle("is-single-line", !isMultiLine);
+      row.classList.toggle("is-multi-line", isMultiLine);
+    });
+  };
+  let metadataAlignmentTimer = 0;
+  const scheduleMetadataRowAlignment = (root = document) => {
+    window.clearTimeout(metadataAlignmentTimer);
+    metadataAlignmentTimer = window.setTimeout(() => syncMetadataRowAlignment(root), 100);
+  };
+  siteResizeHandlers.add(() => scheduleMetadataRowAlignment());
+
   const normalizeImage = (image, fallbackLabel, allowEmpty = false) => {
     if (typeof image === "string") return image || allowEmpty ? {src: image, alt: fallbackLabel} : null;
     if (!image || typeof image !== "object") return null;
@@ -46,6 +66,172 @@
   const imageMarkup = (image, fallbackLabel, cls = "") => image?.src
     ? `<img class="${cls}" src="${C.assetRoute(image.src)}" alt="${image.alt || fallbackLabel}">`
     : C.placeholder(image?.alt || fallbackLabel, cls);
+
+  const detailGalleryLabels = subject => isEnglish ? {
+    gallery: `${subject} image gallery`, open: "Open image viewer", previous: "Previous image",
+    next: "Next image", close: "Close image viewer"
+  } : {
+    gallery: `${subject}圖片藝廊`, open: "開啟圖片放大檢視", previous: "上一張圖片",
+    next: "下一張圖片", close: "關閉圖片放大檢視"
+  };
+
+  const closeActiveDetailLightbox = () => document.querySelector("[data-detail-lightbox]")?.__closeDetailLightbox?.();
+  const openDetailLightbox = (images, initialIndex, trigger, labels) => {
+    if (!images.length) return;
+    closeActiveDetailLightbox();
+    let activeIndex = initialIndex;
+    const lightbox = document.createElement("div");
+    lightbox.className = "detail-lightbox";
+    lightbox.dataset.detailLightbox = "";
+    lightbox.setAttribute("role", "dialog");
+    lightbox.setAttribute("aria-modal", "true");
+    lightbox.setAttribute("aria-label", labels.gallery);
+    lightbox.innerHTML = `
+      <button class="detail-lightbox-close" type="button" data-detail-lightbox-close aria-label="${labels.close}">×</button>
+      <div class="detail-lightbox-stage"><img data-detail-lightbox-image src="" alt=""></div>
+      ${images.length > 1 ? `<button class="detail-lightbox-arrow is-previous" type="button" data-detail-lightbox-direction="-1" aria-label="${labels.previous}">‹</button><button class="detail-lightbox-arrow is-next" type="button" data-detail-lightbox-direction="1" aria-label="${labels.next}">›</button>` : ""}
+      <span class="detail-lightbox-count" data-detail-lightbox-count></span>`;
+    const image = lightbox.querySelector("[data-detail-lightbox-image]");
+    const count = lightbox.querySelector("[data-detail-lightbox-count]");
+    const closeButton = lightbox.querySelector("[data-detail-lightbox-close]");
+    const update = index => {
+      activeIndex = (index + images.length) % images.length;
+      image.src = C.assetRoute(images[activeIndex].src);
+      image.alt = images[activeIndex].alt;
+      count.textContent = `${activeIndex + 1} / ${images.length}`;
+    };
+    const close = () => {
+      window.removeEventListener("keydown", onKeydown, true);
+      lightbox.remove();
+      document.body.classList.remove("detail-lightbox-open");
+      if (trigger?.isConnected) trigger.focus({preventScroll: true});
+    };
+    const onKeydown = event => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        close();
+      } else if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        update(activeIndex + (event.key === "ArrowLeft" ? -1 : 1));
+      }
+    };
+    lightbox.__closeDetailLightbox = close;
+    lightbox.addEventListener("click", event => {
+      const direction = event.target.closest("[data-detail-lightbox-direction]");
+      if (direction) update(activeIndex + Number(direction.dataset.detailLightboxDirection));
+      else if (event.target === lightbox || event.target.closest("[data-detail-lightbox-close]")) close();
+    });
+    update(activeIndex);
+    document.body.append(lightbox);
+    document.body.classList.add("detail-lightbox-open");
+    window.addEventListener("keydown", onKeydown, true);
+    closeButton.focus({preventScroll: true});
+  };
+
+  const renderDetailGallery = (container, images, labels) => {
+    if (!container) return;
+    container.__detailGalleryCleanup?.();
+    container.innerHTML = images.map((image, index) => `
+      <button class="detail-gallery-item" type="button" data-detail-gallery-index="${index}" aria-label="${labels.open}: ${image.alt}">
+        <img src="${C.assetRoute(image.src)}" alt="${image.alt}" loading="lazy" decoding="async">
+      </button>`).join("");
+    container.setAttribute("aria-label", labels.gallery);
+    const buttons = [...container.querySelectorAll("[data-detail-gallery-index]")];
+    buttons.forEach(button => {
+      button.addEventListener("click", () => openDetailLightbox(images, Number(button.dataset.detailGalleryIndex), button, labels));
+    });
+    const mobileGalleryMedia = window.matchMedia("(max-width: 600px)");
+    const targetRowHeight = 260;
+    const maxImagesPerRow = 3;
+    const imageRatio = button => {
+      const image = button.querySelector("img");
+      return image?.naturalWidth && image?.naturalHeight ? image.naturalWidth / image.naturalHeight : 4 / 3;
+    };
+    const resetButtonSize = button => {
+      button.style.removeProperty("width");
+      button.style.removeProperty("height");
+    };
+    const arrangeGallery = () => {
+      const orderedButtons = [...buttons].sort((a, b) => Number(a.dataset.detailGalleryIndex) - Number(b.dataset.detailGalleryIndex));
+      orderedButtons.forEach(button => container.append(button));
+      container.querySelectorAll(".detail-gallery-row").forEach(row => row.remove());
+      orderedButtons.forEach(resetButtonSize);
+      if (mobileGalleryMedia.matches || !orderedButtons.length) return;
+      const containerStyle = getComputedStyle(container);
+      const containerWidth = container.clientWidth
+        - (parseFloat(containerStyle.paddingLeft) || 0)
+        - (parseFloat(containerStyle.paddingRight) || 0);
+      if (!containerWidth) return;
+      const gap = parseFloat(containerStyle.getPropertyValue("--detail-gallery-gap")) || 16;
+      const rows = [];
+      let currentRow = [];
+      let ratioSum = 0;
+      orderedButtons.forEach(button => {
+        const ratio = imageRatio(button);
+        currentRow.push({button, ratio});
+        ratioSum += ratio;
+        const availableWidth = containerWidth - gap * (currentRow.length - 1);
+        const fittedHeight = availableWidth / ratioSum;
+        if (currentRow.length === maxImagesPerRow || fittedHeight <= targetRowHeight) {
+          rows.push(currentRow);
+          currentRow = [];
+          ratioSum = 0;
+        }
+      });
+      if (currentRow.length) rows.push(currentRow);
+      rows.forEach((items, rowIndex) => {
+        const row = document.createElement("div");
+        row.className = "detail-gallery-row";
+        const sum = items.reduce((total, item) => total + item.ratio, 0);
+        const availableWidth = containerWidth - gap * (items.length - 1);
+        const isLastRow = rowIndex === rows.length - 1;
+        const rowHeight = isLastRow ? Math.min(targetRowHeight, availableWidth / sum) : availableWidth / sum;
+        items.forEach(({button, ratio}) => {
+          button.style.width = `${rowHeight * ratio}px`;
+          button.style.height = `${rowHeight}px`;
+          row.append(button);
+        });
+        container.append(row);
+      });
+    };
+    arrangeGallery();
+    let resizeTimer = 0;
+    const scheduleArrange = () => {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(arrangeGallery, 100);
+    };
+    buttons.forEach(button => {
+      const image = button.querySelector("img");
+      if (!image?.complete) {
+        image?.addEventListener("load", scheduleArrange, {once: true});
+        image?.addEventListener("error", scheduleArrange, {once: true});
+      }
+    });
+    let observedWidth = container.clientWidth;
+    const resizeObserver = "ResizeObserver" in window ? new ResizeObserver(entries => {
+      const width = entries[0]?.contentRect.width || container.clientWidth;
+      if (Math.abs(width - observedWidth) < 1) return;
+      observedWidth = width;
+      scheduleArrange();
+    }) : null;
+    resizeObserver?.observe(container);
+    const resizeHandler = () => {
+      if (!container.isConnected) {
+        siteResizeHandlers.delete(resizeHandler);
+        resizeObserver?.disconnect();
+        return;
+      }
+      scheduleArrange();
+    };
+    container.__detailGalleryCleanup = () => {
+      window.clearTimeout(resizeTimer);
+      resizeObserver?.disconnect();
+      siteResizeHandlers.delete(resizeHandler);
+    };
+    siteResizeHandlers.add(resizeHandler);
+  };
 
   const storeRecordForStatus = (id, source) => (source === "shop" ? D.shops : D.venues).find(item => item.id === id);
   const storeStatusMarkup = (store, {compact = false, source = "venue", className = ""} = {}) => {
@@ -166,7 +352,8 @@
   };
 
   const featuredProgramCards = entries => entries.map(({event, ongoing, kind}) => {
-    const image = coverImageFor(event, `${textFor(event, "title")} ${isEnglish ? "program image" : "活動圖片"}`);
+    const imageLabel = `${textFor(event, "title")} ${isEnglish ? "program image" : "活動圖片"}`;
+    const image = normalizeImage(event.coverImage, imageLabel) || normalizeImage(event.image, imageLabel);
     const route = event.route || `event-detail.html?id=${event.detailId ?? event.id}`;
     return `
     <a class="home-featured-card" href="${C.localizedRoute(route)}">
@@ -667,9 +854,27 @@
       if (!registration) registrationRow.remove();
       else setDetailText("[data-event-registration]", registration);
     }
-    const recordImages = galleryImagesFor(event, "活動紀錄圖片");
-    document.querySelector("[data-event-gallery]").innerHTML = recordImages.map(image => imageMarkup(image, "活動紀錄圖片")).join("");
+    showConditionalField("[data-event-registration-method-row]", "[data-event-registration-method]", "registrationMethod", ["講座", "工作坊"]);
+    const descriptionSection = document.querySelector("[data-event-description-section]");
+    const descriptionContainer = document.querySelector("[data-event-description]");
+    const eventDescription = event.type === "工作坊" ? textFor(event, "description") : "";
+    if (descriptionSection && descriptionContainer && eventDescription) {
+      const paragraphs = String(eventDescription).split(/\n\s*\n/).map(paragraph => {
+        const element = document.createElement("p");
+        element.textContent = paragraph;
+        return element;
+      });
+      descriptionContainer.replaceChildren(...paragraphs);
+      descriptionSection.hidden = false;
+    }
+    const documentationAlt = index => `${textFor(event, "title")} ${isEnglish ? "event documentation" : "活動紀錄"} ${index + 1}`;
+    const recordImages = Array.isArray(event.images)
+      ? event.images.map((image, index) => normalizeImage(image, documentationAlt(index))).filter(Boolean)
+      : [];
+    const eventGallery = document.querySelector("[data-event-gallery]");
+    renderDetailGallery(eventGallery, recordImages, detailGalleryLabels(textFor(event, "title")));
     document.querySelector("[data-event-gallery-section]").hidden = recordImages.length === 0;
+    scheduleMetadataRowAlignment(article);
   };
 
   const programRoute = event => event.route || `event-detail.html?id=${event.detailId ?? event.id}`;
@@ -1652,7 +1857,10 @@
     let activeCard = null;
     let activeMarker = null;
     let activeUiLayer = null;
-    const closeMarkerCard = () => {
+    let restoreMarkerFocusOnClose = false;
+    const closeMarkerCard = ({restoreFocus = true} = {}) => {
+      const markerToRestore = activeMarker;
+      const shouldRestoreFocus = restoreFocus && restoreMarkerFocusOnClose && markerToRestore?.isConnected;
       closeDismissiblePanel({
         panel: activeCard,
         layer: activeUiLayer,
@@ -1662,6 +1870,8 @@
           activeCard = null;
           activeMarker = null;
           activeUiLayer = null;
+          restoreMarkerFocusOnClose = false;
+          if (shouldRestoreFocus) markerToRestore.focus({preventScroll: true});
         }
       });
     };
@@ -1670,6 +1880,7 @@
       const markerLayer = map.querySelector("[data-map-markers]");
       const card = map.querySelector(".marker-card");
       const uiLayer = map.querySelector(".map-ui-layer");
+      const cardTitleId = `${map.dataset.mapId}-marker-card-title`;
       const positionMarkerCard = () => {
         if (activeCard !== card || !activeMarker || card.hidden || isCompactMap()) return;
         card.classList.remove("arrow-left", "arrow-right");
@@ -1811,7 +2022,8 @@
           return Math.hypot(rect.left + rect.width / 2 - sourceX, rect.top + rect.height / 2 - sourceY) < 34;
         });
       };
-      markers.forEach(marker => marker.addEventListener("click", () => {
+      markers.forEach(marker => marker.addEventListener("click", event => {
+        const openedFromKeyboard = event.detail === 0;
         const requestedSpreadGroup = spreadGroupFor(marker);
         const isInActiveSpreadGroup = requestedSpreadGroup?.id === activeSpreadGroupId;
         if (!isInActiveSpreadGroup) {
@@ -1834,13 +2046,14 @@
             return;
           }
         }
-        closeMarkerCard();
+        closeMarkerCard({restoreFocus: false});
         const location = D.mapLocations.find(item => item.id === selectedMarker.dataset.locationId);
         const works = location.workIds.map(workById).filter(Boolean);
         const venue = venueById(location.venueId);
         activeMarker = selectedMarker;
         activeCard = card;
         activeUiLayer = uiLayer;
+        restoreMarkerFocusOnClose = openedFromKeyboard;
         selectedMarker.setAttribute("aria-expanded", "true");
         const workMarkup = works.map(work => {
           const catalogWork = catalogWorkFor(work);
@@ -1855,10 +2068,12 @@
           ${imageMarkup(galleryImages[0], galleryImages[0].alt)}
           ${galleryImages.length > 1 ? `<button class="marker-card-media-arrow is-previous" type="button" data-marker-gallery-direction="-1" aria-label="${isEnglish ? "Previous image" : "上一張圖片"}">‹</button><button class="marker-card-media-arrow is-next" type="button" data-marker-gallery-direction="1" aria-label="${isEnglish ? "Next image" : "下一張圖片"}">›</button><div class="gallery-dots" aria-label="${isEnglish ? "Image pagination" : "圖片分頁"}">${galleryImages.map((_, index) => `<button type="button" data-marker-gallery-index="${index}" aria-label="${isEnglish ? `View image ${index + 1}` : `查看第 ${index + 1} 張圖片`}" aria-current="${index === 0 ? "true" : "false"}"></button>`).join("")}</div>` : ""}
         </div>` : `<div class="marker-card-media">${C.placeholder(isEnglish ? "Work image pending" : "作品圖片待提供")}</div>`;
-        card.innerHTML = `<div class="marker-card-controls"><button class="marker-card-close" type="button" aria-label="${isEnglish ? "Close location information" : "關閉位置資訊卡"}">×</button></div>${mediaMarkup}<header class="marker-card-location"><span class="venue-number">${venue?.displayNumber || "00"}</span><strong>${venueName(venue)}</strong>${storeStatusMarkup(venue, {compact:true})}</header><div class="marker-card-works">${workMarkup}</div>`;
+        card.setAttribute("aria-labelledby", cardTitleId);
+        card.innerHTML = `<div class="marker-card-controls"><button class="marker-card-close" type="button" aria-label="${isEnglish ? "Close location information" : "關閉位置資訊卡"}">×</button></div>${mediaMarkup}<header class="marker-card-location"><span class="venue-number">${venue?.displayNumber || "00"}</span><strong id="${cardTitleId}">${venueName(venue)}</strong>${storeStatusMarkup(venue, {compact:true})}</header><div class="marker-card-works">${workMarkup}</div>`;
         card.hidden = false;
         uiLayer.classList.add("is-open");
-        card.querySelector(".marker-card-close").addEventListener("click", closeMarkerCard);
+        const closeButton = card.querySelector(".marker-card-close");
+        closeButton.addEventListener("click", closeMarkerCard);
         const gallery = card.querySelector("[data-marker-gallery]");
         const showGalleryImage = index => {
           if (!gallery || !galleryImages.length) return;
@@ -1872,6 +2087,7 @@
         card.querySelectorAll("[data-marker-gallery-direction]").forEach(button => button.addEventListener("click", () => showGalleryImage(Number(gallery.dataset.galleryIndex) + Number(button.dataset.markerGalleryDirection))));
         card.querySelectorAll("[data-marker-gallery-index]").forEach(button => button.addEventListener("click", () => showGalleryImage(Number(button.dataset.markerGalleryIndex))));
         syncMapCardMode();
+        if (openedFromKeyboard) closeButton.focus({preventScroll: true});
       }));
       map.addEventListener("click", event => { if (!event.target.closest(".marker, .marker-card")) clearSpread(); });
       window.addEventListener("resize", syncMapCardMode);
@@ -1903,23 +2119,48 @@
     window.visualViewport?.addEventListener("scroll", syncShopVisualViewport);
 
     let returnFocus = null;
-    let activeGalleryIndex = 0;
     let activeShop = null;
-    let activeGalleryImages = [];
-    let activeGalleryAlt = "";
     const shopName = shop => isEnglish ? shop.nameEn || shop.nameZh : shop.nameZh || shop.nameEn;
     const shopSecondaryName = shop => !isEnglish && shop.nameEn && shop.nameEn !== shop.nameZh ? shop.nameEn : "";
     const shopAddress = shop => isEnglish ? shop.addressEn || shop.addressZh || shop.address : shop.addressZh || shop.address;
     const shopDescription = shop => isEnglish ? shop.descriptionEn || shop.descriptionZh || shop.description : shop.descriptionZh || shop.description;
     const shopBusinessHours = shop => isEnglish && shop.businessHoursEn?.length ? shop.businessHoursEn : shop.businessHours;
+    const sameStoreHours = (left, right) => JSON.stringify(left || null) === JSON.stringify(right || null);
+    const shopSpecialHours = shop => Object.entries(shop.specialHours || {}).filter(([date, hours]) => {
+      const [, month, day] = date.split("-");
+      const dateToken = `${Number(month)}/${day}`;
+      const listedHours = [...(shop.businessHours || []), ...(shop.businessHoursEn || [])];
+      const alreadyListed = listedHours.some(line => String(line).includes(dateToken));
+      const weekday = new Date(`${date}T12:00:00`).getDay();
+      const matchesRegularHours = sameStoreHours(hours, shop.businessHoursSchedule?.[weekday]);
+      return !alreadyListed && !matchesRegularHours;
+    }).map(([date, hours]) => {
+      const [, month, day] = date.split("-");
+      const weekday = new Date(`${date}T12:00:00`).getDay();
+      const weekdayLabel = isEnglish ? ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][weekday] : "日一二三四五六"[weekday];
+      const dateLabel = isEnglish ? `${Number(month)}/${Number(day)} (${weekdayLabel})` : `${Number(month)}/${Number(day)}（${weekdayLabel}）`;
+      const ranges = (hours || []).map(({open, close}) => `${open}–${close}`).join("、");
+      return `${dateLabel} ${ranges}`;
+    });
     const isReserveImage = src => /(?:^|\/)備\d+\.[^/]+$/i.test(String(src || ""));
     const publicImages = images => Array.isArray(images) ? images.filter(src => typeof src === "string" && src.trim() && !isReserveImage(src)) : [];
+    const storeDetailImages = shop => {
+      const seen = new Set();
+      return publicImages([shop?.mainImage, ...(shop?.images || [])]).filter(src => {
+        const key = src.trim().replace(/\\/g, "/").replace(/^\.\//, "").toLowerCase();
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+    };
     const collaborationMain = project => publicImages(project?.images).find(src => /(?:^|\/)main\.(?:jpe?g|png)$/i.test(src)) || "";
     const labels = isEnglish ? {
       address: "ADDRESS", hours: "BUSINESS HOURS", phone: "PHONE", description: "ABOUT",
+      specialHours: "SPECIAL HOURS",
       close: "Close partner store details", previous: "Previous image", next: "Next image", detail: "View details"
     } : {
       address: "地址", hours: "營業時間", phone: "電話", description: "店家介紹",
+      specialHours: "特殊營業時間",
       close: "關閉合作店家資訊", previous: "上一張圖片", next: "下一張圖片", detail: "查看詳細資訊"
     };
     const collaborationLabels = isEnglish ? {
@@ -1959,7 +2200,9 @@
     const partnerShops = D.shops.map((shop, index) => ({...shop, displayNumber: String(index + 1).padStart(2, "0"), recordType: "partner"}));
     const artVenues = D.venues.filter(venue => venue.type === "district").map(venue => ({...venue, recordType: "venue"}));
     const records = [...partnerShops, ...artVenues];
-    const collaborationRecords = records.flatMap(shop => (shop.collaborations || []).map(project => ({shop, project}))).filter(({project}) => project);
+    const collaborationRecords = records
+      .flatMap(shop => (shop.collaborations || []).map(project => ({shop, project})))
+      .filter(({project}) => project);
     lists.forEach(list => {
       const source = list.dataset.shopList === "venues" ? artVenues : partnerShops;
       list.innerHTML = source.map(listCard).join("");
@@ -1967,9 +2210,10 @@
     if (collaborationList) {
       collaborationList.innerHTML = collaborationRecords.map(({shop, project}) => {
         const title = isEnglish ? (project.titleEn || project.titleZh) : (project.titleZh || project.titleEn);
+        const heading = title || shopName(shop);
         const description = isEnglish ? (project.descriptionEn || project.descriptionZh) : (project.descriptionZh || project.descriptionEn);
         const preview = collaborationMain(project);
-        return `<article class="shop-collaboration-card"><div>${title ? `<h3>${title}</h3>` : ""}<p class="shop-collaboration-store">${shopName(shop)}</p>${description ? `<p>${String(description).split("\n").find(line => line.trim())}</p>` : ""}</div>${preview ? `<div class="shop-collaboration-card-image"><img src="${C.assetRoute(preview)}" alt="${title || shopName(shop)} ${isEnglish ? "collaboration image" : "合作企劃圖片"}"></div>` : ""}<button class="button shop-detail-trigger" type="button" data-collaboration-id="${project.id}" aria-haspopup="dialog">${labels.detail}</button></article>`;
+        return `<article class="shop-collaboration-card"><div><h3>${heading}</h3><p class="shop-collaboration-store">${shopName(shop)}</p>${description ? `<p>${String(description).split("\n").find(line => line.trim())}</p>` : ""}</div>${preview ? `<div class="shop-collaboration-card-image"><img src="${C.assetRoute(preview)}" alt="${heading} ${isEnglish ? "collaboration image" : "合作企劃圖片"}"></div>` : ""}<button class="button shop-detail-trigger" type="button" data-collaboration-id="${project.id}" aria-haspopup="dialog">${labels.detail}</button></article>`;
       }).join("");
     }
 
@@ -1977,29 +2221,9 @@
       closeDismissiblePanel({panel, layer, hideLayer: true});
       unlockModalPageScroll("shop-modal-open");
       activeShop = null;
-      activeGalleryImages = [];
-      activeGalleryAlt = "";
       if (restoreFocus && returnFocus) returnFocus.focus({preventScroll: true});
       returnFocus = null;
     };
-
-    const updateGallery = direction => {
-      const images = activeGalleryImages;
-      if (!images.length) return;
-      activeGalleryIndex = (activeGalleryIndex + direction + images.length) % images.length;
-      const image = panel.querySelector("[data-shop-gallery-image]");
-      const count = panel.querySelector("[data-shop-gallery-count]");
-      image.src = C.assetRoute(images[activeGalleryIndex]);
-      image.alt = `${activeGalleryAlt} ${activeGalleryIndex + 1}`;
-      if (count) count.textContent = `${activeGalleryIndex + 1} / ${images.length}`;
-    };
-
-    const galleryMarkup = (images, alt) => images.length ? `
-      <div class="shop-gallery">
-        <img data-shop-gallery-image src="${C.assetRoute(images[0])}" alt="${alt} 1">
-        ${images.length > 1 ? `<button class="shop-gallery-arrow is-previous" type="button" data-shop-gallery-direction="-1" aria-label="${labels.previous}">‹</button><button class="shop-gallery-arrow is-next" type="button" data-shop-gallery-direction="1" aria-label="${labels.next}">›</button>` : ""}
-        ${images.length > 1 ? `<span class="shop-gallery-count" data-shop-gallery-count>1 / ${images.length}</span>` : ""}
-      </div>` : "";
 
     const showDetailPanel = (trigger, closeLabel) => {
       returnFocus = trigger;
@@ -2012,18 +2236,15 @@
       const closeButton = panel.querySelector(".marker-card-close");
       closeButton.setAttribute("aria-label", closeLabel);
       closeButton.addEventListener("click", () => closeShopPanel());
-      panel.querySelectorAll("[data-shop-gallery-direction]").forEach(button => button.addEventListener("click", () => updateGallery(Number(button.dataset.shopGalleryDirection))));
       closeButton.focus();
     };
 
     const openShopPanel = (shop, trigger) => {
       activeShop = shop;
-      activeGalleryIndex = 0;
-      const images = publicImages(shop.images);
-      activeGalleryImages = images;
-      activeGalleryAlt = `${shopName(shop)} ${isEnglish ? "image" : "圖片"}`;
+      const imageAlt = index => `${shopName(shop)} ${isEnglish ? "image" : "圖片"} ${index + 1}`;
+      const images = storeDetailImages(shop).map((image, index) => normalizeImage(image, imageAlt(index))).filter(Boolean);
+      const specialHours = shopSpecialHours(shop);
       panel.classList.toggle("has-gallery", images.length > 0);
-      const gallery = galleryMarkup(images, activeGalleryAlt);
       panel.innerHTML = `
         <div class="shop-detail-controls"><button class="marker-card-close" type="button" aria-label="${labels.close}">×</button></div>
         <div class="shop-detail-content">
@@ -2033,14 +2254,17 @@
           <dl class="shop-meta">
             ${shopAddress(shop) ? `<div><dt>${labels.address}</dt><dd>${shopAddress(shop)}</dd></div>` : ""}
             ${shopBusinessHours(shop)?.length ? `<div><dt>${labels.hours}</dt><dd>${shopBusinessHours(shop).map(line => `<span>${line}</span>`).join("")}</dd></div>` : ""}
+            ${specialHours.length ? `<div><dt>${labels.specialHours}</dt><dd>${specialHours.map(line => `<span>${line}</span>`).join("")}</dd></div>` : ""}
             ${shop.phone ? `<div><dt>${labels.phone}</dt><dd>${shop.phone}</dd></div>` : ""}
           </dl>
           ${shopDescription(shop) ? `<section class="shop-description"><h4>${labels.description}</h4>${shopDescription(shop).split("\n").map(paragraph => `<p>${paragraph}</p>`).join("")}</section>` : ""}
           ${linkMarkup(shop) ? `<div class="shop-links">${linkMarkup(shop)}</div>` : ""}
           ${shop.recordType === "venue" && shop.workIds?.length ? `<div class="shop-venue-works">${shop.workIds.map(id => workCatalog.find(work => String(work.id) === String(id))).filter(Boolean).map(work => `<a href="${C.localizedRoute(`work-detail.html?id=${work.id}`)}"><span>${work.number}</span>${textFor(work, "title")}</a>`).join("")}</div>` : ""}
         </div>
-        ${gallery}`;
+        ${images.length ? '<div class="detail-gallery shop-detail-gallery" data-shop-detail-gallery></div>' : ""}`;
+      renderDetailGallery(panel.querySelector("[data-shop-detail-gallery]"), images, detailGalleryLabels(shopName(shop)));
       showDetailPanel(trigger, labels.close);
+      scheduleMetadataRowAlignment(panel);
     };
 
     const collaborationText = (project, field) => {
@@ -2050,7 +2274,6 @@
     const fieldMarkup = (label, value) => value ? `<div class="shop-collaboration-field"><strong>${label}</strong>${value.split("\n").map(line => `<p>${line}</p>`).join("")}</div>` : "";
     const openCollaborationPanel = ({shop, project}, trigger) => {
       activeShop = null;
-      activeGalleryIndex = 0;
       const title = collaborationText(project, "title");
       const description = collaborationText(project, "description");
       const content = collaborationText(project, "content");
@@ -2058,15 +2281,15 @@
       const hours = collaborationText(project, "hours");
       const supply = collaborationText(project, "supply");
       const notice = collaborationText(project, "notice");
-      const images = publicImages(project.images);
-      activeGalleryImages = images;
-      activeGalleryAlt = `${title || collaborationLabels.heading} ${isEnglish ? "image" : "圖片"}`;
+      const heading = title || shopName(shop);
+      const imageAlt = index => `${heading} ${isEnglish ? "image" : "圖片"} ${index + 1}`;
+      const images = publicImages(project.images).map((image, index) => normalizeImage(image, imageAlt(index))).filter(Boolean);
       panel.classList.toggle("has-gallery", images.length > 0);
       panel.innerHTML = `
         <div class="shop-detail-controls"><button class="marker-card-close" type="button">×</button></div>
         <div class="shop-detail-content">
           <p class="shop-number">${collaborationLabels.heading}</p>
-          <h3 id="shop-detail-title">${title || collaborationLabels.heading}</h3>
+          <h3 id="shop-detail-title">${heading}</h3>
           <dl class="shop-meta"><div><dt>${collaborationLabels.store}</dt><dd>${shopName(shop)}</dd></div></dl>
           ${description ? `<section class="shop-description"><h4>${collaborationLabels.description}</h4>${description.split("\n").map(paragraph => `<p>${paragraph}</p>`).join("")}</section>` : ""}
           ${fieldMarkup(collaborationLabels.content, content)}
@@ -2075,8 +2298,10 @@
           ${fieldMarkup(collaborationLabels.supply, supply)}
           ${fieldMarkup(collaborationLabels.notice, notice)}
         </div>
-        ${galleryMarkup(images, activeGalleryAlt)}`;
+        ${images.length ? '<div class="detail-gallery shop-detail-gallery" data-shop-detail-gallery></div>' : ""}`;
+      renderDetailGallery(panel.querySelector("[data-shop-detail-gallery]"), images, detailGalleryLabels(heading));
       showDetailPanel(trigger, collaborationLabels.close);
+      scheduleMetadataRowAlignment(panel);
     };
 
     lists.forEach(list => list.addEventListener("click", event => {

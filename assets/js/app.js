@@ -15,10 +15,23 @@
   const queryId = () => new URLSearchParams(location.search).get("id");
   const seoBrand = isEnglish ? "2026 Taipei Digital Art Festival" : "2026 臺北數位藝術節";
   const seoTitle = title => `${title}${isEnglish ? " | " : "｜"}${seoBrand}`;
+  // PRODUCTION_ABSOLUTE_URL_PENDING: replace with the final absolute HTTPS URL after domain confirmation.
+  const fallbackSocialImage = isEnglish
+    ? "../assets/images/seo/daf2026-og-default.jpg"
+    : "assets/images/seo/daf2026-og-default.jpg";
+  const fallbackSocialImageAlt = isEnglish
+    ? "2026 Taipei Digital Art Festival “Grey Autonomous Entity” key visual"
+    : "2026 臺北數位藝術節「灰色自動體」主視覺";
   const metadataElement = (attribute, key) => document.head.querySelector(`meta[${attribute}="${key}"]`);
   const setMetadataContent = (attribute, key, content) => {
-    const element = metadataElement(attribute, key);
-    if (element && content) element.setAttribute("content", content);
+    if (!content) return;
+    let element = metadataElement(attribute, key);
+    if (!element) {
+      element = document.createElement("meta");
+      element.setAttribute(attribute, key);
+      document.head.append(element);
+    }
+    element.setAttribute("content", content);
   };
   const setRobotsDirective = content => {
     const element = metadataElement("name", "robots");
@@ -54,14 +67,24 @@
   };
   const updateDetailMetadata = ({title, description, type, robots = null, kind, id}) => {
     const fullTitle = seoTitle(title);
+    const allowSocialImage = !String(robots || "").toLowerCase().startsWith("noindex");
     document.title = fullTitle;
     setMetadataContent("name", "description", description);
     setMetadataContent("property", "og:title", fullTitle);
     setMetadataContent("property", "og:description", description);
     setMetadataContent("property", "og:type", type);
-    setMetadataContent("name", "twitter:card", "summary");
+    setMetadataContent("name", "twitter:card", allowSocialImage ? "summary_large_image" : "summary");
     setMetadataContent("name", "twitter:title", fullTitle);
     setMetadataContent("name", "twitter:description", description);
+    if (allowSocialImage) {
+      setMetadataContent("property", "og:image", fallbackSocialImage);
+      setMetadataContent("property", "og:image:width", "1200");
+      setMetadataContent("property", "og:image:height", "630");
+      setMetadataContent("property", "og:image:type", "image/jpeg");
+      setMetadataContent("property", "og:image:alt", fallbackSocialImageAlt);
+      setMetadataContent("name", "twitter:image", fallbackSocialImage);
+      setMetadataContent("name", "twitter:image:alt", fallbackSocialImageAlt);
+    }
     setRobotsDirective(robots);
     if (kind && id !== undefined && id !== null) updateDetailHreflang(kind, id);
   };

@@ -126,8 +126,7 @@
   };
 
   const coverImageFor = (item, fallbackLabel) => normalizeImage(item?.coverImage, fallbackLabel)
-    || normalizeImage(item?.image, fallbackLabel)
-    || normalizeImage(item?.images?.[0], fallbackLabel);
+    || normalizeImage(item?.image, fallbackLabel);
 
   const galleryImagesFor = (item, fallbackLabel, preservePlaceholders = false) => {
     const images = Array.isArray(item?.images)
@@ -573,6 +572,21 @@
     setDetailField("location", workLocationName(work), "work");
     setDetailText("[data-work-description]", textFor(work, "description"));
     document.querySelector("[data-work-description-section]").hidden = !textFor(work, "description");
+    const screeningProgram = Array.isArray(work.screeningProgram) ? work.screeningProgram : [];
+    const screeningSection = document.querySelector("[data-work-screening-section]");
+    const screeningList = document.querySelector("[data-work-screening-program]");
+    screeningSection.hidden = screeningProgram.length === 0;
+    screeningList.innerHTML = screeningProgram.map((item, index) => {
+      const title = String(isEnglish ? item.titleEn || "" : item.title || "").trim();
+      const artist = String(isEnglish ? item.artistEn || "" : item.artist || "").trim();
+      const description = String(isEnglish ? item.descriptionEn || "" : item.description || "").trim();
+      return `<article class="work-screening-item">
+        <p class="work-screening-number">${String(index + 1).padStart(2, "0")}</p>
+        ${title ? `<h3>${isEnglish ? title : `《${title}》`}</h3>` : ""}
+        ${artist ? `<p class="work-screening-artist">${artist}</p>` : ""}
+        ${description ? `<div class="work-screening-description">${description.split("\n\n").map(paragraph => `<p>${paragraph}</p>`).join("")}</div>` : ""}
+      </article>`;
+    }).join("");
     const images = galleryImagesFor(work, "作品圖片", true);
     const galleryElement = document.querySelector("[data-work-gallery]");
     const gallerySection = document.querySelector("[data-work-gallery-section]");
@@ -2290,11 +2304,13 @@
     const collaborationLabels = isEnglish ? {
       heading: "COLLABORATION", store: "PARTNER STORE", description: "ABOUT THE COLLABORATION",
       content: "CONTENT", price: "PRICE", hours: "AVAILABILITY", supply: "SUPPLY INFORMATION",
-      notice: "NOTES", close: "Close collaboration details"
+      notice: "NOTES", offers: "SPECIAL OFFER", offerCode: "PROMO CODE", offerDescription: "OFFER DETAILS",
+      close: "Close collaboration details"
     } : {
       heading: "合作企劃", store: "合作店家", description: "合作企劃介紹",
       content: "合作內容／商品內容", price: "價格", hours: "供應時間", supply: "供應資訊",
-      notice: "注意事項", close: "關閉合作企劃資訊"
+      notice: "注意事項", offers: "合作優惠", offerCode: "優惠碼", offerDescription: "優惠內容",
+      close: "關閉合作企劃資訊"
     };
 
     const linkMarkup = shop => Object.entries(shop.links || {}).map(([type, url]) => {
@@ -2396,6 +2412,7 @@
       return String(project[`${field}Zh`] ?? project[field] ?? "").trim();
     };
     const fieldMarkup = (label, value) => value ? `<div class="shop-collaboration-field"><strong>${label}</strong>${value.split("\n").map(line => `<p>${line}</p>`).join("")}</div>` : "";
+    const offerCodeMarkup = (code, index) => code ? `<div class="shop-collaboration-field shop-offer-code-field"><strong>${collaborationLabels.offerCode}</strong><div class="shop-offer-code-row"><button class="shop-offer-copy" type="button" data-offer-copy data-offer-index="${index}" aria-label="${isEnglish ? "Copy promo code" : "複製優惠碼"} ${code}"><span>${code}</span><img src="${C.assetRoute("assets/icons/copy.svg")}" alt=""></button><span class="shop-offer-copy-status" data-offer-copy-status role="status" aria-live="polite" aria-atomic="true">${isEnglish ? "COPIED" : "已複製"}</span></div></div>` : "";
     const openCollaborationPanel = ({shop, project}, trigger) => {
       activeShop = null;
       const title = collaborationText(project, "title");
@@ -2405,6 +2422,7 @@
       const hours = collaborationText(project, "hours");
       const supply = collaborationText(project, "supply");
       const notice = collaborationText(project, "notice");
+      const offers = Array.isArray(project.offers) ? project.offers : [];
       const heading = title || shopName(shop);
       const imageAlt = index => `${heading} ${isEnglish ? "image" : "圖片"} ${index + 1}`;
       const images = publicImages(project.images).map((image, index) => normalizeImage(image, imageAlt(index))).filter(Boolean);
@@ -2421,11 +2439,28 @@
           ${fieldMarkup(collaborationLabels.hours, hours)}
           ${fieldMarkup(collaborationLabels.supply, supply)}
           ${fieldMarkup(collaborationLabels.notice, notice)}
+          ${offers.length ? `<section class="shop-collaboration-offers"><h4>${collaborationLabels.offers}</h4>${offers.map((offer, index) => {
+            const offerTitle = collaborationText(offer, "title");
+            const offerDescription = collaborationText(offer, "description");
+            const offerCode = String(offer.code || "").trim();
+            return `<article>${offerTitle ? `<h5>${offerTitle}</h5>` : ""}${offerCodeMarkup(offerCode, index)}${offerDescription ? fieldMarkup(collaborationLabels.offerDescription, offerDescription) : ""}</article>`;
+          }).join("")}</section>` : ""}
         </div>
         ${images.length ? '<div class="detail-gallery shop-detail-gallery" data-shop-detail-gallery></div>' : ""}`;
       renderDetailGallery(panel.querySelector("[data-shop-detail-gallery]"), images, detailGalleryLabels(heading));
       showDetailPanel(trigger, collaborationLabels.close);
       scheduleMetadataRowAlignment(panel);
+      panel.querySelectorAll("[data-offer-copy]").forEach(button => button.addEventListener("click", async () => {
+        const offer = offers[Number(button.dataset.offerIndex)];
+        const code = String(offer?.code || "").trim();
+        if (!code) return;
+        const copied = await copyText(code);
+        if (!copied) return;
+        const status = button.parentElement.querySelector("[data-offer-copy-status]");
+        window.clearTimeout(status?._hideTimer);
+        status?.classList.add("is-visible");
+        if (status) status._hideTimer = window.setTimeout(() => status.classList.remove("is-visible"), 1800);
+      }));
     };
 
     lists.forEach(list => list.addEventListener("click", event => {
@@ -2623,17 +2658,22 @@
     }
     return copied;
   };
-  const copyCurrentPage = async () => {
+  const copyText = async value => {
     try {
       if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(window.location.href);
+        await navigator.clipboard.writeText(value);
         return true;
       }
-      return fallbackCopy(window.location.href);
+      return fallbackCopy(value);
     } catch (_) {
-      return fallbackCopy(window.location.href);
+      try {
+        return fallbackCopy(value);
+      } catch (_) {
+        return false;
+      }
     }
   };
+  const copyCurrentPage = () => copyText(window.location.href);
   const showCopyToast = (button, copied) => {
     const toast = button.closest(".share")?.querySelector(".copy-link-toast");
     if (!toast) return;

@@ -149,19 +149,19 @@ window.DAF_DATA = {
     "nameZh": "維麗娜．弗里德里希",
     "nameEn": "Verena Friedrich",
     "nationality": "德國",
-    "bio": "Verena Friedrich 的創作主要以時間性裝置為核心，結合有機媒材、電子媒介與雕塑性元素，發展出兼具感知經驗與觀念性的作品。她的計畫曾於國際間多個展覽、媒體藝術節與學術研討會中發表。",
+    "bio": "Verena Friedrich的創作以裝置與兼具詩意及功能性的機械為核心，將複雜的關係凝聚並轉化為具體且可感知的經驗。她的作品探索科技與科學系統的可能性及其限制，並關注其中所承載關於效率、可控性與進步的敘事。\n其作品曾於世界各地展出，包括德國卡爾斯魯厄藝術與媒體中心（ZKM Karlsruhe）、林茲電子藝術節（Ars Electronica）、國際電子藝術研討會（ISEA），以及亞洲多個藝術機構與展覽，包括首爾白南準藝術中心（Nam June Paik Art Center）、香港藝術中心（Hong Kong Arts Centre）及松戶國際科學藝術節（Matsudo International Science Art Festival）。\n她亦曾於德國科隆媒體藝術學院（Academy of Media Arts Cologne）、威瑪包浩斯大學（Bauhaus University Weimar）及奧芬巴赫藝術與設計大學（Offenbach University of Art and Design）擔任教授及教學職務。",
     "workId": "main-05",
     "workTitle": "EZ品質分解機V2",
     "workTitleEn": "EZ Quality Soryer V2",
     "career": "獲獎\n2005｜ZKM Karlsruhe「科學與藝術國際媒體獎」，VIDA 13.2 Art and Artificial Life Award 特別提名。\n2015、2023｜Prix Ars Electronica 榮譽提名。",
     "image": {
-      "src": "assets/images/artists/artist-05.png",
+      "src": "assets/images/artists/artist-05.jpg",
       "alt": "維麗娜．弗里德里希"
     },
     "nationalityZh": "德國",
     "nationalityEn": "Germany",
-    "bioZh": "Verena Friedrich 的創作主要以時間性裝置為核心，結合有機媒材、電子媒介與雕塑性元素，發展出兼具感知經驗與觀念性的作品。她的計畫曾於國際間多個展覽、媒體藝術節與學術研討會中發表。",
-    "bioEn": "Verena Friedrich’s artistic practice centers on time-based installations that combine organic materials, electronic media, and sculptural elements. Her works bring together perceptual experience and conceptual inquiry, exploring the intersections between material processes, technology, and temporality.\nHer projects have been presented internationally at exhibitions, media art festivals, and academic conferences.",
+    "bioZh": "Verena Friedrich的創作以裝置與兼具詩意及功能性的機械為核心，將複雜的關係凝聚並轉化為具體且可感知的經驗。她的作品探索科技與科學系統的可能性及其限制，並關注其中所承載關於效率、可控性與進步的敘事。\n其作品曾於世界各地展出，包括德國卡爾斯魯厄藝術與媒體中心（ZKM Karlsruhe）、林茲電子藝術節（Ars Electronica）、國際電子藝術研討會（ISEA），以及亞洲多個藝術機構與展覽，包括首爾白南準藝術中心（Nam June Paik Art Center）、香港藝術中心（Hong Kong Arts Centre）及松戶國際科學藝術節（Matsudo International Science Art Festival）。\n她亦曾於德國科隆媒體藝術學院（Academy of Media Arts Cologne）、威瑪包浩斯大學（Bauhaus University Weimar）及奧芬巴赫藝術與設計大學（Offenbach University of Art and Design）擔任教授及教學職務。",
+    "bioEn": "Verena Friedrich (she/they) develops installations and poetic-functional machines that condense complex relationships into material and sensorial experiences. Her work explores the possibilities and limits of techno-scientific systems and their embedded narratives of efficiency, controllability, and progress. Her works have been presented internationally at ZKM Karlsruhe, Ars Electronica, ISEA, and various venues in Asia, including the Nam June Paik Art Center in Seoul, the Hong Kong Arts Centre, and the Matsudo International Science Art Festival. She has held professorships and teaching positions at the Academy of Media Arts Cologne, Bauhaus University Weimar, and the Offenbach University of Art and Design (all in Germany).",
     "careerZh": "獲獎\n2005｜ZKM Karlsruhe「科學與藝術國際媒體獎」，VIDA 13.2 Art and Artificial Life Award 特別提名。\n2015、2023｜Prix Ars Electronica 榮譽提名。",
     "careerEn": "AWARDS\n2005 | ZKM Karlsruhe International Media Award for Science and Art, VIDA 13.2 Art and Artificial Life Awards Special Mention.\n2015, 2023 | Honorary Mention, Prix Ars Electronica.",
     "website": "https://heavythinking.org/",
@@ -181,7 +181,7 @@ window.DAF_DATA = {
     "workTitle": "GeodesicDome+3V+1a - Architectural Plans",
     "workTitleEn": "GeodesicDome+3V+1a - Architectural Plans",
     "image": {
-      "src": "assets/images/artists/artist-06.png",
+      "src": "assets/images/artists/artist-06.jpg",
       "alt": "C-LAB未來視覺實驗室"
     },
     "nationalityZh": "臺灣",
@@ -903,22 +903,22 @@ window.DAF_DATA = {
     "titleZh": "EZ品質分解機V2",
     "titleEn": "EZ Quality Soryer V2",
     "year": "2023",
-    "workType": "",
+    "workType": "裝置",
     "medium": "機械裝置、電腦",
     "description": "《EZ Quality Sorter V2》 是德國藝術家 Verena Friedrich 的互動裝置，屬於其 ERBSENZÄHLER 計畫的一部分。作品以一座帶有工業感的自動分選機構為核心，透過送料裝置、輸送帶與影像辨識流程，將豌豆種子區分為「品質良好」與「品質不佳」兩類。作品藉由看似簡單的分選行為，揭示當代「智慧」系統背後的人工勞動、主觀判斷與分類暴力。當複雜生命被壓縮為好壞二分，機器的客觀性也變得可疑。",
     "videoUrl": "",
     "imageFolder": "main-05",
-    "coverImage": "assets/images/works/main/main-05/01.png",
+    "coverImage": "assets/images/works/main/main-05/01.jpg",
     "images": [
-      "assets/images/works/main/main-05/01.png",
-      "assets/images/works/main/main-05/02.png",
-      "assets/images/works/main/main-05/03.png",
-      "assets/images/works/main/main-05/04.png"
+      "assets/images/works/main/main-05/01.jpg",
+      "assets/images/works/main/main-05/02.jpg",
+      "assets/images/works/main/main-05/03.jpg",
+      "assets/images/works/main/main-05/04.jpg"
     ],
     "artistIds": [
       "artist-05"
     ],
-    "workTypeEn": "",
+    "workTypeEn": "Installation",
     "mediumEn": "Mechanical installation, computer",
     "descriptionZh": "《EZ Quality Sorter V2》 是德國藝術家 Verena Friedrich 的互動裝置，屬於其 ERBSENZÄHLER 計畫的一部分。作品以一座帶有工業感的自動分選機構為核心，透過送料裝置、輸送帶與影像辨識流程，將豌豆種子區分為「品質良好」與「品質不佳」兩類。作品藉由看似簡單的分選行為，揭示當代「智慧」系統背後的人工勞動、主觀判斷與分類暴力。當複雜生命被壓縮為好壞二分，機器的客觀性也變得可疑。",
     "descriptionEn": "EZ Quality Sorter V2 is an interactive installation by German artist Verena Friedrich and forms part of her ERBSENZÄHLER project. Centered on an industrial-looking automated sorting mechanism, the work uses a feeding device, conveyor belt, and image-recognition process to classify pea seeds into two categories: “good quality” and “poor quality.” Through this seemingly simple act of sorting, the work reveals the human labor, subjective judgment, and violence of classification embedded in contemporary “smart” systems. When complex forms of life are compressed into a binary of good and bad, the supposed objectivity of the machine itself becomes questionable.",
@@ -954,6 +954,49 @@ window.DAF_DATA = {
     "mediumEn": "Mixed media; dimensions and configuration variable depending on site",
     "descriptionZh": "這個小型的DOME球形骨架設計上使用金屬鋼管作為支撐，一共有7種不同長度的白色烤漆鋼管組成，每一隻白色鋼管上為了方便辨識，進行了字母的標籤記號，設計以M10內六角螺絲將每一支鋼管進行連接並固定，達到穩定的結構。",
     "descriptionEn": "This small-scale DOME framework uses steel tubing as its structural support and is composed of seven different lengths of white powder-coated steel pipes. Each pipe is labeled with a letter for easy identification. The structure is assembled and secured with M10 hex-socket bolts, allowing the individual tubes to connect into a stable spherical framework.",
+    // SCREENING_DESCRIPTION_EN_PENDING: the supplied program currently includes Chinese descriptions only.
+    "screeningProgram": [
+      {
+        "artist": "葉澈",
+        "artistEn": "YEH Che",
+        "title": "幻幕",
+        "titleEn": "What a Screen",
+        "description": "自影像出現以來，我們不斷經歷著觀看裝置的轉化——電影院、電視機、手機、LED 牆、光雕投影⋯⋯。隨著裝置的更迭，影像也持續變異著自身的比例與身體，同時框架出人類的觀看方式，形塑著我們對世界的想像。\n\n《幻幕》從影像的「比例」出發，回望影像史中不同畫幅與技術框架所帶來的感知經驗，帶領觀眾在穹頂空間中穿梭於不同時期的影像身體。然而，當我們再次回望這片被光與聲包覆的世界，才發現自己依然被框架其中——在另一種影像的尺幅裡，被觀看、被包圍。",
+        "descriptionEn": ""
+      },
+      {
+        "artist": "吳秉聖",
+        "artistEn": "WU Ping-Sheng",
+        "title": "靈魂的副翼：穹丘",
+        "titleEn": "Aileron of Soul: DOMOUND",
+        "description": "《靈魂的副翼：穹丘》是對於人工智慧作為一種工具的假設提問出發，所延伸的視覺刺激與探索。它提供了一種非人類視覺的組構方式，如魔法般地將關鍵字嵌入影像與聲響中。作品試圖從建築學、地質學與天文學等圖像資料切入，從人工智慧所產出的視覺架構，探討AI視覺所描述的人類知識樣貌，並突顯非人類視覺認知的違和感。藉此提問人工智慧的影像產出，是引領人類靈魂突破現有認知引導的副翼，還是主導著一張張隱藏著等價交換的契約，而我們並不知道實際上背負的交換內容。作品以人類視聽感官為主題，從神話、宇宙探勘、科技、自然、AI等子題中，提煉出一種以聲音與影像為主體的敘事，藉由音像作品的特性，延展或凍結流轉的時間感，重新組織出一種視聽交融、精神穿越的感官體驗。",
+        "descriptionEn": ""
+      },
+      {
+        "artist": "謝爾蓋．普羅科菲耶夫",
+        "artistEn": "Sergey PROKOFYEV",
+        "title": "全球烏托邦中的在地反烏托邦",
+        "titleEn": "Local Dystopias in the Global Utopia",
+        "description": "在無止境延伸的沙漠中，獨特的觀影經驗透過DOME的多個銀幕展開，每一面銀幕都呈現了一個不同的建築故事。\n\n遊走於三個反烏托邦世界中，我們首先探索的是「摩天大樓狂熱」，這是一座廢棄的村莊，其中木造摩天大樓的複製品由氣球乘托而漂浮著，象徵了脆弱的希望。下一個世界「末日之城」將我們帶入無人之境，場景的塑造靈感來自畫家尼古拉斯．洛里奇（Nicholas Roerich）的作品。第三個建築故事的世界是「虛實間的靈薄獄」，這個令人困惑的數位環境持續地受到以人類情緒為基礎所打造的合成引擎（synthetic engines）刺激，身處其中便如同經歷著集體意識的夢境。",
+        "descriptionEn": ""
+      },
+      {
+        "artist": "初未來 x 超維度 x 江戶未來世 x Kivi x 賴皮 x 林強",
+        "artistEn": "Hello World x Dimension Plus x Hello Edo! x Kivi x Mr. Skin x LIM Giong",
+        "title": "新摩登時代",
+        "titleEn": "NEW MODERN TIMES",
+        "description": "這是一部以臺灣文化為核心的「奇想生成式沉浸影音作品」。它打破現實邊界，將自然環境、工業製造、廟會遶境、夜市印象，乃至於 AI 神話與未來太空，重新編織成一段幽默詼諧卻充滿啟發的視覺史詩。\n\n在巨大的穹形場域之下，體驗集結「惡搞、創造、融合」於一身的文化衝擊。由初未來領銜製作，集結科技藝術代表超維度與 AI 影像先鋒江戶未來世。排灣族天籟歌手 Kivi、潮流電音 DJ 賴皮，和傳奇音樂大師林強。頂尖藝術家跨界聯手，打造出這場橫跨部落與宇宙、傳統與未來的《新摩登時代》。",
+        "descriptionEn": ""
+      },
+      {
+        "artist": "C-LAB未來視覺實驗室",
+        "artistEn": "C-LAB Future Vision Lab",
+        "title": "Echo of Presence",
+        "titleEn": "Echo of Presence",
+        "description": "與工研院合作運用其開發之工業運算的360影像偵測技術，結合生成式影像概念，並納入互動技術，包括人數偵測、多人體位移判斷與攝影畫面擷取，讓影像隨群體於空間行動而改變，透過系統、影像與聲音的連動，創造觀者位置即影像語意的場域。本次將保留影像元素，改以AI生成部分內容。",
+        "descriptionEn": ""
+      }
+    ],
     "videoUrls": [],
     "venueId": "venue-main"
   },
@@ -3978,6 +4021,8 @@ window.DAF_DATA.shops.forEach(shop => {
   shop.images = (DAF_STORE_DETAIL_IMAGES[shop.id] || []).map(filename => `${shop.imageFolder}/${filename}`);
 });
 // Optional store collaboration projects. Empty fields remain omitted in the UI.
+// PARTNERSHIP07_OFFER_EN_PENDING: the supplied offer currently includes Chinese copy only.
+// PARTNERSHIP07_BOOKING_URL_PENDING: no official booking URL was supplied.
 const DAF_SHOP_COLLABORATIONS = {
   "shop-01": [{id:"partnership-01",titleZh:"起 · 初",titleEn:"Origin · Beginning",categoryZh:"黑白麻糬組合禮盒",priceZh:"起・初 四入限定盒  NT$100\n起・初 八入限定盒  NT$180",priceEn:"Origin · Beginning Limited Box (4 pieces)  NT$100\nOrigin · Beginning Limited Box (8 pieces)  NT$180",descriptionZh:"配合臺北數位藝術節展期，推出期間限定黑白麻糬組合。\n夜・黑芝麻｜晝・白椰子\n從黑夜到白晝，都是祝福。",descriptionEn:"In celebration of the Taipei Digital Art Festival, a limited-edition black-and-white mochi set will be available exclusively during the festival period.\nNight · Black Sesame | Day · White Coconut\nFrom night to day, each one carries a blessing.",hoursZh:"10/31（六）白晝之夜\t特別延長營業\t12:00 - 20:00\n11/01（日）\t展期限定開放\t14:00 - 17:00\n11/07（六）\t展期限定開放\t10:30 - 16:30\n11/08（日）\t展期限定開放\t10:30 - 16:30\n11/14（六）\t展期限定開放\t10:30 - 16:30\n11/15（日）\t展期限定開放\t10:30 - 16:30\n平日\t預訂制\t同一取貨日 25 盒以上可成團；至少 7 天前完成預訂\n展期週末限定 OPEN HOUSE；平日採預約制；麻糬每日限量新鮮手作，售完為止。",hoursEn:"10/31 (Sat) Nuit Blanche Taipei\tExtended hours\t12:00–20:00\n11/01 (Sun)\tFestival-period opening\t14:00–17:00\n11/07 (Sat)\tFestival-period opening\t10:30–16:30\n11/08 (Sun)\tFestival-period opening\t10:30–16:30\n11/14 (Sat)\tFestival-period opening\t10:30–16:30\n11/15 (Sun)\tFestival-period opening\t10:30–16:30\nWeekdays\tPre-order only\tOrders of 25 boxes or more for the same pickup date; place orders at least 7 days in advance\nOPEN HOUSE on festival weekends; weekdays by reservation only. Mochi is freshly handmade daily in limited quantities and available while supplies last.",supplyZh:"麻糬\t原本四款：約瑟花生、路得黑芝麻、約拿紅豆、彼得酸菜｜四入盒\tNT$90\n麻糬\t原本四款：約瑟花生、路得黑芝麻、約拿紅豆、彼得酸菜｜八入盒\tNT$160\n冷泡茶 500ml\t撒母耳｜原味蕎麥冷泡茶\tNT$65\n冷泡茶 500ml\t以斯帖｜桂花蕎麥冷泡茶\tNT$75\n冷泡茶 500ml\t大衛｜藜麥蕎麥冷泡茶\tNT$85\n咖啡\t限量手沖咖啡 HOT / ICED\t依現場供應與公告",supplyEn:"Mochi\tOriginal four flavors: Joseph Peanut, Ruth Black Sesame, Jonah Red Bean, Peter Pickled Mustard Greens | Box of 4\tNT$90\nMochi\tOriginal four flavors: Joseph Peanut, Ruth Black Sesame, Jonah Red Bean, Peter Pickled Mustard Greens | Box of 8\tNT$160\nCold-brew tea 500 ml\tSamuel | Original Buckwheat Cold-brew Tea\tNT$65\nCold-brew tea 500 ml\tEsther | Osmanthus Buckwheat Cold-brew Tea\tNT$75\nCold-brew tea 500 ml\tDavid | Quinoa Buckwheat Cold-brew Tea\tNT$85\nCoffee\tLimited pour-over coffee, HOT / ICED\tSubject to on-site availability and announcements",images:["assets/images/partnership/partnership-01/main.png","assets/images/partnership/partnership-01/01.png","assets/images/partnership/partnership-01/02.png","assets/images/partnership/partnership-01/03.png","assets/images/partnership/partnership-01/04.jpg","assets/images/partnership/partnership-01/05.jpg","assets/images/partnership/partnership-01/06.jpg","assets/images/partnership/partnership-01/07.jpg","assets/images/partnership/partnership-01/08.png"]}],
   "shop-02": [{id:"partnership-02",titleZh:"Mirror of Erised",titleEn:"Mirror of Erised",categoryZh:"特調飲品",descriptionZh:"Mirror of Erised\nVodka / Green Tea / Jasmine / Rose / Longan / Smoke\n\n以綠茶為基底，揉合茉莉與玫瑰的細緻花香，搭配煙燻龍眼的果香與燻香，呈現清雅卻帶有朦朧層次的風味。\n\n如同「灰色自動體」對感知的重新編碼，將自然的香氣拆解、轉化，再重新組合成一種介於熟悉與陌生之間的感官體驗。銀白色的酒體，也象徵著訊息經過運算後所留下的中性介面。",descriptionEn:"Mirror of Erised\nVodka / Green Tea / Jasmine / Rose / Longan / Smoke\n\nBuilt on a green tea base, this cocktail layers the delicate floral notes of jasmine and rose with the fruity aroma and smoky depth of smoked longan, creating an elegant yet subtly hazy flavor profile.\n\nEchoing Gray Autonomous Entity and its reconfiguration of perception, natural aromas are deconstructed, transformed, and recombined into a sensory experience that exists somewhere between the familiar and the unfamiliar. The silvery-white appearance of the cocktail evokes a neutral interface—the residue of information after it has been processed and recomposed.",images:["assets/images/partnership/partnership-02/main.jpg","assets/images/partnership/partnership-02/01.jpg","assets/images/partnership/partnership-02/02.jpg"]}],
@@ -3985,7 +4030,7 @@ const DAF_SHOP_COLLABORATIONS = {
   "shop-04": [{id:"partnership-04",titleZh:"在記憶折返以前",titleEn:"Before Memory Turns Back",categoryZh:"響應展覽",descriptionZh:"《在記憶折返以前》由台北雙人創作團體Fina與Tony共同展出。Fina以散文式數位影像收集街道、人物與生活片刻；Tony透過翻轉、鏡像與重組，將城市燈火化為影像詩。兩人的作品游移於具象與抽象之間，沿著光線、記憶與時間交會，邀請觀眾辨認那些尚未說完、仍在心中折返的感受。",descriptionEn:"Before Memory Turns Back is a joint exhibition by Taipei-based artist duo Fina and Tony. Fina gathers fragments of streets, people, and everyday life through essayistic digital imagery, while Tony transforms the lights of the city into visual poetry through inversion, mirroring, and recomposition.\nMoving between the figurative and the abstract, their works trace intersections of light, memory, and time, inviting viewers to recognize feelings that remain unfinished and continue to return within.",hoursZh:"展期 | 10月10日至11月8日\n開幕 | 10月17日15:00",hoursEn:"Exhibition period | October 10–November 8\nOpening | October 17, 15:00",images:["assets/images/partnership/partnership-04/main.png","assets/images/partnership/partnership-04/01.png","assets/images/partnership/partnership-04/02.jpg"]}],
   "shop-05": [{id:"partnership-05",titleZh:"CNSalon花草茶、CNSalon花冰菓",titleEn:"CNSalon Herbal Tea, CNSalon Floral Fruit Ice Pops",categoryZh:"特製餐點",descriptionZh:"CNSalon花草茶\n源起於火山口下的西恩花園新鮮採摘的一杯花草茶，如同「味蕾的花束」，將山裡日月積累的感受，透過一杯花草茶帶入每個人的生活，分享大自然的美好與能量。\nCNSalon花冰菓\n以台灣豐盛的鮮果與西恩花園中自然香草氣味，化作味蕾上冰紛的夏日花園，一支冰菓、一支花，把一座花園結冰，在口中盛開！",descriptionEn:"CNSalon Herbal Tea\nFreshly harvested from CN Garden beneath the volcanic landscape, each cup of herbal tea is like a “bouquet for the palate.” Infused with the flavors and sensations shaped by days and seasons in the mountains, the tea brings the beauty and energy of nature into everyday life, one cup at a time.\nCNSalon Floral Fruit Ice Pops\nMade with Taiwan’s abundant fresh fruits and naturally fragrant herbs from CN Garden, these ice pops transform the flavors of a summer garden into a refreshing frozen treat. A fruit ice pop, a flower—a whole garden captured in ice, blooming with every bite.",images:["assets/images/partnership/partnership-05/main.jpg","assets/images/partnership/partnership-05/01.jpg"]}],
   "shop-06": [{id:"partnership-06",titleZh:"竹炭拿鐵",titleEn:"Bamboo Charcoal Latte",categoryZh:"特調咖啡飲品",priceZh:"NT$100",priceEn:"NT$100",descriptionZh:"灰色自動體\nGRAY AUTONOMOUS ENTITY\n一杯，介於人與機器之間的灰色狀態。\n\n咖啡的深黑、藍莓的色彩，\n黑金竹碳將一切拉回灰階，\n再以牛奶覆上一層柔軟的白。\n\n像是正在生成的物件，\n沒有固定的形狀，也沒有唯一的答案。\n在黑與白之間，\n讓味覺成為另一種感知介面。\n\nCoffee × Blueberry × Black Gold Bamboo Charcoal × Milk\n\n臺北數位藝術節限定\n藝術節限定優惠 $100",descriptionEn:"GRAY AUTONOMOUS ENTITY\nA drink suspended in the gray area between human and machine.\n\nThe deep black of coffee and the color of blueberry are drawn back into grayscale by black gold bamboo charcoal, before being covered with a soft layer of white milk.\n\nLike an object still in the process of becoming, it has no fixed form and no single answer.\n\nBetween black and white, taste becomes another interface for perception.\n\nCoffee × Blueberry × Black Gold Bamboo Charcoal × Milk\n\nTaipei Digital Art Festival Exclusive\nFestival Special | NT$100",images:["assets/images/partnership/partnership-06/main.jpg","assets/images/partnership/partnership-06/01.jpg","assets/images/partnership/partnership-06/02.jpg"]}],
-  "shop-07": [{id:"partnership-07",titleZh:"",titleEn:"",categoryZh:"",images:[]}],
+  "shop-07": [{id:"partnership-07",titleZh:"黑炭法式牛軋餅",titleEn:"Charcoal French Nougat Cracker",categoryZh:"特製點心",descriptionZh:"歐華酒店 × 臺北數位藝術節｜限定黑炭法式牛軋餅\n\n灰色，不只是另一種顏色\n\n當機器越來越懂得模仿人，\n人與機器之間的界線，又在哪裡？\n\n呼應2026臺北數位藝術節對科技、創作與人文之間關係的探索，歐華酒店以熟悉的法式牛軋餅為創作載體，推出限定黑炭法式牛軋餅。\n這一次，我們刻意讓它與傳統牛軋餅的繽紛色彩形成對比，將一場關於「人」與「機器」的思考，藏進一份可以品嚐的甜點裡。\n\n繽紛的法式牛軋餅，象徵人的色彩——有溫度、有情緒，也保留著手作創作的不規則與獨特。\n\n而這一次，歐華酒店以黑炭為靈感，將法式牛軋餅化作一抹深灰。精準、純粹、近乎一致的色彩，彷彿來自數位世界的產物，讓「人」與「機器」之間的界線，成為一場味覺與視覺的想像。法式甜點的細緻工藝，遇上黑炭獨有的自然深色，將法式風格與東方元素融入一口牛軋餅。\n\n當機器開始能創造影像、文字與藝術，什麼樣的色彩，仍然只屬於人？\n繽紛，是人的色彩。\n灰色，是機器的想像。\n而你，看見的是什麼？",descriptionEn:"The Riviera Hotel × Taipei Digital Art Festival | Limited-Edition Charcoal French Nougat Cracker\n\nGray is more than just another color.\n\nAs machines become increasingly capable of imitating humans, where does the boundary between human and machine lie?\n\nEchoing the 2026 Taipei Digital Art Festival’s exploration of the relationships between technology, creativity, and humanity, The Riviera Hotel reimagines its familiar French nougat cracker as a limited-edition charcoal creation. In deliberate contrast to the vibrant colors of traditional nougat crackers, this version transforms a reflection on “humans” and “machines” into something that can be tasted.\n\nThe colorful French nougat cracker represents the colors of humanity—warm, emotional, and marked by the irregularity and individuality of something made by hand.\n\nFor this special edition, The Riviera Hotel draws inspiration from charcoal, transforming the French nougat cracker into a deep shade of gray. Its precise, pure, almost uniform appearance evokes an object from the digital world, turning the boundary between “human” and “machine” into an exploration of both taste and vision. Refined French pastry craftsmanship meets the naturally deep tones of charcoal, bringing French style and Eastern elements together in a single bite.\n\nAs machines begin to create images, words, and art, what colors still belong uniquely to us?\n\nColor is human.\nGray is the imagination of the machine.\nWhat do you see?",offers:[{titleZh:"散客訂房優惠",titleEn:"",code:"DAFTRIV",descriptionZh:"透過官網訂房輸入優惠碼享超值優惠專案9折優惠",descriptionEn:""}],images:["assets/images/partnership/partnership-07/main.jpg","assets/images/partnership/partnership-07/01.jpg"]}],
   "shop-08": [{id:"partnership-08",titleZh:"SOMA・VEIL",titleEn:"SOMA・VEIL",categoryZh:"特調飲品",descriptionZh:"意指雖然無法理解、看不清本質，但能讓人穩定、安心、愉悅的魔藥（AI科技）",descriptionEn:"A potion that may be impossible to fully understand or see for what it truly is, yet brings a sense of stability, reassurance, and pleasure—a metaphor for AI technology.",images:["assets/images/partnership/partnership-08/main.jpg","assets/images/partnership/partnership-08/01.jpg"]}],
   "shop-09": [{id:"partnership-09",titleZh:"墨魚披薩套餐",titleEn:"Squid Ink Pizza Set",categoryZh:"披薩套餐組合",descriptionZh:"🦑 墨魚披薩｜把整片海的鮮味，烤進一張披薩裡。\n使用新鮮墨魚囊、墨魚肉與透抽，搭配辛香料細火翻炒，再打成濃郁細緻的墨魚醬。\n不只是「黑色」而已，入口是滿滿的鮮甜海味，越吃越香。\n將墨魚醬均勻抹上披薩麵團，鋪上新鮮透抽，送進高溫窯爐烘烤。\n出爐後，再搭配酸香開胃的莎莎醬與現刨魷魚乾。\n🔥 窯烤的焦香 × 墨魚的鮮甜 × 莎莎醬的酸香 × 魷魚乾的鹹香\n一口下去，海味、香氣與口感一層一層堆疊。",descriptionEn:"🦑Squid Ink Pizza | The flavors of the sea, baked into every slice.\nFresh squid ink, cuttlefish, and squid are slowly sautéed with aromatic spices, then blended into a rich, velvety squid ink sauce.\nMore than just its striking black appearance, this pizza is packed with the natural sweetness and umami of the sea. The squid ink sauce is spread generously over the pizza dough, topped with fresh squid, and baked at high heat in the oven.\nOnce out of the oven, it is finished with bright, tangy salsa and freshly shaved dried squid.\n🔥 Charred oven-baked aroma × Sweet ocean flavors × Tangy salsa × Savory dried squid\nWith every bite, layers of seafood flavor, aroma, and texture unfold one after another.",images:[]}],
   "shop-10": [{id:"partnership-10",titleZh:"",titleEn:"",categoryZh:"",images:[]}],

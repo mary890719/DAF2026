@@ -175,6 +175,7 @@ body[data-page="program"] .page-title { text-align: center; }
 .button { display: inline-flex; justify-content: center; align-items: center; color: var(--color-text); background: var(--color-bg); border: var(--border); border-radius: var(--radius); padding: 11px 28px; min-width: 140px; transition: color .15s ease, background-color .15s ease, border-color .15s ease; }
 .button:hover, .button:focus-visible { color: var(--color-bg); background: var(--color-surface-hover); border-color: var(--color-text); }
 .back-wrap { text-align: center; margin: 54px 0; }
+.page-bottom-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-2); }
 .hero { position: relative; height: calc(100vh - 105px); min-height: 760px; overflow: hidden; }
 .hero-background { position: absolute; z-index: 0; inset: 0; background-color: var(--color-bg); background-image: none; background-position: center; background-size: cover; background-repeat: no-repeat; pointer-events: none; }
 .hero-background::after { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, .55); }
@@ -699,6 +700,8 @@ body.detail-lightbox-open { overflow: hidden; }
 .map-work-list > strong { font-size: clamp(1.2rem, 2vw, 1.55rem); font-weight: 500; }
 .map-list-entries { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4) var(--space-3); }
 .map-list-item { display: grid; min-width: 0; align-content: start; gap: 5px; }
+.map-list-item:is(a):hover,
+.map-list-item:is(a):focus-visible { background: var(--color-bg-secondary); }
 .map-list-number { color: var(--color-text-secondary); font-size: var(--fs-sm); letter-spacing: .06em; }
 .map-list-artist { color: var(--color-text-secondary); line-height: 1.5; overflow-wrap: anywhere; }
 .map-list-title { color: var(--color-text); font-weight: 500; line-height: 1.5; overflow-wrap: anywhere; }

@@ -473,7 +473,7 @@
   const artistAccordionItems = artists => {
     const defaultIndex = Math.floor((artists.length - 1) / 2);
     return artists.map(artistViewData).map((artist, index) => `
-    <article class="artist-accordion-item" data-artist-id="${artist.id}" data-accordion-index="${index}">
+    <article class="artist-accordion-item" data-artist-id="${artist.id}" data-accordion-index="${index}" tabindex="0" aria-expanded="${index === defaultIndex ? "true" : "false"}" aria-label="${artist.name} — ${artist.workTitle}">
       <div class="artist-accordion-media">
         ${homeArtworkImageMarkup(artist, {priority: index === defaultIndex})}
       </div>
@@ -732,7 +732,7 @@
     else nextLink.removeAttribute("href");
     setDetailText("[data-work-previous-title]", previous ? textFor(previous, "title") : "");
     setDetailText("[data-work-next-title]", next ? textFor(next, "title") : "");
-    document.querySelectorAll("[data-work-return]").forEach(link => { link.href = C.localizedRoute(work.category === "main" ? "works.html" : "district-works.html"); });
+    document.querySelectorAll("[data-work-return]").forEach(link => { link.href = C.localizedRoute(work.category === "district" ? "district-works.html" : "works.html"); });
   };
 
   const openingText = (item, field) => isEnglish
@@ -1382,6 +1382,7 @@
     const TRANSITION_LOCK_DURATION = 420;
     let activeIndex = -1;
     let observationFrame = 0;
+    let manualReleaseFrame = 0;
     let transitionLocked = false;
     let lockTimer = 0;
     let touchStartY = 0;
@@ -1390,18 +1391,24 @@
     let gestureOwner = GESTURE_OWNER.BROWSER;
     let gestureDirection = 0;
     let touchDiscoveryEnabled = touchInput.matches && !hoverInput.matches;
+    let manualMode = false;
+    let manualActiveCard = null;
+    let manualReleasePending = false;
+    accordion.dataset.interactionMode = "scroll";
 
     const setActive = index => {
       if (index < 0 || index >= items.length || index === activeIndex) return;
       const previousItem = items[activeIndex];
       const nextItem = items[index];
       previousItem?.classList.remove("is-active");
+      previousItem?.setAttribute("aria-expanded", "false");
       nextItem.classList.add("is-active");
+      nextItem.setAttribute("aria-expanded", "true");
       activeIndex = index;
     };
 
     const activateNearestToObservation = () => {
-      if (!touchDiscoveryEnabled || !items.length) return;
+      if (manualMode || !touchDiscoveryEnabled || !items.length) return;
       const headerBottom = document.querySelector(".site-header")?.getBoundingClientRect().bottom || 0;
       const readingCenter = headerBottom + (window.innerHeight - headerBottom) / 2;
       const visibleItems = items
@@ -1442,6 +1449,47 @@
       lockTimer = window.setTimeout(() => { transitionLocked = false; }, TRANSITION_LOCK_DURATION);
     };
 
+    const activateManually = item => {
+      if (!item || !accordion.contains(item)) return;
+      manualMode = true;
+      manualActiveCard = item;
+      manualReleasePending = false;
+      accordion.dataset.interactionMode = "manual";
+      setActive(Number(item.dataset.accordionIndex));
+    };
+
+    const resumeScrollMode = () => {
+      if (!manualMode) return;
+      manualMode = false;
+      manualActiveCard = null;
+      manualReleasePending = false;
+      accordion.dataset.interactionMode = "scroll";
+      scheduleObservationCheck();
+    };
+
+    const markManualScrollIntent = () => {
+      if (manualMode) manualReleasePending = true;
+    };
+
+    const scheduleManualReleaseCheck = () => {
+      if (!manualMode || !manualActiveCard || manualReleaseFrame) return;
+      manualReleaseFrame = requestAnimationFrame(() => {
+        manualReleaseFrame = 0;
+        if (!manualMode || !manualActiveCard) return;
+        if (!manualActiveCard.isConnected) {
+          resumeScrollMode();
+          return;
+        }
+        const rect = manualActiveCard.getBoundingClientRect();
+        const headerBottom = document.querySelector(".site-header")?.getBoundingClientRect().bottom || 0;
+        const readableHeight = Math.max(0, window.innerHeight - headerBottom);
+        const releaseMargin = Math.min(120, readableHeight * 0.1);
+        const activeZoneTop = headerBottom - releaseMargin;
+        const activeZoneBottom = window.innerHeight + releaseMargin;
+        if (rect.bottom < activeZoneTop || rect.top > activeZoneBottom) resumeScrollMode();
+      });
+    };
+
     accordion.addEventListener("pointerover", event => {
       if (event.pointerType === "touch") return;
       const item = event.target.closest(".artist-accordion-item");
@@ -1456,7 +1504,19 @@
       const item = event.target.closest(".artist-accordion-item");
       if (item && accordion.contains(item)) setActive(Number(item.dataset.accordionIndex));
     });
+    accordion.addEventListener("click", event => {
+      if (event.target.closest("a, button")) return;
+      activateManually(event.target.closest(".artist-accordion-item"));
+    });
+    accordion.addEventListener("keydown", event => {
+      if (event.target !== event.currentTarget && event.target.closest("a, button")) return;
+      const item = event.target.closest(".artist-accordion-item");
+      if (!item || !["Enter", " "].includes(event.key)) return;
+      event.preventDefault();
+      activateManually(item);
+    });
     document.addEventListener("touchstart", () => { touchDiscoveryEnabled = true; }, {passive: true});
+    document.addEventListener("touchmove", markManualScrollIntent, {passive: true, capture: true});
     accordion.addEventListener("touchstart", event => {
       if (event.touches.length !== 1) return;
       const info = event.target.closest?.(".artist-accordion-info");
@@ -1488,10 +1548,21 @@
     }, {passive: false});
     accordion.addEventListener("touchend", finishSequentialSwipe, {passive: true});
     accordion.addEventListener("touchcancel", () => { trackingTouch = false; gestureOwner = GESTURE_OWNER.BROWSER; }, {passive: true});
-    window.addEventListener("scroll", scheduleObservationCheck, {passive: true});
+    window.addEventListener("scroll", () => {
+      scheduleObservationCheck();
+      if (!manualReleasePending) return;
+      manualReleasePending = false;
+      scheduleManualReleaseCheck();
+    }, {passive: true});
     window.addEventListener("wheel", () => {
+      markManualScrollIntent();
       if (hoverInput.matches) touchDiscoveryEnabled = false;
     }, {passive: true});
+    window.addEventListener("keydown", event => {
+      if (!["PageUp", "PageDown", "ArrowUp", "ArrowDown", "Home", "End", " "].includes(event.key)) return;
+      if (event.key === " " && event.target.closest?.(".artist-accordion-item")) return;
+      markManualScrollIntent();
+    });
     siteResizeHandlers.add(scheduleObservationCheck);
     hoverInput.addEventListener("change", scheduleObservationCheck);
     touchInput.addEventListener("change", scheduleObservationCheck);
@@ -1956,6 +2027,9 @@
 
   const renderMap = () => {
     const workById = id => D.mapWorks.find(item => item.id === id);
+    const catalogWorkFor = mapWork => mapWork?.workId == null
+      ? null
+      : workCatalog.find(item => String(item.id) === String(mapWork.workId));
     const mapArtist = work => isEnglish ? work.artistEn || work.artist : work.artist || work.artistEn;
     const mapTitle = work => isEnglish ? work.titleEn || work.title : work.title || work.titleEn;
     document.querySelectorAll(".map-shell[data-map-id]").forEach(map => {
@@ -1979,7 +2053,11 @@
       list.innerHTML = heading + `<div class="map-list-entries">${entries.map(({work, location}) => {
         const venue = venueById(location.venueId);
         const store = location.type === "district" && venue ? venueName(venue) : "";
-        return `<article class="map-list-item"><span class="map-list-number">${work.number}</span>${mapTitle(work) ? `<strong class="map-list-title">${mapTitle(work)}</strong>` : ""}<span class="map-list-artist">${mapArtist(work)}</span>${store ? `<span class="map-list-store">${store}</span>` : ""}</article>`;
+        const catalogWork = catalogWorkFor(work);
+        const content = `<span class="map-list-number">${work.number}</span>${mapTitle(work) ? `<strong class="map-list-title">${mapTitle(work)}</strong>` : ""}<span class="map-list-artist">${mapArtist(work)}</span>${store ? `<span class="map-list-store">${store}</span>` : ""}`;
+        return catalogWork
+          ? `<a class="map-list-item" href="${C.localizedRoute(`work-detail.html?id=${catalogWork.id}`)}">${content}</a>`
+          : `<article class="map-list-item">${content}</article>`;
       }).join("")}</div>`;
     });
   };

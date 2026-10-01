@@ -954,7 +954,6 @@ window.DAF_DATA = {
     "mediumEn": "Mixed media; dimensions and configuration variable depending on site",
     "descriptionZh": "這個小型的DOME球形骨架設計上使用金屬鋼管作為支撐，一共有7種不同長度的白色烤漆鋼管組成，每一隻白色鋼管上為了方便辨識，進行了字母的標籤記號，設計以M10內六角螺絲將每一支鋼管進行連接並固定，達到穩定的結構。",
     "descriptionEn": "This small-scale DOME framework uses steel tubing as its structural support and is composed of seven different lengths of white powder-coated steel pipes. Each pipe is labeled with a letter for easy identification. The structure is assembled and secured with M10 hex-socket bolts, allowing the individual tubes to connect into a stable spherical framework.",
-    // SCREENING_DESCRIPTION_EN_PENDING: the supplied program currently includes Chinese descriptions only.
     "screeningProgram": [
       {
         "artist": "葉澈",
@@ -962,7 +961,7 @@ window.DAF_DATA = {
         "title": "幻幕",
         "titleEn": "What a Screen",
         "description": "自影像出現以來，我們不斷經歷著觀看裝置的轉化——電影院、電視機、手機、LED 牆、光雕投影⋯⋯。隨著裝置的更迭，影像也持續變異著自身的比例與身體，同時框架出人類的觀看方式，形塑著我們對世界的想像。\n\n《幻幕》從影像的「比例」出發，回望影像史中不同畫幅與技術框架所帶來的感知經驗，帶領觀眾在穹頂空間中穿梭於不同時期的影像身體。然而，當我們再次回望這片被光與聲包覆的世界，才發現自己依然被框架其中——在另一種影像的尺幅裡，被觀看、被包圍。",
-        "descriptionEn": ""
+        "descriptionEn": "Since the emergence of moving images, the devices through which we view them have continually evolved—from cinemas and televisions to mobile phones, LED walls, projection mapping, and beyond. As these devices change, images continue to transform their own proportions and bodies, framing how we see and shaping how we imagine the world.\n\nTaking the proportions of the image as its point of departure, What a Screen looks back at the perceptual experiences produced by different aspect ratios and technological frameworks throughout the history of the moving image. Within the dome, it guides viewers through the changing bodies of images across different eras. Yet when we look again at this world enveloped in light and sound, we realize that we remain framed within it—watched and surrounded within the dimensions of another image."
       },
       {
         "artist": "吳秉聖",
@@ -970,7 +969,7 @@ window.DAF_DATA = {
         "title": "靈魂的副翼：穹丘",
         "titleEn": "Aileron of Soul: DOMOUND",
         "description": "《靈魂的副翼：穹丘》是對於人工智慧作為一種工具的假設提問出發，所延伸的視覺刺激與探索。它提供了一種非人類視覺的組構方式，如魔法般地將關鍵字嵌入影像與聲響中。作品試圖從建築學、地質學與天文學等圖像資料切入，從人工智慧所產出的視覺架構，探討AI視覺所描述的人類知識樣貌，並突顯非人類視覺認知的違和感。藉此提問人工智慧的影像產出，是引領人類靈魂突破現有認知引導的副翼，還是主導著一張張隱藏著等價交換的契約，而我們並不知道實際上背負的交換內容。作品以人類視聽感官為主題，從神話、宇宙探勘、科技、自然、AI等子題中，提煉出一種以聲音與影像為主體的敘事，藉由音像作品的特性，延展或凍結流轉的時間感，重新組織出一種視聽交融、精神穿越的感官體驗。",
-        "descriptionEn": ""
+        "descriptionEn": "Aileron of Soul: DOMOUND begins with a hypothetical question about artificial intelligence as a tool, extending this inquiry into visual stimulation and exploration. It offers a nonhuman way of composing vision, embedding keywords into images and sound as if by magic. Drawing on visual materials from architecture, geology, astronomy, and other fields, the work examines how AI-generated visual structures depict human knowledge while foregrounding the dissonance of nonhuman visual cognition. It asks whether AI-generated imagery serves as an aileron guiding the human soul beyond the limits of existing knowledge, or whether it governs a series of contracts founded on hidden exchanges whose true costs remain unknown to us. Centered on human audiovisual perception, the work distills themes of mythology, space exploration, technology, nature, and AI into a narrative led by sound and image. Through the qualities of audiovisual art, it stretches or suspends the flow of time, reorganizing it into a sensory experience in which sight and sound converge and the spirit passes through."
       },
       {
         "artist": "謝爾蓋．普羅科菲耶夫",
@@ -978,7 +977,7 @@ window.DAF_DATA = {
         "title": "全球烏托邦中的在地反烏托邦",
         "titleEn": "Local Dystopias in the Global Utopia",
         "description": "在無止境延伸的沙漠中，獨特的觀影經驗透過DOME的多個銀幕展開，每一面銀幕都呈現了一個不同的建築故事。\n\n遊走於三個反烏托邦世界中，我們首先探索的是「摩天大樓狂熱」，這是一座廢棄的村莊，其中木造摩天大樓的複製品由氣球乘托而漂浮著，象徵了脆弱的希望。下一個世界「末日之城」將我們帶入無人之境，場景的塑造靈感來自畫家尼古拉斯．洛里奇（Nicholas Roerich）的作品。第三個建築故事的世界是「虛實間的靈薄獄」，這個令人困惑的數位環境持續地受到以人類情緒為基礎所打造的合成引擎（synthetic engines）刺激，身處其中便如同經歷著集體意識的夢境。",
-        "descriptionEn": ""
+        "descriptionEn": "Across an endlessly extending desert, a distinctive viewing experience unfolds on the DOME's multiple screens, each presenting a different architectural story.\n\nMoving through three dystopian worlds, we first encounter \"Skyscraper Mania,\" an abandoned village where replicas of wooden skyscrapers float aloft, carried by balloons as symbols of fragile hope. The next world, \"Doomsday City,\" takes us into an uninhabited realm whose scenery draws inspiration from the paintings of Nicholas Roerich. The third architectural world is \"Limbus between Reality and Virtuality,\" a disorienting digital environment continuously stimulated by synthetic engines built from human emotions. To inhabit it is to experience a dream of collective consciousness."
       },
       {
         "artist": "初未來 x 超維度 x 江戶未來世 x Kivi x 賴皮 x 林強",
@@ -986,7 +985,7 @@ window.DAF_DATA = {
         "title": "新摩登時代",
         "titleEn": "NEW MODERN TIMES",
         "description": "這是一部以臺灣文化為核心的「奇想生成式沉浸影音作品」。它打破現實邊界，將自然環境、工業製造、廟會遶境、夜市印象，乃至於 AI 神話與未來太空，重新編織成一段幽默詼諧卻充滿啟發的視覺史詩。\n\n在巨大的穹形場域之下，體驗集結「惡搞、創造、融合」於一身的文化衝擊。由初未來領銜製作，集結科技藝術代表超維度與 AI 影像先鋒江戶未來世。排灣族天籟歌手 Kivi、潮流電音 DJ 賴皮，和傳奇音樂大師林強。頂尖藝術家跨界聯手，打造出這場橫跨部落與宇宙、傳統與未來的《新摩登時代》。",
-        "descriptionEn": ""
+        "descriptionEn": "NEW MODERN TIMES is a fantastical, generative immersive audiovisual work centered on Taiwanese culture. Breaking through the boundaries of reality, it reweaves natural environments, industrial manufacturing, temple processions, impressions of night markets, AI mythology, and the future of outer space into a humorous, playful, yet thought-provoking visual epic.\n\nBeneath the vast dome, audiences experience a cultural impact that brings together parody, creation, and fusion. Led by Hello World, the production brings together Dimension Plus from the field of technology art and AI visual pioneer Hello Edo! with Paiwan singer Kivi, electronic music DJ Mr. Skin, and legendary musician LIM Giong. Crossing disciplines, these leading artists create NEW MODERN TIMES, a journey spanning the tribal and the cosmic, tradition and the future."
       },
       {
         "artist": "C-LAB未來視覺實驗室",
@@ -994,7 +993,7 @@ window.DAF_DATA = {
         "title": "Echo of Presence",
         "titleEn": "Echo of Presence",
         "description": "與工研院合作運用其開發之工業運算的360影像偵測技術，結合生成式影像概念，並納入互動技術，包括人數偵測、多人體位移判斷與攝影畫面擷取，讓影像隨群體於空間行動而改變，透過系統、影像與聲音的連動，創造觀者位置即影像語意的場域。本次將保留影像元素，改以AI生成部分內容。",
-        "descriptionEn": ""
+        "descriptionEn": "In collaboration with the Industrial Technology Research Institute, the work employs its industrial-computing-based 360-degree image detection technology, combining the concept of generative imagery with interactive techniques including visitor-count detection, multi-person movement tracking, and camera image capture. The imagery changes as groups move through the space, while the interconnection of system, image, and sound creates an environment in which the viewer's position becomes the semantic content of the image. For this presentation, the existing visual elements will be retained, with part of the content regenerated using AI."
       }
     ],
     "videoUrls": [],

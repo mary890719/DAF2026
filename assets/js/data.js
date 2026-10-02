@@ -3929,7 +3929,8 @@ window.DAF_DATA = {
         "台灣互動體驗設計協會",
         "民偉視訊工程有限公司",
         "飛利浦顯示器",
-        "達明機器人股份有限公司"
+        "達明機器人股份有限公司",
+        "上銀科技股份有限公司"
       ],
       "namesEn": [
         "Team Group Inc.",
@@ -3940,7 +3941,8 @@ window.DAF_DATA = {
         "TIEDA",
         "MEWAY VISION",
         "Philips Monitors",
-        "TECHMAN ROBOT INC."
+        "TECHMAN ROBOT INC.",
+        "HIWIN TECHNOLOGIES CORP."
       ],
       "images": [
         "assets/images/logos/十銓科技LOGO.png",
@@ -3951,7 +3953,8 @@ window.DAF_DATA = {
         "assets/images/logos/TIEDA Logo.png",
         "assets/images/logos/民偉_LOGO.png",
         "assets/images/logos/Philips logo.png",
-        "assets/images/logos/達明LOGO.png"
+        "assets/images/logos/達明LOGO.png",
+        "assets/images/logos/上銀LOGO.png"
       ],
       "urls": [
         "https://www.teamgroupinc.com/tw/",
@@ -3962,7 +3965,8 @@ window.DAF_DATA = {
         "https://tieda-ixd.com/",
         "https://www.meway.com.tw/",
         "https://www.philips.com.tw/c-m-so/monitors",
-        "https://www.tm-robot.com/zh-hant"
+        "https://www.tm-robot.com/zh-hant",
+        "https://www.hiwin.tw/"
       ],
       "sponsor": true
     },

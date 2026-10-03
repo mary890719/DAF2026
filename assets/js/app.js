@@ -91,8 +91,9 @@
   const observationState = {x: window.innerWidth / 2, y: window.innerHeight / 2, active: false, mode: "idle"};
   const siteResizeHandlers = new Set();
   const narrowNavigationMedia = window.matchMedia("(max-width: 900px)");
+  const touchNavigationWidthMedia = window.matchMedia("(max-width: 1024px)");
   const touchNavigationMedia = window.matchMedia("(any-pointer: coarse), (any-hover: none)");
-  const usesTouchNavigation = () => narrowNavigationMedia.matches || navigator.maxTouchPoints > 0 || touchNavigationMedia.matches;
+  const usesTouchNavigation = () => narrowNavigationMedia.matches || (touchNavigationWidthMedia.matches && (navigator.maxTouchPoints > 0 || touchNavigationMedia.matches));
   const syncTouchNavigationClass = () => document.documentElement.classList.toggle("touch-navigation", usesTouchNavigation());
   syncTouchNavigationClass();
   window.addEventListener("resize", () => siteResizeHandlers.forEach(handler => handler()), {passive: true});
@@ -451,8 +452,7 @@
   const homeArtworkImageMarkup = (artist, {priority = false} = {}) => {
     const source = D.homeArtworkImages?.[artist.workId];
     if (!source) return C.placeholder(isEnglish ? "Artwork image pending" : "作品圖片待提供");
-    const thumbnail = source.replace("/home/", "/home/thumbs/").replace(/\.[^.]+$/, ".webp");
-    return `<img src="${C.assetRoute(thumbnail)}" alt="${textFor(artist, "workTitle")} ${isEnglish ? "artwork image" : "作品圖片"}" loading="${priority ? "eager" : "lazy"}" decoding="async" fetchpriority="${priority ? "high" : "low"}">`;
+    return `<img src="${C.assetRoute(source)}" alt="${textFor(artist, "workTitle")} ${isEnglish ? "artwork image" : "作品圖片"}" loading="${priority ? "eager" : "lazy"}" decoding="async" fetchpriority="${priority ? "high" : "low"}">`;
   };
 
   const artistViewData = artist => {
@@ -2381,12 +2381,12 @@
     };
     const collaborationLabels = isEnglish ? {
       heading: "COLLABORATION", store: "PARTNER STORE", description: "ABOUT THE COLLABORATION",
-      content: "CONTENT", price: "PRICE", hours: "AVAILABILITY", supply: "SUPPLY INFORMATION",
+      content: "CONTENT", hours: "AVAILABILITY", supply: "Available Products",
       notice: "NOTES", offers: "SPECIAL OFFER", offerCode: "PROMO CODE", offerDescription: "OFFER DETAILS",
       close: "Close collaboration details"
     } : {
       heading: "合作企劃", store: "合作店家", description: "合作企劃介紹",
-      content: "合作內容／商品內容", price: "價格", hours: "供應時間", supply: "供應資訊",
+      content: "合作內容／商品內容", hours: "供應時間", supply: "供應商品",
       notice: "注意事項", offers: "合作優惠", offerCode: "優惠碼", offerDescription: "優惠內容",
       close: "關閉合作企劃資訊"
     };
@@ -2420,7 +2420,7 @@
     const records = [...partnerShops, ...artVenues];
     const collaborationRecords = records
       .flatMap(shop => (shop.collaborations || []).map(project => ({shop, project})))
-      .filter(({project}) => project);
+      .filter(({project}) => project && project.published !== false);
     lists.forEach(list => {
       const source = list.dataset.shopList === "venues" ? artVenues : partnerShops;
       list.innerHTML = source.map(listCard).join("");
@@ -2429,9 +2429,8 @@
       collaborationList.innerHTML = collaborationRecords.map(({shop, project}) => {
         const title = isEnglish ? (project.titleEn || project.titleZh) : (project.titleZh || project.titleEn);
         const heading = title || shopName(shop);
-        const description = isEnglish ? (project.descriptionEn || project.descriptionZh) : (project.descriptionZh || project.descriptionEn);
         const preview = collaborationMain(project);
-        return `<article class="shop-collaboration-card"><div><h3>${heading}</h3><p class="shop-collaboration-store">${shopName(shop)}</p>${description ? `<p>${String(description).split("\n").find(line => line.trim())}</p>` : ""}</div>${preview ? `<div class="shop-collaboration-card-image"><img src="${C.assetRoute(preview)}" alt="${heading} ${isEnglish ? "collaboration image" : "合作企劃圖片"}"></div>` : ""}<button class="button shop-detail-trigger" type="button" data-collaboration-id="${project.id}" aria-haspopup="dialog">${labels.detail}</button></article>`;
+        return `<article class="shop-collaboration-card"><div><h3>${heading}</h3><p class="shop-collaboration-store">${shopName(shop)}</p></div>${preview ? `<div class="shop-collaboration-card-image"><img src="${C.assetRoute(preview)}" alt="${heading} ${isEnglish ? "collaboration image" : "合作企劃圖片"}"></div>` : ""}<button class="button shop-detail-trigger" type="button" data-collaboration-id="${project.id}" aria-haspopup="dialog">${labels.detail}</button></article>`;
       }).join("");
     }
 
@@ -2496,7 +2495,6 @@
       const title = collaborationText(project, "title");
       const description = collaborationText(project, "description");
       const content = collaborationText(project, "content");
-      const price = collaborationText(project, "price");
       const hours = collaborationText(project, "hours");
       const supply = collaborationText(project, "supply");
       const notice = collaborationText(project, "notice");
@@ -2513,7 +2511,6 @@
           <dl class="shop-meta"><div><dt>${collaborationLabels.store}</dt><dd>${shopName(shop)}</dd></div></dl>
           ${description ? `<section class="shop-description"><h4>${collaborationLabels.description}</h4>${description.split("\n").map(paragraph => `<p>${paragraph}</p>`).join("")}</section>` : ""}
           ${fieldMarkup(collaborationLabels.content, content)}
-          ${fieldMarkup(collaborationLabels.price, price)}
           ${fieldMarkup(collaborationLabels.hours, hours)}
           ${fieldMarkup(collaborationLabels.supply, supply)}
           ${fieldMarkup(collaborationLabels.notice, notice)}
@@ -2714,6 +2711,7 @@
     closeMobileMenu({restoreFocus: false});
   };
   narrowNavigationMedia.addEventListener("change", resetMobileMenuForBreakpoint);
+  touchNavigationWidthMedia.addEventListener("change", () => { syncTouchNavigationClass(); resetMobileMenuForBreakpoint(); });
   touchNavigationMedia.addEventListener("change", () => { syncTouchNavigationClass(); resetMobileMenuForBreakpoint(); });
   resetMobileMenuForBreakpoint();
 

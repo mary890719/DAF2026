@@ -30,9 +30,11 @@
         "Shen",
         "Soryer",
         "subperformance",
+        "tfam",
         "Titanik",
         "Togetoge",
         "Ungetsu",
+        "xinsheng",
         "YICCA",
         "YUANSHAN",
         "Zebrastraat",
@@ -42,6 +44,8 @@
     "assets/js/data.js",
     "assets/js/app.js",
     "about.html",
-    "index.html"
+    "index.html",
+    "en/partners.html",
+    "partners.html",
     ]
 }

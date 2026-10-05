@@ -47,5 +47,8 @@
     "index.html",
     "en/partners.html",
     "partners.html",
+    "en/curatorial.html",
+    "curatorial.html",
+    "package.json",
     ]
 }

@@ -1,0 +1,41 @@
+<?php
+/**
+ * DAF2026 關於頁面。
+ */
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+set_query_var( 'daf2026_page_key', 'about' );
+get_header();
+?>
+<main id="app" class="container">
+	<div id="breadcrumb"></div>
+	<p class="page-label" lang="en">ABOUT</p>
+	<h1 class="page-title">關於臺北數位藝術節</h1>
+	<article class="page-sections about-sections">
+		<section class="ia-section" id="festival">
+			<h2>關於臺北數位藝術節</h2>
+			<div class="about-copy">
+				<p>臺北數位藝術節從2006年開辦已成為每年數位藝術嘉年華會，集結許多世界知名數位藝術作品展出，為身為全球高科技發展重鎮的臺灣，展現人文與創意思維。</p>
+				<p>臺北數位藝術節是重要數位藝術展演平台，集結數位藝術與表演創作競賽成果、國際專業機構共同展出交流，透過臺北數位藝術節，拓展國內創作者視野，並藉由節慶活動方式，匯聚國內數位藝術創作能量，每一年度的臺北數位藝術節不但引領市民領略數位藝術的奧妙，為藝術愛好者提供交流創意與分享成果的活動，近年更將數位藝術平台延伸串連到國際性的策展活動，儼然形成數位藝術創意聚落的世界村。</p>
+			</div>
+		</section>
+		<section class="ia-section main-venue-visit" id="main-venue-visit">
+			<h2>主展場參觀</h2>
+			<div class="main-venue-visit-grid">
+				<section class="visit-subsection" id="visit-hours"><h3>參觀時間</h3><div class="visit-venue-info"><p>週一至週日 09:00-17:00<br>10/31 開展當天響應白晝之夜，展期時間延長至次日 02:00</p></div></section>
+				<section class="visit-subsection" id="visit-location"><h3>參觀地點</h3><div class="visit-venue-info"><p>臺北典藏植物園</p></div></section>
+				<section class="visit-subsection" id="transportation">
+					<h3>交通方式</h3>
+					<div class="transport-content">
+						<section class="transport-section"><h4>1. 搭乘捷運後步行／轉乘</h4><section class="transport-route-group"><h5>【圓山站】</h5><ul><li>步行至展區</li><li>轉乘紅50至【新生公園】</li><li>轉乘542至【吉林路底】</li></ul></section><section class="transport-route-group"><h5>【大直站】</h5><ul><li>轉乘72、722至【新生公園（林安泰）】</li></ul></section><section class="transport-route-group"><h5>【中山國小站】</h5><ul><li>步行至展區</li></ul></section></section>
+						<section class="transport-section"><h4>2. 搭乘公車後步行</h4><section class="transport-route-group"><h5>【民族東路口】下車</h5><p>109、203、277、279、280、280直、542、606、606通勤、612、685、敦化幹線</p></section><section class="transport-route-group"><h5>【新生公園】下車</h5><p>紅50、685、市民小巴9</p></section><section class="transport-route-group"><h5>【新生公園（林安泰）】下車</h5><p>72、222、286副、298、643、676、市民小巴9、松江新生幹線、復興幹線</p></section><section class="transport-route-group"><h5>【吉林路底】下車</h5><p>542</p></section></section>
+						<section class="transport-section"><h4>3. 騎乘WeMo共享機車</h4><p>活動期間於新生公園平面停車場（臺北市新生運動館外側），設立WeMo共享機車專屬租還區，民眾可透過共享機車抵達展區，或自由探索臺北圓山街區，觀賞更多作品</p></section>
+					</div>
+				</section>
+				<section class="visit-subsection" id="venue-map"><h3>參觀地圖</h3><div class="transport-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.9133132868665!2d121.5317769!3d25.070927099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a95401821b0d%3A0x26dc1d8284f4461!2z6Ie65YyX5YW46JeP5qSN54mp5ZyS!5e0!3m2!1szh-TW!2sus!4v1786722022654!5m2!1szh-TW!2sus" width="600" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="臺北典藏植物園 Google 地圖"></iframe></div></section>
+			</div>
+		</section>
+		<section class="ia-section" id="art-in-store"><h2>臺北圓山街區</h2><p>本次展覽與臺北圓山周邊街區店家合作，將藝術作品延伸至日常生活場域之中。<br>各合作店家的開放日期與營業時間皆有所不同，請至「<a href="<?php echo esc_url( home_url( '/shops/#partner-stores' ) ); ?>">探索地圖－合作店家</a>」查看位置、資訊與即時營業狀態。</p></section>
+	</article>
+	<nav class="page-bottom-nav back-wrap" aria-label="頁面快速導覽"><a class="button" href="<?php echo esc_url( home_url( '/curatorial/' ) ); ?>">策展論述 &gt;</a></nav>
+</main>
+<?php get_footer(); ?>

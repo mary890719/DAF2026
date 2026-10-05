@@ -44,3 +44,42 @@ function daf2026_enqueue_assets() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'daf2026_enqueue_assets' );
+
+
+/**
+ * 建立 DAF2026 中文正式頁面骨架。
+ * 僅補上不存在的頁面，不覆寫既有頁面內容。
+ */
+function daf2026_ensure_site_pages() {
+	if ( get_option( 'daf2026_pages_v1_created' ) ) {
+		return;
+	}
+	$pages = array(
+		'about' => '關於臺北數位藝術節',
+		'curatorial' => '策展論述',
+		'partners' => '單位介紹',
+		'map' => '臺北典藏植物園',
+		'district-map' => '臺北圓山街區',
+		'shops' => '合作店家',
+		'works' => '參展作品',
+		'district-works' => '圓山街區作品',
+		'work-detail' => '作品詳細',
+		'program' => '活動節目',
+		'event-detail' => '活動詳細',
+		'opening-performance' => '開幕演出',
+	);
+	foreach ( $pages as $slug => $title ) {
+		if ( get_page_by_path( $slug, OBJECT, 'page' ) ) {
+			continue;
+		}
+		wp_insert_post( array(
+			'post_type' => 'page',
+			'post_status' => 'publish',
+			'post_title' => $title,
+			'post_name' => $slug,
+			'post_content' => '',
+		) );
+	}
+	update_option( 'daf2026_pages_v1_created', 1, false );
+}
+add_action( 'admin_init', 'daf2026_ensure_site_pages' );

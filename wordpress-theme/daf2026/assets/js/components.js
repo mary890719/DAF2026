@@ -11,6 +11,15 @@ window.DAF_COMPONENTS = (() => {
   const localizedRoute = (route, targetLanguage = getCurrentLanguage()) => {
     if (!route || isExternal(route)) return route;
     const normalized = route.replace(/^\.\.\//, "").replace(/^en\//, "");
+    if (isWordPress()) {
+      const match = normalized.match(/^([^?#]*)([?#].*)?$/);
+      const path = match?.[1] || "index.html";
+      const suffix = match?.[2] || "";
+      const slug = path === "index.html" ? "" : path.replace(/\.html$/, "").replace(/^\/+|\/+$/g, "");
+      const base = window.DAF_WP.homeUrl.replace(/\/$/, "");
+      const languagePrefix = targetLanguage === "en" ? "/en" : "";
+      return `${base}${languagePrefix}${slug ? `/${slug}` : ""}/${suffix}`;
+    }
     if (targetLanguage === getCurrentLanguage()) return normalized;
     if (isTestMap()) return targetLanguage === "en" ? `../en/${normalized}` : normalized;
     return targetLanguage === "en" ? `en/${normalized}` : `../${normalized}`;
@@ -61,8 +70,9 @@ window.DAF_COMPONENTS = (() => {
       const renderChildren = (children, id, nested = false) => `<ul class="nav-submenu${nested ? " nav-submenu-nested" : ""}" id="${id}">${children.map((child, index) => {
         const data = childData(child);
         const [childPath, childHash] = (data.url || "").split("#");
-        const currentPage = location.pathname.split("/").pop() || "index.html";
-        const current = active && childPath === currentPage && (!childHash || !currentHash || `#${childHash}` === currentHash);
+        const currentPage = location.pathname.split("/").filter(Boolean).pop() || "index.html";
+        const currentChild = isWordPress() ? childPath.replace(/\.html$/, "") : childPath;
+        const current = active && currentChild === currentPage && (!childHash || !currentHash || `#${childHash}` === currentHash);
         const branchActive = active && hasCurrentHash(data);
         const childId = `${id}-${index}`;
         return `<li class="nav-submenu-item${data.children ? " has-children" : ""}${branchActive ? " is-expanded" : ""}"${data.children ? ' data-submenu-container' : ""}><div class="nav-submenu-row"><a class="nav-submenu-link${current ? " active" : ""}" href="${localizedRoute(data.url)}"${current ? ' aria-current="location"' : ""}>${data.label}</a>${data.children ? `<button class="nav-submenu-toggle nav-nested-toggle" type="button" data-submenu-label="${data.label}" aria-expanded="${branchActive ? "true" : "false"}" aria-controls="${childId}" aria-label="${branchActive ? ui().collapse : ui().expand}${data.label}${ui().submenu}"><span aria-hidden="true">＋</span></button>` : ""}</div>${data.children ? renderChildren(data.children, childId, true) : ""}</li>`;
@@ -103,10 +113,10 @@ window.DAF_COMPONENTS = (() => {
     const trail = [{label: ui().home, href: "index.html"}, ...(Array.isArray(items) ? items : [{label: items}])];
     return `<nav class="breadcrumb" aria-label="Breadcrumb"><ol>${trail.map((item, index) => {
       const current = index === trail.length - 1;
-      return `<li>${current ? `<span aria-current="page">${item.label}</span>` : item.href ? `<a href="${item.href}">${item.label}</a>` : `<span>${item.label}</span>`}</li>`;
+      return `<li>${current ? `<span aria-current="page">${item.label}</span>` : item.href ? `<a href="${localizedRoute(item.href)}">${item.label}</a>` : `<span>${item.label}</span>`}</li>`;
     }).join("")}</ol></nav>`;
   };
-  const button = (label, href="index.html") => `<a class="button" href="${href}">${label}</a>`;
+  const button = (label, href="index.html") => `<a class="button" href="${localizedRoute(href)}">${label}</a>`;
   const siteBackground = () => `<canvas class="site-network-canvas" id="site-network-canvas" aria-hidden="true"></canvas><div class="site-observation-light" aria-hidden="true"></div>`;
   const backToTop = () => `<button class="back-to-top" type="button" aria-label="${ui().backToTop}"><img class="icon" src="${assetRoute("assets/icons/chevron-up.svg")}" alt="" aria-hidden="true"><span aria-hidden="true">TOP</span></button>`;
   const taipeiTime = now => {

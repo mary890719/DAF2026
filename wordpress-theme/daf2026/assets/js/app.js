@@ -931,7 +931,7 @@
   };
 
   const renderEventDetail = () => {
-    const isOpeningRoute = /(?:^|\/)opening-performance\.html$/i.test(location.pathname);
+    const isOpeningRoute = /(?:^|\/)opening-performance(?:\.html)?\/?$/i.test(location.pathname);
     const requestedEventId = isOpeningRoute ? "opening-performance" : queryId();
     const event = D.events.find(item => String(item.id) === requestedEventId);
     const article = document.querySelector("[data-event-detail]");
@@ -2565,19 +2565,19 @@
   document.querySelector("#site-header").innerHTML = C.header(page);
   document.querySelector("#site-footer").innerHTML = C.footer();
   initializeBackToTop();
-  if ("serviceWorker" in navigator && location.protocol === "https:" && !/^(?:localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+  if (!window.DAF_WP && "serviceWorker" in navigator && location.protocol === "https:" && !/^(?:localhost|127\.0\.0\.1)$/.test(location.hostname)) {
     navigator.serviceWorker.register(C.assetRoute("sw.js")).catch(error => console.warn("Offline fallback unavailable.", error));
   }
 
   if (page === "about" && location.hash) {
     const legacyAboutPages = {"#theme": "curatorial.html", "#curatorial-execution": "curatorial.html", "#curators": "curatorial.html#curators", "#organizations": "partners.html#organizations", "#partners": "partners.html#partner-organizations", "#partner-organizations": "partners.html#partner-organizations", "#sponsors": "partners.html#sponsors"};
-    if (legacyAboutPages[location.hash]) location.replace(legacyAboutPages[location.hash]);
+    if (legacyAboutPages[location.hash]) location.replace(C.localizedRoute(legacyAboutPages[location.hash]));
   }
   if (page === "map" && location.hash) {
     const legacyMapPages = {"#district-map": "district-map.html#district-map", "#partner-stores": "shops.html#partner-stores", "#art-in-stores": "shops.html#art-in-stores"};
-    if (legacyMapPages[location.hash]) location.replace(legacyMapPages[location.hash]);
+    if (legacyMapPages[location.hash]) location.replace(C.localizedRoute(legacyMapPages[location.hash]));
   }
-  if (page === "works" && location.hash === "#art-in-stores") location.replace("district-works.html#art-in-stores");
+  if (page === "works" && location.hash === "#art-in-stores") location.replace(C.localizedRoute("district-works.html#art-in-stores"));
   const breadcrumbLabels = isEnglish ? {about:"ABOUT TAIPEI DIGITAL ART FESTIVAL", curatorial:"CURATORIAL STATEMENT", partners:"EXECUTION AND PARTNERS", map:"TAIPEI COLLECTIBLE BOTANICAL GARDEN", "district-map":"TAIPEI YUANSHAN DISTRICT", shops:"PARTNER STORES", works:"TAIPEI COLLECTIBLE BOTANICAL GARDEN", "district-works":"TAIPEI YUANSHAN DISTRICT", program:"PROGRAM"} : {about:"關於臺北數位藝術節", curatorial:"策展論述", partners:"單位介紹", map:"臺北典藏植物園", "district-map":"臺北圓山街區", shops:"合作店家", works:"臺北典藏植物園", "district-works":"臺北圓山街區", program:"活動節目"};
   if (breadcrumbLabels[page]) {
     const parent = ["about", "curatorial", "partners"].includes(page) ? (isEnglish ? "ABOUT" : "關於")

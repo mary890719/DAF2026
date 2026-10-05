@@ -1,0 +1,34 @@
+<?php
+/** DAF2026 curatorial 頁面。 */
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+set_query_var( 'daf2026_page_key', 'curatorial' );
+get_header();
+?>
+<main id="app" class="container">
+            <div id="breadcrumb"></div>
+            <p class="page-label" lang="en">ABOUT</p>
+            <h1 class="page-title">策展論述</h1>
+            <article class="page-sections about-sections">
+<section class="ia-section" id="theme">
+                    <h2>策展論述</h2>
+                    <div class="about-copy">
+                        <p>在資訊技術與人工智慧迅速發展的當代，一種尚未被完全指認的存在形式漸漸浮現：它穿梭於龐大的資料流、運算系統與演算法之間，並悄然嵌合進我們所處的世界。</p>
+                        <p>2026臺北數位藝術節以「灰色自動體」（Gray Autonomous Entity）為題，試圖以數位藝術呈現這些正在形成、難以被清楚指認，卻已無可迴避的新型態能動性，以及由此展開的生命、技術與環境關係。當龐大的資料經由編碼進入模型訓練，並在高維向量空間中形成新的表徵，影像、語言與聲音也由此建立新的鄰近性。運算從既有資料中辨識模式、進行預測並產生新的組合，使系統生成與回應，也呈現出某種難以被描述的實體（entity）──它產生出令人感到既熟悉又陌生的經驗：熟悉，是因為它調用了人類共同累積的資料與記憶；陌生，則來自於自動性的湧現。</p>
+                        <p>我們所辨識的事物，可能來自某個人的經驗，也可能來自無數人的資料，經由模型運算後重新生成；那些文化痕跡，經過計算，以另一種形式重新回到我們面前。「灰色」作為一種日常語義中的象徵，指涉著模糊、過渡與邊界未定的狀態；在機器的發展中，它也源自金屬與工業材料的色彩，並在科幻文化中延伸，更承載著人類試圖避免「恐怖谷」（Uncanny Valley）所帶來不安的想望。然而，當機器生成我們的語言、影像與聲音，甚至具身，熟悉與陌生、人造與自然、主體與技術之間的界線依然顯得開放而不確定。</p>
+                        <p>如同植物、土壤、菌絲、動物、人類、機器一般，人工智慧如今也成為構成環境的一部分，共同形成複雜的網絡，使網絡增加了一種新的節點。而如果能動性不再只屬於人類，我們如何重新認識行動、感知、存在、關係與創造？當藝術創作涉及資料取樣、模型訓練、潛在空間與生成演算法，當中也承載著資料所積累的歷史、文化與權力，偏見、分類、勞動、監控與倫理因此與生成能力同時存在。</p>
+                        <p>「灰色自動體」因而指向那些介於生命與非生命、自然與人工、控制與自主之間的實在，並描繪一個由人類與非人共同構成的新生態。藝術或許正是在這些尚未確定之中，使不可見的作用、運算與連結變得可感，並開啟更多理解與創造世界的可能。</p>
+                    </div>
+                </section>
+<section class="ia-section" id="curatorial-execution">
+<h2>策展人</h2>
+<div id="curators">
+                                <div class="curator-profiles">
+                                <article class="curator-profile has-image"><img class="curator-profile-image" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/curators/curators-01.jpg' ); ?>" alt="王連晟"><div class="curator-profile-content"><h3>王連晟</h3><p class="curator-nationality">台灣</p><p>王連晟，新媒體藝術家、教育者與音像表演者，現為國立臺北藝術大學新媒體藝術學系專任助理教授。創作聚焦互動裝置、聲音、演算法影像與機器感知，長期關注科技如何介入人類感知、身體經驗與社會關係，並透過程式、機械系統及即時運算發展跨媒材作品。曾獲台北數位藝術獎互動裝置類首獎、台北數位藝術表演獎首獎、英國 Lumen Prize 雕塑類首獎及台北美術獎首獎。</p><div class="curator-career">2026   KANE Art Prize，榮譽提名, 倫敦, 英國。<br>2023   第十二屆MADATAC雙年展，馬德里達米安複合展演空間，馬德里，西班牙。<br>2022   暴風之眼，法國南特當代藝術中心，南特，法國。<br>2022   客廳，臺中國家歌劇院，臺中，臺灣。<br>2019   放映機錄像藝術節，Prado媒體實驗室，馬德里，西班牙。<br>2018   台北美術獎，首獎，台北，台灣。<br>2018   拉古納藝術獎，入選，威尼斯，義大利。<br>2017   波蘭數位藝術節，藝術花園，克拉克夫，波蘭。<br>2017   林茲電子藝術節，後城市，林茲，奧地利。<br>2017   第四次媒體藝術，光州市立美術館，光州，南韓。<br>2017   流明獎，雕塑類首獎，倫敦，英國。<br>2017   YICCA國際當代藝術競賽，路斯特藝廊，維爾紐斯，立陶宛。<br>2016   Update雙年展，Zebrastraat藝術中心，根特，比利時。<br>2013   台北數位藝術表演獎，首獎，台灣。<br>2009   台北數位藝術獎，互動裝置類首獎，台灣。</div><a class="button" href="https://soulblighter0122.blogspot.com/" target="_blank" rel="noopener noreferrer">個人網站</a></div></article>
+                            
+                                <article class="curator-profile has-image"><img class="curator-profile-image" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/curators/curators-02.jpg' ); ?>" alt="林晏竹"><div class="curator-profile-content"><h3>林晏竹</h3><p class="curator-nationality">台灣</p><p>林晏竹，新媒體藝術家、策展人及研究者，國立臺北藝術大學新媒體藝術碩士、美術學博士。其創作、策展與研究穿越於藝術、資訊技術與宇宙論之間，關注資訊、媒介與系統如何形塑世界及藝術，並探索現實與虛擬、可見與不可見、人與非人間的聯繫。</p><p>其策展實踐源自藝術家的經驗，將策展視為一種藝術實踐與創造的方法，使展覽成為一個生成與聯繫不可見的可能場域。曾共同策展關渡光藝術節「量子糾纏」、中山好融異「逾期日常」，以及林茲電子藝術節「震源」、「觀察者模式」、「向星門的迴聲」、「計算演化」等展覽，並策展「訊號世界[REC]」。</p><div class="curator-career">共同策展<br>2026，「計算演化」，奧地利林茲電子藝術節，林茲，奧地利<br>2025，「向星門的迴聲」，奧地利林茲電子藝術節，林茲，奧地利<br>2024，「觀察者模式」，奧地利林茲電子藝術節，林茲，奧地利<br>2023，「震源」，奧地利林茲電子藝術節，林茲，奧地利<br>2021，「2021中山好融異 — 逾期日常」，中山街區，臺北，臺灣<br>2020，「2020關渡光藝術節 — 量子糾纏」，關渡美術館，臺北，臺灣<br><br>策展<br>2026，「新樂園藝術空間第七屆媒體影像展 — 訊號世界[REC]」，新樂園藝術空間，桃園，臺灣<br><br>期刊論文<br>2024，「跨維信使：藝術作品作為一種訊息傳遞媒介」，國立臺灣美術館《臺灣美術學刊》129期<br><br>個展<br>2017，「常常在家 — 林晏竹個展」，福利社，臺北，臺灣<br><br>精選聯展<br>2026，「Can You See Me Now?」，The Gem Theater / VTIFF，貝瑟爾 / 伯靈頓，緬因州 / 佛蒙特州，美國<br>2024，「街角的利息」，臺北當代藝術館，臺北，臺灣<br>2021，「Non-syntax」，Calm & Punk Gallery / BnA Museum / Workshop Underground，東京 / 京都 / 福岡，日本<br>2021，「似是而非」，Pa Ta Taipei – PTT Space，臺北，臺灣<br>2013–2015，「Schizophrenia Taiwan 2.0」，林茲電子藝術節（Ars Electronica） / 超媒體藝術節 / Maison des Métallos / Ambika P3 / Instants Video Festival / 赫勒勞歐洲藝術中心，林茲 / 柏林 / 巴黎 / 倫敦 / 馬賽 / 德勒斯登，奧地利 / 德國 / 法國 / 英國 / 法國 / 德國<br>2013，「第八屆臺北數位藝術節 — 超神經」，松山文創園區，臺北，臺灣</div><a class="button" href="http://linyenju.com/" target="_blank" rel="noopener noreferrer">個人網站</a></div></article>
+                                </div></div>
+</section>
+            </article>
+            <nav class="page-bottom-nav back-wrap" aria-label="頁面快速導覽"><a class="button" href="/about/">&lt; 關於臺北數位藝術節</a><a class="button" href="/partners/">單位介紹 &gt;</a></nav>
+        </main>
+<?php get_footer(); ?>

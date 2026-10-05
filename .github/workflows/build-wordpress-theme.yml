@@ -40,6 +40,9 @@ jobs:
             daf2026/page-program.php \
             daf2026/page-event-detail.php \
             daf2026/page-opening-performance.php \
+            daf2026/page-en.php \
+            daf2026/page-en-about.php \
+            daf2026/header.php \
             daf2026/functions.php \
             daf2026/assets/js/components.js \
             daf2026/assets/js/app.js

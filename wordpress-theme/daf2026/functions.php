@@ -47,7 +47,7 @@ add_action( 'wp_enqueue_scripts', 'daf2026_enqueue_assets' );
 
 
 /**
- * 建立 DAF2026 中文正式頁面骨架。
+ * 建立 DAF2026 中英文正式頁面骨架。
  * 僅補上不存在的頁面，不覆寫既有頁面內容。
  */
 function daf2026_ensure_site_pages() {
@@ -81,5 +81,57 @@ function daf2026_ensure_site_pages() {
 		) );
 	}
 	update_option( 'daf2026_pages_v1_created', 1, false );
+
+	$english_parent = get_page_by_path( 'en', OBJECT, 'page' );
+	if ( ! $english_parent ) {
+		$english_parent_id = wp_insert_post( array(
+			'post_type' => 'page',
+			'post_status' => 'publish',
+			'post_title' => 'English',
+			'post_name' => 'en',
+			'post_content' => '',
+		) );
+	} else {
+		$english_parent_id = $english_parent->ID;
+	}
+
+	if ( $english_parent_id && ! is_wp_error( $english_parent_id ) ) {
+		$english_pages = array(
+			'about' => 'About Taipei Digital Art Festival',
+		);
+		foreach ( $english_pages as $slug => $title ) {
+			if ( get_page_by_path( 'en/' . $slug, OBJECT, 'page' ) ) {
+				continue;
+			}
+			wp_insert_post( array(
+				'post_type' => 'page',
+				'post_status' => 'publish',
+				'post_title' => $title,
+				'post_name' => $slug,
+				'post_parent' => $english_parent_id,
+				'post_content' => '',
+			) );
+		}
+	}
 }
 add_action( 'admin_init', 'daf2026_ensure_site_pages' );
+
+/**
+ * 英文子頁使用獨立模板，保留 /en/.../ 階層網址。
+ */
+function daf2026_english_page_template( $template ) {
+	if ( ! is_page() ) {
+		return $template;
+	}
+	$post = get_queried_object();
+	if ( ! $post instanceof WP_Post || ! $post->post_parent ) {
+		return $template;
+	}
+	$parent = get_post( $post->post_parent );
+	if ( ! $parent || 'en' !== $parent->post_name ) {
+		return $template;
+	}
+	$english_template = get_template_directory() . '/page-en-' . $post->post_name . '.php';
+	return file_exists( $english_template ) ? $english_template : $template;
+}
+add_filter( 'template_include', 'daf2026_english_page_template' );

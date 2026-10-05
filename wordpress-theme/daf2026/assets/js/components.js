@@ -2,26 +2,10 @@ window.DAF_COMPONENTS = (() => {
   const getCurrentLanguage = () => document.documentElement.lang.toLowerCase().startsWith("en") || /(^|\/)en(\/|$)/.test(location.pathname) ? "en" : "zh-Hant";
   const isExternal = value => /^(?:[a-z]+:|\/\/|#)/i.test(value || "");
   const isTestMap = () => /(^|\/)test_MAP(\/|$)/i.test(location.pathname);
-  const isWordPress = () => Boolean(window.DAF_WP?.themeUri && window.DAF_WP?.homeUrl);
-  const cleanRelativePath = path => (path || "").replace(/^(?:\.\.\/)+/, "").replace(/^en\//, "");
-  const wordpressPageRoute = route => {
-    const [pathAndQuery, hash = ""] = route.split("#");
-    const [path, query = ""] = pathAndQuery.split("?");
-    const normalized = cleanRelativePath(path);
-    const pageMap = {"index.html":"","about.html":"about/","curatorial.html":"curatorial/","partners.html":"partners/","map.html":"map/","district-map.html":"district-map/","shops.html":"shops/","works.html":"works/","district-works.html":"district-works/","work-detail.html":"work-detail/","program.html":"program/","event-detail.html":"event-detail/"};
-    const target = Object.prototype.hasOwnProperty.call(pageMap, normalized) ? pageMap[normalized] : normalized.replace(/\.html$/, "/");
-    const base = window.DAF_WP.homeUrl.replace(/\/$/, "");
-    return `${base}/${target}${query ? `?${query}` : ""}${hash ? `#${hash}` : ""}`;
-  };
-  const assetRoute = path => {
-    if (!path || isExternal(path)) return path;
-    if (isWordPress()) return `${window.DAF_WP.themeUri.replace(/\/$/, "")}/${cleanRelativePath(path)}`;
-    return path.startsWith("../") ? path : `${getCurrentLanguage() === "en" || isTestMap() ? "../" : ""}${path}`;
-  };
+  const assetRoute = path => !path || isExternal(path) || path.startsWith("../") ? path : `${getCurrentLanguage() === "en" || isTestMap() ? "../" : ""}${path}`;
   const localizedRoute = (route, targetLanguage = getCurrentLanguage()) => {
     if (!route || isExternal(route)) return route;
-    const normalized = cleanRelativePath(route);
-    if (isWordPress()) return wordpressPageRoute(targetLanguage === "en" ? `en/${normalized}` : normalized);
+    const normalized = route.replace(/^\.\.\//, "").replace(/^en\//, "");
     if (targetLanguage === getCurrentLanguage()) return normalized;
     if (isTestMap()) return targetLanguage === "en" ? `../en/${normalized}` : normalized;
     return targetLanguage === "en" ? `en/${normalized}` : `../${normalized}`;
@@ -76,13 +60,13 @@ window.DAF_COMPONENTS = (() => {
         const current = active && childPath === currentPage && (!childHash || !currentHash || `#${childHash}` === currentHash);
         const branchActive = active && hasCurrentHash(data);
         const childId = `${id}-${index}`;
-        return `<li class="nav-submenu-item${data.children ? " has-children" : ""}${branchActive ? " is-expanded" : ""}"${data.children ? ' data-submenu-container' : ""}><div class="nav-submenu-row"><a class="nav-submenu-link${current ? " active" : ""}" href="${localizedRoute(data.url)}"${current ? ' aria-current="location"' : ""}>${data.label}</a>${data.children ? `<button class="nav-submenu-toggle nav-nested-toggle" type="button" data-submenu-label="${data.label}" aria-expanded="${branchActive ? "true" : "false"}" aria-controls="${childId}" aria-label="${branchActive ? ui().collapse : ui().expand}${data.label}${ui().submenu}"><span aria-hidden="true">＋</span></button>` : ""}</div>${data.children ? renderChildren(data.children, childId, true) : ""}</li>`;
+        return `<li class="nav-submenu-item${data.children ? " has-children" : ""}${branchActive ? " is-expanded" : ""}"${data.children ? ' data-submenu-container' : ""}><div class="nav-submenu-row"><a class="nav-submenu-link${current ? " active" : ""}" href="${data.url}"${current ? ' aria-current="location"' : ""}>${data.label}</a>${data.children ? `<button class="nav-submenu-toggle nav-nested-toggle" type="button" data-submenu-label="${data.label}" aria-expanded="${branchActive ? "true" : "false"}" aria-controls="${childId}" aria-label="${branchActive ? ui().collapse : ui().expand}${data.label}${ui().submenu}"><span aria-hidden="true">＋</span></button>` : ""}</div>${data.children ? renderChildren(data.children, childId, true) : ""}</li>`;
       }).join("")}</ul>`;
       const activeChild = active && item.children?.some(hasCurrentHash);
       const submenu = item.children ? renderChildren(item.children, submenuId) : "";
       const primary = item.parentOnly
         ? `<button class="nav-main-link nav-parent-trigger${active ? " active" : ""}" type="button" data-submenu-label="${item.label}" aria-expanded="${activeChild ? "true" : "false"}" aria-controls="${submenuId}" aria-label="${activeChild ? ui().collapse : ui().expand}${item.label}${ui().submenu}">${item.label}</button>`
-        : `<a href="${localizedRoute(item.url)}" class="nav-main-link${active ? " active" : ""}"${active ? ' aria-current="page"' : ""}>${item.label}</a>`;
+        : `<a href="${item.url}" class="nav-main-link${active ? " active" : ""}"${active ? ' aria-current="page"' : ""}>${item.label}</a>`;
       return `<div class="nav-item${item.children ? " has-submenu" : ""}${activeChild ? " is-expanded" : ""}"${item.children ? ' data-submenu-container' : ""}><div class="nav-primary-row">${primary}${item.children && !item.parentOnly ? `<button class="nav-submenu-toggle" type="button" data-submenu-label="${item.label}" aria-expanded="${activeChild ? "true" : "false"}" aria-controls="${submenuId}" aria-label="${activeChild ? ui().collapse : ui().expand}${item.label}${ui().submenu}"><span aria-hidden="true">＋</span></button>` : ""}</div>${submenu}</div>`;
     }).join("");
     const brandLogo = `<img class="site-logo-image" src="${assetRoute("assets/images/logos/DAF26LOGO.svg")}" alt="${getCurrentLanguage() === "en" ? "2026 Taipei Digital Art Festival — Gray Autonomous Entity" : "2026 臺北數位藝術節－灰色自動體 Gray Autonomous Entity"}">`;

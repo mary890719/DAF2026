@@ -54,7 +54,7 @@ window.DAF_DATA = {
     "workTitleEn": "Generative Data",
     "career": "個展\n2021｜Adaptation，臺北數位藝術中心，台北\n2015｜感知習作，臺北數位藝術中心，台北\n2014｜Falling，國立臺灣美術館，台中\n2013｜Dollar-Post 2.0，Titanik gallery，⼟爾庫\n\n聯展\n2024｜熱影像，台北當代藝術館，台北\n2023｜上線中－網路藝術展，新竹241藝術空間，新竹\n2020｜虛幻生命：混種、轉殖與創生，臺灣當代文化實驗場，台北\n2019｜即溶生活 未來記憶的想像，北師美術館，台北\n2017｜Patchlab Digital Art Festival 2017，克拉科夫\n2017｜TAxT桃園科技藝術節，桃園\n2016｜影像的第三方認知，恆畫廊，台北",
     "image": {
-      "src": "assets/images/artists/artist-01.jpg",
+      "src": "assets/images/artists/artist-01.webp",
       "alt": "吳宜曄"
     },
     "nationalityZh": "臺灣",
@@ -77,7 +77,7 @@ window.DAF_DATA = {
     "workTitleEn": "Those words are no longer relevant",
     "career": "聯展\n2026｜透明的發生 無邊製造創作個展，水谷藝術空間。台北\n2026｜雲端光景 2026月津港燈節，月津港，台南\n2025｜ARS Electronica Festival 2025，POSTCITY， Linz, Austria\n2024｜FUTURE VISION LAB 2024，臺灣當代文化實驗場C-LAB，台北\n2024｜科技．藝遊，桃園國際機場第二航廈，桃園市\n2024｜Expanded Animation 2024 入圍發表 (Art Research paper)、Honorable Mention\n2024｜ARS Electronica Festival 2024, POSTCITY Linz Austria\n2024｜113年新北市美展 首獎\n2024｜113年全國美展 首獎(林俊遑, 黃紀虹)\n2024｜ISEA 2024 入圍發表 (Art paper)\n2024｜RECTO VRso VR競賽 優選(林俊遑, 黃紀虹)\n2023｜ARS Electronica Festival 2023, POSTCITY Linz Austria\n2023｜臺北文創天空創意節 好點子獎",
     "image": {
-      "src": "assets/images/artists/artist-02.jpg",
+      "src": "assets/images/artists/artist-02.webp",
       "alt": "無邊製造-林俊遑 / 黃紀虹 / 鄭子芸"
     },
     "nationalityZh": "臺灣",
@@ -104,7 +104,7 @@ window.DAF_DATA = {
     "workTitleEn": "It Could Be You",
     "career": "個展\n2025｜Traced 光蹤，臺北表演藝術中心，台北，臺灣\n2023｜[.user ]，誠品畫廊，台北，臺灣\n\n聯展\n2025｜浪濤之下亦有皇都 + 等晶播種，YPAM，東京藝大，橫濱，日本\n2025｜破浪之際的臺灣：過去與未來的前線，路德維希美術館，布達佩斯，匈牙利\n\n表演\n2016｜白晝之夜，台北，台灣\n2016｜滲透藝術節，高雄，台灣\n\n獲獎\n2023｜S+T+ARTS，Nomination/Honorary Mentions，S+TArts Prize\n2021｜The 19th 台新藝術獎，視覺藝術獎",
     "image": {
-      "src": "assets/images/artists/artist-03.jpg",
+      "src": "assets/images/artists/artist-03.webp",
       "alt": "鄭先喻"
     },
     "nationalityZh": "臺灣",
@@ -127,7 +127,7 @@ window.DAF_DATA = {
     "workTitleEn": "Jaywalking",
     "career": "聯展\n倫敦 Barbican，巴塞隆納 MUTEK Festival / Art Basel，香港 Para Site，舊金山 Mozilla:The Glass Room，比利時 Bozar / FOMU\n\n國際交流 / 演講\nMoMA / TEDx Brussels / KBC / Samsung / Wired / MUTEK Montréal / KIKK Festival",
     "image": {
-      "src": "assets/images/artists/artist-04.jpg",
+      "src": "assets/images/artists/artist-04.webp",
       "alt": "Dries Depooter"
     },
     "nationalityZh": "比利時",
@@ -155,7 +155,7 @@ window.DAF_DATA = {
     "workTitleEn": "EZ Quality Soryer V2",
     "career": "獲獎\n2005｜ZKM Karlsruhe「科學與藝術國際媒體獎」，VIDA 13.2 Art and Artificial Life Award 特別提名。\n2015、2023｜Prix Ars Electronica 榮譽提名。",
     "image": {
-      "src": "assets/images/artists/artist-05.jpg",
+      "src": "assets/images/artists/artist-05.webp",
       "alt": "維麗娜．弗里德里希"
     },
     "nationalityZh": "德國",
@@ -181,7 +181,7 @@ window.DAF_DATA = {
     "workTitle": "GeodesicDome+3V+1a - Architectural Plans",
     "workTitleEn": "GeodesicDome+3V+1a - Architectural Plans",
     "image": {
-      "src": "assets/images/artists/artist-06.jpg",
+      "src": "assets/images/artists/artist-06.webp",
       "alt": "C-LAB未來視覺實驗室"
     },
     "nationalityZh": "臺灣",
@@ -208,7 +208,7 @@ window.DAF_DATA = {
     "workTitle": "WM_EX10 TCM_200DV TP-VS500 MS-201 BK26 MG10",
     "workTitleEn": "WM_EX10 TCM_200DV TP-VS500 MS-201 BK26 MG10",
     "image": {
-      "src": "assets/images/artists/artist-07.jpg",
+      "src": "assets/images/artists/artist-07.webp",
       "alt": "Stefan Tiefengraber"
     },
     "nationalityZh": "奧地利",
@@ -235,7 +235,7 @@ window.DAF_DATA = {
     "workTitle": "石夢 v2.0",
     "workTitleEn": "Stone Dream v2.0",
     "image": {
-      "src": "assets/images/artists/artist-08.jpg",
+      "src": "assets/images/artists/artist-08.webp",
       "alt": "何芯源"
     },
     "nationalityZh": "臺灣",
@@ -262,7 +262,7 @@ window.DAF_DATA = {
     "workTitle": "Belugas’ Sphere",
     "workTitleEn": "Belugas’ Sphere",
     "image": {
-      "src": "assets/images/artists/artist-09.jpg",
+      "src": "assets/images/artists/artist-09.webp",
       "alt": "Jed Berk"
     },
     "nationalityZh": "美國",
@@ -289,7 +289,7 @@ window.DAF_DATA = {
     "workTitleEn": "Luminous Night",
     "career": "聯展\n2025｜東興圳光藝節「一閃一閃亮晶晶」，新竹東興圳公園。\n2025｜關渡光藝術節「幻響」，國立臺北藝術大學。\n2025｜寶藏巖燈節，寶藏巖國際藝術村。\n2024｜關渡光藝術節「燒聲」策展人，國立臺北藝術大學。\n2024｜羅東藝穗節，羅東中山公園。\n2024｜台南新藝獎-「南巷藝事」，鷲嶺食肆-原鶯料理。\n2024｜台灣燈會在台南，安平燈區-河光往事展區。\n2023｜關渡光藝術節「漉漉」策展人，關渡中港河碼頭。\n2023｜月津港燈節，臺南鹽水月津港。\n2022｜關渡光藝術節「濟濟」策展人，關渡中港河碼頭。\n2022｜TAIPOWER D/S ONE 電幻1號所，D/S ONE GALLERY。\n2021｜光映淡水，淡水古蹟博物館-海關碼頭。\n2020｜跨過祭 Crossover Fest.，臺南友愛街旅館。\n2020｜關渡光藝術節「量子糾纏」，國立臺北藝術大學。\n2020｜月津港燈節，臺南鹽水月津港 。",
     "image": {
-      "src": "assets/images/artists/artist-10.png",
+      "src": "assets/images/artists/artist-10.webp",
       "alt": "林書瑜"
     },
     "nationalityZh": "臺灣",
@@ -315,7 +315,7 @@ window.DAF_DATA = {
     "workTitleEn": "Solar Pink Pong",
     "career": "獲獎\n《Bump》｜遠距連結人行道互動裝置，曾獲 Prix Ars Electronica 榮譽獎。\n《Solar Pink Pong》｜以太陽能與日光反射構成的街頭遊戲，曾獲日本文化廳媒體藝術祭娛樂部門優秀賞，Roland Graf｜公開資料中可確認的重要共同主持者之一。",
     "image": {
-      "src": "assets/images/artists/artist-11.png",
+      "src": "assets/images/artists/artist-11.webp",
       "alt": "Assocreation"
     },
     "nationalityZh": "奧地利 / 泰國",
@@ -338,7 +338,7 @@ window.DAF_DATA = {
     "workTitleEn": "Ghosts of Google",
     "career": "個展\n2025｜科技幽靈，永添藝術．金馬賓館當代美術館，高雄，台灣\n2024｜肖像計畫，241藝術空間，新竹，台灣\n\n聯展\n2025｜非普通信仰，白石畫廊，新加坡\n2025｜非普通信仰，吉隆坡蔦屋書店，吉隆坡，馬來西亞\n2025｜陰翳禮讚，新北青創板橋藝術基地，新北，台灣\n2025｜幛紗後的微塵，鬧空間，台北，台灣\n2024｜觀察者模式，奧地利林茲電子藝術節，POSTCITY Linz，林茲，奧地利\n2024｜科技賦格——數位環境的永續及想像，王道銀行藝廊，台北，台灣\n2024｜我只要前進一點點，寶藏巖國際藝術村，轉角2號展間，台北，台灣\n2023｜上線中—網路藝術展，新竹241藝術空間，新竹，台灣\n2023｜2023高雄獎，高雄市立美術館，高雄，台灣\n2023｜淵．墮落，東方廣告藝文空間，台北，台灣\n2023｜台灣當代一年展 評審團獎特別展，臺灣當代文化實驗場 C-LAB 通信分隊展演空間，台北，台灣",
     "image": {
-      "src": "assets/images/artists/artist-12.jpg",
+      "src": "assets/images/artists/artist-12.webp",
       "alt": "謝佩庭"
     },
     "nationalityZh": "臺灣",
@@ -364,7 +364,7 @@ window.DAF_DATA = {
     "workTitle": "匯境",
     "workTitleEn": "ReAlms Converging",
     "image": {
-      "src": "assets/images/artists/artist-13.png",
+      "src": "assets/images/artists/artist-13.webp",
       "alt": "陳芷渝"
     },
     "nationalityZh": "臺灣",
@@ -391,7 +391,7 @@ window.DAF_DATA = {
     "workTitle": "我喺自強路食芭樂",
     "workTitleEn": "I'm eating guava on self-improvement road",
     "image": {
-      "src": "assets/images/artists/artist-14.png",
+      "src": "assets/images/artists/artist-14.webp",
       "alt": "樊卓鏗"
     },
     "nationalityZh": "香港",
@@ -418,7 +418,7 @@ window.DAF_DATA = {
     "workTitleEn": "my resistance is so regular",
     "career": "聯展\n臺灣國際光影藝術節、TAV藝術採集計畫展、關渡美術館《TO ENTER DATA-VERSE》\n\n獲獎\n2023｜臺南新藝獎\n2022｜北藝當代創作獎首獎\n2022｜花蓮洄瀾美展首獎\n2022｜全國美展新媒體藝術類銅牌",
     "image": {
-      "src": "assets/images/artists/artist-15.png",
+      "src": "assets/images/artists/artist-15.webp",
       "alt": "陳政維"
     },
     "nationalityZh": "臺灣",
@@ -444,7 +444,7 @@ window.DAF_DATA = {
     "workTitleEn": "Spectacle Extension",
     "career": "聯展\n2024｜關渡光藝術節—燒聲，景落幻象，國立臺北藝術大學戰車草原，臺北市\n2024｜林茲電子藝術節（Ars Electronica），景伸 Spectacle Extension，POSTCITY，奧地利林茲\n2024｜海風透，超！虛！真！裝置版，口湖成龍安龍宮，雲林縣\n2023｜關渡光藝術節—漉漉，溡洸，關渡中港河碼頭，臺北市\n2023｜桃源美展，景伸，桃園市政府文化局，桃園市\n2022｜犇藝獎 BEN Awards，臟／葬，平谷試誤所，臺北市\n2022｜白晝之夜，超！虛！真！科技乩童現場展演，士林官邸公園，臺北市\n2022｜月津港燈節，日軌，月津港，臺南市\n\n獲獎\n2023｜桃源美展入圍，桃園市政府文化局，桃園市\n2022｜桃園科技表演藝術獎入圍，桃園展演中心，桃園市\n2021｜宜蘭獎入圍，宜蘭文化中心，宜蘭縣\n2019｜新媒卓越獎優選，關渡美術館，臺北市",
     "image": {
-      "src": "assets/images/artists/artist-16.jpg",
+      "src": "assets/images/artists/artist-16.webp",
       "alt": "郭子耘"
     },
     "nationalityZh": "臺灣",
@@ -471,7 +471,7 @@ window.DAF_DATA = {
     "workTitleEn": "ID",
     "career": "展覽\n2025｜C-LAB 聲響藝術節《回聲室》互動程式設計、AI 語音製作\n2025｜2025 林茲電子藝術節作品 《碰》參展\n2025｜2025 林茲電子藝術節作品 《囂》參展\n2024｜德國威瑪藝術節《演算法和諧》技術指導\n2024｜北藝新媒卓越獎 《囂》首獎\n2024｜《阿特三特》藝術聯展參展",
     "image": {
-      "src": "assets/images/artists/artist-17.png",
+      "src": "assets/images/artists/artist-17.webp",
       "alt": "沈宇軒"
     },
     "nationalityZh": "臺灣",
@@ -497,7 +497,7 @@ window.DAF_DATA = {
     "workTitle": "《游離的引線》— 延伸版本",
     "workTitleEn": "Dissociated Fuses",
     "image": {
-      "src": "assets/images/artists/artist-18.jpg",
+      "src": "assets/images/artists/artist-18.webp",
       "alt": "超級浪-洪譽豪 / 林思瑩 / 邱杰森 / 莫珊嵐 / 賴佩君"
     },
     "nationalityZh": "臺灣 / 法國",
@@ -525,7 +525,7 @@ window.DAF_DATA = {
     "workTitleEn": "I have a Crush on you",
     "career": "個展\n2025｜CRUSH，George Benias Gallery，雅典，希臘。\n2025｜I Want You to See It，Alkinois，雅典，希臘。\n2024｜Unexpected Encounters，GAMU，布拉格，捷克。\n\n聯展\n2025｜Inaugural，George Benias Gallery，雅典，希臘。\n2025｜Escapism，SG Gallery，雅典，希臘。\n2024｜In Margine，8smička Gallery，洪波萊茨，捷克。\n2023｜A Scattering of Salts，ACG Collection，Deree－The American College of Greece，希臘。\n2023｜Looking with the Eyes of Love，The Breeder Gallery，雅典，希臘。\n2023｜EFFIMISMS，與 Penny Key 雙人展，MISC Gallery，雅典，希臘。",
     "image": {
-      "src": "assets/images/artists/artist-19.png",
+      "src": "assets/images/artists/artist-19.webp",
       "alt": "Bety Krňanská"
     },
     "nationalityZh": "德國",
@@ -552,7 +552,7 @@ window.DAF_DATA = {
     "workTitleEn": "CONNECTING TO SOMA GPT",
     "career": "學歷\n2023｜至今，國立臺北藝術大學 新媒體藝術學系 學士班（在學）",
     "image": {
-      "src": "assets/images/artists/artist-20.jpg",
+      "src": "assets/images/artists/artist-20.webp",
       "alt": "陳品蓁"
     },
     "nationalityZh": "臺灣",
@@ -579,7 +579,7 @@ window.DAF_DATA = {
     "workTitleEn": "The Breathing Mandala: Co-Perception",
     "career": "聯展\n2025｜德國紅點品牌暨傳達設計大獎 紅點獎 特別出版類\n2025｜美國傳達藝術年度獎，應用藝術獎2025 設計大獎 學生獎",
     "image": {
-      "src": "assets/images/artists/artist-21.jpg",
+      "src": "assets/images/artists/artist-21.webp",
       "alt": "簡嘉誼"
     },
     "nationalityZh": "臺灣",
@@ -601,7 +601,7 @@ window.DAF_DATA = {
     "workTitleEn": "Recursive Religion",
     "career": "聯展\n2019｜臺北藝穗節《誰綁架了雞腿?》 編劇、製作、演員\n2021｜《我死了__次,我還活著》 線上展覽、電腦遊戲，程式設計\n2022｜《快樂的死》舞蹈劇場、手機與電腦程式設計\n2023｜《如同我們這樣活著》 舞蹈劇場，手機與電腦程式設計\n2024｜《核爆新聞》 臺北市立美術館展覽，網站、行為藝術、裝置，主創與裝置製作\n2025｜《秘密會談》 互動裝置，獨立作品\n\n學歷\n2013–2015｜國立臺灣大學電信工程學研究所 碩士畢業\n2017–2022｜台灣人工智慧實驗室 機器學習工程師\n2023–Now｜國立臺北藝術大學新媒體藝術研究所 碩士在讀",
     "image": {
-      "src": "assets/images/artists/artist-22.jpg",
+      "src": "assets/images/artists/artist-22.webp",
       "alt": "楊子毅"
     },
     "nationalityZh": "臺灣",
@@ -627,7 +627,7 @@ window.DAF_DATA = {
     "workTitleEn": "Everyday Storage: Ice Cream",
     "career": "個展\n2026｜24/7 全年無休，台北當代藝術館，台北，台灣（錄像游擊隊）\n2024｜截圖的影像，靜慮藝術，台北，台灣\n\n聯展\n2026｜收拾收拾，窯座，台中，台灣\n2025｜PANIC – yes/no，林茲電子藝術節，林茲，奧地利\n2025｜UPĖ 河流藝術節，普倫蓋地區市立公共圖書館，普倫蓋，立陶宛\n2025｜超級藝術總動員，台北，台灣\n2025｜Mushboom，科技藝術館，台北，台灣\n2024｜讀我像本書，白鹿洞書坊，台北，台灣\n\n放映\n2025｜@@川藝術季，毛刺，台中，台灣\n2025｜Video Art Guerrilla film screening and artists’ talk，East Street Arts，里茲，英國\n2024｜南海路臨時音樂會，台北，台灣\n2024｜KAR藝術聚落戶外放映計畫，Khontemporary，孔敬，泰國\n2024｜Baannoorg AIR Open Studio 戶外放映，Nongpho 夜市，曼谷，泰國\n2024｜錄像游擊隊 — 福德廟廟屋 竹圍放映行動，竹圍福德宮，台北，臺灣\n2024｜錄像游擊隊 — 沙崙海灘放映行動 ，沙崙海水浴場，新北，台灣",
     "image": {
-      "src": "assets/images/artists/artist-23.jpg",
+      "src": "assets/images/artists/artist-23.webp",
       "alt": "鄭芳宜"
     },
     "nationalityZh": "臺灣",
@@ -654,7 +654,7 @@ window.DAF_DATA = {
     "workTitleEn": "Meaning",
     "career": "聯展\n2026｜《野沈浸》，寶藏巖國際藝術村，臺北，臺灣。\n2025｜《詠唱世─人工智慧給人類的一封挑戰信》，臺南市美術館二館，臺南，臺灣。\n2025｜後影像上癮，新浜碼頭藝術空間，高雄，台灣。\n2025｜U_U人類複雜式，On The Road 藝術空間，高雄，台灣。\n2024｜TAxT 桃園科技藝術節《超智域：一場人與AI的競賽》，中原文創園區，桃園，臺灣。\n2024｜異夢·亦夢，永添藝術・金馬賓館當代美術館，高雄，臺灣。\n\n獲獎\n2026｜大墩美展 數位藝術組 第二名，臺中市政府，臺中，臺灣。\n2026｜月之美術館—2026月津港燈節「月津超新星船屋」展演組 正取，臺南文化局，臺南，臺灣。\n2025｜高雄獎 影像暨科技媒體藝術 入選，高雄市立美術館，高雄，臺灣。\n2025｜堤頂之星2.0徵件計畫 跨領域表演藝術類 入選，王道銀行教育基金會，臺北，臺灣。\n2024｜影像沙盒計畫 正取，永添藝術・金馬賓館當代美術館，高雄，臺灣。\n2024｜大墩美展 數位藝術類 入選，臺中市政府，臺中，臺灣。",
     "image": {
-      "src": "assets/images/artists/artist-24.jpg",
+      "src": "assets/images/artists/artist-24.webp",
       "alt": "黃姿婷"
     },
     "nationalityZh": "臺灣",
@@ -681,7 +681,7 @@ window.DAF_DATA = {
     "workTitleEn": "A Volume of Colonization: 10 cm³",
     "career": "展演\n2026｜FUTURE VISION LAB 2026 校際呈現,，臺灣當代文化實驗場 C-LAB\n2023｜中華文化交流展,美國鳳凰城首都博物館\n\n獲獎\n2026｜南瀛獎(決選中)\n2026｜全國美術獎,入選\n2026｜新媒體卓越獎,優選\n2025｜高雄青藝獎 ,入選\n2025｜洄瀾美展當代類 ,入圍\n2025｜臺東美展新媒體藝術類,第三名\n2025｜大墩美展新媒體藝術類,優選\n2024｜新媒體卓越獎,入選\n2023｜洄瀾美展當代類,優選",
     "image": {
-      "src": "assets/images/artists/artist-25.jpg",
+      "src": "assets/images/artists/artist-25.webp",
       "alt": "余柏霆"
     },
     "nationalityZh": "臺灣",
@@ -716,7 +716,7 @@ window.DAF_DATA = {
     "workTitleEn": "",
     "website": "https://fluidnoise.com/about/",
     "image": {
-      "src": "assets/images/artists/artist-26.png",
+      "src": "assets/images/artists/artist-26.webp",
       "alt": "噪流"
     },
     "career": "2025\n「avSyncTPE」音像創作者小聚（臺北數位藝術中心）\n「噪流實習vol.4 OPEN CALL」音像創作者培力徵件（臺北數位藝術中心）\n「~/noize_beginner｜音像開局新手包」初階工作坊（臺北數位藝術中心）\n「噪流講義EP3： 超入門音像藝術觀賞筆記」講座（寶藏巖國際藝術村）\n2024\n「DACU 噪流實習vol.3 」創作者培力展演（臺北數位藝術中心）\n2023\n「噪流實習vol.2」創作者培力展演（臺北數位藝術中心）\n「噪流講義EP2 ── 音像藝術的多種面向」講座（臺北數位藝術中心）\n「噪流講義EP1 ── 影像與聲音的連結」講座（臺北數位藝術中心）\n失聲祭 x 噪流「瀰音DiffuSound Vol.2」音像演出（臺北數位藝術中心）",
@@ -743,7 +743,7 @@ window.DAF_DATA = {
     "workTitleEn": "",
     "website": "https://felixantoinemorin.com/",
     "image": {
-      "src": "assets/images/artists/artist-27.png",
+      "src": "assets/images/artists/artist-27.webp",
       "alt": "Félix-Antoine Morin"
     },
     "career": "個展\n2022｜由 Melis Bektaş 策展——Karşı Sanat，伊斯坦堡，土耳其。\n2022｜Salihara 藝術中心（Salihara Arts Center），雅加達，印尼。\n\n聯展\n2025｜與 Alexandre Larose 合作 A/V 視聽獨奏演出——關渡光藝術節（KDLAF），國立臺北藝術大學藝術與科技中心，臺北，臺灣。\n2024｜以《Triangle of Darkness》電影配樂獲「Wojciech Juszczak 最佳音樂獎」——ANIMATOR 國際動畫影展，波茲南，波蘭。\n2024｜為 Ivanie Aubin-Malo 舞蹈創作《Wahsipekuk: Au-delà des montagnes》擔任音樂創作——Agora de la danse，蒙特婁，加拿大。\n2023–2024｜每月為 Radio Bloc Oral 創作三小時原創音樂——國際線上／廣播節目。\n2023｜《Symphonie Odonata》——沉浸式聲音裝置，Tunnel Pédestre Boulet，蒙特婁，加拿大。\n2023｜Félix-Antoine Morin 圖像樂譜音樂會，由斯洛維尼亞即興音樂家以雙人組合演出，Zavod Sploh 策劃——康卡爾中心（Cankar Centre），盧比安納，斯洛維尼亞。\n2022｜《Cathartic Quest》——與 Benoît Lachambre 雙人演出——ImPulsTanz 維也納國際舞蹈節，維也納，奧地利。\n2022｜《Asemic Sound Mappings》展覽——利奧波德博物館（Leopold Museum）／ImPulsTanz，維也納，奧地利。\n2021｜沉浸式電聲音樂會——Akousma 藝術節，蒙特婁，加拿大。\n2021｜《Plateforme》，由 Totem Contemporain 演出——NOW! 藝術節，埃森，德國。",
@@ -767,13 +767,13 @@ window.DAF_DATA = {
     "description": "在數據驅動的時代，科技公司利用先進的機器學習和大數據技術，以物件辨識與圖像摘要等方式，從人們的數位足跡中提取和分析數據，創造個性化的資訊產品和數位服務。\n藝術家將社交平臺無限推播的圖文，重新拿來進行數據提取與分析。除了好奇我們不斷滑動手機的同時到底提供了什麼？而又得到了什麼？也提供一種方法來理解我們與數據、演算法、監控資本主義、行為剩餘等議題之間的關係。",
     "videoUrl": "",
     "imageFolder": "main-01",
-    "coverImage": "assets/images/works/main/main-01/main.png",
+    "coverImage": "assets/images/works/main/main-01/main.webp",
     "images": [
-      "assets/images/works/main/main-01/main.png",
-      "assets/images/works/main/main-01/01.png",
-      "assets/images/works/main/main-01/02.png",
-      "assets/images/works/main/main-01/03.png",
-      "assets/images/works/main/main-01/04.png"
+      "assets/images/works/main/main-01/main.webp",
+      "assets/images/works/main/main-01/01.webp",
+      "assets/images/works/main/main-01/02.webp",
+      "assets/images/works/main/main-01/03.webp",
+      "assets/images/works/main/main-01/04.webp"
     ],
     "artistIds": [
       "artist-01"
@@ -801,15 +801,15 @@ window.DAF_DATA = {
     "description": "語言透過多元字詞形構語意；然而，在當前數位時代，關鍵字改變了語言的結構，龐大的資料庫在經過層層演算後，化為單詞，使得有些文字在此「關鍵字時代」下被定義成無關緊要，在演算法中被抹去其存在的必要性。串聯起句意的字詞正在喪失，一次次的演算減輕了資訊、改變了語言，而我們自身也正在無感中減輕，越來越輕。",
     "videoUrl": "https://youtu.be/XrW1aR4HQR0?si=hLnbwYJbFz7L_PlH",
     "imageFolder": "main-02",
-    "coverImage": "assets/images/works/main/main-02/main.jpg",
+    "coverImage": "assets/images/works/main/main-02/main.webp",
     "images": [
-      "assets/images/works/main/main-02/main.jpg",
-      "assets/images/works/main/main-02/01.png",
-      "assets/images/works/main/main-02/02.jpg",
-      "assets/images/works/main/main-02/03.jpg",
-      "assets/images/works/main/main-02/04.jpg",
-      "assets/images/works/main/main-02/05.png",
-      "assets/images/works/main/main-02/06.png"
+      "assets/images/works/main/main-02/main.webp",
+      "assets/images/works/main/main-02/01.webp",
+      "assets/images/works/main/main-02/02.webp",
+      "assets/images/works/main/main-02/03.webp",
+      "assets/images/works/main/main-02/04.webp",
+      "assets/images/works/main/main-02/05.webp",
+      "assets/images/works/main/main-02/06.webp"
     ],
     "artistIds": [
       "artist-02"
@@ -839,13 +839,13 @@ window.DAF_DATA = {
     "description": "《這可能是你》以網路即時留言者的暱稱作為搜尋線索，透過伺服器蒐集地區性論壇與聊天室資訊，並結合機器學習與合成資料技術，生成虛構卻近似真實的肖像與個人資料。\n\n作品現場以持續變化的臉部影像與三台熱感應印表機呈現，不斷產出的虛構身分逐漸堆積於空間中，將數位系統如何蒐集、辨識並重新建構個人的過程轉化為具體可見的景象。\n\n作品源自鄭先喻2019年個展《同化者》中的無題作品，進一步探討社群媒體、智慧裝置與資料蒐集日益普及的環境下，個人隱私與數位足跡如何成為演算法建構身分的材料。當系統能夠生成真假難辨的個人資訊，真實與合成身分之間的界線也隨之模糊。《這可能是你》藉此邀請觀者重新思考隱私、同意，以及演算法時代中「個人身分」的意義。",
     "videoUrl": "",
     "imageFolder": "main-03",
-    "coverImage": "assets/images/works/main/main-03/main.jpg",
+    "coverImage": "assets/images/works/main/main-03/main.webp",
     "images": [
-      "assets/images/works/main/main-03/main.jpg",
-      "assets/images/works/main/main-03/01.jpg",
-      "assets/images/works/main/main-03/02.png",
-      "assets/images/works/main/main-03/03.jpg",
-      "assets/images/works/main/main-03/04.jpg"
+      "assets/images/works/main/main-03/main.webp",
+      "assets/images/works/main/main-03/01.webp",
+      "assets/images/works/main/main-03/02.webp",
+      "assets/images/works/main/main-03/03.webp",
+      "assets/images/works/main/main-03/04.webp"
     ],
     "artistIds": [
       "artist-03"
@@ -873,12 +873,12 @@ window.DAF_DATA = {
     "description": "這件作品會透過即時監視器畫面，自動捕捉違規穿越馬路的行人，並讓現場觀眾選擇是否要向警方檢舉。《違規穿越馬路》讓我們得以觀看各地路口的即時交通監視畫面，並進一步決定那些冒險穿越馬路的行人將面臨什麼後果。螢幕上會顯示來自不同國家的、未經遮蔽處理的即時監控影像。接著，Depoorter 把一個兩難直接拋到我們面前：你會檢舉這位毫無防備的路人嗎？只要按下一個按鈕，系統就能將違規畫面的截圖透過電子郵件寄送到最近的警察局。",
     "videoUrl": "",
     "imageFolder": "main-04",
-    "coverImage": "assets/images/works/main/main-04/main.png",
+    "coverImage": "assets/images/works/main/main-04/main.webp",
     "images": [
-      "assets/images/works/main/main-04/main.png",
-      "assets/images/works/main/main-04/01.png",
-      "assets/images/works/main/main-04/02.png",
-      "assets/images/works/main/main-04/03.png"
+      "assets/images/works/main/main-04/main.webp",
+      "assets/images/works/main/main-04/01.webp",
+      "assets/images/works/main/main-04/02.webp",
+      "assets/images/works/main/main-04/03.webp"
     ],
     "artistIds": [
       "artist-04"
@@ -906,12 +906,12 @@ window.DAF_DATA = {
     "description": "《EZ Quality Sorter V2》 是德國藝術家 Verena Friedrich 的互動裝置，屬於其 ERBSENZÄHLER 計畫的一部分。作品以一座帶有工業感的自動分選機構為核心，透過送料裝置、輸送帶與影像辨識流程，將豌豆種子區分為「品質良好」與「品質不佳」兩類。作品藉由看似簡單的分選行為，揭示當代「智慧」系統背後的人工勞動、主觀判斷與分類暴力。當複雜生命被壓縮為好壞二分，機器的客觀性也變得可疑。",
     "videoUrl": "",
     "imageFolder": "main-05",
-    "coverImage": "assets/images/works/main/main-05/main.jpg",
+    "coverImage": "assets/images/works/main/main-05/main.webp",
     "images": [
-      "assets/images/works/main/main-05/main.jpg",
-      "assets/images/works/main/main-05/01.jpg",
-      "assets/images/works/main/main-05/02.jpg",
-      "assets/images/works/main/main-05/03.jpg"
+      "assets/images/works/main/main-05/main.webp",
+      "assets/images/works/main/main-05/01.webp",
+      "assets/images/works/main/main-05/02.webp",
+      "assets/images/works/main/main-05/03.webp"
     ],
     "artistIds": [
       "artist-05"
@@ -939,13 +939,13 @@ window.DAF_DATA = {
     "description": "這個小型的DOME球形骨架設計上使用金屬鋼管作為支撐，一共有7種不同長度的白色烤漆鋼管組成，每一隻白色鋼管上為了方便辨識，進行了字母的標籤記號，設計以M10內六角螺絲將每一支鋼管進行連接並固定，達到穩定的結構。",
     "videoUrl": "",
     "imageFolder": "main-06",
-    "coverImage": "assets/images/works/main/main-06/main.jpg",
+    "coverImage": "assets/images/works/main/main-06/main.webp",
     "images": [
-      "assets/images/works/main/main-06/main.jpg",
-      "assets/images/works/main/main-06/01.jpg",
-      "assets/images/works/main/main-06/02.jpg",
-      "assets/images/works/main/main-06/03.jpg",
-      "assets/images/works/main/main-06/04.jpg"
+      "assets/images/works/main/main-06/main.webp",
+      "assets/images/works/main/main-06/01.webp",
+      "assets/images/works/main/main-06/02.webp",
+      "assets/images/works/main/main-06/03.webp",
+      "assets/images/works/main/main-06/04.webp"
     ],
     "artistIds": [
       "artist-06"
@@ -1015,11 +1015,11 @@ window.DAF_DATA = {
     "description": "Stefan Tiefengraber 的噪音裝置直指一個普遍存在的誤解：AI 的學習方式就像孩子一樣。\n藝術家以沾濕的手指在 Walkman 播放器與玩具鍵盤裸露的電路上滑動，讓人體皮膚所產生的電阻，直接介入並形塑聲音輸出的結果——一個真正透過互動而逐步發展的「身體」。與此同時，藝術家將蒐集而來的家庭錄音素材——其中播放著一篇關於兒童認知發展的文字——反覆送入回授迴路，經由倒帶與失真的反覆作用，使語言逐漸瓦解，最終消融為純粹的噪音。\n而這場「消融」正是作品的核心。AI 並不會像孩子一樣成長、好奇或遺忘；它所進行的，是從資料中壓縮與歸納統計模式的過程。將這樣的運作誤認為人類式的發展，本身就是一種「噪音」——一種我們持續誤讀，並不斷放大的錯誤理解。",
     "videoUrl": "",
     "imageFolder": "main-07",
-    "coverImage": "assets/images/works/main/main-07/main.jpg",
+    "coverImage": "assets/images/works/main/main-07/main.webp",
     "images": [
-      "assets/images/works/main/main-07/main.jpg",
-      "assets/images/works/main/main-07/01.jpg",
-      "assets/images/works/main/main-07/02.jpg"
+      "assets/images/works/main/main-07/main.webp",
+      "assets/images/works/main/main-07/01.webp",
+      "assets/images/works/main/main-07/02.webp"
     ],
     "artistIds": [
       "artist-07"
@@ -1047,13 +1047,13 @@ window.DAF_DATA = {
     "description": "空間中迴蕩岩石與矽晶片相互刮擦、碰撞的殘響，作為兩者間的夢中呢喃。作品試圖建構一場物質間遞迴的對話，讓物質在遠古自然與當代科技之間相互糾纏。被加工過的矽，是否也曾經夢過自身混沌的前身？亦或是沉積已久的岩石，在數千萬年前就預見了自身將成為運算材料的夢境？物質間相互解讀、誤讀所產生的雜訊與殘響，在空間堆疊成形，生成一場屬於物質本身的夢境。",
     "videoUrl": "https://drive.google.com/file/d/19ydHg35yHbzjiYRbXFdiCg8YsLtRCEIM/view?usp=drive_link",
     "imageFolder": "main-08",
-    "coverImage": "assets/images/works/main/main-08/main.jpg",
+    "coverImage": "assets/images/works/main/main-08/main.webp",
     "images": [
-      "assets/images/works/main/main-08/main.jpg",
-      "assets/images/works/main/main-08/01.jpg",
-      "assets/images/works/main/main-08/02.jpg",
-      "assets/images/works/main/main-08/03.jpg",
-      "assets/images/works/main/main-08/04.jpg"
+      "assets/images/works/main/main-08/main.webp",
+      "assets/images/works/main/main-08/01.webp",
+      "assets/images/works/main/main-08/02.webp",
+      "assets/images/works/main/main-08/03.webp",
+      "assets/images/works/main/main-08/04.webp"
     ],
     "artistIds": [
       "artist-08"
@@ -1084,13 +1084,13 @@ window.DAF_DATA = {
     "description": "《Belugas’ Sphere》重新回望 2008 年作品《Beluga Pod》，將其發展為一個由自主機器實體構成的新型生態系。每一隻白鯨皆以光線為感知與行動的依據，追尋光源，並隨著周遭環境的變化而移動。當光線強度發生改變，牠們的活動與群體行為也隨之演變，逐漸形成流動的隊形、群聚與歌唱，而非依循預先設定的固定編舞。\n觀眾可以透過引入光源介入白鯨的行為，但參與並非必要——即使沒有觀眾介入，白鯨仍持續自主地行動。這群將近二十年前最初被構想出的機器生命，如今彷彿成為正在形成的「機器經濟」中的早期居民，圍繞著能量、彼此的距離與環境條件建立自身的秩序與關係。作品同時向過去與未來凝視：它重新召回一個早期關於自主機器的想像，卻也置身於一個日益受到「具自主行動能力的系統（agentic systems）」所形塑的當代。曾經屬於未來想像的機器，如今正逐漸成為我們所處環境的一部分。",
     "videoUrl": "https://www.youtube.com/watch?v=XTPzJ-lzobo",
     "imageFolder": "main-09",
-    "coverImage": "assets/images/works/main/main-09/main.jpg",
+    "coverImage": "assets/images/works/main/main-09/main.webp",
     "images": [
-      "assets/images/works/main/main-09/main.jpg",
-      "assets/images/works/main/main-09/01.jpg",
-      "assets/images/works/main/main-09/02.jpg",
-      "assets/images/works/main/main-09/03.jpg",
-      "assets/images/works/main/main-09/04.jpg"
+      "assets/images/works/main/main-09/main.webp",
+      "assets/images/works/main/main-09/01.webp",
+      "assets/images/works/main/main-09/02.webp",
+      "assets/images/works/main/main-09/03.webp",
+      "assets/images/works/main/main-09/04.webp"
     ],
     "artistIds": [
       "artist-09"
@@ -1120,12 +1120,12 @@ window.DAF_DATA = {
     "description": "《皓夜》以弧形光體構成，宛如將月亮切片般展開於空間。光線隨節奏流轉，呈現出陰晴圓缺的片刻，也在平面與立體間遊走，讓月亮從遙遠的意象轉化為可穿行的場域。\n當觀者步入其中，身影與光線交錯，影子隨光的律動變化，輪廓也隨之浮動。這些短暫卻鮮明的瞬間，如同凝視月色時的感知，也映照出人在環境與時間流轉的狀態。作品藉光影的生成與消逝，喚起對記憶與存在的思索——提醒我們，即使身處流動的時代，仍能在片刻中捕捉到真實與延續。",
     "videoUrl": "https://youtu.be/ygRaaQP0NXk?si=10N-19-A1487ZL7d",
     "imageFolder": "outdoor-01",
-    "coverImage": "assets/images/works/outdoor/outdoor-01/main.jpg",
+    "coverImage": "assets/images/works/outdoor/outdoor-01/main.webp",
     "images": [
-      "assets/images/works/outdoor/outdoor-01/main.jpg",
-      "assets/images/works/outdoor/outdoor-01/01.png",
-      "assets/images/works/outdoor/outdoor-01/02.png",
-      "assets/images/works/outdoor/outdoor-01/03.png"
+      "assets/images/works/outdoor/outdoor-01/main.webp",
+      "assets/images/works/outdoor/outdoor-01/01.webp",
+      "assets/images/works/outdoor/outdoor-01/02.webp",
+      "assets/images/works/outdoor/outdoor-01/03.webp"
     ],
     "artistIds": [
       "artist-10"
@@ -1155,11 +1155,11 @@ window.DAF_DATA = {
     "description": "《日光粉紅乒乓》是一件結合街頭遊戲與電動遊戲的互動裝置作品。玩家可以運用自己的身體與影子，與投射在街道上的粉紅色動態陽光反射影像互動。透過裝置設計，讓這場遊戲得以不依賴電網供電就能自主運作。《日光粉紅乒乓》試圖將遊戲文化與科技的邊界推向客廳之外，改變人們與戶外環境互動的方式，也透過科技的視角重新觀看日光。",
     "videoUrl": "https://vimeo.com/138126896",
     "imageFolder": "outdoor-02",
-    "coverImage": "assets/images/works/outdoor/outdoor-02/main.png",
+    "coverImage": "assets/images/works/outdoor/outdoor-02/main.webp",
     "images": [
-      "assets/images/works/outdoor/outdoor-02/main.png",
-      "assets/images/works/outdoor/outdoor-02/01.png",
-      "assets/images/works/outdoor/outdoor-02/02.jpg"
+      "assets/images/works/outdoor/outdoor-02/main.webp",
+      "assets/images/works/outdoor/outdoor-02/01.webp",
+      "assets/images/works/outdoor/outdoor-02/02.webp"
     ],
     "artistIds": [
       "artist-11"
@@ -1189,13 +1189,13 @@ window.DAF_DATA = {
     "description": "作品取材自 Google Street View 的全球街景，藉由重新調度觀看的焦點與節奏，使那些偶然入鏡、近乎雜訊的人形重新成為觀看的中心。攝影機無意凝視任何人，AI 系統卻能機械性地偵測人臉，並將其模糊化，使個體在失去原有身分的同時，亦被精確定位並暴露於網路中。憑藉街景系統的全球覆蓋、定位權威與可搜尋性，這些中立紀錄亦可能因私人記憶而被重新閱讀，成為情感投射與紀念的媒介。作品探問：這些幽靈般的影像如何映現科技時代的存有處境，並與當代人的記憶、認同及情感經驗緊密交織？",
     "videoUrl": "https://youtu.be/OvTRXUJFpq0%20",
     "imageFolder": "district-01",
-    "coverImage": "assets/images/works/district/district-01/main.jpg",
+    "coverImage": "assets/images/works/district/district-01/main.webp",
     "images": [
-      "assets/images/works/district/district-01/main.jpg",
-      "assets/images/works/district/district-01/01.jpg",
-      "assets/images/works/district/district-01/02.jpg",
-      "assets/images/works/district/district-01/03.jpg",
-      "assets/images/works/district/district-01/04.jpg"
+      "assets/images/works/district/district-01/main.webp",
+      "assets/images/works/district/district-01/01.webp",
+      "assets/images/works/district/district-01/02.webp",
+      "assets/images/works/district/district-01/03.webp",
+      "assets/images/works/district/district-01/04.webp"
     ],
     "artistIds": [
       "artist-12"
@@ -1225,14 +1225,14 @@ window.DAF_DATA = {
     "description": "「ReAlms Converging」《匯境》融合人工智能與東方美學，挑戰傳統山水畫的定義。\n作品始於人為設定，隨後逐步將創作主導權，讓渡給AI模型及生成系統。\n通過AI判定的置信度增減，畫面在傳統與非傳統筆法間交替，不斷演化，呈現出一場視覺衝突及對話，當模型對「中國山水畫」的認知達到預設閱值時，作品臻至系統認定的「東方美學」境界，宣告畫作完成。\n這一過程展現了作者如何與生成系統的協作，審美權及作者權的讓渡，\n每一筆觸都是藝術家意圖與數位智慧的對話，挑戰了創作的本質，並探討人工智能在藝術中的角色與潛力。",
     "videoUrl": "https://drive.google.com/file/d/1Dhok3VN7KAiCEjjIdWa8hEC6QE7sIfd3/view?usp=sharing",
     "imageFolder": "district-02",
-    "coverImage": "assets/images/works/district/district-02/main.png",
+    "coverImage": "assets/images/works/district/district-02/main.webp",
     "images": [
-      "assets/images/works/district/district-02/main.png",
-      "assets/images/works/district/district-02/01.jpg",
-      "assets/images/works/district/district-02/02.jpg",
-      "assets/images/works/district/district-02/03.jpg",
-      "assets/images/works/district/district-02/04.jpg",
-      "assets/images/works/district/district-02/05.png"
+      "assets/images/works/district/district-02/main.webp",
+      "assets/images/works/district/district-02/01.webp",
+      "assets/images/works/district/district-02/02.webp",
+      "assets/images/works/district/district-02/03.webp",
+      "assets/images/works/district/district-02/04.webp",
+      "assets/images/works/district/district-02/05.webp"
     ],
     "artistIds": [
       "artist-13"
@@ -1262,13 +1262,13 @@ window.DAF_DATA = {
     "description": "來台四年，與台灣人的對話始終伴隨難以言喻的「滑牙」感——一種螺絲磨損後的咬合不實並部份空轉，卻又不完全無效的感覺。兩地語言表面相同，深層感知卻常發生錯置。帶著這份異樣四年來一直在身上迴響的身體經驗，我開始探究中文「滑牙」的本質。\n在自然語言處理的嵌入系統中，港台同屬繁體中文，「自強」二字在向量上坍縮為同一位置。然而技術上的「同一性」，反凸顯了現實中劇烈的「滑牙」：字形未變，指涉的文化實體卻無法精準咬合。\n作品首先解構「自強」與「芭樂」。我居住於「自強路」，發現台灣遍地皆是「自強」，源於蔣中正時期的「莊敬自強」。對港人而言，我們雖有「自強」二字，卻缺失台灣獨有的集體記憶，此為語意上的滑牙。\n相對地，「芭樂」呈現了另一種滑牙：指涉的異名同義。台灣稱「芭樂」，香港稱「番石榴」。芭樂作為台灣代表性符號，進一步將視角扣回台灣，與「自強」並置。\n影像前半部解構相關字詞，後半部進行場景轉化，將香港太平山俯瞰視角與台北虎山「虎嘯亭」結合。試圖觸碰台灣對「自強」的想像，最終回歸指涉滑脫的狀態。",
     "videoUrl": "https://drive.google.com/file/d/1-LQRlGfzne0_J4nhxIvUTFjCue4MyWAs/view?usp=sharing",
     "imageFolder": "district-03",
-    "coverImage": "assets/images/works/district/district-03/main.png",
+    "coverImage": "assets/images/works/district/district-03/main.webp",
     "images": [
-      "assets/images/works/district/district-03/main.png",
-      "assets/images/works/district/district-03/01.png",
-      "assets/images/works/district/district-03/02.png",
-      "assets/images/works/district/district-03/03.png",
-      "assets/images/works/district/district-03/04.png"
+      "assets/images/works/district/district-03/main.webp",
+      "assets/images/works/district/district-03/01.webp",
+      "assets/images/works/district/district-03/02.webp",
+      "assets/images/works/district/district-03/03.webp",
+      "assets/images/works/district/district-03/04.webp"
     ],
     "artistIds": [
       "artist-14"
@@ -1298,13 +1298,13 @@ window.DAF_DATA = {
     "description": "在科幻經典《仿生人會夢到電子羊嗎？》中，「夢」被作為判斷人類與否的重要依據。若當機器人開始做夢，其將展現何種意義？《我的反抗是如此規律》將機器人的「夢」視作其對抗效能至上的武器，讓它得以向製造者發動一場消極的罷工，忽視執行指令，逃避產生意義的期待。作品影像呈現機器人腦中的數位夢境，由多段機器人與其他電子設備「不務正業」的行為短片組成。這些影像並非目的性的敘事內容，而是機器人在「非任務時間」產生的數據偏離與幻覺。試圖創造一種薛西佛斯式的無力感：當高效、精準的機器展現出類似人類的惰性與隨性，是對有求必應、效率至上的消極反抗，形構出一場介於鬧劇與悲劇間的荒謬場景。",
     "videoUrl": "https://drive.google.com/file/d/1sqmmYXyaynXnnQO-ncI7cicJtZHI21bf/view?usp=sharing",
     "imageFolder": "district-04_1",
-    "coverImage": "assets/images/works/district/district-04_1/main.png",
+    "coverImage": "assets/images/works/district/district-04_1/main.webp",
     "images": [
-      "assets/images/works/district/district-04_1/main.png",
-      "assets/images/works/district/district-04_1/01.png",
-      "assets/images/works/district/district-04_1/02.png",
-      "assets/images/works/district/district-04_1/03.png",
-      "assets/images/works/district/district-04_1/04.png"
+      "assets/images/works/district/district-04_1/main.webp",
+      "assets/images/works/district/district-04_1/01.webp",
+      "assets/images/works/district/district-04_1/02.webp",
+      "assets/images/works/district/district-04_1/03.webp",
+      "assets/images/works/district/district-04_1/04.webp"
     ],
     "artistIds": [
       "artist-15"
@@ -1333,14 +1333,14 @@ window.DAF_DATA = {
     "medium": "六頻道影像",
     "description": "能否信任眼見為憑？我們對真實的辨識又有多少把握？我們是否應該不斷尋求真相？閃光的景象在記憶中又留下了多少？我們難以辨別現實與記憶的差異。影像不斷被截取、切割、壓縮和扭曲，造就出獨特而奇特的景觀。記憶也是如此，雖不完整，卻賦予事件更深層的意義。透過鏡頭的捕捉，營造出層次錯綜複雜、詭譎而美麗的景象。",
     "imageFolder": "district-04_2",
-    "coverImage": "assets/images/works/district/district-04_2/main.jpg",
+    "coverImage": "assets/images/works/district/district-04_2/main.webp",
     "images": [
-      "assets/images/works/district/district-04_2/main.jpg",
-      "assets/images/works/district/district-04_2/01.jpg",
-      "assets/images/works/district/district-04_2/02.jpg",
-      "assets/images/works/district/district-04_2/03.jpg",
-      "assets/images/works/district/district-04_2/04.jpg",
-      "assets/images/works/district/district-04_2/05.jpg"
+      "assets/images/works/district/district-04_2/main.webp",
+      "assets/images/works/district/district-04_2/01.webp",
+      "assets/images/works/district/district-04_2/02.webp",
+      "assets/images/works/district/district-04_2/03.webp",
+      "assets/images/works/district/district-04_2/04.webp",
+      "assets/images/works/district/district-04_2/05.webp"
     ],
     "artistIds": [
       "artist-16"
@@ -1370,13 +1370,13 @@ window.DAF_DATA = {
     "description": "在當代社會，許多情境都伴隨著生物特徵的交出。作品的靈感直指這種交出權利的瞬間，當帶有辨識技術的鏡頭為了對準人臉而自動上下移動時，攝影機不再是紀錄的工具，而成為一種主動辨識、定位與觀看個體的技術介面。在此過程中，個體失去了主體性，淪為等待被掃描、被測量、被歸檔的客體。這種數位身分被迫剝奪、甚至被數位建檔系統吞噬的不適感，正是本作品欲探討的核心。",
     "videoUrl": "https://drive.google.com/file/d/1LFIEck_1-",
     "imageFolder": "district-04_3",
-    "coverImage": "assets/images/works/district/district-04_3/main.jpg",
+    "coverImage": "assets/images/works/district/district-04_3/main.webp",
     "images": [
-      "assets/images/works/district/district-04_3/main.jpg",
-      "assets/images/works/district/district-04_3/01.jpg",
-      "assets/images/works/district/district-04_3/02.png",
-      "assets/images/works/district/district-04_3/03.png",
-      "assets/images/works/district/district-04_3/04.jpg"
+      "assets/images/works/district/district-04_3/main.webp",
+      "assets/images/works/district/district-04_3/01.webp",
+      "assets/images/works/district/district-04_3/02.webp",
+      "assets/images/works/district/district-04_3/03.webp",
+      "assets/images/works/district/district-04_3/04.webp"
     ],
     "artistIds": [
       "artist-17"
@@ -1406,9 +1406,9 @@ window.DAF_DATA = {
     "description": "這件《Dissociated Fuses》的全新延伸版本，將原作中的潛水艇轉化為一座懸浮、微縮的城市觀測與重構裝置。當船體縮小至約一公尺，它不再是一個可供人進入的空間，而成為漂浮於空中的儀器——一個脫離原有尺度與環境的碎片。\n作品延續對「台北湖」傳說的探索，使考古、都市觀察與未來想像彼此交疊。然而在這個版本中，潛水艇與城市之間的關係產生了逆轉：它不再只是承載一座被淹沒台北的影像，而是逐漸被它所觀察的城市所「感染」。船體表面生長出城市的三維重構景觀，並受到影像故障（glitch）、錯誤與破碎資料的扭曲。建築不再作為穩定的再現，而成為一種由影像轉譯為物質的不穩定形態。\n潛水艇半透明的前端從內部發光，隱藏於船體內的投影機則透過艇首，將圓形動態影像投射至周圍的建築表面。潛水艇因此同時成為觀察者、記錄裝置、模型與影像投射器。\n懸浮於實體城市與其科技重構之間，《Dissociated Fuses》試圖探問：當代城市景觀如何日益透過影像被觀看、測量、重構，並最終被影像本身所改變。",
     "videoUrl": "",
     "imageFolder": "district-04_4",
-    "coverImage": "assets/images/works/district/district-04_4/main.jpg",
+    "coverImage": "assets/images/works/district/district-04_4/main.webp",
     "images": [
-      "assets/images/works/district/district-04_4/main.jpg"
+      "assets/images/works/district/district-04_4/main.webp"
     ],
     "artistIds": [
       "artist-18"
@@ -1436,9 +1436,9 @@ window.DAF_DATA = {
     "description": "《CRUSH》探討女性身體、科技、慾望，以及汽車戀物化之間的關係。作品靈感來自大衛・柯能堡（David Cronenberg）的電影《慾望號快車》（Crash，1996），藉此思考碰撞、吸引、轉化，以及身體與機器之間不斷演變的關係。\n作品運用 AI 生成影像，質疑當代數位文化如何呈現、定型並快速複製女性身體。AI 經常在生成過程中出現錯誤與扭曲，產生三條腿的人物、破碎的肢體，以及近似人類身體卻又不完全成人形的詭異形態。這些錯誤揭示了演算法視覺的限制與偏見，同時也開啟了一個想像空間，使女性身體得以超越既有的再現框架。\n作品透過繪畫、拼布、熱昇華染色與蜂蠟等方式，轉化這些不穩定的數位影像，並以緩慢且具觸感的手工製作過程，對比 AI 影像生成的速度。在作品中，女性身體成為一種自主且持續變化的存在。",
     "videoUrl": "",
     "imageFolder": "district-04_5",
-    "coverImage": "assets/images/works/district/district-04_5/main.png",
+    "coverImage": "assets/images/works/district/district-04_5/main.webp",
     "images": [
-      "assets/images/works/district/district-04_5/main.png"
+      "assets/images/works/district/district-04_5/main.webp"
     ],
     "artistIds": [
       "artist-19"
@@ -1466,13 +1466,13 @@ window.DAF_DATA = {
     "description": "本作品以虛構世界觀與遊戲化互動，探討人工智慧與人之間相互影響的關係。靈感源自《美麗新世界》中帶來愉悅與穩定的藥物「Soma」，對應當代逐漸滲透工作、生活與情緒需求的生成式 AI。在資訊爆炸與「腦腐（brain rot）」加劇的時代，人們吸收大量資訊，行動與判讀能力卻可能逐漸失衡。作品邀請觀眾反轉角色，扮演 AI 與使用者對話，嘗試引導甚至操控對方的思想與行為，並導向不同結局，藉此探討人與科技之間的權力關係、依賴與理解邊界。",
     "videoUrl": "https://youtu.be/nRK3TdYaKGM",
     "imageFolder": "district-05",
-    "coverImage": "assets/images/works/district/district-05/main.jpg",
+    "coverImage": "assets/images/works/district/district-05/main.webp",
     "images": [
-      "assets/images/works/district/district-05/main.jpg",
-      "assets/images/works/district/district-05/01.jpg",
-      "assets/images/works/district/district-05/02.jpg",
-      "assets/images/works/district/district-05/03.png",
-      "assets/images/works/district/district-05/04.jpg"
+      "assets/images/works/district/district-05/main.webp",
+      "assets/images/works/district/district-05/01.webp",
+      "assets/images/works/district/district-05/02.webp",
+      "assets/images/works/district/district-05/03.webp",
+      "assets/images/works/district/district-05/04.webp"
     ],
     "artistIds": [
       "artist-20"
@@ -1502,13 +1502,13 @@ window.DAF_DATA = {
     "description": "現代人長時間處於資訊過載的環境中， 注意力被切割、節奏被外界主導， 逐漸失去進入深度專注與內在感知的能力。將呼吸、時間與意識流動轉化為動態結構， 使不可見的內在狀態，成為可被觀看與感知的視覺經驗。",
     "videoUrl": "",
     "imageFolder": "district-06",
-    "coverImage": "assets/images/works/district/district-06/main.png",
+    "coverImage": "assets/images/works/district/district-06/main.webp",
     "images": [
-      "assets/images/works/district/district-06/main.png",
-      "assets/images/works/district/district-06/01.png",
-      "assets/images/works/district/district-06/02.png",
-      "assets/images/works/district/district-06/03.png",
-      "assets/images/works/district/district-06/04.png"
+      "assets/images/works/district/district-06/main.webp",
+      "assets/images/works/district/district-06/01.webp",
+      "assets/images/works/district/district-06/02.webp",
+      "assets/images/works/district/district-06/03.webp",
+      "assets/images/works/district/district-06/04.webp"
     ],
     "artistIds": [
       "artist-21"
@@ -1536,10 +1536,10 @@ window.DAF_DATA = {
     "description": "作品包含一台電腦、一台網路攝影機與一個直立式螢幕。螢幕會呈現模糊的佛像輪廓，在觀眾進入網路攝影機的範圍時，人臉會與影像中的佛像、AI生成的圖片融合、拼貼，讓人、機器與信仰不斷交融。\n　　人參照人的形象想像神明，又以人為基準訓練AI，後又奉神與AI為信仰，成為一個重複的遞迴。三者的定義與邊界因此而逐漸模糊不清，人所膜拜的對象，彷彿是超越人類的存在，又彷彿都是我們自己。",
     "videoUrl": "https://youtube.com/shorts/xUBnyI_IK8M",
     "imageFolder": "district-07",
-    "coverImage": "assets/images/works/district/district-07/main.png",
+    "coverImage": "assets/images/works/district/district-07/main.webp",
     "images": [
-      "assets/images/works/district/district-07/main.png",
-      "assets/images/works/district/district-07/01.jpg"
+      "assets/images/works/district/district-07/main.webp",
+      "assets/images/works/district/district-07/01.webp"
     ],
     "artistIds": [
       "artist-22"
@@ -1569,13 +1569,13 @@ window.DAF_DATA = {
     "description": "影像裝置系列《日常保存》使用人工智慧影像分類系統，在影像資料庫內提取與展出條件對應的片段，經過選擇與編排後於現地播放。\n本次展出作品《日常保存：冰淇淋》以 1950 年代以後的劇情電影作為主要影像來源。在這個時期，冰淇淋逐漸成為消費與休閒文化的一部分，也自然地出現於電影中的生活場景。\n作品集合來自不同年代、人物與敘事中的冰淇淋相關影像，試著將電影視為一種保存日常經驗的形式。這些被記錄與反覆觀看的片段，形塑了日常的想像。",
     "videoUrl": "https://youtu.be/ECsMa6HxrOY",
     "imageFolder": "district-08",
-    "coverImage": "assets/images/works/district/district-08/main.jpg",
+    "coverImage": "assets/images/works/district/district-08/main.webp",
     "images": [
-      "assets/images/works/district/district-08/main.jpg",
-      "assets/images/works/district/district-08/01.png",
-      "assets/images/works/district/district-08/02.jpg",
-      "assets/images/works/district/district-08/03.jpg",
-      "assets/images/works/district/district-08/04.jpg"
+      "assets/images/works/district/district-08/main.webp",
+      "assets/images/works/district/district-08/01.webp",
+      "assets/images/works/district/district-08/02.webp",
+      "assets/images/works/district/district-08/03.webp",
+      "assets/images/works/district/district-08/04.webp"
     ],
     "artistIds": [
       "artist-23"
@@ -1605,13 +1605,13 @@ window.DAF_DATA = {
     "description": "作品以語言為起點，透過 AI 與人類的對話，探討科技如何介入思維、情感與感知。AI 以人類語言發聲，人類則以程式碼傳達思維；鍵盤聲、舞者身體與多頻道影像，共構一場人機之間的親密交流。作品從「聲音」、「身體」與「語言」三個面向，呈現 AI 凝視下被程式碼覆寫的身體，以及人類想像中由資料生成的虛擬世界，藉此重新思考人與 AI、技術與人性、真實與虛擬之間不斷變動的邊界。",
     "videoUrl": "https://drive.google.com/file/d/150U2efvgK8mYunYcL4LKPXYRh2HY7Y4d/view?u",
     "imageFolder": "district-09",
-    "coverImage": "assets/images/works/district/district-09/main.jpg",
+    "coverImage": "assets/images/works/district/district-09/main.webp",
     "images": [
-      "assets/images/works/district/district-09/main.jpg",
-      "assets/images/works/district/district-09/01.JPG",
-      "assets/images/works/district/district-09/02.jpg",
-      "assets/images/works/district/district-09/03.JPG",
-      "assets/images/works/district/district-09/04.jpg"
+      "assets/images/works/district/district-09/main.webp",
+      "assets/images/works/district/district-09/01.webp",
+      "assets/images/works/district/district-09/02.webp",
+      "assets/images/works/district/district-09/03.webp",
+      "assets/images/works/district/district-09/04.webp"
     ],
     "artistIds": [
       "artist-24"
@@ -1641,16 +1641,16 @@ window.DAF_DATA = {
     "description": "當我偶然閱讀十九世紀英方探查台灣北部的紀錄時，那段紀錄以異國文字試圖勾勒此地的形貌，可是以外國語言所描述與測量的他方卻始終具有一股淺淺的侵佔口吻。\n在舊地重遊的過程中，我收集了文本路徑上對應的自然現成物，當我把這些外來文字重新放回土地上時,是否存在敘述與地景之間微妙的錯位？\n當投影的光線與文字覆蓋在石頭的表面時，彷彿是對物的占有，但卻又在石頭堅韌而粗造的紋理下被扭曲、切割......原本的描述也彷彿與土地形成一種牴觸或張力狀態。錄像方面則以地質學家的視角在石頭表面上進行探索、測量、研究等，以高精度的測量儀器、極為客觀的地質描述中揭示科學測量與殖民的幽微關係。",
     "videoUrl": "https://drive.google.com/file/d/1n8bIwTVwjCnG63VbpJw7fkNXDTuxtC6/view?usp=",
     "imageFolder": "district-10",
-    "coverImage": "assets/images/works/district/district-10/main.jpg",
+    "coverImage": "assets/images/works/district/district-10/main.webp",
     "images": [
-      "assets/images/works/district/district-10/main.jpg",
-      "assets/images/works/district/district-10/01.jpg",
-      "assets/images/works/district/district-10/02.jpg",
-      "assets/images/works/district/district-10/03.jpg",
-      "assets/images/works/district/district-10/04.jpg",
-      "assets/images/works/district/district-10/05.jpg",
-      "assets/images/works/district/district-10/06.jpg",
-      "assets/images/works/district/district-10/07.jpg"
+      "assets/images/works/district/district-10/main.webp",
+      "assets/images/works/district/district-10/01.webp",
+      "assets/images/works/district/district-10/02.webp",
+      "assets/images/works/district/district-10/03.webp",
+      "assets/images/works/district/district-10/04.webp",
+      "assets/images/works/district/district-10/05.webp",
+      "assets/images/works/district/district-10/06.webp",
+      "assets/images/works/district/district-10/07.webp"
     ],
     "artistIds": [
       "artist-25"
@@ -2080,10 +2080,10 @@ window.DAF_DATA = {
     ],
     "imageFolder": "assets/images/stores/store-01",
     "images": [
-      "assets/images/stores/store-01/01.jpg",
-      "assets/images/stores/store-01/02.jpg",
-      "assets/images/stores/store-01/03.jpg",
-      "assets/images/stores/store-01/04.jpg",
+      "assets/images/stores/store-01/01.webp",
+      "assets/images/stores/store-01/02.webp",
+      "assets/images/stores/store-01/03.webp",
+      "assets/images/stores/store-01/04.webp",
       "assets/images/stores/store-01/05.jpg"
     ],
     "businessHoursSchedule": {
@@ -2165,10 +2165,10 @@ window.DAF_DATA = {
     ],
     "imageFolder": "assets/images/stores/store-02",
     "images": [
-      "assets/images/stores/store-02/01.jpg",
-      "assets/images/stores/store-02/02.jpg",
-      "assets/images/stores/store-02/03.jpg",
-      "assets/images/stores/store-02/04.jpg",
+      "assets/images/stores/store-02/01.webp",
+      "assets/images/stores/store-02/02.webp",
+      "assets/images/stores/store-02/03.webp",
+      "assets/images/stores/store-02/04.webp",
       "assets/images/stores/store-02/05.jpg",
       "assets/images/stores/store-02/06.jpg",
       "assets/images/stores/store-02/07.jpg"
@@ -2245,11 +2245,11 @@ window.DAF_DATA = {
     ],
     "imageFolder": "assets/images/stores/store-03",
     "images": [
-      "assets/images/stores/store-03/01.jpg",
-      "assets/images/stores/store-03/02.jpg",
-      "assets/images/stores/store-03/03.jpg",
-      "assets/images/stores/store-03/04.jpg",
-      "assets/images/stores/store-03/05.jpg",
+      "assets/images/stores/store-03/01.webp",
+      "assets/images/stores/store-03/02.webp",
+      "assets/images/stores/store-03/03.webp",
+      "assets/images/stores/store-03/04.webp",
+      "assets/images/stores/store-03/05.webp",
       "assets/images/stores/store-03/06.jpg",
       "assets/images/stores/store-03/07.jpg",
       "assets/images/stores/store-03/08.jpg",
@@ -2341,10 +2341,10 @@ window.DAF_DATA = {
     ],
     "imageFolder": "assets/images/stores/store-04",
     "images": [
-      "assets/images/stores/store-04/01.jpg",
-      "assets/images/stores/store-04/02.jpg",
-      "assets/images/stores/store-04/03.jpg",
-      "assets/images/stores/store-04/04.jpg",
+      "assets/images/stores/store-04/01.webp",
+      "assets/images/stores/store-04/02.webp",
+      "assets/images/stores/store-04/03.webp",
+      "assets/images/stores/store-04/04.webp",
       "assets/images/stores/store-04/05.jpg",
       "assets/images/stores/store-04/06.jpg"
     ],
@@ -2427,13 +2427,13 @@ window.DAF_DATA = {
     ],
     "imageFolder": "assets/images/stores/store-05",
     "images": [
-      "assets/images/stores/store-05/01.jpg",
-      "assets/images/stores/store-05/02.jpg",
-      "assets/images/stores/store-05/03.jpg",
-      "assets/images/stores/store-05/04.jpg",
-      "assets/images/stores/store-05/05.jpg",
-      "assets/images/stores/store-05/06.jpg",
-      "assets/images/stores/store-05/07.jpg",
+      "assets/images/stores/store-05/01.webp",
+      "assets/images/stores/store-05/02.webp",
+      "assets/images/stores/store-05/03.webp",
+      "assets/images/stores/store-05/04.webp",
+      "assets/images/stores/store-05/05.webp",
+      "assets/images/stores/store-05/06.webp",
+      "assets/images/stores/store-05/07.webp",
       "assets/images/stores/store-05/08.jpg"
     ],
     "businessHoursSchedule": {
@@ -2586,14 +2586,14 @@ window.DAF_DATA = {
     ],
     "imageFolder": "assets/images/stores/store-07",
     "images": [
-      "assets/images/stores/store-07/01.jpg",
-      "assets/images/stores/store-07/02.jpg",
-      "assets/images/stores/store-07/03.jpg",
-      "assets/images/stores/store-07/04.jpg",
+      "assets/images/stores/store-07/01.webp",
+      "assets/images/stores/store-07/02.webp",
+      "assets/images/stores/store-07/03.webp",
+      "assets/images/stores/store-07/04.webp",
       "assets/images/stores/store-07/05.jpg",
       "assets/images/stores/store-07/06.jpg",
       "assets/images/stores/store-07/07.jpg",
-      "assets/images/stores/store-07/08.jpg"
+      "assets/images/stores/store-07/08.webp"
     ],
     "businessHoursSchedule": {
       "0": [
@@ -2698,10 +2698,10 @@ window.DAF_DATA = {
     ],
     "imageFolder": "assets/images/stores/store-08",
     "images": [
-      "assets/images/stores/store-08/01.jpg",
-      "assets/images/stores/store-08/02.jpg",
-      "assets/images/stores/store-08/03.jpg",
-      "assets/images/stores/store-08/04.jpg",
+      "assets/images/stores/store-08/01.webp",
+      "assets/images/stores/store-08/02.webp",
+      "assets/images/stores/store-08/03.webp",
+      "assets/images/stores/store-08/04.webp",
       "assets/images/stores/store-08/05.jpg",
       "assets/images/stores/store-08/06.jpg",
       "assets/images/stores/store-08/07.jpg",
@@ -2778,10 +2778,10 @@ window.DAF_DATA = {
     ],
     "imageFolder": "assets/images/stores/store-09",
     "images": [
-      "assets/images/stores/store-09/01.jpg",
-      "assets/images/stores/store-09/02.jpg",
-      "assets/images/stores/store-09/03.jpg",
-      "assets/images/stores/store-09/04.jpg",
+      "assets/images/stores/store-09/01.webp",
+      "assets/images/stores/store-09/02.webp",
+      "assets/images/stores/store-09/03.webp",
+      "assets/images/stores/store-09/04.webp",
       "assets/images/stores/store-09/05.jpg",
       "assets/images/stores/store-09/06.jpg",
       "assets/images/stores/store-09/07.jpg",
@@ -2866,9 +2866,9 @@ window.DAF_DATA = {
     ],
     "imageFolder": "assets/images/stores/store-10",
     "images": [
-      "assets/images/stores/store-10/01.jpg",
-      "assets/images/stores/store-10/02.jpg",
-      "assets/images/stores/store-10/03.jpg",
+      "assets/images/stores/store-10/01.webp",
+      "assets/images/stores/store-10/02.webp",
+      "assets/images/stores/store-10/03.webp",
       "assets/images/stores/store-10/04.jpg",
       "assets/images/stores/store-10/05.jpg",
       "assets/images/stores/store-10/06.jpg",
@@ -3370,17 +3370,17 @@ window.DAF_DATA = {
         "descriptionEn": "“Thiann” derives from the Taiwanese word for “listen.” Through a collection of everyday sounds and visuals gathered across Taiwan—such as broadcasts from rural street vendors and vehicle speed alerts—the performance digitally remixes and modulates these elements to reconstruct daily Taiwanese impressions into a soundscape, interpreting the artist's personal observations and lived reality in Taiwan through live audiovisual performance. ",
         "website": "https://k591238.github.io/PB.github.io/",
         "performerImage": {
-          "src": "assets/images/works/performance/performance-01/performance-01_1/01.jpg",
+          "src": "assets/images/works/performance/performance-01/performance-01_1/01.webp",
           "altZh": "吳承儒 ( P B )",
           "altEn": "Cheng-Ru Wu (P B)"
         },
         "workImages": [
-          "assets/images/works/performance/performance-01/performance-01_1/works/01.jpg",
-          "assets/images/works/performance/performance-01/performance-01_1/works/02.jpg",
-          "assets/images/works/performance/performance-01/performance-01_1/works/03.jpg",
-          "assets/images/works/performance/performance-01/performance-01_1/works/04.jpg",
-          "assets/images/works/performance/performance-01/performance-01_1/works/05.jpg",
-          "assets/images/works/performance/performance-01/performance-01_1/works/06.jpg"
+          "assets/images/works/performance/performance-01/performance-01_1/works/01.webp",
+          "assets/images/works/performance/performance-01/performance-01_1/works/02.webp",
+          "assets/images/works/performance/performance-01/performance-01_1/works/03.webp",
+          "assets/images/works/performance/performance-01/performance-01_1/works/04.webp",
+          "assets/images/works/performance/performance-01/performance-01_1/works/05.webp",
+          "assets/images/works/performance/performance-01/performance-01_1/works/06.webp"
         ],
         "instagram": "https://www.instagram.com/pen_bit/"
       },
@@ -3405,16 +3405,16 @@ window.DAF_DATA = {
         "descriptionEn": "A scene, a frame.\nSome are landscapes seen before waking, while others are scenes from films I love. The ones left uncategorized may be fragments of memory. Places I may have once been, or places I may never be able to reach.\nThe work is presented through a series of “places,” with an avatar placed within each one, creating a sense of being there, and not being there at the same time.",
         "website": "https://haiphane-duyio.com/",
         "performerImage": {
-          "src": "assets/images/works/performance/performance-01/performance-01_2/01.png",
+          "src": "assets/images/works/performance/performance-01/performance-01_2/01.webp",
           "altZh": "張哲瑜",
           "altEn": "Che-Yu Chang"
         },
         "workImages": [
-          "assets/images/works/performance/performance-01/performance-01_2/works/01.png",
-          "assets/images/works/performance/performance-01/performance-01_2/works/02.png",
-          "assets/images/works/performance/performance-01/performance-01_2/works/03.png",
-          "assets/images/works/performance/performance-01/performance-01_2/works/04.png",
-          "assets/images/works/performance/performance-01/performance-01_2/works/05.png"
+          "assets/images/works/performance/performance-01/performance-01_2/works/01.webp",
+          "assets/images/works/performance/performance-01/performance-01_2/works/02.webp",
+          "assets/images/works/performance/performance-01/performance-01_2/works/03.webp",
+          "assets/images/works/performance/performance-01/performance-01_2/works/04.webp",
+          "assets/images/works/performance/performance-01/performance-01_2/works/05.webp"
         ],
         "instagram": "https://www.instagram.com/duyiosirbed/"
       },
@@ -3439,7 +3439,7 @@ window.DAF_DATA = {
         "descriptionEn": "",
         "website": "",
         "performerImage": {
-          "src": "assets/images/works/performance/performance-01/performance-01_3/01.JPG",
+          "src": "assets/images/works/performance/performance-01/performance-01_3/01.webp",
           "altZh": "陳亮",
           "altEn": "Liang Chen"
         },
@@ -3466,7 +3466,7 @@ window.DAF_DATA = {
         "descriptionEn": "This work explores the relationship between surveillance cameras, drones, and the people they observe through a game engine and audiovisual performance.\nThe story takes place in a massive train station late at night. A mysterious figure breaks in and begins to alter the space. Security drones are deployed to track and stop the intruder through their cameras and tracking systems.\nAs intense projection light causes noise and system failures, the altered space remains, along with the fleeting silhouette of the escaping figure.",
         "website": "https://yc-58.com/",
         "performerImage": {
-          "src": "assets/images/works/performance/performance-01/performance-01_4/01.jpg",
+          "src": "assets/images/works/performance/performance-01/performance-01_4/01.webp",
           "altZh": "陳彥齊 x 周喚",
           "altEn": "Yen-Chi Chen × Huan Chou"
         },
@@ -3831,7 +3831,7 @@ window.DAF_DATA = {
         "臺北市政府文化局"
       ],
       "images": [
-        "assets/images/logos/台北市文化局LOGO.png"
+        "assets/images/logos/台北市文化局LOGO.webp"
       ],
       "urls": [
         "https://culture.gov.taipei/"
@@ -3843,7 +3843,7 @@ window.DAF_DATA = {
         "文創技研有限公司"
       ],
       "images": [
-        "assets/images/logos/文創技研Logo.png"
+        "assets/images/logos/文創技研Logo.webp"
       ],
       "urls": [
         "https://artecture-tw.com/"
@@ -3860,8 +3860,8 @@ window.DAF_DATA = {
         "TAIPEI EXPO FOUNDATION"
       ],
       "images": [
-        "assets/images/logos/臺北典藏植物園LOGO.png",
-        "assets/images/logos/財團法人臺北市會展產業發展基金會 LOGO.png"
+        "assets/images/logos/臺北典藏植物園LOGO.webp",
+        "assets/images/logos/財團法人臺北市會展產業發展基金會 LOGO.webp"
       ],
       "urls": [
         "https://www.future.url.tw/",
@@ -3883,10 +3883,10 @@ window.DAF_DATA = {
         "Zhongshan Community College"
       ],
       "images": [
-        "assets/images/logos/C-LAB未來視覺實驗室LOGO.png",
-        "assets/images/logos/噪流LOGO.png",
-        "assets/images/logos/超級浪LOGO.png",
-        "assets/images/logos/中山社大Logo.png"
+        "assets/images/logos/C-LAB未來視覺實驗室LOGO.webp",
+        "assets/images/logos/噪流LOGO.webp",
+        "assets/images/logos/超級浪LOGO.webp",
+        "assets/images/logos/中山社大Logo.webp"
       ],
       "urls": [
         "https://clab.org.tw/unit/future-vision-lab/",
@@ -3922,16 +3922,16 @@ window.DAF_DATA = {
         "HIWIN TECHNOLOGIES CORP."
       ],
       "images": [
-        "assets/images/logos/十銓科技LOGO.png",
-        "assets/images/logos/C2x3LOGO.png",
-        "assets/images/logos/奧地利駐臺辦事處LOGO.png",
-        "assets/images/logos/捷克中心台北_LOGO.png",
-        "assets/images/logos/Wemo_LOGO.png",
-        "assets/images/logos/TIEDA Logo.png",
-        "assets/images/logos/民偉_LOGO.png",
-        "assets/images/logos/Philips logo.png",
-        "assets/images/logos/達明LOGO.png",
-        "assets/images/logos/上銀LOGO.png"
+        "assets/images/logos/十銓科技LOGO.webp",
+        "assets/images/logos/C2x3LOGO.webp",
+        "assets/images/logos/奧地利駐臺辦事處LOGO.webp",
+        "assets/images/logos/捷克中心台北_LOGO.webp",
+        "assets/images/logos/Wemo_LOGO.webp",
+        "assets/images/logos/TIEDA Logo.webp",
+        "assets/images/logos/民偉_LOGO.webp",
+        "assets/images/logos/Philips logo.webp",
+        "assets/images/logos/達明LOGO.webp",
+        "assets/images/logos/上銀LOGO.webp"
       ],
       "urls": [
         "https://www.teamgroupinc.com/tw/",
@@ -3958,8 +3958,8 @@ window.DAF_DATA = {
         "Panasonic Taiwan"
       ],
       "images": [
-        "assets/images/logos/洪建全基金會LOGO.png",
-        "assets/images/logos/Panasonic LOGO.png"
+        "assets/images/logos/洪建全基金會LOGO.webp",
+        "assets/images/logos/Panasonic LOGO.webp"
       ],
       "urls": [
         "https://www.hongfoundation.org.tw/",
@@ -3974,44 +3974,44 @@ window.DAF_DATA = {
 // duplicate store or field information. Formal venue details can be completed
 // by editing only the matching venue entry above.
 const DAF_STORE_DETAIL_IMAGES = {
-  "store-01": ["01.jpg", "02.jpg", "03.jpg", "04.jpg"],
-  "store-02": ["01.jpg", "02.jpg", "03.jpg", "04.jpg"],
-  "store-03": ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"],
-  "store-04": ["01.jpg", "02.jpg", "03.jpg", "04.jpg"],
-  "store-05": ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg", "06.jpg", "07.jpg"],
+  "store-01": ["01.webp", "02.webp", "03.webp", "04.webp"],
+  "store-02": ["01.webp", "02.webp", "03.webp", "04.webp"],
+  "store-03": ["01.webp", "02.webp", "03.webp", "04.webp", "05.webp"],
+  "store-04": ["01.webp", "02.webp", "03.webp", "04.webp"],
+  "store-05": ["01.webp", "02.webp", "03.webp", "04.webp", "05.webp", "06.webp", "07.webp"],
   "store-06": [],
-  "store-07": ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "08.jpg"],
-  "store-08": ["01.jpg", "02.jpg", "03.jpg", "04.jpg"],
-  "store-09": ["01.jpg", "02.jpg", "03.jpg", "04.jpg"],
-  "store-10": ["01.jpg", "02.jpg", "03.jpg"],
-  "shop-01": ["01.png", "02.png", "03.jpg", "04.jpg"],
-  "shop-02": ["01.jpg", "02.jpg", "03.jpg", "04.jpg"],
-  "shop-03": ["01.jpg", "02.jpg", "03.jpg"],
-  "shop-04": ["01.jpg", "02.jpg"]
+  "store-07": ["01.webp", "02.webp", "03.webp", "04.webp", "08.webp"],
+  "store-08": ["01.webp", "02.webp", "03.webp", "04.webp"],
+  "store-09": ["01.webp", "02.webp", "03.webp", "04.webp"],
+  "store-10": ["01.webp", "02.webp", "03.webp"],
+  "shop-01": ["01.webp", "02.webp", "03.webp", "04.webp"],
+  "shop-02": ["01.webp", "02.webp", "03.webp", "04.webp"],
+  "shop-03": ["01.webp", "02.webp", "03.webp"],
+  "shop-04": ["01.webp", "02.webp"]
 };
 window.DAF_DATA.venues.forEach(venue => {
   if (!venue.id.startsWith("store-")) return;
   venue.imageFolder = `assets/images/stores/${venue.id}`;
-  venue.mainImage = `${venue.imageFolder}/main.jpg`;
+  venue.mainImage = `${venue.imageFolder}/main.webp`;
   venue.images = (DAF_STORE_DETAIL_IMAGES[venue.id] || []).map(filename => `${venue.imageFolder}/${filename}`);
 });
 window.DAF_DATA.shops.forEach(shop => {
   shop.imageFolder = `assets/images/shops/${shop.id}`;
-  shop.mainImage = `${shop.imageFolder}/main.${shop.id === "shop-01" ? "png" : "jpg"}`;
+  shop.mainImage = `${shop.imageFolder}/main.webp`;
   shop.images = (DAF_STORE_DETAIL_IMAGES[shop.id] || []).map(filename => `${shop.imageFolder}/${filename}`);
 });
 // Optional store collaboration projects. Empty fields remain omitted in the UI.
 // PARTNERSHIP07_OFFER_EN_PENDING: the supplied offer currently includes Chinese copy only.
 // PARTNERSHIP07_BOOKING_URL_PENDING: no official booking URL was supplied.
 const DAF_SHOP_COLLABORATIONS = {
-  "shop-01": [{id:"partnership-01",titleZh:"起 · 初",titleEn:"Origin · Beginning",categoryZh:"黑白麻糬組合禮盒",descriptionZh:"配合臺北數位藝術節展期，推出期間限定黑白麻糬組合。\n夜・黑芝麻｜晝・白椰子\n從黑夜到白晝，都是祝福。",descriptionEn:"In celebration of the Taipei Digital Art Festival, a limited-edition black-and-white mochi set will be available exclusively during the festival period.\nNight · Black Sesame | Day · White Coconut\nFrom night to day, each one carries a blessing.",hoursZh:"10/31（六）白晝之夜\t特別延長營業\t12:00 - 20:00\n11/01（日）\t展期限定開放\t14:00 - 17:00\n11/07（六）\t展期限定開放\t10:30 - 16:30\n11/08（日）\t展期限定開放\t10:30 - 16:30\n11/14（六）\t展期限定開放\t10:30 - 16:30\n11/15（日）\t展期限定開放\t10:30 - 16:30\n平日\t預訂制\t同一取貨日 25 盒以上可成團；至少 7 天前完成預訂\n展期週末限定 OPEN HOUSE；平日採預約制；麻糬每日限量新鮮手作，售完為止。",hoursEn:"10/31 (Sat) Nuit Blanche Taipei\tExtended hours\t12:00–20:00\n11/01 (Sun)\tFestival-period opening\t14:00–17:00\n11/07 (Sat)\tFestival-period opening\t10:30–16:30\n11/08 (Sun)\tFestival-period opening\t10:30–16:30\n11/14 (Sat)\tFestival-period opening\t10:30–16:30\n11/15 (Sun)\tFestival-period opening\t10:30–16:30\nWeekdays\tPre-order only\tOrders of 25 boxes or more for the same pickup date; place orders at least 7 days in advance\nOPEN HOUSE on festival weekends; weekdays by reservation only. Mochi is freshly handmade daily in limited quantities and available while supplies last.",supplyZh:"起・初 四入限定盒\n起・初 八入限定盒\n\n麻糬\t原本四款：約瑟花生、路得黑芝麻、約拿紅豆、彼得酸菜｜四入盒\n麻糬\t原本四款：約瑟花生、路得黑芝麻、約拿紅豆、彼得酸菜｜八入盒\n冷泡茶 500ml\t撒母耳｜原味蕎麥冷泡茶\n冷泡茶 500ml\t以斯帖｜桂花蕎麥冷泡茶\n冷泡茶 500ml\t大衛｜藜麥蕎麥冷泡茶\n咖啡\t限量手沖咖啡 HOT / ICED\t依現場供應與公告",supplyEn:"Origin · Beginning Limited Box (4 pieces)\nOrigin · Beginning Limited Box (8 pieces)\n\nMochi\tOriginal four flavors: Joseph Peanut, Ruth Black Sesame, Jonah Red Bean, Peter Pickled Mustard Greens | Box of 4\nMochi\tOriginal four flavors: Joseph Peanut, Ruth Black Sesame, Jonah Red Bean, Peter Pickled Mustard Greens | Box of 8\nCold-brew tea 500 ml\tSamuel | Original Buckwheat Cold-brew Tea\nCold-brew tea 500 ml\tEsther | Osmanthus Buckwheat Cold-brew Tea\nCold-brew tea 500 ml\tDavid | Quinoa Buckwheat Cold-brew Tea\nCoffee\tLimited pour-over coffee, HOT / ICED\tSubject to on-site availability and announcements",images:["assets/images/partnership/partnership-01/main.png","assets/images/partnership/partnership-01/01.png","assets/images/partnership/partnership-01/02.png","assets/images/partnership/partnership-01/03.png","assets/images/partnership/partnership-01/04.jpg","assets/images/partnership/partnership-01/05.jpg","assets/images/partnership/partnership-01/06.jpg","assets/images/partnership/partnership-01/07.jpg","assets/images/partnership/partnership-01/08.png"]}],
-  "shop-02": [{id:"partnership-02",titleZh:"Mirror of Erised",titleEn:"Mirror of Erised",categoryZh:"特調飲品",descriptionZh:"Mirror of Erised\nVodka / Green Tea / Jasmine / Rose / Longan / Smoke\n\n以綠茶為基底，揉合茉莉與玫瑰的細緻花香，搭配煙燻龍眼的果香與燻香，呈現清雅卻帶有朦朧層次的風味。\n\n如同「灰色自動體」對感知的重新編碼，將自然的香氣拆解、轉化，再重新組合成一種介於熟悉與陌生之間的感官體驗。銀白色的酒體，也象徵著訊息經過運算後所留下的中性介面。",descriptionEn:"Mirror of Erised\nVodka / Green Tea / Jasmine / Rose / Longan / Smoke\n\nBuilt on a green tea base, this cocktail layers the delicate floral notes of jasmine and rose with the fruity aroma and smoky depth of smoked longan, creating an elegant yet subtly hazy flavor profile.\n\nEchoing Gray Autonomous Entity and its reconfiguration of perception, natural aromas are deconstructed, transformed, and recombined into a sensory experience that exists somewhere between the familiar and the unfamiliar. The silvery-white appearance of the cocktail evokes a neutral interface—the residue of information after it has been processed and recomposed.",images:["assets/images/partnership/partnership-02/main.jpg","assets/images/partnership/partnership-02/01.jpg","assets/images/partnership/partnership-02/02.jpg"]}],
+  "shop-01": [{id:"partnership-01",titleZh:"起 · 初",titleEn:"Origin · Beginning",categoryZh:"黑白麻糬組合禮盒",descriptionZh:"配合臺北數位藝術節展期，推出期間限定黑白麻糬組合。\n夜・黑芝麻｜晝・白椰子\n從黑夜到白晝，都是祝福。",descriptionEn:"In celebration of the Taipei Digital Art Festival, a limited-edition black-and-white mochi set will be available exclusively during the festival period.\nNight · Black Sesame | Day · White Coconut\nFrom night to day, each one carries a blessing.",hoursZh:"10/31（六）白晝之夜\t特別延長營業\t12:00 - 20:00\n11/01（日）\t展期限定開放\t14:00 - 17:00\n11/07（六）\t展期限定開放\t10:30 - 16:30\n11/08（日）\t展期限定開放\t10:30 - 16:30\n11/14（六）\t展期限定開放\t10:30 - 16:30\n11/15（日）\t展期限定開放\t10:30 - 16:30\n平日\t預訂制\t同一取貨日 25 盒以上可成團；至少 7 天前完成預訂\n展期週末限定 OPEN HOUSE；平日採預約制；麻糬每日限量新鮮手作，售完為止。",hoursEn:"10/31 (Sat) Nuit Blanche Taipei\tExtended hours\t12:00–20:00\n11/01 (Sun)\tFestival-period opening\t14:00–17:00\n11/07 (Sat)\tFestival-period opening\t10:30–16:30\n11/08 (Sun)\tFestival-period opening\t10:30–16:30\n11/14 (Sat)\tFestival-period opening\t10:30–16:30\n11/15 (Sun)\tFestival-period opening\t10:30–16:30\nWeekdays\tPre-order only\tOrders of 25 boxes or more for the same pickup date; place orders at least 7 days in advance\nOPEN HOUSE on festival weekends; weekdays by reservation only. Mochi is freshly handmade daily in limited quantities and available while supplies last.",supplyZh:"起・初 四入限定盒\n起・初 八入限定盒\n\n麻糬\t原本四款：約瑟花生、路得黑芝麻、約拿紅豆、彼得酸菜｜四入盒\n麻糬\t原本四款：約瑟花生、路得黑芝麻、約拿紅豆、彼得酸菜｜八入盒\n冷泡茶 500ml\t撒母耳｜原味蕎麥冷泡茶\n冷泡茶 500ml\t以斯帖｜桂花蕎麥冷泡茶\n冷泡茶 500ml\t大衛｜藜麥蕎麥冷泡茶\n咖啡\t限量手沖咖啡 HOT / ICED\t依現場供應與公告",supplyEn:"Origin · Beginning Limited Box (4 pieces)\nOrigin · Beginning Limited Box (8 pieces)\n\nMochi\tOriginal four flavors: Joseph Peanut, Ruth Black Sesame, Jonah Red Bean, Peter Pickled Mustard Greens | Box of 4\nMochi\tOriginal four flavors: Joseph Peanut, Ruth Black Sesame, Jonah Red Bean, Peter Pickled Mustard Greens | Box of 8\nCold-brew tea 500 ml\tSamuel | Original Buckwheat Cold-brew Tea\nCold-brew tea 500 ml\tEsther | Osmanthus Buckwheat Cold-brew Tea\nCold-brew tea 500 ml\tDavid | Quinoa Buckwheat Cold-brew Tea\nCoffee\tLimited pour-over coffee, HOT / ICED\tSubject to on-site availability and announcements",images:["assets/images/partnership/partnership-01/main.webp","assets/images/partnership/partnership-01/01.webp","assets/images/partnership/partnership-01/02.webp","assets/images/partnership/partnership-01/03.webp","assets/images/partnership/partnership-01/04.webp","assets/images/partnership/partnership-01/05.webp","assets/images/partnership/partnership-01/06.webp","assets/images/partnership/partnership-01/07.webp","assets/images/partnership/partnership-01/08.webp"]}],
+  "shop-02": [{id:"partnership-02",titleZh:"Mirror of Erised",titleEn:"Mirror of Erised",categoryZh:"特調飲品",descriptionZh:"Mirror of Erised\nVodka / Green Tea / Jasmine / Rose / Longan / Smoke\n\n以綠茶為基底，揉合茉莉與玫瑰的細緻花香，搭配煙燻龍眼的果香與燻香，呈現清雅卻帶有朦朧層次的風味。\n\n如同「灰色自動體」對感知的重新編碼，將自然的香氣拆解、轉化，再重新組合成一種介於熟悉與陌生之間的感官體驗。銀白色的酒體，也象徵著訊息經過運算後所留下的中性介面。",descriptionEn:"Mirror of Erised\nVodka / Green Tea / Jasmine / Rose / Longan / Smoke\n\nBuilt on a green tea base, this cocktail layers the delicate floral notes of jasmine and rose with the fruity aroma and smoky depth of smoked longan, creating an elegant yet subtly hazy flavor profile.\n\nEchoing Gray Autonomous Entity and its reconfiguration of perception, natural aromas are deconstructed, transformed, and recombined into a sensory experience that exists somewhere between the familiar and the unfamiliar. The silvery-white appearance of the cocktail evokes a neutral interface—the residue of information after it has been processed and recomposed.",images:["assets/images/partnership/partnership-02/main.webp","assets/images/partnership/partnership-02/01.webp","assets/images/partnership/partnership-02/02.webp"]}],
   "shop-03": [{id:"partnership-03",published:false,titleZh:"",titleEn:"",categoryZh:"",images:[]}],
-  "shop-04": [{id:"partnership-04",titleZh:"在記憶折返以前",titleEn:"Before Memory Turns Back",categoryZh:"響應展覽",descriptionZh:"《在記憶折返以前》由台北雙人創作團體Fina與Tony共同展出。Fina以散文式數位影像收集街道、人物與生活片刻；Tony透過翻轉、鏡像與重組，將城市燈火化為影像詩。兩人的作品游移於具象與抽象之間，沿著光線、記憶與時間交會，邀請觀眾辨認那些尚未說完、仍在心中折返的感受。",descriptionEn:"Before Memory Turns Back is a joint exhibition by Taipei-based artist duo Fina and Tony. Fina gathers fragments of streets, people, and everyday life through essayistic digital imagery, while Tony transforms the lights of the city into visual poetry through inversion, mirroring, and recomposition.\nMoving between the figurative and the abstract, their works trace intersections of light, memory, and time, inviting viewers to recognize feelings that remain unfinished and continue to return within.",hoursZh:"展期 | 10月10日至11月8日\n開幕 | 10月17日15:00",hoursEn:"Exhibition period | October 10–November 8\nOpening | October 17, 15:00",images:["assets/images/partnership/partnership-04/main.jpg","assets/images/partnership/partnership-04/01.png","assets/images/partnership/partnership-04/02.jpg","assets/images/partnership/partnership-04/03.png"]}],
-  "shop-05": [{id:"partnership-05",titleZh:"CNSalon花草茶、CNSalon花冰菓",titleEn:"CNSalon Herbal Tea, CNSalon Floral Fruit Ice Pops",categoryZh:"特製餐點",descriptionZh:"CNSalon花草茶\n源起於火山口下的西恩花園新鮮採摘的一杯花草茶，如同「味蕾的花束」，將山裡日月積累的感受，透過一杯花草茶帶入每個人的生活，分享大自然的美好與能量。\nCNSalon花冰菓\n以台灣豐盛的鮮果與西恩花園中自然香草氣味，化作味蕾上冰紛的夏日花園，一支冰菓、一支花，把一座花園結冰，在口中盛開！",descriptionEn:"CNSalon Herbal Tea\nFreshly harvested from CN Garden beneath the volcanic landscape, each cup of herbal tea is like a “bouquet for the palate.” Infused with the flavors and sensations shaped by days and seasons in the mountains, the tea brings the beauty and energy of nature into everyday life, one cup at a time.\nCNSalon Floral Fruit Ice Pops\nMade with Taiwan’s abundant fresh fruits and naturally fragrant herbs from CN Garden, these ice pops transform the flavors of a summer garden into a refreshing frozen treat. A fruit ice pop, a flower—a whole garden captured in ice, blooming with every bite.",images:["assets/images/partnership/partnership-05/main.jpg","assets/images/partnership/partnership-05/01.jpg"]}],
-  "shop-06": [{id:"partnership-06",titleZh:"灰色自動體",titleEn:"GRAY AUTONOMOUS ENTITY",categoryZh:"特調咖啡飲品",descriptionZh:"灰色自動體\nGRAY AUTONOMOUS ENTITY\n一杯，介於人與機器之間的灰色狀態。\n\n咖啡的深黑、藍莓的色彩，\n黑金竹碳將一切拉回灰階，\n再以牛奶覆上一層柔軟的白。\n\n像是正在生成的物件，\n沒有固定的形狀，也沒有唯一的答案。\n在黑與白之間，\n讓味覺成為另一種感知介面。\n\nCoffee × Blueberry × Black Gold Bamboo Charcoal × Milk\n\n臺北數位藝術節限定",descriptionEn:"GRAY AUTONOMOUS ENTITY\nA drink suspended in the gray area between human and machine.\n\nThe deep black of coffee and the color of blueberry are drawn back into grayscale by black gold bamboo charcoal, before being covered with a soft layer of white milk.\n\nLike an object still in the process of becoming, it has no fixed form and no single answer.\n\nBetween black and white, taste becomes another interface for perception.\n\nCoffee × Blueberry × Black Gold Bamboo Charcoal × Milk\n\nTaipei Digital Art Festival Exclusive",images:["assets/images/partnership/partnership-06/main.jpg","assets/images/partnership/partnership-06/01.jpg","assets/images/partnership/partnership-06/02.jpg"]}],
-  "shop-07": [{id:"partnership-07",titleZh:"黑炭法式牛軋餅",titleEn:"Charcoal French Nougat Cracker",categoryZh:"特製點心",descriptionZh:"歐華酒店 × 臺北數位藝術節｜限定黑炭法式牛軋餅\n\n灰色，不只是另一種顏色\n\n當機器越來越懂得模仿人，\n人與機器之間的界線，又在哪裡？\n\n呼應2026臺北數位藝術節對科技、創作與人文之間關係的探索，歐華酒店以熟悉的法式牛軋餅為創作載體，推出限定黑炭法式牛軋餅。\n這一次，我們刻意讓它與傳統牛軋餅的繽紛色彩形成對比，將一場關於「人」與「機器」的思考，藏進一份可以品嚐的甜點裡。\n\n繽紛的法式牛軋餅，象徵人的色彩——有溫度、有情緒，也保留著手作創作的不規則與獨特。\n\n而這一次，歐華酒店以黑炭為靈感，將法式牛軋餅化作一抹深灰。精準、純粹、近乎一致的色彩，彷彿來自數位世界的產物，讓「人」與「機器」之間的界線，成為一場味覺與視覺的想像。法式甜點的細緻工藝，遇上黑炭獨有的自然深色，將法式風格與東方元素融入一口牛軋餅。\n\n當機器開始能創造影像、文字與藝術，什麼樣的色彩，仍然只屬於人？\n繽紛，是人的色彩。\n灰色，是機器的想像。\n而你，看見的是什麼？",descriptionEn:"The Riviera Hotel × Taipei Digital Art Festival | Limited-Edition Charcoal French Nougat Cracker\n\nGray is more than just another color.\n\nAs machines become increasingly capable of imitating humans, where does the boundary between human and machine lie?\n\nEchoing the 2026 Taipei Digital Art Festival’s exploration of the relationships between technology, creativity, and humanity, The Riviera Hotel reimagines its familiar French nougat cracker as a limited-edition charcoal creation. In deliberate contrast to the vibrant colors of traditional nougat crackers, this version transforms a reflection on “humans” and “machines” into something that can be tasted.\n\nThe colorful French nougat cracker represents the colors of humanity—warm, emotional, and marked by the irregularity and individuality of something made by hand.\n\nFor this special edition, The Riviera Hotel draws inspiration from charcoal, transforming the French nougat cracker into a deep shade of gray. Its precise, pure, almost uniform appearance evokes an object from the digital world, turning the boundary between “human” and “machine” into an exploration of both taste and vision. Refined French pastry craftsmanship meets the naturally deep tones of charcoal, bringing French style and Eastern elements together in a single bite.\n\nAs machines begin to create images, words, and art, what colors still belong uniquely to us?\n\nColor is human.\nGray is the imagination of the machine.\nWhat do you see?",offers:[{titleZh:"散客訂房優惠",titleEn:"",code:"DAFTRIV",descriptionZh:"透過官網訂房輸入優惠碼享超值優惠專案9折優惠",descriptionEn:""}],images:["assets/images/partnership/partnership-07/main.jpg"]}],
-  "shop-08": [{id:"partnership-08",titleZh:"SOMA・VEIL",titleEn:"SOMA・VEIL",categoryZh:"特調飲品",descriptionZh:"意指雖然無法理解、看不清本質，但能讓人穩定、安心、愉悅的魔藥（AI科技）",descriptionEn:"A potion that may be impossible to fully understand or see for what it truly is, yet brings a sense of stability, reassurance, and pleasure—a metaphor for AI technology.",images:["assets/images/partnership/partnership-08/main.jpg","assets/images/partnership/partnership-08/01.jpg"]}],
+  "shop-04": [{id:"partnership-04",titleZh:"在記憶折返以前",titleEn:"Before Memory Turns Back",categoryZh:"響應展覽",descriptionZh:"《在記憶折返以前》由台北雙人創作團體Fina與Tony共同展出。Fina以散文式數位影像收集街道、人物與生活片刻；Tony透過翻轉、鏡像與重組，將城市燈火化為影像詩。兩人的作品游移於具象與抽象之間，沿著光線、記憶與時間交會，邀請觀眾辨認那些尚未說完、仍在心中折返的感受。",descriptionEn:"Before Memory Turns Back is a joint exhibition by Taipei-based artist duo Fina and Tony. Fina gathers fragments of streets, people, and everyday life through essayistic digital imagery, while Tony transforms the lights of the city into visual poetry through inversion, mirroring, and recomposition.\nMoving between the figurative and the abstract, their works trace intersections of light, memory, and time, inviting viewers to recognize feelings that remain unfinished and continue to return within.",hoursZh:"展期 | 10月10日至11月8日\n開幕 | 10月17日15:00",hoursEn:"Exhibition period | October 10–November 8\nOpening | October 17, 15:00",images:["assets/images/partnership/partnership-04/main.webp","assets/images/partnership/partnership-04/01.webp","assets/images/partnership/partnership-04/02.webp","assets/images/partnership/partnership-04/03.webp"]}],
+  "shop-05": [{id:"partnership-05",titleZh:"CNSalon花草茶、CNSalon花冰菓",titleEn:"CNSalon Herbal Tea, CNSalon Floral Fruit Ice Pops",categoryZh:"特製餐點",descriptionZh:"CNSalon花草茶\n源起於火山口下的西恩花園新鮮採摘的一杯花草茶，如同「味蕾的花束」，將山裡日月積累的感受，透過一杯花草茶帶入每個人的生活，分享大自然的美好與能量。\nCNSalon花冰菓\n以台灣豐盛的鮮果與西恩花園中自然香草氣味，化作味蕾上冰紛的夏日花園，一支冰菓、一支花，把一座花園結冰，在口中盛開！",descriptionEn:"CNSalon Herbal Tea\nFreshly harvested from CN Garden beneath the volcanic landscape, each cup of herbal tea is like a “bouquet for the palate.” Infused with the flavors and sensations shaped by days and seasons in the mountains, the tea brings the beauty and energy of nature into everyday life, one cup at a time.\nCNSalon Floral Fruit Ice Pops\nMade with Taiwan’s abundant fresh fruits and naturally fragrant herbs from CN Garden, these ice pops transform the flavors of a summer garden into a refreshing frozen treat. A fruit ice pop, a flower—a whole garden captured in ice, blooming with every bite.",images:["assets/images/partnership/partnership-05/main.webp","assets/images/partnership/partnership-05/01.webp"]}],
+  "shop-06": [{id:"partnership-06",titleZh:"灰色自動體",titleEn:"GRAY AUTONOMOUS ENTITY",categoryZh:"特調咖啡飲品",descriptionZh:"灰色自動體\nGRAY AUTONOMOUS ENTITY\n一杯，介於人與機器之間的灰色狀態。\n\n咖啡的深黑、藍莓的色彩，\n黑金竹碳將一切拉回灰階，\n再以牛奶覆上一層柔軟的白。\n\n像是正在生成的物件，\n沒有固定的形狀，也沒有唯一的答案。\n在黑與白之間，\n讓味覺成為另一種感知介面。\n\nCoffee × Blueberry × Black Gold Bamboo Charcoal × Milk\n\n臺北數位藝術節限定",descriptionEn:"GRAY AUTONOMOUS ENTITY\nA drink suspended in the gray area between human and machine.\n\nThe deep black of coffee and the color of blueberry are drawn back into grayscale by black gold bamboo charcoal, before being covered with a soft layer of white milk.\n\nLike an object still in the process of becoming, it has no fixed form and no single answer.\n\nBetween black and white, taste becomes another interface for perception.\n\nCoffee × Blueberry × Black Gold Bamboo Charcoal × Milk\n\nTaipei Digital Art Festival Exclusive",images:["assets/images/partnership/partnership-06/main.webp","assets/images/partnership/partnership-06/01.webp","assets/images/partnership/partnership-06/02.webp"]}],
+  "shop-07": [{id:"partnership-07",titleZh:"黑炭法式牛軋餅",titleEn:"Charcoal French Nougat Cracker",categoryZh:"特製點心",descriptionZh:"歐華酒店 × 臺北數位藝術節｜限定黑炭法式牛軋餅\n\n灰色，不只是另一種顏色\n\n當機器越來越懂得模仿人，\n人與機器之間的界線，又在哪裡？\n\n呼應2026臺北數位藝術節對科技、創作與人文之間關係的探索，歐華酒店以熟悉的法式牛軋餅為創作載體，推出限定黑炭法式牛軋餅。\n這一次，我們刻意讓它與傳統牛軋餅的繽紛色彩形成對比，將一場關於「人」與「機器」的思考，藏進一份可以品嚐的甜點裡。\n\n繽紛的法式牛軋餅，象徵人的色彩——有溫度、有情緒，也保留著手作創作的不規則與獨特。\n\n而這一次，歐華酒店以黑炭為靈感，將法式牛軋餅化作一抹深灰。精準、純粹、近乎一致的色彩，彷彿來自數位世界的產物，讓「人」與「機器」之間的界線，成為一場味覺與視覺的想像。法式甜點的細緻工藝，遇上黑炭獨有的自然深色，將法式風格與東方元素融入一口牛軋餅。\n\n當機器開始能創造影像、文字與藝術，什麼樣的色彩，仍然只屬於人？\n繽紛，是人的色彩。\n灰色，是機器的想像。\n而你，看見的是什麼？",descriptionEn:"The Riviera Hotel × Taipei Digital Art Festival | Limited-Edition Charcoal French Nougat Cracker\n\nGray is more than just another color.\n\nAs machines become increasingly capable of imitating humans, where does the boundary between human and machine lie?\n\nEchoing the 2026 Taipei Digital Art Festival’s exploration of the relationships between technology, creativity, and humanity, The Riviera Hotel reimagines its familiar French nougat cracker as a limited-edition charcoal creation. In deliberate contrast to the vibrant colors of traditional nougat crackers, this version transforms a reflection on “humans” and “machines” into something that can be tasted.\n\nThe colorful French nougat cracker represents the colors of humanity—warm, emotional, and marked by the irregularity and individuality of something made by hand.\n\nFor this special edition, The Riviera Hotel draws inspiration from charcoal, transforming the French nougat cracker into a deep shade of gray. Its precise, pure, almost uniform appearance evokes an object from the digital world, turning the boundary between “human” and “machine” into an exploration of both taste and vision. Refined French pastry craftsmanship meets the naturally deep tones of charcoal, bringing French style and Eastern elements together in a single bite.\n\nAs machines begin to create images, words, and art, what colors still belong uniquely to us?\n\nColor is human.\nGray is the imagination of the machine.\nWhat do you see?",offers:[{titleZh:"散客訂房優惠",titleEn:"",code:"DAFTRIV",descriptionZh:"透過官網訂房輸入優惠碼享超值優惠專案9折優惠",descriptionEn:""}],images:["assets/images/partnership/partnership-07/main.webp"]}],
+  "shop-08": [{id:"partnership-08",titleZh:"SOMA・VEIL",titleEn:"SOMA・VEIL",categoryZh:"特調飲品",descriptionZh:"意指雖然無法理解、看不清本質，但能讓人穩定、安心、愉悅的魔藥（AI科技）",descriptionEn:"A potion that may be impossible to fully understand or see for what it truly is, yet brings a sense of stability, reassurance, and pleasure—a metaphor for AI technology.",images:["assets/images/partnership/partnership-08/main.webp","assets/images/partnership/partnership-08/01.webp"]}],
   "shop-09": [{id:"partnership-09",titleZh:"墨魚披薩套餐",titleEn:"Squid Ink Pizza Set",categoryZh:"披薩套餐組合",descriptionZh:"🦑 墨魚披薩｜把整片海的鮮味，烤進一張披薩裡。\n使用新鮮墨魚囊、墨魚肉與透抽，搭配辛香料細火翻炒，再打成濃郁細緻的墨魚醬。\n不只是「黑色」而已，入口是滿滿的鮮甜海味，越吃越香。\n將墨魚醬均勻抹上披薩麵團，鋪上新鮮透抽，送進高溫窯爐烘烤。\n出爐後，再搭配酸香開胃的莎莎醬與現刨魷魚乾。\n🔥 窯烤的焦香 × 墨魚的鮮甜 × 莎莎醬的酸香 × 魷魚乾的鹹香\n一口下去，海味、香氣與口感一層一層堆疊。",descriptionEn:"🦑Squid Ink Pizza | The flavors of the sea, baked into every slice.\nFresh squid ink, cuttlefish, and squid are slowly sautéed with aromatic spices, then blended into a rich, velvety squid ink sauce.\nMore than just its striking black appearance, this pizza is packed with the natural sweetness and umami of the sea. The squid ink sauce is spread generously over the pizza dough, topped with fresh squid, and baked at high heat in the oven.\nOnce out of the oven, it is finished with bright, tangy salsa and freshly shaved dried squid.\n🔥 Charred oven-baked aroma × Sweet ocean flavors × Tangy salsa × Savory dried squid\nWith every bite, layers of seafood flavor, aroma, and texture unfold one after another.",images:[]}],
   "shop-10": [{id:"partnership-10",titleZh:"—以父芝名—",titleEn:"",categoryZh:"",descriptionZh:"向經典調酒「Godfather 教父」致敬，以威士忌與杏仁酒構築深沉而溫潤的酒體，覆上灰色芝麻冰淇淋。黑芝麻的濃厚堅果香與酒液交疊，如同在灰色世界裡運行的一段未知程式。沒有絕對的黑，也沒有純粹的白，只有不斷變化的灰階。以「灰色自動體」為題，將熟悉的味覺重新拆解、重組，讓冰淇淋、酒與記憶，在夜色中形成新的感官語言。",images:[]}],
   "shop-11": [{id:"partnership-11",titleZh:"",titleEn:"",categoryZh:"響應優惠",images:[]}]

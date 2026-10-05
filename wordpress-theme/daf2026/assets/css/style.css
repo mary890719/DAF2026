@@ -186,7 +186,7 @@ body[data-page="home"] .site-network-canvas { z-index: 1; }
 body[data-page="home"] .site-observation-light { z-index: 2; }
 body[data-page="home"] #app > .section { position: relative; z-index: 3; }
 .hero-ui { position: absolute; z-index: 3; inset: 0; display: flex; align-items: flex-end; justify-content: center; padding-bottom: clamp(48px, 6vh, 84px); pointer-events: none; }
-html[lang="zh-Hant"] body[data-page="home"] .hero-ui { padding-bottom: calc(clamp(18px, 2vw, 24px) + clamp(40px, calc(12.5vh - 50px), 120px)); }
+html[lang="zh-Hant"] body[data-page="home"] .hero-ui { padding-bottom: clamp(120px, 16vh, 180px); }
 .hero-copy { position: relative; z-index: 3; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: var(--space-4) var(--space-4) 110px; text-align: center; }
 .hero-kicker { margin: 0 0 var(--space-2); color: var(--color-text-secondary); font-size: var(--fs-base); }
 .hero-title-stage { --hero-logo-width: 740px; position: relative; width: min(100%, 1040px); }

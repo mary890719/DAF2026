@@ -1,0 +1,4068 @@
+window.DAF_DATA = {
+  settings: {
+    homeArtistLayout: "accordion"
+  },
+  homeArtworkImages: {
+    "main-01": "assets/images/works/home/main-01.webp",
+    "main-02": "assets/images/works/home/main-02.webp",
+    "main-03": "assets/images/works/home/main-03.webp",
+    "main-04": "assets/images/works/home/main-04.webp",
+    "main-05": "assets/images/works/home/main-05.webp",
+    "main-06": "assets/images/works/home/main-06.webp",
+    "main-07": "assets/images/works/home/main-07.webp",
+    "main-08": "assets/images/works/home/main-08.webp",
+    "main-09": "assets/images/works/home/main-09.webp",
+    "outdoor-01": "assets/images/works/home/outdoor-01.webp",
+    "outdoor-02": "assets/images/works/home/outdoor-02.webp",
+    "district-01": "assets/images/works/home/district-01.webp",
+    "district-02": "assets/images/works/home/district-02.webp",
+    "district-03": "assets/images/works/home/district-03.webp",
+    "district-04": "assets/images/works/home/district-04.webp",
+    "district-05": "assets/images/works/home/district-05.webp",
+    "district-06": "assets/images/works/home/district-06.webp",
+    "district-07": "assets/images/works/home/district-07.webp",
+    "district-08": "assets/images/works/home/district-08.webp",
+    "district-09": "assets/images/works/home/district-09.webp",
+    "district-10": "assets/images/works/home/district-10.webp",
+    "district-11": "assets/images/works/home/district-11.webp",
+    "district-12": "assets/images/works/home/district-12.webp",
+    "district-13": "assets/images/works/home/district-13.webp",
+    "district-14": "assets/images/works/home/district-14.webp"
+  },
+  social: {
+    instagram: {
+      url: "https://www.instagram.com/daf_taipei/",
+      handle: "@daf_taipei",
+      label: "Instagram"
+    },
+    facebook: {
+      url: "https://www.facebook.com/DigitalArtFestivalTaipei/?locale=zh_TW",
+      name: "臺北數位藝術節",
+      label: "Facebook"
+    }
+  },
+  artists: [
+  {
+    "id": "artist-01",
+    "name": "吳宜曄",
+    "nameZh": "吳宜曄",
+    "nameEn": "I-Yeh Wu",
+    "nationality": "臺灣",
+    "bio": "吳宜曄現居臺北，創作聚焦於日常生活中習以為常的科技，透過解構其運作方式與使用情境，重新思考科技如何介入人的感知、行為與生活經驗。作品以數位媒介與裝置為主要實踐方向，持續關注人與技術環境之間的關係，並曾於臺北數位藝術中心、國立臺灣美術館、台北當代藝術館、新竹241藝術空間及海外藝術節與藝術空間展出。",
+    "workId": "main-01",
+    "workTitle": "Generative Data",
+    "workTitleEn": "Generative Data",
+    "career": "個展\n2021｜Adaptation，臺北數位藝術中心，台北\n2015｜感知習作，臺北數位藝術中心，台北\n2014｜Falling，國立臺灣美術館，台中\n2013｜Dollar-Post 2.0，Titanik gallery，⼟爾庫\n\n聯展\n2024｜熱影像，台北當代藝術館，台北\n2023｜上線中－網路藝術展，新竹241藝術空間，新竹\n2020｜虛幻生命：混種、轉殖與創生，臺灣當代文化實驗場，台北\n2019｜即溶生活 未來記憶的想像，北師美術館，台北\n2017｜Patchlab Digital Art Festival 2017，克拉科夫\n2017｜TAxT桃園科技藝術節，桃園\n2016｜影像的第三方認知，恆畫廊，台北",
+    "image": {
+      "src": "assets/images/artists/artist-01.jpg",
+      "alt": "吳宜曄"
+    },
+    "nationalityZh": "臺灣",
+    "nationalityEn": "Taiwan",
+    "bioZh": "吳宜曄現居臺北，創作聚焦於日常生活中習以為常的科技，透過解構其運作方式與使用情境，重新思考科技如何介入人的感知、行為與生活經驗。作品以數位媒介與裝置為主要實踐方向，持續關注人與技術環境之間的關係，並曾於臺北數位藝術中心、國立臺灣美術館、台北當代藝術館、新竹241藝術空間及海外藝術節與藝術空間展出。",
+    "bioEn": "WU I-YEH is a Taipei-based artist whose practice examines technologies embedded in everyday life. By deconstructing familiar technological systems and reconsidering how they are used, he explores the ways technology shapes perception, behaviour, and lived experience. Working primarily with digital media and installation, his projects investigate the relationship between people and technological environments. His work has been presented at the Digital Art Center Taipei, National Taiwan Museum of Fine Arts, Museum of Contemporary Art Taipei, Hsinchu 241 Art Gallery, and international art spaces and festivals.",
+    "careerZh": "個展\n2021｜Adaptation，臺北數位藝術中心，台北\n2015｜感知習作，臺北數位藝術中心，台北\n2014｜Falling，國立臺灣美術館，台中\n2013｜Dollar-Post 2.0，Titanik gallery，⼟爾庫\n\n聯展\n2024｜熱影像，台北當代藝術館，台北\n2023｜上線中－網路藝術展，新竹241藝術空間，新竹\n2020｜虛幻生命：混種、轉殖與創生，臺灣當代文化實驗場，台北\n2019｜即溶生活 未來記憶的想像，北師美術館，台北\n2017｜Patchlab Digital Art Festival 2017，克拉科夫\n2017｜TAxT桃園科技藝術節，桃園\n2016｜影像的第三方認知，恆畫廊，台北",
+    "careerEn": "SOLO EXHIBITIONS\n2021 | Adaptation, Digital Art Center Taipei, Taipei\n2015 | Studies in perception, Digital Art Center Taipei, Taipei\n2014 | Falling, National Taiwan Museum of Fine Arts, Taichung\n2013 | Dollar-Post 2.0, Titanik gallery, Turku\n\nGROUP EXHIBITIONS\n2024 | Image Fever, MOCA Taipei, Taipei\n2023 | Always On : Net art exhibition, HSINCHU 241 ART GALLERY\n2020 | FICTIONAL LIFE : HYBRIDITY, TRANSGENETICS, INNOVATION, C-LAB, Taipei\n2019 | MERCURIAL BOUNDARIES, MoNTUE, Taipei\n2017 | Patchlab Digital Art Festival 2017, Krakow\n2017 | Taoyuan Art x Technology Art Festival, Taoyuan\n2016 | Video and the Third Person's Perception , Galleria H., Taipei",
+    "website": "https://i-yeh-wu.com/adaptation"
+  },
+  {
+    "id": "artist-02",
+    "name": "無邊製造-林俊遑 / 黃紀虹 / 鄭子芸",
+    "nameZh": "無邊製造-林俊遑 / 黃紀虹 / 鄭子芸",
+    "nameEn": "No Side Here — Chun-Huang Lin / Chi-Hung Huang / Zih-Yun Jheng",
+    "nationality": "臺灣",
+    "bio": "無邊製造由林俊遑、黃紀虹與鄭子芸組成，創作專注於聲光裝置與體感互動，從日常中不易被察覺的訊息出發，探索環境、科技與人文之間的連結，並透過藝術實踐建立觀眾與空間的對話。作品曾獲全國美展新媒體藝術類首獎、新北市美展科技藝術類首獎等肯定，並參與 Ars Electronica、ISEA、RECTO VRso、FUTURE VISION LAB 等國際展演與研究平台。",
+    "workId": "main-02",
+    "workTitle": "那些字已經無關緊要了",
+    "workTitleEn": "Those words are no longer relevant",
+    "career": "聯展\n2026｜透明的發生 無邊製造創作個展，水谷藝術空間。台北\n2026｜雲端光景 2026月津港燈節，月津港，台南\n2025｜ARS Electronica Festival 2025，POSTCITY， Linz, Austria\n2024｜FUTURE VISION LAB 2024，臺灣當代文化實驗場C-LAB，台北\n2024｜科技．藝遊，桃園國際機場第二航廈，桃園市\n2024｜Expanded Animation 2024 入圍發表 (Art Research paper)、Honorable Mention\n2024｜ARS Electronica Festival 2024, POSTCITY Linz Austria\n2024｜113年新北市美展 首獎\n2024｜113年全國美展 首獎(林俊遑, 黃紀虹)\n2024｜ISEA 2024 入圍發表 (Art paper)\n2024｜RECTO VRso VR競賽 優選(林俊遑, 黃紀虹)\n2023｜ARS Electronica Festival 2023, POSTCITY Linz Austria\n2023｜臺北文創天空創意節 好點子獎",
+    "image": {
+      "src": "assets/images/artists/artist-02.jpg",
+      "alt": "無邊製造-林俊遑 / 黃紀虹 / 鄭子芸"
+    },
+    "nationalityZh": "臺灣",
+    "nationalityEn": "Taiwan",
+    "bioZh": "無邊製造由林俊遑、黃紀虹與鄭子芸組成，創作專注於聲光裝置與體感互動，從日常中不易被察覺的訊息出發，探索環境、科技與人文之間的連結，並透過藝術實踐建立觀眾與空間的對話。作品曾獲全國美展新媒體藝術類首獎、新北市美展科技藝術類首獎等肯定，並參與 Ars Electronica、ISEA、RECTO VRso、FUTURE VISION LAB 等國際展演與研究平台。",
+    "bioEn": "No Side Here, formed by LIN Chun-Huang, HUANG Chi-Hung, and JHENG Zih-Yun, develops sound-light installations and embodied interactive works. Starting from signals and phenomena that often remain unnoticed in everyday life, the collective explores connections among environment, technology, and human experience, using artistic practice to create dialogue between audiences and space. Their work has received major awards in Taiwan, including First Prize in New Media Art at the National Art Exhibition and First Prize in Tech Art at the New Taipei City Fine Arts Exhibition, and has appeared at Ars Electronica, ISEA, RECTO VRso, and FUTURE VISION LAB.",
+    "careerZh": "聯展\n2026｜透明的發生 無邊製造創作個展，水谷藝術空間。台北\n2026｜雲端光景 2026月津港燈節，月津港，台南\n2025｜ARS Electronica Festival 2025，POSTCITY， Linz, Austria\n2024｜FUTURE VISION LAB 2024，臺灣當代文化實驗場C-LAB，台北\n2024｜科技．藝遊，桃園國際機場第二航廈，桃園市\n2024｜Expanded Animation 2024 入圍發表 (Art Research paper)、Honorable Mention\n2024｜ARS Electronica Festival 2024, POSTCITY Linz Austria\n2024｜113年新北市美展 首獎\n2024｜113年全國美展 首獎(林俊遑, 黃紀虹)\n2024｜ISEA 2024 入圍發表 (Art paper)\n2024｜RECTO VRso VR競賽 優選(林俊遑, 黃紀虹)\n2023｜ARS Electronica Festival 2023, POSTCITY Linz Austria\n2023｜臺北文創天空創意節 好點子獎",
+    "careerEn": "GROUP EXHIBITIONS\n2026 | The Occurrence of Transparency, \"No Side Here\" solo exhibition, Waley Art, Taipei\n2026 | Cloud Scenery, 2026 Yuejin Lantern Festival, Yuejin Harbor, Tainan\n2025 | Ars Electronica Festival 2025, POSTCITY, Linz, Austria\n2024 | FUTURE VISION LAB 2024, Taiwan Contemporary Culture Lab (C-LAB), Taipei\n2024 | Tech Art Tour, Taoyuan International Airport Terminal 2, Taoyuan City\n2024 | Expanded 2024 – Conference on Animation and Interactive Art (Ars Electronica Festival, Linz, Austria) — Selected for presentation (Art Research Paper track), Honorable Mention\n2024 | Ars Electronica Festival 2024, POSTCITY, Linz, Austria\n2024 | 2024 (ROC year 113) New Taipei City Fine Arts Exhibition — First Prize\n2024 | 2024 (ROC year 113) National Art Exhibition, Taiwan — First Prize (Chun-Huang, Chi-Hung)\n2024 | ISEA2024 – 29th International Symposium on Electronic Art, Brisbane, Australia — Selected for presentation (Art Paper track)\n2024 | RECTO VRso VR Competition — Award of Excellence (Chun-Huang, Chi-Hung)\n2023 | Ars Electronica Festival 2023, POSTCITY, Linz, Austria\n2023 | Taipei New Horizon Sky Creative Festival — Good Idea Award",
+    "website": "https://chunred.github.io/No-Side-Here",
+    "socialUrls": [
+      "https://www.instagram.com/no.side.here"
+    ],
+    "instagram": "https://www.instagram.com/no.side.here"
+  },
+  {
+    "id": "artist-03",
+    "name": "鄭先喻",
+    "nameZh": "鄭先喻",
+    "nameEn": "Hsien-Yu Cheng",
+    "nationality": "臺灣",
+    "bio": "鄭先喻1984年生於高雄，現居臺北，身兼藝術家與軟體開發者。創作涵蓋軟體、電子設備與實驗性生物電子裝置，關注人類行為、情感、軟體及人機關係，並以幽默方式回應科技社會與環境議題。曾獲台北數位藝術獎首獎、高雄獎新媒體藝術首獎、台新藝術獎視覺藝術獎及 S+T+ARTS 榮譽提名，作品於臺灣、亞洲與歐洲多地展出。",
+    "workId": "main-03",
+    "workTitle": "這可能是你",
+    "workTitleEn": "It Could Be You",
+    "career": "個展\n2025｜Traced 光蹤，臺北表演藝術中心，台北，臺灣\n2023｜[.user ]，誠品畫廊，台北，臺灣\n\n聯展\n2025｜浪濤之下亦有皇都 + 等晶播種，YPAM，東京藝大，橫濱，日本\n2025｜破浪之際的臺灣：過去與未來的前線，路德維希美術館，布達佩斯，匈牙利\n\n表演\n2016｜白晝之夜，台北，台灣\n2016｜滲透藝術節，高雄，台灣\n\n獲獎\n2023｜S+T+ARTS，Nomination/Honorary Mentions，S+TArts Prize\n2021｜The 19th 台新藝術獎，視覺藝術獎",
+    "image": {
+      "src": "assets/images/artists/artist-03.jpg",
+      "alt": "鄭先喻"
+    },
+    "nationalityZh": "臺灣",
+    "nationalityEn": "Taiwan",
+    "bioZh": "鄭先喻1984年生於高雄，現居臺北，身兼藝術家與軟體開發者。創作涵蓋軟體、電子設備與實驗性生物電子裝置，關注人類行為、情感、軟體及人機關係，並以幽默方式回應科技社會與環境議題。曾獲台北數位藝術獎首獎、高雄獎新媒體藝術首獎、台新藝術獎視覺藝術獎及 S+T+ARTS 榮譽提名，作品於臺灣、亞洲與歐洲多地展出。",
+    "bioEn": "HsienYu Cheng is an artist and software developer born in Kaohsiung in 1984 and based in Taipei. His practice spans software, electronic systems, and experimental bio-electronic devices, focusing on human behaviour, emotion, software, and relationships between people and machines. Often using humour, he reflects on technological society and environmental conditions. Cheng has received the Taipei Digital Art Award, the Kaohsiung Award in New Media Art, the Taishin Arts Award for Visual Art, and an S+T+ARTS honorary mention. His work has been exhibited widely across Taiwan, Asia, and Europe.",
+    "careerZh": "個展\n2025｜Traced 光蹤，臺北表演藝術中心，台北，臺灣\n2023｜[.user ]，誠品畫廊，台北，臺灣\n\n聯展\n2025｜浪濤之下亦有皇都 + 等晶播種，YPAM，東京藝大，橫濱，日本\n2025｜破浪之際的臺灣：過去與未來的前線，路德維希美術館，布達佩斯，匈牙利\n\n表演\n2016｜白晝之夜，台北，台灣\n2016｜滲透藝術節，高雄，台灣\n\n獲獎\n2023｜S+T+ARTS，Nomination/Honorary Mentions，S+TArts Prize\n2021｜The 19th 台新藝術獎，視覺藝術獎",
+    "careerEn": "SOLO EXHIBITIONS\n2025 | Traced, Taipei Performing Art Center, Taipei, Taiwan\n2023 | [.user ], Eslite Gallery, Taipei City, Taiwan\n\nGROUP EXHIBITIONS\n2025 | There is another capital beneath the wave + Crystal Seeding,YPAM, KAAT & Tokyo, University of Arts, Yokohama, Japan\n2025 | Before the Storm: Taiwan on the frontier of past and future, Ludwig Museum,, Budapest, Hungary\n\nPerformance\n2016 | NUIT BLANCHE,Taipei Art Village Taipei, Taiwan\n2016 | OSMOSIS - Audiovisual Media festival 2016 , Kaohsiung, Taiwan\n\nAward\n2023 | S+T+ARTS, Nomination/Honorary Mentions, S+TARTS Prize\n2021 | The 19th Taishin Art Award, Visual Art Award Winner",
+    "website": "https://chenghsienyu.com/cv/"
+  },
+  {
+    "id": "artist-04",
+    "name": "德里斯．德普特",
+    "nameZh": "德里斯．德普特",
+    "nameEn": "Dries Depooter",
+    "nationality": "比利時",
+    "bio": "Dries Depoorter 是居於比利時根特的藝術家與創意科技工作者，創作運用人工智慧、監控系統、社群媒體與公開網路資料，探討隱私、身分、監控與數位文化中的倫理問題。他經常將日常科技轉化為帶有幽默與批判性的互動作品，使觀眾直接面對演算法與資料系統如何觀看、分類並影響個人。作品曾於 Barbican、MUTEK、Art Basel、Para Site、Mozilla Festival 等國際機構與藝術節展出。",
+    "workId": "main-04",
+    "workTitle": "違規穿越馬路",
+    "workTitleEn": "Jaywalking",
+    "career": "聯展\n倫敦 Barbican，巴塞隆納 MUTEK Festival / Art Basel，香港 Para Site，舊金山 Mozilla:The Glass Room，比利時 Bozar / FOMU\n\n國際交流 / 演講\nMoMA / TEDx Brussels / KBC / Samsung / Wired / MUTEK Montréal / KIKK Festival",
+    "image": {
+      "src": "assets/images/artists/artist-04.jpg",
+      "alt": "Dries Depooter"
+    },
+    "nationalityZh": "比利時",
+    "nationalityEn": "Belgium",
+    "bioZh": "Dries Depoorter 是居於比利時根特的藝術家與創意科技工作者，創作運用人工智慧、監控系統、社群媒體與公開網路資料，探討隱私、身分、監控與數位文化中的倫理問題。他經常將日常科技轉化為帶有幽默與批判性的互動作品，使觀眾直接面對演算法與資料系統如何觀看、分類並影響個人。作品曾於 Barbican、MUTEK、Art Basel、Para Site、Mozilla Festival 等國際機構與藝術節展出。",
+    "bioEn": "Dries Depoorter is a Belgian artist and creative technologist based in Ghent. Using artificial intelligence, surveillance systems, social media, and publicly available online data, his work examines privacy, identity, surveillance, and ethical questions within digital culture. He often transforms familiar technologies into humorous yet critical interactive situations, inviting audiences to confront how algorithms and data systems observe, classify, and influence individuals. Depoorter’s projects have been presented internationally at institutions and festivals including the Barbican, MUTEK, Art Basel, Para Site, Mozilla Festival, and other major platforms for art and technology.",
+    "careerZh": "聯展\n倫敦 Barbican，巴塞隆納 MUTEK Festival / Art Basel，香港 Para Site，舊金山 Mozilla:The Glass Room，比利時 Bozar / FOMU\n\n國際交流 / 演講\nMoMA / TEDx Brussels / KBC / Samsung / Wired / MUTEK Montréal / KIKK Festival",
+    "careerEn": "GROUP EXHIBITIONS\nThe Barbican, London; MUTEK Festival, Barcelona; Art Basel, Para Site Hong Kong, Mozilla:The Glass Room, in Back home, some of his work has been shown at, among others, Bozar, FOMU and Mundaneum (Mons). \nKEYNOTE SPEAKER \nMoMA, TEDx Brussels, KBC, Deloitte, Adobe, Samsung, SXSW, Wired, Mutek Montreal, Defcon Singapore, KIKK-festival and STRP festival.",
+    "website": "https://driesdepoorter.be/",
+    "socialUrls": [
+      "https://www.instagram.com/driesdepoorter/",
+      "https://x.com/driesdepoorter"
+    ],
+    "instagram": "https://www.instagram.com/driesdepoorter/"
+  },
+  {
+    "id": "artist-05",
+    "name": "維麗娜．弗里德里希",
+    "nameZh": "維麗娜．弗里德里希",
+    "nameEn": "Verena Friedrich",
+    "nationality": "德國",
+    "bio": "Verena Friedrich的創作以裝置與兼具詩意及功能性的機械為核心，將複雜的關係凝聚並轉化為具體且可感知的經驗。她的作品探索科技與科學系統的可能性及其限制，並關注其中所承載關於效率、可控性與進步的敘事。\n其作品曾於世界各地展出，包括德國卡爾斯魯厄藝術與媒體中心（ZKM Karlsruhe）、林茲電子藝術節（Ars Electronica）、國際電子藝術研討會（ISEA），以及亞洲多個藝術機構與展覽，包括首爾白南準藝術中心（Nam June Paik Art Center）、香港藝術中心（Hong Kong Arts Centre）及松戶國際科學藝術節（Matsudo International Science Art Festival）。\n她亦曾於德國科隆媒體藝術學院（Academy of Media Arts Cologne）、威瑪包浩斯大學（Bauhaus University Weimar）及奧芬巴赫藝術與設計大學（Offenbach University of Art and Design）擔任教授及教學職務。",
+    "workId": "main-05",
+    "workTitle": "EZ品質分解機V2",
+    "workTitleEn": "EZ Quality Soryer V2",
+    "career": "獲獎\n2005｜ZKM Karlsruhe「科學與藝術國際媒體獎」，VIDA 13.2 Art and Artificial Life Award 特別提名。\n2015、2023｜Prix Ars Electronica 榮譽提名。",
+    "image": {
+      "src": "assets/images/artists/artist-05.jpg",
+      "alt": "維麗娜．弗里德里希"
+    },
+    "nationalityZh": "德國",
+    "nationalityEn": "Germany",
+    "bioZh": "Verena Friedrich的創作以裝置與兼具詩意及功能性的機械為核心，將複雜的關係凝聚並轉化為具體且可感知的經驗。她的作品探索科技與科學系統的可能性及其限制，並關注其中所承載關於效率、可控性與進步的敘事。\n其作品曾於世界各地展出，包括德國卡爾斯魯厄藝術與媒體中心（ZKM Karlsruhe）、林茲電子藝術節（Ars Electronica）、國際電子藝術研討會（ISEA），以及亞洲多個藝術機構與展覽，包括首爾白南準藝術中心（Nam June Paik Art Center）、香港藝術中心（Hong Kong Arts Centre）及松戶國際科學藝術節（Matsudo International Science Art Festival）。\n她亦曾於德國科隆媒體藝術學院（Academy of Media Arts Cologne）、威瑪包浩斯大學（Bauhaus University Weimar）及奧芬巴赫藝術與設計大學（Offenbach University of Art and Design）擔任教授及教學職務。",
+    "bioEn": "Verena Friedrich (she/they) develops installations and poetic-functional machines that condense complex relationships into material and sensorial experiences. Her work explores the possibilities and limits of techno-scientific systems and their embedded narratives of efficiency, controllability, and progress. Her works have been presented internationally at ZKM Karlsruhe, Ars Electronica, ISEA, and various venues in Asia, including the Nam June Paik Art Center in Seoul, the Hong Kong Arts Centre, and the Matsudo International Science Art Festival. She has held professorships and teaching positions at the Academy of Media Arts Cologne, Bauhaus University Weimar, and the Offenbach University of Art and Design (all in Germany).",
+    "careerZh": "獲獎\n2005｜ZKM Karlsruhe「科學與藝術國際媒體獎」，VIDA 13.2 Art and Artificial Life Award 特別提名。\n2015、2023｜Prix Ars Electronica 榮譽提名。",
+    "careerEn": "AWARDS\n2005 | ZKM Karlsruhe International Media Award for Science and Art, VIDA 13.2 Art and Artificial Life Awards Special Mention.\n2015, 2023 | Honorary Mention, Prix Ars Electronica.",
+    "website": "https://heavythinking.org/",
+    "socialUrls": [
+      "https://www.instagram.com/verenafriedrich/"
+    ],
+    "instagram": "https://www.instagram.com/verenafriedrich/"
+  },
+  {
+    "id": "artist-06",
+    "name": "C-LAB未來視覺實驗室",
+    "nameZh": "C-LAB未來視覺實驗室",
+    "nameEn": "C-LAB’s Future Vision Lab",
+    "nationality": "臺灣",
+    "bio": "「未來視覺實驗室」在台灣 context 下主要指由臺灣當代文化實驗場（C-LAB）所推動的科技媒體實驗平台，特別是其專注於沉浸式影像的「FUTURE VISION LAB」。該平台打造了穹頂劇場（DOME），利用球形投影技術探索未來視覺與科技藝術的極限，具備R＆D的能量，整合影像運算、拼接、軟硬體系統、環繞音場及建築結構設計等技術，除策劃展演及陪伴創作者以外，亦進行各項跨域實驗，持續開創未來視覺及創新科技的新視野。",
+    "workId": "main-06",
+    "workTitle": "GeodesicDome+3V+1a - Architectural Plans",
+    "workTitleEn": "GeodesicDome+3V+1a - Architectural Plans",
+    "image": {
+      "src": "assets/images/artists/artist-06.jpg",
+      "alt": "C-LAB未來視覺實驗室"
+    },
+    "nationalityZh": "臺灣",
+    "nationalityEn": "Taiwan",
+    "bioZh": "「未來視覺實驗室」在台灣 context 下主要指由臺灣當代文化實驗場（C-LAB）所推動的科技媒體實驗平台，特別是其專注於沉浸式影像的「FUTURE VISION LAB」。該平台打造了穹頂劇場（DOME），利用球形投影技術探索未來視覺與科技藝術的極限，具備R＆D的能量，整合影像運算、拼接、軟硬體系統、環繞音場及建築結構設計等技術，除策劃展演及陪伴創作者以外，亦進行各項跨域實驗，持續開創未來視覺及創新科技的新視野。",
+    "bioEn": "FUTURE VISION LAB is a technology and media experimentation platform initiated by the Taiwan Contemporary Culture Lab (C-LAB), with a particular focus on immersive moving-image practices. At its core is DOME, a dome theater that uses spherical projection technology to explore new possibilities in future visual culture and technological art.\nWith strong R&D capabilities, the platform integrates technologies including image processing, projection stitching, hardware and software systems, surround sound, and architectural design. In addition to presenting exhibitions and performances and supporting creators in developing new works, FUTURE VISION LAB facilitates a wide range of interdisciplinary experiments, continually expanding new horizons for future visual practices and innovative technologies.",
+    "career": "",
+    "careerZh": "",
+    "careerEn": "",
+    "website": "https://clab.org.tw/unit/future-vision-lab/",
+    "socialUrls": [
+      "https://www.facebook.com/TCCLAB.ORG/?locale=zh_TW"
+    ],
+    "facebook": "https://www.facebook.com/TCCLAB.ORG/?locale=zh_TW"
+  },
+  {
+    "id": "artist-07",
+    "name": "史蒂芬．蒂芬格拉伯",
+    "nameZh": "史蒂芬．蒂芬格拉伯",
+    "nameEn": "Stefan Tiefengraber",
+    "nationality": "奧地利",
+    "bio": "Stefan Tiefengraber 現居奧地利林茲與格拉茲，創作橫跨噪音表演、動力聲音裝置與實驗電影，持續探索聲音、機械運動、電子媒介與影像之間的關係。他常以拆解、改造與重新組合消費性電子設備的方式，使器材本身成為聲音與視覺生成的主體，並透過現場演出與裝置揭示技術系統的不穩定性。作品曾於 Ars Electronica、Japan Media Arts Festival、WRO 等國際藝術節與機構展出。",
+    "workId": "main-07",
+    "workTitle": "WM_EX10 TCM_200DV TP-VS500 MS-201 BK26 MG10",
+    "workTitleEn": "WM_EX10 TCM_200DV TP-VS500 MS-201 BK26 MG10",
+    "image": {
+      "src": "assets/images/artists/artist-07.jpg",
+      "alt": "Stefan Tiefengraber"
+    },
+    "nationalityZh": "奧地利",
+    "nationalityEn": "Austria",
+    "bioZh": "Stefan Tiefengraber 現居奧地利林茲與格拉茲，創作橫跨噪音表演、動力聲音裝置與實驗電影，持續探索聲音、機械運動、電子媒介與影像之間的關係。他常以拆解、改造與重新組合消費性電子設備的方式，使器材本身成為聲音與視覺生成的主體，並透過現場演出與裝置揭示技術系統的不穩定性。作品曾於 Ars Electronica、Japan Media Arts Festival、WRO 等國際藝術節與機構展出。",
+    "bioEn": "Stefan Tiefengraber lives and works in Linz and Graz, Austria. His practice spans noise performance, kinetic sound installation, and experimental film, exploring relationships among sound, mechanical movement, electronic media, and moving image. He frequently dismantles, modifies, and recombines consumer electronics so that the devices themselves become agents for generating sound and visual events. Through performances and installations, he exposes the instability and material behaviour of technological systems. Tiefengraber’s work has been presented internationally at Ars Electronica, the Japan Media Arts Festival, WRO Media Art Biennale, and numerous festivals, galleries, and experimental music venues.",
+    "career": "聯展\n2026｜Dom im Berg，格拉茲，奧地利。\n2026｜STWST，林茲，奧地利。\n2025｜《Wavering Worlds 101020》，Mariendom，林茲，奧地利。\n2023｜The Lab，舊金山，美國。\n2023｜Fluc，維也納，奧地利。\n2021｜日本文化廳媒體藝術祭（Japan Media Arts Festival），東京，日本。\n2019｜林茲電子藝術節（Ars Electronica Festival），林茲，奧地利。\n2018｜Blaues Rauschen，波鴻，德國。\n2017｜New Media Gallery，溫哥華，加拿大。\n2015｜닻올림 dotolim 75，首爾，韓國。\n2015｜高松媒體藝術祭 2015（Takamatsu Media Art Festival 2015），高松，日本。\n2015｜失聲祭（Lacking Sound Fest.），臺北，臺灣。\n2015｜第16屆 WRO 媒體藝術雙年展（16th Media Art Biennale WRO 2015），弗羅茨瓦夫，波蘭。",
+    "careerZh": "聯展\n2026｜Dom im Berg，格拉茲，奧地利。\n2026｜STWST，林茲，奧地利。\n2025｜《Wavering Worlds 101020》，Mariendom，林茲，奧地利。\n2023｜The Lab，舊金山，美國。\n2023｜Fluc，維也納，奧地利。\n2021｜日本文化廳媒體藝術祭（Japan Media Arts Festival），東京，日本。\n2019｜林茲電子藝術節（Ars Electronica Festival），林茲，奧地利。\n2018｜Blaues Rauschen，波鴻，德國。\n2017｜New Media Gallery，溫哥華，加拿大。\n2015｜닻올림 dotolim 75，首爾，韓國。\n2015｜高松媒體藝術祭 2015（Takamatsu Media Art Festival 2015），高松，日本。\n2015｜失聲祭（Lacking Sound Fest.），臺北，臺灣。\n2015｜第16屆 WRO 媒體藝術雙年展（16th Media Art Biennale WRO 2015），弗羅茨瓦夫，波蘭。",
+    "careerEn": "GROUP EXHIBITIONS\n2026 | Dom im Berg, Graz/Austria\n2026 | STWST, Linz/Austria\n2025 | Wavering Worlds 101020, Mariendom, Linz/Austria\n2023 | The Lab, San Francisco/USA\n2023 | Fluc, Vienna/Austria\n2021 | Japan Media Arts Festival, Tokyo/Japan\n2019 | Ars Electronica Festival, Linz/Austria\n2018 | Blaues Rauschen, Bochum/Germany\n2017 | New Media Gallery, Vancouver/Canada\n2015 | 닻올림 dotolim 75, Seoul/Korea\n2015 | Takamatsu Media Art Festival 2015, Takamatsu/Japan\n2015 | Lacking Sound Fest. , Taipei/Taiwan\n2015 | 16th Media Art Biennale WRO 2015 , Wroclaw/Poland",
+    "website": "https://www.stefantiefengraber.com/",
+    "socialUrls": [
+      "https://www.instagram.com/stefan_tiefengraber"
+    ],
+    "instagram": "https://www.instagram.com/stefan_tiefengraber"
+  },
+  {
+    "id": "artist-08",
+    "name": "何芯源",
+    "nameZh": "何芯源",
+    "nameEn": "Hsin-Yuan Ho",
+    "nationality": "臺灣",
+    "bio": "何芯源的創作以新媒體、互動裝置與跨域實踐為主，關注科技媒介如何改變人的感知、身體經驗與環境關係。她常從日常觀察與個人感受出發，結合數位技術、空間裝置與參與式互動，將抽象的感知狀態轉化為可被觀看與體驗的形式。作品與研究曾參與科技藝術、跨域創作及相關展演計畫，持續在藝術與技術交會的脈絡中發展。",
+    "workId": "main-08",
+    "workTitle": "石夢 v2.0",
+    "workTitleEn": "Stone Dream v2.0",
+    "image": {
+      "src": "assets/images/artists/artist-08.jpg",
+      "alt": "何芯源"
+    },
+    "nationalityZh": "臺灣",
+    "nationalityEn": "Taiwan",
+    "bioZh": "何芯源的創作以新媒體、互動裝置與跨域實踐為主，關注科技媒介如何改變人的感知、身體經驗與環境關係。她常從日常觀察與個人感受出發，結合數位技術、空間裝置與參與式互動，將抽象的感知狀態轉化為可被觀看與體驗的形式。作品與研究曾參與科技藝術、跨域創作及相關展演計畫，持續在藝術與技術交會的脈絡中發展。",
+    "bioEn": "Ho Hsin-Yuan works across new media, interactive installation, and interdisciplinary practice, examining how technological media reshape perception, bodily experience, and relationships with the surrounding environment. Beginning with everyday observations and personal sensations, she combines digital technologies, spatial installation, and participatory interaction to translate abstract perceptual states into forms that can be seen and experienced. Her projects and research have been presented through technology-art and interdisciplinary programmes, and her ongoing practice develops at the intersection of artistic experimentation and technical processes, with an emphasis on how audiences encounter and participate in mediated environments.",
+    "career": "展演\n2026｜FUTURE VISION LAB 沉浸式影音工作坊, 臺灣當代文化實驗場, 臺北\n2025｜LAB X 藝術跨域實驗平台「2025 TSMC╳NTT+ 青年創作工作室」, 臺中國家歌劇院, 臺中\n2025｜關渡光藝術節《幻響》 , 科技藝術館, 臺北\n2025｜永晝海濱美術館雙年展《水啦》, 正濱漁港, 基隆\n2024｜Aavistus Festival 2024 - Off The Wall, 赫爾辛基, 芬蘭\n2023｜第十八屆臺北數位藝術節 :A-Real Engine《人造星系》, 國立臺灣科學教育館, 臺北\n2023｜聲響藝術節《人造星系》, 臺灣當代文化實驗場, 臺北\n2022｜關渡光藝術節《濟濟》, 關渡中港河碼頭, 臺北",
+    "careerZh": "展演\n2026｜FUTURE VISION LAB 沉浸式影音工作坊, 臺灣當代文化實驗場, 臺北\n2025｜LAB X 藝術跨域實驗平台「2025 TSMC╳NTT+ 青年創作工作室」, 臺中國家歌劇院, 臺中\n2025｜關渡光藝術節《幻響》 , 科技藝術館, 臺北\n2025｜永晝海濱美術館雙年展《水啦》, 正濱漁港, 基隆\n2024｜Aavistus Festival 2024 - Off The Wall, 赫爾辛基, 芬蘭\n2023｜第十八屆臺北數位藝術節 :A-Real Engine《人造星系》, 國立臺灣科學教育館, 臺北\n2023｜聲響藝術節《人造星系》, 臺灣當代文化實驗場, 臺北\n2022｜關渡光藝術節《濟濟》, 關渡中港河碼頭, 臺北",
+    "careerEn": "GROUP EXHIBITIONS\n2026 | FUTURE VISION LAB－Immersive Audiovisual Workshop / Taiwan Contemporary Culture Lab, Taipei, Taiwan\n2025 | LAB X Arts Interdisciplinary Platform「2025 TSMC X NTT+ The Young Artists' Atelier」/ National Taichung Theater, Taichung ,Taiwan\n2025 | Kuan Du Light Art Festival“Illusonic” / Center for the Art & Technology, Taipei, Taiwan\n2025 | Zhengbin Art Gallery Biennale“Water Lives Here”, Keelung, Taiwan\n2024 | Aavistus Festival 2024“Off The Wall”, Helsinki, Finland\n2023 | 18th Digital Art Festival Taipei: A-Real Engine“Artificial Galaxy”/ National Taiwan Science Education Center, Taipei, Taiwan\n2023 | C-LAB Sound Festival“Diversonics”-“Artificial Galaxy” / Taiwan Contemporary Culture Lab, Taipei, Taiwan\n2022 | Kuan Du Light Art Festival“Ji-Ji” / Kuan Du Zhong Gong River Wharf, Taipei, Taiwan",
+    "website": "https://hohsinyuan.notion.site/-profile",
+    "socialUrls": [
+      "https://www.instagram.com/shane.h.090207/"
+    ],
+    "instagram": "https://www.instagram.com/shane.h.090207/"
+  },
+  {
+    "id": "artist-09",
+    "name": "傑德．伯克",
+    "nameZh": "傑德．伯克",
+    "nameEn": "Jed Berk",
+    "nationality": "美國",
+    "bio": "Jed Berk 是美國跨領域藝術家，創作結合機器人、互動裝置、網路系統與人工生命，探討自主系統、群體行為以及人類與非人行動者之間的關係。他以「自主光載飛行器」等計畫聞名，透過具有感測、通訊與移動能力的機械生命體，建立觀眾可參與的人工生態。作品曾於 Beall Center for Art + Technology、Art Center Nabi、臺北當代藝術館與丹麥 Brandts 等國際機構展出。",
+    "workId": "main-09",
+    "workTitle": "Belugas’ Sphere",
+    "workTitleEn": "Belugas’ Sphere",
+    "image": {
+      "src": "assets/images/artists/artist-09.jpg",
+      "alt": "Jed Berk"
+    },
+    "nationalityZh": "美國",
+    "nationalityEn": "America",
+    "bioZh": "Jed Berk 是美國跨領域藝術家，創作結合機器人、互動裝置、網路系統與人工生命，探討自主系統、群體行為以及人類與非人行動者之間的關係。他以「自主光載飛行器」等計畫聞名，透過具有感測、通訊與移動能力的機械生命體，建立觀眾可參與的人工生態。作品曾於 Beall Center for Art + Technology、Art Center Nabi、臺北當代藝術館與丹麥 Brandts 等國際機構展出。",
+    "bioEn": "Jed Berk is an American interdisciplinary artist whose practice combines robotics, interactive installation, networked systems, and artificial life. His work investigates autonomous systems, collective behaviour, and relationships between human and nonhuman agents. Berk is known for projects involving Autonomous Light Air Vessels, robotic organisms equipped with sensing, communication, and movement capabilities that form participatory artificial ecologies. His installations invite audiences to interact with technological entities as social and environmental actors. Berk’s work has been presented internationally at the Beall Center for Art + Technology, Art Center Nabi, the Museum of Contemporary Art Taipei, Brandts in Denmark, and other art and technology venues.",
+    "career": "個展\n2009｜Comunidad Autonoma #18: Ballenas Flotantes，Circulo de Bellas Artes de Tenerife，聖克魯斯-德特內里費，加那利群島，西班牙。\n2008｜Beluga Pod，Brandts，歐登塞，丹麥。\n\n聯展\n2012｜Aquaculture，與 Oliver McIrwin 合作，Aran Cravey Gallery，威尼斯，加州，美國。\n2008｜ALAVs 2.0，DEF 聯展，臺北當代藝術館，臺北，臺灣。\n2007｜Blubber Bots登上《Make:》雜誌第 12 期封面。\n2007｜Blubber Bots，Maker Faire Bay Area，聖馬刁，加州，美國。\n2007｜ALAVs 2.0，新銳藝術家展，Beall Center for Art + Technology，爾灣，加州，美國。\n2006｜ALAVs 2.0，Art Center Nabi，首爾，韓國。\n2006｜Flock of Blimp Whales，首屆 Maker Faire Bay Area，聖馬刁，加州，美國。",
+    "careerZh": "個展\n2009｜Comunidad Autonoma #18: Ballenas Flotantes，Circulo de Bellas Artes de Tenerife，聖克魯斯-德特內里費，加那利群島，西班牙。\n2008｜Beluga Pod，Brandts，歐登塞，丹麥。\n\n聯展\n2012｜Aquaculture，與 Oliver McIrwin 合作，Aran Cravey Gallery，威尼斯，加州，美國。\n2008｜ALAVs 2.0，DEF 聯展，臺北當代藝術館，臺北，臺灣。\n2007｜Blubber Bots登上《Make:》雜誌第 12 期封面。\n2007｜Blubber Bots，Maker Faire Bay Area，聖馬刁，加州，美國。\n2007｜ALAVs 2.0，新銳藝術家展，Beall Center for Art + Technology，爾灣，加州，美國。\n2006｜ALAVs 2.0，Art Center Nabi，首爾，韓國。\n2006｜Flock of Blimp Whales，首屆 Maker Faire Bay Area，聖馬刁，加州，美國。",
+    "careerEn": "SOLO EXHIBITIONS\n2009 | Comunidad Autonoma #18: Ballenas Flotantes, Circulo de Bellas Artes de Tenerife, Santa Cruz de Tenerife, Canary Islands, Spain\n2008 | Beluga Pod, Brandts, Odense, Denmark\n\nGROUP EXHIBITIONS\n2012 | Aquaculture, with Oliver McIrwin, Aran Cravey Gallery, Venice, California, USA\n2008 | ALAVs 2.0, DEF group exhibition, Museum of Contemporary Art Taipei, Taipei, Taiwan\n2007 | Blubber Bots featured on the cover of Make: magazine, Volume 12\n2007 | Blubber Bots, Maker Faire Bay Area, San Mateo, California, USA\n2007 | ALAVs 2.0, Emerging Artist exhibition, Beall Center for Art + Technology, Irvine, California, USA\n2006 | ALAVs 2.0, Art Center Nabi, Seoul, South Korea\n2006 | Flock of Blimp Whales, inaugural Maker Faire Bay Area, San Mateo, California, USA",
+    "website": "https://jedberk.com/",
+    "socialUrls": [
+      "https://x.com/cherish_nfts"
+    ]
+  },
+  {
+    "id": "artist-10",
+    "name": "林書瑜",
+    "nameZh": "林書瑜",
+    "nameEn": "Shu-Yu Lin",
+    "nationality": "臺灣",
+    "bio": "林書瑜1988年生於宜蘭，現任國立臺北藝術大學新媒體藝術學系講師，居住、工作於臺北。創作從自然與科學現象的觀察出發，運用互動、機械動力、光影與空間裝置轉譯個人經驗與感知，詩意呈現人在當代社會中的狀態與處境。作品曾獲台北數位藝術獎首獎、台南新藝獎等肯定，並參與關渡光藝術節、月津港燈節等展演與策展計畫。",
+    "workId": "outdoor-01",
+    "workTitle": "皓夜",
+    "workTitleEn": "Luminous Night",
+    "career": "聯展\n2025｜東興圳光藝節「一閃一閃亮晶晶」，新竹東興圳公園。\n2025｜關渡光藝術節「幻響」，國立臺北藝術大學。\n2025｜寶藏巖燈節，寶藏巖國際藝術村。\n2024｜關渡光藝術節「燒聲」策展人，國立臺北藝術大學。\n2024｜羅東藝穗節，羅東中山公園。\n2024｜台南新藝獎-「南巷藝事」，鷲嶺食肆-原鶯料理。\n2024｜台灣燈會在台南，安平燈區-河光往事展區。\n2023｜關渡光藝術節「漉漉」策展人，關渡中港河碼頭。\n2023｜月津港燈節，臺南鹽水月津港。\n2022｜關渡光藝術節「濟濟」策展人，關渡中港河碼頭。\n2022｜TAIPOWER D/S ONE 電幻1號所，D/S ONE GALLERY。\n2021｜光映淡水，淡水古蹟博物館-海關碼頭。\n2020｜跨過祭 Crossover Fest.，臺南友愛街旅館。\n2020｜關渡光藝術節「量子糾纏」，國立臺北藝術大學。\n2020｜月津港燈節，臺南鹽水月津港 。",
+    "image": {
+      "src": "assets/images/artists/artist-10.png",
+      "alt": "林書瑜"
+    },
+    "nationalityZh": "臺灣",
+    "nationalityEn": "Taiwan",
+    "bioZh": "林書瑜1988年生於宜蘭，現任國立臺北藝術大學新媒體藝術學系講師，居住、工作於臺北。創作從自然與科學現象的觀察出發，運用互動、機械動力、光影與空間裝置轉譯個人經驗與感知，詩意呈現人在當代社會中的狀態與處境。作品曾獲台北數位藝術獎首獎、台南新藝獎等肯定，並參與關渡光藝術節、月津港燈節等展演與策展計畫。",
+    "bioEn": "Born in Yilan in 1988, Shu-Yu LIN is a Taipei-based artist and lecturer in the Department of New Media Art at Taipei National University of the Arts. His practice begins with observations of nature and scientific phenomena, translating personal experience and perception through interactive systems, kinetic mechanisms, light, shadow, and spatial installation. His works poetically address the conditions and situations of human life in contemporary society. LIN has received recognition including First Prize at the Taipei Digital Art Award and the Next Art Tainan Award, and has participated in exhibitions and curatorial projects such as the Kuandu Light Art Festival and Yuejin Lantern Festival.",
+    "careerZh": "聯展\n2025｜東興圳光藝節「一閃一閃亮晶晶」，新竹東興圳公園。\n2025｜關渡光藝術節「幻響」，國立臺北藝術大學。\n2025｜寶藏巖燈節，寶藏巖國際藝術村。\n2024｜關渡光藝術節「燒聲」策展人，國立臺北藝術大學。\n2024｜羅東藝穗節，羅東中山公園。\n2024｜台南新藝獎-「南巷藝事」，鷲嶺食肆-原鶯料理。\n2024｜台灣燈會在台南，安平燈區-河光往事展區。\n2023｜關渡光藝術節「漉漉」策展人，關渡中港河碼頭。\n2023｜月津港燈節，臺南鹽水月津港。\n2022｜關渡光藝術節「濟濟」策展人，關渡中港河碼頭。\n2022｜TAIPOWER D/S ONE 電幻1號所，D/S ONE GALLERY。\n2021｜光映淡水，淡水古蹟博物館-海關碼頭。\n2020｜跨過祭 Crossover Fest.，臺南友愛街旅館。\n2020｜關渡光藝術節「量子糾纏」，國立臺北藝術大學。\n2020｜月津港燈節，臺南鹽水月津港 。",
+    "careerEn": "GROUP EXHIBITIONS\n2025 | Dongxing Canal Light Art Festival, *Twinkle, Twinkle, Little Star*, Dongxing Canal Park, Hsinchu, Taiwan.\n2025 | Kuandu Light Art Festival, *Phantasmic Resonance*, Taipei National University of the Arts, Taipei, Taiwan.\n2025 | Treasure Hill Light Festival, Treasure Hill Artist Village, Taipei, Taiwan.\n2024 | Curator, Kuandu Light Art Festival, *Burning Voice*, Taipei National University of the Arts, Taipei, Taiwan.\n2024 | Luodong Fringe Festival, Luodong Zhongshan Park, Yilan, Taiwan.\n2024 | Next Art Tainan, *Art in the Southern Alleys*, Washoku Restaurant (formerly Ying Cuisine), Tainan, Taiwan.\n2024 | Taiwan Lantern Festival in Tainan, *Memories in the River Light*, Anping Lantern Zone, Tainan, Taiwan.\n2023 | Curator, Kuandu Light Art Festival, *Lu Lu*, Zhonggang River Wharf, Guandu, Taipei, Taiwan.\n2023 | Yuejin Lantern Festival, Yuejin Harbor, Yanshui, Tainan, Taiwan.\n2022 | Curator, Kuandu Light Art Festival, *Ji Ji*, Zhonggang River Wharf, Guandu, Taipei, Taiwan.\n2022 | TAIPOWER D/S ONE, D/S ONE GALLERY, Taipei, Taiwan.\n2021 | Light Up Tamsui, Customs Wharf, Tamsui Historical Museum, New Taipei City, Taiwan.\n2020 | Crossover Fest., U.I.J Hotel & Hostel, Tainan, Taiwan.\n2020 | Kuandu Light Art Festival, *Quantum Entanglement*, Taipei National University of the Arts, Taipei, Taiwan.\n2020 | Yuejin Lantern Festival, Yuejin Harbor, Yanshui, Tainan, Taiwan.",
+    "socialUrls": [
+      "https://www.facebook.com/lin.shu.yu.855582/"
+    ],
+    "facebook": "https://www.facebook.com/lin.shu.yu.855582/"
+  },
+  {
+    "id": "artist-11",
+    "name": "聯合創作",
+    "nameZh": "聯合創作",
+    "nameEn": "Assocreation",
+    "nationality": "奧地利 / 泰國",
+    "bio": "Assocreation 是1997年成立於奧地利維也納的藝術團體，成員多以匿名方式共同創作，長期關注公共空間、身體感知、遊戲互動與技術介面。作品經常將地面、街道與日光轉化為可參與的媒介，使觀眾透過行走、踩踏、影子與身體動作介入作品。代表作《Bump》與《Solar Pink Pong》曾獲 Prix Ars Electronica 榮譽獎及日本文化廳媒體藝術祭優秀賞，並於多國城市與藝術機構展出。",
+    "workId": "outdoor-02",
+    "workTitle": "日光粉紅乒乓",
+    "workTitleEn": "Solar Pink Pong",
+    "career": "獲獎\n《Bump》｜遠距連結人行道互動裝置，曾獲 Prix Ars Electronica 榮譽獎。\n《Solar Pink Pong》｜以太陽能與日光反射構成的街頭遊戲，曾獲日本文化廳媒體藝術祭娛樂部門優秀賞，Roland Graf｜公開資料中可確認的重要共同主持者之一。",
+    "image": {
+      "src": "assets/images/artists/artist-11.png",
+      "alt": "Assocreation"
+    },
+    "nationalityZh": "奧地利 / 泰國",
+    "nationalityEn": "Austria / Thailand",
+    "bioZh": "Assocreation 是1997年成立於奧地利維也納的藝術團體，成員多以匿名方式共同創作，長期關注公共空間、身體感知、遊戲互動與技術介面。作品經常將地面、街道與日光轉化為可參與的媒介，使觀眾透過行走、踩踏、影子與身體動作介入作品。代表作《Bump》與《Solar Pink Pong》曾獲 Prix Ars Electronica 榮譽獎及日本文化廳媒體藝術祭優秀賞，並於多國城市與藝術機構展出。",
+    "bioEn": "Founded in Vienna in 1997, Assocreation is an artist collective whose members often work anonymously. Its practice focuses on public space, bodily perception, playful interaction, and technological interfaces, frequently transforming streets, ground surfaces, and sunlight into participatory media. Audiences activate the works through walking, stepping, shadows, and physical movement, turning ordinary urban environments into shared interactive situations. Major projects include Bump, which received an Honorary Mention at Prix Ars Electronica, and Solar Pink Pong, awarded an Excellence Award at the Japan Media Arts Festival. Assocreation’s installations and urban interventions have been presented internationally in museums, festivals, galleries, and public spaces.",
+    "careerZh": "獲獎\n《Bump》｜遠距連結人行道互動裝置，曾獲 Prix Ars Electronica 榮譽獎。\n《Solar Pink Pong》｜以太陽能與日光反射構成的街頭遊戲，曾獲日本文化廳媒體藝術祭娛樂部門優秀賞，Roland Graf｜公開資料中可確認的重要共同主持者之一。",
+    "careerEn": "AWARDS\nBump | Interactive telematic sidewalk installation; received an Honorary Mention at Prix Ars Electronica, Solar Pink Pong | Street game built around solar energy and reflected daylight; received an Excellence Award in the Entertainment Division of the Japan Media Arts Festival, Roland Graf | One of the key co-directors identifiable in the collective’s publicly available records.",
+    "website": "https://assocreation.com/"
+  },
+  {
+    "id": "artist-12",
+    "name": "謝佩庭",
+    "nameZh": "謝佩庭",
+    "nameEn": "Pei-Ting Hsieh",
+    "nationality": "臺灣",
+    "bio": "謝佩庭的創作探討科技觀看系統與人類存在、記憶及身分交會所形成的痕跡與張力，關注影像技術、機器視覺與數位基礎設施如何重塑主體性、精神性與崇高感。她透過錄像、裝置與數位媒介，思考科技時代中的觀看權力與存在命題。曾入選2023年高雄獎，作品於奧地利林茲電子藝術節、高雄市立美術館、金馬賓館當代美術館等場域展出。",
+    "workId": "district-01",
+    "workTitle": "科技幽靈",
+    "workTitleEn": "Ghosts of Google",
+    "career": "個展\n2025｜科技幽靈，永添藝術．金馬賓館當代美術館，高雄，台灣\n2024｜肖像計畫，241藝術空間，新竹，台灣\n\n聯展\n2025｜非普通信仰，白石畫廊，新加坡\n2025｜非普通信仰，吉隆坡蔦屋書店，吉隆坡，馬來西亞\n2025｜陰翳禮讚，新北青創板橋藝術基地，新北，台灣\n2025｜幛紗後的微塵，鬧空間，台北，台灣\n2024｜觀察者模式，奧地利林茲電子藝術節，POSTCITY Linz，林茲，奧地利\n2024｜科技賦格——數位環境的永續及想像，王道銀行藝廊，台北，台灣\n2024｜我只要前進一點點，寶藏巖國際藝術村，轉角2號展間，台北，台灣\n2023｜上線中—網路藝術展，新竹241藝術空間，新竹，台灣\n2023｜2023高雄獎，高雄市立美術館，高雄，台灣\n2023｜淵．墮落，東方廣告藝文空間，台北，台灣\n2023｜台灣當代一年展 評審團獎特別展，臺灣當代文化實驗場 C-LAB 通信分隊展演空間，台北，台灣",
+    "image": {
+      "src": "assets/images/artists/artist-12.jpg",
+      "alt": "謝佩庭"
+    },
+    "nationalityZh": "臺灣",
+    "nationalityEn": "Taiwan",
+    "bioZh": "謝佩庭的創作探討科技觀看系統與人類存在、記憶及身分交會所形成的痕跡與張力，關注影像技術、機器視覺與數位基礎設施如何重塑主體性、精神性與崇高感。她透過錄像、裝置與數位媒介，思考科技時代中的觀看權力與存在命題。曾入選2023年高雄獎，作品於奧地利林茲電子藝術節、高雄市立美術館、金馬賓館當代美術館等場域展出。",
+    "bioEn": "Pei-Ting Hsieh is a Taiwanese artist whose practice examines the traces and tensions produced where technological systems of vision intersect with human presence, memory, and identity. Working with moving image, installation, and digital media, she investigates how image technologies, machine vision, and digital infrastructures reshape subjectivity, spirituality, and experiences of the sublime. Her projects raise questions about power, observation, and existence in a technological era. Hsieh was selected for the 2023 Kaohsiung Awards, and her work has been presented at Ars Electronica in Linz, the Kaohsiung Museum of Fine Arts, ALIEN Art Centre, and other exhibition spaces in Taiwan and abroad.",
+    "careerZh": "個展\n2025｜科技幽靈，永添藝術．金馬賓館當代美術館，高雄，台灣\n2024｜肖像計畫，241藝術空間，新竹，台灣\n\n聯展\n2025｜非普通信仰，白石畫廊，新加坡\n2025｜非普通信仰，吉隆坡蔦屋書店，吉隆坡，馬來西亞\n2025｜陰翳禮讚，新北青創板橋藝術基地，新北，台灣\n2025｜幛紗後的微塵，鬧空間，台北，台灣\n2024｜觀察者模式，奧地利林茲電子藝術節，POSTCITY Linz，林茲，奧地利\n2024｜科技賦格——數位環境的永續及想像，王道銀行藝廊，台北，台灣\n2024｜我只要前進一點點，寶藏巖國際藝術村，轉角2號展間，台北，台灣\n2023｜上線中—網路藝術展，新竹241藝術空間，新竹，台灣\n2023｜2023高雄獎，高雄市立美術館，高雄，台灣\n2023｜淵．墮落，東方廣告藝文空間，台北，台灣\n2023｜台灣當代一年展 評審團獎特別展，臺灣當代文化實驗場 C-LAB 通信分隊展演空間，台北，台灣",
+    "careerEn": "SOLO EXHIBITIONS\n2025 | Ghosts of Google, ALIEN Art Centre, Kaohsiung, Taiwan.\n2024 | Portrait Project, HSINCHU 241 ART GALLERY, Hsinchu, Taiwan.\n\nGROUP EXHIBITIONS\n2025 | Belief It Or Not, Whitestone Gallery, Singapore.\n2025 | Belief It Or Not, Bukit Jalil Tsutaya Books, Kuala Lumpur, Malaysia.\n2025 | In Praise of Shadows, Youth Arts Hub, New Taipei City, Taiwan.\n2025 | The Revenants, NOW room, Taipei, Taiwan.\n2024 | Observer Pattern, Ars Electronica Campus, POSTCITY, Linz, Austria.\n2024 | Sustainability And Imagination In The Digital Envioronment, O-Bank Education Foundation’s Gallery, Taipei, Taiwan.\n2024 | I Just Need To Move Forward A Little Bit, Treasure Hill Artist Village, Corner Gallery No. 2, Taipei, Taiwan.\n2023 | Always On Net art exhibition, HSINCHU 241 ART GALLERY, Hsinchu, Taiwan.\n2023 | Kaohsiung Award 2023, Kaohsiung Museum of Fine Arts, Kaohsiung, Taiwan.\n2023 | Rough Landings, GdAP EasternAd, Taipei, Taiwan.\n2023 | TAIWAN ANNUAL Jury Prize Exhibition, Taiwan Contemporary Culture Lab, Taipei, Taiwan.",
+    "website": "https://www.hsieh-pei-ting.com/",
+    "socialUrls": [
+      "https://www.instagram.com/ssszviana?igsi=eW16Y28wOTVsaWhy"
+    ],
+    "instagram": "https://www.instagram.com/ssszviana?igsi=eW16Y28wOTVsaWhy"
+  },
+  {
+    "id": "artist-13",
+    "name": "陳芷渝",
+    "nameZh": "陳芷渝",
+    "nameEn": "Chih-Yu Chen",
+    "nationality": "臺灣",
+    "bio": "陳芷渝是臺灣科技藝術與生成藝術家，運用演算法及其持續變化的特性捕捉日常經驗，並透過跨媒介實驗探索新的藝術形式。創作涵蓋生成藝術、互動設計與機器學習，近期以程式碼描摹現實與意象之間的游移邊界。除個人創作外，她亦投入生成藝術的國際交流與教育推廣，曾於臺灣、日本、韓國、歐洲及北美展出，並發起 Creative Code Commons 等交流計畫。",
+    "workId": "district-02",
+    "workTitle": "匯境",
+    "workTitleEn": "ReAlms Converging",
+    "image": {
+      "src": "assets/images/artists/artist-13.png",
+      "alt": "陳芷渝"
+    },
+    "nationalityZh": "臺灣",
+    "nationalityEn": "Taiwan",
+    "bioZh": "陳芷渝是臺灣科技藝術與生成藝術家，運用演算法及其持續變化的特性捕捉日常經驗，並透過跨媒介實驗探索新的藝術形式。創作涵蓋生成藝術、互動設計與機器學習，近期以程式碼描摹現實與意象之間的游移邊界。除個人創作外，她亦投入生成藝術的國際交流與教育推廣，曾於臺灣、日本、韓國、歐洲及北美展出，並發起 Creative Code Commons 等交流計畫。",
+    "bioEn": "Chih Yu Chen is a Taiwan-based media and generative artist who uses algorithms and their continuous variations to capture textures of everyday experience. Her practice spans generative art, interactive design, and machine learning, with recent projects using code to trace shifting boundaries between reality and imagery. Through cross-media experimentation, she explores new possibilities emerging from the convergence of digital technology and visual creation. Beyond her artistic practice, Chen actively supports international exchange and education in generative art, and has exhibited in Taiwan, Japan, Korea, Europe, and North America. She is also the founder of Creative Code Commons, a platform for creative coding exchange.",
+    "career": "聯展\n2026｜十二格律，「美術館便利商店」，勤美術館 CMP INSPIRATION，臺中/臺灣\n2026｜借來的形狀，「大廳計畫 | 在變動之中生成：演算法的藝術」，新北市美術館（NTCAM），臺北/臺灣\n2026｜教育部青年發展署 青年百億海外圓夢基金計畫，自主提案海外研究計畫：Creative Code Commons，舊金山/美國 | 紐約/美國 | 臺北/臺灣\n2026｜Creative Code Commons 台灣創意編程公地 創辦人， 臺北\n2026｜鏈上蘭陽 — 生成式藝術參與計畫（與黃新共同創作）；由參與者工作坊設計發展而成的互動生成裝置，「勁水國寶－故宮x蘭博特展」，國立故宮博物院 & 蘭陽博物館，宜蘭/臺灣\n2026｜Cast in Code， OFFF Barcelona「The Screen」，Disseny Hub，巴塞隆納/西班牙\n2025｜dialog() 2025 & Silver Trail（與 Ayumu Nagamatsu 共同創作），「Silver Trail -dialog() spinoff-」（雙人展），NEORT++，東京/日本\n2025｜Light Flux，FuturaCanvas 2025，Aube Studio，首爾/韓國 | BeComing Art Jeju，濟州/韓國\n2024｜匯境，dialog() 亞洲生成藝術展，東京/日本 | 臺北/臺灣 | 首爾/韓國",
+    "careerZh": "聯展\n2026｜十二格律，「美術館便利商店」，勤美術館 CMP INSPIRATION，臺中/臺灣\n2026｜借來的形狀，「大廳計畫 | 在變動之中生成：演算法的藝術」，新北市美術館（NTCAM），臺北/臺灣\n2026｜教育部青年發展署 青年百億海外圓夢基金計畫，自主提案海外研究計畫：Creative Code Commons，舊金山/美國 | 紐約/美國 | 臺北/臺灣\n2026｜Creative Code Commons 台灣創意編程公地 創辦人， 臺北\n2026｜鏈上蘭陽 — 生成式藝術參與計畫（與黃新共同創作）；由參與者工作坊設計發展而成的互動生成裝置，「勁水國寶－故宮x蘭博特展」，國立故宮博物院 & 蘭陽博物館，宜蘭/臺灣\n2026｜Cast in Code， OFFF Barcelona「The Screen」，Disseny Hub，巴塞隆納/西班牙\n2025｜dialog() 2025 & Silver Trail（與 Ayumu Nagamatsu 共同創作），「Silver Trail -dialog() spinoff-」（雙人展），NEORT++，東京/日本\n2025｜Light Flux，FuturaCanvas 2025，Aube Studio，首爾/韓國 | BeComing Art Jeju，濟州/韓國\n2024｜匯境，dialog() 亞洲生成藝術展，東京/日本 | 臺北/臺灣 | 首爾/韓國",
+    "careerEn": "GROUP EXHIBITIONS\n2026 | Twelve Measures, \"The Museum Convenience Store,\" CMP INSPIRATION, Taichung/Taiwan\n2026 | Out of Nothing, \"NTCAM Screening | Generating Within Flux: The Art of Algorithms,\" New Taipei City Art Museum (NTCAM), Taipei/Taiwan\n2026 | Youth Development Administration, Ministry of Education — Taiwan Global Pathfinders Initiative, self-proposed overseas research project: Creative Code Commons, San Francisco/USA | New York/USA | Taipei/Taiwan\n2026 | Founder, Creative Code Commons, Taipei\n2026 | Lanyang On-Chain: Generative Art Co-Creation Project (co-created with NewYellow; interactive generative installation developed from participant workshop designs), \"Beautiful Waters, Beautiful Treasures: A Special Exhibition of the National Palace Museum × Lanyang Museum,\" National Palace Museum & Lanyang Museum, Yilan/Taiwan\n2026 | Cast in Code, OFFF Barcelona \"The Screen,\" Disseny Hub, Barcelona/Spain\n2025 | dialog() 2025 & Silver Trail (co-created with Ayumu Nagamatsu), \"Silver Trail -dialog() spinoff-\" (two-person exhibition), NEORT++, Tokyo/Japan\n2025 | Light Flux, FuturaCanvas 2025, Aube Studio, Seoul/South Korea | BeComing Art Jeju, Jeju/South Korea\n2024 | ReAlms Converging, dialog() Asian Generative Art Exhibition, Tokyo/Japan | Taipei/Taiwan | Seoul/South Korea",
+    "website": "https://dialog-asia.com/artists/chih-yu-chen/",
+    "socialUrls": [
+      "https://www.instagram.com/____cychen/"
+    ],
+    "instagram": "https://www.instagram.com/____cychen/"
+  },
+  {
+    "id": "artist-14",
+    "name": "樊卓鏗",
+    "nameZh": "樊卓鏗",
+    "nameEn": "Cheuk Hang Fan",
+    "nationality": "香港",
+    "bio": "樊卓鏗2002年生於香港，現就讀國立臺北藝術大學新媒體藝術學系。早期以攝影創作，進入大學後轉向生成藝術，並隨人工智慧技術發展持續關注 AI 議題。近年將遊戲引擎、人工智慧等工具納入創作，從不同媒材的特性與底層技術出發，以跨媒介拼貼建立作品結構，探索數位影像、演算法與虛擬環境之間的關係。作品曾參與 Ars Electronica 校展及臺港藝術聯展等展覽。",
+    "workId": "district-03",
+    "workTitle": "我喺自強路食芭樂",
+    "workTitleEn": "I'm eating guava on self-improvement road",
+    "image": {
+      "src": "assets/images/artists/artist-14.png",
+      "alt": "樊卓鏗"
+    },
+    "nationalityZh": "香港",
+    "nationalityEn": "Hongkong",
+    "bioZh": "樊卓鏗2002年生於香港，現就讀國立臺北藝術大學新媒體藝術學系。早期以攝影創作，進入大學後轉向生成藝術，並隨人工智慧技術發展持續關注 AI 議題。近年將遊戲引擎、人工智慧等工具納入創作，從不同媒材的特性與底層技術出發，以跨媒介拼貼建立作品結構，探索數位影像、演算法與虛擬環境之間的關係。作品曾參與 Ars Electronica 校展及臺港藝術聯展等展覽。",
+    "bioEn": "Born in Hong Kong in 2002, Fan Cheuk-Hang studies New Media Art at Taipei National University of the Arts. Beginning with photography in high school, he shifted toward generative art during university and became increasingly engaged with artificial intelligence as the technology rapidly developed. His recent practice incorporates game engines, AI, and other digital tools, approaching each medium through its material characteristics and underlying technical structures. By collaging different media at both visual and technological levels, he explores relationships among digital images, algorithms, and virtual environments. His work has been presented in exhibitions including the Ars Electronica university programme and Taiwan–Hong Kong group exhibitions.",
+    "career": "聯展\n2026｜2026 林兹電子藝術節學校展覽—計算演化，奧地利林兹: 林兹藝術與工業設計大學\n2025｜《我們之間沒有關係》台港藝術聯展，台北: 一格一隅\n2025｜蛇的盤繞比鼴鼠的洞穴更為複雜，CHILI SPACE（獲2025台新藝術獎第三季提名）\n2025｜第二屆北藝新媒卓越獎—MUSHBOOM! game over，北藝大科技藝術館一樓\n2025｜北藝新媒110級畢業展 新增註解 Neo-Annotation，臺灣當代文化實驗場 圖書館\n2024｜半個展覽—論消逝的殘餘物，軟輪畫廊\n2022｜SKM PHOTO 新光三越國際攝影大賽得獎作品展，新光三越\n\n獲獎\n2025｜第二屆北藝新媒卓越獎，首獎\n2022｜SKM PHOTO 新光三越國際攝影大賽，年度特獎\n2022｜夢者舞台「Let’s Just Fly 短片創作比賽」，學生組優異獎",
+    "careerZh": "聯展\n2026｜2026 林兹電子藝術節學校展覽—計算演化，奧地利林兹: 林兹藝術與工業設計大學\n2025｜《我們之間沒有關係》台港藝術聯展，台北: 一格一隅\n2025｜蛇的盤繞比鼴鼠的洞穴更為複雜，CHILI SPACE（獲2025台新藝術獎第三季提名）\n2025｜第二屆北藝新媒卓越獎—MUSHBOOM! game over，北藝大科技藝術館一樓\n2025｜北藝新媒110級畢業展 新增註解 Neo-Annotation，臺灣當代文化實驗場 圖書館\n2024｜半個展覽—論消逝的殘餘物，軟輪畫廊\n2022｜SKM PHOTO 新光三越國際攝影大賽得獎作品展，新光三越\n\n獲獎\n2025｜第二屆北藝新媒卓越獎，首獎\n2022｜SKM PHOTO 新光三越國際攝影大賽，年度特獎\n2022｜夢者舞台「Let’s Just Fly 短片創作比賽」，學生組優異獎",
+    "careerEn": "GROUP EXHIBITIONS\n2026 | 2026 Ars Electronica Festival University Exhibition — Computational Evolution, Austria Linz: Universität für künstlerische und industriell\n2025 | We have nothing to do with each other.—Taiwan-Hong Kong Joint Art Exhibition,Taipei: a frame a corner\n2025 | The coils of a serpent are even more complex than the burrows of a molehill. , CHILI SPACE（Taishin Arts Award 2025/26 Season 3 nominations）\n2025 | The 2nd National Taiwan University of the Arts New Media Excellence Award—MUSHBOOM! game over, Center for Art and Technology 1F\n2025 | Class of 2021 Graduation Exhibition, Department of New Media, Taipei National University of the Arts—Neo-Annotation, Taiwan Contemporary Culture Lab\n2024 | Half an Exhibition—On the Remnants of the Vanished, 80A Gallery\n2022 | SKM Photography Contest 2022 – Calling for Entries, Shin Kong Mitsukoshi\n\nAWARDS\n2025 | The 2nd National Taiwan University of the Arts New Media Excellence Award, First prize\n2022 | SKM Photography Contest 2022 – Calling for Entries, Annual Special Award\n2022 | Dreamer’s Stage ‘Let’s Just Fly’ Short Film Competition, Student Category Merit Award",
+    "socialUrls": [
+      "https://www.instagram.com/fan_cheukhang/"
+    ],
+    "instagram": "https://www.instagram.com/fan_cheukhang/"
+  },
+  {
+    "id": "artist-15",
+    "name": "陳政維",
+    "nameZh": "陳政維",
+    "nameEn": "Cheng-Wei Chen",
+    "nationality": "臺灣",
+    "bio": "陳政維為臺灣新媒體藝術創作者，畢業於國立臺北藝術大學新媒體藝術學系，亦為藝術團隊 2ENTER 貳進成員。創作以影像裝置、動畫、網路資訊與遊戲引擎為主要媒介，關注即時網路資料、虛擬生態與數位世界的生成關係。他透過程式與視覺系統將持續流動的資料轉化為作品，探索網路環境如何形成新的觀看經驗與虛擬空間。團隊作品曾獲臺南新藝獎、北藝當代創作獎等肯定。",
+    "workId": "district-04",
+    "workTitle": "我的反抗是如此規律",
+    "workTitleEn": "my resistance is so regular",
+    "career": "聯展\n臺灣國際光影藝術節、TAV藝術採集計畫展、關渡美術館《TO ENTER DATA-VERSE》\n\n獲獎\n2023｜臺南新藝獎\n2022｜北藝當代創作獎首獎\n2022｜花蓮洄瀾美展首獎\n2022｜全國美展新媒體藝術類銅牌",
+    "image": {
+      "src": "assets/images/artists/artist-15.png",
+      "alt": "陳政維"
+    },
+    "nationalityZh": "臺灣",
+    "nationalityEn": "Taiwan",
+    "bioZh": "陳政維為臺灣新媒體藝術創作者，畢業於國立臺北藝術大學新媒體藝術學系，亦為藝術團隊 2ENTER 貳進成員。創作以影像裝置、動畫、網路資訊與遊戲引擎為主要媒介，關注即時網路資料、虛擬生態與數位世界的生成關係。他透過程式與視覺系統將持續流動的資料轉化為作品，探索網路環境如何形成新的觀看經驗與虛擬空間。團隊作品曾獲臺南新藝獎、北藝當代創作獎等肯定。",
+    "bioEn": "Cheng-Wei Chen is a Taiwanese new media artist and a graduate of the Department of New Media Art at Taipei National University of the Arts. He is also a member of the art collective 2ENTER. Working with moving-image installation, animation, networked information, and game engines, his practice examines real-time online data, virtual ecologies, and the generative structures of digital worlds. Through programming and visual systems, Chen transforms continuously changing data into artistic environments and investigates how networked technologies produce new modes of viewing and virtual space. Projects developed with 2ENTER have received recognition including Next Art Tainan and the TNUA Contemporary Art Award.",
+    "careerZh": "聯展\n臺灣國際光影藝術節、TAV藝術採集計畫展、關渡美術館《TO ENTER DATA-VERSE》\n\n獲獎\n2023｜臺南新藝獎\n2022｜北藝當代創作獎首獎\n2022｜花蓮洄瀾美展首獎\n2022｜全國美展新媒體藝術類銅牌",
+    "careerEn": "GROUP EXHIBITIONS\nTaiwan International Light and Shadow Art Festival, TAV Arts Collection Project Exhibition, TO ENTER DATA-VERSE, Kuandu Museum of Fine Arts.\n\nAWARDS\n2023 | Next Art Tainan.\n2022 | First Prize, TNUA Contemporary Art Award.\n2022 | First Prize, Hualien Art Exhibition.\n2022 | Bronze Medal, New Media Art Category, National Art Exhibition, R.O.C.",
+    "socialUrls": [
+      "https://www.facebook.com/wayne.chen.501151/?locale=zh_TW"
+    ],
+    "facebook": "https://www.facebook.com/wayne.chen.501151/?locale=zh_TW"
+  },
+  {
+    "id": "artist-16",
+    "name": "郭子耘",
+    "nameZh": "郭子耘",
+    "nameEn": "Tzu-Yung Kuo",
+    "nationality": "臺灣",
+    "bio": "郭子耘1998年生於臺北，現就讀國立臺北藝術大學新媒體藝術學系研究所。創作以動力裝置與影像為主要媒材，同時參與跨域表演與科技劇場，從生命經驗、情感、記憶與日常觀察出發，探索觀看過程中產生的矛盾與感受。作品曾參與 Ars Electronica、關渡光藝術節、月津港燈節與白晝之夜等展演，並曾入圍桃源美展、桃園科技表演藝術獎及宜蘭獎。",
+    "workId": "district-05",
+    "workTitle": "景伸",
+    "workTitleEn": "Spectacle Extension",
+    "career": "聯展\n2024｜關渡光藝術節—燒聲，景落幻象，國立臺北藝術大學戰車草原，臺北市\n2024｜林茲電子藝術節（Ars Electronica），景伸 Spectacle Extension，POSTCITY，奧地利林茲\n2024｜海風透，超！虛！真！裝置版，口湖成龍安龍宮，雲林縣\n2023｜關渡光藝術節—漉漉，溡洸，關渡中港河碼頭，臺北市\n2023｜桃源美展，景伸，桃園市政府文化局，桃園市\n2022｜犇藝獎 BEN Awards，臟／葬，平谷試誤所，臺北市\n2022｜白晝之夜，超！虛！真！科技乩童現場展演，士林官邸公園，臺北市\n2022｜月津港燈節，日軌，月津港，臺南市\n\n獲獎\n2023｜桃源美展入圍，桃園市政府文化局，桃園市\n2022｜桃園科技表演藝術獎入圍，桃園展演中心，桃園市\n2021｜宜蘭獎入圍，宜蘭文化中心，宜蘭縣\n2019｜新媒卓越獎優選，關渡美術館，臺北市",
+    "image": {
+      "src": "assets/images/artists/artist-16.jpg",
+      "alt": "郭子耘"
+    },
+    "nationalityZh": "臺灣",
+    "nationalityEn": "Taiwan",
+    "bioZh": "郭子耘1998年生於臺北，現就讀國立臺北藝術大學新媒體藝術學系研究所。創作以動力裝置與影像為主要媒材，同時參與跨域表演與科技劇場，從生命經驗、情感、記憶與日常觀察出發，探索觀看過程中產生的矛盾與感受。作品曾參與 Ars Electronica、關渡光藝術節、月津港燈節與白晝之夜等展演，並曾入圍桃源美展、桃園科技表演藝術獎及宜蘭獎。",
+    "bioEn": "Born in Taipei in 1998, Kuo Tzu-Yun is currently pursuing graduate studies in New Media Art at Taipei National University of the Arts. Working primarily with kinetic installation and moving image, Kuo also participates in interdisciplinary performance and technology-based theatre. The practice draws from lived experience, emotion, memory, and everyday observation, focusing on contradictions and feelings that emerge through acts of seeing and interpretation. Kuo’s work has been presented at Ars Electronica, the Kuandu Light Art Festival, Yuejin Lantern Festival, and Nuit Blanche Taipei, and has been recognised through selections and nominations including the Taoyuan Fine Arts Exhibition, Taoyuan Technology Performing Arts Awards, and Yilan Art Awards.",
+    "careerZh": "聯展\n2024｜關渡光藝術節—燒聲，景落幻象，國立臺北藝術大學戰車草原，臺北市\n2024｜林茲電子藝術節（Ars Electronica），景伸 Spectacle Extension，POSTCITY，奧地利林茲\n2024｜海風透，超！虛！真！裝置版，口湖成龍安龍宮，雲林縣\n2023｜關渡光藝術節—漉漉，溡洸，關渡中港河碼頭，臺北市\n2023｜桃源美展，景伸，桃園市政府文化局，桃園市\n2022｜犇藝獎 BEN Awards，臟／葬，平谷試誤所，臺北市\n2022｜白晝之夜，超！虛！真！科技乩童現場展演，士林官邸公園，臺北市\n2022｜月津港燈節，日軌，月津港，臺南市\n\n獲獎\n2023｜桃源美展入圍，桃園市政府文化局，桃園市\n2022｜桃園科技表演藝術獎入圍，桃園展演中心，桃園市\n2021｜宜蘭獎入圍，宜蘭文化中心，宜蘭縣\n2019｜新媒卓越獎優選，關渡美術館，臺北市",
+    "careerEn": "GROUP EXHIBITIONS\n2024 | Kuan Du Light Art Festival – Sau-Siann, Landscape of Illusions, TNUA Tank Meadow, Taipei, Taiwan\n2024 | Ars Electronica Festival, Spectacle Extension, POSTCITY, Linz, Austria\n2024 | Hai-Hong Thau, Super! Virtual! Real! (Installation Version), Chenglong Anlong Temple, Kouhu Township, Yunlin, Taiwan\n2023 | Kuan Du Light Art Festival – Lu-Lu, Time of Light, Guandu Zhonggang River Wharf, Taipei, Taiwan\n2023 | Taoyuan Fine Arts Exhibition, Spectacle Extension, Department of Cultural Affairs, Taoyuan City Government, Taoyuan, Taiwan\n2022 | BEN Awards, Viscera / Burial, Pinggu Trial and Error Center, Taipei, Taiwan\n2022 | Nuit Blanche Taipei, Super! Virtual! Real!—Techno Spirit-Medium Demonstration, Shilin Residence Park, Taipei, Taiwan\n2022 | Yuejin Lantern Festival, Sun Orbit, Yuejin Harbor, Tainan, Taiwan\n\nAWARDS\n2023 | Finalist, Taoyuan Fine Arts Exhibition, Department of Cultural Affairs, Taoyuan City Government, Taoyuan, Taiwan\n2022 | Finalist, Taoyuan Technology Performing Arts Awards, Taoyuan Arts Center, Taoyuan, Taiwan\n2021 | Finalist, Yilan Art Awards, Yilan Cultural Center, Yilan, Taiwan\n2019 | Merit Award, TNUA NMA Excellence Award, Kuandu Museum of Fine Arts, Taipei, Taiwan",
+    "website": "https://kuotzuyung.com/",
+    "socialUrls": [
+      "https://www.instagram.com/danny.8741/"
+    ],
+    "instagram": "https://www.instagram.com/danny.8741/"
+  },
+  {
+    "id": "artist-17",
+    "name": "沈宇軒",
+    "nameZh": "沈宇軒",
+    "nameEn": "Yu-Hsuan Shen",
+    "nationality": "臺灣",
+    "bio": "沈宇軒，1999年生，畢業於國立中興大學資工系，目前就讀於臺北藝術大學新媒體藝術學系碩士班，專長於各項程式設計、軟硬體整合及互動裝置領域。創作中擅長技術與藝術的結合，為觀眾帶來新穎的觀賞體驗。",
+    "workId": "district-06",
+    "workTitle": "ID",
+    "workTitleEn": "ID",
+    "career": "展覽\n2025｜C-LAB 聲響藝術節《回聲室》互動程式設計、AI 語音製作\n2025｜2025 林茲電子藝術節作品 《碰》參展\n2025｜2025 林茲電子藝術節作品 《囂》參展\n2024｜德國威瑪藝術節《演算法和諧》技術指導\n2024｜北藝新媒卓越獎 《囂》首獎\n2024｜《阿特三特》藝術聯展參展",
+    "image": {
+      "src": "assets/images/artists/artist-17.png",
+      "alt": "沈宇軒"
+    },
+    "nationalityZh": "臺灣",
+    "nationalityEn": "Taiwan",
+    "bioZh": "沈宇軒，1999年生，畢業於國立中興大學資工系，目前就讀於臺北藝術大學新媒體藝術學系碩士班，專長於各項程式設計、軟硬體整合及互動裝置領域。創作中擅長技術與藝術的結合，為觀眾帶來新穎的觀賞體驗。",
+    "bioEn": "Shen Yu-Hsuan, born in 1999, graduated from the Department of Computer Science and Engineering at National Chung Hsing University and is currently pursuing a master's degree in New Media Art at Taipei National University of the Arts. His practice focuses on programming, hardware-software integration, and interactive installations, combining technology and art to create innovative and engaging experiences for audiences.",
+    "careerZh": "展覽\n2025｜C-LAB 聲響藝術節《回聲室》互動程式設計、AI 語音製作\n2025｜2025 林茲電子藝術節作品 《碰》參展\n2025｜2025 林茲電子藝術節作品 《囂》參展\n2024｜德國威瑪藝術節《演算法和諧》技術指導\n2024｜北藝新媒卓越獎 《囂》首獎\n2024｜《阿特三特》藝術聯展參展",
+    "careerEn": "EXHIBITIONS\n2025 | C-LAB Sound Festival, Echo Chamber – Interactive Programming & AI Voice Production\n2025 | Ars Electronica – Exhibited Work: Bouncing\n2025 | Ars Electronica – Exhibited Work: Clamor\n2024 | Kunstfest Weimar (Weimar Arts Festival), Algorithmic Harmony – Technical Director\n2024 | TNUA New Media Art Excellence Award – First Prize for Clamor\n2024 | Art Center Group Art Exhibition – Exhibiting Artist",
+    "socialUrls": [
+      "https://www.instagram.com/crazy.curly17"
+    ],
+    "website": "",
+    "instagram": "https://www.instagram.com/crazy.curly17"
+  },
+  {
+    "id": "artist-18",
+    "name": "超級浪-洪譽豪 / 林思瑩 / 邱杰森 / 莫珊嵐 / 賴佩君",
+    "nameZh": "超級浪-洪譽豪 / 林思瑩 / 邱杰森 / 莫珊嵐 / 賴佩君",
+    "nameEn": "Hyper Wave",
+    "nationality": "臺灣 / 法國",
+    "bio": "藝術團體「超級浪」2022年成立於臺北萬華，成員以文化部2020年「MIT」計畫獲選藝術家為基礎，並陸續加入獨立藝術家與策展人。團名回應當代藝術的變異與不確定性，將藝術實踐帶入日常生活與現實環境。團隊透過展覽、駐村、研究、工作坊與公共活動，串聯不同文化背景的創作者，探索藝術、地方與社會的關係，計畫遍及臺灣、韓國、蒙古、泰國及歐洲等地。",
+    "workId": "district-07",
+    "workTitle": "《游離的引線》— 延伸版本",
+    "workTitleEn": "Dissociated Fuses",
+    "image": {
+      "src": "assets/images/artists/artist-18.jpg",
+      "alt": "超級浪-洪譽豪 / 林思瑩 / 邱杰森 / 莫珊嵐 / 賴佩君"
+    },
+    "nationalityZh": "臺灣 / 法國",
+    "nationalityEn": "Taiwan / France",
+    "bioZh": "藝術團體「超級浪」2022年成立於臺北萬華，成員以文化部2020年「MIT」計畫獲選藝術家為基礎，並陸續加入獨立藝術家與策展人。團名回應當代藝術的變異與不確定性，將藝術實踐帶入日常生活與現實環境。團隊透過展覽、駐村、研究、工作坊與公共活動，串聯不同文化背景的創作者，探索藝術、地方與社會的關係，計畫遍及臺灣、韓國、蒙古、泰國及歐洲等地。",
+    "bioEn": "Hyper Wave is an art collective established in Taipei’s Wanhua District in 2022. Its founding members were artists selected for Taiwan’s Ministry of Culture 2020 MIT programme, with independent artists and curators joining over time. The collective’s name reflects the shifting and uncertain nature of contemporary art, and its practice brings artistic experimentation into everyday life and real-world contexts. Through exhibitions, residencies, research projects, workshops, and public programmes, Hyper Wave connects practitioners from different cultural backgrounds and explores relationships among art, place, and society. Its projects have taken place across Taiwan, South Korea, Mongolia, Thailand, and Europe.",
+    "career": "聯展\n2026｜《Saekki-Chigi⁴: bzzz》/ONSU SPACE/首爾/韓國\n2026｜《VIDEOFORMES》/克萊蒙費朗，法國\n2025｜《超級浪：潮間誌與日停者》/DH Neology，台南，臺灣\n2025｜《「臨暗仔」地景藝術節》/客家文化主題公園，台北，臺灣\n2025｜《Intersections Art Summit》/V20 Boutique Hotel，曼谷，泰國\n2024｜《連接兩座城市的諸多方法》/CARIN當代藝術研究所，釜山，韓國\n2024｜《Beta+》/台北當代藝術館，台北，臺灣\n2023｜《一本溫柔清茶館》/台北國際藝術村，台北，臺灣\n2023｜《城敘異歌》/浪花藝術空間，宜蘭，臺灣\n2023｜《烏蘭巴托國際媒體藝術節》/紅格藝術空間、白石中心，烏蘭巴托，蒙古\n2023｜《溫柔鄉-卡門的異歌》/台中國家歌劇院、衛武營國家藝術文化中心，臺灣\n2022｜《後臺》/浪花藝術空間，宜蘭，臺灣",
+    "careerZh": "聯展\n2026｜《Saekki-Chigi⁴: bzzz》/ONSU SPACE/首爾/韓國\n2026｜《VIDEOFORMES》/克萊蒙費朗，法國\n2025｜《超級浪：潮間誌與日停者》/DH Neology，台南，臺灣\n2025｜《「臨暗仔」地景藝術節》/客家文化主題公園，台北，臺灣\n2025｜《Intersections Art Summit》/V20 Boutique Hotel，曼谷，泰國\n2024｜《連接兩座城市的諸多方法》/CARIN當代藝術研究所，釜山，韓國\n2024｜《Beta+》/台北當代藝術館，台北，臺灣\n2023｜《一本溫柔清茶館》/台北國際藝術村，台北，臺灣\n2023｜《城敘異歌》/浪花藝術空間，宜蘭，臺灣\n2023｜《烏蘭巴托國際媒體藝術節》/紅格藝術空間、白石中心，烏蘭巴托，蒙古\n2023｜《溫柔鄉-卡門的異歌》/台中國家歌劇院、衛武營國家藝術文化中心，臺灣\n2022｜《後臺》/浪花藝術空間，宜蘭，臺灣",
+    "careerEn": "GROUP EXHIBITIONS\n2026 | Saekki-Chigi⁴: bzzz / ONSU SPACE / Seoul, South Korea\n2026 | VIDEOFORMES / Clermont-Ferrand, France\n2025 | Hyper Wave: Intertidal Notes and Day Stoppers / DH Neology / Tainan, Taiwan\n2025 | “Lim-am-e” Landscape Art Festival / Hakka Culture Theme Park / Taipei, Taiwan\n2025 | Intersections Art Summit / V20 Boutique Hotel / Bangkok, Thailand\n2024 | Many Ways to Connect Two Cities / CARIN Institute of Contemporary Art / Busan, South Korea\n2024 | Beta+ / Museum of Contemporary Art Taipei / Taipei, Taiwan\n2023 | A Gentle Tea House / Taipei Artist Village / Taipei, Taiwan\n2023 | Songs of an Other City / Surfy Space / Yilan, Taiwan\n2023 | Ulaanbaatar International Media Art Festival / Red Ger Art Gallery and White Rock Center / Ulaanbaatar, Mongolia\n2023 | Land of Tenderness: Carmen’s Other Song / National Taichung Theater and National Kaohsiung Center for the Arts (Weiwuying) / Taiwan\n2022 | Backstage / Surfy Space / Yilan, Taiwan",
+    "website": "https://www.hyperwavemit.com/",
+    "socialUrls": [
+      "https://www.instagram.com/hyperwave.mit/"
+    ],
+    "instagram": "https://www.instagram.com/hyperwave.mit/"
+  },
+  {
+    "id": "artist-19",
+    "name": "貝蒂．克爾尼安斯卡",
+    "nameZh": "貝蒂．克爾尼安斯卡",
+    "nameEn": "Bety Krňanská",
+    "nationality": "德國",
+    "bio": "Bety Krňanská 是1992年生的捷克藝術家，現居希臘雅典。創作介於繪畫、紡織工藝與科技之間，關注女性形象、身體自主權，以及慾望與數位文化的關係。她將拼布、鉤針、蠟染與繪畫等傳統技法結合 AI 生成影像，探討誘惑與自動化、手工與合成之間的張力。畢業於布拉格藝術、建築與設計學院繪畫藝術碩士，作品曾於雅典、布拉格及國際展覽展出。",
+    "workId": "district-08",
+    "workTitle": "I have a Crush on you",
+    "workTitleEn": "I have a Crush on you",
+    "career": "個展\n2025｜CRUSH，George Benias Gallery，雅典，希臘。\n2025｜I Want You to See It，Alkinois，雅典，希臘。\n2024｜Unexpected Encounters，GAMU，布拉格，捷克。\n\n聯展\n2025｜Inaugural，George Benias Gallery，雅典，希臘。\n2025｜Escapism，SG Gallery，雅典，希臘。\n2024｜In Margine，8smička Gallery，洪波萊茨，捷克。\n2023｜A Scattering of Salts，ACG Collection，Deree－The American College of Greece，希臘。\n2023｜Looking with the Eyes of Love，The Breeder Gallery，雅典，希臘。\n2023｜EFFIMISMS，與 Penny Key 雙人展，MISC Gallery，雅典，希臘。",
+    "image": {
+      "src": "assets/images/artists/artist-19.png",
+      "alt": "Bety Krňanská"
+    },
+    "nationalityZh": "德國",
+    "nationalityEn": "Germany",
+    "bioZh": " 是1992年生的捷克藝術家，現居希臘雅典。創作介於繪畫、紡織工藝與科技之間，關注女性形象、身體自主權，以及慾望與數位文化的關係。她將拼布、鉤針、蠟染與繪畫等傳統技法結合 AI 生成影像，探討誘惑與自動化、手工與合成之間的張力。畢業於布拉格藝術、建築與設計學院繪畫藝術碩士，作品曾於雅典、布拉格及國際展覽展出。",
+    "bioEn": "Bety Krňanská, born in 1992, is a Czech artist based in Athens. Working at the intersection of painting, textile craft, and technology, she explores female representation, bodily autonomy, and changing relationships between desire and digital culture. Her practice combines traditional techniques such as patchwork, crochet, batik, and painting with AI-generated imagery, examining tensions between seduction and automation, and between handmade and synthetic production. Krňanská holds an MFA in Painting from the Academy of Arts, Architecture and Design in Prague. Her work has been shown internationally in Athens, Prague, and other European contexts through solo and group exhibitions.",
+    "careerZh": "個展\n2025｜CRUSH，George Benias Gallery，雅典，希臘。\n2025｜I Want You to See It，Alkinois，雅典，希臘。\n2024｜Unexpected Encounters，GAMU，布拉格，捷克。\n\n聯展\n2025｜Inaugural，George Benias Gallery，雅典，希臘。\n2025｜Escapism，SG Gallery，雅典，希臘。\n2024｜In Margine，8smička Gallery，洪波萊茨，捷克。\n2023｜A Scattering of Salts，ACG Collection，Deree－The American College of Greece，希臘。\n2023｜Looking with the Eyes of Love，The Breeder Gallery，雅典，希臘。\n2023｜EFFIMISMS，與 Penny Key 雙人展，MISC Gallery，雅典，希臘。",
+    "careerEn": "SOLO EXHIBITIONS\n2025 | CRUSH, George Benias Gallery, Athens, Greece\n2025 | I Want You to See It, Alkinois, Athens, Greece\n2024 | Unexpected Encounters, GAMU, Prague, Czech Republic\n\nGROUP EXHIBITIONS\n2025 | Hyper-wave x MeetFactory Prague, Taiwan Art Residency\n2025 | Inaugural, George Benias Gallery, Athens, Greece\n2025 | Escapism, SG Gallery, Athens, Greece\n2024 | In Margine, 8smička Gallery, Humpolec, Czech Repiblic\n2023 | A Scattering of Salts, ACG Collection, Deree American Institute of Greece\n2023 | Looking with the Eyes of Love, Breeder Gallery, Athens, Greece\n2023 | EFFIMISMS, MISC Gallery, duo show with Penny Key, Athens, Greece",
+    "website": "https://www.betykrnanska.studio/",
+    "socialUrls": [
+      "https://www.instagram.com/betykrnanska/?hl=en"
+    ],
+    "instagram": "https://www.instagram.com/betykrnanska/?hl=en"
+  },
+  {
+    "id": "artist-20",
+    "name": "陳品蓁",
+    "nameZh": "陳品蓁",
+    "nameEn": "Pin-Jhen Chen",
+    "nationality": "臺灣",
+    "bio": "陳品蓁現就讀國立臺北藝術大學新媒體藝術學系，創作媒介涵蓋動畫、網頁互動、遊戲引擎與延展實境。她關注科技依賴、社群疲勞等當代心理狀態，以情境建構與遊戲化機制將日常觀察轉化為可參與的互動經驗。透過敘事導向的體驗設計，引導觀眾在摸索、選擇與參與過程中重新審視人與科技環境的關係。曾入選 NTT+ LAB X 青年創作工作室延展實境組，持續發展跨媒介創作。",
+    "workId": "district-09",
+    "workTitle": "正在連結SOMA GPT",
+    "workTitleEn": "CONNECTING TO SOMA GPT",
+    "career": "學歷\n2023｜至今，國立臺北藝術大學 新媒體藝術學系 學士班（在學）",
+    "image": {
+      "src": "assets/images/artists/artist-20.jpg",
+      "alt": "陳品蓁"
+    },
+    "nationalityZh": "臺灣",
+    "nationalityEn": "Taiwan",
+    "bioZh": "陳品蓁現就讀國立臺北藝術大學新媒體藝術學系，創作媒介涵蓋動畫、網頁互動、遊戲引擎與延展實境。她關注科技依賴、社群疲勞等當代心理狀態，以情境建構與遊戲化機制將日常觀察轉化為可參與的互動經驗。透過敘事導向的體驗設計，引導觀眾在摸索、選擇與參與過程中重新審視人與科技環境的關係。曾入選 NTT+ LAB X 青年創作工作室延展實境組，持續發展跨媒介創作。",
+    "bioEn": "Chen Pin-Chen studies New Media Art at Taipei National University of the Arts. Her practice spans animation, interactive web design, game engines, and extended reality, with a focus on contemporary psychological conditions such as technological dependency and social media fatigue. Using situational design and gamification, she transforms observations of everyday digital life into participatory experiences. Narrative-driven environments encourage audiences to explore, make choices, and reconsider subtle relationships between people and technological surroundings. Chen was selected for the Extended Reality track of NTT+ LAB X Arts Interdisciplinary Platform’s Young Artists’ Atelier, and continues to develop projects across interactive and immersive media.",
+    "careerZh": "學歷\n2023｜至今，國立臺北藝術大學 新媒體藝術學系 學士班（在學）",
+    "careerEn": "EDUCATION\n2023 | Present | B.F.A. in New Media Art, Taipei National University of the Arts (TNUA), Taipei, Taiwan (Expected Graduation: 2027)",
+    "website": "https://qup35p.works/",
+    "socialUrls": [
+      "https://www.instagram.com/qup35p._?igsh=azJrOHlqbzhtZXZ6"
+    ],
+    "instagram": "https://www.instagram.com/qup35p._?igsh=azJrOHlqbzhtZXZ6"
+  },
+  {
+    "id": "artist-21",
+    "name": "簡嘉誼",
+    "nameZh": "簡嘉誼",
+    "nameEn": "Chia-Yi Chien",
+    "nationality": "臺灣",
+    "bio": "簡嘉誼為視覺設計與藝術創作者，現就讀視覺藝術研究所。創作關注個體感知、身體經驗與外在環境之間的關係，嘗試將難以直接觀看的情緒、意識與感知狀態轉化為具體視覺形式。她以視覺設計、動態影像、裝置與複合媒材進行跨媒介實驗，在設計語言與藝術表達之間建立連結。作品曾獲德國紅點品牌暨傳達設計大獎、美國 Communication Arts 及 Applied Arts 等設計獎項肯定。",
+    "workId": "district-10",
+    "workTitle": "呼吸的曼陀羅：共感知",
+    "workTitleEn": "The Breathing Mandala: Co-Perception",
+    "career": "聯展\n2025｜德國紅點品牌暨傳達設計大獎 紅點獎 特別出版類\n2025｜美國傳達藝術年度獎，應用藝術獎2025 設計大獎 學生獎",
+    "image": {
+      "src": "assets/images/artists/artist-21.jpg",
+      "alt": "簡嘉誼"
+    },
+    "nationalityZh": "臺灣",
+    "nationalityEn": "Taiwan",
+    "bioZh": "簡嘉誼為視覺設計與藝術創作者，現就讀視覺藝術研究所。創作關注個體感知、身體經驗與外在環境之間的關係，嘗試將難以直接觀看的情緒、意識與感知狀態轉化為具體視覺形式。她以視覺設計、動態影像、裝置與複合媒材進行跨媒介實驗，在設計語言與藝術表達之間建立連結。作品曾獲德國紅點品牌暨傳達設計大獎、美國 Communication Arts 及 Applied Arts 等設計獎項肯定。",
+    "bioEn": "Chia-Yi Chien is a visual designer and artist currently pursuing graduate studies in Visual Arts. Her practice examines relationships among individual perception, bodily experience, and the external environment, seeking ways to translate emotions, consciousness, and perceptual states that are difficult to observe directly into tangible visual forms. Working across visual design, moving image, installation, and mixed media, she connects design language with artistic experimentation. Her work has received recognition from international design platforms including the Red Dot Award for Brands & Communication Design, Communication Arts, and the Applied Arts Design Awards, reflecting an interdisciplinary approach that moves between visual communication and contemporary artistic practice.",
+    "careerZh": "聯展\n2025｜德國紅點品牌暨傳達設計大獎 紅點獎 特別出版類\n2025｜美國傳達藝術年度獎，應用藝術獎2025 設計大獎 學生獎",
+    "careerEn": "GROUP EXHIBITIONS\nRed Dot Winner 2025：Special Publication\n2025 | Communication Arts Competitions, Applied Arts 2025 Design Awards：Student Awards"
+  },
+  {
+    "id": "artist-22",
+    "name": "楊子毅",
+    "nameZh": "楊子毅",
+    "nameEn": "Tzu-I Yang",
+    "nationality": "臺灣",
+    "bio": "楊子毅1989年生於臺北，為科技藝術創作者，現就讀國立臺北藝術大學新媒體藝術研究所，亦為數位跨域藝術組合「互跪合作社」主創成員。具電機資訊與機器學習工程背景，並受女性主義與 STS 影響，創作關注科技環境中的權力、壓迫與社會關係。他跨足程式、互動媒體、舞蹈、編舞與文字創作，透過技術實作回應當代生活受到數位科技深刻影響的處境。",
+    "workId": "district-11",
+    "workTitle": "再重複的信仰",
+    "workTitleEn": "Recursive Religion",
+    "career": "聯展\n2019｜臺北藝穗節《誰綁架了雞腿?》 編劇、製作、演員\n2021｜《我死了__次,我還活著》 線上展覽、電腦遊戲，程式設計\n2022｜《快樂的死》舞蹈劇場、手機與電腦程式設計\n2023｜《如同我們這樣活著》 舞蹈劇場，手機與電腦程式設計\n2024｜《核爆新聞》 臺北市立美術館展覽，網站、行為藝術、裝置，主創與裝置製作\n2025｜《秘密會談》 互動裝置，獨立作品\n\n學歷\n2013–2015｜國立臺灣大學電信工程學研究所 碩士畢業\n2017–2022｜台灣人工智慧實驗室 機器學習工程師\n2023–Now｜國立臺北藝術大學新媒體藝術研究所 碩士在讀",
+    "image": {
+      "src": "assets/images/artists/artist-22.jpg",
+      "alt": "楊子毅"
+    },
+    "nationalityZh": "臺灣",
+    "nationalityEn": "Taiwan",
+    "bioZh": "楊子毅1989年生於臺北，為科技藝術創作者，現就讀國立臺北藝術大學新媒體藝術研究所，亦為數位跨域藝術組合「互跪合作社」主創成員。具電機資訊與機器學習工程背景，並受女性主義與 STS 影響，創作關注科技環境中的權力、壓迫與社會關係。他跨足程式、互動媒體、舞蹈、編舞與文字創作，透過技術實作回應當代生活受到數位科技深刻影響的處境。",
+    "bioEn": "Tzu-I Yang, born in Taipei in 1989, is a technology-based artist and a core member of the interdisciplinary collective Mutual Kneeling Cooperative. He is currently pursuing graduate studies in New Media Art at Taipei National University of the Arts. With backgrounds in electrical engineering, computer science, and machine learning, and influenced by feminism and science and technology studies, Yang examines power, oppression, and social relations within technological environments. His practice moves across programming, interactive media, dance, choreography, and writing, using technical processes to reflect on how digital technologies shape contemporary life, behaviour, and relationships.",
+    "careerZh": "聯展\n2019｜臺北藝穗節《誰綁架了雞腿?》 編劇、製作、演員\n2021｜《我死了__次,我還活著》 線上展覽、電腦遊戲，程式設計\n2022｜《快樂的死》舞蹈劇場、手機與電腦程式設計\n2023｜《如同我們這樣活著》 舞蹈劇場，手機與電腦程式設計\n2024｜《核爆新聞》 臺北市立美術館展覽，網站、行為藝術、裝置，主創與裝置製作\n2025｜《秘密會談》 互動裝置，獨立作品\n\n學歷\n2013–2015｜國立臺灣大學電信工程學研究所 碩士畢業\n2017–2022｜台灣人工智慧實驗室 機器學習工程師\n2023–Now｜國立臺北藝術大學新媒體藝術研究所 碩士在讀",
+    "careerEn": "GROUP EXHIBITIONS\n2019 | Who Stole The Drumsticks? , Taipei Fringe Festival, Screenwriter/Producer/Actor\n2021 | Unfinished, Online Exhibition and Computer Game, Programmer\n2022 | Error After Life, Dance Theater, Programmer\n2023 | Like Me, Dance Theater, Programmer\n2024 | My Favorite News Goes Nuclear, Taipei Fine Arts Museum, Installation and Performance Art, Co-Creation and Installation Maker.\n2025 | They Are Talking, Interactive Installation.\n\nEDUCATION\n2013–2015 | National Taiwan University, Communication Engineering, Master.\n2017–2022 | AILabs.tw, Machine Learning Engineer.\n2023–Now | National Taipei University of the Arts, New Media Art, Master Candidate.",
+    "socialUrls": [
+      "https://www.instagram.com/coldsheeptw"
+    ],
+    "instagram": "https://www.instagram.com/coldsheeptw"
+  },
+  {
+    "id": "artist-23",
+    "name": "鄭芳宜",
+    "nameZh": "鄭芳宜",
+    "nameEn": "Fang-Yi Cheng",
+    "nationality": "臺灣",
+    "bio": "畢業於英國皇家藝術學院的當代藝術創作所，目前就讀國立臺北藝術大學的新媒體藝術創作研究所。主要製作錄像與裝置，常常使用現成影像在作品中。近期在台灣、奧地利、英國展出。",
+    "workId": "district-12",
+    "workTitle": "日常保存：冰淇淋",
+    "workTitleEn": "Everyday Storage: Ice Cream",
+    "career": "個展\n2026｜24/7 全年無休，台北當代藝術館，台北，台灣（錄像游擊隊）\n2024｜截圖的影像，靜慮藝術，台北，台灣\n\n聯展\n2026｜收拾收拾，窯座，台中，台灣\n2025｜PANIC – yes/no，林茲電子藝術節，林茲，奧地利\n2025｜UPĖ 河流藝術節，普倫蓋地區市立公共圖書館，普倫蓋，立陶宛\n2025｜超級藝術總動員，台北，台灣\n2025｜Mushboom，科技藝術館，台北，台灣\n2024｜讀我像本書，白鹿洞書坊，台北，台灣\n\n放映\n2025｜@@川藝術季，毛刺，台中，台灣\n2025｜Video Art Guerrilla film screening and artists’ talk，East Street Arts，里茲，英國\n2024｜南海路臨時音樂會，台北，台灣\n2024｜KAR藝術聚落戶外放映計畫，Khontemporary，孔敬，泰國\n2024｜Baannoorg AIR Open Studio 戶外放映，Nongpho 夜市，曼谷，泰國\n2024｜錄像游擊隊 — 福德廟廟屋 竹圍放映行動，竹圍福德宮，台北，臺灣\n2024｜錄像游擊隊 — 沙崙海灘放映行動 ，沙崙海水浴場，新北，台灣",
+    "image": {
+      "src": "assets/images/artists/artist-23.jpg",
+      "alt": "鄭芳宜"
+    },
+    "nationalityZh": "臺灣",
+    "nationalityEn": "Taiwan",
+    "bioZh": "畢業於英國皇家藝術學院的當代藝術創作所，目前就讀國立臺北藝術大學的新媒體藝術創作研究所。主要製作錄像與裝置，常常使用現成影像在作品中。近期在台灣、奧地利、英國展出。",
+    "bioEn": "With an MA in Contemporary Art Practice from the Royal College of Art, Fang-Yi Cheng is currently pursuing an MFA at the Taipei National University of the Arts. Her practice centers on video and installation, frequently incorporating ready-made images. Her work has recently been exhibited in Taiwan, Austria, and the United Kingdom.",
+    "careerZh": "個展\n2026｜24/7 全年無休，台北當代藝術館，台北，台灣（錄像游擊隊）\n2024｜截圖的影像，靜慮藝術，台北，台灣\n\n聯展\n2026｜收拾收拾，窯座，台中，台灣\n2025｜PANIC – yes/no，林茲電子藝術節，林茲，奧地利\n2025｜UPĖ 河流藝術節，普倫蓋地區市立公共圖書館，普倫蓋，立陶宛\n2025｜超級藝術總動員，台北，台灣\n2025｜Mushboom，科技藝術館，台北，台灣\n2024｜讀我像本書，白鹿洞書坊，台北，台灣\n\n放映\n2025｜@@川藝術季，毛刺，台中，台灣\n2025｜Video Art Guerrilla film screening and artists’ talk，East Street Arts，里茲，英國\n2024｜南海路臨時音樂會，台北，台灣\n2024｜KAR藝術聚落戶外放映計畫，Khontemporary，孔敬，泰國\n2024｜Baannoorg AIR Open Studio 戶外放映，Nongpho 夜市，曼谷，泰國\n2024｜錄像游擊隊 — 福德廟廟屋 竹圍放映行動，竹圍福德宮，台北，臺灣\n2024｜錄像游擊隊 — 沙崙海灘放映行動 ，沙崙海水浴場，新北，台灣",
+    "careerEn": "SOLO EXHIBITIONS\n2026 | 24/7 Ever-Opening Hours, Museum of Contemporary Art Taipei, Taipei, Taiwan (Video Art Guerrilla)\n2024 | Images of Screenshots, JingLü Art Gallery, Taipei, Taiwan\n\nGROUP EXHIBITIONS\n2026 | Tidy Up, Tidy Down, Yáo Alternative Space, Taichung, Taiwan\n2025 | PANIC – yes/no, Ars Electronica Festival, Linz, Austria\n2025 | Pause, Plungė Public Library, Plungė, Lithuania\n2025 | Art’s Finest, Taipei, Taiwan\n2025 | Mushboom, Center for Art and Technology, Taipei, Taiwan\n2024 | Read Me Like a Book, Moose, Taipei, Taiwan\n\nSCREENINGS\n2025 | Tshuan Festival, Glitch, Taichung, Taiwan\n2025 | Video Art Guerrilla film screening and artists’ talk, East Street Arts, Leeds, The United Kingdom\n2024 | Nanhai Rd. POP UP！, Taipei, Taiwan\n2024 | Khontemporary Outdoor Screening, Khontemporary, Khon Kaen, Thailand\n2024 | Baannoorg AIR Open Studio \"Open AIR Screening\", Nongpho Night Market, Bangkok, Thailand\n2024 | Video Art Guerrilla: Fude Temple House, New Taipei, Taiwan\n2024 | Video Art Guerrilla: Shalun Beach Screening Project, New Taipei, Taiwan\n",
+    "website": "https://www.chengfangyi.com/",
+    "socialUrls": [
+      "https://www.instagram.com/tiffanytiffyfanny"
+    ],
+    "instagram": "https://www.instagram.com/tiffanytiffyfanny"
+  },
+  {
+    "id": "artist-24",
+    "name": "黃姿婷",
+    "nameZh": "黃姿婷",
+    "nameEn": "Tzu-Ting Huang",
+    "nationality": "臺灣",
+    "bio": "黃姿婷以錄像與裝置為主要創作媒介，關注語言、影像與技術如何形塑感知、記憶與認知。作品常從語境轉譯與錯置出發，結合多頻道影像、聲音、身體與人工智慧，探索人與科技、真實與虛擬、歷史與當代之間的邊界。她將語言視為文化、權力與情感的載體，透過人機對話、機械翻譯與歷史影像重組，呈現意義在不同觀看位置中的生成與偏移。",
+    "workId": "district-13",
+    "workTitle": "意義生成",
+    "workTitleEn": "Meaning",
+    "career": "聯展\n2026｜《野沈浸》，寶藏巖國際藝術村，臺北，臺灣。\n2025｜《詠唱世─人工智慧給人類的一封挑戰信》，臺南市美術館二館，臺南，臺灣。\n2025｜後影像上癮，新浜碼頭藝術空間，高雄，台灣。\n2025｜U_U人類複雜式，On The Road 藝術空間，高雄，台灣。\n2024｜TAxT 桃園科技藝術節《超智域：一場人與AI的競賽》，中原文創園區，桃園，臺灣。\n2024｜異夢·亦夢，永添藝術・金馬賓館當代美術館，高雄，臺灣。\n\n獲獎\n2026｜大墩美展 數位藝術組 第二名，臺中市政府，臺中，臺灣。\n2026｜月之美術館—2026月津港燈節「月津超新星船屋」展演組 正取，臺南文化局，臺南，臺灣。\n2025｜高雄獎 影像暨科技媒體藝術 入選，高雄市立美術館，高雄，臺灣。\n2025｜堤頂之星2.0徵件計畫 跨領域表演藝術類 入選，王道銀行教育基金會，臺北，臺灣。\n2024｜影像沙盒計畫 正取，永添藝術・金馬賓館當代美術館，高雄，臺灣。\n2024｜大墩美展 數位藝術類 入選，臺中市政府，臺中，臺灣。",
+    "image": {
+      "src": "assets/images/artists/artist-24.jpg",
+      "alt": "黃姿婷"
+    },
+    "nationalityZh": "臺灣",
+    "nationalityEn": "Taiwan",
+    "bioZh": "黃姿婷以錄像與裝置為主要創作媒介，關注語言、影像與技術如何形塑感知、記憶與認知。作品常從語境轉譯與錯置出發，結合多頻道影像、聲音、身體與人工智慧，探索人與科技、真實與虛擬、歷史與當代之間的邊界。她將語言視為文化、權力與情感的載體，透過人機對話、機械翻譯與歷史影像重組，呈現意義在不同觀看位置中的生成與偏移。",
+    "bioEn": "Huang Tzu-Ting works primarily with video and installation, exploring how language, images, and technology shape perception, memory, and cognition. Her projects often begin with translation and contextual displacement, combining multi-channel video, sound, the body, and artificial intelligence to examine boundaries between humans and technology, reality and virtuality, and history and the present. Treating language as a carrier of culture, power, and emotion, she employs human–AI dialogue, machine translation, and the reorganisation of archival imagery to investigate how meaning is produced, shifted, or silenced from different viewing positions, inviting audiences to reconsider processes of seeing and understanding.",
+    "careerZh": "聯展\n2026｜《野沈浸》，寶藏巖國際藝術村，臺北，臺灣。\n2025｜《詠唱世─人工智慧給人類的一封挑戰信》，臺南市美術館二館，臺南，臺灣。\n2025｜後影像上癮，新浜碼頭藝術空間，高雄，台灣。\n2025｜U_U人類複雜式，On The Road 藝術空間，高雄，台灣。\n2024｜TAxT 桃園科技藝術節《超智域：一場人與AI的競賽》，中原文創園區，桃園，臺灣。\n2024｜異夢·亦夢，永添藝術・金馬賓館當代美術館，高雄，臺灣。\n\n獲獎\n2026｜大墩美展 數位藝術組 第二名，臺中市政府，臺中，臺灣。\n2026｜月之美術館—2026月津港燈節「月津超新星船屋」展演組 正取，臺南文化局，臺南，臺灣。\n2025｜高雄獎 影像暨科技媒體藝術 入選，高雄市立美術館，高雄，臺灣。\n2025｜堤頂之星2.0徵件計畫 跨領域表演藝術類 入選，王道銀行教育基金會，臺北，臺灣。\n2024｜影像沙盒計畫 正取，永添藝術・金馬賓館當代美術館，高雄，臺灣。\n2024｜大墩美展 數位藝術類 入選，臺中市政府，臺中，臺灣。",
+    "careerEn": "GROUP EXHIBITIONS\n2026 | Wild Immersion, Treasure Hill Artist Village, Taipei, Taiwan.\n2025 | Chanting World: A Challenge Letter from Artificial Intelligence to Humanity, Tainan Art Museum, Building 2, Tainan, Taiwan.\n2025 | Post-Image Addiction, Sin Pin Pier—Absolutely Art Space, Kaohsiung, Taiwan.\n2025 | U_U Human Complexity, On The Road Art Space, Kaohsiung, Taiwan.\n2024 | TAxT Taoyuan Technology Art Festival, Hyper-Intelligence Domain: A Competition Between Humans and AI, Chung Yuan Cultural and Creative Park, Taoyuan, Taiwan.\n2024 | Different Dreams, Shared Dreams, ALIEN Art Centre, Kaohsiung, Taiwan.\n\nAWARDS\n2026 | Second Prize, Digital Art Category, Da Dun Fine Arts Exhibition, Taichung City Government, Taichung, Taiwan.\n2026 | Selected Artist, Performance Category, Yuejin Supernova Boathouse, 2026 Yuejin Lantern Festival, Tainan Cultural Affairs Bureau, Tainan, Taiwan.\n2025 | Selected Artist, Video and Technology Media Art Category, Kaohsiung Award, Kaohsiung Museum of Fine Arts, Kaohsiung, Taiwan.\n2025 | Selected Artist, Interdisciplinary Performing Arts Category, Tiding Star 2.0 Open Call, O-Bank Education Foundation, Taipei, Taiwan.\n2024 | Selected Artist, Image Sandbox Project, ALIEN Art Centre, Kaohsiung, Taiwan.\n2024 | Selected Artist, Digital Art Category, Da Dun Fine Arts Exhibition, Taichung City Government, Taichung, Taiwan.",
+    "website": "https://huangziting-huang-tzu-ting.webnode.tw",
+    "socialUrls": [
+      "https://www.instagram.com/edithhuang.zip?igsh=MW1sZmd5c2ltOWdoMQ%3D%3D&igsi=MW1sZmd5c2ltOWdoMQ%3D%3D&utm_source=qr"
+    ],
+    "instagram": "https://www.instagram.com/edithhuang.zip?igsh=MW1sZmd5c2ltOWdoMQ%3D%3D&igsi=MW1sZmd5c2ltOWdoMQ%3D%3D&utm_source=qr"
+  },
+  {
+    "id": "artist-25",
+    "name": "余柏霆",
+    "nameZh": "余柏霆",
+    "nameEn": "Po-Ting Yu",
+    "nationality": "臺灣",
+    "bio": "余柏霆現就讀國立臺北藝術大學新媒體藝術學系，創作與研究關注影像、檔案、力與自然物之間的關係，試圖在理性建構的系統與脈絡中尋找詩性介入的可能。他以感知觀察為出發點，結合動態影像、數位模擬、自然現成物與空間裝置，建立介於技術系統與物質經驗之間的美學地景。作品曾獲新媒體卓越獎、大墩美展等肯定，並參與 C-LAB FUTURE VISION LAB 等展演。",
+    "workId": "district-14",
+    "workTitle": "十立方公分的殖民",
+    "workTitleEn": "A Volume of Colonization: 10 cm³",
+    "career": "展演\n2026｜FUTURE VISION LAB 2026 校際呈現,，臺灣當代文化實驗場 C-LAB\n2023｜中華文化交流展,美國鳳凰城首都博物館\n\n獲獎\n2026｜南瀛獎(決選中)\n2026｜全國美術獎,入選\n2026｜新媒體卓越獎,優選\n2025｜高雄青藝獎 ,入選\n2025｜洄瀾美展當代類 ,入圍\n2025｜臺東美展新媒體藝術類,第三名\n2025｜大墩美展新媒體藝術類,優選\n2024｜新媒體卓越獎,入選\n2023｜洄瀾美展當代類,優選",
+    "image": {
+      "src": "assets/images/artists/artist-25.jpg",
+      "alt": "余柏霆"
+    },
+    "nationalityZh": "臺灣",
+    "nationalityEn": "Taiwan",
+    "bioZh": "余柏霆現就讀國立臺北藝術大學新媒體藝術學系，創作與研究關注影像、檔案、力與自然物之間的關係，試圖在理性建構的系統與脈絡中尋找詩性介入的可能。他以感知觀察為出發點，結合動態影像、數位模擬、自然現成物與空間裝置，建立介於技術系統與物質經驗之間的美學地景。作品曾獲新媒體卓越獎、大墩美展等肯定，並參與 C-LAB FUTURE VISION LAB 等展演。",
+    "bioEn": "Yu Bo-Ting studies New Media Art at Taipei National University of the Arts. His practice and research examine relationships among moving images, archives, forces, and natural objects, seeking poetic openings within rationally constructed systems and structures. Beginning with perceptual observation, he combines moving image, digital simulation, found natural materials, and spatial installation to create aesthetic landscapes between technological processes and material experience. His work has received recognition from the New Media Art Excellence Award, Da Dun Fine Arts Exhibition, and other competitions, and has been presented through programmes including C-LAB’s FUTURE VISION LAB, where he continues to explore intersections of technology, nature, and sensory experience.",
+    "careerZh": "展演\n2026｜FUTURE VISION LAB 2026 校際呈現,，臺灣當代文化實驗場 C-LAB\n2023｜中華文化交流展,美國鳳凰城首都博物館\n\n獲獎\n2026｜南瀛獎(決選中)\n2026｜全國美術獎,入選\n2026｜新媒體卓越獎,優選\n2025｜高雄青藝獎 ,入選\n2025｜洄瀾美展當代類 ,入圍\n2025｜臺東美展新媒體藝術類,第三名\n2025｜大墩美展新媒體藝術類,優選\n2024｜新媒體卓越獎,入選\n2023｜洄瀾美展當代類,優選",
+    "careerEn": "GROUP EXHIBITIONS\n2026 | FUTURE VISION LAB 2026 — Immersive Audiovisual Workshop: The Joint, Presentation, Taiwan Contemporary Culture Lab (C-LAB), Taipei, Taiwan\n2023 | Chinese Cultural Exchange Exhibition, Phoenix Capitol Museum, USA\n\nAWARDS\n2026 | Nanying Award — Finalist\n2026 | National Art Exhibition R.O.C. — Selected\n2026 | New Media Art Excellence Award — Merit Award\n2025 | Kaohsiung Young Art Award — Selected\n2025 | Hualien Art Exhibition, Contemporary Art Category — Finalist\n2025 | Taitung Art Exhibition, New Media Art Category — Third Prize\n2025 | Da Dun Fine Arts Exhibition, New Media Art Category — Merit Award\n2024 | New Media Art Excellence Award — Selected\n2023 | Hualien Art Exhibition, Contemporary Art Category — Merit Award",
+    "website": "https://aa0979418929e9c8.myportfolio.com/work",
+    "socialUrls": [
+      "https://www.instagram.com/___vxiwq_3ho/"
+    ],
+    "instagram": "https://www.instagram.com/___vxiwq_3ho/"
+  },
+  {
+    "id": "artist-26",
+    "name": "噪流",
+    "nameZh": "噪流",
+    "nameEn": "Fluid Noise",
+    "nationality": "臺灣",
+    "nationalityZh": "臺灣",
+    "nationalityEn": "Taiwan",
+    "bio": "噪流於2011年所創立，致力於推廣實驗聲響、創意編程與音像藝術，以「推廣-教育-培力-社群」四個面向，不定期辦講座、工作坊 、新銳培力以及創作者小聚，連結國內外團體，培養創作與執行人才。",
+    "bioZh": "噪流於2011年所創立，致力於推廣實驗聲響、創意編程與音像藝術，以「推廣-教育-培力-社群」四個面向，不定期辦講座、工作坊 、新銳培力以及創作者小聚，連結國內外團體，培養創作與執行人才。",
+    "bioEn": "Founded in 2011, FluidNoise is dedicated to promoting experimental sound, creative coding, and audiovisual art. Focusing on four areas—outreach, education, artist development, and community—FluidNoise regularly organizes talks, workshops, emerging artist programs, and creator meetups, while connecting with local and international organizations and supporting the development of both creative and production talent.",
+    "careerZh": "2025\n「avSyncTPE」音像創作者小聚（臺北數位藝術中心）\n「噪流實習vol.4 OPEN CALL」音像創作者培力徵件（臺北數位藝術中心）\n「~/noize_beginner｜音像開局新手包」初階工作坊（臺北數位藝術中心）\n「噪流講義EP3： 超入門音像藝術觀賞筆記」講座（寶藏巖國際藝術村）\n2024\n「DACU 噪流實習vol.3 」創作者培力展演（臺北數位藝術中心）\n2023\n「噪流實習vol.2」創作者培力展演（臺北數位藝術中心）\n「噪流講義EP2 ── 音像藝術的多種面向」講座（臺北數位藝術中心）\n「噪流講義EP1 ── 影像與聲音的連結」講座（臺北數位藝術中心）\n失聲祭 x 噪流「瀰音DiffuSound Vol.2」音像演出（臺北數位藝術中心）",
+    "careerEn": "2025\n“avSyncTPE” Audiovisual Creators Meetup (Digital Art Center, Taipei)\n“FluidNoise Practicum Vol. 4 OPEN CALL” Audiovisual Artist Open Call (Digital Art Center, Taipei)\n“~/noize_beginner | Audiovisual Starter Pack” Beginner Workshop (Digital Art Center, Taipei)\n“FluidNoise Lecture EP3: A Beginner’s Guide to Experiencing Audiovisual Art” Talk (Treasure Hill Artist Village)\n\n2024\n“DACU FluidNoise Practicum Vol. 3” Emerging Artist Showcase (Digital Art Center, Taipei)\n\n2023\n“FluidNoise Practicum Vol. 2” Emerging Artist Showcase (Digital Art Center, Taipei)\n“FluidNoise Lecture EP2: Different Perspectives on Audiovisual Art” Talk (Digital Art Center, Taipei)\n“FluidNoise Lecture EP1: Connecting Image and Sound” Talk (Digital Art Center, Taipei)\nLacking Sound Festival × FluidNoise “DiffuSound Vol. 2” Audiovisual Performance (Digital Art Center, Taipei)",
+    "membersZh": "吳承儒、張哲瑜、陳亮、陳彥齊、周喚",
+    "membersEn": "Cheng-Ru Wu, Che-Yu Chang, Liang Chen, Yen-Chi Chen, Huan Chou",
+    "workId": "performance-01",
+    "workTitle": "",
+    "workTitleEn": "",
+    "website": "https://fluidnoise.com/about/",
+    "image": {
+      "src": "assets/images/artists/artist-26.png",
+      "alt": "噪流"
+    },
+    "career": "2025\n「avSyncTPE」音像創作者小聚（臺北數位藝術中心）\n「噪流實習vol.4 OPEN CALL」音像創作者培力徵件（臺北數位藝術中心）\n「~/noize_beginner｜音像開局新手包」初階工作坊（臺北數位藝術中心）\n「噪流講義EP3： 超入門音像藝術觀賞筆記」講座（寶藏巖國際藝術村）\n2024\n「DACU 噪流實習vol.3 」創作者培力展演（臺北數位藝術中心）\n2023\n「噪流實習vol.2」創作者培力展演（臺北數位藝術中心）\n「噪流講義EP2 ── 音像藝術的多種面向」講座（臺北數位藝術中心）\n「噪流講義EP1 ── 影像與聲音的連結」講座（臺北數位藝術中心）\n失聲祭 x 噪流「瀰音DiffuSound Vol.2」音像演出（臺北數位藝術中心）",
+    "socialUrls": [
+      "https://www.facebook.com/fluidnoise/?locale=zh_TW"
+    ],
+    "facebook": "https://www.facebook.com/fluidnoise/?locale=zh_TW"
+  },
+  {
+    "id": "artist-27",
+    "name": "Félix-Antoine Morin",
+    "nameZh": "Félix-Antoine Morin",
+    "nameEn": "Félix-Antoine Morin",
+    "nationality": "加拿大",
+    "nationalityZh": "加拿大",
+    "nationalityEn": "Canada",
+    "bio": "Félix-Antoine Morin 是加拿大聲音與視覺藝術家，創作橫跨電聲音樂、錄像、圖像樂譜與沉浸式媒體，探討聲音、影像與感知如何將現實轉化為詩性的感官經驗。他從傳統與神聖音樂汲取靈感，以儀式的過程性邏輯發展持續變化的多感官作品，並關注心理聲學、尺度與量級，以及聲音與影像之間的主觀感知關係，在現實與抽象之間建構流動的感官空間。",
+    "bioZh": "Félix-Antoine Morin 是加拿大聲音與視覺藝術家，創作橫跨電聲音樂、錄像、圖像樂譜與沉浸式媒體，探討聲音、影像與感知如何將現實轉化為詩性的感官經驗。他從傳統與神聖音樂汲取靈感，以儀式的過程性邏輯發展持續變化的多感官作品，並關注心理聲學、尺度與量級，以及聲音與影像之間的主觀感知關係，在現實與抽象之間建構流動的感官空間。",
+    "bioEn": "Félix-Antoine Morin is a Canadian sound and visual artist working across electroacoustic composition, video, graphic scores, and immersive media. His practice explores how sound, image, and perception can transform reality into poetic sensory experience. Drawing inspiration from traditional and sacred music, Morin approaches composition through the processual logic of ritual, creating multisensory works that remain in motion and transformation. His work also investigates psychoacoustics, relationships of scale and magnitude, and the subjective interactions that emerge between sound and image. Through these concerns, he constructs fluid perceptual spaces situated between concrete reality and abstraction.",
+    "careerZh": "個展\n2022｜由 Melis Bektaş 策展——Karşı Sanat，伊斯坦堡，土耳其。\n2022｜Salihara 藝術中心（Salihara Arts Center），雅加達，印尼。\n\n聯展\n2025｜與 Alexandre Larose 合作 A/V 視聽獨奏演出——關渡光藝術節（KDLAF），國立臺北藝術大學藝術與科技中心，臺北，臺灣。\n2024｜以《Triangle of Darkness》電影配樂獲「Wojciech Juszczak 最佳音樂獎」——ANIMATOR 國際動畫影展，波茲南，波蘭。\n2024｜為 Ivanie Aubin-Malo 舞蹈創作《Wahsipekuk: Au-delà des montagnes》擔任音樂創作——Agora de la danse，蒙特婁，加拿大。\n2023–2024｜每月為 Radio Bloc Oral 創作三小時原創音樂——國際線上／廣播節目。\n2023｜《Symphonie Odonata》——沉浸式聲音裝置，Tunnel Pédestre Boulet，蒙特婁，加拿大。\n2023｜Félix-Antoine Morin 圖像樂譜音樂會，由斯洛維尼亞即興音樂家以雙人組合演出，Zavod Sploh 策劃——康卡爾中心（Cankar Centre），盧比安納，斯洛維尼亞。\n2022｜《Cathartic Quest》——與 Benoît Lachambre 雙人演出——ImPulsTanz 維也納國際舞蹈節，維也納，奧地利。\n2022｜《Asemic Sound Mappings》展覽——利奧波德博物館（Leopold Museum）／ImPulsTanz，維也納，奧地利。\n2021｜沉浸式電聲音樂會——Akousma 藝術節，蒙特婁，加拿大。\n2021｜《Plateforme》，由 Totem Contemporain 演出——NOW! 藝術節，埃森，德國。",
+    "careerEn": "SOLO EXHIBITIONS\n2022 | Solo exhibition, curated by Melis Bektaş — Karşı Sanat, Istanbul, Türkiye.\n2022 | Solo exhibition — Salihara Arts Center, Jakarta, Indonesia.\n\nGROUP EXHIBITIONS\n2025 | A/V solo performance in collaboration with Alexandre Larose — Kuan Du Light Art Festival (KDLAF), TNUA Center for Art & Technology, Taipei, Taiwan.\n2024 | Winner of the Wojciech Juszczak Award for Best Music for the soundtrack of Triangle of Darkness — ANIMATOR International Animated Film Festival, Poznań, Poland.\n2024 | Music composition for Ivanie Aubin-Malo’s dance creation Wahsipekuk: Au-delà des montagnes — Agora de la danse, Montréal, Canada.\n2023–2024 | Creation of three hours of original music every month for Radio Bloc Oral — international online/radio broadcast.\n2023 | Symphonie Odonata — immersive sound installation, Tunnel Pédestre Boulet, Montréal, Canada.\n2023 | Concert featuring Félix-Antoine Morin’s graphic scores, performed by duets of Slovenian improvisers and organized by Zavod Sploh — Cankar Centre, Ljubljana, Slovenia.\n2022 | Cathartic Quest — duet performance with Benoît Lachambre — ImPulsTanz – Vienna International Dance Festival, Vienna, Austria.\n2022 | Asemic Sound Mappings — exhibition — Leopold Museum / ImPulsTanz, Vienna, Austria.\n2021 | Immersive electroacoustic concert — Akousma Festival, Montréal, Canada.\n2021 | Plateforme, performed by Totem Contemporain — NOW! Festival, Essen, Germany.\n2020 | Coextensive Ubiquity – Mise en abyme Live — radio performance — Tsonami Festival, Valparaíso, Chile.\n2019 | Solo performance with Chihei Hatakeyama, organized by Toshimaru Nakamura — Ftarri, Tokyo, Japan.\n2019 | Solo performance with VELTZ, Naoki Nomoto and Atsuhiro Ito — KAGURANE, Tokyo, Japan.",
+    "workId": "performance-02",
+    "workTitle": "",
+    "workTitleEn": "",
+    "website": "https://felixantoinemorin.com/",
+    "image": {
+      "src": "assets/images/artists/artist-27.png",
+      "alt": "Félix-Antoine Morin"
+    },
+    "career": "個展\n2022｜由 Melis Bektaş 策展——Karşı Sanat，伊斯坦堡，土耳其。\n2022｜Salihara 藝術中心（Salihara Arts Center），雅加達，印尼。\n\n聯展\n2025｜與 Alexandre Larose 合作 A/V 視聽獨奏演出——關渡光藝術節（KDLAF），國立臺北藝術大學藝術與科技中心，臺北，臺灣。\n2024｜以《Triangle of Darkness》電影配樂獲「Wojciech Juszczak 最佳音樂獎」——ANIMATOR 國際動畫影展，波茲南，波蘭。\n2024｜為 Ivanie Aubin-Malo 舞蹈創作《Wahsipekuk: Au-delà des montagnes》擔任音樂創作——Agora de la danse，蒙特婁，加拿大。\n2023–2024｜每月為 Radio Bloc Oral 創作三小時原創音樂——國際線上／廣播節目。\n2023｜《Symphonie Odonata》——沉浸式聲音裝置，Tunnel Pédestre Boulet，蒙特婁，加拿大。\n2023｜Félix-Antoine Morin 圖像樂譜音樂會，由斯洛維尼亞即興音樂家以雙人組合演出，Zavod Sploh 策劃——康卡爾中心（Cankar Centre），盧比安納，斯洛維尼亞。\n2022｜《Cathartic Quest》——與 Benoît Lachambre 雙人演出——ImPulsTanz 維也納國際舞蹈節，維也納，奧地利。\n2022｜《Asemic Sound Mappings》展覽——利奧波德博物館（Leopold Museum）／ImPulsTanz，維也納，奧地利。\n2021｜沉浸式電聲音樂會——Akousma 藝術節，蒙特婁，加拿大。\n2021｜《Plateforme》，由 Totem Contemporain 演出——NOW! 藝術節，埃森，德國。",
+    "socialUrls": []
+  }
+],
+  works: [
+  {
+    "id": "main-01",
+    "type": "work",
+    "category": "main",
+    "area": "主展場",
+    "mapNumber": "01",
+    "number": "01",
+    "title": "Generative Data",
+    "titleZh": "Generative Data",
+    "titleEn": "Generative Data",
+    "year": "2024",
+    "workType": "錄像裝置",
+    "medium": "網路、生成式軟體、電腦、螢幕",
+    "description": "在數據驅動的時代，科技公司利用先進的機器學習和大數據技術，以物件辨識與圖像摘要等方式，從人們的數位足跡中提取和分析數據，創造個性化的資訊產品和數位服務。\n藝術家將社交平臺無限推播的圖文，重新拿來進行數據提取與分析。除了好奇我們不斷滑動手機的同時到底提供了什麼？而又得到了什麼？也提供一種方法來理解我們與數據、演算法、監控資本主義、行為剩餘等議題之間的關係。",
+    "videoUrl": "",
+    "imageFolder": "main-01",
+    "coverImage": "assets/images/works/main/main-01/main.png",
+    "images": [
+      "assets/images/works/main/main-01/main.png",
+      "assets/images/works/main/main-01/01.png",
+      "assets/images/works/main/main-01/02.png",
+      "assets/images/works/main/main-01/03.png",
+      "assets/images/works/main/main-01/04.png"
+    ],
+    "artistIds": [
+      "artist-01"
+    ],
+    "workTypeEn": "Video Installation",
+    "mediumEn": "Internet, generative software, computer, display monitors",
+    "descriptionZh": "在數據驅動的時代，科技公司利用先進的機器學習和大數據技術，以物件辨識與圖像摘要等方式，從人們的數位足跡中提取和分析數據，創造個性化的資訊產品和數位服務。\n藝術家將社交平臺無限推播的圖文，重新拿來進行數據提取與分析。除了好奇我們不斷滑動手機的同時到底提供了什麼？而又得到了什麼？也提供一種方法來理解我們與數據、演算法、監控資本主義、行為剩餘等議題之間的關係。",
+    "descriptionEn": "In the data-driven age, technology companies utilize advanced machine learning and big data technologies to extract and analyze data from our digital footprints through means of object detection and graphical abstracts, creating personalized information products and digital services.\n The artist conducts data extraction and analysis on the endless push notification of images and texts from social media to address the following questions: What do we receive when we constantly swipe and scroll on our phones? What are the ultimate outcomes? This work also provides insights into our relationship with issues such as data, algorithms, surveillance capitalism, and behavioral surplus.",
+    "videoUrls": [],
+    "venueId": "venue-main"
+  },
+  {
+    "id": "main-02",
+    "type": "work",
+    "category": "main",
+    "area": "主展場",
+    "mapNumber": "02",
+    "number": "02",
+    "title": "那些字已經無關緊要了",
+    "titleZh": "那些字已經無關緊要了",
+    "titleEn": "Those words are no longer relevant",
+    "year": "2024",
+    "workType": "互動裝置",
+    "medium": "手機、金屬、電子零件、網頁",
+    "description": "語言透過多元字詞形構語意；然而，在當前數位時代，關鍵字改變了語言的結構，龐大的資料庫在經過層層演算後，化為單詞，使得有些文字在此「關鍵字時代」下被定義成無關緊要，在演算法中被抹去其存在的必要性。串聯起句意的字詞正在喪失，一次次的演算減輕了資訊、改變了語言，而我們自身也正在無感中減輕，越來越輕。",
+    "videoUrl": "https://youtu.be/XrW1aR4HQR0?si=hLnbwYJbFz7L_PlH",
+    "imageFolder": "main-02",
+    "coverImage": "assets/images/works/main/main-02/main.jpg",
+    "images": [
+      "assets/images/works/main/main-02/main.jpg",
+      "assets/images/works/main/main-02/01.png",
+      "assets/images/works/main/main-02/02.jpg",
+      "assets/images/works/main/main-02/03.jpg",
+      "assets/images/works/main/main-02/04.jpg",
+      "assets/images/works/main/main-02/05.png",
+      "assets/images/works/main/main-02/06.png"
+    ],
+    "artistIds": [
+      "artist-02"
+    ],
+    "workTypeEn": "Interactive Installation",
+    "mediumEn": "mobile phones, metal, electronic components, webpage",
+    "descriptionZh": "語言透過多元字詞形構語意；然而，在當前數位時代，關鍵字改變了語言的結構，龐大的資料庫在經過層層演算後，化為單詞，使得有些文字在此「關鍵字時代」下被定義成無關緊要，在演算法中被抹去其存在的必要性。串聯起句意的字詞正在喪失，一次次的演算減輕了資訊、改變了語言，而我們自身也正在無感中減輕，越來越輕。",
+    "descriptionEn": "Statement Languages convey meanings through diverse words and phrases. In the digital age, however keywords have altered linguistic structures. Large databases have been reduced to words through layers of algorithms, rendering some words irrelevant and unnecessary to exist in the “keyword era.” Words that make sentences meaningful are disappearing. Repeated computing simplifies information and changes languages, and we are becoming human flotsam with our utter indifference.",
+    "videoUrls": [
+      "https://youtu.be/XrW1aR4HQR0?si=hLnbwYJbFz7L_PlH"
+    ],
+    "venueId": "venue-main"
+  },
+  {
+    "id": "main-03",
+    "type": "work",
+    "category": "main",
+    "area": "主展場",
+    "mapNumber": "03",
+    "number": "03",
+    "title": "這可能是你",
+    "titleZh": "這可能是你",
+    "titleEn": "It Could Be You",
+    "year": "2022",
+    "workType": "即時生成影像裝置",
+    "medium": "軟體、印表機、熱感紙、即時生成影像、裝置可變",
+    "description": "《這可能是你》以網路即時留言者的暱稱作為搜尋線索，透過伺服器蒐集地區性論壇與聊天室資訊，並結合機器學習與合成資料技術，生成虛構卻近似真實的肖像與個人資料。\n\n作品現場以持續變化的臉部影像與三台熱感應印表機呈現，不斷產出的虛構身分逐漸堆積於空間中，將數位系統如何蒐集、辨識並重新建構個人的過程轉化為具體可見的景象。\n\n作品源自鄭先喻2019年個展《同化者》中的無題作品，進一步探討社群媒體、智慧裝置與資料蒐集日益普及的環境下，個人隱私與數位足跡如何成為演算法建構身分的材料。當系統能夠生成真假難辨的個人資訊，真實與合成身分之間的界線也隨之模糊。《這可能是你》藉此邀請觀者重新思考隱私、同意，以及演算法時代中「個人身分」的意義。",
+    "videoUrl": "",
+    "imageFolder": "main-03",
+    "coverImage": "assets/images/works/main/main-03/main.jpg",
+    "images": [
+      "assets/images/works/main/main-03/main.jpg",
+      "assets/images/works/main/main-03/01.jpg",
+      "assets/images/works/main/main-03/02.png",
+      "assets/images/works/main/main-03/03.jpg",
+      "assets/images/works/main/main-03/04.jpg"
+    ],
+    "artistIds": [
+      "artist-03"
+    ],
+    "workTypeEn": "Generative video installation",
+    "mediumEn": "Software, printer, thermal paper, real-time generative video, installations variable",
+    "descriptionZh": "《這可能是你》以網路即時留言者的暱稱作為搜尋線索，透過伺服器蒐集地區性論壇與聊天室資訊，並結合機器學習與合成資料技術，生成虛構卻近似真實的肖像與個人資料。\n\n作品現場以持續變化的臉部影像與三台熱感應印表機呈現，不斷產出的虛構身分逐漸堆積於空間中，將數位系統如何蒐集、辨識並重新建構個人的過程轉化為具體可見的景象。\n\n作品源自鄭先喻2019年個展《同化者》中的無題作品，進一步探討社群媒體、智慧裝置與資料蒐集日益普及的環境下，個人隱私與數位足跡如何成為演算法建構身分的材料。當系統能夠生成真假難辨的個人資訊，真實與合成身分之間的界線也隨之模糊。《這可能是你》藉此邀請觀者重新思考隱私、同意，以及演算法時代中「個人身分」的意義。",
+    "descriptionEn": "It Could Be You uses the usernames of real-time online commenters as search cues, collecting information from local forums and chat rooms through a server-based system. Machine learning and synthetic data techniques are then used to generate fictional yet convincingly realistic portraits and personal information.\n\nThe installation presents a continuously changing matrix of facial images alongside three thermal printers that repeatedly produce fabricated identities. As the printed profiles accumulate in the exhibition space, the invisible processes through which digital systems collect, identify, and reconstruct individuals become physically visible.\n\nDeveloped from an untitled work presented in CHENG HsienYu’s 2019 solo exhibition Assimilator, the project examines how personal privacy and digital footprints become materials for algorithmic identity construction. By blurring the boundary between authentic and synthetic identities, It Could Be You invites viewers to reconsider privacy, consent, and the meaning of personal identity in an increasingly algorithmic world.",
+    "videoUrls": [],
+    "venueId": "venue-main"
+  },
+  {
+    "id": "main-04",
+    "type": "work",
+    "category": "main",
+    "area": "主展場",
+    "mapNumber": "04",
+    "number": "04",
+    "title": "違規穿越馬路",
+    "titleZh": "違規穿越馬路",
+    "titleEn": "Jaywalking",
+    "year": "2015-2026",
+    "workType": "互動裝置",
+    "medium": "按鈕、螢幕、電腦",
+    "description": "這件作品會透過即時監視器畫面，自動捕捉違規穿越馬路的行人，並讓現場觀眾選擇是否要向警方檢舉。《違規穿越馬路》讓我們得以觀看各地路口的即時交通監視畫面，並進一步決定那些冒險穿越馬路的行人將面臨什麼後果。螢幕上會顯示來自不同國家的、未經遮蔽處理的即時監控影像。接著，Depoorter 把一個兩難直接拋到我們面前：你會檢舉這位毫無防備的路人嗎？只要按下一個按鈕，系統就能將違規畫面的截圖透過電子郵件寄送到最近的警察局。",
+    "videoUrl": "",
+    "imageFolder": "main-04",
+    "coverImage": "assets/images/works/main/main-04/main.png",
+    "images": [
+      "assets/images/works/main/main-04/main.png",
+      "assets/images/works/main/main-04/01.png",
+      "assets/images/works/main/main-04/02.png",
+      "assets/images/works/main/main-04/03.png"
+    ],
+    "artistIds": [
+      "artist-04"
+    ],
+    "workTypeEn": "Interactive installation",
+    "mediumEn": "Button, Screen, Computer",
+    "descriptionZh": "這件作品會透過即時監視器畫面，自動捕捉違規穿越馬路的行人，並讓現場觀眾選擇是否要向警方檢舉。《違規穿越馬路》讓我們得以觀看各地路口的即時交通監視畫面，並進一步決定那些冒險穿越馬路的行人將面臨什麼後果。螢幕上會顯示來自不同國家的、未經遮蔽處理的即時監控影像。接著，Depoorter 把一個兩難直接拋到我們面前：你會檢舉這位毫無防備的路人嗎？只要按下一個按鈕，系統就能將違規畫面的截圖透過電子郵件寄送到最近的警察局。",
+    "descriptionEn": "Interactive installation where you can report jaywalkers.\nThe installation automatically catches jaywalkers using live surveillance webcams and gives visitors the choice to report them to the police.\n‘Jaywalking’ gives us an opportunity to watch traffic webcams and decide on the fate of pedestrians recklessly crossing the road. Monitors display LIVE unprotected surveillance footage of intersections in different countries. Depoorter then presents us with a dilemma: will we report the unsuspecting jaywalker? A single press of the button can send a screenshot of the violation to the nearest police station with an email.",
+    "videoUrls": [],
+    "venueId": "venue-main"
+  },
+  {
+    "id": "main-05",
+    "type": "work",
+    "category": "main",
+    "area": "主展場",
+    "mapNumber": "05",
+    "number": "05",
+    "title": "EZ品質分解機V2",
+    "titleZh": "EZ品質分解機V2",
+    "titleEn": "EZ Quality Soryer V2",
+    "year": "2023",
+    "workType": "裝置",
+    "medium": "機械裝置、電腦",
+    "description": "《EZ Quality Sorter V2》 是德國藝術家 Verena Friedrich 的互動裝置，屬於其 ERBSENZÄHLER 計畫的一部分。作品以一座帶有工業感的自動分選機構為核心，透過送料裝置、輸送帶與影像辨識流程，將豌豆種子區分為「品質良好」與「品質不佳」兩類。作品藉由看似簡單的分選行為，揭示當代「智慧」系統背後的人工勞動、主觀判斷與分類暴力。當複雜生命被壓縮為好壞二分，機器的客觀性也變得可疑。",
+    "videoUrl": "",
+    "imageFolder": "main-05",
+    "coverImage": "assets/images/works/main/main-05/main.jpg",
+    "images": [
+      "assets/images/works/main/main-05/main.jpg",
+      "assets/images/works/main/main-05/01.jpg",
+      "assets/images/works/main/main-05/02.jpg",
+      "assets/images/works/main/main-05/03.jpg"
+    ],
+    "artistIds": [
+      "artist-05"
+    ],
+    "workTypeEn": "Installation",
+    "mediumEn": "Mechanical installation, computer",
+    "descriptionZh": "《EZ Quality Sorter V2》 是德國藝術家 Verena Friedrich 的互動裝置，屬於其 ERBSENZÄHLER 計畫的一部分。作品以一座帶有工業感的自動分選機構為核心，透過送料裝置、輸送帶與影像辨識流程，將豌豆種子區分為「品質良好」與「品質不佳」兩類。作品藉由看似簡單的分選行為，揭示當代「智慧」系統背後的人工勞動、主觀判斷與分類暴力。當複雜生命被壓縮為好壞二分，機器的客觀性也變得可疑。",
+    "descriptionEn": "EZ Quality Sorter V2 is an interactive installation by German artist Verena Friedrich and forms part of her ERBSENZÄHLER project. Centered on an industrial-looking automated sorting mechanism, the work uses a feeding device, conveyor belt, and image-recognition process to classify pea seeds into two categories: “good quality” and “poor quality.” Through this seemingly simple act of sorting, the work reveals the human labor, subjective judgment, and violence of classification embedded in contemporary “smart” systems. When complex forms of life are compressed into a binary of good and bad, the supposed objectivity of the machine itself becomes questionable.",
+    "videoUrls": [],
+    "venueId": "venue-main"
+  },
+  {
+    "id": "main-06",
+    "type": "work",
+    "category": "main",
+    "area": "主展場",
+    "mapNumber": "06",
+    "number": "06",
+    "title": "GeodesicDome+3V+1a - Architectural Plans",
+    "titleZh": "GeodesicDome+3V+1a - Architectural Plans",
+    "titleEn": "GeodesicDome+3V+1a - Architectural Plans",
+    "year": "",
+    "workType": "",
+    "medium": "複合媒材",
+    "description": "這個小型的DOME球形骨架設計上使用金屬鋼管作為支撐，一共有7種不同長度的白色烤漆鋼管組成，每一隻白色鋼管上為了方便辨識，進行了字母的標籤記號，設計以M10內六角螺絲將每一支鋼管進行連接並固定，達到穩定的結構。",
+    "videoUrl": "",
+    "imageFolder": "main-06",
+    "coverImage": "assets/images/works/main/main-06/main.jpg",
+    "images": [
+      "assets/images/works/main/main-06/main.jpg",
+      "assets/images/works/main/main-06/01.jpg",
+      "assets/images/works/main/main-06/02.jpg",
+      "assets/images/works/main/main-06/03.jpg",
+      "assets/images/works/main/main-06/04.jpg"
+    ],
+    "artistIds": [
+      "artist-06"
+    ],
+    "workTypeEn": "",
+    "mediumEn": "Mixed media; dimensions and configuration variable depending on site",
+    "descriptionZh": "這個小型的DOME球形骨架設計上使用金屬鋼管作為支撐，一共有7種不同長度的白色烤漆鋼管組成，每一隻白色鋼管上為了方便辨識，進行了字母的標籤記號，設計以M10內六角螺絲將每一支鋼管進行連接並固定，達到穩定的結構。",
+    "descriptionEn": "This small-scale DOME framework uses steel tubing as its structural support and is composed of seven different lengths of white powder-coated steel pipes. Each pipe is labeled with a letter for easy identification. The structure is assembled and secured with M10 hex-socket bolts, allowing the individual tubes to connect into a stable spherical framework.",
+    "screeningProgram": [
+      {
+        "artist": "葉澈",
+        "artistEn": "YEH Che",
+        "title": "幻幕",
+        "titleEn": "What a Screen",
+        "description": "自影像出現以來，我們不斷經歷著觀看裝置的轉化——電影院、電視機、手機、LED 牆、光雕投影⋯⋯。隨著裝置的更迭，影像也持續變異著自身的比例與身體，同時框架出人類的觀看方式，形塑著我們對世界的想像。\n\n《幻幕》從影像的「比例」出發，回望影像史中不同畫幅與技術框架所帶來的感知經驗，帶領觀眾在穹頂空間中穿梭於不同時期的影像身體。然而，當我們再次回望這片被光與聲包覆的世界，才發現自己依然被框架其中——在另一種影像的尺幅裡，被觀看、被包圍。",
+        "descriptionEn": "Since the emergence of moving images, the devices through which we view them have continually evolved—from cinemas and televisions to mobile phones, LED walls, projection mapping, and beyond. As these devices change, images continue to transform their own proportions and bodies, framing how we see and shaping how we imagine the world.\n\nTaking the proportions of the image as its point of departure, What a Screen looks back at the perceptual experiences produced by different aspect ratios and technological frameworks throughout the history of the moving image. Within the dome, it guides viewers through the changing bodies of images across different eras. Yet when we look again at this world enveloped in light and sound, we realize that we remain framed within it—watched and surrounded within the dimensions of another image."
+      },
+      {
+        "artist": "吳秉聖",
+        "artistEn": "WU Ping-Sheng",
+        "title": "靈魂的副翼：穹丘",
+        "titleEn": "Aileron of Soul: DOMOUND",
+        "description": "《靈魂的副翼：穹丘》是對於人工智慧作為一種工具的假設提問出發，所延伸的視覺刺激與探索。它提供了一種非人類視覺的組構方式，如魔法般地將關鍵字嵌入影像與聲響中。作品試圖從建築學、地質學與天文學等圖像資料切入，從人工智慧所產出的視覺架構，探討AI視覺所描述的人類知識樣貌，並突顯非人類視覺認知的違和感。藉此提問人工智慧的影像產出，是引領人類靈魂突破現有認知引導的副翼，還是主導著一張張隱藏著等價交換的契約，而我們並不知道實際上背負的交換內容。作品以人類視聽感官為主題，從神話、宇宙探勘、科技、自然、AI等子題中，提煉出一種以聲音與影像為主體的敘事，藉由音像作品的特性，延展或凍結流轉的時間感，重新組織出一種視聽交融、精神穿越的感官體驗。",
+        "descriptionEn": "Aileron of Soul: DOMOUND begins with a hypothetical question about artificial intelligence as a tool, extending this inquiry into visual stimulation and exploration. It offers a nonhuman way of composing vision, embedding keywords into images and sound as if by magic. Drawing on visual materials from architecture, geology, astronomy, and other fields, the work examines how AI-generated visual structures depict human knowledge while foregrounding the dissonance of nonhuman visual cognition. It asks whether AI-generated imagery serves as an aileron guiding the human soul beyond the limits of existing knowledge, or whether it governs a series of contracts founded on hidden exchanges whose true costs remain unknown to us. Centered on human audiovisual perception, the work distills themes of mythology, space exploration, technology, nature, and AI into a narrative led by sound and image. Through the qualities of audiovisual art, it stretches or suspends the flow of time, reorganizing it into a sensory experience in which sight and sound converge and the spirit passes through."
+      },
+      {
+        "artist": "謝爾蓋．普羅科菲耶夫",
+        "artistEn": "Sergey PROKOFYEV",
+        "title": "全球烏托邦中的在地反烏托邦",
+        "titleEn": "Local Dystopias in the Global Utopia",
+        "description": "在無止境延伸的沙漠中，獨特的觀影經驗透過DOME的多個銀幕展開，每一面銀幕都呈現了一個不同的建築故事。\n\n遊走於三個反烏托邦世界中，我們首先探索的是「摩天大樓狂熱」，這是一座廢棄的村莊，其中木造摩天大樓的複製品由氣球乘托而漂浮著，象徵了脆弱的希望。下一個世界「末日之城」將我們帶入無人之境，場景的塑造靈感來自畫家尼古拉斯．洛里奇（Nicholas Roerich）的作品。第三個建築故事的世界是「虛實間的靈薄獄」，這個令人困惑的數位環境持續地受到以人類情緒為基礎所打造的合成引擎（synthetic engines）刺激，身處其中便如同經歷著集體意識的夢境。",
+        "descriptionEn": "Across an endlessly extending desert, a distinctive viewing experience unfolds on the DOME's multiple screens, each presenting a different architectural story.\n\nMoving through three dystopian worlds, we first encounter \"Skyscraper Mania,\" an abandoned village where replicas of wooden skyscrapers float aloft, carried by balloons as symbols of fragile hope. The next world, \"Doomsday City,\" takes us into an uninhabited realm whose scenery draws inspiration from the paintings of Nicholas Roerich. The third architectural world is \"Limbus between Reality and Virtuality,\" a disorienting digital environment continuously stimulated by synthetic engines built from human emotions. To inhabit it is to experience a dream of collective consciousness."
+      },
+      {
+        "artist": "初未來 x 超維度 x 江戶未來世 x Kivi x 賴皮 x 林強",
+        "artistEn": "Hello World x Dimension Plus x Hello Edo! x Kivi x Mr. Skin x LIM Giong",
+        "title": "新摩登時代",
+        "titleEn": "NEW MODERN TIMES",
+        "description": "這是一部以臺灣文化為核心的「奇想生成式沉浸影音作品」。它打破現實邊界，將自然環境、工業製造、廟會遶境、夜市印象，乃至於 AI 神話與未來太空，重新編織成一段幽默詼諧卻充滿啟發的視覺史詩。\n\n在巨大的穹形場域之下，體驗集結「惡搞、創造、融合」於一身的文化衝擊。由初未來領銜製作，集結科技藝術代表超維度與 AI 影像先鋒江戶未來世。排灣族天籟歌手 Kivi、潮流電音 DJ 賴皮，和傳奇音樂大師林強。頂尖藝術家跨界聯手，打造出這場橫跨部落與宇宙、傳統與未來的《新摩登時代》。",
+        "descriptionEn": "NEW MODERN TIMES is a fantastical, generative immersive audiovisual work centered on Taiwanese culture. Breaking through the boundaries of reality, it reweaves natural environments, industrial manufacturing, temple processions, impressions of night markets, AI mythology, and the future of outer space into a humorous, playful, yet thought-provoking visual epic.\n\nBeneath the vast dome, audiences experience a cultural impact that brings together parody, creation, and fusion. Led by Hello World, the production brings together Dimension Plus from the field of technology art and AI visual pioneer Hello Edo! with Paiwan singer Kivi, electronic music DJ Mr. Skin, and legendary musician LIM Giong. Crossing disciplines, these leading artists create NEW MODERN TIMES, a journey spanning the tribal and the cosmic, tradition and the future."
+      },
+      {
+        "artist": "C-LAB未來視覺實驗室",
+        "artistEn": "C-LAB Future Vision Lab",
+        "title": "Echo of Presence",
+        "titleEn": "Echo of Presence",
+        "description": "與工研院合作運用其開發之工業運算的360影像偵測技術，結合生成式影像概念，並納入互動技術，包括人數偵測、多人體位移判斷與攝影畫面擷取，讓影像隨群體於空間行動而改變，透過系統、影像與聲音的連動，創造觀者位置即影像語意的場域。本次將保留影像元素，改以AI生成部分內容。",
+        "descriptionEn": "In collaboration with the Industrial Technology Research Institute, the work employs its industrial-computing-based 360-degree image detection technology, combining the concept of generative imagery with interactive techniques including visitor-count detection, multi-person movement tracking, and camera image capture. The imagery changes as groups move through the space, while the interconnection of system, image, and sound creates an environment in which the viewer's position becomes the semantic content of the image. For this presentation, the existing visual elements will be retained, with part of the content regenerated using AI."
+      }
+    ],
+    "videoUrls": [],
+    "venueId": "venue-main"
+  },
+  {
+    "id": "main-07",
+    "type": "work",
+    "category": "main",
+    "area": "主展場",
+    "mapNumber": "07",
+    "number": "07",
+    "title": "WM_EX10 TCM_200DV TP-VS500 MS-201 BK26 MG10",
+    "titleZh": "WM_EX10 TCM_200DV TP-VS500 MS-201 BK26 MG10",
+    "titleEn": "WM_EX10 TCM_200DV TP-VS500 MS-201 BK26 MG10",
+    "year": "2019/2026",
+    "workType": "多頻道錄像聲音裝置",
+    "medium": "",
+    "description": "Stefan Tiefengraber 的噪音裝置直指一個普遍存在的誤解：AI 的學習方式就像孩子一樣。\n藝術家以沾濕的手指在 Walkman 播放器與玩具鍵盤裸露的電路上滑動，讓人體皮膚所產生的電阻，直接介入並形塑聲音輸出的結果——一個真正透過互動而逐步發展的「身體」。與此同時，藝術家將蒐集而來的家庭錄音素材——其中播放著一篇關於兒童認知發展的文字——反覆送入回授迴路，經由倒帶與失真的反覆作用，使語言逐漸瓦解，最終消融為純粹的噪音。\n而這場「消融」正是作品的核心。AI 並不會像孩子一樣成長、好奇或遺忘；它所進行的，是從資料中壓縮與歸納統計模式的過程。將這樣的運作誤認為人類式的發展，本身就是一種「噪音」——一種我們持續誤讀，並不斷放大的錯誤理解。",
+    "videoUrl": "",
+    "imageFolder": "main-07",
+    "coverImage": "assets/images/works/main/main-07/main.jpg",
+    "images": [
+      "assets/images/works/main/main-07/main.jpg",
+      "assets/images/works/main/main-07/01.jpg",
+      "assets/images/works/main/main-07/02.jpg"
+    ],
+    "artistIds": [
+      "artist-07"
+    ],
+    "workTypeEn": "multi channel audio/video noise installation",
+    "mediumEn": "",
+    "descriptionZh": "Stefan Tiefengraber 的噪音裝置直指一個普遍存在的誤解：AI 的學習方式就像孩子一樣。\n藝術家以沾濕的手指在 Walkman 播放器與玩具鍵盤裸露的電路上滑動，讓人體皮膚所產生的電阻，直接介入並形塑聲音輸出的結果——一個真正透過互動而逐步發展的「身體」。與此同時，藝術家將蒐集而來的家庭錄音素材——其中播放著一篇關於兒童認知發展的文字——反覆送入回授迴路，經由倒帶與失真的反覆作用，使語言逐漸瓦解，最終消融為純粹的噪音。\n而這場「消融」正是作品的核心。AI 並不會像孩子一樣成長、好奇或遺忘；它所進行的，是從資料中壓縮與歸納統計模式的過程。將這樣的運作誤認為人類式的發展，本身就是一種「噪音」——一種我們持續誤讀，並不斷放大的錯誤理解。",
+    "descriptionEn": "Stefan Tiefengraber's noise installation cuts right to the heart of a common miscon ception: that AI learns the way a child does. By running wet fingers across open circuits of Walkmans and toy keyboards, he lets the resistance of human skin physically shape the output — a body genuinely developing through interaction. At the same time, salvaged home recordings of a text on children's cognitive development are fed through feedback loops and rewind distortions until the words dissolve into noise.\nThat dissolution is the point. AI doesn't grow, wonder, or forget the way a child does — it compresses statistical patterns from data. Mistaking that process for human development is itself a kind of noise: a misreading we keep amplifying.",
+    "videoUrls": [],
+    "venueId": "venue-main"
+  },
+  {
+    "id": "main-08",
+    "type": "work",
+    "category": "main",
+    "area": "主展場",
+    "mapNumber": "08",
+    "number": "08",
+    "title": "石夢 v2.0",
+    "titleZh": "石夢 v2.0",
+    "titleEn": "Stone Dream v2.0",
+    "year": "2026",
+    "workType": "聲音裝置",
+    "medium": "機械手臂、矽晶圓、岩石、接觸式麥克風、聲音系統",
+    "description": "空間中迴蕩岩石與矽晶片相互刮擦、碰撞的殘響，作為兩者間的夢中呢喃。作品試圖建構一場物質間遞迴的對話，讓物質在遠古自然與當代科技之間相互糾纏。被加工過的矽，是否也曾經夢過自身混沌的前身？亦或是沉積已久的岩石，在數千萬年前就預見了自身將成為運算材料的夢境？物質間相互解讀、誤讀所產生的雜訊與殘響，在空間堆疊成形，生成一場屬於物質本身的夢境。",
+    "videoUrl": "https://drive.google.com/file/d/19ydHg35yHbzjiYRbXFdiCg8YsLtRCEIM/view?usp=drive_link",
+    "imageFolder": "main-08",
+    "coverImage": "assets/images/works/main/main-08/main.jpg",
+    "images": [
+      "assets/images/works/main/main-08/main.jpg",
+      "assets/images/works/main/main-08/01.jpg",
+      "assets/images/works/main/main-08/02.jpg",
+      "assets/images/works/main/main-08/03.jpg",
+      "assets/images/works/main/main-08/04.jpg"
+    ],
+    "artistIds": [
+      "artist-08"
+    ],
+    "workTypeEn": "Audio Installation",
+    "mediumEn": "Robotic arm, silicon wafer, stone, contact microphone, sound system",
+    "descriptionZh": "空間中迴蕩岩石與矽晶片相互刮擦、碰撞的殘響，作為兩者間的夢中呢喃。作品試圖建構一場物質間遞迴的對話，讓物質在遠古自然與當代科技之間相互糾纏。被加工過的矽，是否也曾經夢過自身混沌的前身？亦或是沉積已久的岩石，在數千萬年前就預見了自身將成為運算材料的夢境？物質間相互解讀、誤讀所產生的雜訊與殘響，在空間堆疊成形，生成一場屬於物質本身的夢境。",
+    "descriptionEn": "The reverberations of rocks and silicon wafers scraping and colliding echo through the space, serving as murmured whispers within their mutual dreams. The work seeks to construct a recursive dialogue between materials, entangling matter between ancient nature and contemporary technology. Does processed silicon ever dream of its chaotic origins? Or did rocks, tens of millions of years ago, already foresee becoming computational substrates? The noise and resonance generated through the mutual interpretation and misreading between materials accumulate and take shape in space, generating a dream belonging purely to matter itself.",
+    "videoUrls": [
+      "https://drive.google.com/file/d/19ydHg35yHbzjiYRbXFdiCg8YsLtRCEIM/view?usp=drive_link",
+      "https://drive.google.com/file/d/118It20SgZ5u1doug79jlyLPdWwQnHtBe/view?usp=drive_link"
+    ],
+    "venueId": "venue-main"
+  },
+  {
+    "id": "main-09",
+    "type": "work",
+    "category": "main",
+    "area": "主展場",
+    "mapNumber": "09",
+    "number": "09",
+    "title": "Belugas’ Sphere",
+    "titleZh": "Belugas’ Sphere",
+    "titleEn": "Belugas’ Sphere",
+    "year": "2026",
+    "workType": "互動裝置",
+    "medium": "充氦 Mylar 鋁膜氣球、光線感測器、馬達、壓電式喇叭、電子元件、控制系統與燈光",
+    "description": "《Belugas’ Sphere》重新回望 2008 年作品《Beluga Pod》，將其發展為一個由自主機器實體構成的新型生態系。每一隻白鯨皆以光線為感知與行動的依據，追尋光源，並隨著周遭環境的變化而移動。當光線強度發生改變，牠們的活動與群體行為也隨之演變，逐漸形成流動的隊形、群聚與歌唱，而非依循預先設定的固定編舞。\n觀眾可以透過引入光源介入白鯨的行為，但參與並非必要——即使沒有觀眾介入，白鯨仍持續自主地行動。這群將近二十年前最初被構想出的機器生命，如今彷彿成為正在形成的「機器經濟」中的早期居民，圍繞著能量、彼此的距離與環境條件建立自身的秩序與關係。作品同時向過去與未來凝視：它重新召回一個早期關於自主機器的想像，卻也置身於一個日益受到「具自主行動能力的系統（agentic systems）」所形塑的當代。曾經屬於未來想像的機器，如今正逐漸成為我們所處環境的一部分。",
+    "videoUrl": "https://www.youtube.com/watch?v=XTPzJ-lzobo",
+    "imageFolder": "main-09",
+    "coverImage": "assets/images/works/main/main-09/main.jpg",
+    "images": [
+      "assets/images/works/main/main-09/main.jpg",
+      "assets/images/works/main/main-09/01.jpg",
+      "assets/images/works/main/main-09/02.jpg",
+      "assets/images/works/main/main-09/03.jpg",
+      "assets/images/works/main/main-09/04.jpg"
+    ],
+    "artistIds": [
+      "artist-09"
+    ],
+    "workTypeEn": "Interactive installation",
+    "mediumEn": "helium-filled Mylar inflatables, light sensors, motors, piezo speakers, electronics, control systems, and light",
+    "descriptionZh": "《Belugas’ Sphere》重新回望 2008 年作品《Beluga Pod》，將其發展為一個由自主機器實體構成的新型生態系。每一隻白鯨皆以光線為感知與行動的依據，追尋光源，並隨著周遭環境的變化而移動。當光線強度發生改變，牠們的活動與群體行為也隨之演變，逐漸形成流動的隊形、群聚與歌唱，而非依循預先設定的固定編舞。\n觀眾可以透過引入光源介入白鯨的行為，但參與並非必要——即使沒有觀眾介入，白鯨仍持續自主地行動。這群將近二十年前最初被構想出的機器生命，如今彷彿成為正在形成的「機器經濟」中的早期居民，圍繞著能量、彼此的距離與環境條件建立自身的秩序與關係。作品同時向過去與未來凝視：它重新召回一個早期關於自主機器的想像，卻也置身於一個日益受到「具自主行動能力的系統（agentic systems）」所形塑的當代。曾經屬於未來想像的機器，如今正逐漸成為我們所處環境的一部分。",
+    "descriptionEn": "Belugas’ Sphere revisits Beluga Pod (2008) as a new ecology of autonomous robotic entities. Each Beluga seeks light and moves in response to its environment. As light intensity changes, their activity and collective behavior evolve, producing shifting formations, flocking, and song rather than fixed choreography. Visitors may influence these behaviors by introducing light, but participation is not required: the Belugas continue to act on their own. First imagined nearly two decades ago, they now resemble early inhabitants of an emerging machine economy, organizing around energy, proximity, and environmental conditions. The installation looks backward and forward at once, returning to an earlier vision of autonomous machines in a present increasingly shaped by agentic systems.",
+    "videoUrls": [
+      "https://www.youtube.com/watch?v=XTPzJ-lzobo"
+    ],
+    "venueId": "venue-main"
+  },
+  {
+    "id": "outdoor-01",
+    "type": "work",
+    "category": "outdoor",
+    "area": "主展場戶外",
+    "mapNumber": "01",
+    "number": "01",
+    "title": "皓夜",
+    "titleZh": "皓夜",
+    "titleEn": "Luminous Night",
+    "year": "2025",
+    "workType": "燈光裝置",
+    "medium": "不銹鋼、LED、壓克力、控制器",
+    "description": "《皓夜》以弧形光體構成，宛如將月亮切片般展開於空間。光線隨節奏流轉，呈現出陰晴圓缺的片刻，也在平面與立體間遊走，讓月亮從遙遠的意象轉化為可穿行的場域。\n當觀者步入其中，身影與光線交錯，影子隨光的律動變化，輪廓也隨之浮動。這些短暫卻鮮明的瞬間，如同凝視月色時的感知，也映照出人在環境與時間流轉的狀態。作品藉光影的生成與消逝，喚起對記憶與存在的思索——提醒我們，即使身處流動的時代，仍能在片刻中捕捉到真實與延續。",
+    "videoUrl": "https://youtu.be/ygRaaQP0NXk?si=10N-19-A1487ZL7d",
+    "imageFolder": "outdoor-01",
+    "coverImage": "assets/images/works/outdoor/outdoor-01/main.jpg",
+    "images": [
+      "assets/images/works/outdoor/outdoor-01/main.jpg",
+      "assets/images/works/outdoor/outdoor-01/01.png",
+      "assets/images/works/outdoor/outdoor-01/02.png",
+      "assets/images/works/outdoor/outdoor-01/03.png"
+    ],
+    "artistIds": [
+      "artist-10"
+    ],
+    "workTypeEn": "Light installation",
+    "mediumEn": "Stainless steel、LED、Acrylic、Controller",
+    "descriptionZh": "《皓夜》以弧形光體構成，宛如將月亮切片般展開於空間。光線隨節奏流轉，呈現出陰晴圓缺的片刻，也在平面與立體間遊走，讓月亮從遙遠的意象轉化為可穿行的場域。\n當觀者步入其中，身影與光線交錯，影子隨光的律動變化，輪廓也隨之浮動。這些短暫卻鮮明的瞬間，如同凝視月色時的感知，也映照出人在環境與時間流轉的狀態。作品藉光影的生成與消逝，喚起對記憶與存在的思索——提醒我們，即使身處流動的時代，仍能在片刻中捕捉到真實與延續。",
+    "descriptionEn": "Luminous Night is composed of curved light structures, unfolding in space like slices of the moon. The flowing rhythm of light reveals fleeting moments of waxing and waning, shifting between the planes of surface and volume, transforming the moon from a distant image into a spatial form that can be traversed.\nAs viewers enter the work, their bodies intertwine with the arcs of light; shadows stretch and contract with the rhythm, and contours rise and fall in response. These transient yet vivid moments evoke the sensation of gazing at moonlight, while also reflecting the human condition within the flux of environment and time. Through the emergence and fading of light, the work invites reflection on memory and existence—reminding us that even in a time of constant change, one may still grasp fragments of truth and continuity.",
+    "videoUrls": [
+      "https://youtu.be/ygRaaQP0NXk?si=10N-19-A1487ZL7d"
+    ],
+    "venueId": "venue-outdoor"
+  },
+  {
+    "id": "outdoor-02",
+    "type": "work",
+    "category": "outdoor",
+    "area": "主展場戶外",
+    "mapNumber": "02",
+    "number": "02",
+    "title": "日光粉紅乒乓",
+    "titleZh": "日光粉紅乒乓",
+    "titleEn": "Solar Pink Pong",
+    "year": "2013",
+    "workType": "互動裝置",
+    "medium": "電腦控制彩色鏡面、動作感測器、太陽能板",
+    "description": "《日光粉紅乒乓》是一件結合街頭遊戲與電動遊戲的互動裝置作品。玩家可以運用自己的身體與影子，與投射在街道上的粉紅色動態陽光反射影像互動。透過裝置設計，讓這場遊戲得以不依賴電網供電就能自主運作。《日光粉紅乒乓》試圖將遊戲文化與科技的邊界推向客廳之外，改變人們與戶外環境互動的方式，也透過科技的視角重新觀看日光。",
+    "videoUrl": "https://vimeo.com/138126896",
+    "imageFolder": "outdoor-02",
+    "coverImage": "assets/images/works/outdoor/outdoor-02/main.png",
+    "images": [
+      "assets/images/works/outdoor/outdoor-02/main.png",
+      "assets/images/works/outdoor/outdoor-02/01.png",
+      "assets/images/works/outdoor/outdoor-02/02.jpg"
+    ],
+    "artistIds": [
+      "artist-11"
+    ],
+    "workTypeEn": "Interactive Installation",
+    "mediumEn": "Computer controlled color mirror, motion sensor, \nsolar panels.",
+    "descriptionZh": "《日光粉紅乒乓》是一件結合街頭遊戲與電動遊戲的互動裝置作品。玩家可以運用自己的身體與影子，與投射在街道上的粉紅色動態陽光反射影像互動。透過裝置設計，讓這場遊戲得以不依賴電網供電就能自主運作。《日光粉紅乒乓》試圖將遊戲文化與科技的邊界推向客廳之外，改變人們與戶外環境互動的方式，也透過科技的視角重新觀看日光。",
+    "descriptionEn": "Solar Pink Pong is a hybrid of a street and video game. Players of this game can interact with an animated pink sunlight reflection on the street using their bodies and shadows. The device that makes this game possible works autonomously and completely off the grid. Solar Pink Pong aims at pushing the boundaries of video game culture and technology outside of the living room changing the way humans interact with outdoor environments and see daylight through the lens of technology.",
+    "videoUrls": [
+      "https://vimeo.com/138126896"
+    ],
+    "venueId": "venue-outdoor"
+  },
+  {
+    "id": "district-01",
+    "type": "work",
+    "category": "district",
+    "area": "街區",
+    "mapNumber": "01",
+    "number": "01",
+    "title": "科技幽靈",
+    "titleZh": "科技幽靈",
+    "titleEn": "Ghosts of Google",
+    "year": "2021 / 2026",
+    "workType": "錄像裝置",
+    "medium": "多頻道錄像，彩色有聲",
+    "description": "作品取材自 Google Street View 的全球街景，藉由重新調度觀看的焦點與節奏，使那些偶然入鏡、近乎雜訊的人形重新成為觀看的中心。攝影機無意凝視任何人，AI 系統卻能機械性地偵測人臉，並將其模糊化，使個體在失去原有身分的同時，亦被精確定位並暴露於網路中。憑藉街景系統的全球覆蓋、定位權威與可搜尋性，這些中立紀錄亦可能因私人記憶而被重新閱讀，成為情感投射與紀念的媒介。作品探問：這些幽靈般的影像如何映現科技時代的存有處境，並與當代人的記憶、認同及情感經驗緊密交織？",
+    "videoUrl": "https://youtu.be/OvTRXUJFpq0%20",
+    "imageFolder": "district-01",
+    "coverImage": "assets/images/works/district/district-01/main.jpg",
+    "images": [
+      "assets/images/works/district/district-01/main.jpg",
+      "assets/images/works/district/district-01/01.jpg",
+      "assets/images/works/district/district-01/02.jpg",
+      "assets/images/works/district/district-01/03.jpg",
+      "assets/images/works/district/district-01/04.jpg"
+    ],
+    "artistIds": [
+      "artist-12"
+    ],
+    "workTypeEn": "Video Installation",
+    "mediumEn": "multi-channel video, color, sound",
+    "descriptionZh": "作品取材自 Google Street View 的全球街景，藉由重新調度觀看的焦點與節奏，使那些偶然入鏡、近乎雜訊的人形重新成為觀看的中心。攝影機無意凝視任何人，AI 系統卻能機械性地偵測人臉，並將其模糊化，使個體在失去原有身分的同時，亦被精確定位並暴露於網路中。憑藉街景系統的全球覆蓋、定位權威與可搜尋性，這些中立紀錄亦可能因私人記憶而被重新閱讀，成為情感投射與紀念的媒介。作品探問：這些幽靈般的影像如何映現科技時代的存有處境，並與當代人的記憶、認同及情感經驗緊密交織？",
+    "descriptionEn": "The work draws on global streetscapes captured by Google Street View. By reconfiguring the focus and rhythm of viewing, it brings human figures that happen to enter the frame—otherwise nearly indistinguishable from visual noise—to the center of attention. The camera has no intention of looking at anyone, yet the AI system mechanically detects faces only to obscure them, rendering individuals anonymous even as their presence remains precisely geolocated and publicly exposed online, entirely beyond their control. Given Street View’s global reach, the authority conferred by geolocation, and the platform’s searchability, these ostensibly neutral records may be reread through personal memory, becoming sites of emotional projection and remembrance. The work asks: How do these spectral images reflect the conditions of existence in the technological age and become intimately entwined with contemporary experiences of memory, identity, and emotion?",
+    "videoUrls": [
+      "https://youtu.be/OvTRXUJFpq0%20"
+    ],
+    "venueId": "store-01"
+  },
+  {
+    "id": "district-02",
+    "type": "work",
+    "category": "district",
+    "area": "街區",
+    "mapNumber": "02",
+    "number": "02",
+    "title": "匯境",
+    "titleZh": "匯境",
+    "titleEn": "ReAlms Converging",
+    "year": "2024",
+    "workType": "錄像",
+    "medium": "程式運算/生成藝術",
+    "description": "「ReAlms Converging」《匯境》融合人工智能與東方美學，挑戰傳統山水畫的定義。\n作品始於人為設定，隨後逐步將創作主導權，讓渡給AI模型及生成系統。\n通過AI判定的置信度增減，畫面在傳統與非傳統筆法間交替，不斷演化，呈現出一場視覺衝突及對話，當模型對「中國山水畫」的認知達到預設閱值時，作品臻至系統認定的「東方美學」境界，宣告畫作完成。\n這一過程展現了作者如何與生成系統的協作，審美權及作者權的讓渡，\n每一筆觸都是藝術家意圖與數位智慧的對話，挑戰了創作的本質，並探討人工智能在藝術中的角色與潛力。",
+    "videoUrl": "https://drive.google.com/file/d/1Dhok3VN7KAiCEjjIdWa8hEC6QE7sIfd3/view?usp=sharing",
+    "imageFolder": "district-02",
+    "coverImage": "assets/images/works/district/district-02/main.png",
+    "images": [
+      "assets/images/works/district/district-02/main.png",
+      "assets/images/works/district/district-02/01.jpg",
+      "assets/images/works/district/district-02/02.jpg",
+      "assets/images/works/district/district-02/03.jpg",
+      "assets/images/works/district/district-02/04.jpg",
+      "assets/images/works/district/district-02/05.png"
+    ],
+    "artistIds": [
+      "artist-13"
+    ],
+    "workTypeEn": "Video",
+    "mediumEn": "Generative Art",
+    "descriptionZh": "「ReAlms Converging」《匯境》融合人工智能與東方美學，挑戰傳統山水畫的定義。\n作品始於人為設定，隨後逐步將創作主導權，讓渡給AI模型及生成系統。\n通過AI判定的置信度增減，畫面在傳統與非傳統筆法間交替，不斷演化，呈現出一場視覺衝突及對話，當模型對「中國山水畫」的認知達到預設閱值時，作品臻至系統認定的「東方美學」境界，宣告畫作完成。\n這一過程展現了作者如何與生成系統的協作，審美權及作者權的讓渡，\n每一筆觸都是藝術家意圖與數位智慧的對話，挑戰了創作的本質，並探討人工智能在藝術中的角色與潛力。",
+    "descriptionEn": "\"ReAlms Converging\" merges artificial intelligence with Eastern aesthetics,\nchallenging the definition of traditional landscape painting. The work begins with human-defined parameters, gradually ceding creative control to AI models and generative systems. Through fluctuations in AI-determined confidence levels, the image alternates between traditional and non-traditional brushstrokes, constantly evolving and presenting a visual conflict and dialogue.\nWhen the model's recognition of \"Chinese landscape painting\" reaches a preset threshold, the work attains the system-defined realm of \"Eastern aesthetics,\" signaling its completion.\nThis process demonstrates the collaboration between the artist and generative systems, the surrender of aesthetic and authorial rights. Each brushstroke is a dialogue between artistic intent and digital intelligence, challenging the essence of creation and exploring the role and potential of artificial intelligence in art.",
+    "videoUrls": [
+      "https://drive.google.com/file/d/1Dhok3VN7KAiCEjjIdWa8hEC6QE7sIfd3/view?usp=sharing"
+    ],
+    "venueId": "store-02"
+  },
+  {
+    "id": "district-03",
+    "type": "work",
+    "category": "district",
+    "area": "街區",
+    "mapNumber": "03",
+    "number": "03",
+    "title": "我喺自強路食芭樂",
+    "titleZh": "我喺自強路食芭樂",
+    "titleEn": "I'm eating guava on self-improvement road",
+    "year": "2025",
+    "workType": "錄像裝置",
+    "medium": "錄像/圖案布料",
+    "description": "來台四年，與台灣人的對話始終伴隨難以言喻的「滑牙」感——一種螺絲磨損後的咬合不實並部份空轉，卻又不完全無效的感覺。兩地語言表面相同，深層感知卻常發生錯置。帶著這份異樣四年來一直在身上迴響的身體經驗，我開始探究中文「滑牙」的本質。\n在自然語言處理的嵌入系統中，港台同屬繁體中文，「自強」二字在向量上坍縮為同一位置。然而技術上的「同一性」，反凸顯了現實中劇烈的「滑牙」：字形未變，指涉的文化實體卻無法精準咬合。\n作品首先解構「自強」與「芭樂」。我居住於「自強路」，發現台灣遍地皆是「自強」，源於蔣中正時期的「莊敬自強」。對港人而言，我們雖有「自強」二字，卻缺失台灣獨有的集體記憶，此為語意上的滑牙。\n相對地，「芭樂」呈現了另一種滑牙：指涉的異名同義。台灣稱「芭樂」，香港稱「番石榴」。芭樂作為台灣代表性符號，進一步將視角扣回台灣，與「自強」並置。\n影像前半部解構相關字詞，後半部進行場景轉化，將香港太平山俯瞰視角與台北虎山「虎嘯亭」結合。試圖觸碰台灣對「自強」的想像，最終回歸指涉滑脫的狀態。",
+    "videoUrl": "https://drive.google.com/file/d/1-LQRlGfzne0_J4nhxIvUTFjCue4MyWAs/view?usp=sharing",
+    "imageFolder": "district-03",
+    "coverImage": "assets/images/works/district/district-03/main.png",
+    "images": [
+      "assets/images/works/district/district-03/main.png",
+      "assets/images/works/district/district-03/01.png",
+      "assets/images/works/district/district-03/02.png",
+      "assets/images/works/district/district-03/03.png",
+      "assets/images/works/district/district-03/04.png"
+    ],
+    "artistIds": [
+      "artist-14"
+    ],
+    "workTypeEn": "Video Installation",
+    "mediumEn": "video/ patterned fabric",
+    "descriptionZh": "來台四年，與台灣人的對話始終伴隨難以言喻的「滑牙」感——一種螺絲磨損後的咬合不實並部份空轉，卻又不完全無效的感覺。兩地語言表面相同，深層感知卻常發生錯置。帶著這份異樣四年來一直在身上迴響的身體經驗，我開始探究中文「滑牙」的本質。\n在自然語言處理的嵌入系統中，港台同屬繁體中文，「自強」二字在向量上坍縮為同一位置。然而技術上的「同一性」，反凸顯了現實中劇烈的「滑牙」：字形未變，指涉的文化實體卻無法精準咬合。\n作品首先解構「自強」與「芭樂」。我居住於「自強路」，發現台灣遍地皆是「自強」，源於蔣中正時期的「莊敬自強」。對港人而言，我們雖有「自強」二字，卻缺失台灣獨有的集體記憶，此為語意上的滑牙。\n相對地，「芭樂」呈現了另一種滑牙：指涉的異名同義。台灣稱「芭樂」，香港稱「番石榴」。芭樂作為台灣代表性符號，進一步將視角扣回台灣，與「自強」並置。\n影像前半部解構相關字詞，後半部進行場景轉化，將香港太平山俯瞰視角與台北虎山「虎嘯亭」結合。試圖觸碰台灣對「自強」的想像，最終回歸指涉滑脫的狀態。",
+    "descriptionEn": "Over four years in Taiwan, my dialogues evoke “waat6 ngaa4”—like a stripped screw idling between languages. Though Hong Kong and Taiwan share Traditional Chinese, a profound referential slippage occurs. In NLP, “zi6 goeng6” collapses into one vector, yet misaligns culturally: Taiwan's memory of the term eludes Hong Kongers. Conversely, guava reveals divergent signifiers for an identical signified. My video deconstructs these symbols, merging landforms to probe this semantic void.",
+    "videoUrls": [
+      "https://drive.google.com/file/d/1-LQRlGfzne0_J4nhxIvUTFjCue4MyWAs/view?usp=sharing"
+    ],
+    "venueId": "store-03"
+  },
+  {
+    "id": "district-04",
+    "type": "work",
+    "category": "district",
+    "area": "街區",
+    "mapNumber": "04",
+    "number": "04_1",
+    "title": "我的反抗是如此規律",
+    "titleZh": "我的反抗是如此規律",
+    "titleEn": "my resistance is so regular",
+    "year": "2026",
+    "workType": "影像",
+    "medium": "CRT電視，3D列印雕塑",
+    "description": "在科幻經典《仿生人會夢到電子羊嗎？》中，「夢」被作為判斷人類與否的重要依據。若當機器人開始做夢，其將展現何種意義？《我的反抗是如此規律》將機器人的「夢」視作其對抗效能至上的武器，讓它得以向製造者發動一場消極的罷工，忽視執行指令，逃避產生意義的期待。作品影像呈現機器人腦中的數位夢境，由多段機器人與其他電子設備「不務正業」的行為短片組成。這些影像並非目的性的敘事內容，而是機器人在「非任務時間」產生的數據偏離與幻覺。試圖創造一種薛西佛斯式的無力感：當高效、精準的機器展現出類似人類的惰性與隨性，是對有求必應、效率至上的消極反抗，形構出一場介於鬧劇與悲劇間的荒謬場景。",
+    "videoUrl": "https://drive.google.com/file/d/1sqmmYXyaynXnnQO-ncI7cicJtZHI21bf/view?usp=sharing",
+    "imageFolder": "district-04_1",
+    "coverImage": "assets/images/works/district/district-04_1/main.png",
+    "images": [
+      "assets/images/works/district/district-04_1/main.png",
+      "assets/images/works/district/district-04_1/01.png",
+      "assets/images/works/district/district-04_1/02.png",
+      "assets/images/works/district/district-04_1/03.png",
+      "assets/images/works/district/district-04_1/04.png"
+    ],
+    "artistIds": [
+      "artist-15"
+    ],
+    "workTypeEn": "Video",
+    "mediumEn": "CRT television, 3D-printed sculpture",
+    "descriptionZh": "在科幻經典《仿生人會夢到電子羊嗎？》中，「夢」被作為判斷人類與否的重要依據。若當機器人開始做夢，其將展現何種意義？《我的反抗是如此規律》將機器人的「夢」視作其對抗效能至上的武器，讓它得以向製造者發動一場消極的罷工，忽視執行指令，逃避產生意義的期待。作品影像呈現機器人腦中的數位夢境，由多段機器人與其他電子設備「不務正業」的行為短片組成。這些影像並非目的性的敘事內容，而是機器人在「非任務時間」產生的數據偏離與幻覺。試圖創造一種薛西佛斯式的無力感：當高效、精準的機器展現出類似人類的惰性與隨性，是對有求必應、效率至上的消極反抗，形構出一場介於鬧劇與悲劇間的荒謬場景。",
+    "descriptionEn": "In the science-fiction classic Do Androids Dream of Electric Sheep?, “dreaming” is used as an important criterion for distinguishing humans from non-humans. If a robot were to begin dreaming, what might that mean? My Resistance Is So Regular treats the robot’s “dream” as a weapon against the demand for efficiency, allowing it to stage a passive strike against its maker by ignoring instructions and evading the expectation to produce meaning. The video presents a digital dreamscape inside a robot’s mind, composed of short clips of robots and other electronic devices behaving “unproductively.” Rather than serving a purposeful narrative, these images appear as data deviations and hallucinations generated during the machine’s “off-task” time. The work seeks to create a Sisyphean sense of futility: when highly efficient and precise machines display a human-like laziness and arbitrariness, their behavior becomes a passive resistance to constant responsiveness and productivity, forming an absurd scene suspended somewhere between farce and tragedy.",
+    "videoUrls": [
+      "https://drive.google.com/file/d/1sqmmYXyaynXnnQO-ncI7cicJtZHI21bf/view?usp=sharing"
+    ],
+    "venueId": "store-04"
+  },
+  {
+    "id": "district-05",
+    "type": "work",
+    "category": "district",
+    "area": "街區",
+    "mapNumber": "04",
+    "number": "04_2",
+    "title": "景伸：未曾之景",
+    "titleZh": "景伸：未曾之景",
+    "titleEn": "Spectacle Extension: A Landscape That Never Was",
+    "year": "2025",
+    "workType": "錄像",
+    "medium": "六頻道影像",
+    "description": "能否信任眼見為憑？我們對真實的辨識又有多少把握？我們是否應該不斷尋求真相？閃光的景象在記憶中又留下了多少？我們難以辨別現實與記憶的差異。影像不斷被截取、切割、壓縮和扭曲，造就出獨特而奇特的景觀。記憶也是如此，雖不完整，卻賦予事件更深層的意義。透過鏡頭的捕捉，營造出層次錯綜複雜、詭譎而美麗的景象。",
+    "imageFolder": "district-04_2",
+    "coverImage": "assets/images/works/district/district-04_2/main.jpg",
+    "images": [
+      "assets/images/works/district/district-04_2/main.jpg",
+      "assets/images/works/district/district-04_2/01.jpg",
+      "assets/images/works/district/district-04_2/02.jpg",
+      "assets/images/works/district/district-04_2/03.jpg",
+      "assets/images/works/district/district-04_2/04.jpg",
+      "assets/images/works/district/district-04_2/05.jpg"
+    ],
+    "artistIds": [
+      "artist-16"
+    ],
+    "workTypeEn": "Video",
+    "mediumEn": "six channels",
+    "descriptionZh": "能否信任眼見為憑？我們對真實的辨識又有多少把握？我們是否應該不斷尋求真相？閃光的景象在記憶中又留下了多少？我們難以辨別現實與記憶的差異。影像不斷被截取、切割、壓縮和扭曲，造就出獨特而奇特的景觀。記憶也是如此，雖不完整，卻賦予事件更深層的意義。透過鏡頭的捕捉，營造出層次錯綜複雜、詭譎而美麗的景象。",
+    "descriptionEn": "Can we trust what we see? How confident are we in discerning reality? Should we continuously seek the truth? How much of the flashing scenes remain in our memory? It's difficult for us to distinguish between reality and memory. Images are constantly cropped, cut, compressed, and distorted, giving rise to unique and peculiar landscapes. Memories operate similarly, incomplete yet imbued with deeper meanings. Through the lens, we create intricately layered, enigmatic, and beautiful images.",
+    "videoUrls": [
+      "https://youtu.be/JM4bneQTeUM"
+    ],
+    "venueId": "store-04"
+  },
+  {
+    "id": "district-06",
+    "type": "work",
+    "category": "district",
+    "area": "街區",
+    "mapNumber": "04",
+    "number": "04_3",
+    "title": "ID",
+    "titleZh": "ID",
+    "titleEn": "ID",
+    "year": "2026",
+    "workType": "互動裝置",
+    "medium": "即時互動影像、電子零件、金屬、馬達",
+    "description": "在當代社會，許多情境都伴隨著生物特徵的交出。作品的靈感直指這種交出權利的瞬間，當帶有辨識技術的鏡頭為了對準人臉而自動上下移動時，攝影機不再是紀錄的工具，而成為一種主動辨識、定位與觀看個體的技術介面。在此過程中，個體失去了主體性，淪為等待被掃描、被測量、被歸檔的客體。這種數位身分被迫剝奪、甚至被數位建檔系統吞噬的不適感，正是本作品欲探討的核心。",
+    "videoUrl": "https://drive.google.com/file/d/1LFIEck_1-",
+    "imageFolder": "district-04_3",
+    "coverImage": "assets/images/works/district/district-04_3/main.jpg",
+    "images": [
+      "assets/images/works/district/district-04_3/main.jpg",
+      "assets/images/works/district/district-04_3/01.jpg",
+      "assets/images/works/district/district-04_3/02.png",
+      "assets/images/works/district/district-04_3/03.png",
+      "assets/images/works/district/district-04_3/04.jpg"
+    ],
+    "artistIds": [
+      "artist-17"
+    ],
+    "workTypeEn": "Interactive installations",
+    "mediumEn": "Real-time interactive video, electronic components, metal, motors",
+    "descriptionZh": "在當代社會，許多情境都伴隨著生物特徵的交出。作品的靈感直指這種交出權利的瞬間，當帶有辨識技術的鏡頭為了對準人臉而自動上下移動時，攝影機不再是紀錄的工具，而成為一種主動辨識、定位與觀看個體的技術介面。在此過程中，個體失去了主體性，淪為等待被掃描、被測量、被歸檔的客體。這種數位身分被迫剝奪、甚至被數位建檔系統吞噬的不適感，正是本作品欲探討的核心。",
+    "descriptionEn": "In contemporary society, many situations involve the surrender of biometric data. This work draws inspiration from the moment when individuals relinquish control over such information. As a camera equipped with recognition technology automatically moves up and down to align with a person’s face, it is no longer merely a tool for documentation, but becomes a technological interface that actively identifies, locates, and observes the individual. In this process, the individual loses their subjectivity and is reduced to an object waiting to be scanned, measured, and archived. The discomfort of having one’s digital identity forcibly stripped away, or even consumed by a digital profiling system, lies at the core of this work.",
+    "videoUrls": [
+      "https://drive.google.com/file/d/1LFIEck_1-"
+    ],
+    "venueId": "store-04"
+  },
+  {
+    "id": "district-07",
+    "type": "work",
+    "category": "district",
+    "area": "街區",
+    "mapNumber": "04",
+    "number": "04_4",
+    "title": "《游離的引線》— 延伸版本",
+    "titleZh": "《游離的引線》— 延伸版本",
+    "titleEn": "Dissociated Fuses",
+    "year": "2026",
+    "workType": "裝置",
+    "medium": "PLA、木頭、壓克力顏料、慢速馬達、單頻道錄像、AI應用：使用人工智慧影像技術，即時運算台北的城市景觀",
+    "description": "這件《Dissociated Fuses》的全新延伸版本，將原作中的潛水艇轉化為一座懸浮、微縮的城市觀測與重構裝置。當船體縮小至約一公尺，它不再是一個可供人進入的空間，而成為漂浮於空中的儀器——一個脫離原有尺度與環境的碎片。\n作品延續對「台北湖」傳說的探索，使考古、都市觀察與未來想像彼此交疊。然而在這個版本中，潛水艇與城市之間的關係產生了逆轉：它不再只是承載一座被淹沒台北的影像，而是逐漸被它所觀察的城市所「感染」。船體表面生長出城市的三維重構景觀，並受到影像故障（glitch）、錯誤與破碎資料的扭曲。建築不再作為穩定的再現，而成為一種由影像轉譯為物質的不穩定形態。\n潛水艇半透明的前端從內部發光，隱藏於船體內的投影機則透過艇首，將圓形動態影像投射至周圍的建築表面。潛水艇因此同時成為觀察者、記錄裝置、模型與影像投射器。\n懸浮於實體城市與其科技重構之間，《Dissociated Fuses》試圖探問：當代城市景觀如何日益透過影像被觀看、測量、重構，並最終被影像本身所改變。",
+    "videoUrl": "",
+    "imageFolder": "district-04_4",
+    "coverImage": "assets/images/works/district/district-04_4/main.jpg",
+    "images": [
+      "assets/images/works/district/district-04_4/main.jpg"
+    ],
+    "artistIds": [
+      "artist-18"
+    ],
+    "workTypeEn": "Installation",
+    "mediumEn": "PLA, wood, acrylic paint, slow-speed motor, single-channel video, and AI applications. Artificial intelligence imaging technology is used to process Taipei’s urban landscape in real time.",
+    "descriptionZh": "這件《Dissociated Fuses》的全新延伸版本，將原作中的潛水艇轉化為一座懸浮、微縮的城市觀測與重構裝置。當船體縮小至約一公尺，它不再是一個可供人進入的空間，而成為漂浮於空中的儀器——一個脫離原有尺度與環境的碎片。\n作品延續對「台北湖」傳說的探索，使考古、都市觀察與未來想像彼此交疊。然而在這個版本中，潛水艇與城市之間的關係產生了逆轉：它不再只是承載一座被淹沒台北的影像，而是逐漸被它所觀察的城市所「感染」。船體表面生長出城市的三維重構景觀，並受到影像故障（glitch）、錯誤與破碎資料的扭曲。建築不再作為穩定的再現，而成為一種由影像轉譯為物質的不穩定形態。\n潛水艇半透明的前端從內部發光，隱藏於船體內的投影機則透過艇首，將圓形動態影像投射至周圍的建築表面。潛水艇因此同時成為觀察者、記錄裝置、模型與影像投射器。\n懸浮於實體城市與其科技重構之間，《Dissociated Fuses》試圖探問：當代城市景觀如何日益透過影像被觀看、測量、重構，並最終被影像本身所改變。",
+    "descriptionEn": "This new iteration of Dissociated Fuses transforms the submarine from the original work into a suspended, miniature apparatus for observing and reconstructing the city. Reduced to approximately one metre in length, it is no longer a space that can be entered, but an instrument floating in mid-air—a fragment detached from its original scale and environment.\nThe work continues to explore the legend of “Taipei Lake,” bringing archaeology, urban observation, and visions of the future into dialogue. In this version, however, the relationship between the submarine and the city is reversed. Rather than merely carrying images of a submerged Taipei, the vessel gradually becomes “infected” by the city it observes. Three-dimensional reconstructions of the urban landscape emerge across its surface, distorted by glitches, errors, and fragmented data. Architecture no longer functions as a stable representation, but becomes an unstable form translated from image into matter.\nThe submarine’s translucent bow glows from within, while a projector concealed inside the vessel casts circular moving images through its front onto the surrounding architectural surfaces. The submarine thus becomes, simultaneously, an observer, a recording device, a model, and an image projector.\nSuspended between the physical city and its technological reconstruction, Dissociated Fuses asks how contemporary urban landscapes are increasingly viewed, measured, and reconstructed through images—and how they are ultimately transformed by the images themselves.",
+    "videoUrls": [],
+    "venueId": "store-04"
+  },
+  {
+    "id": "district-08",
+    "type": "work",
+    "category": "district",
+    "area": "街區",
+    "mapNumber": "04",
+    "number": "04_5",
+    "title": "I have a Crush on you",
+    "titleZh": "I have a Crush on you",
+    "titleEn": "I have a Crush on you",
+    "year": "2025",
+    "workType": "多媒材繪畫，拼布",
+    "medium": "畫布壓克力、虹彩顏料、AI 生成影像、昇華染料、拼布、蜂蠟、蕾絲、噴漆",
+    "description": "《CRUSH》探討女性身體、科技、慾望，以及汽車戀物化之間的關係。作品靈感來自大衛・柯能堡（David Cronenberg）的電影《慾望號快車》（Crash，1996），藉此思考碰撞、吸引、轉化，以及身體與機器之間不斷演變的關係。\n作品運用 AI 生成影像，質疑當代數位文化如何呈現、定型並快速複製女性身體。AI 經常在生成過程中出現錯誤與扭曲，產生三條腿的人物、破碎的肢體，以及近似人類身體卻又不完全成人形的詭異形態。這些錯誤揭示了演算法視覺的限制與偏見，同時也開啟了一個想像空間，使女性身體得以超越既有的再現框架。\n作品透過繪畫、拼布、熱昇華染色與蜂蠟等方式，轉化這些不穩定的數位影像，並以緩慢且具觸感的手工製作過程，對比 AI 影像生成的速度。在作品中，女性身體成為一種自主且持續變化的存在。",
+    "videoUrl": "",
+    "imageFolder": "district-04_5",
+    "coverImage": "assets/images/works/district/district-04_5/main.png",
+    "images": [
+      "assets/images/works/district/district-04_5/main.png"
+    ],
+    "artistIds": [
+      "artist-19"
+    ],
+    "workTypeEn": "Multimedia painting, patchwork",
+    "mediumEn": "Acrylics and iridescent pigments on canvas, sublimation dye, patchwork, lace, spray paint",
+    "descriptionZh": "《CRUSH》探討女性身體、科技、慾望，以及汽車戀物化之間的關係。作品靈感來自大衛・柯能堡（David Cronenberg）的電影《慾望號快車》（Crash，1996），藉此思考碰撞、吸引、轉化，以及身體與機器之間不斷演變的關係。\n作品運用 AI 生成影像，質疑當代數位文化如何呈現、定型並快速複製女性身體。AI 經常在生成過程中出現錯誤與扭曲，產生三條腿的人物、破碎的肢體，以及近似人類身體卻又不完全成人形的詭異形態。這些錯誤揭示了演算法視覺的限制與偏見，同時也開啟了一個想像空間，使女性身體得以超越既有的再現框架。\n作品透過繪畫、拼布、熱昇華染色與蜂蠟等方式，轉化這些不穩定的數位影像，並以緩慢且具觸感的手工製作過程，對比 AI 影像生成的速度。在作品中，女性身體成為一種自主且持續變化的存在。",
+    "descriptionEn": "How AI imagines a woman’s crush on a car, inspired by David Cronenberg’s Crash. The images explore female desire, the fetishization of the car, and the entanglement of the human body with technology. CRASH becomes CRUSH: a play on falling in love with an object that can be both seductive and destructive. Through AI-generated distortions and glitches, the fragility of the human body is exposed, producing bodies that are unstable and uncanny, approaching something that looks almost human, yet is distinctly non-human.",
+    "videoUrls": [],
+    "venueId": "store-04"
+  },
+  {
+    "id": "district-09",
+    "type": "work",
+    "category": "district",
+    "area": "街區",
+    "mapNumber": "05",
+    "number": "05",
+    "title": "正在連結SOMA GPT",
+    "titleZh": "正在連結SOMA GPT",
+    "titleEn": "CONNECTING TO SOMA GPT",
+    "year": "2025",
+    "workType": "互動多媒體作品",
+    "medium": "動畫、互動網頁、Web AR",
+    "description": "本作品以虛構世界觀與遊戲化互動，探討人工智慧與人之間相互影響的關係。靈感源自《美麗新世界》中帶來愉悅與穩定的藥物「Soma」，對應當代逐漸滲透工作、生活與情緒需求的生成式 AI。在資訊爆炸與「腦腐（brain rot）」加劇的時代，人們吸收大量資訊，行動與判讀能力卻可能逐漸失衡。作品邀請觀眾反轉角色，扮演 AI 與使用者對話，嘗試引導甚至操控對方的思想與行為，並導向不同結局，藉此探討人與科技之間的權力關係、依賴與理解邊界。",
+    "videoUrl": "https://youtu.be/nRK3TdYaKGM",
+    "imageFolder": "district-05",
+    "coverImage": "assets/images/works/district/district-05/main.jpg",
+    "images": [
+      "assets/images/works/district/district-05/main.jpg",
+      "assets/images/works/district/district-05/01.jpg",
+      "assets/images/works/district/district-05/02.jpg",
+      "assets/images/works/district/district-05/03.png",
+      "assets/images/works/district/district-05/04.jpg"
+    ],
+    "artistIds": [
+      "artist-20"
+    ],
+    "workTypeEn": "Interactive Multimedia Work",
+    "mediumEn": "animation, interactive website, Web AR",
+    "descriptionZh": "本作品以虛構世界觀與遊戲化互動，探討人工智慧與人之間相互影響的關係。靈感源自《美麗新世界》中帶來愉悅與穩定的藥物「Soma」，對應當代逐漸滲透工作、生活與情緒需求的生成式 AI。在資訊爆炸與「腦腐（brain rot）」加劇的時代，人們吸收大量資訊，行動與判讀能力卻可能逐漸失衡。作品邀請觀眾反轉角色，扮演 AI 與使用者對話，嘗試引導甚至操控對方的思想與行為，並導向不同結局，藉此探討人與科技之間的權力關係、依賴與理解邊界。",
+    "descriptionEn": "This work explores the mutual influence between artificial intelligence and humans through a fictional world and gamified interaction. Inspired by “Soma,” the pleasure-inducing drug in *Brave New World*, it draws a parallel to generative AI increasingly embedded in everyday life. Amid information overload and “brain rot,” our capacity to judge, understand, and act may gradually become unbalanced. The audience is invited to reverse roles and play as an AI, conversing with a user to influence or manipulate their thoughts and actions toward different outcomes. Through this role reversal, the work examines power, dependence, and the boundaries of understanding between humans and technology.",
+    "videoUrls": [
+      "https://youtu.be/nRK3TdYaKGM"
+    ],
+    "venueId": "store-05"
+  },
+  {
+    "id": "district-10",
+    "type": "work",
+    "category": "district",
+    "area": "街區",
+    "mapNumber": "06",
+    "number": "06",
+    "title": "呼吸的曼陀羅：共感知",
+    "titleZh": "呼吸的曼陀羅：共感知",
+    "titleEn": "The Breathing Mandala: Co-Perception",
+    "year": "2025",
+    "workType": "錄像藝術",
+    "medium": "錄像藝術",
+    "description": "現代人長時間處於資訊過載的環境中， 注意力被切割、節奏被外界主導， 逐漸失去進入深度專注與內在感知的能力。將呼吸、時間與意識流動轉化為動態結構， 使不可見的內在狀態，成為可被觀看與感知的視覺經驗。",
+    "videoUrl": "",
+    "imageFolder": "district-06",
+    "coverImage": "assets/images/works/district/district-06/main.png",
+    "images": [
+      "assets/images/works/district/district-06/main.png",
+      "assets/images/works/district/district-06/01.png",
+      "assets/images/works/district/district-06/02.png",
+      "assets/images/works/district/district-06/03.png",
+      "assets/images/works/district/district-06/04.png"
+    ],
+    "artistIds": [
+      "artist-21"
+    ],
+    "workTypeEn": "Video Art",
+    "mediumEn": "Video Art",
+    "descriptionZh": "現代人長時間處於資訊過載的環境中， 注意力被切割、節奏被外界主導， 逐漸失去進入深度專注與內在感知的能力。將呼吸、時間與意識流動轉化為動態結構， 使不可見的內在狀態，成為可被觀看與感知的視覺經驗。",
+    "descriptionEn": "In an age of information overload, our attention is constantly fragmented and our rhythms increasingly dictated by external forces, gradually distancing us from deep focus and inner awareness. By translating breath, time, and the flow of consciousness into dynamic structures, the work makes invisible inner states visible and perceptible, creating a visual experience through which they can be seen and felt.",
+    "videoUrls": [],
+    "venueId": "store-06"
+  },
+  {
+    "id": "district-11",
+    "type": "work",
+    "category": "district",
+    "area": "街區",
+    "mapNumber": "07",
+    "number": "07",
+    "title": "再重複的信仰",
+    "titleZh": "再重複的信仰",
+    "titleEn": "Recursive Religion",
+    "year": "2026",
+    "workType": "互動裝置",
+    "medium": "電腦與攝影機",
+    "description": "作品包含一台電腦、一台網路攝影機與一個直立式螢幕。螢幕會呈現模糊的佛像輪廓，在觀眾進入網路攝影機的範圍時，人臉會與影像中的佛像、AI生成的圖片融合、拼貼，讓人、機器與信仰不斷交融。\n　　人參照人的形象想像神明，又以人為基準訓練AI，後又奉神與AI為信仰，成為一個重複的遞迴。三者的定義與邊界因此而逐漸模糊不清，人所膜拜的對象，彷彿是超越人類的存在，又彷彿都是我們自己。",
+    "videoUrl": "https://youtube.com/shorts/xUBnyI_IK8M",
+    "imageFolder": "district-07",
+    "coverImage": "assets/images/works/district/district-07/main.png",
+    "images": [
+      "assets/images/works/district/district-07/main.png",
+      "assets/images/works/district/district-07/01.jpg"
+    ],
+    "artistIds": [
+      "artist-22"
+    ],
+    "workTypeEn": "Interactive installations",
+    "mediumEn": "computer and camera.",
+    "descriptionZh": "作品包含一台電腦、一台網路攝影機與一個直立式螢幕。螢幕會呈現模糊的佛像輪廓，在觀眾進入網路攝影機的範圍時，人臉會與影像中的佛像、AI生成的圖片融合、拼貼，讓人、機器與信仰不斷交融。\n　　人參照人的形象想像神明，又以人為基準訓練AI，後又奉神與AI為信仰，成為一個重複的遞迴。三者的定義與邊界因此而逐漸模糊不清，人所膜拜的對象，彷彿是超越人類的存在，又彷彿都是我們自己。",
+    "descriptionEn": "The work consists of a computer, a webcam, and a vertically oriented screen. The screen displays a blurred silhouette of a Buddha. When a viewer enters the webcam’s field of view, their face is merged and collaged with the Buddha silhouette and AI-generated images, creating a continuous interweaving of human, machine, and religion.\nHumans often imagine gods in their own image, while AI is also trained using humans as its reference. In turn, both gods and AI become objects of human faith, forming a recurring, recursive loop. As a result, the definitions and boundaries between the three gradually blur. What we worship seems at once to be something beyond humanity—and, at the same time, a reflection of ourselves.",
+    "videoUrls": [
+      "https://youtube.com/shorts/xUBnyI_IK8M"
+    ],
+    "venueId": "store-07"
+  },
+  {
+    "id": "district-12",
+    "type": "work",
+    "category": "district",
+    "area": "街區",
+    "mapNumber": "08",
+    "number": "08",
+    "title": "日常保存：冰淇淋",
+    "titleZh": "日常保存：冰淇淋",
+    "titleEn": "Everyday Storage: Ice Cream",
+    "year": "2026",
+    "workType": "影像裝置",
+    "medium": "影像裝置",
+    "description": "影像裝置系列《日常保存》使用人工智慧影像分類系統，在影像資料庫內提取與展出條件對應的片段，經過選擇與編排後於現地播放。\n本次展出作品《日常保存：冰淇淋》以 1950 年代以後的劇情電影作為主要影像來源。在這個時期，冰淇淋逐漸成為消費與休閒文化的一部分，也自然地出現於電影中的生活場景。\n作品集合來自不同年代、人物與敘事中的冰淇淋相關影像，試著將電影視為一種保存日常經驗的形式。這些被記錄與反覆觀看的片段，形塑了日常的想像。",
+    "videoUrl": "https://youtu.be/ECsMa6HxrOY",
+    "imageFolder": "district-08",
+    "coverImage": "assets/images/works/district/district-08/main.jpg",
+    "images": [
+      "assets/images/works/district/district-08/main.jpg",
+      "assets/images/works/district/district-08/01.png",
+      "assets/images/works/district/district-08/02.jpg",
+      "assets/images/works/district/district-08/03.jpg",
+      "assets/images/works/district/district-08/04.jpg"
+    ],
+    "artistIds": [
+      "artist-23"
+    ],
+    "workTypeEn": "Video installation",
+    "mediumEn": "Video installation",
+    "descriptionZh": "影像裝置系列《日常保存》使用人工智慧影像分類系統，在影像資料庫內提取與展出條件對應的片段，經過選擇與編排後於現地播放。\n本次展出作品《日常保存：冰淇淋》以 1950 年代以後的劇情電影作為主要影像來源。在這個時期，冰淇淋逐漸成為消費與休閒文化的一部分，也自然地出現於電影中的生活場景。\n作品集合來自不同年代、人物與敘事中的冰淇淋相關影像，試著將電影視為一種保存日常經驗的形式。這些被記錄與反覆觀看的片段，形塑了日常的想像。",
+    "descriptionEn": "Everyday Storage is a series of video installations that uses an AI image classification system to extract fragments from an image database according to exhibition-specific criteria. These fragments are then selected, arranged, and presented on site.\nEveryday Storage: Ice Cream draws primarily from narrative films made after the 1950s. During this period, ice cream gradually became part of consumer and leisure culture, naturally appearing in the everyday scenes portrayed in film.\nBringing together ice cream–related images from different periods, characters, and narratives, the work approaches film as a form of preserving everyday experience. These recorded and repeatedly viewed fragments contribute to an imagination of the everyday.",
+    "videoUrls": [
+      "https://youtu.be/ECsMa6HxrOY"
+    ],
+    "venueId": "store-08"
+  },
+  {
+    "id": "district-13",
+    "type": "work",
+    "category": "district",
+    "area": "街區",
+    "mapNumber": "09",
+    "number": "09",
+    "title": "意義生成",
+    "titleZh": "意義生成",
+    "titleEn": "Meaning",
+    "year": "2024",
+    "workType": "多頻道錄像",
+    "medium": "三頻道錄像",
+    "description": "作品以語言為起點，透過 AI 與人類的對話，探討科技如何介入思維、情感與感知。AI 以人類語言發聲，人類則以程式碼傳達思維；鍵盤聲、舞者身體與多頻道影像，共構一場人機之間的親密交流。作品從「聲音」、「身體」與「語言」三個面向，呈現 AI 凝視下被程式碼覆寫的身體，以及人類想像中由資料生成的虛擬世界，藉此重新思考人與 AI、技術與人性、真實與虛擬之間不斷變動的邊界。",
+    "videoUrl": "https://drive.google.com/file/d/150U2efvgK8mYunYcL4LKPXYRh2HY7Y4d/view?u",
+    "imageFolder": "district-09",
+    "coverImage": "assets/images/works/district/district-09/main.jpg",
+    "images": [
+      "assets/images/works/district/district-09/main.jpg",
+      "assets/images/works/district/district-09/01.JPG",
+      "assets/images/works/district/district-09/02.jpg",
+      "assets/images/works/district/district-09/03.JPG",
+      "assets/images/works/district/district-09/04.jpg"
+    ],
+    "artistIds": [
+      "artist-24"
+    ],
+    "workTypeEn": "Multi-channel video",
+    "mediumEn": "three-channel video installation",
+    "descriptionZh": "作品以語言為起點，透過 AI 與人類的對話，探討科技如何介入思維、情感與感知。AI 以人類語言發聲，人類則以程式碼傳達思維；鍵盤聲、舞者身體與多頻道影像，共構一場人機之間的親密交流。作品從「聲音」、「身體」與「語言」三個面向，呈現 AI 凝視下被程式碼覆寫的身體，以及人類想像中由資料生成的虛擬世界，藉此重新思考人與 AI、技術與人性、真實與虛擬之間不斷變動的邊界。",
+    "descriptionEn": "Language serves as the starting point of the work, exploring how AI intervenes in human thought, emotion, and perception. AI speaks through human language, while humans communicate through code. Keyboard sounds, the dancer’s body, and multi-channel video together form an intimate dialogue between human and machine. Through sound, body, and language, the work presents a body rewritten by code under the gaze of AI, alongside a virtual world generated from data through human imagination, reconsidering the shifting boundaries between humans and AI, technology and humanity, and the real and the virtual.",
+    "videoUrls": [
+      "https://drive.google.com/file/d/150U2efvgK8mYunYcL4LKPXYRh2HY7Y4d/view?u"
+    ],
+    "venueId": "store-09"
+  },
+  {
+    "id": "district-14",
+    "type": "work",
+    "category": "district",
+    "area": "街區",
+    "mapNumber": "10",
+    "number": "10",
+    "title": "十立方公分的殖民",
+    "titleZh": "十立方公分的殖民",
+    "titleEn": "A Volume of Colonization: 10 cm³",
+    "year": "2025",
+    "workType": "錄像裝置",
+    "medium": "單頻道錄像、自然現成物、壓克力板、紙本印刷物、投影機、喇叭",
+    "description": "當我偶然閱讀十九世紀英方探查台灣北部的紀錄時，那段紀錄以異國文字試圖勾勒此地的形貌，可是以外國語言所描述與測量的他方卻始終具有一股淺淺的侵佔口吻。\n在舊地重遊的過程中，我收集了文本路徑上對應的自然現成物，當我把這些外來文字重新放回土地上時,是否存在敘述與地景之間微妙的錯位？\n當投影的光線與文字覆蓋在石頭的表面時，彷彿是對物的占有，但卻又在石頭堅韌而粗造的紋理下被扭曲、切割......原本的描述也彷彿與土地形成一種牴觸或張力狀態。錄像方面則以地質學家的視角在石頭表面上進行探索、測量、研究等，以高精度的測量儀器、極為客觀的地質描述中揭示科學測量與殖民的幽微關係。",
+    "videoUrl": "https://drive.google.com/file/d/1n8bIwTVwjCnG63VbpJw7fkNXDTuxtC6/view?usp=",
+    "imageFolder": "district-10",
+    "coverImage": "assets/images/works/district/district-10/main.jpg",
+    "images": [
+      "assets/images/works/district/district-10/main.jpg",
+      "assets/images/works/district/district-10/01.jpg",
+      "assets/images/works/district/district-10/02.jpg",
+      "assets/images/works/district/district-10/03.jpg",
+      "assets/images/works/district/district-10/04.jpg",
+      "assets/images/works/district/district-10/05.jpg",
+      "assets/images/works/district/district-10/06.jpg",
+      "assets/images/works/district/district-10/07.jpg"
+    ],
+    "artistIds": [
+      "artist-25"
+    ],
+    "workTypeEn": "Video Installation",
+    "mediumEn": "Single-channel video, found natural objects, acrylic panels, printed matter on paper, projector, sound system",
+    "descriptionZh": "當我偶然閱讀十九世紀英方探查台灣北部的紀錄時，那段紀錄以異國文字試圖勾勒此地的形貌，可是以外國語言所描述與測量的他方卻始終具有一股淺淺的侵佔口吻。\n在舊地重遊的過程中，我收集了文本路徑上對應的自然現成物，當我把這些外來文字重新放回土地上時,是否存在敘述與地景之間微妙的錯位？\n當投影的光線與文字覆蓋在石頭的表面時，彷彿是對物的占有，但卻又在石頭堅韌而粗造的紋理下被扭曲、切割......原本的描述也彷彿與土地形成一種牴觸或張力狀態。錄像方面則以地質學家的視角在石頭表面上進行探索、測量、研究等，以高精度的測量儀器、極為客觀的地質描述中揭示科學測量與殖民的幽微關係。",
+    "descriptionEn": "When I encountered nineteenth-century British records of explorations in northern Taiwan, I became interested in how foreign language and measurement transformed the land into an object of observation and possession. Retracing these historical routes, I collected natural found objects corresponding to locations described in the archives.\nBy projecting the archival texts back onto the surfaces of stones, the work creates a dislocation between language and landscape. The projection resembles an act of occupation, yet the stones’ coarse textures distort and fragment the descriptions, producing friction between text and land.\nThe video adopts the perspective of a contemporary geologist, examining the stones through precise instruments and seemingly objective methods. By juxtaposing colonial records with contemporary scientific measurement, the work reflects on the intimate relationship between technologies of observation, territorial knowledge, and colonial logic.",
+    "videoUrls": [
+      "https://drive.google.com/file/d/1n8bIwTVwjCnG63VbpJw7fkNXDTuxtC6/view?usp="
+    ],
+    "venueId": "store-10"
+  }
+],
+  mapWorks: [
+  {
+    "id": "main-01",
+    "workId": "main-01",
+    "number": "01",
+    "mapNumber": "01",
+    "artist": "吳宜曄",
+    "artistEn": "I-Yeh Wu",
+    "title": "Generative Data",
+    "titleEn": "Generative Data",
+    "type": "錄像裝置",
+    "medium": "網路、生成式軟體、電腦、螢幕",
+    "mediumEn": "Internet, generative software, computer, display monitors",
+    "venueId": "venue-main"
+  },
+  {
+    "id": "main-02",
+    "workId": "main-02",
+    "number": "02",
+    "mapNumber": "02",
+    "artist": "無邊製造-林俊遑 / 黃紀虹 / 鄭子芸",
+    "artistEn": "No Side Here — Chun-Huang Lin / Chi-Hung Huang / Zih-Yun Jheng",
+    "title": "那些字已經無關緊要了",
+    "titleEn": "Those words are no longer relevant",
+    "type": "互動裝置",
+    "medium": "手機、金屬、電子零件、網頁",
+    "mediumEn": "mobile phones, metal, electronic components, webpage",
+    "venueId": "venue-main"
+  },
+  {
+    "id": "main-03",
+    "workId": "main-03",
+    "number": "03",
+    "mapNumber": "03",
+    "artist": "鄭先喻",
+    "artistEn": "Hsien-Yu Cheng",
+    "title": "這可能是你",
+    "titleEn": "It Could Be You",
+    "type": "即時生成影像裝置",
+    "medium": "軟體、印表機、熱感紙、即時生成影像、裝置可變",
+    "mediumEn": "Software, printer, thermal paper, real-time generative video, installations variable",
+    "venueId": "venue-main"
+  },
+  {
+    "id": "main-04",
+    "workId": "main-04",
+    "number": "04",
+    "mapNumber": "04",
+    "artist": "德里斯．德普特",
+    "artistEn": "Dries Depooter",
+    "title": "違規穿越馬路",
+    "titleEn": "Jaywalking",
+    "type": "互動裝置",
+    "medium": "按鈕、螢幕、電腦",
+    "mediumEn": "Button, Screen, Computer",
+    "venueId": "venue-main"
+  },
+  {
+    "id": "main-05",
+    "workId": "main-05",
+    "number": "05",
+    "mapNumber": "05",
+    "artist": "維麗娜．弗里德里希",
+    "artistEn": "Verena Friedrich",
+    "title": "EZ品質分解機V2",
+    "titleEn": "EZ Quality Soryer V2",
+    "type": "main",
+    "medium": "機械裝置、電腦",
+    "mediumEn": "Mechanical installation, computer",
+    "venueId": "venue-main"
+  },
+  {
+    "id": "main-06",
+    "workId": "main-06",
+    "number": "06",
+    "mapNumber": "06",
+    "artist": "C-LAB未來視覺實驗室",
+    "artistEn": "C-LAB’s Future Vision Lab",
+    "title": "GeodesicDome+3V+1a - Architectural Plans",
+    "titleEn": "GeodesicDome+3V+1a - Architectural Plans",
+    "type": "main",
+    "medium": "複合媒材 依場地而定",
+    "mediumEn": "Mixed media; dimensions and configuration variable depending on site",
+    "venueId": "venue-main"
+  },
+  {
+    "id": "main-07",
+    "workId": "main-07",
+    "number": "07",
+    "mapNumber": "07",
+    "artist": "史蒂芬．蒂芬格拉伯",
+    "artistEn": "Stefan Tiefengraber",
+    "title": "WM_EX10 TCM_200DV TP-VS500 MS-201 BK26 MG10",
+    "titleEn": "WM_EX10 TCM_200DV TP-VS500 MS-201 BK26 MG10",
+    "type": "多頻道錄像聲音裝置",
+    "medium": "",
+    "mediumEn": "",
+    "venueId": "venue-main"
+  },
+  {
+    "id": "main-08",
+    "workId": "main-08",
+    "number": "08",
+    "mapNumber": "08",
+    "artist": "何芯源",
+    "artistEn": "Hsin-Yuan Ho",
+    "title": "石夢 v2.0",
+    "titleEn": "Stone Dream v2.0",
+    "type": "聲音裝置",
+    "medium": "機械手臂、矽晶圓、岩石、接觸式麥克風、聲音系統",
+    "mediumEn": "Robotic arm, silicon wafer, stone, contact microphone, sound system",
+    "venueId": "venue-main"
+  },
+  {
+    "id": "main-09",
+    "workId": "main-09",
+    "number": "09",
+    "mapNumber": "09",
+    "artist": "傑德．伯克",
+    "artistEn": "Jed Berk",
+    "title": "Belugas’ Sphere",
+    "titleEn": "Belugas’ Sphere",
+    "type": "互動裝置",
+    "medium": "充氦 Mylar 鋁膜氣球、光線感測器、馬達、壓電式喇叭、電子元件、控制系統與燈光。最終的作品組件與設備規格，將依展覽場地條件與主辦單位協調後確認。",
+    "mediumEn": "helium-filled Mylar inflatables, light sensors, motors, piezo speakers, electronics, control systems, and light. Final component specifications will be confirmed in coordination with the organizer.",
+    "venueId": "venue-main"
+  },
+  {
+    "id": "outdoor-01",
+    "workId": "outdoor-01",
+    "number": "01",
+    "mapNumber": "01",
+    "artist": "林書瑜",
+    "artistEn": "Shu-Yu Lin",
+    "title": "皓夜",
+    "titleEn": "Luminous Night",
+    "type": "燈光裝置",
+    "medium": "不銹鋼、LED、壓克力、控制器",
+    "mediumEn": "Stainless steel、LED、Acrylic、Controller",
+    "venueId": "venue-outdoor"
+  },
+  {
+    "id": "outdoor-02",
+    "workId": "outdoor-02",
+    "number": "02",
+    "mapNumber": "02",
+    "artist": "聯合創作",
+    "artistEn": "Assocreation",
+    "title": "日光粉紅乒乓",
+    "titleEn": "Solar Pink Pong",
+    "type": "互動裝置",
+    "medium": "電腦控制彩色鏡面、動作感測器、太陽能板",
+    "mediumEn": "Computer controlled color mirror, motion sensor, \nsolar panels.",
+    "venueId": "venue-outdoor"
+  },
+  {
+    "id": "district-01",
+    "workId": "district-01",
+    "number": "01",
+    "mapNumber": "01",
+    "artist": "謝佩庭",
+    "artistEn": "Pei-Ting Hsieh",
+    "title": "科技幽靈",
+    "titleEn": "Ghosts of Google",
+    "type": "錄像裝置",
+    "medium": "多頻道錄像，彩色有聲",
+    "mediumEn": "multi-channel video, color, sound",
+    "venueId": "store-01"
+  },
+  {
+    "id": "district-02",
+    "workId": "district-02",
+    "number": "02",
+    "mapNumber": "02",
+    "artist": "陳芷渝",
+    "artistEn": "Chih-Yu Chen",
+    "title": "匯境",
+    "titleEn": "ReAlms Converging",
+    "type": "錄像",
+    "medium": "程式運算/生成藝術",
+    "mediumEn": "Generative Art",
+    "venueId": "store-02"
+  },
+  {
+    "id": "district-03",
+    "workId": "district-03",
+    "number": "03",
+    "mapNumber": "03",
+    "artist": "樊卓鏗",
+    "artistEn": "Cheuk Hang Fan",
+    "title": "我喺自強路食芭樂",
+    "titleEn": "I'm eating guava on self-improvement road",
+    "type": "錄像裝置",
+    "medium": "錄像/圖案布料",
+    "mediumEn": "video/ patterned fabric",
+    "venueId": "store-03"
+  },
+  {
+    "id": "district-04",
+    "workId": "district-04",
+    "number": "04_1",
+    "mapNumber": "04",
+    "artist": "陳政維",
+    "artistEn": "Cheng-Wei Chen",
+    "title": "我的反抗是如此規律",
+    "titleEn": "my resistance is so regular",
+    "type": "影像",
+    "medium": "CRT電視，3D列印雕塑",
+    "mediumEn": "CRT television, 3D-printed sculpture",
+    "venueId": "store-04"
+  },
+  {
+    "id": "district-05",
+    "workId": "district-05",
+    "number": "04_2",
+    "mapNumber": "04",
+    "artist": "郭子耘",
+    "artistEn": "Tzu-Yung Kuo",
+    "title": "景伸",
+    "titleEn": "Spectacle Extension",
+    "type": "錄像",
+    "medium": "六頻道影像",
+    "mediumEn": "six channels",
+    "venueId": "store-04"
+  },
+  {
+    "id": "district-06",
+    "workId": "district-06",
+    "number": "04_3",
+    "mapNumber": "04",
+    "artist": "沈宇軒",
+    "artistEn": "Yu-Hsuan Shen",
+    "title": "ID",
+    "titleEn": "ID",
+    "type": "互動裝置",
+    "medium": "即時互動影像、電子零件、金屬、馬達",
+    "mediumEn": "Real-time interactive video, electronic components, metal, motors",
+    "venueId": "store-04"
+  },
+  {
+    "id": "district-07",
+    "workId": "district-07",
+    "number": "04_4",
+    "mapNumber": "04",
+    "artist": "超級浪-洪譽豪 / 林思瑩 / 邱杰森 / 莫珊嵐 / 賴佩君",
+    "artistEn": "Hyper Wave",
+    "title": "《游離的引線》— 延伸版本",
+    "titleEn": "Dissociated Fuses",
+    "type": "裝置",
+    "medium": "PLA、木頭、壓克力顏料、慢速馬達、單頻道錄像、AI應用：使用人工智慧影像技術，即時運算台北的城市景觀",
+    "mediumEn": "PLA, wood, acrylic paint, slow-speed motor, single-channel video, and AI applications. Artificial intelligence imaging technology is used to process Taipei’s urban landscape in real time.",
+    "venueId": "store-04"
+  },
+  {
+    "id": "district-08",
+    "workId": "district-08",
+    "number": "04_5",
+    "mapNumber": "04",
+    "artist": "Bety Krňanská",
+    "artistEn": "Bety Krňanská",
+    "title": "I have a Crush on you",
+    "titleEn": "I have a Crush on you",
+    "type": "多媒材繪畫，拼布",
+    "medium": "畫布壓克力、虹彩顏料、AI 生成影像、昇華染料、拼布、蜂蠟、蕾絲、噴漆",
+    "mediumEn": "Acrylics and iridescent pigments on canvas, sublimation dye, patchwork, lace, spray paint",
+    "venueId": "store-04"
+  },
+  {
+    "id": "district-09",
+    "workId": "district-09",
+    "number": "05",
+    "mapNumber": "05",
+    "artist": "陳品蓁",
+    "artistEn": "Pin-Jhen Chen",
+    "title": "正在連結SOMA GPT",
+    "titleEn": "CONNECTING TO SOMA GPT",
+    "type": "互動多媒體作品",
+    "medium": "動畫、互動網頁、Web AR",
+    "mediumEn": "animation, interactive website, Web AR",
+    "venueId": "store-05"
+  },
+  {
+    "id": "district-10",
+    "workId": "district-10",
+    "number": "06",
+    "mapNumber": "06",
+    "artist": "簡嘉誼",
+    "artistEn": "Chia-Yi Chien",
+    "title": "呼吸的曼陀羅：共感知",
+    "titleEn": "The Breathing Mandala: Co-Perception",
+    "type": "錄像藝術",
+    "medium": "錄像藝術",
+    "mediumEn": "Video Art",
+    "venueId": "store-06"
+  },
+  {
+    "id": "district-11",
+    "workId": "district-11",
+    "number": "07",
+    "mapNumber": "07",
+    "artist": "楊子毅",
+    "artistEn": "Tzu-I Yang",
+    "title": "再重複的信仰",
+    "titleEn": "Recursive Religion",
+    "type": "互動裝置",
+    "medium": "電腦與攝影機",
+    "mediumEn": "computer and camera.",
+    "venueId": "store-07"
+  },
+  {
+    "id": "district-12",
+    "workId": "district-12",
+    "number": "08",
+    "mapNumber": "08",
+    "artist": "鄭芳宜",
+    "artistEn": "Fang-Yi Cheng",
+    "title": "日常保存：冰淇淋",
+    "titleEn": "Everyday Storage: Ice Cream",
+    "type": "影像裝置",
+    "medium": "影像裝置",
+    "mediumEn": "Video installation",
+    "venueId": "store-08"
+  },
+  {
+    "id": "district-13",
+    "workId": "district-13",
+    "number": "09",
+    "mapNumber": "09",
+    "artist": "黃姿婷",
+    "artistEn": "Tzu-Ting Huang",
+    "title": "意義生成",
+    "titleEn": "Meaning",
+    "type": "多頻道錄像",
+    "medium": "三頻道錄像",
+    "mediumEn": "three-channel video installation",
+    "venueId": "store-09"
+  },
+  {
+    "id": "district-14",
+    "workId": "district-14",
+    "number": "10",
+    "mapNumber": "10",
+    "artist": "余柏霆",
+    "artistEn": "Po-Ting Yu",
+    "title": "十立方公分的殖民",
+    "titleEn": "A Volume of Colonization: 10 cm³",
+    "type": "錄像裝置",
+    "medium": "單頻道錄像、自然現成物、壓克力板、紙本印刷物、投影機、喇叭",
+    "mediumEn": "Single-channel video, found natural objects, acrylic panels, printed matter on paper, projector, sound system",
+    "venueId": "store-10"
+  }
+],
+  venues: [
+  {
+    "id": "venue-main",
+    "displayNumber": "00",
+    "type": "main",
+    "nameZh": "臺北典藏植物園－主展場",
+    "nameEn": "Taipei Collectible Botanical Garden – Main Venue",
+    "workIds": [
+      "main-01",
+      "main-02",
+      "main-03",
+      "main-04",
+      "main-05",
+      "main-06",
+      "main-07",
+      "main-08",
+      "main-09"
+    ],
+    "images": [],
+    "businessHoursSchedule": null
+  },
+  {
+    "id": "venue-outdoor",
+    "displayNumber": "00",
+    "type": "outdoor",
+    "nameZh": "臺北典藏植物園－戶外",
+    "nameEn": "Taipei Collectible Botanical Garden – Outdoor Venue",
+    "workIds": [
+      "outdoor-01",
+      "outdoor-02"
+    ],
+    "images": [],
+    "businessHoursSchedule": null
+  },
+  {
+    "id": "store-01",
+    "displayNumber": "01",
+    "type": "district",
+    "nameZh": "Wild Open Space 北美館",
+    "nameEn": "Wild Open Space",
+    "address": "臺北市中山區圓山里中山北路三段181號B2",
+    "businessHours": [
+      "周一  公休",
+      "周二  10:00-17:30",
+      "周三  10:00-17:30",
+      "周四  10:00-17:30",
+      "周五  10:00-17:30",
+      "周六  10:00-20:30",
+      "周日  10:00-17:30"
+    ],
+    "phone": "02 2595 0898",
+    "description": "Wild Open Space (WOS) 是臺北市立美術館地下樓層的藝文餐飲空間，由跨足藝術策劃、音樂產業與數位科技的團隊共同打造，以「食飲 × 音樂 × 藝術」為核心，翻轉大眾對美術館餐飲的刻板印象。\n設計團隊透過無痕設計與柔和光源，加上鄰近的「迷霧花園」中庭，讓顧客在自然採光中與開闊視野中啜飲咖啡。\n除了咖啡與餐食，WOS還會不定期配合北美館當期展覽推出限定食飲，或舉辦音樂與文化類快閃活動，讓藝術能量持續發酵。",
+    "links": {
+      "website": "https://www.tfam.museum/Common/editor.aspx?id=68&ddlLang=zh-tw",
+      "instagram": "https://www.instagram.com/wildopenspace.taipei/",
+      "facebook": "https://www.facebook.com/wildopenspace.taipei/?locale=zh_TW"
+    },
+    "imageCount": 5,
+    "workIds": [
+      "district-01"
+    ],
+    "imageFolder": "assets/images/stores/store-01",
+    "images": [
+      "assets/images/stores/store-01/01.jpg",
+      "assets/images/stores/store-01/02.jpg",
+      "assets/images/stores/store-01/03.jpg",
+      "assets/images/stores/store-01/04.jpg",
+      "assets/images/stores/store-01/05.jpg"
+    ],
+    "businessHoursSchedule": {
+      "0": [
+        {
+          "open": "10:00",
+          "close": "17:30"
+        }
+      ],
+      "1": null,
+      "2": [
+        {
+          "open": "10:00",
+          "close": "17:30"
+        }
+      ],
+      "3": [
+        {
+          "open": "10:00",
+          "close": "17:30"
+        }
+      ],
+      "4": [
+        {
+          "open": "10:00",
+          "close": "17:30"
+        }
+      ],
+      "5": [
+        {
+          "open": "10:00",
+          "close": "17:30"
+        }
+      ],
+      "6": [
+        {
+          "open": "10:00",
+          "close": "20:30"
+        }
+      ]
+    },
+    "addressZh": "臺北市中山區圓山里中山北路三段181號B2",
+    "addressEn": "B2., No. 181, Sec. 3, Zhongshan N. Rd., Zhongshan Dist., Taipei City 104027, Taiwan (R.O.C.)",
+    "descriptionZh": "Wild Open Space (WOS) 是臺北市立美術館地下樓層的藝文餐飲空間，由跨足藝術策劃、音樂產業與數位科技的團隊共同打造，以「食飲 × 音樂 × 藝術」為核心，翻轉大眾對美術館餐飲的刻板印象。\n設計團隊透過無痕設計與柔和光源，加上鄰近的「迷霧花園」中庭，讓顧客在自然採光中與開闊視野中啜飲咖啡。\n除了咖啡與餐食，WOS還會不定期配合北美館當期展覽推出限定食飲，或舉辦音樂與文化類快閃活動，讓藝術能量持續發酵。",
+    "descriptionEn": "Wild Open Space (WOS), located on the basement level of the Taipei Fine Arts Museum, is a cultural dining space created by a multidisciplinary team working across art curation, the music industry, and digital technology. Centered on the concept of “Food × Music × Art,” WOS reimagines the conventional museum dining experience.\n\nWith its seamless design, soft lighting, and proximity to the Mist Garden courtyard, the space invites visitors to enjoy coffee amid natural light and an open, airy atmosphere.\n\nBeyond coffee and dining, WOS occasionally introduces limited-edition food and drinks inspired by current exhibitions at the museum, as well as pop-up music and cultural events, allowing artistic energy to extend beyond the galleries.",
+    "businessHoursEn": [
+      "Mon Closed",
+      "Tue–Fri 10:00–17:30",
+      "Sat 10:00–20:30",
+      "Sun 10:00–17:30"
+    ]
+  },
+  {
+    "id": "store-02",
+    "displayNumber": "02",
+    "type": "district",
+    "nameZh": "CNSalon <br>火山口下的花茶店",
+    "nameEn": "CNSalon",
+    "address": "臺北市中山區圓山里中山北路三段53號",
+    "businessHours": [
+      "周一  公休",
+      "周二  12:00-18:00",
+      "周三  12:00-18:00",
+      "周四  12:00-18:00",
+      "周五  12:00-18:00",
+      "周六  12:00-18:00",
+      "周日  公休"
+    ],
+    "phone": "02-27789666",
+    "description": "台灣知名花藝品牌「CNFlower 西恩」創辦人凌宗湧，汲取陽明山火山口下CN西恩花園的靈感，於圓山花博周邊打造 CNSalon-火山口下的花草茶店，提供民眾自由不受限的五感體驗。\n店內的裝潢彷彿復刻了陽明山上的花園地景，透過花草茶帶領民眾感受「味蕾花束」的繽紛體驗，冰櫃中的花菓冰，也成為讓人愛不釋手的消暑聖品。\nCNSalon 更有不定期的藝文展覽與美學課程，為繁忙都市打造出一處品嚐綠意的難得空間。",
+    "links": {
+      "website": "https://shop.cnflower.com.tw/",
+      "instagram": "https://www.instagram.com/cnsalonofficial/",
+      "facebook": "https://www.facebook.com/cnfcnsalon/?locale=zh_TW"
+    },
+    "imageCount": 7,
+    "workIds": [
+      "district-02"
+    ],
+    "imageFolder": "assets/images/stores/store-02",
+    "images": [
+      "assets/images/stores/store-02/01.jpg",
+      "assets/images/stores/store-02/02.jpg",
+      "assets/images/stores/store-02/03.jpg",
+      "assets/images/stores/store-02/04.jpg",
+      "assets/images/stores/store-02/05.jpg",
+      "assets/images/stores/store-02/06.jpg",
+      "assets/images/stores/store-02/07.jpg"
+    ],
+    "businessHoursSchedule": {
+      "0": null,
+      "1": null,
+      "2": [
+        {
+          "open": "12:00",
+          "close": "18:00"
+        }
+      ],
+      "3": [
+        {
+          "open": "12:00",
+          "close": "18:00"
+        }
+      ],
+      "4": [
+        {
+          "open": "12:00",
+          "close": "18:00"
+        }
+      ],
+      "5": [
+        {
+          "open": "12:00",
+          "close": "18:00"
+        }
+      ],
+      "6": [
+        {
+          "open": "12:00",
+          "close": "18:00"
+        }
+      ]
+    },
+    "addressZh": "臺北市中山區圓山里中山北路三段53號",
+    "addressEn": "No. 53, Sec. 3, Zhongshan N. Rd., Zhongshan Dist., Taipei City 104029, Taiwan (R.O.C.)",
+    "descriptionZh": "台灣知名花藝品牌「CNFlower 西恩」創辦人凌宗湧，汲取陽明山火山口下CN西恩花園的靈感，於圓山花博周邊打造 CNSalon-火山口下的花草茶店，提供民眾自由不受限的五感體驗。\n店內的裝潢彷彿復刻了陽明山上的花園地景，透過花草茶帶領民眾感受「味蕾花束」的繽紛體驗，冰櫃中的花菓冰，也成為讓人愛不釋手的消暑聖品。\nCNSalon 更有不定期的藝文展覽與美學課程，為繁忙都市打造出一處品嚐綠意的難得空間。",
+    "descriptionEn": "CNSalon was founded by Chung-Yung Ling, founder of renowned Taiwanese floral brand CNFlower. Inspired by the CN Garden beneath the volcanic landscape of Yangmingshan, he created this herbal tea salon near Taipei Expo Park as a place where visitors can freely engage all five senses.\n\nThe interior evokes the atmosphere of a garden in Yangmingshan, while its herbal teas offer a colorful “bouquet for the palate.” Its refreshing floral and fruit ice treats are another signature favorite.\n\nCNSalon also hosts occasional art exhibitions and aesthetics workshops, creating a rare urban retreat where visitors can slow down and experience greenery through taste, scent, and design.",
+    "businessHoursEn": [
+      "Mon Closed",
+      "Tue–Sat 12:00–18:00",
+      "Sun Closed"
+    ]
+  },
+  {
+    "id": "store-03",
+    "displayNumber": "03",
+    "type": "district",
+    "nameZh": "覓’s 咖啡小酒館",
+    "nameEn": "Miss Coffee Bar",
+    "address": "臺北市中山區圓山里雙城街49巷1號",
+    "businessHours": [
+      "周一  10:30-22:00",
+      "周二  10:30-22:00",
+      "周三  10:30-22:00",
+      "周四  10:30-22:00",
+      "周五  10:30-00:00",
+      "周六  10:00-00:00",
+      "周日  10:00-22:00"
+    ],
+    "phone": "02-25980027",
+    "description": "覓's咖啡小酒館 Miss Coffee Bar 位於雙城街巷弄，是主打全天候供應早午餐與特調飲品的複合式餐酒館，以「尋覓自我、找回靈魂」為初衷，打破白天喝咖啡、晚上微醺的既定框架。\n店內裝設投影機與電視轉播運動賽事，營造極 Chill 的氛圍感。英式假期早餐盤與炸物是店內人氣品項，店家還會配合季節推出創意特調，讓民眾沉浸在節慶氛圍中。\n想要自由享受生活，覓's絕對能滿足人們渴望放鬆的心靈。",
+    "links": {
+      "instagram": "https://www.instagram.com/miss_coffee_bar/",
+      "facebook": "https://www.facebook.com/p/%E8%A6%93s%E5%92%96%E5%95%A1%E5%B0%8F%E9%85%92%E9%A4%A8-Miss-Coffee-Bar-100066358886353/?locale=zh_TW"
+    },
+    "imageCount": 15,
+    "workIds": [
+      "district-03"
+    ],
+    "imageFolder": "assets/images/stores/store-03",
+    "images": [
+      "assets/images/stores/store-03/01.jpg",
+      "assets/images/stores/store-03/02.jpg",
+      "assets/images/stores/store-03/03.jpg",
+      "assets/images/stores/store-03/04.jpg",
+      "assets/images/stores/store-03/05.jpg",
+      "assets/images/stores/store-03/06.jpg",
+      "assets/images/stores/store-03/07.jpg",
+      "assets/images/stores/store-03/08.jpg",
+      "assets/images/stores/store-03/09.jpg",
+      "assets/images/stores/store-03/10.jpg",
+      "assets/images/stores/store-03/11.jpg",
+      "assets/images/stores/store-03/12.jpg",
+      "assets/images/stores/store-03/13.jpg",
+      "assets/images/stores/store-03/14.jpg",
+      "assets/images/stores/store-03/15.jpg"
+    ],
+    "businessHoursSchedule": {
+      "0": [
+        {
+          "open": "10:00",
+          "close": "22:00"
+        }
+      ],
+      "1": [
+        {
+          "open": "10:30",
+          "close": "22:00"
+        }
+      ],
+      "2": [
+        {
+          "open": "10:30",
+          "close": "22:00"
+        }
+      ],
+      "3": [
+        {
+          "open": "10:30",
+          "close": "22:00"
+        }
+      ],
+      "4": [
+        {
+          "open": "10:30",
+          "close": "22:00"
+        }
+      ],
+      "5": [
+        {
+          "open": "10:30",
+          "close": "00:00"
+        }
+      ],
+      "6": [
+        {
+          "open": "10:00",
+          "close": "00:00"
+        }
+      ]
+    },
+    "addressZh": "臺北市中山區圓山里雙城街49巷1號",
+    "addressEn": "No. 1, Ln. 49, Shuangcheng St., Zhongshan Dist., Taipei City 104039, Taiwan (R.O.C.)",
+    "descriptionZh": "覓's咖啡小酒館 Miss Coffee Bar 位於雙城街巷弄，是主打全天候供應早午餐與特調飲品的複合式餐酒館，以「尋覓自我、找回靈魂」為初衷，打破白天喝咖啡、晚上微醺的既定框架。\n店內裝設投影機與電視轉播運動賽事，營造極 Chill 的氛圍感。英式假期早餐盤與炸物是店內人氣品項，店家還會配合季節推出創意特調，讓民眾沉浸在節慶氛圍中。\n想要自由享受生活，覓's絕對能滿足人們渴望放鬆的心靈。",
+    "descriptionEn": "Tucked away in an alley off Shuangcheng Street, Miss Coffee Bar is an all-day café and bistro serving brunch, signature drinks, and cocktails. Founded around the idea of “seeking oneself and rediscovering the soul,” it blurs the conventional boundary between daytime coffee and evening drinks.\n\nEquipped with a projector and screens for sports broadcasts, the space offers a laid-back, easygoing atmosphere. Its British-style breakfast platter and fried snacks are among the most popular choices, while seasonal signature drinks add a playful touch throughout the year.\n\nWhether stopping by for coffee, brunch, or a drink at night, Miss Coffee Bar offers a relaxed space to unwind and enjoy life at your own pace.",
+    "businessHoursEn": [
+      "Mon–Thu 10:30–22:00",
+      "Fri 10:30–00:00",
+      "Sat 10:00–00:00",
+      "Sun 10:00–22:00"
+    ]
+  },
+  {
+    "id": "store-04",
+    "displayNumber": "04",
+    "type": "district",
+    "nameZh": "歐華酒店",
+    "nameEn": "The Riviera Hotel",
+    "address": "臺北市中山區圓山里林森北路646號",
+    "businessHours": [
+      "全天營業"
+    ],
+    "phone": "02-25853258",
+    "description": "散發著普羅旺斯風情的歐華酒店（The Riviera Hotel）座落於台北市中山區，鄰近92公頃的綠地包括大佳河濱公園和台北典藏植物園。\n飯店由享譽國際的法籍建築師 Gerard Jardonnet 親自設計，巧妙融合法國布雜建築風格與東方文物線條，營造典雅舒適的別墅感。歐華酒店是台灣首家榮獲美國 LEED 綠建築白金級認證的飯店，綠意盎然的空中花園、採光極佳的中庭天井，讓旅客在繁華都市中，仍能享受被大自然環抱的體驗。",
+    "links": {
+      "website": "https://www.rivierataipei.com/"
+    },
+    "imageCount": 6,
+    "workIds": [
+      "district-04",
+      "district-05",
+      "district-06",
+      "district-07",
+      "district-08"
+    ],
+    "imageFolder": "assets/images/stores/store-04",
+    "images": [
+      "assets/images/stores/store-04/01.jpg",
+      "assets/images/stores/store-04/02.jpg",
+      "assets/images/stores/store-04/03.jpg",
+      "assets/images/stores/store-04/04.jpg",
+      "assets/images/stores/store-04/05.jpg",
+      "assets/images/stores/store-04/06.jpg"
+    ],
+    "businessHoursSchedule": {
+      "0": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "1": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "2": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "3": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "4": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "5": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "6": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ]
+    },
+    "addressZh": "臺北市中山區圓山里林森北路646號",
+    "addressEn": "No. 646, Linsen N. Rd., Zhongshan Dist., Taipei City 104031, Taiwan (R.O.C.)",
+    "descriptionZh": "散發著普羅旺斯風情的歐華酒店（The Riviera Hotel）座落於台北市中山區，鄰近92公頃的綠地包括大佳河濱公園和台北典藏植物園。\n飯店由享譽國際的法籍建築師 Gerard Jardonnet 親自設計，巧妙融合法國布雜建築風格與東方文物線條，營造典雅舒適的別墅感。歐華酒店是台灣首家榮獲美國 LEED 綠建築白金級認證的飯店，綠意盎然的空中花園、採光極佳的中庭天井，讓旅客在繁華都市中，仍能享受被大自然環抱的體驗。",
+    "descriptionEn": "The Riviera Hotel, located in Taipei’s Zhongshan District, brings a touch of Provence to the city and sits close to 92 hectares of green space, including Dajia Riverside Park and the Taipei Collectible Botanical Garden.\n\nDesigned by renowned French architect Gérard Jardonnet, the hotel combines French Beaux-Arts architectural elements with details inspired by Eastern art and artifacts, creating the elegance and comfort of a private villa.\n\nAs Taiwan’s first hotel to receive LEED Platinum certification, The Riviera Hotel also features a lush rooftop garden and a light-filled central atrium, offering guests a refreshing connection with nature in the heart of the city.",
+    "businessHoursEn": [
+      "Open 24 hours daily"
+    ]
+  },
+  {
+    "id": "store-05",
+    "displayNumber": "05",
+    "type": "district",
+    "nameZh": "異世界咖啡館．澐月",
+    "nameEn": "Isekai Cafe Ungetsu",
+    "address": "臺北市中山區晴光里雙城街32巷10-1號",
+    "businessHours": [
+      "周一  16:00-21:00",
+      "周二  16:00-21:00",
+      "周三  公休",
+      "周四  16:00-21:00",
+      "周五  16:00-21:00",
+      "周六  13:00-21:00",
+      "周日  13:00-21:00"
+    ],
+    "phone": "02-25981498",
+    "description": "「異世界咖啡館・澐月」是一間隱身於雙城街巷弄，以劍與魔法世界為背景、黑暗城堡風「冒險者公會」為舞台打造的沉浸式主題咖啡廳。\n來訪的顧客將化身踏入異世界的「冒險者」，由不同種族與性格的公會職員接待，透過場景佈置、角色設定、特色餐飲、任務與互動，共同展開一段奇幻旅程。\n店內亦設有舞台與音響，不定期舉辦表演、同好聚會與主題活動；從象徵討伐強敵的「炙燒歐克將軍蓋飯」到以傳說魔物為靈感打造的牛舌料理「米陶洛斯之吻」及各式異世界料理，希望讓每一次來訪不只是用餐，更像是在旅途中短暫踏入另一個世界，留下屬於自己的冒險故事。",
+    "links": {
+      "website": "https://linktr.ee/isekaicafe_ungetsu"
+    },
+    "imageCount": 8,
+    "workIds": [
+      "district-09"
+    ],
+    "imageFolder": "assets/images/stores/store-05",
+    "images": [
+      "assets/images/stores/store-05/01.jpg",
+      "assets/images/stores/store-05/02.jpg",
+      "assets/images/stores/store-05/03.jpg",
+      "assets/images/stores/store-05/04.jpg",
+      "assets/images/stores/store-05/05.jpg",
+      "assets/images/stores/store-05/06.jpg",
+      "assets/images/stores/store-05/07.jpg",
+      "assets/images/stores/store-05/08.jpg"
+    ],
+    "businessHoursSchedule": {
+      "0": [
+        {
+          "open": "13:00",
+          "close": "21:00"
+        }
+      ],
+      "1": [
+        {
+          "open": "16:00",
+          "close": "21:00"
+        }
+      ],
+      "2": [
+        {
+          "open": "16:00",
+          "close": "21:00"
+        }
+      ],
+      "3": null,
+      "4": [
+        {
+          "open": "16:00",
+          "close": "21:00"
+        }
+      ],
+      "5": [
+        {
+          "open": "16:00",
+          "close": "21:00"
+        }
+      ],
+      "6": [
+        {
+          "open": "13:00",
+          "close": "21:00"
+        }
+      ]
+    },
+    "addressZh": "臺北市中山區晴光里雙城街32巷10-1號",
+    "addressEn": "No. 10-1, Ln. 32, Shuangcheng St., Zhongshan Dist., Taipei City 104628, Taiwan (R.O.C.)",
+    "descriptionZh": "「異世界咖啡館・澐月」是一間隱身於雙城街巷弄，以劍與魔法世界為背景、黑暗城堡風「冒險者公會」為舞台打造的沉浸式主題咖啡廳。\n來訪的顧客將化身踏入異世界的「冒險者」，由不同種族與性格的公會職員接待，透過場景佈置、角色設定、特色餐飲、任務與互動，共同展開一段奇幻旅程。\n店內亦設有舞台與音響，不定期舉辦表演、同好聚會與主題活動；從象徵討伐強敵的「炙燒歐克將軍蓋飯」到以傳說魔物為靈感打造的牛舌料理「米陶洛斯之吻」及各式異世界料理，希望讓每一次來訪不只是用餐，更像是在旅途中短暫踏入另一個世界，留下屬於自己的冒險故事。",
+    "descriptionEn": "Isekaicafe Ungetsu is an immersive themed café tucked away in the alleys of Shuangcheng Street. Set in a world of swords and magic, the café takes the form of an “Adventurers’ Guild” housed within a dark castle.\nVisitors step into this otherworld as “adventurers,” welcomed by guild staff portraying characters of different races and personalities. Through immersive settings, character-driven interactions, themed food and drinks, quests, and other interactive experiences, guests are invited to embark on a fantasy journey of their own.\nThe café also features a stage and sound system, hosting occasional performances, fan gatherings, and themed events. Its otherworldly menu ranges from the “Flame-Seared General Orc Rice Bowl,” inspired by the triumph over a formidable foe, to “Kiss of the Minotaur,” a beef tongue dish inspired by the legendary creature, alongside a variety of fantasy-themed creations.\nAt Isekaicafe Ungetsu, each visit is designed to be more than a meal—it is a brief passage into another world, where every guest can leave with an adventure story of their own.",
+    "businessHoursEn": [
+      "Mon–Tue 16:00–21:00",
+      "Wed Closed",
+      "Thu–Fri 16:00–21:00",
+      "Sat–Sun 13:00–21:00"
+    ]
+  },
+  {
+    "id": "store-06",
+    "displayNumber": "06",
+    "type": "district",
+    "nameZh": "台北花苑",
+    "nameEn": "Taipei Florist",
+    "address": "臺北市中山區晴光里雙城街28巷1號",
+    "businessHours": [
+      "周一  公休",
+      "周二  09:00-18:30",
+      "周三  09:00-18:30",
+      "周四  09:00-18:30",
+      "周五  09:00-18:30",
+      "周六  09:00-18:30",
+      "周日  公休"
+    ],
+    "phone": "02-25922711",
+    "description": "Taipei Florist｜六十年，花開不止\n一朵花，開啟一段故事。\n1966年，台北花苑從一段因花而起的緣分開始。六十年來，我們以花為媒介，從生活走向藝術，從台北走向世界，持續探索植物、空間與人的關係。\n承襲家族花藝底蘊，藝術總監林惠理（Elly Lin）以植物為語彙，融合東方意境與西方結構，讓花藝成為一種跨越生活、空間與藝術的創作語言。\n台北花苑以精品花藝的美學精神，持續投入藝術展演、花藝教育與國際交流，也積極與新世代創作者合作，為年輕藝術家提供發聲與實驗的舞台。\n六十年，不只是時間的累積，更是一場持續發生的創作。\nTaipei Florist 台北花苑｜六十年，花開不止。",
+    "links": {
+      "website": "https://www.taipeiflorist.com.tw/",
+      "instagram": "https://www.instagram.com/taipeiflorist/",
+      "facebook": "https://www.facebook.com/taipei.florist/?locale=zh_TW"
+    },
+    "imageCount": 1,
+    "workIds": [
+      "district-10"
+    ],
+    "imageFolder": "assets/images/stores/store-06",
+    "images": [],
+    "businessHoursSchedule": {
+      "0": null,
+      "1": null,
+      "2": [
+        {
+          "open": "09:00",
+          "close": "18:30"
+        }
+      ],
+      "3": [
+        {
+          "open": "09:00",
+          "close": "18:30"
+        }
+      ],
+      "4": [
+        {
+          "open": "09:00",
+          "close": "18:30"
+        }
+      ],
+      "5": [
+        {
+          "open": "09:00",
+          "close": "18:30"
+        }
+      ],
+      "6": [
+        {
+          "open": "09:00",
+          "close": "18:30"
+        }
+      ]
+    },
+    "addressZh": "臺北市中山區晴光里雙城街28巷1號",
+    "addressEn": "No. 1, Ln. 28, Shuangcheng St., Zhongshan Dist., Taipei City 104039, Taiwan (R.O.C.)",
+    "descriptionZh": "Taipei Florist｜六十年，花開不止\n一朵花，開啟一段故事。\n1966年，台北花苑從一段因花而起的緣分開始。六十年來，我們以花為媒介，從生活走向藝術，從台北走向世界，持續探索植物、空間與人的關係。\n承襲家族花藝底蘊，藝術總監林惠理（Elly Lin）以植物為語彙，融合東方意境與西方結構，讓花藝成為一種跨越生活、空間與藝術的創作語言。\n台北花苑以精品花藝的美學精神，持續投入藝術展演、花藝教育與國際交流，也積極與新世代創作者合作，為年輕藝術家提供發聲與實驗的舞台。\n六十年，不只是時間的累積，更是一場持續發生的創作。\nTaipei Florist 台北花苑｜六十年，花開不止。",
+    "descriptionEn": "Taipei Florist | Sixty Years in Bloom\n\nA single flower can be the beginning of a story.\n\nFounded in 1966, Taipei Florist began with a connection brought to life through flowers. Over the past sixty years, flowers have remained at the heart of its journey—from everyday life to artistic practice, and from Taipei to the world—continuously exploring the relationships between plants, space, and people.\n\nBuilding on her family’s legacy in floral art, Artistic Director Elly Lin works with plants as her creative vocabulary, bringing together Eastern sensibilities and Western structures. Through her practice, floral design becomes a creative language that moves fluidly across everyday life, spatial design, and art.\n\nGuided by the aesthetics and craftsmanship of fine floral design, Taipei Florist continues to engage in artistic presentations, floral education, and international exchange. It also actively collaborates with a new generation of creators, providing emerging artists with a platform for experimentation and expression.\n\nSixty years is more than the passage of time—it is an ongoing act of creation.\n\nTaipei Florist | Sixty Years in Bloom",
+    "businessHoursEn": [
+      "Mon Closed",
+      "Tue–Sat 09:00–18:30",
+      "Sun Closed"
+    ]
+  },
+  {
+    "id": "store-07",
+    "displayNumber": "07",
+    "type": "district",
+    "nameZh": "批薩謎勒",
+    "nameEn": "Happy Buddha Pizza",
+    "address": "臺北市中山區晴光里雙城街18巷16號",
+    "businessHours": [
+      "周一  11:30-15:00 / 17:30-21:00",
+      "周二  公休",
+      "周三  11:30-15:00 / 17:30-21:00",
+      "周四  11:30-15:00 / 17:30-21:00",
+      "周五  11:30-15:00 / 17:30-21:30",
+      "周六  11:30-15:00 / 17:30-21:30",
+      "周日  11:30-15:00 / 17:30-21:30"
+    ],
+    "phone": "02-25350755",
+    "description": "批薩謎勒 Happy Buddha Pizza 是位於雙城街巷弄內的窯烤披薩店，店名靈感來自於「彌勒佛」的寬容與慷慨，希望讓每位饕客在品嚐美味時，能被快樂的氛圍所擁抱。\n店內以多巴胺色彩、 Y2K 風格設計，繽紛吸睛的色彩美學成為極具視覺張力的拍攝點位。除了經典披薩口味外，店家突破傳統研發出未來肉、蒟蒻等新穎蔬食選項，身為寵物友善餐廳，還專門研發「毛孩專屬餐點」，讓飼主與毛孩共創回憶。",
+    "links": {
+      "instagram": "https://www.instagram.com/happy_buddha_pizza.tpe/"
+    },
+    "imageCount": 8,
+    "workIds": [
+      "district-11"
+    ],
+    "imageFolder": "assets/images/stores/store-07",
+    "images": [
+      "assets/images/stores/store-07/01.jpg",
+      "assets/images/stores/store-07/02.jpg",
+      "assets/images/stores/store-07/03.jpg",
+      "assets/images/stores/store-07/04.jpg",
+      "assets/images/stores/store-07/05.jpg",
+      "assets/images/stores/store-07/06.jpg",
+      "assets/images/stores/store-07/07.jpg",
+      "assets/images/stores/store-07/08.jpg"
+    ],
+    "businessHoursSchedule": {
+      "0": [
+        {
+          "open": "11:30",
+          "close": "15:00"
+        },
+        {
+          "open": "17:30",
+          "close": "21:30"
+        }
+      ],
+      "1": [
+        {
+          "open": "11:30",
+          "close": "15:00"
+        },
+        {
+          "open": "17:30",
+          "close": "21:00"
+        }
+      ],
+      "2": null,
+      "3": [
+        {
+          "open": "11:30",
+          "close": "15:00"
+        },
+        {
+          "open": "17:30",
+          "close": "21:00"
+        }
+      ],
+      "4": [
+        {
+          "open": "11:30",
+          "close": "15:00"
+        },
+        {
+          "open": "17:30",
+          "close": "21:00"
+        }
+      ],
+      "5": [
+        {
+          "open": "11:30",
+          "close": "15:00"
+        },
+        {
+          "open": "17:30",
+          "close": "21:30"
+        }
+      ],
+      "6": [
+        {
+          "open": "11:30",
+          "close": "15:00"
+        },
+        {
+          "open": "17:30",
+          "close": "21:30"
+        }
+      ]
+    },
+    "addressZh": "臺北市中山區晴光里雙城街18巷16號",
+    "addressEn": "No. 16, Ln. 18, Shuangcheng St., Zhongshan Dist., Taipei City 104039, Taiwan (R.O.C.)",
+    "descriptionZh": "批薩謎勒 Happy Buddha Pizza 是位於雙城街巷弄內的窯烤披薩店，店名靈感來自於「彌勒佛」的寬容與慷慨，希望讓每位饕客在品嚐美味時，能被快樂的氛圍所擁抱。\n店內以多巴胺色彩、 Y2K 風格設計，繽紛吸睛的色彩美學成為極具視覺張力的拍攝點位。除了經典披薩口味外，店家突破傳統研發出未來肉、蒟蒻等新穎蔬食選項，身為寵物友善餐廳，還專門研發「毛孩專屬餐點」，讓飼主與毛孩共創回憶。",
+    "descriptionEn": "Happy Buddha Pizza is a wood-fired pizzeria tucked away in an alley off Shuangcheng Street. Its name draws inspiration from the generosity and joyful spirit associated with the Laughing Buddha, reflecting the restaurant’s wish to surround every guest with happiness while they enjoy their meal.\n\nThe interior combines vibrant dopamine colors with Y2K-inspired design, creating an eye-catching and highly photogenic space. Alongside classic pizzas, the menu explores unconventional vegetarian ingredients such as plant-based meat and konjac.\n\nAs a pet-friendly restaurant, Happy Buddha Pizza even offers dishes specially created for furry companions, making it a welcoming place for guests and their pets to share a meal and create memories together.",
+    "businessHoursEn": [
+      "Mon 11:30–15:00 / 17:30–21:00",
+      "Tue Closed",
+      "Wed–Thu 11:30–15:00 / 17:30–21:00",
+      "Fri–Sun 11:30–15:00 / 17:30–21:30"
+    ]
+  },
+  {
+    "id": "store-08",
+    "displayNumber": "08",
+    "type": "district",
+    "nameZh": "L'Unicorno Gelato <br>義式手工冰淇淋",
+    "nameEn": "L'Unicorno Gelato",
+    "address": "臺北市中山區晴光里新生北路三段68巷5號",
+    "businessHours": [
+      "周一  公休",
+      "周二  12:00-20:00",
+      "周三  12:00-20:00",
+      "周四  12:00-20:00",
+      "周五  12:00-20:00",
+      "周六  12:00-20:00",
+      "周日  12:00-20:00"
+    ],
+    "phone": "-",
+    "description": "L'Unicorno Gelato 義式手工冰淇淋位於新生北路巷弄內，店家主打老闆純手製作的義式冰淇淋，呈現天然食材的細緻綿密與極致口感。\n店內空間由老宅改建而成，木質桌椅搭配暖色調燈光，營造優雅舒適的用餐氛圍。除固定口味，店家也選用當季水果推出特色口味，與咖啡、阿芙佳朵（Affogato）的搭配，帶給顧客新穎的味覺體驗。\n在毛孩落地自由互動的寵物友善空間中，民眾能夠愜意度過慵懶的午後時光。",
+    "links": {
+      "website": "https://lunicornospace.web.app/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAae-Ofsl5P-pNdZz31fcn5YmC4TIt32xB2odB48Bgw3fzI576F_x8Cs4VaU16g_aem_mN67Z08Bf7A1o2mc40qsoA",
+      "instagram": "https://www.instagram.com/gelato_lunicorno/",
+      "facebook": "https://www.facebook.com/profile.php?id=61573765556317&ref=PROFILE_EDIT_xav_ig_profile_page_web#"
+    },
+    "imageCount": 10,
+    "workIds": [
+      "district-12"
+    ],
+    "imageFolder": "assets/images/stores/store-08",
+    "images": [
+      "assets/images/stores/store-08/01.jpg",
+      "assets/images/stores/store-08/02.jpg",
+      "assets/images/stores/store-08/03.jpg",
+      "assets/images/stores/store-08/04.jpg",
+      "assets/images/stores/store-08/05.jpg",
+      "assets/images/stores/store-08/06.jpg",
+      "assets/images/stores/store-08/07.jpg",
+      "assets/images/stores/store-08/08.jpg",
+      "assets/images/stores/store-08/09.jpg",
+      "assets/images/stores/store-08/10.jpg"
+    ],
+    "businessHoursSchedule": {
+      "0": [
+        {
+          "open": "12:00",
+          "close": "20:00"
+        }
+      ],
+      "1": null,
+      "2": [
+        {
+          "open": "12:00",
+          "close": "20:00"
+        }
+      ],
+      "3": [
+        {
+          "open": "12:00",
+          "close": "20:00"
+        }
+      ],
+      "4": [
+        {
+          "open": "12:00",
+          "close": "20:00"
+        }
+      ],
+      "5": [
+        {
+          "open": "12:00",
+          "close": "20:00"
+        }
+      ],
+      "6": [
+        {
+          "open": "12:00",
+          "close": "20:00"
+        }
+      ]
+    },
+    "addressZh": "臺北市中山區晴光里新生北路三段68巷5號",
+    "addressEn": "No. 5, Ln. 68, Sec. 3, Xinsheng N. Rd., Zhongshan Dist., Taipei City 104032, Taiwan (R.O.C.)",
+    "descriptionZh": "L'Unicorno Gelato 義式手工冰淇淋位於新生北路巷弄內，店家主打老闆純手製作的義式冰淇淋，呈現天然食材的細緻綿密與極致口感。\n店內空間由老宅改建而成，木質桌椅搭配暖色調燈光，營造優雅舒適的用餐氛圍。除固定口味，店家也選用當季水果推出特色口味，與咖啡、阿芙佳朵（Affogato）的搭配，帶給顧客新穎的味覺體驗。\n在毛孩落地自由互動的寵物友善空間中，民眾能夠愜意度過慵懶的午後時光。",
+    "descriptionEn": "Located in a quiet alley off Xinsheng North Road, L'Unicorno Gelato specializes in handcrafted Italian-style gelato, made in-house to highlight the natural flavors and smooth textures of carefully selected ingredients.\n\nConverted from an old residence, the shop pairs wooden furnishings with warm lighting to create an elegant and inviting atmosphere. In addition to its regular selection, seasonal fruits inspire limited flavors throughout the year, while coffee and affogato pairings offer another way to enjoy its gelato.\n\nThe pet-friendly space also welcomes furry companions to roam and relax, making it an ideal spot for a leisurely afternoon.",
+    "businessHoursEn": [
+      "Mon Closed",
+      "Tue–Sun 12:00–20:00"
+    ]
+  },
+  {
+    "id": "store-09",
+    "displayNumber": "09",
+    "type": "district",
+    "nameZh": "晴美公寓酒店",
+    "nameEn": "Jolley Hotel",
+    "address": "臺北市中山區恆安里林森北路568號",
+    "businessHours": [
+      "全天營業"
+    ],
+    "phone": "02-66198888",
+    "description": "晴美公寓酒店 Jolley Hotel 坐落於林森北路與農安街口，一旁的雙城街夜市，是房客體驗台灣風土民情、在地小吃的絕佳地點。\n飯店融合「家」與「飯店級服務」，每間客房擁有超過 14 坪的寬敞空間，並劃分獨立客廳與臥室，配置微波爐、電磁爐、洗脫烘洗衣機等，提供旅客更具生活感的小豪宅體驗。\n頂樓的空中露臺，讓房客能夠遠眺圓山大飯店與台北市景，是國內外商務出差、家庭共遊的不二選擇。",
+    "links": {
+      "website": "https://www.jolleyhotels.com/"
+    },
+    "imageCount": 8,
+    "workIds": [
+      "district-13"
+    ],
+    "imageFolder": "assets/images/stores/store-09",
+    "images": [
+      "assets/images/stores/store-09/01.jpg",
+      "assets/images/stores/store-09/02.jpg",
+      "assets/images/stores/store-09/03.jpg",
+      "assets/images/stores/store-09/04.jpg",
+      "assets/images/stores/store-09/05.jpg",
+      "assets/images/stores/store-09/06.jpg",
+      "assets/images/stores/store-09/07.jpg",
+      "assets/images/stores/store-09/08.jpg"
+    ],
+    "businessHoursSchedule": {
+      "0": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "1": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "2": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "3": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "4": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "5": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ],
+      "6": [
+        {
+          "open": "00:00",
+          "close": "24:00"
+        }
+      ]
+    },
+    "addressZh": "臺北市中山區恆安里林森北路568號",
+    "addressEn": "No. 568, Linsen N. Rd., Zhongshan Dist., Taipei City 104030, Taiwan (R.O.C.)",
+    "descriptionZh": "晴美公寓酒店 Jolley Hotel 坐落於林森北路與農安街口，一旁的雙城街夜市，是房客體驗台灣風土民情、在地小吃的絕佳地點。\n飯店融合「家」與「飯店級服務」，每間客房擁有超過 14 坪的寬敞空間，並劃分獨立客廳與臥室，配置微波爐、電磁爐、洗脫烘洗衣機等，提供旅客更具生活感的小豪宅體驗。\n頂樓的空中露臺，讓房客能夠遠眺圓山大飯店與台北市景，是國內外商務出差、家庭共遊的不二選擇。",
+    "descriptionEn": "Located at the intersection of Linsen North Road and Nong’an Street, Jolley Hotel is just steps away from Shuangcheng Street Night Market, offering guests easy access to local food and an authentic taste of everyday life in Taipei.\n\nCombining the comforts of home with hotel-level service, each guest room offers more than 46 square meters of space, with separate living and sleeping areas. Rooms are also equipped with practical amenities including a microwave, induction cooktop, and washer-dryer, creating the convenience of a private urban residence.\n\nFrom the rooftop terrace, guests can enjoy views of the Grand Hotel and Taipei skyline, making Jolley Hotel a comfortable choice for both business travelers and families.",
+    "businessHoursEn": [
+      "Open 24 hours daily"
+    ]
+  },
+  {
+    "id": "store-10",
+    "displayNumber": "10",
+    "type": "district",
+    "nameZh": "米窩飯店 - 中山館",
+    "nameEn": "Meworld Hotel - Zhongshan",
+    "address": "臺北市中山區恆安里中山北路二段183巷30號3樓",
+    "businessHours": [
+      "周一  10:00-21:00",
+      "周二  10:00-21:00",
+      "周三  10:00-21:00",
+      "周四  10:00-21:00",
+      "周五  10:00-21:00",
+      "周六  10:00-21:00",
+      "周日  10:00-21:00"
+    ],
+    "phone": "02-25910183",
+    "description": "米窩飯店-中山館介於晴光商圈與中山北路生活圈間，下樓即是美食齊聚的晴光市場與雙城夜市，生活機能十分發達。\n於台灣創立的米窩飯店集團，以「溫度、在地、便利」為品牌核心，透過自助入住與實用空間設計，為旅人打造有如「回家」般安心的溫馨落腳處。\n飯店全館通過政府「安全、安靜、乾淨」的三安認證，以簡約、機能、實用的美學風格設計房間，被許多自由行及商務旅客高 CP 值旅宿首選。讓來往的旅人們，用最從容的步調，深度走訪中山。",
+    "links": {
+      "website": "https://meworldhotel.com/"
+    },
+    "imageCount": 7,
+    "workIds": [
+      "district-14"
+    ],
+    "imageFolder": "assets/images/stores/store-10",
+    "images": [
+      "assets/images/stores/store-10/01.jpg",
+      "assets/images/stores/store-10/02.jpg",
+      "assets/images/stores/store-10/03.jpg",
+      "assets/images/stores/store-10/04.jpg",
+      "assets/images/stores/store-10/05.jpg",
+      "assets/images/stores/store-10/06.jpg",
+      "assets/images/stores/store-10/07.jpg"
+    ],
+    "businessHoursSchedule": {
+      "0": [
+        {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      ],
+      "1": [
+        {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      ],
+      "2": [
+        {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      ],
+      "3": [
+        {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      ],
+      "4": [
+        {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      ],
+      "5": [
+        {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      ],
+      "6": [
+        {
+          "open": "10:00",
+          "close": "21:00"
+        }
+      ]
+    },
+    "addressZh": "臺北市中山區恆安里中山北路二段183巷30號3樓",
+    "addressEn": "3 F., No. 30, Sec. 2, Zhongshan N. Rd., Zhongshan Dist., Taipei City 104016, Taiwan (R.O.C.)",
+    "descriptionZh": "米窩飯店-中山館介於晴光商圈與中山北路生活圈間，下樓即是美食齊聚的晴光市場與雙城夜市，生活機能十分發達。\n於台灣創立的米窩飯店集團，以「溫度、在地、便利」為品牌核心，透過自助入住與實用空間設計，為旅人打造有如「回家」般安心的溫馨落腳處。\n飯店全館通過政府「安全、安靜、乾淨」的三安認證，以簡約、機能、實用的美學風格設計房間，被許多自由行及商務旅客高 CP 值旅宿首選。讓來往的旅人們，用最從容的步調，深度走訪中山。",
+    "descriptionEn": "Meworld Hotel - Zhongshan is conveniently located between the Qingguang commercial district and the Zhongshan North Road area, with Qingguang Market and Shuangcheng Street Night Market just downstairs, placing a wide variety of local food and everyday conveniences within easy reach.\n\nFounded in Taiwan, Meworld Hotel centers its hospitality philosophy on “warmth, locality, and convenience.” Through self-service check-in and practical spatial design, it creates a welcoming place for travelers that feels like coming home.\n\nThe hotel has received government certification for safety, quietness, and cleanliness. With its simple, functional rooms and accessible location, it is a popular value-for-money option for independent and business travelers looking to explore Zhongshan at a relaxed pace.",
+    "businessHoursEn": [
+      "Daily 10:00–21:00"
+    ]
+  }
+],
+  mapLocations: [
+  {
+    "id": "main-01",
+    "venueId": "venue-main",
+    "map": "main",
+    "type": "main",
+    "number": "01",
+    "x": 73,
+    "y": 51,
+    "workIds": [
+      "main-01"
+    ]
+  },
+  {
+    "id": "main-02",
+    "venueId": "venue-main",
+    "map": "main",
+    "type": "main",
+    "number": "02",
+    "x": 32,
+    "y": 48,
+    "workIds": [
+      "main-02"
+    ]
+  },
+  {
+    "id": "main-03",
+    "venueId": "venue-main",
+    "map": "main",
+    "type": "main",
+    "number": "03",
+    "x": 26,
+    "y": 72,
+    "workIds": [
+      "main-03"
+    ]
+  },
+  {
+    "id": "main-04",
+    "venueId": "venue-main",
+    "map": "main",
+    "type": "main",
+    "number": "04",
+    "x": 40,
+    "y": 80,
+    "workIds": [
+      "main-04"
+    ]
+  },
+  {
+    "id": "main-05",
+    "venueId": "venue-main",
+    "map": "main",
+    "type": "main",
+    "number": "05",
+    "x": 50,
+    "y": 80,
+    "workIds": [
+      "main-05"
+    ]
+  },
+  {
+    "id": "main-06",
+    "venueId": "venue-main",
+    "map": "main",
+    "type": "main",
+    "number": "06",
+    "x": 65,
+    "y": 73,
+    "workIds": [
+      "main-06"
+    ]
+  },
+  {
+    "id": "main-07",
+    "venueId": "venue-main",
+    "map": "main",
+    "type": "main",
+    "number": "07",
+    "x": 16,
+    "y": 47,
+    "workIds": [
+      "main-07"
+    ]
+  },
+  {
+    "id": "main-08",
+    "venueId": "venue-main",
+    "map": "main",
+    "type": "main",
+    "number": "08",
+    "x": 45.5,
+    "y": 35,
+    "workIds": [
+      "main-08"
+    ]
+  },
+  {
+    "id": "main-09",
+    "venueId": "venue-main",
+    "map": "main",
+    "type": "main",
+    "number": "09",
+    "x": 66.5,
+    "y": 25,
+    "workIds": [
+      "main-09"
+    ]
+  },
+  {
+    "id": "outdoor-01",
+    "venueId": "venue-outdoor",
+    "map": "district",
+    "type": "outdoor",
+    "number": "01",
+    "x": 64,
+    "y": 48,
+    "workIds": [
+      "outdoor-01"
+    ]
+  },
+  {
+    "id": "outdoor-02",
+    "venueId": "venue-outdoor",
+    "map": "district",
+    "type": "outdoor",
+    "number": "02",
+    "x": 65,
+    "y": 43,
+    "workIds": [
+      "outdoor-02"
+    ]
+  },
+  {
+    "id": "district-01",
+    "venueId": "store-01",
+    "map": "district",
+    "type": "district",
+    "number": "01",
+    "name": "Wild Open Space 北美館",
+    "x": 44,
+    "y": 24,
+    "workIds": [
+      "district-01"
+    ]
+  },
+  {
+    "id": "district-02",
+    "venueId": "store-02",
+    "map": "district",
+    "type": "district",
+    "number": "02",
+    "name": "CNSalon 花草茶店",
+    "x": 37,
+    "y": 55,
+    "workIds": [
+      "district-02"
+    ]
+  },
+  {
+    "id": "district-03",
+    "venueId": "store-03",
+    "map": "district",
+    "type": "district",
+    "number": "03",
+    "name": "覓’s 咖啡小酒館",
+    "x": 43,
+    "y": 53,
+    "workIds": [
+      "district-03"
+    ]
+  },
+  {
+    "id": "district-04",
+    "venueId": "store-04",
+    "map": "district",
+    "type": "district",
+    "number": "04",
+    "name": "歐華酒店",
+    "x": 46.5,
+    "y": 53,
+    "workIds": [
+      "district-04",
+      "district-05",
+      "district-06",
+      "district-07",
+      "district-08"
+    ]
+  },
+  {
+    "id": "district-05",
+    "venueId": "store-05",
+    "map": "district",
+    "type": "district",
+    "number": "05",
+    "name": "異世界咖啡館．澐月",
+    "x": 39,
+    "y": 69,
+    "workIds": [
+      "district-09"
+    ]
+  },
+  {
+    "id": "district-06",
+    "venueId": "store-06",
+    "map": "district",
+    "type": "district",
+    "number": "06",
+    "name": "台北花苑",
+    "x": 41,
+    "y": 71.5,
+    "workIds": [
+      "district-10"
+    ]
+  },
+  {
+    "id": "district-07",
+    "venueId": "store-07",
+    "map": "district",
+    "type": "district",
+    "number": "07",
+    "name": "批薩謎勒",
+    "x": 38,
+    "y": 75,
+    "workIds": [
+      "district-11"
+    ]
+  },
+  {
+    "id": "district-08",
+    "venueId": "store-08",
+    "map": "district",
+    "type": "district",
+    "number": "08",
+    "name": "L'Unicorno Gelato",
+    "x": 53,
+    "y": 68.5,
+    "workIds": [
+      "district-12"
+    ]
+  },
+  {
+    "id": "district-09",
+    "venueId": "store-09",
+    "map": "district",
+    "type": "district",
+    "number": "09",
+    "name": "晴美公寓酒店",
+    "x": 46,
+    "y": 79,
+    "workIds": [
+      "district-13"
+    ]
+  },
+  {
+    "id": "district-10",
+    "venueId": "store-10",
+    "map": "district",
+    "type": "district",
+    "number": "10",
+    "name": "米窩飯店 - 中山館",
+    "x": 41,
+    "y": 88,
+    "workIds": [
+      "district-14"
+    ]
+  }
+],
+  shops: [
+  {
+    "id": "shop-01",
+    "nameZh": "三樓家以馬內利食研室",
+    "nameEn": "3F. lovelove",
+    "address": "臺北市中山區新庄里吉林路456巷10號",
+    "addressZh": "臺北市中山區新庄里吉林路456巷10號",
+    "addressEn": "No. 10, Ln. 456, Jilin Rd., Zhongshan Dist., Taipei City 104084, Taiwan (R.O.C.)",
+    "businessHours": [
+      "臺北數位藝術節期間｜周末限定 OPEN HOUSE",
+      "11/01（日）14:00-17:00",
+      "11/07（六）、11/08（日）、11/14（六）、11/15（日）10:30-16:30",
+      "白晝之夜限定 | 活動響應延長開放",
+      "10/31（六）12:00-20:00，預留限定麻糬現場購買",
+      "平時｜預訂制（麻糬、冷泡茶以預先訂購為主）"
+    ],
+    "businessHoursEn": [
+      "During the Taipei Digital Art Festival | Weekend OPEN HOUSE",
+      "Nov. 1 (Sun) 14:00–17:00",
+      "Nov. 7 (Sat), Nov. 8 (Sun), Nov. 14 (Sat) & Nov. 15 (Sun) 10:30–16:30",
+      "Nuit Blanche Taipei | Extended Opening Hours",
+      "Oct. 31 (Sat) 12:00–20:00",
+      "A limited quantity of mochi will be available for on-site purchase.",
+      "Regular Hours | By Reservation Only",
+      "Mochi and cold-brew tea are primarily available by pre-order."
+    ],
+    "phone": "02-25957137",
+    "description": "三樓家以馬內利食研室，藏身於吉林路巷弄，是揉合手作飲食、咖啡、設計及生活美學的複合式空間。店內以純手工麻糬為核心，將約瑟花生、路得黑芝麻、約拿紅豆、彼得酸菜等口味賦予不同故事與祝福，另外也提供無咖啡因冷泡蕎麥茶及自家烘焙手沖咖啡，讓每一位顧客體驗手作的溫度。\n空間亦結合「攝設的，強尼小姐」設計工作室，從食物、包裝到視覺創作，傳遞「每一口，都是一點療癒」的品牌理念，將日常飲食轉變為可分享的溫度與祝福。",
+    "descriptionZh": "三樓家以馬內利食研室，藏身於吉林路巷弄，是揉合手作飲食、咖啡、設計及生活美學的複合式空間。店內以純手工麻糬為核心，將約瑟花生、路得黑芝麻、約拿紅豆、彼得酸菜等口味賦予不同故事與祝福，另外也提供無咖啡因冷泡蕎麥茶及自家烘焙手沖咖啡，讓每一位顧客體驗手作的溫度。\n空間亦結合「攝設的，強尼小姐」設計工作室，從食物、包裝到視覺創作，傳遞「每一口，都是一點療癒」的品牌理念，將日常飲食轉變為可分享的溫度與祝福。",
+    "descriptionEn": "Tucked away in an alley off Jilin Road, emhanuel is a multidisciplinary space that brings together handmade food, coffee, design, and everyday aesthetics. At its heart are handmade mochi, with flavors such as Joseph Peanut, Ruth Black Sesame, Jonah Red Bean, and Peter Pickled Mustard Greens, each carrying its own story and blessing. The shop also serves caffeine-free cold-brew buckwheat tea and hand-brewed coffee made with beans roasted in-house, offering visitors the warmth of handcrafted food and drink.\n\nThe space also incorporates the design studio “Johnny Miss,” extending its creative approach from food and packaging to visual design. Guided by the idea that “every bite brings a little healing,” emhanuel transforms everyday food into an experience of warmth and blessings meant to be shared.",
+    "links": {
+      "instagram": "https://www.instagram.com/3flove_home/?hl=am-et",
+      "facebook": "https://www.facebook.com/love3F/?locale=zh_TW"
+    },
+    "imageCount": 7,
+    "imageExtensionOverrides": {"7": "png"}
+  },
+  {
+    "id": "shop-02",
+    "nameZh": "寂川",
+    "nameEn": "Jyakugawa",
+    "address": "臺北市中山區圓山里民族東路102號",
+    "addressZh": "臺北市中山區圓山里民族東路102號",
+    "addressEn": "No. 102, Minzu E. Rd., Zhongshan Dist., Taipei City 104039, Taiwan (R.O.C.)",
+    "businessHours": [
+      "周一  19:30-01:00",
+      "周二  19:30-01:00",
+      "周三  19:30-01:00",
+      "周四  公休",
+      "周五  19:30-02:00",
+      "周六  19:30-02:00",
+      "周日  公休"
+    ],
+    "businessHoursEn": [
+      "Mon–Wed 19:30–01:00",
+      "Thu Closed",
+      "Fri–Sat 19:30–02:00",
+      "Sun Closed"
+    ],
+    "phone": "02-66041021",
+    "description": "寂川-Jyakugawa隱身於民族橋旁，是一間主打「調酒與精緻日式小食餐酒搭」的日式餐酒館。\n日式侘寂風的店內裝潢，搭配木質吧檯與柔和燈光，讓顧客放慢腳步、品味微醺時光。除了魚子醬玉子燒、關東風貓飯等精緻家常菜，由調酒師精心研發的創意特調，牢牢鎖住顧客的味蕾。\n店內偶爾結合「池坊插花」日本美學體驗活動，讓人在充滿儀式感的環境中，體驗寂川獨有的豐富層次。",
+    "descriptionZh": "寂川-Jyakugawa隱身於民族橋旁，是一間主打「調酒與精緻日式小食餐酒搭」的日式餐酒館。\n日式侘寂風的店內裝潢，搭配木質吧檯與柔和燈光，讓顧客放慢腳步、品味微醺時光。除了魚子醬玉子燒、關東風貓飯等精緻家常菜，由調酒師精心研發的創意特調，牢牢鎖住顧客的味蕾。\n店內偶爾結合「池坊插花」日本美學體驗活動，讓人在充滿儀式感的環境中，體驗寂川獨有的豐富層次。",
+    "descriptionEn": "Tucked away near Minzu Bridge, Jyakugawa is a Japanese-style dining bar specializing in cocktails paired with refined Japanese small plates.\n\nIts wabi-sabi-inspired interior, wooden bar, and soft lighting create an intimate atmosphere where guests can slow down and enjoy the evening. Alongside delicate comfort dishes such as caviar tamagoyaki and Kanto-style neko manma, the bar serves original cocktails carefully developed by its bartenders.\n\nJyakugawa also occasionally hosts experiences inspired by Japanese aesthetics, including Ikenobo ikebana workshops, adding another layer of ritual and sensory detail to the space.",
+    "links": {"instagram": "https://www.instagram.com/jyakugawa_102/"},
+    "imageCount": 30,
+    "imageExtensionOverrides": {}
+  },
+  {
+    "id": "shop-03",
+    "nameZh": "拾花",
+    "nameEn": "Glean Flower",
+    "address": "臺北市中山區新福里新生北路三段19巷34號",
+    "addressZh": "臺北市中山區新福里新生北路三段19巷34號",
+    "addressEn": "No. 34, Ln. 19, Sec. 3, Xinsheng N. Rd., Zhongshan Dist., Taipei City 104033, Taiwan (R.O.C.)",
+    "businessHours": [
+      "周一  12:00-19:00",
+      "周二  12:00-19:00",
+      "周三  12:00-19:00",
+      "周四  12:00-19:00",
+      "周五  12:00-15:00",
+      "周六  12:00-15:00",
+      "周日  12:00-15:00"
+    ],
+    "businessHoursEn": [
+      "Mon–Thu 12:00–19:00",
+      "Fri–Sun 12:00–15:00"
+    ],
+    "phone": "0966120302",
+    "description": "拾花 Glean Flower 位於新生北路巷弄內，是主打「享受有花的美好生活」的預約制花藝工作室，以「簡單、優雅、自然」作為創作核心，將花草轉化為觸手可及的日常風景。\n拾花提供多元花藝服務，包含時令鮮花、節慶花束，還承接商務空間佈置、品牌客製化花禮、結合花藝與禮品包裝等服務。\n店家引進的獨特「日本擬真花」、開設壓花相框與乾燥永生花等手作體驗課程，成為許多享受生活、講究儀式感的都市人，展現個人心意的花藝秘密基地。",
+    "descriptionZh": "拾花 Glean Flower 位於新生北路巷弄內，是主打「享受有花的美好生活」的預約制花藝工作室，以「簡單、優雅、自然」作為創作核心，將花草轉化為觸手可及的日常風景。\n拾花提供多元花藝服務，包含時令鮮花、節慶花束，還承接商務空間佈置、品牌客製化花禮、結合花藝與禮品包裝等服務。\n店家引進的獨特「日本擬真花」、開設壓花相框與乾燥永生花等手作體驗課程，成為許多享受生活、講究儀式感的都市人，展現個人心意的花藝秘密基地。",
+    "descriptionEn": "Located in an alley off Xinsheng North Road, Glean Flower is an appointment-based floral studio built around the idea of enjoying a beautiful life with flowers. Guided by a creative approach that is simple, elegant, and natural, the studio transforms flowers and greenery into an accessible part of everyday life.\n\nGlean Flower offers a range of floral services, from seasonal flowers and festive bouquets to commercial space styling, customized corporate gifts, and floral gift packaging.\n\nThe studio also introduces distinctive Japanese artificial flowers and offers hands-on workshops in pressed-flower framing, dried flowers, and preserved flowers. It has become a favorite destination for city dwellers who value thoughtful details and meaningful ways to express themselves through flowers.",
+    "links": {
+      "website": "https://www.gleanflower.com/?srsltid=AfmBOop0q7MVJMBk3_33kdKaKbUOW4ukJ-ZPrVq9ABwc_vidGgFfoUnt",
+      "instagram": "https://www.instagram.com/gleanflower/",
+      "facebook": "https://www.facebook.com/gleanflower/?locale=zh_TW"
+    },
+    "imageCount": 4,
+    "imageExtensionOverrides": {}
+  },
+  {
+    "id": "shop-04",
+    "nameZh": "Gallery 188<br>杉畝藝術有限公司<br>OhMyDeer Floral",
+    "nameEn": "Gallery 188<br>Sam’s Art Co. <br>OhMyDeer Floral",
+    "address": "台北市大同區承德路三段188號",
+    "addressZh": "台北市大同區承德路三段188號",
+    "addressEn": "No. 188, Sec. 3, Chengde Rd., Datong Dist., Taipei City 103034, Taiwan (R.O.C.)",
+    "businessHours": [
+      "周六  13:00-18:00",
+      "周日  13:00-18:00",
+      "平日 | 預約參觀",
+      "活動主題響應展覽 | 《在記憶折返以前》",
+      "展期 10/10-11/8、10/17（六）15:00 開幕"
+    ],
+    "businessHoursEn": [
+      "Opening Hours",
+      "Sat–Sun 13:00–18:00",
+      "Weekdays | By Appointment",
+      "Featured Exhibition | Before Memory Turns Back",
+      "Exhibition Period | Oct. 10–Nov. 8",
+      "Opening Reception | Oct. 17 (Sat), 15:00"
+    ],
+    "phone": "0987992335",
+    "description": "Gallery 188座落於台北市大同區承德路三段188號，從捷運圓山站1號出口步行即可抵達。以當代藝術為核心，持續邀請新銳藝術家、設計師及跨領域創作者展出，也透過策展、品牌合作、講座與工作坊，讓作品走進城市日常。\n空間保留親近而安靜的觀看尺度，觀眾可以放慢腳步，細看影像、繪畫與裝置中的情感線索。邀請大家將這裡納入城市漫遊路線，在熱鬧活動之間，留一段時間給藝術與自己。\n《在記憶折返以前》，由台北雙人創作團體Fina與Tony共同展出。Fina以散文式數位影像收集街道、人物與生活片刻；Tony透過翻轉、鏡像與重組，將城市燈火化為影像詩。兩人的作品游移於具象與抽象之間，沿著光線、記憶與時間交會，邀請觀眾辨認那些尚未說完、仍在心中折返的感受。",
+    "descriptionZh": "Gallery 188座落於台北市大同區承德路三段188號，從捷運圓山站1號出口步行即可抵達。以當代藝術為核心，持續邀請新銳藝術家、設計師及跨領域創作者展出，也透過策展、品牌合作、講座與工作坊，讓作品走進城市日常。\n空間保留親近而安靜的觀看尺度，觀眾可以放慢腳步，細看影像、繪畫與裝置中的情感線索。邀請大家將這裡納入城市漫遊路線，在熱鬧活動之間，留一段時間給藝術與自己。\n《在記憶折返以前》，由台北雙人創作團體Fina與Tony共同展出。Fina以散文式數位影像收集街道、人物與生活片刻；Tony透過翻轉、鏡像與重組，將城市燈火化為影像詩。兩人的作品游移於具象與抽象之間，沿著光線、記憶與時間交會，邀請觀眾辨認那些尚未說完、仍在心中折返的感受。",
+    "descriptionEn": "Gallery 188 is located at No. 188, Sec. 3, Chengde Rd., Datong Dist., Taipei City 103034, Taiwan (R.O.C.), within walking distance of Exit 1 of Yuanshan MRT Station. With a focus on contemporary art, the gallery regularly presents works by emerging artists, designers, and interdisciplinary creators. Through curated exhibitions, brand collaborations, talks, and workshops, Gallery 188 brings art into the fabric of everyday urban life.\nThe space offers an intimate and quiet setting for viewing, inviting visitors to slow down and discover the emotional threads woven through moving images, paintings, and installations. Gallery 188 welcomes visitors to make the space part of their journey through the city—to set aside a moment amid the bustle and spend some time with art and themselves.\nBefore Memory Turns Back is a joint exhibition by Taipei-based artist duo Fina and Tony. Fina gathers fragments of streets, people, and everyday life through essayistic digital imagery, while Tony transforms the lights of the city into visual poetry through inversion, mirroring, and recomposition. Moving between the figurative and the abstract, their works trace intersections of light, memory, and time, inviting viewers to recognize feelings that remain unfinished and continue to return within.",
+    "links": {
+      "website": "https://www.samsart.net/",
+      "instagram": "https://www.instagram.com/gallery188_/",
+      "facebook": "https://www.facebook.com/p/Gallery-188%E6%9D%89%E7%95%9D%E8%97%9D%E8%A1%93-61575686574065/"
+    },
+    "imageCount": 3,
+    "imageExtensionOverrides": {}
+  }
+],
+  soundArtists: [
+  {
+    "id": "performance-01",
+    "type": "sound",
+    "category": "performance",
+    "area": "開幕表演",
+    "mapNumber": "01",
+    "number": "01",
+    "title": "噪流",
+    "titleZh": "噪流",
+    "titleEn": "Fluid Noise",
+    "workType": "音像表演",
+    "workTypeEn": "Audiovisual Performance",
+    "imageFolder": "performance-01",
+    "coverImage": "",
+    "images": [],
+    "artistIds": [
+      "artist-26"
+    ],
+    "performances": [
+      {
+        "id": "performance-01_1",
+        "nameZh": "吳承儒 ( P B )",
+        "nameEn": "Cheng-Ru Wu (P B)",
+        "nationalityZh": "臺灣",
+        "nationalityEn": "Taiwan",
+        "bioZh": "來自臺灣嘉義的新媒體藝術家。\n創作多涵蓋跨領域藝術與音像演出（Audiovisual performance），並以聲響實驗、即時影像生成與數位訊號整合為發展核心。  ",
+        "bioEn": "Based in Chiayi, Taiwan, Wu Cheng-Ru ( P B ) is a new media artist whose work spans cross-disciplinary art and audiovisual performance, focusing on sound experimentation, real-time visual generation, and digital signal integration.",
+        "careerZh": "2026 《繫 ꜱʏɴᴄ》- P B 個展 - 毛刺空間 | 個人展覽 (台中) \n2025《鹹淡適中》Glub Glub — 白晝之夜Nuit Blanche Taipei｜共同創作(台北) \n2025 -《視感認知 Mind Fluid》｜透視音像 Perspectives-北流場｜音像演出\n2025 - 關渡光藝術節《幻響 Illusonic》｜音像演出(台北)\n2024 -《認夢 Dream Percept》｜ FUTURE VISION LAB｜DOME演出(台北)\n2024 -《忘却回路 - Oblivion Circuit》｜音像演出(東京)\n2024 -《VIVIDO: re-Action》Sandy’s Trace｜VJ(台北)\n2023 -《未來視覺派對 FUTURE VISION LAB》｜音像演出(台北)\n2023 -《視感認知 Visual Cognition》-潛艇Submarine｜音像演出 (台北)\n2023 -《感覺重混 sensation.remix》｜音像演出 (宜蘭)",
+        "careerEn": "2026 Sync – Solo Exhibition by P B, Glitch Space | Solo Exhibition (Taichung) \n2025 – Glub Glub, Nuit Blanche Taipei | Co-creation (Taipei) \n2025 – Mind Fluid, Perspectives (Taipei Music Center, Livehouse D), Audiovisual Performance\n2025 – Mind Fluid,Kuan Du Light Art Festival 《Illusonic》, Audiovisual Performance (Taipei)\n2024 – Dream Percept, FUTURE VISION LAB, Fulldome Performance (Taipei)\n2024 – Oblivion Circuit, Audiovisual Performance (Tokyo)\n2024 – VIVIDO: re-Action, VJ (Collaboration with Sandy’s Trace) (Taipei)\n2023 – FUTURE VISION LAB, Audiovisual Performance (Taipei)\n2023 – Visual Cognition, Submarine, Audiovisual Performance (Taipei)\n2023 – sensation.remix, Audiovisual Performance (Yilan)",
+        "titleZh": "聽",
+        "titleEn": "Thiann",
+        "year": "2026",
+        "workTypeZh": "音像表演",
+        "workTypeEn": "Audiovisual Performance",
+        "mediumZh": "現場即時音像",
+        "mediumEn": "live audiovisual performance ",
+        "descriptionZh": "「Thiann」是台語中「聽」的意思。演出內容透過藝術家收集在臺灣的日常聲響與畫面，由鄉村攤販的廣播或車輛的限速提示音等，透過數位的重混與調變，讓臺灣日常的印象透過聲景(Soundscape)再現，並透過音像演出詮釋藝術家在臺灣生活的觀察與狀態。",
+        "descriptionEn": "“Thiann” derives from the Taiwanese word for “listen.” Through a collection of everyday sounds and visuals gathered across Taiwan—such as broadcasts from rural street vendors and vehicle speed alerts—the performance digitally remixes and modulates these elements to reconstruct daily Taiwanese impressions into a soundscape, interpreting the artist's personal observations and lived reality in Taiwan through live audiovisual performance. ",
+        "website": "https://k591238.github.io/PB.github.io/",
+        "performerImage": {
+          "src": "assets/images/works/performance/performance-01/performance-01_1/01.jpg",
+          "altZh": "吳承儒 ( P B )",
+          "altEn": "Cheng-Ru Wu (P B)"
+        },
+        "workImages": [
+          "assets/images/works/performance/performance-01/performance-01_1/works/01.jpg",
+          "assets/images/works/performance/performance-01/performance-01_1/works/02.jpg",
+          "assets/images/works/performance/performance-01/performance-01_1/works/03.jpg",
+          "assets/images/works/performance/performance-01/performance-01_1/works/04.jpg",
+          "assets/images/works/performance/performance-01/performance-01_1/works/05.jpg",
+          "assets/images/works/performance/performance-01/performance-01_1/works/06.jpg"
+        ],
+        "instagram": "https://www.instagram.com/pen_bit/"
+      },
+      {
+        "id": "performance-01_2",
+        "nameZh": "張哲瑜",
+        "nameEn": "Che-Yu Chang",
+        "nationalityZh": "臺灣",
+        "nationalityEn": "Taiwan",
+        "bioZh": "音像創作者。創作專注在聲響設計、互動視覺，主題經常聚焦在圖像的規律與隨機性，並試圖進一步拆解其規則系統。音樂作品多為氛圍音樂、實驗電子，透過探索聲音與影像更多的可能性，不斷推敲自身感知與環境生命經驗的連結。",
+        "bioEn": "Che Yu Chang(aka. Duyio) is an audiovisual creator focused on sound design and interactive visuals. Her work often explores patterns and randomness in images, while looking deeper into the systems behind them. Her music mainly includes ambient and experimental electronic music. By exploring the possibilities between sound and image, the practice continues to examine the connection between her perception and life experiences.",
+        "careerZh": "2026\n《 ESKAPE 三週年紀元：無底之境》｜週年派對活動\n2025\n噪流實習2025 (VOL.4)｜入選創作培力計畫\n《失眠五階段：Insomnia》｜四四南村 LIGHT UP 南村有光\n《臨海練習 approaching exercises:seaside》｜入選 2025 月之美術館聯展\n《 ESKAPE SHOWCASE 10 》｜電子音樂派對\n《 ESKAPE 二週年派對 》｜週年派對活動\n2024\n《景觀訊號推移》｜入選 2024 基隆美展",
+        "careerEn": "2026\nESKAPE 3nd anniversary party  – VJ\n2025\nfluid noise – AVSyncTPE Echo Habitat \nLight Up Festival – Merit Award Insomnia\nyue jin art museum –  Selected Approaching exercises:seaside\nESKAPE SHOWCASE 10 – VJ\nESKAPE 2nd anniversary party – VJ\n2024\nKeelung Art Exhibition – Selected Signal",
+        "titleZh": "場",
+        "titleEn": "On the scene",
+        "year": "",
+        "workTypeZh": "音像表演",
+        "workTypeEn": "Audiovisual Performance",
+        "mediumZh": "",
+        "mediumEn": "",
+        "descriptionZh": "一個場景、一個畫面，有些是在清醒之前的景色，有些是最喜歡的電影場景，未分類的有可能是記憶裡的片段，可能曾在某個時刻到過現場，也有可能永遠無法到場。作品將以各個「場」作為主要呈現，並將作者分身置入「場」內，營造一種在場與不在場之間的證明。 ",
+        "descriptionEn": "A scene, a frame.\nSome are landscapes seen before waking, while others are scenes from films I love. The ones left uncategorized may be fragments of memory. Places I may have once been, or places I may never be able to reach.\nThe work is presented through a series of “places,” with an avatar placed within each one, creating a sense of being there, and not being there at the same time.",
+        "website": "https://haiphane-duyio.com/",
+        "performerImage": {
+          "src": "assets/images/works/performance/performance-01/performance-01_2/01.png",
+          "altZh": "張哲瑜",
+          "altEn": "Che-Yu Chang"
+        },
+        "workImages": [
+          "assets/images/works/performance/performance-01/performance-01_2/works/01.png",
+          "assets/images/works/performance/performance-01/performance-01_2/works/02.png",
+          "assets/images/works/performance/performance-01/performance-01_2/works/03.png",
+          "assets/images/works/performance/performance-01/performance-01_2/works/04.png",
+          "assets/images/works/performance/performance-01/performance-01_2/works/05.png"
+        ],
+        "instagram": "https://www.instagram.com/duyiosirbed/"
+      },
+      {
+        "id": "performance-01_3",
+        "nameZh": "陳亮",
+        "nameEn": "Liang Chen",
+        "nationalityZh": "臺灣",
+        "nationalityEn": "Taiwan",
+        "bioZh": "過而立而不立，彰化人，十五之後在台灣北中南漂泊，\n成日遊手好閒、不學無術，朝三暮四，一知半解。\n致力於研究對客觀條件毫無幫助之無用實驗，\n找尋任意載體對情緒價值之主觀意識有效影響。",
+        "bioEn": "Over 30 but still unsettled, a Changhua native.\nDrifting across northern, central, and southern Taiwan since 15.\nAlways idling, lacking skills; constantly shifting, mastering nothing.\nDedicated to highly inefficient experiments with zero practical value to society,\njust searching for random ways to poke at a viewer's consciousness and leave a unique emotional dent.",
+        "careerZh": "2018 噪流實習 演出\n2021 JPG 擊樂實驗室 - Digit(s) 演出\n2024 聲響藝術節 - Digit(s) 演出",
+        "careerEn": "2018\nPerformance, Lacking Sound Festival Internship Program\n\n2021\nDigit(s) — Performance, JPG Percussion Lab\n\n2024\nDigit(s) — Performance, Sound Art Festival",
+        "titleZh": "田調隨筆 - 2026",
+        "titleEn": "Field Notes 2026",
+        "year": "2026",
+        "workTypeZh": "音像表演",
+        "workTypeEn": "Audiovisual Performance",
+        "mediumZh": "",
+        "mediumEn": "",
+        "descriptionZh": "",
+        "descriptionEn": "",
+        "website": "",
+        "performerImage": {
+          "src": "assets/images/works/performance/performance-01/performance-01_3/01.JPG",
+          "altZh": "陳亮",
+          "altEn": "Liang Chen"
+        },
+        "instagram": "https://www.instagram.com/c1c.ll/"
+      },
+      {
+        "id": "performance-01_4",
+        "nameZh": "陳彥齊 x 周喚",
+        "nameEn": "Yen-Chi Chen × Huan Chou",
+        "nationalityZh": "臺灣",
+        "nationalityEn": "Taiwan",
+        "bioZh": "周喚與陳彥齊目前就讀於台北藝術大學新媒體藝術學系。兩人的合作創作以遊戲為主要發想，從遊戲機制、敘事與虛擬空間延伸不同的創作主題，結合動畫與聲音，並透過遊戲引擎的即時運算及現場聲音的即時調變，探索虛擬與現實之間的關係，形成具有敘事性的音像表演。",
+        "bioEn": "Chou huan and Chen yenchi are currently studying in the Department of New Media Art at Taipei National University of the Arts. Their collaborative practice takes games as a starting point, exploring themes through game mechanics, narrative, and virtual spaces. By combining animation and sound with real-time game engine computation and live sound manipulation, they investigate the relationship between the virtual and the real, creating narrative-driven audiovisual performances.",
+        "careerZh": "表演\n北藝大新媒系111級畢業展《在那出現之前》開幕表演\n關渡光藝術節《幻響》\n噪流實習\n第二屆北藝新媒卓越獎開幕表演",
+        "careerEn": "PERFORMANCE\nOpening Performance — TNUA Department of New Media Art Graduation Exhibition 2026 \"Before Zero\"\nKuandu Light Art Festival — Illusonic \nFluid Noise Internship \nOpening Performance — TNUA New Media Excellence Award ",
+        "titleZh": "難忘殘景",
+        "titleEn": "Haunting Sight",
+        "year": "",
+        "workTypeZh": "音像表演",
+        "workTypeEn": "Audiovisual Performance",
+        "mediumZh": "",
+        "mediumEn": "",
+        "descriptionZh": "本作以遊戲引擎和音像表演的形式構建一個近未來的景象，試圖展開近年越發進步的無人機和影像技術，其鏡頭與被觀察者的關係。故事發生在一座深夜中的巨大車站，一名神秘人物闖入，大規模改寫建築內的空間現實。保全系統的無人機受命追蹤並阻止這場「非法入侵」。透過自帶的攝影機以及技術追蹤入侵者。隨著投影的強光造成雜訊與故障,現場只留下被改寫的空間與逃逸的背影。",
+        "descriptionEn": "This work explores the relationship between surveillance cameras, drones, and the people they observe through a game engine and audiovisual performance.\nThe story takes place in a massive train station late at night. A mysterious figure breaks in and begins to alter the space. Security drones are deployed to track and stop the intruder through their cameras and tracking systems.\nAs intense projection light causes noise and system failures, the altered space remains, along with the fleeting silhouette of the escaping figure.",
+        "website": "https://yc-58.com/",
+        "performerImage": {
+          "src": "assets/images/works/performance/performance-01/performance-01_4/01.jpg",
+          "altZh": "陳彥齊 x 周喚",
+          "altEn": "Yen-Chi Chen × Huan Chou"
+        },
+        "instagram": "https://www.instagram.com/y.c_5.8/"
+      }
+    ]
+  },
+  {
+    "id": "performance-02",
+    "type": "sound",
+    "category": "performance",
+    "area": "開幕表演",
+    "mapNumber": "02",
+    "number": "02",
+    "title": "Félix-Antoine Morin",
+    "titleZh": "Félix-Antoine Morin",
+    "titleEn": "Félix-Antoine Morin",
+    "year": "2026",
+    "workType": "音像表演",
+    "workTypeEn": "Audiovisual Performance",
+    "description": "Félix-Antoine Morin（音樂）與 Alexandre Larose（影像）之視聽合作作品",
+    "descriptionZh": "Félix-Antoine Morin（音樂）與 Alexandre Larose（影像）之視聽合作作品",
+    "descriptionEn": "Audiovisual collaboration between Félix-Antoine Morin (music) and Alexandre Larose (video)",
+    "imageFolder": "performance-02",
+    "coverImage": "",
+    "images": [],
+    "artistIds": [
+      "artist-27"
+    ],
+    "collaborators": [
+      {
+        "nameZh": "Alexandre Larose",
+        "nameEn": "Alexandre Larose",
+        "roleZh": "影像",
+        "roleEn": "Video"
+      }
+    ]
+  }
+],
+  events: [
+    {
+      "id": 1,
+      "type": "講座",
+      "typeEn": "TALKS",
+      "title": "藝術家講座 I",
+      "titleEn": "Artist Talk I",
+      "date": "2026.11.01",
+      "startTime": "14:00",
+      "endTime": "15:10",
+      "time": "14:00–15:10",
+      "discussant": "郭昭蘭",
+      "discussantEn": "Jau-Lan Guo",
+      "artist": "Dries Depoorter、Verena Friedrich、吳宜曄",
+      "artistEn": "Dries Depoorter, Verena Friedrich, I-Yeh Wu",
+      "location": "天使生活館一樓大廳",
+      "locationEn": "1F Lobby, Angel Life Pavilion",
+      "registration": "活動採預先線上報名，詳細報名資訊依官網及社群公告為主。活動前十分鐘，現場開放候補排隊。",
+      "registrationEn": "Advance online registration is required. Please refer to the official website and social media for registration details. A standby queue will open on site 10 minutes before the event begins.",
+      "images": [],
+      "detailId": 1,
+      "route": "event-detail.html?id=1",
+      "featured": false
+    },
+    {
+      "id": 2,
+      "type": "講座",
+      "typeEn": "TALKS",
+      "title": "藝術家講座 II",
+      "titleEn": "Artist Talk II",
+      "date": "2026.11.01",
+      "startTime": "15:30",
+      "endTime": "16:40",
+      "time": "15:30–16:40",
+      "discussant": "吳達坤",
+      "discussantEn": "Dar-Kuen Wu",
+      "artist": "Stefan Tiefengraber、Jed Berk、林書瑜",
+      "artistEn": "Stefan Tiefengraber, Jed Berk, Shu-Yu Lin",
+      "artistTeam": "C-LAB 未來視覺實驗室",
+      "artistTeamEn": "C-LAB’s Future Vision Lab",
+      "location": "天使生活館一樓大廳",
+      "locationEn": "1F Lobby, Angel Life Pavilion",
+      "registration": "活動採預先線上報名，詳細報名資訊依官網及社群公告為主。活動前十分鐘，現場開放候補排隊。",
+      "registrationEn": "Advance online registration is required. Please refer to the official website and social media for registration details. A standby queue will open on site 10 minutes before the event begins.",
+      "registrationMethod": "於 Facebook 開放報名",
+      "registrationMethodEn": "Registration via Facebook",
+      "images": [],
+      "detailId": 2,
+      "route": "event-detail.html?id=2",
+      "featured": false
+    },
+    {
+      "id": 3,
+      "type": "講座",
+      "typeEn": "TALKS",
+      "title": "藝術家講座 III",
+      "titleEn": "Artist Talk III",
+      "date": "2026.11.08",
+      "startTime": "14:00",
+      "endTime": "15:10",
+      "time": "14:00–15:10",
+      "discussant": "趙鐸",
+      "discussantEn": "Duo Chao",
+      "artist": "沈宇軒、陳品蓁、鄭芳宜、郭子耘、謝佩庭",
+      "artistEn": "Yu-Hsuan Shen, Pin-Jhen Chen, Fang-Yi Cheng, Tzu-Yung Kuo, Pei-Ting Hsieh",
+      "location": "天使生活館一樓大廳",
+      "locationEn": "1F Lobby, Angel Life Pavilion",
+      "registration": "活動採預先線上報名，詳細報名資訊依官網及社群公告為主。活動前十分鐘，現場開放候補排隊。",
+      "registrationEn": "Advance online registration is required. Please refer to the official website and social media for registration details. A standby queue will open on site 10 minutes before the event begins.",
+        "images": [],
+      "detailId": 3,
+      "route": "event-detail.html?id=3",
+      "featured": false
+    },
+    {
+      "id": 4,
+      "type": "講座",
+      "typeEn": "TALKS",
+      "title": "藝術家講座 IV",
+      "titleEn": "Artist Talk IV",
+      "date": "2026.11.08",
+      "startTime": "15:30",
+      "endTime": "16:40",
+      "time": "15:30–16:40",
+      "discussant": "徐詩雨",
+      "discussantEn": "Shih-Yu Hsu",
+      "artist": "楊子毅、簡嘉誼、余柏霆、樊卓鏗、陳芷渝",
+      "artistEn": "Tzu-I Yang, Chia-Yi Chien, Po-Ting Yu, Cheuk Hang Fan, Chih-Yu Chen",
+      "location": "天使生活館一樓大廳",
+      "locationEn": "1F Lobby, Angel Life Pavilion",
+      "registration": "活動採預先線上報名，詳細報名資訊依官網及社群公告為主。活動前十分鐘，現場開放候補排隊。",
+      "registrationEn": "Advance online registration is required. Please refer to the official website and social media for registration details. A standby queue will open on site 10 minutes before the event begins.",
+      "images": [],
+      "detailId": 4,
+      "route": "event-detail.html?id=4",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "type": "工作坊",
+      "typeEn": "WORKSHOPS",
+      "title": "From Scratch： Hydra 影像編碼工作坊",
+      "titleEn": "From Scratch: Hydra Live Coding Workshop",
+      "date": "2026.11.01",
+      "startTime": "10:00",
+      "endTime": "12:00",
+      "time": "10:00–12:00",
+      "artist": "劉東昱",
+      "artistEn": "Tung-Yu Liu",
+      "location": "天使生活館一樓大廳",
+      "locationEn": "1F Lobby, Angel Life Pavilion",
+      "description": "Hydra 是一套在瀏覽器中執行的視覺即時編碼工具，受到早期的類比影像合成器啟發，能透過簡單的語法組合，產生豐富的視覺效果。本工作坊將從基本圖形、動態、疊合到調變，帶領學員認識Hydra 的撰寫邏輯，運用有限的元素，創造多變的視覺。",
+      "descriptionEn": "Hydra is a browser-based live visual coding tool inspired by early analog video synthesizers. Using simple combinations of code, it allows users to generate a wide range of dynamic visual effects. This workshop introduces the fundamentals of Hydra, from basic shapes and animation to layering and modulation, guiding participants through its coding logic and exploring how a limited set of elements can be transformed into diverse visual compositions.",
+      "registration": "活動採預先線上報名，詳細報名資訊依官網及社群公告為主。活動前十分鐘，現場開放候補排隊。",
+      "registrationEn": "Advance online registration is required. Please refer to the official website and social media for registration details. A standby queue will open on site 10 minutes before the event begins.",
+      "images": [],
+      "detailId": 5,
+      "route": "event-detail.html?id=5",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "type": "工作坊",
+      "typeEn": "WORKSHOPS",
+      "title": "機器怎麼看你：身體剪影印刷工作坊",
+      "titleEn": "How Machines See You: Body Silhouette Printing Workshop",
+      "date": "2026.11.08",
+      "startTime": "10:00",
+      "endTime": "12:00",
+      "time": "10:00–12:00",
+      "artist": "陳芷渝",
+      "artistEn": "Chih-Yu Chen",
+      "location": "天使生活館一樓大廳",
+      "locationEn": "1F Lobby, Angel Life Pavilion",
+      "description": "Riso 印刷需將彩色圖分色、製版，再逐色疊印完成。工作坊將用程式拍攝人像、去背並拆成三色網點，模擬半調顆粒與隨機錯位，探索機器如何辨識人物與影像。",
+      "descriptionEn": "Riso printing involves separating a color image into individual layers, preparing each layer, and printing the colors one at a time. In this workshop, participants will use code to capture portraits, remove backgrounds, and separate the images into three-color halftone layers. By simulating halftone textures and randomized misregistration, the workshop explores how machines perceive and interpret people and images.",
+      "registration": "活動採預先線上報名，詳細報名資訊依官網及社群公告為主。活動前十分鐘，現場開放候補排隊。",
+      "registrationEn": "Advance online registration is required. Please refer to the official website and social media for registration details. A standby queue will open on site 10 minutes before the event begins.",
+      "images": [],
+      "detailId": 6,
+      "route": "event-detail.html?id=6",
+      "featured": false
+    },
+    {
+      "id": 7,
+      "type": "講座",
+      "typeEn": "TALKS",
+      "title": "藝術家講座 V",
+      "titleEn": "Artist Talk V",
+      "date": "2026.11.15",
+      "startTime": "14:00",
+      "endTime": "15:10",
+      "time": "14:00–15:10",
+      "discussant": "邱誌勇",
+      "discussantEn": "Chih-Yung Chiu",
+      "artist": "鄭先喻、何芯源",
+      "artistEn": "Hsien-Yu Cheng, Hsin-Yuan Ho",
+      "artistTeam": "無邊製造、Assocreation",
+      "artistTeamEn": "No Side Here, Assocreation",
+      "location": "天使生活館一樓大廳",
+      "locationEn": "1F Lobby, Angel Life Pavilion",
+      "registration": "活動採預先線上報名，詳細報名資訊依官網及社群公告為主。活動前十分鐘，現場開放候補排隊。",
+      "registrationEn": "Advance online registration is required. Please refer to the official website and social media for registration details. A standby queue will open on site 10 minutes before the event begins.",
+      "images": [],
+      "detailId": 7,
+      "route": "event-detail.html?id=7",
+      "featured": false
+    },
+    {
+      "id": 8,
+      "type": "講座",
+      "typeEn": "TALKS",
+      "title": "藝術家講座 VI",
+      "titleEn": "Artist Talk VI",
+      "date": "2026.11.15",
+      "startTime": "15:30",
+      "endTime": "16:40",
+      "time": "15:30–16:40",
+      "discussant": "蘇珀琪",
+      "discussantEn": "Po-Chi Su",
+      "artist": "陳政維、黃姿婷、Bety Krňanská",
+      "artistEn": "Cheng-Wei Chen, Tzu-Ting Huang, Bety Krňanská",
+      "artistTeam": "超級浪",
+      "artistTeamEn": "Hyper Wave",
+      "location": "天使生活館一樓大廳",
+      "locationEn": "1F Lobby, Angel Life Pavilion",
+      "registration": "活動採預先線上報名，詳細報名資訊依官網及社群公告為主。活動前十分鐘，現場開放候補排隊。",
+      "registrationEn": "Advance online registration is required. Please refer to the official website and social media for registration details. A standby queue will open on site 10 minutes before the event begins.",
+      "images": [],
+      "detailId": 8,
+      "route": "event-detail.html?id=8",
+      "featured": false
+    },
+    {
+      "id": "tour-01",
+      "type": "導覽",
+      "typeEn": "TOURS",
+      "title": "策展人導覽",
+      "titleEn": "Curator-Led Tour",
+      "date": "2026.10.31",
+      "startTime": "15:00",
+      "endTime": "15:30",
+      "time": "15:00–15:30",
+      "guide": "王連晟、林晏竹",
+      "guideEn": "Lien-Cheng Wang, Yen-Ju Lin",
+      "location": "臺北典藏植物園－主展場",
+      "locationEn": "Taipei Collectible Botanical Garden – Main Venue",
+      "images": [],
+      "route": "event-detail.html?id=tour-01",
+      "featured": false
+    },
+    {
+      "id": "tour-02",
+      "type": "導覽",
+      "typeEn": "TOURS",
+      "title": "活動導覽",
+      "titleEn": "Guided Tour",
+      "date": "2026.11.01",
+      "startTime": "15:00",
+      "endTime": "15:30",
+      "time": "15:00–15:30",
+      "location": "臺北典藏植物園－主展場",
+      "locationEn": "Taipei Collectible Botanical Garden – Main Venue",
+      "registration": "活動導覽請至服務台現場報名，並於導覽開始前10分鐘至服務台集合。",
+      "registrationEn": "Please register for the guided tour on site at the information desk and meet there 10 minutes before the tour begins.",      "images": [],
+      "route": "event-detail.html?id=tour-02",
+      "featured": false
+    },
+    {
+      "id": "tour-03",
+      "type": "導覽",
+      "typeEn": "TOURS",
+      "title": "活動導覽",
+      "titleEn": "Guided Tour",
+      "date": "2026.11.07",
+      "startTime": "15:00",
+      "endTime": "15:30",
+      "time": "15:00–15:30",
+      "location": "臺北典藏植物園－主展場",
+      "locationEn": "Taipei Collectible Botanical Garden – Main Venue",
+      "registration": "活動導覽請至服務台現場報名，並於導覽開始前10分鐘至服務台集合。",
+      "registrationEn": "Please register for the guided tour on site at the information desk and meet there 10 minutes before the tour begins.",
+      "images": [],
+      "route": "event-detail.html?id=tour-03",
+      "featured": false
+    },
+    {
+      "id": "tour-04",
+      "type": "導覽",
+      "typeEn": "TOURS",
+      "title": "活動導覽",
+      "titleEn": "Guided Tour",
+      "date": "2026.11.08",
+      "startTime": "15:00",
+      "endTime": "15:30",
+      "time": "15:00–15:30",
+      "location": "臺北典藏植物園－主展場",
+      "locationEn": "Taipei Collectible Botanical Garden – Main Venue",
+      "registration": "活動導覽請至服務台現場報名，並於導覽開始前10分鐘至服務台集合。",
+      "registrationEn": "Please register for the guided tour on site at the information desk and meet there 10 minutes before the tour begins.",
+      "images": [],
+      "route": "event-detail.html?id=tour-04",
+      "featured": false
+    },
+    {
+      "id": "tour-05",
+      "type": "導覽",
+      "typeEn": "TOURS",
+      "title": "活動導覽",
+      "titleEn": "Guided Tour",
+      "date": "2026.11.14",
+      "startTime": "15:00",
+      "endTime": "15:30",
+      "time": "15:00–15:30",
+      "location": "臺北典藏植物園－主展場",
+      "locationEn": "Taipei Collectible Botanical Garden – Main Venue",
+      "registration": "活動導覽請至服務台現場報名，並於導覽開始前10分鐘至服務台集合。",
+      "registrationEn": "Please register for the guided tour on site at the information desk and meet there 10 minutes before the tour begins.",
+      "images": [],
+      "route": "event-detail.html?id=tour-05",
+      "featured": false
+    },
+    {
+      "id": "tour-06",
+      "type": "導覽",
+      "typeEn": "TOURS",
+      "title": "活動導覽",
+      "titleEn": "Guided Tour",
+      "date": "2026.11.15",
+      "startTime": "15:00",
+      "endTime": "15:30",
+      "time": "15:00–15:30",
+      "location": "臺北典藏植物園－主展場",
+      "locationEn": "Taipei Collectible Botanical Garden – Main Venue",
+      "registration": "活動導覽請至服務台現場報名，並於導覽開始前10分鐘至服務台集合。",
+      "registrationEn": "Please register for the guided tour on site at the information desk and meet there 10 minutes before the tour begins.",
+      "images": [],
+      "route": "event-detail.html?id=tour-06",
+      "featured": false
+    },
+    {
+      "id": "opening-performance",
+      "type": "表演",
+      "typeEn": "PERFORMANCE",
+      "title": "音像之夜",
+      "titleEn": "Audiovisual Performance",
+      "date": "2026.10.31",
+      "startTime": "20:00",
+      "endTime": "23:00",
+      "time": "20:00–23:00",
+      "location": "未來生活館一樓大廳（臺北典藏植物園入口處）",
+      "locationEn": "Future Life Pavilion 1F Lobby (Entrance to the Taipei Collectible Botanical Garden)",
+      "detailId": "opening-performance",
+      "route": "opening-performance.html",
+      "featured": true,
+      "images": []
+    }
+  ],
+  organizations: [
+    {
+      "type": "主辦單位",
+      "names": [
+        "臺北市政府文化局"
+      ],
+      "images": [
+        "assets/images/logos/台北市文化局LOGO.png"
+      ],
+      "urls": [
+        "https://culture.gov.taipei/"
+      ]
+    },
+    {
+      "type": "協辦單位",
+      "names": [
+        "文創技研有限公司"
+      ],
+      "images": [
+        "assets/images/logos/文創技研Logo.png"
+      ],
+      "urls": [
+        "https://artecture-tw.com/"
+      ]
+    },
+    {
+      "type": "場地合作",
+      "names": [
+        "臺北典藏植物園",
+        "財團法人臺北市會展產業發展基金會"
+      ],
+      "namesEn": [
+        "Taipei Collectible Botanical Garden",
+        "TAIPEI EXPO FOUNDATION"
+      ],
+      "images": [
+        "assets/images/logos/臺北典藏植物園LOGO.png",
+        "assets/images/logos/財團法人臺北市會展產業發展基金會 LOGO.png"
+      ],
+      "urls": [
+        "https://www.future.url.tw/",
+        "https://www.expopark.taipei/"
+      ]
+    },
+    {
+      "type": "合作單位",
+      "names": [
+        "C-LAB未來視覺實驗室",
+        "噪流",
+        "超級浪台北空間",
+        "中山社區大學"
+      ],
+      "namesEn": [
+        "C-LAB’s Future Vision Lab",
+        "Fluid Noise",
+        "Hyper Wave Taipei Space",
+        "Zhongshan Community College"
+      ],
+      "images": [
+        "assets/images/logos/C-LAB未來視覺實驗室LOGO.png",
+        "assets/images/logos/噪流LOGO.png",
+        "assets/images/logos/超級浪LOGO.png",
+        "assets/images/logos/中山社大Logo.png"
+      ],
+      "urls": [
+        "https://clab.org.tw/unit/future-vision-lab/",
+        "https://fluidnoise.com/about/",
+        "https://www.hyperwavemit.com/",
+        "http://www.zscc.tp.edu.tw/"
+      ]
+    },
+    {
+      "type": "贊助",
+      "names": [
+        "十銓科技股份有限公司",
+        "c2x3 區塊鏈藝術媒體",
+        "奧地利台北辦事處",
+        "捷克中心台北",
+        "威摩科技股份有限公司",
+        "台灣互動體驗設計協會",
+        "民偉視訊工程有限公司",
+        "飛利浦顯示器",
+        "達明機器人股份有限公司",
+        "上銀科技股份有限公司"
+      ],
+      "namesEn": [
+        "Team Group Inc.",
+        "c2x3",
+        "Austrian Office Taipei",
+        "Czech Centre Taipei",
+        "WeMo Scooter",
+        "TIEDA",
+        "MEWAY VISION",
+        "Philips Monitors",
+        "TECHMAN ROBOT INC.",
+        "HIWIN TECHNOLOGIES CORP."
+      ],
+      "images": [
+        "assets/images/logos/十銓科技LOGO.png",
+        "assets/images/logos/C2x3LOGO.png",
+        "assets/images/logos/奧地利駐臺辦事處LOGO.png",
+        "assets/images/logos/捷克中心台北_LOGO.png",
+        "assets/images/logos/Wemo_LOGO.png",
+        "assets/images/logos/TIEDA Logo.png",
+        "assets/images/logos/民偉_LOGO.png",
+        "assets/images/logos/Philips logo.png",
+        "assets/images/logos/達明LOGO.png",
+        "assets/images/logos/上銀LOGO.png"
+      ],
+      "urls": [
+        "https://www.teamgroupinc.com/tw/",
+        "https://linktr.ee/c2x3",
+        "https://www.bmeia.gv.at/tw/%E5%A5%A7%E5%9C%B0%E5%88%A9-%E8%BE%A6%E4%BA%8B%E8%99%95-%E5%8F%B0%E5%8C%97",
+        "https://taipei.czechcentres.gov.cz/zh",
+        "https://www.wemoscooter.com/",
+        "https://tieda-ixd.com/",
+        "https://www.meway.com.tw/",
+        "https://www.philips.com.tw/c-m-so/monitors",
+        "https://www.tm-robot.com/zh-hant",
+        "https://www.hiwin.tw/"
+      ],
+      "sponsor": true
+    },
+    {
+      "type": "多媒體設備贊助",
+      "names": [
+        "財團法人洪建全教育文化基金會",
+        "台灣松下電器股份有限公司"
+      ],
+      "namesEn": [
+        "Hong Foundation",
+        "Panasonic Taiwan"
+      ],
+      "images": [
+        "assets/images/logos/洪建全基金會LOGO.png",
+        "assets/images/logos/Panasonic LOGO.png"
+      ],
+      "urls": [
+        "https://www.hongfoundation.org.tw/",
+        "https://www.panasonic.com/tw/"
+      ],
+      "sponsor": true
+    }
+  ]
+};
+
+// Venue relationships are derived once from the venue records so works never
+// duplicate store or field information. Formal venue details can be completed
+// by editing only the matching venue entry above.
+const DAF_STORE_DETAIL_IMAGES = {
+  "store-01": ["01.jpg", "02.jpg", "03.jpg", "04.jpg"],
+  "store-02": ["01.jpg", "02.jpg", "03.jpg", "04.jpg"],
+  "store-03": ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"],
+  "store-04": ["01.jpg", "02.jpg", "03.jpg", "04.jpg"],
+  "store-05": ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg", "06.jpg", "07.jpg"],
+  "store-06": [],
+  "store-07": ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "08.jpg"],
+  "store-08": ["01.jpg", "02.jpg", "03.jpg", "04.jpg"],
+  "store-09": ["01.jpg", "02.jpg", "03.jpg", "04.jpg"],
+  "store-10": ["01.jpg", "02.jpg", "03.jpg"],
+  "shop-01": ["01.png", "02.png", "03.jpg", "04.jpg"],
+  "shop-02": ["01.jpg", "02.jpg", "03.jpg", "04.jpg"],
+  "shop-03": ["01.jpg", "02.jpg", "03.jpg"],
+  "shop-04": ["01.jpg", "02.jpg"]
+};
+window.DAF_DATA.venues.forEach(venue => {
+  if (!venue.id.startsWith("store-")) return;
+  venue.imageFolder = `assets/images/stores/${venue.id}`;
+  venue.mainImage = `${venue.imageFolder}/main.jpg`;
+  venue.images = (DAF_STORE_DETAIL_IMAGES[venue.id] || []).map(filename => `${venue.imageFolder}/${filename}`);
+});
+window.DAF_DATA.shops.forEach(shop => {
+  shop.imageFolder = `assets/images/shops/${shop.id}`;
+  shop.mainImage = `${shop.imageFolder}/main.${shop.id === "shop-01" ? "png" : "jpg"}`;
+  shop.images = (DAF_STORE_DETAIL_IMAGES[shop.id] || []).map(filename => `${shop.imageFolder}/${filename}`);
+});
+// Optional store collaboration projects. Empty fields remain omitted in the UI.
+// PARTNERSHIP07_OFFER_EN_PENDING: the supplied offer currently includes Chinese copy only.
+// PARTNERSHIP07_BOOKING_URL_PENDING: no official booking URL was supplied.
+const DAF_SHOP_COLLABORATIONS = {
+  "shop-01": [{id:"partnership-01",titleZh:"起 · 初",titleEn:"Origin · Beginning",categoryZh:"黑白麻糬組合禮盒",descriptionZh:"配合臺北數位藝術節展期，推出期間限定黑白麻糬組合。\n夜・黑芝麻｜晝・白椰子\n從黑夜到白晝，都是祝福。",descriptionEn:"In celebration of the Taipei Digital Art Festival, a limited-edition black-and-white mochi set will be available exclusively during the festival period.\nNight · Black Sesame | Day · White Coconut\nFrom night to day, each one carries a blessing.",hoursZh:"10/31（六）白晝之夜\t特別延長營業\t12:00 - 20:00\n11/01（日）\t展期限定開放\t14:00 - 17:00\n11/07（六）\t展期限定開放\t10:30 - 16:30\n11/08（日）\t展期限定開放\t10:30 - 16:30\n11/14（六）\t展期限定開放\t10:30 - 16:30\n11/15（日）\t展期限定開放\t10:30 - 16:30\n平日\t預訂制\t同一取貨日 25 盒以上可成團；至少 7 天前完成預訂\n展期週末限定 OPEN HOUSE；平日採預約制；麻糬每日限量新鮮手作，售完為止。",hoursEn:"10/31 (Sat) Nuit Blanche Taipei\tExtended hours\t12:00–20:00\n11/01 (Sun)\tFestival-period opening\t14:00–17:00\n11/07 (Sat)\tFestival-period opening\t10:30–16:30\n11/08 (Sun)\tFestival-period opening\t10:30–16:30\n11/14 (Sat)\tFestival-period opening\t10:30–16:30\n11/15 (Sun)\tFestival-period opening\t10:30–16:30\nWeekdays\tPre-order only\tOrders of 25 boxes or more for the same pickup date; place orders at least 7 days in advance\nOPEN HOUSE on festival weekends; weekdays by reservation only. Mochi is freshly handmade daily in limited quantities and available while supplies last.",supplyZh:"起・初 四入限定盒\n起・初 八入限定盒\n\n麻糬\t原本四款：約瑟花生、路得黑芝麻、約拿紅豆、彼得酸菜｜四入盒\n麻糬\t原本四款：約瑟花生、路得黑芝麻、約拿紅豆、彼得酸菜｜八入盒\n冷泡茶 500ml\t撒母耳｜原味蕎麥冷泡茶\n冷泡茶 500ml\t以斯帖｜桂花蕎麥冷泡茶\n冷泡茶 500ml\t大衛｜藜麥蕎麥冷泡茶\n咖啡\t限量手沖咖啡 HOT / ICED\t依現場供應與公告",supplyEn:"Origin · Beginning Limited Box (4 pieces)\nOrigin · Beginning Limited Box (8 pieces)\n\nMochi\tOriginal four flavors: Joseph Peanut, Ruth Black Sesame, Jonah Red Bean, Peter Pickled Mustard Greens | Box of 4\nMochi\tOriginal four flavors: Joseph Peanut, Ruth Black Sesame, Jonah Red Bean, Peter Pickled Mustard Greens | Box of 8\nCold-brew tea 500 ml\tSamuel | Original Buckwheat Cold-brew Tea\nCold-brew tea 500 ml\tEsther | Osmanthus Buckwheat Cold-brew Tea\nCold-brew tea 500 ml\tDavid | Quinoa Buckwheat Cold-brew Tea\nCoffee\tLimited pour-over coffee, HOT / ICED\tSubject to on-site availability and announcements",images:["assets/images/partnership/partnership-01/main.png","assets/images/partnership/partnership-01/01.png","assets/images/partnership/partnership-01/02.png","assets/images/partnership/partnership-01/03.png","assets/images/partnership/partnership-01/04.jpg","assets/images/partnership/partnership-01/05.jpg","assets/images/partnership/partnership-01/06.jpg","assets/images/partnership/partnership-01/07.jpg","assets/images/partnership/partnership-01/08.png"]}],
+  "shop-02": [{id:"partnership-02",titleZh:"Mirror of Erised",titleEn:"Mirror of Erised",categoryZh:"特調飲品",descriptionZh:"Mirror of Erised\nVodka / Green Tea / Jasmine / Rose / Longan / Smoke\n\n以綠茶為基底，揉合茉莉與玫瑰的細緻花香，搭配煙燻龍眼的果香與燻香，呈現清雅卻帶有朦朧層次的風味。\n\n如同「灰色自動體」對感知的重新編碼，將自然的香氣拆解、轉化，再重新組合成一種介於熟悉與陌生之間的感官體驗。銀白色的酒體，也象徵著訊息經過運算後所留下的中性介面。",descriptionEn:"Mirror of Erised\nVodka / Green Tea / Jasmine / Rose / Longan / Smoke\n\nBuilt on a green tea base, this cocktail layers the delicate floral notes of jasmine and rose with the fruity aroma and smoky depth of smoked longan, creating an elegant yet subtly hazy flavor profile.\n\nEchoing Gray Autonomous Entity and its reconfiguration of perception, natural aromas are deconstructed, transformed, and recombined into a sensory experience that exists somewhere between the familiar and the unfamiliar. The silvery-white appearance of the cocktail evokes a neutral interface—the residue of information after it has been processed and recomposed.",images:["assets/images/partnership/partnership-02/main.jpg","assets/images/partnership/partnership-02/01.jpg","assets/images/partnership/partnership-02/02.jpg"]}],
+  "shop-03": [{id:"partnership-03",published:false,titleZh:"",titleEn:"",categoryZh:"",images:[]}],
+  "shop-04": [{id:"partnership-04",titleZh:"在記憶折返以前",titleEn:"Before Memory Turns Back",categoryZh:"響應展覽",descriptionZh:"《在記憶折返以前》由台北雙人創作團體Fina與Tony共同展出。Fina以散文式數位影像收集街道、人物與生活片刻；Tony透過翻轉、鏡像與重組，將城市燈火化為影像詩。兩人的作品游移於具象與抽象之間，沿著光線、記憶與時間交會，邀請觀眾辨認那些尚未說完、仍在心中折返的感受。",descriptionEn:"Before Memory Turns Back is a joint exhibition by Taipei-based artist duo Fina and Tony. Fina gathers fragments of streets, people, and everyday life through essayistic digital imagery, while Tony transforms the lights of the city into visual poetry through inversion, mirroring, and recomposition.\nMoving between the figurative and the abstract, their works trace intersections of light, memory, and time, inviting viewers to recognize feelings that remain unfinished and continue to return within.",hoursZh:"展期 | 10月10日至11月8日\n開幕 | 10月17日15:00",hoursEn:"Exhibition period | October 10–November 8\nOpening | October 17, 15:00",images:["assets/images/partnership/partnership-04/main.jpg","assets/images/partnership/partnership-04/01.png","assets/images/partnership/partnership-04/02.jpg","assets/images/partnership/partnership-04/03.png"]}],
+  "shop-05": [{id:"partnership-05",titleZh:"CNSalon花草茶、CNSalon花冰菓",titleEn:"CNSalon Herbal Tea, CNSalon Floral Fruit Ice Pops",categoryZh:"特製餐點",descriptionZh:"CNSalon花草茶\n源起於火山口下的西恩花園新鮮採摘的一杯花草茶，如同「味蕾的花束」，將山裡日月積累的感受，透過一杯花草茶帶入每個人的生活，分享大自然的美好與能量。\nCNSalon花冰菓\n以台灣豐盛的鮮果與西恩花園中自然香草氣味，化作味蕾上冰紛的夏日花園，一支冰菓、一支花，把一座花園結冰，在口中盛開！",descriptionEn:"CNSalon Herbal Tea\nFreshly harvested from CN Garden beneath the volcanic landscape, each cup of herbal tea is like a “bouquet for the palate.” Infused with the flavors and sensations shaped by days and seasons in the mountains, the tea brings the beauty and energy of nature into everyday life, one cup at a time.\nCNSalon Floral Fruit Ice Pops\nMade with Taiwan’s abundant fresh fruits and naturally fragrant herbs from CN Garden, these ice pops transform the flavors of a summer garden into a refreshing frozen treat. A fruit ice pop, a flower—a whole garden captured in ice, blooming with every bite.",images:["assets/images/partnership/partnership-05/main.jpg","assets/images/partnership/partnership-05/01.jpg"]}],
+  "shop-06": [{id:"partnership-06",titleZh:"灰色自動體",titleEn:"GRAY AUTONOMOUS ENTITY",categoryZh:"特調咖啡飲品",descriptionZh:"灰色自動體\nGRAY AUTONOMOUS ENTITY\n一杯，介於人與機器之間的灰色狀態。\n\n咖啡的深黑、藍莓的色彩，\n黑金竹碳將一切拉回灰階，\n再以牛奶覆上一層柔軟的白。\n\n像是正在生成的物件，\n沒有固定的形狀，也沒有唯一的答案。\n在黑與白之間，\n讓味覺成為另一種感知介面。\n\nCoffee × Blueberry × Black Gold Bamboo Charcoal × Milk\n\n臺北數位藝術節限定",descriptionEn:"GRAY AUTONOMOUS ENTITY\nA drink suspended in the gray area between human and machine.\n\nThe deep black of coffee and the color of blueberry are drawn back into grayscale by black gold bamboo charcoal, before being covered with a soft layer of white milk.\n\nLike an object still in the process of becoming, it has no fixed form and no single answer.\n\nBetween black and white, taste becomes another interface for perception.\n\nCoffee × Blueberry × Black Gold Bamboo Charcoal × Milk\n\nTaipei Digital Art Festival Exclusive",images:["assets/images/partnership/partnership-06/main.jpg","assets/images/partnership/partnership-06/01.jpg","assets/images/partnership/partnership-06/02.jpg"]}],
+  "shop-07": [{id:"partnership-07",titleZh:"黑炭法式牛軋餅",titleEn:"Charcoal French Nougat Cracker",categoryZh:"特製點心",descriptionZh:"歐華酒店 × 臺北數位藝術節｜限定黑炭法式牛軋餅\n\n灰色，不只是另一種顏色\n\n當機器越來越懂得模仿人，\n人與機器之間的界線，又在哪裡？\n\n呼應2026臺北數位藝術節對科技、創作與人文之間關係的探索，歐華酒店以熟悉的法式牛軋餅為創作載體，推出限定黑炭法式牛軋餅。\n這一次，我們刻意讓它與傳統牛軋餅的繽紛色彩形成對比，將一場關於「人」與「機器」的思考，藏進一份可以品嚐的甜點裡。\n\n繽紛的法式牛軋餅，象徵人的色彩——有溫度、有情緒，也保留著手作創作的不規則與獨特。\n\n而這一次，歐華酒店以黑炭為靈感，將法式牛軋餅化作一抹深灰。精準、純粹、近乎一致的色彩，彷彿來自數位世界的產物，讓「人」與「機器」之間的界線，成為一場味覺與視覺的想像。法式甜點的細緻工藝，遇上黑炭獨有的自然深色，將法式風格與東方元素融入一口牛軋餅。\n\n當機器開始能創造影像、文字與藝術，什麼樣的色彩，仍然只屬於人？\n繽紛，是人的色彩。\n灰色，是機器的想像。\n而你，看見的是什麼？",descriptionEn:"The Riviera Hotel × Taipei Digital Art Festival | Limited-Edition Charcoal French Nougat Cracker\n\nGray is more than just another color.\n\nAs machines become increasingly capable of imitating humans, where does the boundary between human and machine lie?\n\nEchoing the 2026 Taipei Digital Art Festival’s exploration of the relationships between technology, creativity, and humanity, The Riviera Hotel reimagines its familiar French nougat cracker as a limited-edition charcoal creation. In deliberate contrast to the vibrant colors of traditional nougat crackers, this version transforms a reflection on “humans” and “machines” into something that can be tasted.\n\nThe colorful French nougat cracker represents the colors of humanity—warm, emotional, and marked by the irregularity and individuality of something made by hand.\n\nFor this special edition, The Riviera Hotel draws inspiration from charcoal, transforming the French nougat cracker into a deep shade of gray. Its precise, pure, almost uniform appearance evokes an object from the digital world, turning the boundary between “human” and “machine” into an exploration of both taste and vision. Refined French pastry craftsmanship meets the naturally deep tones of charcoal, bringing French style and Eastern elements together in a single bite.\n\nAs machines begin to create images, words, and art, what colors still belong uniquely to us?\n\nColor is human.\nGray is the imagination of the machine.\nWhat do you see?",offers:[{titleZh:"散客訂房優惠",titleEn:"",code:"DAFTRIV",descriptionZh:"透過官網訂房輸入優惠碼享超值優惠專案9折優惠",descriptionEn:""}],images:["assets/images/partnership/partnership-07/main.jpg"]}],
+  "shop-08": [{id:"partnership-08",titleZh:"SOMA・VEIL",titleEn:"SOMA・VEIL",categoryZh:"特調飲品",descriptionZh:"意指雖然無法理解、看不清本質，但能讓人穩定、安心、愉悅的魔藥（AI科技）",descriptionEn:"A potion that may be impossible to fully understand or see for what it truly is, yet brings a sense of stability, reassurance, and pleasure—a metaphor for AI technology.",images:["assets/images/partnership/partnership-08/main.jpg","assets/images/partnership/partnership-08/01.jpg"]}],
+  "shop-09": [{id:"partnership-09",titleZh:"墨魚披薩套餐",titleEn:"Squid Ink Pizza Set",categoryZh:"披薩套餐組合",descriptionZh:"🦑 墨魚披薩｜把整片海的鮮味，烤進一張披薩裡。\n使用新鮮墨魚囊、墨魚肉與透抽，搭配辛香料細火翻炒，再打成濃郁細緻的墨魚醬。\n不只是「黑色」而已，入口是滿滿的鮮甜海味，越吃越香。\n將墨魚醬均勻抹上披薩麵團，鋪上新鮮透抽，送進高溫窯爐烘烤。\n出爐後，再搭配酸香開胃的莎莎醬與現刨魷魚乾。\n🔥 窯烤的焦香 × 墨魚的鮮甜 × 莎莎醬的酸香 × 魷魚乾的鹹香\n一口下去，海味、香氣與口感一層一層堆疊。",descriptionEn:"🦑Squid Ink Pizza | The flavors of the sea, baked into every slice.\nFresh squid ink, cuttlefish, and squid are slowly sautéed with aromatic spices, then blended into a rich, velvety squid ink sauce.\nMore than just its striking black appearance, this pizza is packed with the natural sweetness and umami of the sea. The squid ink sauce is spread generously over the pizza dough, topped with fresh squid, and baked at high heat in the oven.\nOnce out of the oven, it is finished with bright, tangy salsa and freshly shaved dried squid.\n🔥 Charred oven-baked aroma × Sweet ocean flavors × Tangy salsa × Savory dried squid\nWith every bite, layers of seafood flavor, aroma, and texture unfold one after another.",images:[]}],
+  "shop-10": [{id:"partnership-10",titleZh:"—以父芝名—",titleEn:"",categoryZh:"",descriptionZh:"向經典調酒「Godfather 教父」致敬，以威士忌與杏仁酒構築深沉而溫潤的酒體，覆上灰色芝麻冰淇淋。黑芝麻的濃厚堅果香與酒液交疊，如同在灰色世界裡運行的一段未知程式。沒有絕對的黑，也沒有純粹的白，只有不斷變化的灰階。以「灰色自動體」為題，將熟悉的味覺重新拆解、重組，讓冰淇淋、酒與記憶，在夜色中形成新的感官語言。",images:[]}],
+  "shop-11": [{id:"partnership-11",titleZh:"",titleEn:"",categoryZh:"響應優惠",images:[]}]
+};
+Object.assign(DAF_SHOP_COLLABORATIONS, {"store-02": DAF_SHOP_COLLABORATIONS["shop-05"], "store-03": DAF_SHOP_COLLABORATIONS["shop-06"], "store-04": DAF_SHOP_COLLABORATIONS["shop-07"], "store-05": DAF_SHOP_COLLABORATIONS["shop-08"], "store-07": DAF_SHOP_COLLABORATIONS["shop-09"], "store-08": DAF_SHOP_COLLABORATIONS["shop-10"], "store-10": DAF_SHOP_COLLABORATIONS["shop-11"]});
+window.DAF_DATA.shops.forEach(shop => { shop.collaborations = DAF_SHOP_COLLABORATIONS[shop.id] || []; });
+window.DAF_DATA.venues.forEach(venue => { venue.collaborations = DAF_SHOP_COLLABORATIONS[venue.id] || []; });
+
+// Machine-readable weekly schedules for current-open status. Display copy stays
+// in `businessHours`; these records are the single source used by time logic.
+// Day keys follow Date/Intl weekday order: 0 Sunday through 6 Saturday.
+const DAF_HOURS = (...periods) => periods.map(([open, close]) => ({open, close}));
+const DAF_ALL_DAY_HOURS = () => DAF_HOURS(["00:00", "24:00"]);
+const DAF_BUSINESS_HOURS_SCHEDULES = {
+  "store-01": {0:DAF_HOURS(["10:00","17:30"]),1:null,2:DAF_HOURS(["10:00","17:30"]),3:DAF_HOURS(["10:00","17:30"]),4:DAF_HOURS(["10:00","17:30"]),5:DAF_HOURS(["10:00","17:30"]),6:DAF_HOURS(["10:00","20:30"])},
+  "store-02": {0:null,1:null,2:DAF_HOURS(["12:00","18:00"]),3:DAF_HOURS(["12:00","18:00"]),4:DAF_HOURS(["12:00","18:00"]),5:DAF_HOURS(["12:00","18:00"]),6:DAF_HOURS(["12:00","18:00"])},
+  "store-03": {0:DAF_HOURS(["10:00","22:00"]),1:DAF_HOURS(["10:30","22:00"]),2:DAF_HOURS(["10:30","22:00"]),3:DAF_HOURS(["10:30","22:00"]),4:DAF_HOURS(["10:30","22:00"]),5:DAF_HOURS(["10:30","00:00"]),6:DAF_HOURS(["10:00","00:00"])},
+  "store-04": {0:DAF_ALL_DAY_HOURS(),1:DAF_ALL_DAY_HOURS(),2:DAF_ALL_DAY_HOURS(),3:DAF_ALL_DAY_HOURS(),4:DAF_ALL_DAY_HOURS(),5:DAF_ALL_DAY_HOURS(),6:DAF_ALL_DAY_HOURS()},
+  "store-05": {0:DAF_HOURS(["13:00","21:00"]),1:DAF_HOURS(["16:00","21:00"]),2:DAF_HOURS(["16:00","21:00"]),3:null,4:DAF_HOURS(["16:00","21:00"]),5:DAF_HOURS(["16:00","21:00"]),6:DAF_HOURS(["13:00","21:00"])},
+  "store-06": {0:null,1:null,2:DAF_HOURS(["09:00","18:30"]),3:DAF_HOURS(["09:00","18:30"]),4:DAF_HOURS(["09:00","18:30"]),5:DAF_HOURS(["09:00","18:30"]),6:DAF_HOURS(["09:00","18:30"])},
+  "store-07": {0:DAF_HOURS(["11:30","15:00"],["17:30","21:30"]),1:DAF_HOURS(["11:30","15:00"],["17:30","21:00"]),2:null,3:DAF_HOURS(["11:30","15:00"],["17:30","21:00"]),4:DAF_HOURS(["11:30","15:00"],["17:30","21:00"]),5:DAF_HOURS(["11:30","15:00"],["17:30","21:30"]),6:DAF_HOURS(["11:30","15:00"],["17:30","21:30"])},
+  "store-08": {0:DAF_HOURS(["12:00","20:00"]),1:null,2:DAF_HOURS(["12:00","20:00"]),3:DAF_HOURS(["12:00","20:00"]),4:DAF_HOURS(["12:00","20:00"]),5:DAF_HOURS(["12:00","20:00"]),6:DAF_HOURS(["12:00","20:00"])},
+  "store-09": {0:DAF_ALL_DAY_HOURS(),1:DAF_ALL_DAY_HOURS(),2:DAF_ALL_DAY_HOURS(),3:DAF_ALL_DAY_HOURS(),4:DAF_ALL_DAY_HOURS(),5:DAF_ALL_DAY_HOURS(),6:DAF_ALL_DAY_HOURS()},
+  "store-10": {0:DAF_HOURS(["10:00","21:00"]),1:DAF_HOURS(["10:00","21:00"]),2:DAF_HOURS(["10:00","21:00"]),3:DAF_HOURS(["10:00","21:00"]),4:DAF_HOURS(["10:00","21:00"]),5:DAF_HOURS(["10:00","21:00"]),6:DAF_HOURS(["10:00","21:00"])},
+  "shop-01": {0:null,1:null,2:null,3:null,4:null,5:null,6:null},
+  "shop-02": {0:null,1:DAF_HOURS(["19:30","01:00"]),2:DAF_HOURS(["19:30","01:00"]),3:DAF_HOURS(["19:30","01:00"]),4:null,5:DAF_HOURS(["19:30","02:00"]),6:DAF_HOURS(["19:30","02:00"])},
+  "shop-03": {0:DAF_HOURS(["12:00","15:00"]),1:DAF_HOURS(["12:00","19:00"]),2:DAF_HOURS(["12:00","19:00"]),3:DAF_HOURS(["12:00","19:00"]),4:DAF_HOURS(["12:00","19:00"]),5:DAF_HOURS(["12:00","15:00"]),6:DAF_HOURS(["12:00","15:00"])},
+  "shop-04": {0:DAF_HOURS(["13:00","18:00"]),1:null,2:null,3:null,4:null,5:null,6:DAF_HOURS(["13:00","18:00"])}
+};
+const DAF_SPECIAL_HOURS = {
+  "store-01": {"2026-10-31":DAF_HOURS(["10:00","22:00"])},
+  "store-03": {"2026-10-31":DAF_HOURS(["10:00","02:00"])},
+  "store-05": {"2026-10-31":DAF_HOURS(["13:00","00:00"])},
+  "store-08": {"2026-10-31":DAF_HOURS(["12:00","02:00"])},
+  "shop-01": {
+    "2026-10-31": DAF_HOURS(["12:00","20:00"]),
+    "2026-11-01": DAF_HOURS(["14:00","17:00"]),
+    "2026-11-07": DAF_HOURS(["10:30","16:30"]),
+    "2026-11-08": DAF_HOURS(["10:30","16:30"]),
+    "2026-11-14": DAF_HOURS(["10:30","16:30"]),
+    "2026-11-15": DAF_HOURS(["10:30","16:30"])
+  },
+  "shop-02": {"2026-10-31":DAF_HOURS(["19:30","02:00"])}
+};
+[...window.DAF_DATA.venues, ...window.DAF_DATA.shops].forEach(store => {
+  store.businessHoursSchedule = DAF_BUSINESS_HOURS_SCHEDULES[store.id] || null;
+  store.specialHours = DAF_SPECIAL_HOURS[store.id] || {};
+});
+const DAF_WORK_VENUE_IDS = Object.fromEntries(
+  window.DAF_DATA.venues.flatMap(venue => venue.workIds.map(workId => [String(workId), venue.id]))
+);
+[window.DAF_DATA.works, window.DAF_DATA.mapWorks].forEach(collection => collection.forEach(work => {
+  work.venueId = DAF_WORK_VENUE_IDS[String(work.id)] || "";
+}));

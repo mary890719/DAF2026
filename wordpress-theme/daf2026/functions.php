@@ -51,9 +51,6 @@ add_action( 'wp_enqueue_scripts', 'daf2026_enqueue_assets' );
  * 僅補上不存在的頁面，不覆寫既有頁面內容。
  */
 function daf2026_ensure_site_pages() {
-	if ( get_option( 'daf2026_pages_v1_created' ) ) {
-		return;
-	}
 	$pages = array(
 		'about' => '關於臺北數位藝術節',
 		'curatorial' => '策展論述',
@@ -80,7 +77,9 @@ function daf2026_ensure_site_pages() {
 			'post_content' => '',
 		) );
 	}
-	update_option( 'daf2026_pages_v1_created', 1, false );
+	if ( ! get_option( 'daf2026_pages_v1_created' ) ) {
+		update_option( 'daf2026_pages_v1_created', 1, false );
+	}
 
 	$english_parent = get_page_by_path( 'en', OBJECT, 'page' );
 	if ( ! $english_parent ) {
@@ -93,6 +92,10 @@ function daf2026_ensure_site_pages() {
 		) );
 	} else {
 		$english_parent_id = $english_parent->ID;
+	}
+
+	if ( get_option( 'daf2026_pages_en_v1_created' ) ) {
+		return;
 	}
 
 	if ( $english_parent_id && ! is_wp_error( $english_parent_id ) ) {
@@ -112,6 +115,7 @@ function daf2026_ensure_site_pages() {
 				'post_content' => '',
 			) );
 		}
+		update_option( 'daf2026_pages_en_v1_created', 1, false );
 	}
 }
 add_action( 'admin_init', 'daf2026_ensure_site_pages' );

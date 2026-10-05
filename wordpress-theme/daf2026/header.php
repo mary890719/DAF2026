@@ -8,8 +8,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $page_key = get_query_var( 'daf2026_page_key', 'home' );
+$daf_language = get_query_var( 'daf2026_language', '' );
 ?><!doctype html>
-<html <?php language_attributes(); ?>>
+<html<?php echo 'en' === $daf_language ? ' lang="en"' : ' ' . get_language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width,initial-scale=1">

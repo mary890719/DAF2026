@@ -1,0 +1,32 @@
+name: 打包 WordPress Theme
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - wordpress-theme-v1
+    paths:
+      - "wordpress-theme/daf2026/**"
+      - ".github/workflows/build-wordpress-theme.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 取得 Repository
+        uses: actions/checkout@v4
+
+      - name: 打包 DAF2026 Theme
+        run: |
+          cd wordpress-theme
+          zip -r ../daf2026.zip daf2026
+
+      - name: 上傳 Theme ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: daf2026-wordpress-theme
+          path: daf2026.zip
+          if-no-files-found: error

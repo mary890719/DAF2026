@@ -23,7 +23,7 @@ get_header();
 						<span class="hero-logo-blocks"></span>
 						<span class="hero-logo-recognition"><span class="hero-logo-recognition-zh hero-logo-scramble" data-final-text="灰色自動體">灰色自動體</span><span class="hero-logo-recognition-en hero-logo-scramble" data-final-text="GRAY AUTONOMOUS ENTITY">GRAY AUTONOMOUS ENTITY</span></span>
 						<span class="hero-logo-flash"></span>
-						<span class="hero-logo-final"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logos/DAF26LOGO.png' ); ?>" width="2055" height="593" alt=""></span>
+						<span class="hero-logo-final"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logos/DAF26LOGO.webp' ); ?>" width="2055" height="593" alt=""></span>
 					</span>
 				</h1>
 			</div>

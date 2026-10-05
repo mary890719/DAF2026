@@ -26,6 +26,17 @@ window.DAF_COMPONENTS = (() => {
   };
   const localizedText = (item, field) => getCurrentLanguage() === "en" && item?.[`${field}En`] ? item[`${field}En`] : item?.[field] || "";
   const languageSwitchRoute = () => {
+    if (isWordPress()) {
+      const segments = location.pathname.split("/").filter(Boolean);
+      const language = getCurrentLanguage();
+      const pageSegments = language === "en" && segments[0] === "en" ? segments.slice(1) : segments;
+      const slug = pageSegments.join("/");
+      const base = window.DAF_WP.homeUrl.replace(/\/$/, "");
+      const targetPath = language === "en"
+        ? (slug ? `/${slug}/` : "/")
+        : `/en${slug ? `/${slug}` : ""}/`;
+      return `${base}${targetPath}${location.search}${location.hash}`;
+    }
     const filename = location.pathname.split("/").filter(Boolean).pop() || "index.html";
     const page = filename.endsWith(".html") ? filename : "index.html";
     return localizedRoute(`${page}${location.search}${location.hash}`, getCurrentLanguage() === "en" ? "zh-Hant" : "en");

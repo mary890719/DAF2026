@@ -1,21 +1,21 @@
 window.DAF_COMPONENTS = (() => {
   const getCurrentLanguage = () => document.documentElement.lang.toLowerCase().startsWith("en") || /(^|\/)en(\/|$)/.test(location.pathname) ? "en" : "zh-Hant";
   const isExternal = value => /^(?:[a-z]+:|\/\/|#)/i.test(value || "");
-  const isTestMap = () => /(^|\\/)test_MAP(\\/|$)/i.test(location.pathname);
+  const isTestMap = () => /(^|\/)test_MAP(\/|$)/i.test(location.pathname);
   const isWordPress = () => Boolean(window.DAF_WP?.themeUri && window.DAF_WP?.homeUrl);
-  const cleanRelativePath = path => (path || "").replace(/^(?:\\.\\.\\/)+/, "").replace(/^en\\//, "");
+  const cleanRelativePath = path => (path || "").replace(/^(?:\.\.\/)+/, "").replace(/^en\//, "");
   const wordpressPageRoute = route => {
     const [pathAndQuery, hash = ""] = route.split("#");
     const [path, query = ""] = pathAndQuery.split("?");
     const normalized = cleanRelativePath(path);
     const pageMap = {"index.html":"","about.html":"about/","curatorial.html":"curatorial/","partners.html":"partners/","map.html":"map/","district-map.html":"district-map/","shops.html":"shops/","works.html":"works/","district-works.html":"district-works/","work-detail.html":"work-detail/","program.html":"program/","event-detail.html":"event-detail/"};
-    const target = Object.prototype.hasOwnProperty.call(pageMap, normalized) ? pageMap[normalized] : normalized.replace(/\\.html$/, "/");
-    const base = window.DAF_WP.homeUrl.replace(/\\/$/, "");
+    const target = Object.prototype.hasOwnProperty.call(pageMap, normalized) ? pageMap[normalized] : normalized.replace(/\.html$/, "/");
+    const base = window.DAF_WP.homeUrl.replace(/\/$/, "");
     return `${base}/${target}${query ? `?${query}` : ""}${hash ? `#${hash}` : ""}`;
   };
   const assetRoute = path => {
     if (!path || isExternal(path)) return path;
-    if (isWordPress()) return `${window.DAF_WP.themeUri.replace(/\\/$/, "")}/${cleanRelativePath(path)}`;
+    if (isWordPress()) return `${window.DAF_WP.themeUri.replace(/\/$/, "")}/${cleanRelativePath(path)}`;
     return path.startsWith("../") ? path : `${getCurrentLanguage() === "en" || isTestMap() ? "../" : ""}${path}`;
   };
   const localizedRoute = (route, targetLanguage = getCurrentLanguage()) => {

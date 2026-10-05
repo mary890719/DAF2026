@@ -17,8 +17,8 @@
   const seoTitle = title => `${title}${isEnglish ? " | " : "｜"}${seoBrand}`;
   // PRODUCTION_ABSOLUTE_URL_PENDING: replace with the final absolute HTTPS URL after domain confirmation.
   const fallbackSocialImage = isEnglish
-    ? "../assets/images/seo/daf2026-og-default.jpg"
-    : "assets/images/seo/daf2026-og-default.jpg";
+    ? "../assets/images/seo/daf2026-og-default.webp"
+    : "assets/images/seo/daf2026-og-default.webp";
   const fallbackSocialImageAlt = isEnglish
     ? "2026 Taipei Digital Art Festival “Grey Autonomous Entity” key visual"
     : "2026 臺北數位藝術節「灰色自動體」主視覺";
@@ -80,7 +80,7 @@
       setMetadataContent("property", "og:image", fallbackSocialImage);
       setMetadataContent("property", "og:image:width", "1200");
       setMetadataContent("property", "og:image:height", "630");
-      setMetadataContent("property", "og:image:type", "image/jpeg");
+      setMetadataContent("property", "og:image:type", "image/webp");
       setMetadataContent("property", "og:image:alt", fallbackSocialImageAlt);
       setMetadataContent("name", "twitter:image", fallbackSocialImage);
       setMetadataContent("name", "twitter:image:alt", fallbackSocialImageAlt);
@@ -2369,7 +2369,7 @@
         return true;
       });
     };
-    const collaborationMain = project => publicImages(project?.images).find(src => /(?:^|\/)main\.(?:jpe?g|png)$/i.test(src)) || "";
+    const collaborationMain = project => publicImages(project?.images).find(src => /(?:^|\/)main\.webp$/i.test(src)) || "";
     const labels = isEnglish ? {
       address: "ADDRESS", hours: "BUSINESS HOURS", phone: "PHONE", description: "ABOUT",
       specialHours: "SPECIAL HOURS",

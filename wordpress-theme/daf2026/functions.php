@@ -21,16 +21,16 @@ add_action( 'after_setup_theme', 'daf2026_theme_setup' );
  * 載入既有 Prototype 樣式與 JavaScript。
  */
 function daf2026_enqueue_assets() {
-	$theme_version = wp_get_theme()->get( 'Version' );
 	$theme_uri = get_template_directory_uri();
+	$theme_dir = get_template_directory();
 
 	wp_enqueue_style( 'daf2026-google-font', 'https://fonts.googleapis.com/css2?family=Turret+Road:wght@400;500;700&display=swap', array(), null );
-	wp_enqueue_style( 'daf2026-style', $theme_uri . '/assets/css/style.css', array( 'daf2026-google-font' ), $theme_version );
+	wp_enqueue_style( 'daf2026-style', $theme_uri . '/assets/css/style.css', array( 'daf2026-google-font' ), filemtime( $theme_dir . '/assets/css/style.css' ) );
 
-	wp_enqueue_script( 'daf2026-data', $theme_uri . '/assets/js/data.js', array(), $theme_version, true );
-	wp_enqueue_script( 'daf2026-components', $theme_uri . '/assets/js/components.js', array( 'daf2026-data' ), $theme_version, true );
-	wp_enqueue_script( 'daf2026-hero-logo', $theme_uri . '/assets/js/hero-logo-animation.js', array(), $theme_version, true );
-	wp_enqueue_script( 'daf2026-app', $theme_uri . '/assets/js/app.js', array( 'daf2026-components', 'daf2026-hero-logo' ), $theme_version, true );
+	wp_enqueue_script( 'daf2026-data', $theme_uri . '/assets/js/data.js', array(), filemtime( $theme_dir . '/assets/js/data.js' ), true );
+	wp_enqueue_script( 'daf2026-components', $theme_uri . '/assets/js/components.js', array( 'daf2026-data' ), filemtime( $theme_dir . '/assets/js/components.js' ), true );
+	wp_enqueue_script( 'daf2026-hero-logo', $theme_uri . '/assets/js/hero-logo-animation.js', array(), filemtime( $theme_dir . '/assets/js/hero-logo-animation.js' ), true );
+	wp_enqueue_script( 'daf2026-app', $theme_uri . '/assets/js/app.js', array( 'daf2026-components', 'daf2026-hero-logo' ), filemtime( $theme_dir . '/assets/js/app.js' ), true );
 
 	wp_add_inline_script(
 		'daf2026-data',

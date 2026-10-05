@@ -24,9 +24,36 @@ jobs:
           cd wordpress-theme
           zip -r ../daf2026.zip daf2026
 
+      - name: 打包中文版 WordPress 增量更新
+        run: |
+          cd wordpress-theme
+          zip ../daf2026-update-zh-wordpress-v1.zip \
+            daf2026/page-about.php \
+            daf2026/page-curatorial.php \
+            daf2026/page-partners.php \
+            daf2026/page-map.php \
+            daf2026/page-district-map.php \
+            daf2026/page-shops.php \
+            daf2026/page-works.php \
+            daf2026/page-district-works.php \
+            daf2026/page-work-detail.php \
+            daf2026/page-program.php \
+            daf2026/page-event-detail.php \
+            daf2026/page-opening-performance.php \
+            daf2026/functions.php \
+            daf2026/assets/js/components.js \
+            daf2026/assets/js/app.js
+
       - name: 上傳 Theme ZIP
         uses: actions/upload-artifact@v4
         with:
           name: daf2026-wordpress-theme
           path: daf2026.zip
+          if-no-files-found: error
+
+      - name: 上傳中文版增量更新 ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: daf2026-update-zh-wordpress-v1
+          path: daf2026-update-zh-wordpress-v1.zip
           if-no-files-found: error

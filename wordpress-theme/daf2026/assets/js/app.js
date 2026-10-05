@@ -205,6 +205,19 @@
     closeButton.focus({preventScroll: true});
   };
 
+  const preloadGalleryImages = (images, {skip = 0} = {}) => {
+    if (!Array.isArray(images) || images.length <= skip) return;
+    const schedule = window.requestIdleCallback || (callback => window.setTimeout(callback, 0));
+    schedule(() => {
+      images.slice(skip).forEach(image => {
+        if (!image?.src) return;
+        const preload = new Image();
+        preload.decoding = "async";
+        preload.src = C.assetRoute(image.src);
+      });
+    });
+  };
+
   const renderDetailGallery = (container, images, labels) => {
     if (!container) return;
     container.__detailGalleryCleanup?.();
@@ -213,6 +226,7 @@
         <img src="${C.assetRoute(image.src)}" alt="${image.alt}" loading="lazy" decoding="async">
       </button>`).join("");
     container.setAttribute("aria-label", labels.gallery);
+    preloadGalleryImages(images, {skip: 1});
     const buttons = [...container.querySelectorAll("[data-detail-gallery-index]")];
     buttons.forEach(button => {
       button.addEventListener("click", () => openDetailLightbox(images, Number(button.dataset.detailGalleryIndex), button, labels));
@@ -2280,6 +2294,7 @@
             : `<div class="marker-card-work is-pending">${content}</div>`;
         }).join("");
         const galleryImages = works.flatMap(work => galleryImagesFor(catalogWorkFor(work), `${mapTitle(work)} ${isEnglish ? "image" : "作品圖片"}`));
+        preloadGalleryImages(galleryImages, {skip: 1});
         const mediaMarkup = galleryImages.length ? `<div class="marker-card-media" data-marker-gallery data-gallery-index="0">
           ${imageMarkup(galleryImages[0], galleryImages[0].alt)}
           ${galleryImages.length > 1 ? `<button class="marker-card-media-arrow is-previous" type="button" data-marker-gallery-direction="-1" aria-label="${isEnglish ? "Previous image" : "上一張圖片"}">‹</button><button class="marker-card-media-arrow is-next" type="button" data-marker-gallery-direction="1" aria-label="${isEnglish ? "Next image" : "下一張圖片"}">›</button><div class="gallery-dots" aria-label="${isEnglish ? "Image pagination" : "圖片分頁"}">${galleryImages.map((_, index) => `<button type="button" data-marker-gallery-index="${index}" aria-label="${isEnglish ? `View image ${index + 1}` : `查看第 ${index + 1} 張圖片`}" aria-current="${index === 0 ? "true" : "false"}"></button>`).join("")}</div>` : ""}

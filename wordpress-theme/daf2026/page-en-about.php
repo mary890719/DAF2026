@@ -1,0 +1,34 @@
+<?php
+/**
+ * DAF2026 English About page.
+ */
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+set_query_var( 'daf2026_page_key', 'about' );
+set_query_var( 'daf2026_language', 'en' );
+get_header();
+?>
+<main id="app" class="container">
+	<div id="breadcrumb"></div>
+	<p class="page-label" lang="en">ABOUT</p>
+	<h1 class="page-title">About Taipei Digital Art Festival</h1>
+	<article class="page-sections about-sections">
+		<section class="ia-section" id="festival"><h2>ABOUT THE FESTIVAL</h2><div class="about-copy">
+			<p>Since its launch in 2006, the Taipei Digital Art Festival has grown into an annual celebration of digital art, bringing together internationally renowned works from around the world. Taking place in Taiwan, a global hub of high-tech development, the festival highlights the intersection of technology, humanities, and creative thinking.</p>
+			<p>As an important platform for digital art exhibitions and performances, the Taipei Digital Art Festival brings together award-winning works in digital art and performance, while fostering exhibitions and exchanges in collaboration with international professional institutions. Through the festival, local creators are given opportunities to broaden their perspectives, while the festival format brings together the creative energy of Taiwan’s digital art community.</p>
+			<p>Each year, the Taipei Digital Art Festival invites the public to discover the possibilities of digital art and provides artists and art enthusiasts with a platform to exchange ideas and share creative achievements. In recent years, the festival has further extended its digital art platform through connections with international curatorial projects, gradually developing into a global meeting point for digital art and creative communities.</p>
+		</div></section>
+		<section class="ia-section main-venue-visit" id="main-venue-visit"><h2>MAIN VENUE VISIT</h2><div class="main-venue-visit-grid">
+			<section class="visit-subsection" id="visit-hours"><h3>VISITING HOURS</h3><div class="visit-venue-info"><p>Tue–Sun 9:00–17:00 (Closed on Mondays)</p></div></section>
+			<section class="visit-subsection" id="visit-location"><h3>LOCATION</h3><div class="visit-venue-info"><p><strong>Main Venue | </strong>Taipei Collectible Botanical Garden</p></div></section>
+			<section class="visit-subsection" id="transportation"><h3>TRANSPORTATION</h3><div class="transport-content">
+				<section class="transport-section"><h4>1. WALK OR TRANSFER AFTER TAKING THE MRT</h4><section class="transport-route-group"><h5>YUANSHAN STATION</h5><ul><li>Walk to the exhibition area.</li><li>Transfer to Red 50 and get off at Xinsheng Park.</li><li>Transfer to bus 542 and get off at Jilin Road Terminal.</li></ul></section><section class="transport-route-group"><h5>DAZHI STATION</h5><ul><li>Transfer to bus 72 or 722 and get off at Xinsheng Park (Lin An Tai).</li></ul></section><section class="transport-route-group"><h5>ZHONGSHAN ELEMENTARY SCHOOL STATION</h5><ul><li>Walk to the exhibition area.</li></ul></section></section>
+				<section class="transport-section"><h4>2. WALK AFTER TAKING THE BUS</h4><section class="transport-route-group"><h5>GET OFF AT MINZU EAST ROAD INTERSECTION</h5><p>109, 203, 277, 279, 280, 280 Direct, 542, 606, 606 Commuter, 612, 685, Dunhua Main Line</p></section><section class="transport-route-group"><h5>GET OFF AT XINSHENG PARK</h5><p>Red 50, 685, Citizen Minibus 9</p></section><section class="transport-route-group"><h5>GET OFF AT XINSHENG PARK (LIN AN TAI)</h5><p>72, 222, 286 Shuttle, 298, 643, 676, Citizen Minibus 9, Songjiang–Xinsheng Main Line, Fuxing Main Line</p></section><section class="transport-route-group"><h5>GET OFF AT JILIN ROAD TERMINAL</h5><p>542</p></section></section>
+				<section class="transport-section"><h4>3. Ride a WeMo Scooter</h4><p>During the festival, a dedicated WeMo scooter rental and return zone will be available at the Xinsheng Park Surface Parking Lot (outside Taipei Xinsheng Sports Center). Visitors can take a WeMo scooter directly to the festival venue or explore the Yuanshan area at their own pace and discover more artworks along the way.</p></section>
+			</div></section>
+			<section class="visit-subsection" id="venue-map"><h3>MAP</h3><div class="transport-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.9133132868665!2d121.5317769!3d25.070927099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a95401821b0d%3A0x26dc1d8284f4461!2z6Ie65YyX5YW46JeP5qSN54mp5ZyS!5e0!3m2!1szh-TW!2sus!4v1786722022654!5m2!1szh-TW!2sus" width="600" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Taipei Collectible Botanical Garden on Google Maps"></iframe></div></section>
+		</div></section>
+		<section class="ia-section" id="art-in-store"><h2>TAIPEI YUANSHAN DISTRICT</h2><p>This exhibition collaborates with stores in the neighborhoods surrounding Taipei Yuanshan, extending artworks into spaces of everyday life.<br>Opening dates and business hours vary by participating store. Visit <a href="<?php echo esc_url( home_url( '/en/shops/#partner-stores' ) ); ?>">MAP – Partner Stores</a> for locations, information, and real-time opening status.</p></section>
+	</article>
+	<nav class="page-bottom-nav back-wrap" aria-label="Page navigation"><a class="button" href="<?php echo esc_url( home_url( '/en/curatorial/' ) ); ?>">CURATORIAL STATEMENT &gt;</a></nav>
+</main>
+<?php get_footer(); ?>

@@ -1074,7 +1074,7 @@
       list.innerHTML = filtered.length ? filtered.map(event => {
         const index = orderedEvents.indexOf(event) + 1;
         const date = programDate(event.date);
-        return `<a class="program-card" href="${programRoute(event)}">
+        return `<a class="program-card" href="${C.localizedRoute(programRoute(event))}">
           <span class="program-card-number">${String(index).padStart(2, "0")}</span>
           <span class="program-card-content"><small>${displayType(event)}</small><strong>${displayTitle(event)}</strong></span>
           <span class="program-card-meta">${date || event.date ? `<span>${date ? date.short : event.date}</span>` : ""}${date ? `<span>${displayWeekday(date)}</span>` : ""}${programTime(event) ? `<span>${programTime(event)}</span>` : ""}</span>

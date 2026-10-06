@@ -47,6 +47,51 @@ add_action( 'wp_enqueue_scripts', 'daf2026_enqueue_assets' );
 
 
 /**
+ * 讀取由 data.js 衍生的詳細頁 SEO 索引。
+ */
+function daf2026_get_detail_seo_index() {
+	static $index = null;
+	if ( null !== $index ) {
+		return $index;
+	}
+	$path = get_template_directory() . '/assets/data/seo-detail-index.json';
+	if ( ! is_readable( $path ) ) {
+		$index = array();
+		return $index;
+	}
+	$decoded = json_decode( file_get_contents( $path ), true );
+	$index = is_array( $decoded ) ? $decoded : array();
+	return $index;
+}
+
+/**
+ * 取得目前詳細頁對應的伺服器端 SEO 資料。
+ */
+function daf2026_get_detail_seo_data( $page_key, $is_english ) {
+	if ( ! in_array( $page_key, array( 'work-detail', 'event-detail' ), true ) || ! isset( $_GET['id'] ) ) {
+		return null;
+	}
+	$id = sanitize_text_field( wp_unslash( $_GET['id'] ) );
+	$group = 'work-detail' === $page_key ? 'works' : 'events';
+	$index = daf2026_get_detail_seo_index();
+	if ( '' === $id || empty( $index[ $group ][ $id ] ) ) {
+		return array( 'valid' => false, 'id' => $id );
+	}
+	$item = $index[ $group ][ $id ];
+	$title_key = $is_english ? 'titleEn' : 'titleZh';
+	$description_key = $is_english ? 'descriptionEn' : 'descriptionZh';
+	$brand = $is_english ? '2026 Taipei Digital Art Festival' : '2026 臺北數位藝術節';
+	$separator = $is_english ? ' | ' : '｜';
+	return array(
+		'valid' => true,
+		'id' => $id,
+		'title' => $item[ $title_key ] . $separator . $brand,
+		'description' => $item[ $description_key ],
+		'image' => ! empty( $item['image'] ) ? get_template_directory_uri() . '/' . ltrim( $item['image'], '/' ) : '',
+	);
+}
+
+/**
  * 取得目前頁面的 SEO 設定。
  * 內容同步自 Prototype 正式 SEO 文案，WordPress 僅負責輸出對應標記。
  */
@@ -92,12 +137,14 @@ function daf2026_get_seo_data() {
 		return null;
 	}
 
+	$detail = daf2026_get_detail_seo_data( $page_key, $is_english );
 	return array(
-		'title' => $source[ $page_key ][0],
-		'description' => $source[ $page_key ][1],
+		'title' => $detail && ! empty( $detail['valid'] ) ? $detail['title'] : $source[ $page_key ][0],
+		'description' => $detail && ! empty( $detail['valid'] ) ? $detail['description'] : $source[ $page_key ][1],
 		'type' => $source[ $page_key ][2],
 		'language' => $is_english ? 'en' : 'zh',
 		'page_key' => $page_key,
+		'detail' => $detail,
 	);
 }
 
@@ -130,11 +177,16 @@ function daf2026_output_seo_meta() {
 		$en_url = add_query_arg( 'id', $detail_id, $en_url );
 	}
 	$canonical_url = $is_english ? $en_url : $zh_url;
-	$og_image = get_template_directory_uri() . '/assets/images/seo/daf2026-og-default.webp';
+	$detail = isset( $seo['detail'] ) ? $seo['detail'] : null;
+	$og_image = $detail && ! empty( $detail['valid'] ) && ! empty( $detail['image'] ) ? $detail['image'] : get_template_directory_uri() . '/assets/images/seo/daf2026-og-default.webp';
 	$locale = $is_english ? 'en_US' : 'zh_TW';
 	$alternate_locale = $is_english ? 'zh_TW' : 'en_US';
 	$image_alt = $is_english ? '2026 Taipei Digital Art Festival “Grey Autonomous Entity” key visual' : '2026 臺北數位藝術節「灰色自動體」主視覺';
-	$twitter_card = in_array( $page_key, array( 'work-detail', 'event-detail' ), true ) ? 'summary' : 'summary_large_image';
+	$twitter_card = $detail && ! empty( $detail['valid'] ) ? 'summary_large_image' : ( in_array( $page_key, array( 'work-detail', 'event-detail' ), true ) ? 'summary' : 'summary_large_image' );
+
+	if ( $detail && empty( $detail['valid'] ) ) {
+		echo "\n" . '<meta name="robots" content="noindex, follow">' . "\n";
+	}
 
 	echo "\n" . '<meta name="description" content="' . esc_attr( $seo['description'] ) . '">' . "\n";
 	echo '<meta property="og:title" content="' . esc_attr( $seo['title'] ) . '">' . "\n";

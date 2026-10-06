@@ -27,11 +27,11 @@ get_header();
 					</span>
 				</h1>
 			</div>
-			<div class="hero-meta hero-observation-target" data-observation-id="details"><span><span class="hero-meta-label">展場｜</span><span class="hero-meta-value">臺北典藏植物園、臺北圓山街區</span></span></div>
+			<div class="hero-meta hero-observation-target" data-observation-id="details"><span><span class="hero-meta-label">展場｜</span><span class="hero-meta-value">臺北典藏植物園、藝術入店</span></span></div>
 		</div>
 		<div class="hero-ui"><a class="hero-scroll" href="#exhibition-venues">ENTER</a></div>
 	</section>
-	<section class="section home-venues" id="exhibition-venues" aria-labelledby="exhibition-venues-title"><div class="container"><h2 class="section-title" id="exhibition-venues-title">展覽地點</h2><div class="home-venue-grid"><a class="home-venue-card" href="<?php echo esc_url( home_url( '/works/' ) ); ?>"><span class="home-venue-number">01</span><strong>臺北典藏植物園</strong></a><a class="home-venue-card" href="<?php echo esc_url( home_url( '/district-works/' ) ); ?>"><span class="home-venue-number">02</span><strong>臺北圓山街區</strong></a></div></div></section>
+	<section class="section home-venues" id="exhibition-venues" aria-labelledby="exhibition-venues-title"><div class="container"><h2 class="section-title" id="exhibition-venues-title">展覽地點</h2><div class="home-venue-grid"><a class="home-venue-card" href="<?php echo esc_url( home_url( '/works/' ) ); ?>"><span class="home-venue-number">01</span><strong>臺北典藏植物園</strong></a><a class="home-venue-card" href="<?php echo esc_url( home_url( '/district-works/' ) ); ?>"><span class="home-venue-number">02</span><strong>藝術入店</strong></a></div></div></section>
 	<section class="section home-accordion-section"><div class="container"><h2 class="section-title">參展作品</h2><div class="artist-accordion" id="home-artist-accordion" aria-label="參展作品"></div></div></section>
 	<section class="section home-featured-section" id="upcoming-programs"><div class="container"><h2 class="section-title home-featured-title">活動節目</h2><div class="home-featured-track" id="home-upcoming-programs" aria-label="活動節目"></div><div class="home-featured-pagination" data-featured-pagination="home-upcoming-programs" aria-label="活動節目分頁"></div><p class="home-featured-more"><a href="<?php echo esc_url( home_url( '/program/' ) ); ?>">查看全部活動 →</a></p></div></section>
 </main>

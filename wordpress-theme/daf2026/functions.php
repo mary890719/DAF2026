@@ -100,6 +100,14 @@ function daf2026_ensure_site_pages() {
 			'curatorial' => 'Curatorial Statement',
 			'partners' => 'Execution and Partners',
 			'map' => 'Taipei Collectible Botanical Garden',
+			'district-map' => 'Taipei Yuanshan District Map',
+			'shops' => 'Partner Stores',
+			'works' => 'Works',
+			'district-works' => 'Taipei Yuanshan District Works',
+			'work-detail' => 'Work Detail',
+			'program' => 'Program',
+			'event-detail' => 'Program Detail',
+			'opening-performance' => 'Audiovisual Performance',
 		);
 		foreach ( $english_pages as $slug => $title ) {
 			if ( get_page_by_path( 'en/' . $slug, OBJECT, 'page' ) ) {

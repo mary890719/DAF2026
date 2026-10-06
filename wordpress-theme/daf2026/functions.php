@@ -219,6 +219,63 @@ function daf2026_output_seo_meta() {
 }
 add_action( 'wp_head', 'daf2026_output_seo_meta', 2 );
 
+/**
+ * 在 WordPress robots.txt 宣告正式 Sitemap。
+ */
+function daf2026_robots_txt( $output, $public ) {
+	if ( ! $public ) {
+		return $output;
+	}
+	$output = trim( $output ) . "\n";
+	$output .= 'Sitemap: ' . home_url( '/wp-sitemap.xml' ) . "\n";
+	return $output;
+}
+add_filter( 'robots_txt', 'daf2026_robots_txt', 10, 2 );
+
+/**
+ * 將 JavaScript 詳細頁加入 WordPress Core Sitemap。
+ */
+function daf2026_register_detail_sitemap_provider() {
+	if ( ! function_exists( 'wp_register_sitemap_provider' ) || ! class_exists( 'WP_Sitemaps_Provider' ) ) {
+		return;
+	}
+
+	$provider = new class extends WP_Sitemaps_Provider {
+		public function __construct() {
+			$this->name = 'daf2026-details';
+			$this->object_type = 'daf2026-detail';
+		}
+
+		public function get_url_list( $page_num, $object_subtype = '' ) {
+			if ( 1 !== (int) $page_num ) {
+				return array();
+			}
+			$index = daf2026_get_detail_seo_index();
+			$urls = array();
+			foreach ( array( 'works' => 'work-detail', 'events' => 'event-detail' ) as $group => $route ) {
+				if ( empty( $index[ $group ] ) ) {
+					continue;
+				}
+				foreach ( array_keys( $index[ $group ] ) as $id ) {
+					if ( 'events' === $group && 'opening-performance' === $id ) {
+						continue;
+					}
+					$urls[] = array( 'loc' => add_query_arg( 'id', $id, home_url( '/' . $route . '/' ) ) );
+					$urls[] = array( 'loc' => add_query_arg( 'id', $id, home_url( '/en/' . $route . '/' ) ) );
+				}
+			}
+			return $urls;
+		}
+
+		public function get_max_num_pages( $object_subtype = '' ) {
+			return 1;
+		}
+	};
+
+	wp_register_sitemap_provider( 'daf2026-details', $provider );
+}
+add_action( 'init', 'daf2026_register_detail_sitemap_provider' );
+
 
 /**
  * 建立 DAF2026 中英文正式頁面骨架。

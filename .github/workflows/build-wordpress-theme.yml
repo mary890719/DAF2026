@@ -39,7 +39,12 @@ jobs:
             daf2026/page-work-detail.php \
             daf2026/page-program.php \
             daf2026/page-event-detail.php \
-            daf2026/page-opening-performance.php \
+            daf2026/page-opening-performance.php
+
+      - name: 打包英文版 WordPress 增量更新
+        run: |
+          cd wordpress-theme
+          zip ../daf2026-update-en-wordpress-v1.zip \
             daf2026/page-en.php \
             daf2026/page-en-about.php \
             daf2026/page-en-curatorial.php \
@@ -71,4 +76,11 @@ jobs:
         with:
           name: daf2026-update-zh-wordpress-v1
           path: daf2026-update-zh-wordpress-v1.zip
+          if-no-files-found: error
+
+      - name: 上傳英文版增量更新 ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: daf2026-update-en-wordpress-v1
+          path: daf2026-update-en-wordpress-v1.zip
           if-no-files-found: error

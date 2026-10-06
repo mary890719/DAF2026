@@ -24,7 +24,7 @@ get_header();
                     <div class="map-work-list" data-map-list="main"><strong>WORKS</strong></div>
                 </section>
             </div>
-            <nav class="page-bottom-nav back-wrap" aria-label="Page navigation"><a class="button" href="<?php echo esc_url( home_url( '/en/district-map/' ) ); ?>">TAIPEI YUANSHAN DISTRICT &gt;</a></nav>
+            <nav class="page-bottom-nav back-wrap" aria-label="Page navigation"><a class="button" href="<?php echo esc_url( home_url( '/en/district-map/' ) ); ?>">ART IN STORES &gt;</a></nav>
         
 </main>
 <?php get_footer(); ?>

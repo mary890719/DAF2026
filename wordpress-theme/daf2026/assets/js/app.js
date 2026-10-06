@@ -205,19 +205,6 @@
     closeButton.focus({preventScroll: true});
   };
 
-  const preloadGalleryImages = (images, {skip = 0} = {}) => {
-    if (!Array.isArray(images) || images.length <= skip) return;
-    const schedule = window.requestIdleCallback || (callback => window.setTimeout(callback, 0));
-    schedule(() => {
-      images.slice(skip).forEach(image => {
-        if (!image?.src) return;
-        const preload = new Image();
-        preload.decoding = "async";
-        preload.src = C.assetRoute(image.src);
-      });
-    });
-  };
-
   const renderDetailGallery = (container, images, labels) => {
     if (!container) return;
     container.__detailGalleryCleanup?.();
@@ -226,7 +213,6 @@
         <img src="${C.assetRoute(image.src)}" alt="${image.alt}" loading="lazy" decoding="async">
       </button>`).join("");
     container.setAttribute("aria-label", labels.gallery);
-    preloadGalleryImages(images, {skip: 1});
     const buttons = [...container.querySelectorAll("[data-detail-gallery-index]")];
     buttons.forEach(button => {
       button.addEventListener("click", () => openDetailLightbox(images, Number(button.dataset.detailGalleryIndex), button, labels));
@@ -571,7 +557,7 @@
             {label: isEnglish ? "TAIPEI COLLECTIBLE BOTANICAL GARDEN" : "臺北典藏植物園", href: "works.html"},
             {label: isEnglish ? "OUTDOOR WORKS" : "戶外作品", href: "works.html#outdoor-works"}
           ]
-        : [{label: isEnglish ? "TAIPEI YUANSHAN DISTRICT" : "臺北圓山街區", href: "district-works.html"}];
+        : [{label: isEnglish ? "TAIPEI YUANSHAN DISTRICT" : "藝術入店", href: "district-works.html"}];
     document.querySelector("#breadcrumb").innerHTML = C.crumb([
       {label: isEnglish ? "WORKS" : "作品介紹"},
       ...areaCrumbs,
@@ -945,7 +931,7 @@
   };
 
   const renderEventDetail = () => {
-    const isOpeningRoute = /(?:^|\/)opening-performance(?:\.html)?\/?$/i.test(location.pathname);
+    const isOpeningRoute = /(?:^|\/)opening-performance\.html$/i.test(location.pathname);
     const requestedEventId = isOpeningRoute ? "opening-performance" : queryId();
     const event = D.events.find(item => String(item.id) === requestedEventId);
     const article = document.querySelector("[data-event-detail]");
@@ -1088,7 +1074,7 @@
       list.innerHTML = filtered.length ? filtered.map(event => {
         const index = orderedEvents.indexOf(event) + 1;
         const date = programDate(event.date);
-        return `<a class="program-card" href="${C.localizedRoute(programRoute(event))}">
+        return `<a class="program-card" href="${programRoute(event)}">
           <span class="program-card-number">${String(index).padStart(2, "0")}</span>
           <span class="program-card-content"><small>${displayType(event)}</small><strong>${displayTitle(event)}</strong></span>
           <span class="program-card-meta">${date || event.date ? `<span>${date ? date.short : event.date}</span>` : ""}${date ? `<span>${displayWeekday(date)}</span>` : ""}${programTime(event) ? `<span>${programTime(event)}</span>` : ""}</span>
@@ -2294,7 +2280,6 @@
             : `<div class="marker-card-work is-pending">${content}</div>`;
         }).join("");
         const galleryImages = works.flatMap(work => galleryImagesFor(catalogWorkFor(work), `${mapTitle(work)} ${isEnglish ? "image" : "作品圖片"}`));
-        preloadGalleryImages(galleryImages, {skip: 1});
         const mediaMarkup = galleryImages.length ? `<div class="marker-card-media" data-marker-gallery data-gallery-index="0">
           ${imageMarkup(galleryImages[0], galleryImages[0].alt)}
           ${galleryImages.length > 1 ? `<button class="marker-card-media-arrow is-previous" type="button" data-marker-gallery-direction="-1" aria-label="${isEnglish ? "Previous image" : "上一張圖片"}">‹</button><button class="marker-card-media-arrow is-next" type="button" data-marker-gallery-direction="1" aria-label="${isEnglish ? "Next image" : "下一張圖片"}">›</button><div class="gallery-dots" aria-label="${isEnglish ? "Image pagination" : "圖片分頁"}">${galleryImages.map((_, index) => `<button type="button" data-marker-gallery-index="${index}" aria-label="${isEnglish ? `View image ${index + 1}` : `查看第 ${index + 1} 張圖片`}" aria-current="${index === 0 ? "true" : "false"}"></button>`).join("")}</div>` : ""}
@@ -2580,20 +2565,20 @@
   document.querySelector("#site-header").innerHTML = C.header(page);
   document.querySelector("#site-footer").innerHTML = C.footer();
   initializeBackToTop();
-  if (!window.DAF_WP && "serviceWorker" in navigator && location.protocol === "https:" && !/^(?:localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+  if ("serviceWorker" in navigator && location.protocol === "https:" && !/^(?:localhost|127\.0\.0\.1)$/.test(location.hostname)) {
     navigator.serviceWorker.register(C.assetRoute("sw.js")).catch(error => console.warn("Offline fallback unavailable.", error));
   }
 
   if (page === "about" && location.hash) {
     const legacyAboutPages = {"#theme": "curatorial.html", "#curatorial-execution": "curatorial.html", "#curators": "curatorial.html#curators", "#organizations": "partners.html#organizations", "#partners": "partners.html#partner-organizations", "#partner-organizations": "partners.html#partner-organizations", "#sponsors": "partners.html#sponsors"};
-    if (legacyAboutPages[location.hash]) location.replace(C.localizedRoute(legacyAboutPages[location.hash]));
+    if (legacyAboutPages[location.hash]) location.replace(legacyAboutPages[location.hash]);
   }
   if (page === "map" && location.hash) {
     const legacyMapPages = {"#district-map": "district-map.html#district-map", "#partner-stores": "shops.html#partner-stores", "#art-in-stores": "shops.html#art-in-stores"};
-    if (legacyMapPages[location.hash]) location.replace(C.localizedRoute(legacyMapPages[location.hash]));
+    if (legacyMapPages[location.hash]) location.replace(legacyMapPages[location.hash]);
   }
-  if (page === "works" && location.hash === "#art-in-stores") location.replace(C.localizedRoute("district-works.html#art-in-stores"));
-  const breadcrumbLabels = isEnglish ? {about:"ABOUT TAIPEI DIGITAL ART FESTIVAL", curatorial:"CURATORIAL STATEMENT", partners:"EXECUTION AND PARTNERS", map:"TAIPEI COLLECTIBLE BOTANICAL GARDEN", "district-map":"TAIPEI YUANSHAN DISTRICT", shops:"PARTNER STORES", works:"TAIPEI COLLECTIBLE BOTANICAL GARDEN", "district-works":"TAIPEI YUANSHAN DISTRICT", program:"PROGRAM"} : {about:"關於臺北數位藝術節", curatorial:"策展論述", partners:"單位介紹", map:"臺北典藏植物園", "district-map":"臺北圓山街區", shops:"合作店家", works:"臺北典藏植物園", "district-works":"臺北圓山街區", program:"活動節目"};
+  if (page === "works" && location.hash === "#art-in-stores") location.replace("district-works.html#art-in-stores");
+  const breadcrumbLabels = isEnglish ? {about:"ABOUT TAIPEI DIGITAL ART FESTIVAL", curatorial:"CURATORIAL STATEMENT", partners:"EXECUTION AND PARTNERS", map:"TAIPEI COLLECTIBLE BOTANICAL GARDEN", "district-map":"TAIPEI YUANSHAN DISTRICT", shops:"PARTNER STORES", works:"TAIPEI COLLECTIBLE BOTANICAL GARDEN", "district-works":"TAIPEI YUANSHAN DISTRICT", program:"PROGRAM"} : {about:"關於臺北數位藝術節", curatorial:"策展論述", partners:"單位介紹", map:"臺北典藏植物園", "district-map":"藝術入店", shops:"合作店家", works:"臺北典藏植物園", "district-works":"藝術入店", program:"活動節目"};
   if (breadcrumbLabels[page]) {
     const parent = ["about", "curatorial", "partners"].includes(page) ? (isEnglish ? "ABOUT" : "關於")
       : ["map", "district-map", "shops"].includes(page) ? (isEnglish ? "MAP" : "探索地圖")

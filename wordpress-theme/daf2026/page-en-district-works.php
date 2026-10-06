@@ -12,7 +12,7 @@ get_header();
             <p class="page-label" lang="en">WORKS</p>
             <h1 class="page-title">WORKS</h1>
 <section class="ia-section works-anchor-section" id="art-in-stores" aria-labelledby="art-in-stores-title">
-                <h2 class="section-title" id="art-in-stores-title">TAIPEI YUANSHAN DISTRICT</h2>
+                <h2 class="section-title" id="art-in-stores-title">ART IN STORES</h2>
                 <div class="works-grid-frame">
                     <div class="works-grid works-grid-main" id="works-grid-district"></div>
                 </div>

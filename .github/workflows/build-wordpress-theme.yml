@@ -24,28 +24,19 @@ jobs:
           cd wordpress-theme
           zip -r ../daf2026.zip daf2026
 
-      - name: 打包中文版 WordPress 增量更新
+      - name: 打包 WordPress 本次更新
         run: |
           cd wordpress-theme
-          zip ../daf2026-update-zh-wordpress-v1.zip \
-            daf2026/page-about.php \
-            daf2026/page-curatorial.php \
-            daf2026/page-partners.php \
-            daf2026/page-map.php \
-            daf2026/page-district-map.php \
-            daf2026/page-shops.php \
-            daf2026/page-works.php \
-            daf2026/page-district-works.php \
-            daf2026/page-work-detail.php \
-            daf2026/page-program.php \
-            daf2026/page-event-detail.php \
-            daf2026/page-opening-performance.php
-
-      - name: 打包英文版 WordPress 本次更新
-        run: |
-          cd wordpress-theme
-          zip ../daf2026-update-en-wordpress-v1.zip \
-            daf2026/assets/js/app.js
+          zip ../daf2026-update-wordpress-v1.zip \
+            daf2026/page-en-about.php \
+            daf2026/page-en-district-map.php \
+            daf2026/page-en-district-works.php \
+            daf2026/page-en.php \
+            daf2026/page-en-map.php \
+            daf2026/page-en-shops.php \
+            daf2026/page-en-works.php \
+            daf2026/assets/js/app.js \
+            daf2026/assets/js/components.js
 
       - name: 上傳 Theme ZIP
         uses: actions/upload-artifact@v4
@@ -54,16 +45,9 @@ jobs:
           path: daf2026.zip
           if-no-files-found: error
 
-      - name: 上傳中文版增量更新 ZIP
+      - name: 上傳本次更新 ZIP
         uses: actions/upload-artifact@v4
         with:
-          name: daf2026-update-zh-wordpress-v1
-          path: daf2026-update-zh-wordpress-v1.zip
-          if-no-files-found: error
-
-      - name: 上傳英文版增量更新 ZIP
-        uses: actions/upload-artifact@v4
-        with:
-          name: daf2026-update-en-wordpress-v1
-          path: daf2026-update-en-wordpress-v1.zip
+          name: daf2026-update-wordpress-v1
+          path: daf2026-update-wordpress-v1.zip
           if-no-files-found: error

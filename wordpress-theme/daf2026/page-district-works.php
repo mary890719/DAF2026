@@ -9,7 +9,7 @@ get_header();
             <p class="page-label" lang="en">WORKS</p>
             <h1 class="page-title">作品介紹</h1>
 <section class="ia-section works-anchor-section" id="art-in-stores" aria-labelledby="art-in-stores-title">
-                <h2 class="section-title" id="art-in-stores-title">臺北圓山街區</h2>
+                <h2 class="section-title" id="art-in-stores-title">藝術入店</h2>
                 <div class="works-grid-frame">
                     <div class="works-grid works-grid-main" id="works-grid-district"></div>
                 </div>

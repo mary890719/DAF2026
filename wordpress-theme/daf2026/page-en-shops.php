@@ -12,7 +12,7 @@ get_header();
             <h1 class="page-title">PARTNER STORES</h1>
             <div class="page-sections map-contexts">
 <section class="ia-section shop-section" id="art-in-stores">
-                    <h2>TAIPEI YUANSHAN DISTRICT</h2>
+                    <h2>ART IN STORES</h2>
                     <div class="shop-list" data-shop-list="venues"></div>
                     <div class="shop-detail-layer" data-shop-detail-layer hidden>
                         <article class="shop-detail-panel" role="dialog" aria-modal="true" aria-labelledby="shop-detail-title" hidden></article>
@@ -27,7 +27,7 @@ get_header();
                     <div class="shop-collaboration-list" data-shop-collaborations></div>
                 </section>
         </div>
-            <nav class="page-bottom-nav back-wrap" aria-label="Page navigation"><a class="button" href="<?php echo esc_url( home_url( '/en/district-map/' ) ); ?>">&lt; TAIPEI YUANSHAN DISTRICT</a></nav>
+            <nav class="page-bottom-nav back-wrap" aria-label="Page navigation"><a class="button" href="<?php echo esc_url( home_url( '/en/district-map/' ) ); ?>">&lt; ART IN STORES</a></nav>
         
 </main>
 <?php get_footer(); ?>

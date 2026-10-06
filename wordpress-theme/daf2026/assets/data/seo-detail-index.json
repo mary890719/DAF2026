@@ -1,1 +1,271 @@
-{}
+{
+  "works": {
+    "main-01": {
+      "titleZh": "Generative Data",
+      "titleEn": "Generative Data",
+      "descriptionZh": "在數據驅動的時代，科技公司利用先進的機器學習和大數據技術，以物件辨識與圖像摘要等方式，從人們的數位足跡中提取和分析數據，創造個性化的資訊產品和數位服務。",
+      "descriptionEn": "In the data-driven age, technology companies utilize advanced machine learning and big data technologies to extract and analyze data from our digital footprints through means of object detection and graphical abstracts, creating personalized information products and digital services.",
+      "image": "assets/images/works/main/main-01/main.webp"
+    },
+    "main-02": {
+      "titleZh": "那些字已經無關緊要了",
+      "titleEn": "Those words are no longer relevant",
+      "descriptionZh": "語言透過多元字詞形構語意；然而，在當前數位時代，關鍵字改變了語言的結構，龐大的資料庫在經過層層演算後，化為單詞，使得有些文字在此「關鍵字時代」下被定義成無關緊要，在演算法中被抹去其存在的必要性。",
+      "descriptionEn": "Statement Languages convey meanings through diverse words and phrases. In the digital age, however keywords have altered linguistic structures.",
+      "image": "assets/images/works/main/main-02/main.webp"
+    },
+    "main-03": {
+      "titleZh": "這可能是你",
+      "titleEn": "It Could Be You",
+      "descriptionZh": "《這可能是你》以網路即時留言者的暱稱作為搜尋線索，透過伺服器蒐集地區性論壇與聊天室資訊，並結合機器學習與合成資料技術，生成虛構卻近似真實的肖像與個人資料。",
+      "descriptionEn": "It Could Be You uses the usernames of real-time online commenters as search cues, collecting information from local forums and chat rooms through a server-based system.",
+      "image": "assets/images/works/main/main-03/main.webp"
+    },
+    "main-04": {
+      "titleZh": "違規穿越馬路",
+      "titleEn": "Jaywalking",
+      "descriptionZh": "這件作品會透過即時監視器畫面，自動捕捉違規穿越馬路的行人，並讓現場觀眾選擇是否要向警方檢舉。",
+      "descriptionEn": "Interactive installation where you can report jaywalkers.",
+      "image": "assets/images/works/main/main-04/main.webp"
+    },
+    "main-05": {
+      "titleZh": "EZ品質分解機V2",
+      "titleEn": "EZ Quality Sorter V2",
+      "descriptionZh": "《EZ Quality Sorter V2》 是德國藝術家 Verena Friedrich 的互動裝置，屬於其 ERBSENZÄHLER 計畫的一部分。",
+      "descriptionEn": "EZ Quality Sorter V2 is an interactive installation by German artist Verena Friedrich and forms part of her ERBSENZÄHLER project.",
+      "image": "assets/images/works/main/main-05/main.webp"
+    },
+    "main-06": {
+      "titleZh": "GeodesicDome+3V+1a - Architectural Plans",
+      "titleEn": "GeodesicDome+3V+1a - Architectural Plans",
+      "descriptionZh": "這個小型的DOME球形骨架設計上使用金屬鋼管作為支撐，一共有7種不同長度的白色烤漆鋼管組成，每一隻白色鋼管上為了方便辨識，進行了字母的標籤記號，設計以M10內六角螺絲將每一支鋼管進行連接並固定，達到穩定的結構。",
+      "descriptionEn": "This small-scale DOME framework uses steel tubing as its structural support and is composed of seven different lengths of white powder-coated steel pipes.",
+      "image": "assets/images/works/main/main-06/main.webp"
+    },
+    "main-07": {
+      "titleZh": "WM_EX10 TCM_200DV TP-VS500 MS-201 BK26 MG10",
+      "titleEn": "WM_EX10 TCM_200DV TP-VS500 MS-201 BK26 MG10",
+      "descriptionZh": "Stefan Tiefengraber 的噪音裝置直指一個普遍存在的誤解：AI 的學習方式就像孩子一樣。",
+      "descriptionEn": "Stefan Tiefengraber's noise installation cuts right to the heart of a common miscon ception: that AI learns the way a child does.",
+      "image": "assets/images/works/main/main-07/main.webp"
+    },
+    "main-08": {
+      "titleZh": "石夢 v2.0",
+      "titleEn": "Stone Dream v2.0",
+      "descriptionZh": "空間中迴蕩岩石與矽晶片相互刮擦、碰撞的殘響，作為兩者間的夢中呢喃。作品試圖建構一場物質間遞迴的對話，讓物質在遠古自然與當代科技之間相互糾纏。",
+      "descriptionEn": "The reverberations of rocks and silicon wafers scraping and colliding echo through the space, serving as murmured whispers within their mutual dreams.",
+      "image": "assets/images/works/main/main-08/main.webp"
+    },
+    "main-09": {
+      "titleZh": "Belugas’ Sphere",
+      "titleEn": "Belugas’ Sphere",
+      "descriptionZh": "《Belugas’ Sphere》重新回望 2008 年作品《Beluga Pod》，將其發展為一個由自主機器實體構成的新型生態系。",
+      "descriptionEn": "Belugas’ Sphere revisits Beluga Pod (2008) as a new ecology of autonomous robotic entities. Each Beluga seeks light and moves in response to its environment.",
+      "image": "assets/images/works/main/main-09/main.webp"
+    },
+    "outdoor-01": {
+      "titleZh": "皓夜",
+      "titleEn": "Luminous Night",
+      "descriptionZh": "《皓夜》以弧形光體構成，宛如將月亮切片般展開於空間。光線隨節奏流轉，呈現出陰晴圓缺的片刻，也在平面與立體間遊走，讓月亮從遙遠的意象轉化為可穿行的場域。",
+      "descriptionEn": "Luminous Night is composed of curved light structures, unfolding in space like slices of the moon.",
+      "image": "assets/images/works/outdoor/outdoor-01/main.webp"
+    },
+    "outdoor-02": {
+      "titleZh": "日光粉紅乒乓",
+      "titleEn": "Solar Pink Pong",
+      "descriptionZh": "《日光粉紅乒乓》是一件結合街頭遊戲與電動遊戲的互動裝置作品。玩家可以運用自己的身體與影子，與投射在街道上的粉紅色動態陽光反射影像互動。",
+      "descriptionEn": "Solar Pink Pong is a hybrid of a street and video game. Players of this game can interact with an animated pink sunlight reflection on the street using their bodies and shadows.",
+      "image": "assets/images/works/outdoor/outdoor-02/main.webp"
+    },
+    "district-01": {
+      "titleZh": "科技幽靈",
+      "titleEn": "Ghosts of Google",
+      "descriptionZh": "作品取材自 Google Street View 的全球街景，藉由重新調度觀看的焦點與節奏，使那些偶然入鏡、近乎雜訊的人形重新成為觀看的中心。",
+      "descriptionEn": "The work draws on global streetscapes captured by Google Street View.",
+      "image": "assets/images/works/district/district-01/main.webp"
+    },
+    "district-02": {
+      "titleZh": "匯境",
+      "titleEn": "ReAlms Converging",
+      "descriptionZh": "「ReAlms Converging」《匯境》融合人工智能與東方美學，挑戰傳統山水畫的定義。 作品始於人為設定，隨後逐步將創作主導權，讓渡給AI模型及生成系統。",
+      "descriptionEn": "\"ReAlms Converging\" merges artificial intelligence with Eastern aesthetics, challenging the definition of traditional landscape painting.",
+      "image": "assets/images/works/district/district-02/main.webp"
+    },
+    "district-03": {
+      "titleZh": "我喺自強路食芭樂",
+      "titleEn": "I'm eating guava on self-improvement road",
+      "descriptionZh": "來台四年，與台灣人的對話始終伴隨難以言喻的「滑牙」感——一種螺絲磨損後的咬合不實並部份空轉，卻又不完全無效的感覺。兩地語言表面相同，深層感知卻常發生錯置。",
+      "descriptionEn": "Over four years in Taiwan, my dialogues evoke “waat6 ngaa4”—like a stripped screw idling between languages.",
+      "image": "assets/images/works/district/district-03/main.webp"
+    },
+    "district-04": {
+      "titleZh": "我的反抗是如此規律",
+      "titleEn": "my resistance is so regular",
+      "descriptionZh": "在科幻經典《仿生人會夢到電子羊嗎？》中，「夢」被作為判斷人類與否的重要依據。若當機器人開始做夢，其將展現何種意義？",
+      "descriptionEn": "In the science-fiction classic Do Androids Dream of Electric Sheep?, “dreaming” is used as an important criterion for distinguishing humans from non-humans.",
+      "image": "assets/images/works/district/district-04_1/main.webp"
+    },
+    "district-05": {
+      "titleZh": "景伸：未曾之景",
+      "titleEn": "Spectacle Extension: A Landscape That Never Was",
+      "descriptionZh": "能否信任眼見為憑？我們對真實的辨識又有多少把握？我們是否應該不斷尋求真相？閃光的景象在記憶中又留下了多少？我們難以辨別現實與記憶的差異。",
+      "descriptionEn": "Can we trust what we see? How confident are we in discerning reality? Should we continuously seek the truth? How much of the flashing scenes remain in our memory?",
+      "image": "assets/images/works/district/district-04_2/main.webp"
+    },
+    "district-06": {
+      "titleZh": "ID",
+      "titleEn": "ID",
+      "descriptionZh": "在當代社會，許多情境都伴隨著生物特徵的交出。",
+      "descriptionEn": "In contemporary society, many situations involve the surrender of biometric data.",
+      "image": "assets/images/works/district/district-04_3/main.webp"
+    },
+    "district-07": {
+      "titleZh": "《游離的引線》— 延伸版本",
+      "titleEn": "Dissociated Fuses",
+      "descriptionZh": "這件《Dissociated Fuses》的全新延伸版本，將原作中的潛水艇轉化為一座懸浮、微縮的城市觀測與重構裝置。",
+      "descriptionEn": "This new iteration of Dissociated Fuses transforms the submarine from the original work into a suspended, miniature apparatus for observing and reconstructing the city.",
+      "image": "assets/images/works/district/district-04_4/main.webp"
+    },
+    "district-08": {
+      "titleZh": "I have a Crush on you",
+      "titleEn": "I have a Crush on you",
+      "descriptionZh": "《CRUSH》探討女性身體、科技、慾望，以及汽車戀物化之間的關係。",
+      "descriptionEn": "How AI imagines a woman’s crush on a car, inspired by David Cronenberg’s Crash.",
+      "image": "assets/images/works/district/district-04_5/main.webp"
+    },
+    "district-09": {
+      "titleZh": "正在連結SOMA GPT",
+      "titleEn": "CONNECTING TO SOMA GPT",
+      "descriptionZh": "本作品以虛構世界觀與遊戲化互動，探討人工智慧與人之間相互影響的關係。靈感源自《美麗新世界》中帶來愉悅與穩定的藥物「Soma」，對應當代逐漸滲透工作、生活與情緒需求的生成式 AI。",
+      "descriptionEn": "This work explores the mutual influence between artificial intelligence and humans through a fictional world and gamified interaction.",
+      "image": "assets/images/works/district/district-05/main.webp"
+    },
+    "district-10": {
+      "titleZh": "呼吸的曼陀羅：共感知",
+      "titleEn": "The Breathing Mandala: Co-Perception",
+      "descriptionZh": "現代人長時間處於資訊過載的環境中， 注意力被切割、節奏被外界主導， 逐漸失去進入深度專注與內在感知的能力。",
+      "descriptionEn": "In an age of information overload, our attention is constantly fragmented and our rhythms increasingly dictated by external forces, gradually distancing us from deep focus and inner awareness.",
+      "image": "assets/images/works/district/district-06/main.webp"
+    },
+    "district-11": {
+      "titleZh": "再重複的信仰",
+      "titleEn": "Recursive Religion",
+      "descriptionZh": "作品包含一台電腦、一台網路攝影機與一個直立式螢幕。螢幕會呈現模糊的佛像輪廓，在觀眾進入網路攝影機的範圍時，人臉會與影像中的佛像、AI生成的圖片融合、拼貼，讓人、機器與信仰不斷交融。",
+      "descriptionEn": "The work consists of a computer, a webcam, and a vertically oriented screen. The screen displays a blurred silhouette of a Buddha.",
+      "image": "assets/images/works/district/district-07/main.webp"
+    },
+    "district-12": {
+      "titleZh": "日常保存：冰淇淋",
+      "titleEn": "Everyday Storage: Ice Cream",
+      "descriptionZh": "影像裝置系列《日常保存》使用人工智慧影像分類系統，在影像資料庫內提取與展出條件對應的片段，經過選擇與編排後於現地播放。",
+      "descriptionEn": "Everyday Storage is a series of video installations that uses an AI image classification system to extract fragments from an image database according to exhibition-specific criteria.",
+      "image": "assets/images/works/district/district-08/main.webp"
+    },
+    "district-13": {
+      "titleZh": "意義生成",
+      "titleEn": "Meaning",
+      "descriptionZh": "作品以語言為起點，透過 AI 與人類的對話，探討科技如何介入思維、情感與感知。",
+      "descriptionEn": "Language serves as the starting point of the work, exploring how AI intervenes in human thought, emotion, and perception.",
+      "image": "assets/images/works/district/district-09/main.webp"
+    },
+    "district-14": {
+      "titleZh": "十立方公分的殖民",
+      "titleEn": "A Volume of Colonization: 10 cm³",
+      "descriptionZh": "當我偶然閱讀十九世紀英方探查台灣北部的紀錄時，那段紀錄以異國文字試圖勾勒此地的形貌，可是以外國語言所描述與測量的他方卻始終具有一股淺淺的侵佔口吻。",
+      "descriptionEn": "When I encountered nineteenth-century British records of explorations in northern Taiwan, I became interested in how foreign language and measurement transformed the land into an object of observation and possession.",
+      "image": "assets/images/works/district/district-10/main.webp"
+    }
+  },
+  "events": {
+    "talk-01": {
+      "titleZh": "藝術家講座 I",
+      "titleEn": "Artist Talk I",
+      "descriptionZh": "藝術家講座 I；藝術家: Dries Depoorter、Verena Friedrich、吳宜曄；日期: 2026.11.01；時間: 14:00–15:10；地點: 天使生活館一樓大廳。",
+      "descriptionEn": "Artist Talk I; Artist: Dries Depoorter, Verena Friedrich, I-Yeh Wu; Date: 2026.11.01; Time: 14:00–15:10; Location: 1F Lobby, Angel Life Pavilion."
+    },
+    "talk-02": {
+      "titleZh": "藝術家講座 II",
+      "titleEn": "Artist Talk II",
+      "descriptionZh": "藝術家講座 II；藝術家: Stefan Tiefengraber、Jed Berk、林書瑜；藝術團隊: C-LAB 未來視覺實驗室；日期: 2026.11.01；時間: 15:30–16:40；地點: 天使生活館一樓大廳。",
+      "descriptionEn": "Artist Talk II; Artist: Stefan Tiefengraber, Jed Berk, Shu-Yu Lin; Artist Team: C-LAB’s Future Vision Lab; Date: 2026.11.01; Time: 15:30–16:40; Location: 1F Lobby, Angel Life Pavilion."
+    },
+    "talk-03": {
+      "titleZh": "藝術家講座 III",
+      "titleEn": "Artist Talk III",
+      "descriptionZh": "藝術家講座 III；藝術家: 沈宇軒、陳品蓁、鄭芳宜、郭子耘、謝佩庭；日期: 2026.11.08；時間: 14:00–15:10；地點: 天使生活館一樓大廳。",
+      "descriptionEn": "Artist Talk III; Artist: Yu-Hsuan Shen, Pin-Jhen Chen, Fang-Yi Cheng, Tzu-Yung Kuo, Pei-Ting Hsieh; Date: 2026.11.08; Time: 14:00–15:10; Location: 1F Lobby, Angel Life Pavilion."
+    },
+    "talk-04": {
+      "titleZh": "藝術家講座 IV",
+      "titleEn": "Artist Talk IV",
+      "descriptionZh": "藝術家講座 IV；藝術家: 楊子毅、簡嘉誼、余柏霆、樊卓鏗、陳芷渝；日期: 2026.11.08；時間: 15:30–16:40；地點: 天使生活館一樓大廳。",
+      "descriptionEn": "Artist Talk IV; Artist: Tzu-I Yang, Chia-Yi Chien, Po-Ting Yu, Cheuk Hang Fan, Chih-Yu Chen; Date: 2026.11.08; Time: 15:30–16:40; Location: 1F Lobby, Angel Life Pavilion."
+    },
+    "workshop-01": {
+      "titleZh": "From Scratch： Hydra 影像編碼工作坊",
+      "titleEn": "From Scratch: Hydra Live Coding Workshop",
+      "descriptionZh": "Hydra 是一套在瀏覽器中執行的視覺即時編碼工具，受到早期的類比影像合成器啟發，能透過簡單的語法組合，產生豐富的視覺效果。",
+      "descriptionEn": "Hydra is a browser-based live visual coding tool inspired by early analog video synthesizers."
+    },
+    "workshop-02": {
+      "titleZh": "機器怎麼看你：身體剪影印刷工作坊",
+      "titleEn": "How Machines See You: Body Silhouette Printing Workshop",
+      "descriptionZh": "Riso 印刷需將彩色圖分色、製版，再逐色疊印完成。工作坊將用程式拍攝人像、去背並拆成三色網點，模擬半調顆粒與隨機錯位，探索機器如何辨識人物與影像。",
+      "descriptionEn": "Riso printing involves separating a color image into individual layers, preparing each layer, and printing the colors one at a time."
+    },
+    "talk-05": {
+      "titleZh": "藝術家講座 V",
+      "titleEn": "Artist Talk V",
+      "descriptionZh": "藝術家講座 V；藝術家: 鄭先喻、何芯源；藝術團隊: 無邊製造、Assocreation；日期: 2026.11.15；時間: 14:00–15:10；地點: 天使生活館一樓大廳。",
+      "descriptionEn": "Artist Talk V; Artist: Hsien-Yu Cheng, Hsin-Yuan Ho; Artist Team: No Side Here, Assocreation; Date: 2026.11.15; Time: 14:00–15:10; Location: 1F Lobby, Angel Life Pavilion."
+    },
+    "talk-06": {
+      "titleZh": "藝術家講座 VI",
+      "titleEn": "Artist Talk VI",
+      "descriptionZh": "藝術家講座 VI；藝術家: 陳政維、黃姿婷、Bety Krňanská；藝術團隊: 超級浪；日期: 2026.11.15；時間: 15:30–16:40；地點: 天使生活館一樓大廳。",
+      "descriptionEn": "Artist Talk VI; Artist: Cheng-Wei Chen, Tzu-Ting Huang, Bety Krňanská; Artist Team: Hyper Wave; Date: 2026.11.15; Time: 15:30–16:40; Location: 1F Lobby, Angel Life Pavilion."
+    },
+    "tour-01": {
+      "titleZh": "策展人導覽",
+      "titleEn": "Curator-Led Tour",
+      "descriptionZh": "策展人導覽；日期: 2026.10.31；時間: 15:00–15:30；地點: 臺北典藏植物園－主展場。",
+      "descriptionEn": "Curator-Led Tour; Date: 2026.10.31; Time: 15:00–15:30; Location: Taipei Collectible Botanical Garden – Main Venue."
+    },
+    "tour-02": {
+      "titleZh": "活動導覽",
+      "titleEn": "Guided Tour",
+      "descriptionZh": "活動導覽；日期: 2026.11.01；時間: 15:00–15:30；地點: 臺北典藏植物園－主展場。",
+      "descriptionEn": "Guided Tour; Date: 2026.11.01; Time: 15:00–15:30; Location: Taipei Collectible Botanical Garden – Main Venue."
+    },
+    "tour-03": {
+      "titleZh": "活動導覽",
+      "titleEn": "Guided Tour",
+      "descriptionZh": "活動導覽；日期: 2026.11.07；時間: 15:00–15:30；地點: 臺北典藏植物園－主展場。",
+      "descriptionEn": "Guided Tour; Date: 2026.11.07; Time: 15:00–15:30; Location: Taipei Collectible Botanical Garden – Main Venue."
+    },
+    "tour-04": {
+      "titleZh": "活動導覽",
+      "titleEn": "Guided Tour",
+      "descriptionZh": "活動導覽；日期: 2026.11.08；時間: 15:00–15:30；地點: 臺北典藏植物園－主展場。",
+      "descriptionEn": "Guided Tour; Date: 2026.11.08; Time: 15:00–15:30; Location: Taipei Collectible Botanical Garden – Main Venue."
+    },
+    "tour-05": {
+      "titleZh": "活動導覽",
+      "titleEn": "Guided Tour",
+      "descriptionZh": "活動導覽；日期: 2026.11.14；時間: 15:00–15:30；地點: 臺北典藏植物園－主展場。",
+      "descriptionEn": "Guided Tour; Date: 2026.11.14; Time: 15:00–15:30; Location: Taipei Collectible Botanical Garden – Main Venue."
+    },
+    "tour-06": {
+      "titleZh": "活動導覽",
+      "titleEn": "Guided Tour",
+      "descriptionZh": "活動導覽；日期: 2026.11.15；時間: 15:00–15:30；地點: 臺北典藏植物園－主展場。",
+      "descriptionEn": "Guided Tour; Date: 2026.11.15; Time: 15:00–15:30; Location: Taipei Collectible Botanical Garden – Main Venue."
+    },
+    "opening-performance": {
+      "titleZh": "音像之夜",
+      "titleEn": "Audiovisual Performance",
+      "descriptionZh": "音像之夜；日期: 2026.10.31；時間: 20:00–23:00；地點: 未來生活館一樓大廳（臺北典藏植物園入口處）。",
+      "descriptionEn": "Audiovisual Performance; Date: 2026.10.31; Time: 20:00–23:00; Location: Future Life Pavilion 1F Lobby (Entrance to the Taipei Collectible Botanical Garden)."
+    }
+  }
+}

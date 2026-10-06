@@ -213,7 +213,7 @@ function daf2026_output_seo_meta() {
 	}
 
 	echo '<link rel="canonical" href="' . esc_url( $canonical_url ) . '">' . "\n";
-	echo '<link rel="alternate" hreflang="zh-Hant" href="' . esc_url( $zh_url ) . '">' . "\n";
+	echo '<link rel="alternate" hreflang="zh-TW" href="' . esc_url( $zh_url ) . '">' . "\n";
 	echo '<link rel="alternate" hreflang="en" href="' . esc_url( $en_url ) . '">' . "\n";
 	echo '<link rel="alternate" hreflang="x-default" href="' . esc_url( $zh_url ) . '">' . "\n";
 }

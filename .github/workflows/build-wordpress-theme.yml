@@ -28,15 +28,7 @@ jobs:
         run: |
           cd wordpress-theme
           zip ../daf2026-update-wordpress-v1.zip \
-            daf2026/page-en-about.php \
-            daf2026/page-en-district-map.php \
-            daf2026/page-en-district-works.php \
-            daf2026/page-en.php \
-            daf2026/page-en-map.php \
-            daf2026/page-en-shops.php \
-            daf2026/page-en-works.php \
-            daf2026/assets/js/app.js \
-            daf2026/assets/js/components.js
+            daf2026/assets/js/data.js
 
       - name: 上傳 Theme ZIP
         uses: actions/upload-artifact@v4

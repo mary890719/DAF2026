@@ -21,6 +21,6 @@ get_header();
                     <div class="map-work-list" data-map-list="main"><strong>作品及藝術家一覽</strong></div>
                 </section>
             </div>
-            <nav class="page-bottom-nav back-wrap" aria-label="頁面快速導覽"><a class="button" href="/district-map/">臺北圓山街區 &gt;</a></nav>
+            <nav class="page-bottom-nav back-wrap" aria-label="頁面快速導覽"><a class="button" href="/district-map/">藝術入店 &gt;</a></nav>
         </main>
 <?php get_footer(); ?>

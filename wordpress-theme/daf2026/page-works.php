@@ -19,6 +19,6 @@ get_header();
                 <h2 class="section-title" id="outdoor-works-title">戶外作品</h2>
                 <div class="works-grid-frame"><div class="works-grid works-grid-main" id="works-grid-outdoor"></div></div>
             </section>
-            <nav class="page-bottom-nav back-wrap" aria-label="頁面快速導覽"><a class="button" href="/district-works/">臺北圓山街區 &gt;</a></nav>
+            <nav class="page-bottom-nav back-wrap" aria-label="頁面快速導覽"><a class="button" href="/district-works/">藝術入店 &gt;</a></nav>
         </main>
 <?php get_footer(); ?>

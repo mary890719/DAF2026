@@ -23,12 +23,12 @@ window.DAF_COMPONENTS = (() => {
       ["單位介紹", "partners.html"]
     ]},
     {id: "map", label: "探索地圖", parentOnly: true, children: [
-      ["臺北典藏植物園", "map.html"], ["臺北圓山街區", "district-map.html"],
+      ["臺北典藏植物園", "map.html"], ["藝術入店", "district-map.html"],
       ["合作店家", "shops.html"]
     ]},
     {id: "works", label: "作品介紹", parentOnly: true, children: [
       ["臺北典藏植物園", "works.html"],
-      ["臺北圓山街區", "district-works.html"]
+      ["藝術入店", "district-works.html"]
     ]},
     {id: "program", label: "活動節目", url: "program.html"}
   ];

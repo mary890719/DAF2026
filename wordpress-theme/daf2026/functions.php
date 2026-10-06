@@ -242,8 +242,8 @@ function daf2026_register_detail_sitemap_provider() {
 
 	$provider = new class extends WP_Sitemaps_Provider {
 		public function __construct() {
-			$this->name = 'daf2026-details';
-			$this->object_type = 'daf2026-detail';
+			$this->name = 'dafdetails';
+			$this->object_type = 'dafdetail';
 		}
 
 		public function get_url_list( $page_num, $object_subtype = '' ) {
@@ -272,7 +272,7 @@ function daf2026_register_detail_sitemap_provider() {
 		}
 	};
 
-	wp_register_sitemap_provider( 'daf2026-details', $provider );
+	wp_register_sitemap_provider( 'dafdetails', $provider );
 }
 add_action( 'init', 'daf2026_register_detail_sitemap_provider' );
 

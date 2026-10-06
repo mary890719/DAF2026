@@ -94,13 +94,12 @@ function daf2026_ensure_site_pages() {
 		$english_parent_id = $english_parent->ID;
 	}
 
-	if ( get_option( 'daf2026_pages_en_v1_created' ) ) {
-		return;
-	}
-
 	if ( $english_parent_id && ! is_wp_error( $english_parent_id ) ) {
 		$english_pages = array(
 			'about' => 'About Taipei Digital Art Festival',
+			'curatorial' => 'Curatorial Statement',
+			'partners' => 'Execution and Partners',
+			'map' => 'Taipei Collectible Botanical Garden',
 		);
 		foreach ( $english_pages as $slug => $title ) {
 			if ( get_page_by_path( 'en/' . $slug, OBJECT, 'page' ) ) {

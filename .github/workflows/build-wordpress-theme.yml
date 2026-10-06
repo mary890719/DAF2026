@@ -29,7 +29,7 @@ jobs:
           cd wordpress-theme
           zip ../daf2026-update-wordpress-v1.zip \
             daf2026/functions.php \
-            daf2026/assets/js/app.js
+            daf2026/assets/data/seo-detail-index.json
 
       - name: 上傳 Theme ZIP
         uses: actions/upload-artifact@v4

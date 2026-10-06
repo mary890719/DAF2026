@@ -3504,7 +3504,7 @@ window.DAF_DATA = {
 ],
   events: [
     {
-      "id": 1,
+      "id": "talk-01",
       "type": "講座",
       "typeEn": "TALKS",
       "title": "藝術家講座 I",
@@ -3522,12 +3522,12 @@ window.DAF_DATA = {
       "registration": "活動採預先線上報名，詳細報名資訊依官網及社群公告為主。活動前十分鐘，現場開放候補排隊。",
       "registrationEn": "Advance online registration is required. Please refer to the official website and social media for registration details. A standby queue will open on site 10 minutes before the event begins.",
       "images": [],
-      "detailId": 1,
-      "route": "event-detail.html?id=1",
+      "detailId": "talk-01",
+      "route": "event-detail.html?id=talk-01",
       "featured": false
     },
     {
-      "id": 2,
+      "id": "talk-02",
       "type": "講座",
       "typeEn": "TALKS",
       "title": "藝術家講座 II",
@@ -3549,12 +3549,12 @@ window.DAF_DATA = {
       "registrationMethod": "於 Facebook 開放報名",
       "registrationMethodEn": "Registration via Facebook",
       "images": [],
-      "detailId": 2,
-      "route": "event-detail.html?id=2",
+      "detailId": "talk-02",
+      "route": "event-detail.html?id=talk-02",
       "featured": false
     },
     {
-      "id": 3,
+      "id": "talk-03",
       "type": "講座",
       "typeEn": "TALKS",
       "title": "藝術家講座 III",
@@ -3572,12 +3572,12 @@ window.DAF_DATA = {
       "registration": "活動採預先線上報名，詳細報名資訊依官網及社群公告為主。活動前十分鐘，現場開放候補排隊。",
       "registrationEn": "Advance online registration is required. Please refer to the official website and social media for registration details. A standby queue will open on site 10 minutes before the event begins.",
         "images": [],
-      "detailId": 3,
-      "route": "event-detail.html?id=3",
+      "detailId": "talk-03",
+      "route": "event-detail.html?id=talk-03",
       "featured": false
     },
     {
-      "id": 4,
+      "id": "talk-04",
       "type": "講座",
       "typeEn": "TALKS",
       "title": "藝術家講座 IV",
@@ -3595,12 +3595,12 @@ window.DAF_DATA = {
       "registration": "活動採預先線上報名，詳細報名資訊依官網及社群公告為主。活動前十分鐘，現場開放候補排隊。",
       "registrationEn": "Advance online registration is required. Please refer to the official website and social media for registration details. A standby queue will open on site 10 minutes before the event begins.",
       "images": [],
-      "detailId": 4,
-      "route": "event-detail.html?id=4",
+      "detailId": "talk-04",
+      "route": "event-detail.html?id=talk-04",
       "featured": false
     },
     {
-      "id": 5,
+      "id": "workshop-01",
       "type": "工作坊",
       "typeEn": "WORKSHOPS",
       "title": "From Scratch： Hydra 影像編碼工作坊",
@@ -3618,12 +3618,12 @@ window.DAF_DATA = {
       "registration": "活動採預先線上報名，詳細報名資訊依官網及社群公告為主。活動前十分鐘，現場開放候補排隊。",
       "registrationEn": "Advance online registration is required. Please refer to the official website and social media for registration details. A standby queue will open on site 10 minutes before the event begins.",
       "images": [],
-      "detailId": 5,
-      "route": "event-detail.html?id=5",
+      "detailId": "workshop-01",
+      "route": "event-detail.html?id=workshop-01",
       "featured": false
     },
     {
-      "id": 6,
+      "id": "workshop-02",
       "type": "工作坊",
       "typeEn": "WORKSHOPS",
       "title": "機器怎麼看你：身體剪影印刷工作坊",
@@ -3641,12 +3641,12 @@ window.DAF_DATA = {
       "registration": "活動採預先線上報名，詳細報名資訊依官網及社群公告為主。活動前十分鐘，現場開放候補排隊。",
       "registrationEn": "Advance online registration is required. Please refer to the official website and social media for registration details. A standby queue will open on site 10 minutes before the event begins.",
       "images": [],
-      "detailId": 6,
-      "route": "event-detail.html?id=6",
+      "detailId": "workshop-02",
+      "route": "event-detail.html?id=workshop-02",
       "featured": false
     },
     {
-      "id": 7,
+      "id": "talk-05",
       "type": "講座",
       "typeEn": "TALKS",
       "title": "藝術家講座 V",
@@ -3666,12 +3666,12 @@ window.DAF_DATA = {
       "registration": "活動採預先線上報名，詳細報名資訊依官網及社群公告為主。活動前十分鐘，現場開放候補排隊。",
       "registrationEn": "Advance online registration is required. Please refer to the official website and social media for registration details. A standby queue will open on site 10 minutes before the event begins.",
       "images": [],
-      "detailId": 7,
-      "route": "event-detail.html?id=7",
+      "detailId": "talk-05",
+      "route": "event-detail.html?id=talk-05",
       "featured": false
     },
     {
-      "id": 8,
+      "id": "talk-06",
       "type": "講座",
       "typeEn": "TALKS",
       "title": "藝術家講座 VI",
@@ -3691,8 +3691,8 @@ window.DAF_DATA = {
       "registration": "活動採預先線上報名，詳細報名資訊依官網及社群公告為主。活動前十分鐘，現場開放候補排隊。",
       "registrationEn": "Advance online registration is required. Please refer to the official website and social media for registration details. A standby queue will open on site 10 minutes before the event begins.",
       "images": [],
-      "detailId": 8,
-      "route": "event-detail.html?id=8",
+      "detailId": "talk-06",
+      "route": "event-detail.html?id=talk-06",
       "featured": false
     },
     {

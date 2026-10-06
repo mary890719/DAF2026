@@ -45,38 +45,25 @@ jobs:
             daf2026/page-en-curatorial.php \
             daf2026/page-en-partners.php \
             daf2026/page-en-map.php \
+            daf2026/page-en-district-map.php \
+            daf2026/page-en-shops.php \
+            daf2026/page-en-works.php \
+            daf2026/page-en-district-works.php \
+            daf2026/page-en-work-detail.php \
+            daf2026/page-en-program.php \
+            daf2026/page-en-event-detail.php \
+            daf2026/page-en-opening-performance.php \
             daf2026/header.php \
             daf2026/functions.php \
+            daf2026/assets/css/style.css \
             daf2026/assets/js/components.js \
             daf2026/assets/js/app.js
-
-      - name: 打包本次正式內容更新
-        run: |
-          cd wordpress-theme
-          zip ../daf2026-content-update-20261006.zip \
-            daf2026/front-page.php \
-            daf2026/page-about.php \
-            daf2026/page-map.php \
-            daf2026/page-district-map.php \
-            daf2026/page-shops.php \
-            daf2026/page-works.php \
-            daf2026/page-district-works.php \
-            daf2026/assets/js/data.js \
-            daf2026/assets/js/app.js \
-            daf2026/assets/js/components.js
 
       - name: 上傳 Theme ZIP
         uses: actions/upload-artifact@v4
         with:
           name: daf2026-wordpress-theme
           path: daf2026.zip
-          if-no-files-found: error
-
-      - name: 上傳本次正式內容更新 ZIP
-        uses: actions/upload-artifact@v4
-        with:
-          name: daf2026-content-update-20261006
-          path: daf2026-content-update-20261006.zip
           if-no-files-found: error
 
       - name: 上傳中文版增量更新 ZIP

@@ -15,7 +15,6 @@
   const queryId = () => new URLSearchParams(location.search).get("id");
   const seoBrand = isEnglish ? "2026 Taipei Digital Art Festival" : "2026 臺北數位藝術節";
   const seoTitle = title => `${title}${isEnglish ? " | " : "｜"}${seoBrand}`;
-  // PRODUCTION_ABSOLUTE_URL_PENDING: replace with the final absolute HTTPS URL after domain confirmation.
   const fallbackSocialImage = isEnglish
     ? "../assets/images/seo/daf2026-og-default.webp"
     : "assets/images/seo/daf2026-og-default.webp";
@@ -60,7 +59,7 @@
   };
   const updateDetailHreflang = (kind, id) => {
     const encodedId = encodeURIComponent(id);
-    const zhLink = document.head.querySelector('link[rel="alternate"][hreflang="zh-Hant"]');
+    const zhLink = document.head.querySelector('link[rel="alternate"][hreflang="zh-TW"]');
     const enLink = document.head.querySelector('link[rel="alternate"][hreflang="en"]');
     const defaultLink = document.head.querySelector('link[rel="alternate"][hreflang="x-default"]');
     const canonicalLink = document.head.querySelector('link[rel="canonical"]');
@@ -1055,9 +1054,9 @@
     if (openingEvent) orderedEvents.unshift(openingEvent);
     const list = document.querySelector("#program-card-list");
     const filters = [...document.querySelectorAll("[data-program-filter]")];
-    const locale = document.documentElement.lang.toLowerCase().startsWith("en") ? "en" : "zh-Hant";
+    const locale = document.documentElement.lang.toLowerCase().startsWith("en") ? "en" : "zh-TW";
     const labels = {
-      "zh-Hant": {
+      "zh-TW": {
         overview: "節目總覽", schedule: "日程表",
         filterAll: "全部", filterTalks: "講座", filterWorkshops: "工作坊", filterTours: "導覽",
         noEvents: "活動資料待提供", eventCountSuffix: "場活動",

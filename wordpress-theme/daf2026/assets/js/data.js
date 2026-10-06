@@ -152,7 +152,7 @@ window.DAF_DATA = {
     "bio": "Verena Friedrich的創作以裝置與兼具詩意及功能性的機械為核心，將複雜的關係凝聚並轉化為具體且可感知的經驗。她的作品探索科技與科學系統的可能性及其限制，並關注其中所承載關於效率、可控性與進步的敘事。\n其作品曾於世界各地展出，包括德國卡爾斯魯厄藝術與媒體中心（ZKM Karlsruhe）、林茲電子藝術節（Ars Electronica）、國際電子藝術研討會（ISEA），以及亞洲多個藝術機構與展覽，包括首爾白南準藝術中心（Nam June Paik Art Center）、香港藝術中心（Hong Kong Arts Centre）及松戶國際科學藝術節（Matsudo International Science Art Festival）。\n她亦曾於德國科隆媒體藝術學院（Academy of Media Arts Cologne）、威瑪包浩斯大學（Bauhaus University Weimar）及奧芬巴赫藝術與設計大學（Offenbach University of Art and Design）擔任教授及教學職務。",
     "workId": "main-05",
     "workTitle": "EZ品質分解機V2",
-    "workTitleEn": "EZ Quality Soryer V2",
+    "workTitleEn": "EZ Quality Sorter V2",
     "career": "獲獎\n2005｜ZKM Karlsruhe「科學與藝術國際媒體獎」，VIDA 13.2 Art and Artificial Life Award 特別提名。\n2015、2023｜Prix Ars Electronica 榮譽提名。",
     "image": {
       "src": "assets/images/artists/artist-05.webp",
@@ -899,7 +899,7 @@ window.DAF_DATA = {
     "number": "05",
     "title": "EZ品質分解機V2",
     "titleZh": "EZ品質分解機V2",
-    "titleEn": "EZ Quality Soryer V2",
+    "titleEn": "EZ Quality Sorter V2",
     "year": "2023",
     "workType": "裝置",
     "medium": "機械裝置、電腦",
@@ -941,11 +941,7 @@ window.DAF_DATA = {
     "imageFolder": "main-06",
     "coverImage": "assets/images/works/main/main-06/main.webp",
     "images": [
-      "assets/images/works/main/main-06/main.webp",
-      "assets/images/works/main/main-06/01.webp",
-      "assets/images/works/main/main-06/02.webp",
-      "assets/images/works/main/main-06/03.webp",
-      "assets/images/works/main/main-06/04.webp"
+      "assets/images/works/main/main-06/main.webp"
     ],
     "artistIds": [
       "artist-06"
@@ -1730,7 +1726,7 @@ window.DAF_DATA = {
     "artist": "維麗娜．弗里德里希",
     "artistEn": "Verena Friedrich",
     "title": "EZ品質分解機V2",
-    "titleEn": "EZ Quality Soryer V2",
+    "titleEn": "EZ Quality Sorter V2",
     "type": "main",
     "medium": "機械裝置、電腦",
     "mediumEn": "Mechanical installation, computer",

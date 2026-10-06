@@ -123,6 +123,13 @@ function daf2026_output_seo_meta() {
 	$page_key = $seo['page_key'];
 	$zh_url = 'home' === $page_key ? home_url( '/' ) : home_url( '/' . $page_key . '/' );
 	$en_url = 'home' === $page_key ? home_url( '/en/' ) : home_url( '/en/' . $page_key . '/' );
+	$is_detail = in_array( $page_key, array( 'work-detail', 'event-detail' ), true );
+	$detail_id = $is_detail && isset( $_GET['id'] ) ? sanitize_text_field( wp_unslash( $_GET['id'] ) ) : '';
+	if ( '' !== $detail_id ) {
+		$zh_url = add_query_arg( 'id', $detail_id, $zh_url );
+		$en_url = add_query_arg( 'id', $detail_id, $en_url );
+	}
+	$canonical_url = $is_english ? $en_url : $zh_url;
 	$og_image = get_template_directory_uri() . '/assets/images/seo/daf2026-og-default.webp';
 	$locale = $is_english ? 'en_US' : 'zh_TW';
 	$alternate_locale = $is_english ? 'zh_TW' : 'en_US';
@@ -153,8 +160,10 @@ function daf2026_output_seo_meta() {
 		echo '<meta name="twitter:image:alt" content="' . esc_attr( $image_alt ) . '">' . "\n";
 	}
 
+	echo '<link rel="canonical" href="' . esc_url( $canonical_url ) . '">' . "\n";
 	echo '<link rel="alternate" hreflang="zh-Hant" href="' . esc_url( $zh_url ) . '">' . "\n";
 	echo '<link rel="alternate" hreflang="en" href="' . esc_url( $en_url ) . '">' . "\n";
+	echo '<link rel="alternate" hreflang="x-default" href="' . esc_url( $zh_url ) . '">' . "\n";
 }
 add_action( 'wp_head', 'daf2026_output_seo_meta', 2 );
 

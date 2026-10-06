@@ -62,8 +62,15 @@
     const encodedId = encodeURIComponent(id);
     const zhLink = document.head.querySelector('link[rel="alternate"][hreflang="zh-Hant"]');
     const enLink = document.head.querySelector('link[rel="alternate"][hreflang="en"]');
-    if (zhLink) zhLink.setAttribute("href", `${isEnglish ? "../" : ""}${kind}-detail.html?id=${encodedId}`);
-    if (enLink) enLink.setAttribute("href", `${isEnglish ? "" : "en/"}${kind}-detail.html?id=${encodedId}`);
+    const defaultLink = document.head.querySelector('link[rel="alternate"][hreflang="x-default"]');
+    const canonicalLink = document.head.querySelector('link[rel="canonical"]');
+    const wpHome = window.DAF_WP?.homeUrl;
+    const zhHref = wpHome ? `${wpHome}${kind}-detail/?id=${encodedId}` : `${isEnglish ? "../" : ""}${kind}-detail.html?id=${encodedId}`;
+    const enHref = wpHome ? `${wpHome}en/${kind}-detail/?id=${encodedId}` : `${isEnglish ? "" : "en/"}${kind}-detail.html?id=${encodedId}`;
+    if (zhLink) zhLink.setAttribute("href", zhHref);
+    if (enLink) enLink.setAttribute("href", enHref);
+    if (defaultLink) defaultLink.setAttribute("href", zhHref);
+    if (canonicalLink) canonicalLink.setAttribute("href", isEnglish ? enHref : zhHref);
   };
   const updateDetailMetadata = ({title, description, type, robots = null, kind, id}) => {
     const fullTitle = seoTitle(title);

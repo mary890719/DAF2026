@@ -35,8 +35,8 @@ window.DAF_COMPONENTS = (() => {
   const navEn = [
     {id:"home",label:"HOME",url:"index.html"},
     {id:"about",label:"ABOUT",parentOnly:true,children:[["ABOUT TAIPEI DIGITAL ART FESTIVAL","about.html"],["CURATORIAL STATEMENT","curatorial.html"],["EXECUTION AND PARTNERS","partners.html"]]},
-    {id:"map",label:"MAP",parentOnly:true,children:[["TAIPEI COLLECTIBLE BOTANICAL GARDEN","map.html"],["TAIPEI YUANSHAN DISTRICT","district-map.html"],["PARTNER STORES","shops.html"]]},
-    {id:"works",label:"WORKS",parentOnly:true,children:[["TAIPEI COLLECTIBLE BOTANICAL GARDEN","works.html"],["TAIPEI YUANSHAN DISTRICT","district-works.html"]]},
+    {id:"map",label:"MAP",parentOnly:true,children:[["TAIPEI COLLECTIBLE BOTANICAL GARDEN","map.html"],["ART IN STORES","district-map.html"],["PARTNER STORES","shops.html"]]},
+    {id:"works",label:"WORKS",parentOnly:true,children:[["TAIPEI COLLECTIBLE BOTANICAL GARDEN","works.html"],["ART IN STORES","district-works.html"]]},
     {id:"program",label:"PROGRAM",url:"program.html"}
   ];
   const ui = () => getCurrentLanguage() === "en"

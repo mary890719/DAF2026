@@ -931,7 +931,7 @@
   };
 
   const renderEventDetail = () => {
-    const isOpeningRoute = /(?:^|\/)opening-performance\.html$/i.test(location.pathname);
+    const isOpeningRoute = /(?:^|\/)opening-performance(?:\.html)?\/?$/i.test(location.pathname);
     const requestedEventId = isOpeningRoute ? "opening-performance" : queryId();
     const event = D.events.find(item => String(item.id) === requestedEventId);
     const article = document.querySelector("[data-event-detail]");

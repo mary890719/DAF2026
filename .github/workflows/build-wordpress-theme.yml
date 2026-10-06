@@ -41,27 +41,10 @@ jobs:
             daf2026/page-event-detail.php \
             daf2026/page-opening-performance.php
 
-      - name: 打包英文版 WordPress 增量更新
+      - name: 打包英文版 WordPress 本次更新
         run: |
           cd wordpress-theme
           zip ../daf2026-update-en-wordpress-v1.zip \
-            daf2026/page-en.php \
-            daf2026/page-en-about.php \
-            daf2026/page-en-curatorial.php \
-            daf2026/page-en-partners.php \
-            daf2026/page-en-map.php \
-            daf2026/page-en-district-map.php \
-            daf2026/page-en-shops.php \
-            daf2026/page-en-works.php \
-            daf2026/page-en-district-works.php \
-            daf2026/page-en-work-detail.php \
-            daf2026/page-en-program.php \
-            daf2026/page-en-event-detail.php \
-            daf2026/page-en-opening-performance.php \
-            daf2026/header.php \
-            daf2026/functions.php \
-            daf2026/assets/css/style.css \
-            daf2026/assets/js/components.js \
             daf2026/assets/js/app.js
 
       - name: 上傳 Theme ZIP

@@ -9,7 +9,7 @@ get_header();
             <h1 class="page-title">合作店家</h1>
             <div class="page-sections map-contexts">
 <section class="ia-section shop-section" id="art-in-stores">
-                    <h2>臺北圓山街區</h2>
+                    <h2>藝術入店</h2>
                     <div class="shop-list" data-shop-list="venues"></div>
                     <div class="shop-detail-layer" data-shop-detail-layer hidden>
                         <article class="shop-detail-panel" role="dialog" aria-modal="true" aria-labelledby="shop-detail-title" hidden></article>
@@ -24,6 +24,6 @@ get_header();
                     <div class="shop-collaboration-list" data-shop-collaborations></div>
                 </section>
         </div>
-            <nav class="page-bottom-nav back-wrap" aria-label="頁面快速導覽"><a class="button" href="/district-map/">&lt; 臺北圓山街區</a></nav>
+            <nav class="page-bottom-nav back-wrap" aria-label="頁面快速導覽"><a class="button" href="/district-map/">&lt; 藝術入店</a></nav>
         </main>
 <?php get_footer(); ?>

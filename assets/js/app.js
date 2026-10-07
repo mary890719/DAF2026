@@ -2563,6 +2563,8 @@
   document.documentElement.style.setProperty("--observation-light-center", String(networkProfile.lightCenterAlpha));
   document.documentElement.style.setProperty("--observation-light-edge", String(networkProfile.lightEdgeAlpha));
   document.querySelector("#site-header").innerHTML = C.header(page);
+  const districtMapMenuLink = document.querySelector('.header-nav a[href="district-map.html"]');
+  if (districtMapMenuLink) districtMapMenuLink.textContent = isEnglish ? "OUTDOOR WORKS & ART IN STORES" : "戶外作品及藝術入店";
   document.querySelector("#site-footer").innerHTML = C.footer();
   initializeBackToTop();
   if ("serviceWorker" in navigator && location.protocol === "https:" && !/^(?:localhost|127\.0\.0\.1)$/.test(location.hostname)) {
@@ -2578,7 +2580,7 @@
     if (legacyMapPages[location.hash]) location.replace(legacyMapPages[location.hash]);
   }
   if (page === "works" && location.hash === "#art-in-stores") location.replace("district-works.html#art-in-stores");
-  const breadcrumbLabels = isEnglish ? {about:"ABOUT TAIPEI DIGITAL ART FESTIVAL", curatorial:"CURATORIAL STATEMENT", partners:"EXECUTION AND PARTNERS", map:"TAIPEI COLLECTIBLE BOTANICAL GARDEN", "district-map":"ART IN STORES", shops:"PARTNER STORES", works:"TAIPEI COLLECTIBLE BOTANICAL GARDEN", "district-works":"ART IN STORES", program:"PROGRAM"} : {about:"關於臺北數位藝術節", curatorial:"策展論述", partners:"單位介紹", map:"臺北典藏植物園", "district-map":"藝術入店", shops:"合作店家", works:"臺北典藏植物園", "district-works":"藝術入店", program:"活動節目"};
+  const breadcrumbLabels = isEnglish ? {about:"ABOUT TAIPEI DIGITAL ART FESTIVAL", curatorial:"CURATORIAL STATEMENT", partners:"EXECUTION AND PARTNERS", map:"TAIPEI COLLECTIBLE BOTANICAL GARDEN", "district-map":"OUTDOOR WORKS & ART IN STORES", shops:"PARTNER STORES", works:"TAIPEI COLLECTIBLE BOTANICAL GARDEN", "district-works":"ART IN STORES", program:"PROGRAM"} : {about:"關於臺北數位藝術節", curatorial:"策展論述", partners:"單位介紹", map:"臺北典藏植物園", "district-map":"戶外作品及藝術入店", shops:"合作店家", works:"臺北典藏植物園", "district-works":"藝術入店", program:"活動節目"};
   if (breadcrumbLabels[page]) {
     const parent = ["about", "curatorial", "partners"].includes(page) ? (isEnglish ? "ABOUT" : "關於")
       : ["map", "district-map", "shops"].includes(page) ? (isEnglish ? "MAP" : "探索地圖")

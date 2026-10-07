@@ -1791,8 +1791,8 @@ window.DAF_DATA = {
   {
     "id": "outdoor-01",
     "workId": "outdoor-01",
-    "number": "01",
-    "mapNumber": "01",
+    "number": "A",
+    "mapNumber": "A",
     "artist": "林書瑜",
     "artistEn": "Shu-Yu Lin",
     "title": "皓夜",
@@ -1805,8 +1805,8 @@ window.DAF_DATA = {
   {
     "id": "outdoor-02",
     "workId": "outdoor-02",
-    "number": "02",
-    "mapNumber": "02",
+    "number": "B",
+    "mapNumber": "B",
     "artist": "聯合創作",
     "artistEn": "Assocreation",
     "title": "日光粉紅乒乓",

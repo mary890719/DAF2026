@@ -11,7 +11,7 @@ get_header();
             <div id="breadcrumb"></div>
             <h1 class="page-title">MAP</h1>
             <div class="map-legend" aria-label="Map legend">
-                <span data-location-type="main"><i aria-hidden="true"></i>MAIN VENUE</span>
+                <span data-location-type="main"><i aria-hidden="true"></i>Taipei Collectible Botanical Garden Floor Plan</span>
             </div>
             <div class="page-sections map-contexts">
 <section class="ia-section map-context" id="garden-map" data-map-context="garden">
@@ -24,7 +24,7 @@ get_header();
                     <div class="map-work-list" data-map-list="main"><strong>WORKS</strong></div>
                 </section>
             </div>
-            <nav class="page-bottom-nav back-wrap" aria-label="Page navigation"><a class="button" href="<?php echo esc_url( home_url( '/en/district-map/' ) ); ?>">ART IN STORES &gt;</a></nav>
+            <nav class="page-bottom-nav back-wrap" aria-label="Page navigation"><a class="button" href="<?php echo esc_url( home_url( '/en/district-map/' ) ); ?>">OUTDOOR WORKS & ART IN STORES &gt;</a></nav>
         
 </main>
 <?php get_footer(); ?>

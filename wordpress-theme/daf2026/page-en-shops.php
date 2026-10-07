@@ -27,7 +27,7 @@ get_header();
                     <div class="shop-collaboration-list" data-shop-collaborations></div>
                 </section>
         </div>
-            <nav class="page-bottom-nav back-wrap" aria-label="Page navigation"><a class="button" href="<?php echo esc_url( home_url( '/en/district-map/' ) ); ?>">&lt; ART IN STORES</a></nav>
+            <nav class="page-bottom-nav back-wrap" aria-label="Page navigation"><a class="button" href="<?php echo esc_url( home_url( '/en/district-map/' ) ); ?>">&lt; OUTDOOR WORKS & ART IN STORES</a></nav>
         
 </main>
 <?php get_footer(); ?>

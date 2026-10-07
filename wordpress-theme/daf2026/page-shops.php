@@ -24,6 +24,6 @@ get_header();
                     <div class="shop-collaboration-list" data-shop-collaborations></div>
                 </section>
         </div>
-            <nav class="page-bottom-nav back-wrap" aria-label="頁面快速導覽"><a class="button" href="/district-map/">&lt; 藝術入店</a></nav>
+            <nav class="page-bottom-nav back-wrap" aria-label="頁面快速導覽"><a class="button" href="/district-map/">&lt; 戶外作品及藝術入店</a></nav>
         </main>
 <?php get_footer(); ?>

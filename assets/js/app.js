@@ -990,7 +990,29 @@
     if (registrationRow) {
       const registration = ["講座", "工作坊", "導覽"].includes(event.type) ? textFor(event, "registration") : "";
       if (!registration) registrationRow.remove();
-      else setDetailText("[data-event-registration]", registration);
+      else {
+        registrationRow.hidden = false;
+        const registrationSlot = document.querySelector("[data-event-registration]");
+        if (registrationSlot) {
+          registrationSlot.textContent = registration;
+          let registrationUrl = "";
+          try {
+            const parsedUrl = new URL(String(event.registrationUrl || ""));
+            if (["http:", "https:"].includes(parsedUrl.protocol)) registrationUrl = parsedUrl.href;
+          } catch {}
+          if (registrationUrl) {
+            const links = document.createElement("div");
+            links.className = "work-links";
+            const link = document.createElement("a");
+            link.href = registrationUrl;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.innerHTML = `${C.icon("link", "")}<span>${isEnglish ? "Register Now" : "前往報名"}</span>`;
+            links.append(link);
+            registrationSlot.append(links);
+          }
+        }
+      }
     }
     showConditionalField("[data-event-registration-method-row]", "[data-event-registration-method]", "registrationMethod", ["講座", "工作坊"]);
     const descriptionSection = document.querySelector("[data-event-description-section]");

@@ -15,6 +15,7 @@
   const queryId = () => new URLSearchParams(location.search).get("id");
   const seoBrand = isEnglish ? "2026 Taipei Digital Art Festival" : "2026 臺北數位藝術節";
   const seoTitle = title => `${title}${isEnglish ? " | " : "｜"}${seoBrand}`;
+  // PRODUCTION_ABSOLUTE_URL_PENDING: replace with the final absolute HTTPS URL after domain confirmation.
   const fallbackSocialImage = isEnglish
     ? "../assets/images/seo/daf2026-og-default.webp"
     : "assets/images/seo/daf2026-og-default.webp";
@@ -59,17 +60,10 @@
   };
   const updateDetailHreflang = (kind, id) => {
     const encodedId = encodeURIComponent(id);
-    const zhLink = document.head.querySelector('link[rel="alternate"][hreflang="zh-TW"]');
+    const zhLink = document.head.querySelector('link[rel="alternate"][hreflang="zh-Hant"]');
     const enLink = document.head.querySelector('link[rel="alternate"][hreflang="en"]');
-    const defaultLink = document.head.querySelector('link[rel="alternate"][hreflang="x-default"]');
-    const canonicalLink = document.head.querySelector('link[rel="canonical"]');
-    const wpHome = window.DAF_WP?.homeUrl;
-    const zhHref = wpHome ? `${wpHome}${kind}-detail/?id=${encodedId}` : `${isEnglish ? "../" : ""}${kind}-detail.html?id=${encodedId}`;
-    const enHref = wpHome ? `${wpHome}en/${kind}-detail/?id=${encodedId}` : `${isEnglish ? "" : "en/"}${kind}-detail.html?id=${encodedId}`;
-    if (zhLink) zhLink.setAttribute("href", zhHref);
-    if (enLink) enLink.setAttribute("href", enHref);
-    if (defaultLink) defaultLink.setAttribute("href", zhHref);
-    if (canonicalLink) canonicalLink.setAttribute("href", isEnglish ? enHref : zhHref);
+    if (zhLink) zhLink.setAttribute("href", `${isEnglish ? "../" : ""}${kind}-detail.html?id=${encodedId}`);
+    if (enLink) enLink.setAttribute("href", `${isEnglish ? "" : "en/"}${kind}-detail.html?id=${encodedId}`);
   };
   const updateDetailMetadata = ({title, description, type, robots = null, kind, id}) => {
     const fullTitle = seoTitle(title);
@@ -937,7 +931,7 @@
   };
 
   const renderEventDetail = () => {
-    const isOpeningRoute = /(?:^|\/)opening-performance(?:\.html)?\/?$/i.test(location.pathname);
+    const isOpeningRoute = /(?:^|\/)opening-performance\.html$/i.test(location.pathname);
     const requestedEventId = isOpeningRoute ? "opening-performance" : queryId();
     const event = D.events.find(item => String(item.id) === requestedEventId);
     const article = document.querySelector("[data-event-detail]");
@@ -996,7 +990,29 @@
     if (registrationRow) {
       const registration = ["講座", "工作坊", "導覽"].includes(event.type) ? textFor(event, "registration") : "";
       if (!registration) registrationRow.remove();
-      else setDetailText("[data-event-registration]", registration);
+      else {
+        registrationRow.hidden = false;
+        const registrationSlot = document.querySelector("[data-event-registration]");
+        if (registrationSlot) {
+          registrationSlot.textContent = registration;
+          let registrationUrl = "";
+          try {
+            const parsedUrl = new URL(String(event.registrationUrl || ""));
+            if (["http:", "https:"].includes(parsedUrl.protocol)) registrationUrl = parsedUrl.href;
+          } catch {}
+          if (registrationUrl) {
+            const links = document.createElement("div");
+            links.className = "work-links";
+            const link = document.createElement("a");
+            link.href = registrationUrl;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.innerHTML = `${C.icon("link", "")}<span>${isEnglish ? "Register Now" : "前往報名"}</span>`;
+            links.append(link);
+            registrationSlot.append(links);
+          }
+        }
+      }
     }
     showConditionalField("[data-event-registration-method-row]", "[data-event-registration-method]", "registrationMethod", ["講座", "工作坊"]);
     const descriptionSection = document.querySelector("[data-event-description-section]");
@@ -1054,9 +1070,9 @@
     if (openingEvent) orderedEvents.unshift(openingEvent);
     const list = document.querySelector("#program-card-list");
     const filters = [...document.querySelectorAll("[data-program-filter]")];
-    const locale = document.documentElement.lang.toLowerCase().startsWith("en") ? "en" : "zh-TW";
+    const locale = document.documentElement.lang.toLowerCase().startsWith("en") ? "en" : "zh-Hant";
     const labels = {
-      "zh-TW": {
+      "zh-Hant": {
         overview: "節目總覽", schedule: "日程表",
         filterAll: "全部", filterTalks: "講座", filterWorkshops: "工作坊", filterTours: "導覽",
         noEvents: "活動資料待提供", eventCountSuffix: "場活動",
@@ -2569,6 +2585,8 @@
   document.documentElement.style.setProperty("--observation-light-center", String(networkProfile.lightCenterAlpha));
   document.documentElement.style.setProperty("--observation-light-edge", String(networkProfile.lightEdgeAlpha));
   document.querySelector("#site-header").innerHTML = C.header(page);
+  const districtMapMenuLink = document.querySelector('.header-nav a[href="district-map.html"]');
+  if (districtMapMenuLink) districtMapMenuLink.textContent = isEnglish ? "OUTDOOR WORKS & ART IN STORES" : "戶外作品及藝術入店";
   document.querySelector("#site-footer").innerHTML = C.footer();
   initializeBackToTop();
   if ("serviceWorker" in navigator && location.protocol === "https:" && !/^(?:localhost|127\.0\.0\.1)$/.test(location.hostname)) {

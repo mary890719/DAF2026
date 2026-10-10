@@ -1049,7 +1049,8 @@ window.DAF_DATA = {
       "assets/images/works/main/main-08/01.webp",
       "assets/images/works/main/main-08/02.webp",
       "assets/images/works/main/main-08/03.webp",
-      "assets/images/works/main/main-08/04.webp"
+      "assets/images/works/main/main-08/04.webp",
+      "assets/images/works/main/main-08/05.webp"
     ],
     "artistIds": [
       "artist-08"
@@ -1228,7 +1229,8 @@ window.DAF_DATA = {
       "assets/images/works/district/district-02/02.webp",
       "assets/images/works/district/district-02/03.webp",
       "assets/images/works/district/district-02/04.webp",
-      "assets/images/works/district/district-02/05.webp"
+      "assets/images/works/district/district-02/05.webp",
+      "assets/images/works/district/district-02/06.webp"
     ],
     "artistIds": [
       "artist-13"
@@ -2930,8 +2932,8 @@ window.DAF_DATA = {
     "map": "main",
     "type": "main",
     "number": "01",
-    "x": 73,
-    "y": 51,
+    "x": 76,
+    "y": 54,
     "workIds": [
       "main-01"
     ]
@@ -2943,7 +2945,7 @@ window.DAF_DATA = {
     "type": "main",
     "number": "02",
     "x": 32,
-    "y": 48,
+    "y": 50,
     "workIds": [
       "main-02"
     ]
@@ -2954,7 +2956,7 @@ window.DAF_DATA = {
     "map": "main",
     "type": "main",
     "number": "03",
-    "x": 26,
+    "x": 28,
     "y": 72,
     "workIds": [
       "main-03"
@@ -2966,8 +2968,8 @@ window.DAF_DATA = {
     "map": "main",
     "type": "main",
     "number": "04",
-    "x": 40,
-    "y": 80,
+    "x": 39,
+    "y": 85,
     "workIds": [
       "main-04"
     ]
@@ -2978,8 +2980,8 @@ window.DAF_DATA = {
     "map": "main",
     "type": "main",
     "number": "05",
-    "x": 50,
-    "y": 80,
+    "x": 52,
+    "y": 85,
     "workIds": [
       "main-05"
     ]
@@ -2990,8 +2992,8 @@ window.DAF_DATA = {
     "map": "main",
     "type": "main",
     "number": "06",
-    "x": 65,
-    "y": 73,
+    "x": 66,
+    "y": 75,
     "workIds": [
       "main-06"
     ]
@@ -3002,8 +3004,8 @@ window.DAF_DATA = {
     "map": "main",
     "type": "main",
     "number": "07",
-    "x": 16,
-    "y": 47,
+    "x": 18,
+    "y": 49,
     "workIds": [
       "main-07"
     ]
@@ -3014,7 +3016,7 @@ window.DAF_DATA = {
     "map": "main",
     "type": "main",
     "number": "08",
-    "x": 45.5,
+    "x": 47,
     "y": 35,
     "workIds": [
       "main-08"
@@ -3026,7 +3028,7 @@ window.DAF_DATA = {
     "map": "main",
     "type": "main",
     "number": "09",
-    "x": 66.5,
+    "x": 68.5,
     "y": 25,
     "workIds": [
       "main-09"
@@ -3038,8 +3040,8 @@ window.DAF_DATA = {
     "map": "district",
     "type": "outdoor",
     "number": "A",
-    "x": 64,
-    "y": 48,
+    "x": 59,
+    "y": 40,
     "workIds": [
       "outdoor-01"
     ]
@@ -3050,8 +3052,8 @@ window.DAF_DATA = {
     "map": "district",
     "type": "outdoor",
     "number": "B",
-    "x": 65,
-    "y": 43,
+    "x": 60.5,
+    "y": 36,
     "workIds": [
       "outdoor-02"
     ]
@@ -3063,8 +3065,8 @@ window.DAF_DATA = {
     "type": "district",
     "number": "01",
     "name": "Wild Open Space 北美館",
-    "x": 44,
-    "y": 24,
+    "x": 34.5,
+    "y": 23,
     "workIds": [
       "district-01"
     ]
@@ -3076,8 +3078,8 @@ window.DAF_DATA = {
     "type": "district",
     "number": "02",
     "name": "CNSalon 花草茶店",
-    "x": 37,
-    "y": 55,
+    "x": 27.5,
+    "y": 54,
     "workIds": [
       "district-02"
     ]
@@ -3089,8 +3091,8 @@ window.DAF_DATA = {
     "type": "district",
     "number": "03",
     "name": "覓’s 咖啡小酒館",
-    "x": 43,
-    "y": 53,
+    "x": 36,
+    "y": 50,
     "workIds": [
       "district-03"
     ]
@@ -3102,8 +3104,8 @@ window.DAF_DATA = {
     "type": "district",
     "number": "04",
     "name": "歐華酒店",
-    "x": 46.5,
-    "y": 53,
+    "x": 39.5,
+    "y": 50,
     "workIds": [
       "district-04",
       "district-05",
@@ -3119,8 +3121,8 @@ window.DAF_DATA = {
     "type": "district",
     "number": "05",
     "name": "異世界咖啡館．澐月",
-    "x": 39,
-    "y": 69,
+    "x": 29,
+    "y": 67,
     "workIds": [
       "district-09"
     ]
@@ -3132,8 +3134,8 @@ window.DAF_DATA = {
     "type": "district",
     "number": "06",
     "name": "台北花苑",
-    "x": 41,
-    "y": 71.5,
+    "x": 32,
+    "y": 68,
     "workIds": [
       "district-10"
     ]
@@ -3145,8 +3147,8 @@ window.DAF_DATA = {
     "type": "district",
     "number": "07",
     "name": "批薩謎勒",
-    "x": 38,
-    "y": 75,
+    "x": 28.5,
+    "y": 73,
     "workIds": [
       "district-11"
     ]
@@ -3158,8 +3160,8 @@ window.DAF_DATA = {
     "type": "district",
     "number": "08",
     "name": "L'Unicorno Gelato",
-    "x": 53,
-    "y": 68.5,
+    "x": 47,
+    "y": 63.5,
     "workIds": [
       "district-12"
     ]
@@ -3171,8 +3173,8 @@ window.DAF_DATA = {
     "type": "district",
     "number": "09",
     "name": "晴美公寓酒店",
-    "x": 46,
-    "y": 79,
+    "x": 39,
+    "y": 77,
     "workIds": [
       "district-13"
     ]
@@ -3184,8 +3186,8 @@ window.DAF_DATA = {
     "type": "district",
     "number": "10",
     "name": "米窩飯店 - 中山館",
-    "x": 41,
-    "y": 88,
+    "x": 33,
+    "y": 87,
     "workIds": [
       "district-14"
     ]
@@ -3519,8 +3521,9 @@ window.DAF_DATA = {
       "artistEn": "Dries Depoorter, Verena Friedrich, I-Yeh Wu",
       "location": "天使生活館一樓大廳",
       "locationEn": "1F Lobby, Angel Life Pavilion",
-      "registration": "活動採預先線上報名，詳細報名資訊依官網及社群公告為主。活動前十分鐘，現場開放候補排隊。",
-      "registrationEn": "Advance online registration is required. Please refer to the official website and social media for registration details. A standby queue will open on site 10 minutes before the event begins.",
+      "registration": "採線上預先報名，詳細報名資訊請參閱報名連結。活動開始前 10 分鐘開放現場候補排隊。",
+      "registrationEn": "Advance online registration is required. Please refer to the registration link for details. On-site standby registration opens 10 minutes before the event begins.",
+      "registrationUrl": "https://www.accupass.com/event/2610100445371446273071",
       "images": [],
       "detailId": "talk-01",
       "route": "event-detail.html?id=talk-01",
@@ -3544,8 +3547,9 @@ window.DAF_DATA = {
       "artistTeamEn": "C-LAB’s Future Vision Lab",
       "location": "天使生活館一樓大廳",
       "locationEn": "1F Lobby, Angel Life Pavilion",
-      "registration": "活動採預先線上報名，詳細報名資訊依官網及社群公告為主。活動前十分鐘，現場開放候補排隊。",
-      "registrationEn": "Advance online registration is required. Please refer to the official website and social media for registration details. A standby queue will open on site 10 minutes before the event begins.",
+      "registration": "採線上預先報名，詳細報名資訊請參閱報名連結。活動開始前 10 分鐘開放現場候補排隊。",
+      "registrationEn": "Advance online registration is required. Please refer to the registration link for details. On-site standby registration opens 10 minutes before the event begins.",
+      "registrationUrl": "https://www.accupass.com/event/2610100502543481994960",
       "registrationMethod": "於 Facebook 開放報名",
       "registrationMethodEn": "Registration via Facebook",
       "images": [],
@@ -3615,8 +3619,9 @@ window.DAF_DATA = {
       "locationEn": "1F Lobby, Angel Life Pavilion",
       "description": "Hydra 是一套在瀏覽器中執行的視覺即時編碼工具，受到早期的類比影像合成器啟發，能透過簡單的語法組合，產生豐富的視覺效果。本工作坊將從基本圖形、動態、疊合到調變，帶領學員認識Hydra 的撰寫邏輯，運用有限的元素，創造多變的視覺。",
       "descriptionEn": "Hydra is a browser-based live visual coding tool inspired by early analog video synthesizers. Using simple combinations of code, it allows users to generate a wide range of dynamic visual effects. This workshop introduces the fundamentals of Hydra, from basic shapes and animation to layering and modulation, guiding participants through its coding logic and exploring how a limited set of elements can be transformed into diverse visual compositions.",
-      "registration": "活動採預先線上報名，詳細報名資訊依官網及社群公告為主。活動前十分鐘，現場開放候補排隊。",
-      "registrationEn": "Advance online registration is required. Please refer to the official website and social media for registration details. A standby queue will open on site 10 minutes before the event begins.",
+      "registration": "採線上預先報名，詳細報名資訊請參閱報名連結。活動開始前 10 分鐘開放現場候補排隊。",
+      "registrationEn": "Advance online registration is required. Please refer to the registration link for details. On-site standby registration opens 10 minutes before the event begins.",
+      "registrationUrl": "https://www.accupass.com/event/2610100335032289477570",
       "images": [],
       "detailId": "workshop-01",
       "route": "event-detail.html?id=workshop-01",

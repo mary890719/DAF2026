@@ -913,7 +913,6 @@
     if (event.type === "工作坊" && textFor(event, "description")) return naturalDescription(textFor(event, "description"));
     const facts = [textFor(event, "title")];
     if (event.type === "講座") {
-      if (textFor(event, "discussant")) facts.push(`${isEnglish ? "Discussant" : "與談人"}: ${textFor(event, "discussant")}`);
       if (textFor(event, "artist")) facts.push(`${isEnglish ? "Artist" : "藝術家"}: ${textFor(event, "artist")}`);
       if (textFor(event, "artistTeam")) facts.push(`${isEnglish ? "Artist Team" : "藝術團隊"}: ${textFor(event, "artistTeam")}`);
     } else if (event.type === "表演") {
@@ -983,7 +982,7 @@
       }
       setDetailText(valueSelector, value);
     };
-    showConditionalField("[data-event-discussant-row]", "[data-event-discussant]", "discussant", ["講座"]);
+    showConditionalField("[data-event-discussant-row]", "[data-event-discussant]", "discussant", []);
     showConditionalField("[data-event-artist-row]", "[data-event-artist]", "artist", ["講座", "工作坊", "表演"]);
     showConditionalField("[data-event-artist-team-row]", "[data-event-artist-team]", "artistTeam", ["講座", "表演"]);
     const registrationRow = document.querySelector("[data-event-registration-row]");

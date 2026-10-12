@@ -22,8 +22,8 @@ window.DAF_COMPONENTS = (() => {
       ["關於臺北數位藝術節", "about.html"], ["策展論述", "curatorial.html"],
       ["單位介紹", "partners.html"]
     ]},
-    {id: "map", label: "探索地圖", parentOnly: true, children: [
-      ["臺北典藏植物園", "map.html"], ["藝術入店", "district-map.html"],
+    {id: "map", label: "參觀資訊", parentOnly: true, children: [
+      ["主展場地圖", "map.html"], ["藝術入店地圖", "district-map.html"],
       ["合作店家", "shops.html"]
     ]},
     {id: "works", label: "作品介紹", parentOnly: true, children: [
@@ -35,7 +35,7 @@ window.DAF_COMPONENTS = (() => {
   const navEn = [
     {id:"home",label:"HOME",url:"index.html"},
     {id:"about",label:"ABOUT",parentOnly:true,children:[["ABOUT TAIPEI DIGITAL ART FESTIVAL","about.html"],["CURATORIAL STATEMENT","curatorial.html"],["EXECUTION AND PARTNERS","partners.html"]]},
-    {id:"map",label:"MAP",parentOnly:true,children:[["TAIPEI COLLECTIBLE BOTANICAL GARDEN","map.html"],["ART IN STORES","district-map.html"],["PARTNER STORES","shops.html"]]},
+    {id:"map",label:"Information",parentOnly:true,children:[["Main Venue Map","map.html"],["Art in Stores Map","district-map.html"],["PARTNER STORES","shops.html"]]},
     {id:"works",label:"WORKS",parentOnly:true,children:[["TAIPEI COLLECTIBLE BOTANICAL GARDEN","works.html"],["ART IN STORES","district-works.html"]]},
     {id:"program",label:"PROGRAM",url:"program.html"}
   ];
@@ -69,8 +69,9 @@ window.DAF_COMPONENTS = (() => {
         : `<a href="${item.url}" class="nav-main-link${active ? " active" : ""}"${active ? ' aria-current="page"' : ""}>${item.label}</a>`;
       return `<div class="nav-item${item.children ? " has-submenu" : ""}${activeChild ? " is-expanded" : ""}"${item.children ? ' data-submenu-container' : ""}><div class="nav-primary-row">${primary}${item.children && !item.parentOnly ? `<button class="nav-submenu-toggle" type="button" data-submenu-label="${item.label}" aria-expanded="${activeChild ? "true" : "false"}" aria-controls="${submenuId}" aria-label="${activeChild ? ui().collapse : ui().expand}${item.label}${ui().submenu}"><span aria-hidden="true">＋</span></button>` : ""}</div>${submenu}</div>`;
     }).join("");
-    const brandLogo = `<img class="site-logo-image" src="${assetRoute("assets/images/logos/DAF26LOGO.svg")}" alt="${getCurrentLanguage() === "en" ? "2026 Taipei Digital Art Festival — Gray Autonomous Entity" : "2026 臺北數位藝術節－灰色自動體 Gray Autonomous Entity"}">`;
-    return `<header class="site-header"><a class="logo" href="${localizedRoute("index.html")}">${brandLogo}</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="${ui().openNav}" data-open-label="${ui().openNav}" data-close-label="${ui().closeNav}"><img src="${assetRoute("assets/icons/menu.svg")}" data-menu-icon data-open-icon="${assetRoute("assets/icons/menu.svg")}" data-close-icon="${assetRoute("assets/icons/x.svg")}" alt="" aria-hidden="true"></button><nav class="header-nav" id="main-nav" aria-label="${ui().mainNav}"><div class="mobile-menu-header"><a class="logo mobile-menu-logo" href="${localizedRoute("index.html")}">${brandLogo}</a><div class="mobile-menu-tools"><a class="language-switch" href="${languageSwitchRoute()}" hreflang="${getCurrentLanguage() === "en" ? "zh-Hant" : "en"}">${ui().language}</a></div></div><div class="header-nav-links">${navigation}</div></nav><div class="header-tools"><a class="language-switch" href="${languageSwitchRoute()}" hreflang="${getCurrentLanguage() === "en" ? "zh-Hant" : "en"}">${ui().language}</a></div></header>`;
+    const isEnglish = getCurrentLanguage() === "en";
+    const brandLogo = `<img class="site-logo-image" src="${assetRoute("assets/images/logos/DAF26LOGO.svg")}" alt="${isEnglish ? "2026 Taipei Digital Art Festival — Gray Autonomous Entity" : "2026 臺北數位藝術節－灰色自動體 Gray Autonomous Entity"}"><span class="site-logo-divider" aria-hidden="true"></span><span class="site-logo-name" aria-hidden="true"><span>${isEnglish ? "2026 Digital Art" : "2026 臺北"}</span><span>${isEnglish ? "Festival Taipei" : "數位藝術節"}</span></span>`;
+    return `<header class="site-header"><a class="logo logo-lockup" href="${localizedRoute("index.html")}">${brandLogo}</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="${ui().openNav}" data-open-label="${ui().openNav}" data-close-label="${ui().closeNav}"><img src="${assetRoute("assets/icons/menu.svg")}" data-menu-icon data-open-icon="${assetRoute("assets/icons/menu.svg")}" data-close-icon="${assetRoute("assets/icons/x.svg")}" alt="" aria-hidden="true"></button><nav class="header-nav" id="main-nav" aria-label="${ui().mainNav}"><div class="mobile-menu-header"><a class="logo logo-lockup mobile-menu-logo" href="${localizedRoute("index.html")}">${brandLogo}</a><div class="mobile-menu-tools"><a class="language-switch" href="${languageSwitchRoute()}" hreflang="${isEnglish ? "zh-Hant" : "en"}">${ui().language}</a></div></div><div class="header-nav-links">${navigation}</div></nav><div class="header-tools"><a class="language-switch" href="${languageSwitchRoute()}" hreflang="${isEnglish ? "zh-Hant" : "en"}">${ui().language}</a></div></header>`;
   }
   function footer() {
     const social = DAF_DATA.social;
@@ -90,7 +91,10 @@ window.DAF_COMPONENTS = (() => {
     };
     const organizationRows = `<div class="container org-grid"><div class="org-row org-row-primary">${DAF_DATA.organizations.slice(0, 3).map(organizationGroup).join("")}</div><div class="org-row org-row-secondary">${DAF_DATA.organizations.slice(3).map(organizationGroup).join("")}</div></div>`;
     const organizationLabel = getCurrentLanguage() === "en" ? "Festival organizations" : "藝術節單位資訊";
-    return `<section class="site-organizations" aria-label="${organizationLabel}">${organizationRows}</section><footer class="site-footer"><div class="container site-footer-inner"><div class="footer-info"><p class="copyright">© 2026 臺北數位藝術節 Taipei Digital Art Festival. All Rights Reserved.</p></div>${socialLinks}</div></footer>`;
+    const festivalInfo = getCurrentLanguage() === "en"
+      ? `<div class="footer-festival-info"><strong>2026 Digital Art Festival Taipei</strong><p>Grey Autonomous Entity</p><p>2026.10.31 — 11.15</p><p>Taipei Collectible Botanical Garden、Art in Stores</p></div>`
+      : `<div class="footer-festival-info"><strong>2026 臺北數位藝術節</strong><p>灰色自動體</p><p>2026.10.31 — 11.15</p><p>臺北典藏植物園、藝術入店</p></div>`;
+    return `<section class="footer-festival"><div class="container">${festivalInfo}</div></section><section class="site-organizations" aria-label="${organizationLabel}">${organizationRows}</section><footer class="site-footer"><div class="container site-footer-content"><div class="site-footer-inner"><div class="footer-info"><p class="copyright">© 2026 臺北數位藝術節 Taipei Digital Art Festival. All Rights Reserved.</p></div>${socialLinks}</div></div></footer>`;
   }
   const placeholder = (label="圖片 Placeholder", cls="") => `<div class="placeholder ${cls}"><span>${label}</span></div>`;
   const icon = (name, label, cls="") => `<img class="icon ${cls}" src="${assetRoute(`assets/icons/${name}.svg`)}" alt="${label}"${label ? "" : ' aria-hidden="true"'}>`;

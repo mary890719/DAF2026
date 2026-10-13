@@ -14,15 +14,9 @@ get_header();
             <div class="page-sections program-sections">
                 <section class="ia-section program-overview" id="program-overview" aria-labelledby="program-overview-title">
                     <header class="program-section-heading"><span aria-hidden="true">01</span><h2 id="program-overview-title" data-program-label="overview">PROGRAM OVERVIEW</h2></header>
-                    <div class="program-filter" role="group" aria-label="Filter programs by type">
-                        <button type="button" class="is-active" data-program-filter="all" data-program-label="filterAll" aria-pressed="true">ALL</button>
-                        <button type="button" data-program-filter="講座" data-program-label="filterTalks" aria-pressed="false">TALKS</button>
-                        <button type="button" data-program-filter="工作坊" data-program-label="filterWorkshops" aria-pressed="false">WORKSHOPS</button>
-                        <button type="button" data-program-filter="導覽" data-program-label="filterTours" aria-pressed="false">TOURS</button>
-                    </div>
-                    <div class="program-card-list" id="program-card-list" aria-live="polite"></div>
+                    <div class="program-foldout"><section class="program-opening-column"><h3>AUDIOVISUAL NIGHT</h3><div data-program-opening></div></section><section class="program-schedule-column"><h3>WORKSHOPS / TALKS</h3><div class="program-date-columns" data-program-schedule></div></section></div>
                 </section>
+                <section class="ia-section program-guide-tour" id="guide-tour" aria-labelledby="guide-tour-title"><header class="program-section-heading"><span aria-hidden="true">02</span><h2 id="guide-tour-title">GUIDED TOURS</h2></header><div class="guide-tour-grid" data-guide-tour-list></div></section>
             </div>
-        
-</main>
+        </main>
 <?php get_footer(); ?>

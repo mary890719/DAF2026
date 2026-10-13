@@ -18,11 +18,6 @@ get_header();
                     <div class="works-grid works-grid-main" id="works-grid-main"></div>
                 </div>
             </section>
-            <section class="ia-section works-anchor-section" id="outdoor-works" aria-labelledby="outdoor-works-title">
-                <h2 class="section-title" id="outdoor-works-title">OUTDOOR WORKS</h2>
-                <div class="works-grid-frame"><div class="works-grid works-grid-main" id="works-grid-outdoor"></div></div>
-            </section>
             <nav class="page-bottom-nav back-wrap" aria-label="Page navigation"><a class="button" href="<?php echo esc_url( home_url( '/en/district-works/' ) ); ?>">ART IN STORES &gt;</a></nav>
-        
-</main>
+        </main>
 <?php get_footer(); ?>

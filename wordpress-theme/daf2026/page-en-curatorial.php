@@ -13,7 +13,7 @@ get_header();
             <h1 class="page-title">Curatorial Statement</h1>
             <article class="page-sections about-sections">
 <section class="ia-section" id="theme">
-                    <h2>CURATORIAL STATEMENT</h2>
+                    
                     <div class="about-copy">
                         <p>In an age of rapidly advancing information technology and artificial intelligence, a form of existence that has yet to be fully identified is gradually emerging. It moves through vast flows of data, computational systems, and algorithms, quietly becoming embedded in the world we inhabit.</p>
                         <p>Under the theme Gray Autonomous Entity, the 2026 Digital Art Festival Taipei seeks, through digital art, to render perceptible these emerging forms of agency—difficult to clearly identify, yet increasingly impossible to ignore—and the relationships among life, technology, and environment that unfold through them. As vast amounts of data are encoded and fed into model training, forming new representations within high-dimensional vector spaces, images, language, and sound establish new forms of proximity. Computation identifies patterns in existing data, makes predictions, and produces new combinations, allowing systems to generate and respond while also bringing forth a certain entity that remains difficult to describe. It produces experiences that feel both familiar and unfamiliar: familiar because they draw upon data and memories collectively accumulated by humanity; unfamiliar because they arise from the emergence of automaticity.</p>

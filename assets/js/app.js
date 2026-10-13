@@ -2315,18 +2315,34 @@
         restoreMarkerFocusOnClose = openedFromKeyboard;
         selectedMarker.setAttribute("aria-expanded", "true");
         document.querySelectorAll(".map-list-item").forEach(item => item.classList.toggle("is-active", item.dataset.mapLocationId === location.id));
-        const workMarkup = works.map(work => {
+        const workMarkupFor = work => {
           const catalogWork = catalogWorkFor(work);
           const store = location.type === "district" && venue ? venueName(venue) : "";
           const content = `<span class="marker-work-number">${work.number}</span><span class="marker-work-copy"><span class="marker-work-title-line">${mapTitle(work) ? `<strong>${mapTitle(work)}</strong>` : ""}</span><span class="marker-work-artist">${mapArtist(work)}</span>${store ? `<span class="marker-work-store">${store}</span>` : ""}${catalogWork?.year ? `<span class="marker-work-year">${catalogWork.year}</span>` : ""}</span><span class="marker-work-arrow" aria-hidden="true">&gt;</span>`;
           return catalogWork
             ? `<a class="marker-card-work" href="${C.localizedRoute(`work-detail.html?id=${catalogWork.id}`)}">${content}</a>`
             : `<div class="marker-card-work is-pending">${content}</div>`;
-        }).join("");
-        const galleryImages = works.flatMap(work => galleryImagesFor(catalogWorkFor(work), `${mapTitle(work)} ${isEnglish ? "image" : "作品圖片"}`));
-        const mediaMarkup = galleryImages.length ? `<div class="marker-card-media" data-marker-gallery data-gallery-index="0">
-          ${imageMarkup(galleryImages[0], galleryImages[0].alt)}
-          ${galleryImages.length > 1 ? `<button class="marker-card-media-arrow is-previous" type="button" data-marker-gallery-direction="-1" aria-label="${isEnglish ? "Previous image" : "上一張圖片"}">‹</button><button class="marker-card-media-arrow is-next" type="button" data-marker-gallery-direction="1" aria-label="${isEnglish ? "Next image" : "下一張圖片"}">›</button><div class="gallery-dots" aria-label="${isEnglish ? "Image pagination" : "圖片分頁"}">${galleryImages.map((_, index) => `<button type="button" data-marker-gallery-index="${index}" aria-label="${isEnglish ? `View image ${index + 1}` : `查看第 ${index + 1} 張圖片`}" aria-current="${index === 0 ? "true" : "false"}"></button>`).join("")}</div>` : ""}
+        };
+        const workMarkup = works.map(workMarkupFor).join("");
+        const markerSlides = works.map(work => {
+          const fallbackLabel = `${mapTitle(work)} ${isEnglish ? "image" : "作品圖片"}`;
+          return {
+            work,
+            catalogWork: catalogWorkFor(work),
+            image: normalizeImage(catalogWorkFor(work)?.coverImage, fallbackLabel)
+          };
+        });
+        const requestedWorkId = selectedMarker.dataset.requestedWorkId || "";
+        delete selectedMarker.dataset.requestedWorkId;
+        const requestedIndex = markerSlides.findIndex(slide => String(slide.catalogWork?.id || "") === requestedWorkId);
+        const initialSlideIndex = requestedIndex >= 0 ? requestedIndex : 0;
+        const initialSlide = markerSlides[initialSlideIndex];
+        const markerImageMarkup = slide => slide?.image
+          ? imageMarkup(slide.image, slide.image.alt)
+          : C.placeholder(isEnglish ? "Work image pending" : "作品圖片待提供");
+        const mediaMarkup = markerSlides.length ? `<div class="marker-card-media" data-marker-gallery data-gallery-index="${initialSlideIndex}">
+          <div data-marker-gallery-content>${markerImageMarkup(initialSlide)}</div>
+          ${markerSlides.length > 1 ? `<button class="marker-card-media-arrow is-previous" type="button" data-marker-gallery-direction="-1" aria-label="${isEnglish ? "Previous work" : "上一件作品"}">‹</button><button class="marker-card-media-arrow is-next" type="button" data-marker-gallery-direction="1" aria-label="${isEnglish ? "Next work" : "下一件作品"}">›</button><div class="gallery-dots" aria-label="${isEnglish ? "Work pagination" : "作品分頁"}">${markerSlides.map((slide, index) => `<button type="button" data-marker-gallery-index="${index}" aria-label="${isEnglish ? `View ${mapTitle(slide.work)}` : `查看${mapTitle(slide.work)}`}" aria-current="${index === initialSlideIndex ? "true" : "false"}"></button>`).join("")}</div>` : ""}
         </div>` : `<div class="marker-card-media">${C.placeholder(isEnglish ? "Work image pending" : "作品圖片待提供")}</div>`;
         card.setAttribute("aria-labelledby", cardTitleId);
         card.innerHTML = `<div class="marker-card-controls"><button class="marker-card-close" type="button" aria-label="${isEnglish ? "Close location information" : "關閉位置資訊卡"}">×</button></div>${mediaMarkup}<header class="marker-card-location"><span class="venue-number">${venue?.displayNumber || "00"}</span><strong id="${cardTitleId}">${venueName(venue)}</strong>${storeStatusMarkup(venue, {compact:true})}</header><div class="marker-card-works">${workMarkup}</div>`;
@@ -2335,17 +2351,17 @@
         const closeButton = card.querySelector(".marker-card-close");
         closeButton.addEventListener("click", closeMarkerCard);
         const gallery = card.querySelector("[data-marker-gallery]");
-        const showGalleryImage = index => {
-          if (!gallery || !galleryImages.length) return;
-          const nextIndex = (index + galleryImages.length) % galleryImages.length;
+        const showMarkerSlide = index => {
+          if (!gallery || !markerSlides.length) return;
+          const nextIndex = (index + markerSlides.length) % markerSlides.length;
+          const slide = markerSlides[nextIndex];
           gallery.dataset.galleryIndex = String(nextIndex);
-          const image = gallery.querySelector("img");
-          image.src = C.assetRoute(galleryImages[nextIndex].src);
-          image.alt = galleryImages[nextIndex].alt;
+          gallery.querySelector("[data-marker-gallery-content]").innerHTML = markerImageMarkup(slide);
           gallery.querySelectorAll("[data-marker-gallery-index]").forEach((dot, dotIndex) => dot.setAttribute("aria-current", String(dotIndex === nextIndex)));
         };
-        card.querySelectorAll("[data-marker-gallery-direction]").forEach(button => button.addEventListener("click", () => showGalleryImage(Number(gallery.dataset.galleryIndex) + Number(button.dataset.markerGalleryDirection))));
-        card.querySelectorAll("[data-marker-gallery-index]").forEach(button => button.addEventListener("click", () => showGalleryImage(Number(button.dataset.markerGalleryIndex))));
+        showMarkerSlide(initialSlideIndex);
+        card.querySelectorAll("[data-marker-gallery-direction]").forEach(button => button.addEventListener("click", () => showMarkerSlide(Number(gallery.dataset.galleryIndex) + Number(button.dataset.markerGalleryDirection))));
+        card.querySelectorAll("[data-marker-gallery-index]").forEach(button => button.addEventListener("click", () => showMarkerSlide(Number(button.dataset.markerGalleryIndex))));
         syncMapCardMode();
         if (openedFromKeyboard) closeButton.focus({preventScroll: true});
       }));
@@ -2356,6 +2372,7 @@
     document.querySelectorAll(".map-list-item[data-map-location-id]").forEach(item => item.addEventListener("click", () => {
       const marker = document.querySelector(`.marker[data-location-id="${item.dataset.mapLocationId}"]`);
       if (!marker) return;
+      if (item.dataset.mapWorkId) marker.dataset.requestedWorkId = item.dataset.mapWorkId;
       marker.click();
       requestAnimationFrame(() => {
         if (marker.getAttribute("aria-expanded") !== "true") marker.click();
@@ -2644,7 +2661,7 @@
   document.documentElement.style.setProperty("--observation-light-edge", String(networkProfile.lightEdgeAlpha));
   document.querySelector("#site-header").innerHTML = C.header(page);
   const districtMapMenuLink = document.querySelector('.header-nav a[href="district-map.html"]');
-  if (districtMapMenuLink) districtMapMenuLink.textContent = isEnglish ? "Art in Stores Map" : "藝術入店地圖";
+  if (districtMapMenuLink) districtMapMenuLink.textContent = isEnglish ? "ART IN STORES MAP" : "藝術入店地圖";
   document.querySelector("#site-footer").innerHTML = C.footer();
   initializeBackToTop();
   if ("serviceWorker" in navigator && location.protocol === "https:" && !/^(?:localhost|127\.0\.0\.1)$/.test(location.hostname)) {
@@ -2660,10 +2677,10 @@
     if (legacyMapPages[location.hash]) location.replace(legacyMapPages[location.hash]);
   }
   if (page === "works" && location.hash === "#art-in-stores") location.replace("district-works.html#art-in-stores");
-  const breadcrumbLabels = isEnglish ? {about:"ABOUT TAIPEI DIGITAL ART FESTIVAL", curatorial:"CURATORIAL STATEMENT", partners:"EXECUTION AND PARTNERS", map:"Main Venue Map", "district-map":"Art in Stores Map", shops:"PARTNER STORES", works:"TAIPEI COLLECTIBLE BOTANICAL GARDEN", "district-works":"ART IN STORES", program:"PROGRAM"} : {about:"關於臺北數位藝術節", curatorial:"策展論述", partners:"單位介紹", map:"主展場地圖", "district-map":"藝術入店地圖", shops:"合作店家", works:"臺北典藏植物園", "district-works":"藝術入店", program:"活動節目"};
+  const breadcrumbLabels = isEnglish ? {about:"ABOUT TAIPEI DIGITAL ART FESTIVAL", curatorial:"CURATORIAL STATEMENT", partners:"EXECUTION AND PARTNERS", map:"MAIN VENUE MAP", "district-map":"ART IN STORES MAP", shops:"PARTNER STORES", works:"TAIPEI COLLECTIBLE BOTANICAL GARDEN", "district-works":"ART IN STORES", program:"PROGRAM"} : {about:"關於臺北數位藝術節", curatorial:"策展論述", partners:"單位介紹", map:"主展場地圖", "district-map":"藝術入店地圖", shops:"合作店家", works:"臺北典藏植物園", "district-works":"藝術入店", program:"活動節目"};
   if (breadcrumbLabels[page]) {
     const parent = ["about", "curatorial", "partners"].includes(page) ? (isEnglish ? "ABOUT" : "關於")
-      : ["map", "district-map", "shops"].includes(page) ? (isEnglish ? "Information" : "參觀資訊")
+      : ["map", "district-map", "shops"].includes(page) ? (isEnglish ? "INFORMATION" : "參觀資訊")
       : ["works", "district-works"].includes(page) ? (isEnglish ? "WORKS" : "作品介紹") : null;
     const breadcrumb = parent ? [{label: parent}, {label: breadcrumbLabels[page]}] : breadcrumbLabels[page];
     document.querySelector("#breadcrumb").innerHTML = C.crumb(breadcrumb);

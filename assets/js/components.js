@@ -35,7 +35,7 @@ window.DAF_COMPONENTS = (() => {
   const navEn = [
     {id:"home",label:"HOME",url:"index.html"},
     {id:"about",label:"ABOUT",parentOnly:true,children:[["ABOUT TAIPEI DIGITAL ART FESTIVAL","about.html"],["CURATORIAL STATEMENT","curatorial.html"],["EXECUTION AND PARTNERS","partners.html"]]},
-    {id:"map",label:"Information",parentOnly:true,children:[["Main Venue Map","map.html"],["Art in Stores Map","district-map.html"],["PARTNER STORES","shops.html"]]},
+    {id:"map",label:"INFORMATION",parentOnly:true,children:[["MAIN VENUE MAP","map.html"],["ART IN STORES MAP","district-map.html"],["PARTNER STORES","shops.html"]]},
     {id:"works",label:"WORKS",parentOnly:true,children:[["TAIPEI COLLECTIBLE BOTANICAL GARDEN","works.html"],["ART IN STORES","district-works.html"]]},
     {id:"program",label:"PROGRAM",url:"program.html"}
   ];

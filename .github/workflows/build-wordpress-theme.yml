@@ -28,8 +28,8 @@ jobs:
         run: |
           cd wordpress-theme
           zip ../daf2026-update-wordpress-v1.zip \
-            daf2026/page-program.php \
-            daf2026/page-en-program.php
+            daf2026/page-works.php \
+            daf2026/page-en-works.php
 
       - name: 上傳 Theme ZIP
         uses: actions/upload-artifact@v4

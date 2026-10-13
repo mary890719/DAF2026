@@ -90,7 +90,7 @@
   };
   const observationState = {x: window.innerWidth / 2, y: window.innerHeight / 2, active: false, mode: "idle"};
   const siteResizeHandlers = new Set();
-  const narrowNavigationMedia = window.matchMedia("(max-width: 900px)");
+  const narrowNavigationMedia = window.matchMedia("(max-width: 1024px)");
   const touchNavigationWidthMedia = window.matchMedia("(max-width: 1024px)");
   const touchNavigationMedia = window.matchMedia("(any-pointer: coarse), (any-hover: none)");
   const usesTouchNavigation = () => narrowNavigationMedia.matches || (touchNavigationWidthMedia.matches && (navigator.maxTouchPoints > 0 || touchNavigationMedia.matches));
@@ -429,7 +429,7 @@
   const featuredProgramCards = entries => entries.map(({event, ongoing, kind}) => {
     const imageLabel = `${textFor(event, "title")} ${isEnglish ? "program image" : "活動圖片"}`;
     const image = normalizeImage(event.coverImage, imageLabel) || normalizeImage(event.image, imageLabel);
-    const route = event.route || `event-detail.html?id=${event.detailId ?? event.id}`;
+    const route = kind === "tour" ? "program.html#guide-tour" : event.route || `event-detail.html?id=${event.detailId ?? event.id}`;
     return `
     <a class="home-featured-card" href="${C.localizedRoute(route)}">
       ${image ? `<div class="home-featured-card-media">${imageMarkup(image, `${textFor(event, "title")} ${isEnglish ? "program image" : "活動圖片"}`)}</div>` : ""}
@@ -1067,52 +1067,71 @@
       })
       .map(item => item.event);
     if (openingEvent) orderedEvents.unshift(openingEvent);
-    const list = document.querySelector("#program-card-list");
-    const filters = [...document.querySelectorAll("[data-program-filter]")];
     const locale = document.documentElement.lang.toLowerCase().startsWith("en") ? "en" : "zh-Hant";
     const labels = {
       "zh-Hant": {
-        overview: "節目總覽", schedule: "日程表",
-        filterAll: "全部", filterTalks: "講座", filterWorkshops: "工作坊", filterTours: "導覽",
-        noEvents: "活動資料待提供", eventCountSuffix: "場活動",
+        overview: "節目總覽", guide: "現場導覽", noEvents: "活動資料待提供",
         weekdays: ["日", "一", "二", "三", "四", "五", "六"]
       },
       en: {
-        overview: "Program Overview", schedule: "Schedule",
-        filterAll: "All", filterTalks: "Talks", filterWorkshops: "Workshops", filterTours: "Tours",
-        noEvents: "Program information pending", eventCountSuffix: "events",
+        overview: "Program Overview", guide: "Guide Tour", noEvents: "Program information pending",
         weekdays: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
       }
     }[locale];
     const displayTitle = event => locale === "en" ? event.titleEn || event.title : event.title;
-    const displayType = event => locale === "en" ? event.typeEn || event.type : event.type;
     const displayWeekday = date => date ? labels.weekdays[date.weekdayIndex] : "";
     document.querySelectorAll("[data-program-label]").forEach(node => {
       node.textContent = labels[node.dataset.programLabel] || node.textContent;
     });
-    const renderOverview = filter => {
-      const filtered = filter === "all" ? orderedEvents : orderedEvents.filter(event => event.type === filter);
-      list.innerHTML = filtered.length ? filtered.map(event => {
-        const index = orderedEvents.indexOf(event) + 1;
-        const date = programDate(event.date);
-        return `<a class="program-card" href="${C.localizedRoute(programRoute(event))}">
-          <span class="program-card-number">${String(index).padStart(2, "0")}</span>
-          <span class="program-card-content"><small>${displayType(event)}</small><strong>${displayTitle(event)}</strong></span>
-          <span class="program-card-meta">${date || event.date ? `<span>${date ? date.short : event.date}</span>` : ""}${date ? `<span>${displayWeekday(date)}</span>` : ""}${programTime(event) ? `<span>${programTime(event)}</span>` : ""}</span>
-          <span class="program-card-arrow" aria-hidden="true">&gt;</span>
-        </a>`;
-      }).join("") : `<p class="program-empty data-pending">${labels.noEvents}</p>`;
-    };
-
-    filters.forEach(button => button.addEventListener("click", () => {
-      filters.forEach(item => {
-        const active = item === button;
-        item.classList.toggle("is-active", active);
-        item.setAttribute("aria-pressed", String(active));
+    const openingSlot = document.querySelector("[data-program-opening]");
+    const scheduleSlot = document.querySelector("[data-program-schedule]");
+    const guideSlot = document.querySelector("[data-guide-tour-list]");
+    const artistNames = work => (work.artistIds || []).map(id => D.artists.find(artist => artist.id === id)).filter(Boolean).map(artist => textFor(artist, "name")).join(isEnglish ? ", " : "、");
+    const programLocalizedText = (item, field) => isEnglish
+      ? item?.[`${field}En`] || item?.[`${field}Zh`] || item?.[field] || ""
+      : item?.[`${field}Zh`] || item?.[field] || "";
+    const displayShortDate = date => date ? `${date.date.getUTCMonth() + 1}.${date.date.getUTCDate()}` : "";
+    const openingHeading = document.querySelector(".program-opening-column h3");
+    const scheduleHeading = document.querySelector(".program-schedule-column h3");
+    const guideHeading = document.querySelector(".program-guide-tour .program-section-heading h2");
+    if (openingHeading) openingHeading.textContent = isEnglish ? "Audiovisual Performance" : "音像之夜";
+    if (scheduleHeading) scheduleHeading.textContent = isEnglish ? "Workshop / Talk" : "工作坊／講座";
+    if (guideHeading) guideHeading.textContent = isEnglish ? "Guide Tour" : "現場導覽／Guide Tour";
+    if (openingSlot) {
+      const openingWorks = D.soundArtists.flatMap(work => {
+        if (Array.isArray(work.performances) && work.performances.length) {
+          return work.performances.map(performance => ({
+            title: programLocalizedText(performance, "title"),
+            artists: programLocalizedText(performance, "name")
+          }));
+        }
+        const names = [artistNames(work), ...(work.collaborators || []).map(collaborator => programLocalizedText(collaborator, "name"))]
+          .filter(Boolean)
+          .filter((name, index, list) => list.indexOf(name) === index);
+        return [{title: textFor(work, "title"), artists: names.join(isEnglish ? ", " : "、")}];
       });
-      renderOverview(button.dataset.programFilter);
-    }));
-    renderOverview("all");
+      const openingDate = programDate(openingEvent?.date);
+      openingSlot.innerHTML = `${openingEvent ? `<a class="program-opening-event" href="${C.localizedRoute(programRoute(openingEvent))}"><span>${displayShortDate(openingDate)} ${displayWeekday(openingDate)}</span><time>${programTime(openingEvent)}</time></a>` : ""}<div class="program-opening-works">${openingWorks.map(work => `<article><strong>${work.title}</strong>${work.artists ? `<span>${work.artists}</span>` : ""}</article>`).join("")}</div>`;
+    }
+    const scheduleEvents = orderedEvents.filter(event => ["工作坊", "講座"].includes(event.type));
+    const scheduleDates = ["2026.11.01", "2026.11.08", "2026.11.15"];
+    if (scheduleSlot) scheduleSlot.innerHTML = scheduleDates.map(dateKey => {
+      const date = programDate(dateKey);
+      const items = scheduleEvents.filter(event => event.date === dateKey).sort((a, b) => (a.startTime || "").localeCompare(b.startTime || ""));
+      return `<section class="program-date-column"><h4><span>${displayShortDate(date) || dateKey}</span><small>${displayWeekday(date)}</small></h4><div>${items.map(event => `<a class="program-schedule-item" href="${C.localizedRoute(programRoute(event))}"><time>${programTime(event)}</time><span>${displayTitle(event)}</span></a>`).join("") || `<p class="data-pending">${labels.noEvents}</p>`}</div></section>`;
+    }).join("");
+    if (guideSlot) {
+      const tours = orderedEvents.filter(event => event.type === "導覽").sort((a, b) => (a.date || "").localeCompare(b.date || "") || (a.startTime || "").localeCompare(b.startTime || ""));
+      const firstValue = getter => tours.map(getter).find(Boolean) || "";
+      const time = firstValue(programTime);
+      const location = firstValue(event => textFor(event, "location"));
+      const registration = firstValue(event => textFor(event, "registration"));
+      const guideWeekdays = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+      guideSlot.innerHTML = `<div class="guide-tour-summary"><div><span>${isEnglish ? "TIME" : "時間"}</span><strong>${time}</strong></div><div><span>${isEnglish ? "LOCATION" : "地點"}</span><strong>${location}</strong></div><div><span>${isEnglish ? "REGISTRATION" : "報名方式"}</span><strong>${registration}</strong></div></div><div class="guide-tour-dates"><h3>${isEnglish ? "GUIDE TOUR DATES" : "導覽日期"}</h3><div>${tours.map(event => {
+        const date = programDate(event.date);
+        return `<div class="guide-tour-date"><strong>${displayShortDate(date) || event.date}</strong><span>${date ? guideWeekdays[date.weekdayIndex] : ""}</span></div>`;
+      }).join("")}</div></div>`;
+    }
 
   };
 
@@ -1892,7 +1911,7 @@
     }
     await wait(230);
     await wait(540);
-    scrollLink.classList.add("is-visible");
+    scrollLink?.classList.add("is-visible");
     await wait(320);
     completeSequence();
   };
@@ -2062,7 +2081,7 @@
         const label = location.name || works.map(work => `${mapArtist(work)} ${mapTitle(work)}`).join("、");
         const markerNumber = Number.parseInt(location.number, 10);
         const markerStack = Number.isFinite(markerNumber) ? Math.max(2, 19 - markerNumber) : 2;
-        return `<button class="marker" style="left:${location.x}%;top:${location.y}%;--marker-stack:${markerStack}" data-location-id="${location.id}" data-location-type="${location.type}" aria-label="${isEnglish ? "View" : "查看"} ${label}" aria-expanded="false"><svg class="marker-symbol" viewBox="0 0 385.5 680.3" aria-hidden="true"><path d="M.1,353.3C.1,248.9,86.4,164.4,192.8,164.4s192.7,84.5,192.7,188.9-120.6,262.8-171,317.4c-5.9,6.4-13.8,9.6-21.7,9.6s-15.8-3.2-21.7-9.6C120.6,616.1,0,472.8,0,353.3h.1Z"/></svg><span class="marker-number">${location.number}</span></button>`;
+        return `<button class="marker" style="left:${location.x}%;top:${location.y}%;--marker-stack:${markerStack}" data-location-id="${location.id}" data-location-type="${location.type}" aria-label="${isEnglish ? "View" : "查看"} ${label}" aria-expanded="false"><span class="marker-number">${location.number}</span></button>`;
       }).join("");
     });
 
@@ -2075,10 +2094,12 @@
         const venue = venueById(location.venueId);
         const store = location.type === "district" && venue ? venueName(venue) : "";
         const catalogWork = catalogWorkFor(work);
-        const content = `<span class="map-list-number">${work.number}</span>${mapTitle(work) ? `<strong class="map-list-title">${mapTitle(work)}</strong>` : ""}<span class="map-list-artist">${mapArtist(work)}</span>${store ? `<span class="map-list-store">${store}</span>` : ""}`;
-        return catalogWork
-          ? `<a class="map-list-item" href="${C.localizedRoute(`work-detail.html?id=${catalogWork.id}`)}">${content}</a>`
-          : `<article class="map-list-item">${content}</article>`;
+        const districtSubnumber = location.type === "district" ? /^04[_-]([1-5])$/.exec(work.number) : null;
+        const indexNumber = districtSubnumber
+          ? `<span class="map-list-number is-compound"><span class="map-list-number-circle">04</span><span class="map-list-number-suffix">-${districtSubnumber[1]}</span></span>`
+          : `<span class="map-list-number">${work.number}</span>`;
+        const content = `${indexNumber}${mapTitle(work) ? `<strong class="map-list-title">${mapTitle(work)}</strong>` : ""}<span class="map-list-artist">${mapArtist(work)}</span>${store ? `<span class="map-list-store">${store}</span>` : ""}`;
+        return `<button class="map-list-item" type="button" data-map-location-id="${location.id}"${catalogWork ? ` data-map-work-id="${catalogWork.id}"` : ""} aria-label="${isEnglish ? "Open map information for" : "開啟地圖資訊"} ${mapTitle(work)}">${content}</button>`;
       }).join("")}</div>`;
     });
   };
@@ -2104,6 +2125,7 @@
         bodyClass: "map-modal-open",
         afterClose: () => {
           if (activeMarker) activeMarker.setAttribute("aria-expanded", "false");
+          document.querySelectorAll(".map-list-item.is-active").forEach(item => item.classList.remove("is-active"));
           activeCard = null;
           activeMarker = null;
           activeUiLayer = null;
@@ -2292,18 +2314,35 @@
         activeUiLayer = uiLayer;
         restoreMarkerFocusOnClose = openedFromKeyboard;
         selectedMarker.setAttribute("aria-expanded", "true");
-        const workMarkup = works.map(work => {
+        document.querySelectorAll(".map-list-item").forEach(item => item.classList.toggle("is-active", item.dataset.mapLocationId === location.id));
+        const workMarkupFor = work => {
           const catalogWork = catalogWorkFor(work);
           const store = location.type === "district" && venue ? venueName(venue) : "";
           const content = `<span class="marker-work-number">${work.number}</span><span class="marker-work-copy"><span class="marker-work-title-line">${mapTitle(work) ? `<strong>${mapTitle(work)}</strong>` : ""}</span><span class="marker-work-artist">${mapArtist(work)}</span>${store ? `<span class="marker-work-store">${store}</span>` : ""}${catalogWork?.year ? `<span class="marker-work-year">${catalogWork.year}</span>` : ""}</span><span class="marker-work-arrow" aria-hidden="true">&gt;</span>`;
           return catalogWork
             ? `<a class="marker-card-work" href="${C.localizedRoute(`work-detail.html?id=${catalogWork.id}`)}">${content}</a>`
             : `<div class="marker-card-work is-pending">${content}</div>`;
-        }).join("");
-        const galleryImages = works.flatMap(work => galleryImagesFor(catalogWorkFor(work), `${mapTitle(work)} ${isEnglish ? "image" : "作品圖片"}`));
-        const mediaMarkup = galleryImages.length ? `<div class="marker-card-media" data-marker-gallery data-gallery-index="0">
-          ${imageMarkup(galleryImages[0], galleryImages[0].alt)}
-          ${galleryImages.length > 1 ? `<button class="marker-card-media-arrow is-previous" type="button" data-marker-gallery-direction="-1" aria-label="${isEnglish ? "Previous image" : "上一張圖片"}">‹</button><button class="marker-card-media-arrow is-next" type="button" data-marker-gallery-direction="1" aria-label="${isEnglish ? "Next image" : "下一張圖片"}">›</button><div class="gallery-dots" aria-label="${isEnglish ? "Image pagination" : "圖片分頁"}">${galleryImages.map((_, index) => `<button type="button" data-marker-gallery-index="${index}" aria-label="${isEnglish ? `View image ${index + 1}` : `查看第 ${index + 1} 張圖片`}" aria-current="${index === 0 ? "true" : "false"}"></button>`).join("")}</div>` : ""}
+        };
+        const workMarkup = works.map(workMarkupFor).join("");
+        const markerSlides = works.map(work => {
+          const fallbackLabel = `${mapTitle(work)} ${isEnglish ? "image" : "作品圖片"}`;
+          return {
+            work,
+            catalogWork: catalogWorkFor(work),
+            image: normalizeImage(catalogWorkFor(work)?.coverImage, fallbackLabel)
+          };
+        });
+        const requestedWorkId = selectedMarker.dataset.requestedWorkId || "";
+        delete selectedMarker.dataset.requestedWorkId;
+        const requestedIndex = markerSlides.findIndex(slide => String(slide.catalogWork?.id || "") === requestedWorkId);
+        const initialSlideIndex = requestedIndex >= 0 ? requestedIndex : 0;
+        const initialSlide = markerSlides[initialSlideIndex];
+        const markerImageMarkup = slide => slide?.image
+          ? imageMarkup(slide.image, slide.image.alt)
+          : C.placeholder(isEnglish ? "Work image pending" : "作品圖片待提供");
+        const mediaMarkup = markerSlides.length ? `<div class="marker-card-media" data-marker-gallery data-gallery-index="${initialSlideIndex}">
+          <div data-marker-gallery-content>${markerImageMarkup(initialSlide)}</div>
+          ${markerSlides.length > 1 ? `<button class="marker-card-media-arrow is-previous" type="button" data-marker-gallery-direction="-1" aria-label="${isEnglish ? "Previous work" : "上一件作品"}">‹</button><button class="marker-card-media-arrow is-next" type="button" data-marker-gallery-direction="1" aria-label="${isEnglish ? "Next work" : "下一件作品"}">›</button><div class="gallery-dots" aria-label="${isEnglish ? "Work pagination" : "作品分頁"}">${markerSlides.map((slide, index) => `<button type="button" data-marker-gallery-index="${index}" aria-label="${isEnglish ? `View ${mapTitle(slide.work)}` : `查看${mapTitle(slide.work)}`}" aria-current="${index === initialSlideIndex ? "true" : "false"}"></button>`).join("")}</div>` : ""}
         </div>` : `<div class="marker-card-media">${C.placeholder(isEnglish ? "Work image pending" : "作品圖片待提供")}</div>`;
         card.setAttribute("aria-labelledby", cardTitleId);
         card.innerHTML = `<div class="marker-card-controls"><button class="marker-card-close" type="button" aria-label="${isEnglish ? "Close location information" : "關閉位置資訊卡"}">×</button></div>${mediaMarkup}<header class="marker-card-location"><span class="venue-number">${venue?.displayNumber || "00"}</span><strong id="${cardTitleId}">${venueName(venue)}</strong>${storeStatusMarkup(venue, {compact:true})}</header><div class="marker-card-works">${workMarkup}</div>`;
@@ -2312,23 +2351,33 @@
         const closeButton = card.querySelector(".marker-card-close");
         closeButton.addEventListener("click", closeMarkerCard);
         const gallery = card.querySelector("[data-marker-gallery]");
-        const showGalleryImage = index => {
-          if (!gallery || !galleryImages.length) return;
-          const nextIndex = (index + galleryImages.length) % galleryImages.length;
+        const showMarkerSlide = index => {
+          if (!gallery || !markerSlides.length) return;
+          const nextIndex = (index + markerSlides.length) % markerSlides.length;
+          const slide = markerSlides[nextIndex];
           gallery.dataset.galleryIndex = String(nextIndex);
-          const image = gallery.querySelector("img");
-          image.src = C.assetRoute(galleryImages[nextIndex].src);
-          image.alt = galleryImages[nextIndex].alt;
+          gallery.querySelector("[data-marker-gallery-content]").innerHTML = markerImageMarkup(slide);
           gallery.querySelectorAll("[data-marker-gallery-index]").forEach((dot, dotIndex) => dot.setAttribute("aria-current", String(dotIndex === nextIndex)));
         };
-        card.querySelectorAll("[data-marker-gallery-direction]").forEach(button => button.addEventListener("click", () => showGalleryImage(Number(gallery.dataset.galleryIndex) + Number(button.dataset.markerGalleryDirection))));
-        card.querySelectorAll("[data-marker-gallery-index]").forEach(button => button.addEventListener("click", () => showGalleryImage(Number(button.dataset.markerGalleryIndex))));
+        showMarkerSlide(initialSlideIndex);
+        card.querySelectorAll("[data-marker-gallery-direction]").forEach(button => button.addEventListener("click", () => showMarkerSlide(Number(gallery.dataset.galleryIndex) + Number(button.dataset.markerGalleryDirection))));
+        card.querySelectorAll("[data-marker-gallery-index]").forEach(button => button.addEventListener("click", () => showMarkerSlide(Number(button.dataset.markerGalleryIndex))));
         syncMapCardMode();
         if (openedFromKeyboard) closeButton.focus({preventScroll: true});
       }));
       map.addEventListener("click", event => { if (!event.target.closest(".marker, .marker-card")) clearSpread(); });
       window.addEventListener("resize", syncMapCardMode);
     });
+
+    document.querySelectorAll(".map-list-item[data-map-location-id]").forEach(item => item.addEventListener("click", () => {
+      const marker = document.querySelector(`.marker[data-location-id="${item.dataset.mapLocationId}"]`);
+      if (!marker) return;
+      if (item.dataset.mapWorkId) marker.dataset.requestedWorkId = item.dataset.mapWorkId;
+      marker.click();
+      requestAnimationFrame(() => {
+        if (marker.getAttribute("aria-expanded") !== "true") marker.click();
+      });
+    }));
 
     document.addEventListener("click", event => {
       if (!activeCard || event.target.closest(".marker-card, .marker")) return;
@@ -2556,8 +2605,8 @@
         window.clearTimeout(status?._hideTimer);
         status?.classList.add("is-visible");
         if (status) status._hideTimer = window.setTimeout(() => status.classList.remove("is-visible"), 1800);
-      }));
-    };
+    }));
+  };
 
     lists.forEach(list => list.addEventListener("click", event => {
       const trigger = event.target.closest("[data-shop-id]");
@@ -2579,13 +2628,40 @@
     });
   };
 
+  const initializeTransportMapViewer = () => {
+    const trigger = document.querySelector("[data-transport-map-open]");
+    const viewer = document.querySelector("[data-transport-map-viewer]");
+    const closeButton = viewer?.querySelector("[data-transport-map-close]");
+    if (!trigger || !viewer || !closeButton) return;
+
+    const closeViewer = () => {
+      if (viewer.hidden) return;
+      viewer.hidden = true;
+      document.body.classList.remove("transport-map-viewer-open");
+      trigger.focus({preventScroll: true});
+    };
+
+    trigger.addEventListener("click", () => {
+      viewer.hidden = false;
+      document.body.classList.add("transport-map-viewer-open");
+      closeButton.focus({preventScroll: true});
+    });
+    closeButton.addEventListener("click", closeViewer);
+    viewer.addEventListener("click", event => {
+      if (event.target === viewer) closeViewer();
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && !viewer.hidden) closeViewer();
+    });
+  };
+
   document.body.insertAdjacentHTML("afterbegin", C.siteBackground());
   document.body.dataset.networkProfile = "site";
   document.documentElement.style.setProperty("--observation-light-center", String(networkProfile.lightCenterAlpha));
   document.documentElement.style.setProperty("--observation-light-edge", String(networkProfile.lightEdgeAlpha));
   document.querySelector("#site-header").innerHTML = C.header(page);
   const districtMapMenuLink = document.querySelector('.header-nav a[href="district-map.html"]');
-  if (districtMapMenuLink) districtMapMenuLink.textContent = isEnglish ? "OUTDOOR WORKS & ART IN STORES" : "戶外作品及藝術入店";
+  if (districtMapMenuLink) districtMapMenuLink.textContent = isEnglish ? "ART IN STORES MAP" : "藝術入店地圖";
   document.querySelector("#site-footer").innerHTML = C.footer();
   initializeBackToTop();
   if ("serviceWorker" in navigator && location.protocol === "https:" && !/^(?:localhost|127\.0\.0\.1)$/.test(location.hostname)) {
@@ -2601,10 +2677,10 @@
     if (legacyMapPages[location.hash]) location.replace(legacyMapPages[location.hash]);
   }
   if (page === "works" && location.hash === "#art-in-stores") location.replace("district-works.html#art-in-stores");
-  const breadcrumbLabels = isEnglish ? {about:"ABOUT TAIPEI DIGITAL ART FESTIVAL", curatorial:"CURATORIAL STATEMENT", partners:"EXECUTION AND PARTNERS", map:"TAIPEI COLLECTIBLE BOTANICAL GARDEN", "district-map":"OUTDOOR WORKS & ART IN STORES", shops:"PARTNER STORES", works:"TAIPEI COLLECTIBLE BOTANICAL GARDEN", "district-works":"ART IN STORES", program:"PROGRAM"} : {about:"關於臺北數位藝術節", curatorial:"策展論述", partners:"單位介紹", map:"臺北典藏植物園", "district-map":"戶外作品及藝術入店", shops:"合作店家", works:"臺北典藏植物園", "district-works":"藝術入店", program:"活動節目"};
+  const breadcrumbLabels = isEnglish ? {about:"ABOUT TAIPEI DIGITAL ART FESTIVAL", curatorial:"CURATORIAL STATEMENT", partners:"EXECUTION AND PARTNERS", map:"MAIN VENUE MAP", "district-map":"ART IN STORES MAP", shops:"PARTNER STORES", works:"TAIPEI COLLECTIBLE BOTANICAL GARDEN", "district-works":"ART IN STORES", program:"PROGRAM"} : {about:"關於臺北數位藝術節", curatorial:"策展論述", partners:"單位介紹", map:"主展場地圖", "district-map":"藝術入店地圖", shops:"合作店家", works:"臺北典藏植物園", "district-works":"藝術入店", program:"活動節目"};
   if (breadcrumbLabels[page]) {
     const parent = ["about", "curatorial", "partners"].includes(page) ? (isEnglish ? "ABOUT" : "關於")
-      : ["map", "district-map", "shops"].includes(page) ? (isEnglish ? "MAP" : "探索地圖")
+      : ["map", "district-map", "shops"].includes(page) ? (isEnglish ? "INFORMATION" : "參觀資訊")
       : ["works", "district-works"].includes(page) ? (isEnglish ? "WORKS" : "作品介紹") : null;
     const breadcrumb = parent ? [{label: parent}, {label: breadcrumbLabels[page]}] : breadcrumbLabels[page];
     document.querySelector("#breadcrumb").innerHTML = C.crumb(breadcrumb);
@@ -2613,9 +2689,9 @@
   if (page === "home") hydrateHome();
   if (page === "works") {
     document.querySelector("#works-grid-main").innerHTML = workCards(D.works.filter(work => work.category === "main"));
-    document.querySelector("#works-grid-outdoor").innerHTML = workCards(D.works.filter(work => work.category === "outdoor"));
   }
   if (page === "district-works") {
+    document.querySelector("#works-grid-outdoor").innerHTML = workCards(D.works.filter(work => work.category === "outdoor"));
     document.querySelector("#works-grid-district").innerHTML = workCards(D.works.filter(work => work.category === "district"));
   }
   if (page === "program") {
@@ -2624,6 +2700,7 @@
   if (page === "map" || page === "district-map") {
     renderMap();
     initializeMapInteraction();
+    initializeTransportMapViewer();
   }
   if (page === "shops") {
     initializeShops();

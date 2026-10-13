@@ -6,15 +6,18 @@ get_header();
 ?>
 <main class="container detail-page work-detail" id="main-content">
             <div id="breadcrumb"></div>
-            <section class="detail-not-found" data-work-error hidden><h2>找不到此作品</h2><p><a class="button" href="/works/">返回作品介紹</a></p></section>
+            <section class="detail-not-found" data-work-error hidden><h2>找不到此作品</h2><p><a class="button" href="<?php echo esc_url( home_url( '/works/' ) ); ?>">返回作品介紹</a></p></section>
             <article class="detail-shell" data-work-detail>
                 <section class="detail-left work-detail-section">
-                    <div class="work-detail-primary">
-                        <header class="detail-header">
-                            <p class="detail-number" data-work-number></p>
-                            <h1 class="detail-title" data-work-title></h1>
-                            <p class="detail-creators" data-work-creator-names></p>
-                        </header>
+                    <header class="detail-header work-detail-header">
+                        <p class="detail-number" data-work-number></p>
+                        <h1 class="detail-title" data-work-title></h1>
+                        <p class="detail-creators" data-work-creator-names></p>
+                    </header>
+                    <section class="detail-media work-detail-gallery" data-work-gallery-section aria-label="作品圖片">
+                        <div class="gallery" data-work-gallery></div>
+                    </section>
+                    <div class="work-detail-information-grid">
                         <section class="detail-information" aria-labelledby="work-information-title">
                             <h2 id="work-information-title">作品資訊</h2>
                             <dl class="detail-meta">
@@ -29,17 +32,11 @@ get_header();
                             <h2>作品介紹</h2>
                             <div data-work-description></div>
                         </section>
-                        <section class="detail-content work-screening-program" data-work-screening-section hidden>
-                            <h2>片單</h2>
-                            <div data-work-screening-program></div>
-                        </section>
                     </div>
-                    <div class="work-detail-secondary">
-                        <section class="detail-media" data-work-gallery-section>
-                            <h2>作品圖片</h2>
-                            <div class="gallery" data-work-gallery></div>
-                        </section>
-                    </div>
+                    <section class="detail-content work-screening-program" data-work-screening-section hidden>
+                        <h2>片單</h2>
+                        <div data-work-screening-program></div>
+                    </section>
                 </section>
                 <section class="detail-media work-artist-section" aria-labelledby="work-artists-title">
                     <div class="work-artist-primary" data-work-primary-media></div>
@@ -68,7 +65,7 @@ get_header();
                 </nav>
                 <div data-work-map-slot hidden></div>
             </article>
-            <nav class="detail-return-navigation page-bottom-nav back-wrap" aria-label="頁面快速導覽"><a class="button" href="/">&lt; 返回首頁</a><a class="button" href="/works/" data-work-return>返回作品介紹</a></nav>
+            <nav class="detail-return-navigation page-bottom-nav back-wrap" aria-label="頁面快速導覽"><a class="button" href="<?php echo esc_url( home_url( '/' ) ); ?>">&lt; 返回首頁</a><a class="button" href="<?php echo esc_url( home_url( '/works/' ) ); ?>" data-work-return>返回作品介紹</a></nav>
             <noscript><p class="container detail-page-noscript">本頁需要啟用 JavaScript 才能顯示作品資訊。</p></noscript>
         </main>
 <?php get_footer(); ?>

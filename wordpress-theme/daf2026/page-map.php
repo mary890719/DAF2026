@@ -6,21 +6,47 @@ get_header();
 ?>
 <main id="app" class="container">
             <div id="breadcrumb"></div>
-            <h1 class="page-title">探索地圖</h1>
+            <h1 class="page-title">主展場地圖</h1>
             <div class="map-legend" aria-label="地圖圖例">
                 <span data-location-type="main"><i aria-hidden="true"></i>臺北典藏植物園</span>
             </div>
             <div class="page-sections map-contexts">
 <section class="ia-section map-context" id="garden-map" data-map-context="garden">
-                    <h2>臺北典藏植物園</h2>
-                    <div class="map-shell map-shell-garden" data-map-id="main">
-                        <div class="map-base-layer"><img class="map-base" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/map/主展場MAP_zh.webp' ); ?>" alt="臺北典藏植物園主展場地圖，包含廁所、服務台、出入口與緊急逃生口資訊"></div>
-                        <div class="map-overlay-layer" data-map-markers></div>
-                        <div class="map-ui-layer"><article class="marker-card" role="dialog" hidden></article></div>
+                    <h2><span class="section-number">01</span> 主展場地圖</h2>
+                    <div class="map-explorer-layout">
+                        <div class="map-map-column"><div class="map-shell map-shell-garden" data-map-id="main">
+                            <div class="map-base-layer"><img class="map-base" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/map/主展場MAP_zh.webp' ); ?>" alt="臺北典藏植物園主展場地圖，包含廁所、服務台、出入口與緊急逃生口資訊"></div>
+                            <div class="map-overlay-layer" data-map-markers></div>
+                            <div class="map-ui-layer"><article class="marker-card" role="dialog" hidden></article></div>
+                        </div></div>
+                        <div class="map-index-column"><div class="map-work-list" data-map-list="main"></div></div>
                     </div>
-                    <div class="map-work-list" data-map-list="main"><strong>作品及藝術家一覽</strong></div>
+                </section>
+                <section class="ia-section exhibition-information" id="exhibition-information">
+                    <h2><span class="section-number">02</span> 展覽資訊</h2>
+                    <div class="exhibition-information-layout">
+                        <div class="exhibition-information-list">
+                            <section><h3>展覽日期</h3><p class="visit-primary-value">2026.10.31–11.15</p><p>週一休館。</p></section>
+                            <section><h3>開放時間</h3><p class="visit-primary-value">週二至週日 09:00–17:00</p><p>10/31 開展當天響應白晝之夜，延長開放至次日 02:00</p></section>
+                            <section><h3>參觀地點</h3><p class="visit-primary-value visit-venue-name">花博公園新生園區 臺北典藏植物園</p><p>臺北市中山區新庄里濱江街16號</p></section>
+                        </div>
+                        <div class="exhibition-map-column">
+                            <div class="exhibition-google-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.9133132868665!2d121.5317769!3d25.070927099999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a95401821b0d%3A0x26dc1d8284f4461!2z6Ie65YyX5YW46JeP5qSN54mp5ZyS!5e0!3m2!1szh-TW!2sus!4v1786722022654!5m2!1szh-TW!2sus" title="花博公園新生園區 臺北典藏植物園 Google Maps" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                            <a class="button exhibition-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%87%BA%E5%8C%97%E5%B8%82%E4%B8%AD%E5%B1%B1%E5%8D%80%E6%96%B0%E5%BA%84%E9%87%8C%E6%BF%B1%E6%B1%9F%E8%A1%9716%E8%99%9F" target="_blank" rel="noopener noreferrer">在 Google Maps 中開啟</a>
+                        </div>
+                    </div>
+                </section>
+                <section class="ia-section transportation-information" id="transportation">
+                    <h2><span class="section-number">03</span> 交通資訊</h2>
+                    <button class="transport-route-map" type="button" data-transport-map-open aria-label="放大檢視交通路線圖"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/map/交通資訊_zh.webp' ); ?>" alt="臺北典藏植物園交通路線圖"></button>
+                    <div class="transport-content transport-method-grid">
+                        <section class="transport-section"><h3>01. 捷運</h3><section class="transport-route-group"><h4>【圓山站】</h4><ul><li>步行至展區</li><li>轉乘紅50至【新生公園】</li><li>轉乘542至【吉林路底】</li></ul></section><section class="transport-route-group"><h4>【大直站】</h4><ul><li>轉乘72、722至【新生公園（林安泰）】</li></ul></section><section class="transport-route-group"><h4>【中山國小站】</h4><ul><li>步行至展區</li></ul></section></section>
+                        <section class="transport-section"><h3>02. 公車</h3><section class="transport-route-group"><h4>【民族東路口】下車</h4><p>109、203、277、279、280、280直、542、606、606通勤、612、685、敦化幹線</p></section><section class="transport-route-group"><h4>【新生公園】下車</h4><p>紅50、685、市民小巴9</p></section><section class="transport-route-group"><h4>【新生公園（林安泰）】下車</h4><p>72、222、286副、298、643、676、市民小巴9、松江新生幹線、復興幹線</p></section><section class="transport-route-group"><h4>【吉林路底】下車</h4><p>542</p></section></section>
+                        <section class="transport-section transport-section-wide"><h3>03. WeMo 共享機車</h3><p>活動期間於新生公園平面停車場（臺北市新生運動館外側），設立 WeMo 共享機車專屬租還區，民眾可透過共享機車抵達展區，或自由探索藝術入店，觀賞更多作品。</p></section>
+                    </div>
+                    <a class="button transport-navigation-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=%E8%87%BA%E5%8C%97%E5%85%B8%E8%97%8F%E6%A4%8D%E7%89%A9%E5%9C%92" target="_blank" rel="noopener noreferrer">Google Maps 導航</a>
                 </section>
             </div>
-            <nav class="page-bottom-nav back-wrap" aria-label="頁面快速導覽"><a class="button" href="/district-map/">戶外作品及藝術入店 &gt;</a></nav>
+            <nav class="page-bottom-nav back-wrap" aria-label="頁面快速導覽"><a class="button" href="<?php echo esc_url( home_url( '/district-map/' ) ); ?>">藝術入店地圖 &gt;</a></nav>
         </main>
 <?php get_footer(); ?>

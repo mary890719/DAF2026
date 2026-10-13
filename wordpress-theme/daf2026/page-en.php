@@ -21,7 +21,6 @@ get_header();
 			</div>
 			<div class="hero-meta hero-observation-target" data-observation-id="details"><span><span class="hero-meta-label">Venue | </span><span class="hero-meta-value">Taipei Collectible Botanical Garden, Art in Stores</span></span></div>
 		</div>
-		<div class="hero-ui"><a class="hero-scroll" href="#exhibition-venues">ENTER</a></div>
 	</section>
 	<section class="section home-venues" id="exhibition-venues" aria-labelledby="exhibition-venues-title"><div class="container"><h2 class="section-title" id="exhibition-venues-title">EXHIBITION VENUES</h2><div class="home-venue-grid"><a class="home-venue-card" href="<?php echo esc_url( home_url( '/en/works/' ) ); ?>"><span class="home-venue-number">01</span><strong>Taipei Collectible Botanical Garden</strong></a><a class="home-venue-card" href="<?php echo esc_url( home_url( '/en/district-works/' ) ); ?>"><span class="home-venue-number">02</span><strong>Art in Stores</strong></a></div></div></section>
 	<section class="section home-accordion-section"><div class="container"><h2 class="section-title">EXHIBITING WORKS</h2><div class="artist-accordion" id="home-artist-accordion" aria-label="Exhibiting works and artists"></div></div></section>

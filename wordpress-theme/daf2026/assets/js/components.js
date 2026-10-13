@@ -2,8 +2,17 @@ window.DAF_COMPONENTS = (() => {
   const getCurrentLanguage = () => document.documentElement.lang.toLowerCase().startsWith("en") || /(^|\/)en(\/|$)/.test(location.pathname) ? "en" : "zh-Hant";
   const isExternal = value => /^(?:[a-z]+:|\/\/|#)/i.test(value || "");
   const isTestMap = () => /(^|\/)test_MAP(\/|$)/i.test(location.pathname);
-  const assetRoute = path => !path || isExternal(path) || path.startsWith("../") ? path : `${getCurrentLanguage() === "en" || isTestMap() ? "../" : ""}${path}`;
+  const assetRoute = path => {
+    if (!path || isExternal(path)) return path;
+    if (window.DAF_WP?.themeUri) return window.DAF_WP.themeUri.replace(/\/$/, "") + "/" + path.replace(/^(\.\.\/)+/, "").replace(/^\//, "");
+    return path.startsWith("../") ? path : `${getCurrentLanguage() === "en" || isTestMap() ? "../" : ""}${path}`;
+  };
   const localizedRoute = (route, targetLanguage = getCurrentLanguage()) => {
+    if (window.DAF_WP?.homeUrl && route && !isExternal(route)) {
+      const normalized = route.replace(/^(\.\.\/)+/, "").replace(/^en\//, "");
+      const target = targetLanguage === "en" ? "en/" : "";
+      return window.DAF_WP.homeUrl.replace(/\/$/, "/") + target + normalized.replace(/index\.html(?=[?#]|$)/, "").replace(/\.html(?=[?#]|$)/, "/");
+    }
     if (!route || isExternal(route)) return route;
     const normalized = route.replace(/^\.\.\//, "").replace(/^en\//, "");
     if (targetLanguage === getCurrentLanguage()) return normalized;
@@ -12,6 +21,12 @@ window.DAF_COMPONENTS = (() => {
   };
   const localizedText = (item, field) => getCurrentLanguage() === "en" && item?.[`${field}En`] ? item[`${field}En`] : item?.[field] || "";
   const languageSwitchRoute = () => {
+    if (window.DAF_WP?.homeUrl) {
+      const root = new URL(window.DAF_WP.homeUrl, location.origin).pathname;
+      const current = location.pathname.startsWith(root) ? location.pathname.slice(root.length) : location.pathname.replace(/^\//, "");
+      const page = current.replace(/^en\//, "");
+      return window.DAF_WP.homeUrl.replace(/\/$/, "/") + (getCurrentLanguage() === "en" ? "" : "en/") + page + location.search + location.hash;
+    }
     const filename = location.pathname.split("/").filter(Boolean).pop() || "index.html";
     const page = filename.endsWith(".html") ? filename : "index.html";
     return localizedRoute(`${page}${location.search}${location.hash}`, getCurrentLanguage() === "en" ? "zh-Hant" : "en");

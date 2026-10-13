@@ -9,11 +9,17 @@ get_header();
             <p class="page-label" lang="en">WORKS</p>
             <h1 class="page-title">作品介紹</h1>
 <section class="ia-section works-anchor-section" id="art-in-stores" aria-labelledby="art-in-stores-title">
-                <h2 class="section-title" id="art-in-stores-title">藝術入店</h2>
+                <h2 class="works-category-title is-outdoor">戶外作品</h2>
                 <div class="works-grid-frame">
-                    <div class="works-grid works-grid-main" id="works-grid-district"></div>
+                    <div class="works-grid works-grid-main" id="works-grid-outdoor"></div>
+                </div>
+                <div class="works-category-block is-district">
+                    <h2 class="works-category-title is-district">藝術入店</h2>
+                    <div class="works-grid-frame">
+                        <div class="works-grid works-grid-main" id="works-grid-district"></div>
+                    </div>
                 </div>
             </section>
-            <nav class="page-bottom-nav back-wrap" aria-label="頁面快速導覽"><a class="button" href="/works/">&lt; 臺北典藏植物園</a></nav>
+            <nav class="page-bottom-nav back-wrap" aria-label="頁面快速導覽"><a class="button" href="<?php echo esc_url( home_url( '/works/' ) ); ?>">&lt; 臺北典藏植物園</a></nav>
         </main>
 <?php get_footer(); ?>

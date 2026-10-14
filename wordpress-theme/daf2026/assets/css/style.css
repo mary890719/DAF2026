@@ -2573,6 +2573,66 @@ body.work-lightbox-open {
   outline: 1px solid var(--color-border-strong);
   outline-offset: -1px;
 }
+.clab-detail-layer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+}
+.clab-detail-panel {
+  min-height: 0;
+  max-height: calc(100dvh - 48px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.clab-work-gallery-section {
+  padding-top: 0;
+  border-top: 0;
+}
+.clab-work-meta {
+  margin-bottom: 0;
+}
+.clab-creator-profile {
+  display: grid;
+  grid-template-columns: minmax(160px, 30%) minmax(0, 1fr);
+  gap: var(--space-4);
+  padding-block: var(--space-4);
+  border-top: var(--border);
+}
+.clab-creator-profile:first-of-type {
+  margin-top: var(--space-3);
+}
+.clab-creator-profile .opening-performance-media {
+  margin: 0;
+}
+.clab-creator-profile.has-no-image .clab-creator-copy {
+  grid-column: 2;
+}
+.clab-creator-copy h4 {
+  margin: 0 0 var(--space-1);
+}
+.clab-creator-biography p, .clab-creator-copy .opening-detail-section p {
+  margin-bottom: 1.5em;
+  line-height: 2;
+  white-space: pre-line;
+}
+.clab-creator-biography .clab-production-team-title {
+  margin: 1.5em 0 var(--space-2);
+}
+.clab-creator-biography .clab-production-team-item {
+  margin: 0 0 6px;
+  line-height: 1.55;
+}
+.clab-creator-biography .clab-production-team-item:last-child {
+  margin-bottom: 0;
+}
+.clab-creator-copy .opening-detail-section h5 {
+  margin: 0 0 var(--space-2);
+  color: var(--color-text-secondary);
+  font-size: var(--fs-sm);
+  font-weight: 400;
+}
 .opening-detail-back {
   margin: 0 0 var(--space-4);
   padding: 0;
@@ -4701,6 +4761,18 @@ body.shop-modal-open {
   .opening-performance-list-item i {
     grid-column: 2;
     grid-row: 1 / 3;
+  }
+  .clab-detail-panel {
+    max-height: calc(100dvh - 28px - max(38px, calc(24px + env(safe-area-inset-bottom))));
+  }
+  .clab-creator-profile {
+    grid-template-columns: 1fr;
+  }
+  .clab-creator-profile.has-no-image .clab-creator-copy {
+    grid-column: auto;
+  }
+  .clab-creator-profile .opening-performance-media {
+    width: min(100%, 320px);
   }
   .detail-meta > div, .event-gallery {
     grid-template-columns: 1fr;

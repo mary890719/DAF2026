@@ -22,13 +22,46 @@ jobs:
       - name: 打包 DAF2026 Theme
         run: |
           cd wordpress-theme
-          zip -r ../daf2026.zip daf2026
+          zip -r ../daf2026.zip daf2026 \
+            -x '*/node_modules/*' '*/dome備用/*' '*/hero*backup*' '*/Hero*backup*' '*/backup/*' '*/temp/*' '*/tmp/*' '*.bak' '*.tmp'
 
       - name: 打包 WordPress 本次更新
         run: |
           cd wordpress-theme
           zip ../daf2026-update-wordpress-v1.zip \
-            daf2026/assets/css/style.css
+            'daf2026/assets/css/style.css' \
+            'daf2026/assets/icons/threads.svg' \
+            'daf2026/assets/images/artists/artist-06.webp' \
+            'daf2026/assets/images/partnership/partnership-10/01.webp' \
+            'daf2026/assets/images/partnership/partnership-10/main.webp' \
+            'daf2026/assets/images/works/main/main-06/01.webp' \
+            'daf2026/assets/images/works/main/main-06/02.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_1/01.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_1/work/01.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_1/work/02.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_1/work/03.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_2/01.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_2/work/01.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_2/work/02.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_3/01.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_3/work/01.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_3/work/02.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_4/01.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_4/03.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_4/04.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_4/05.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_4/06.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_4/work/01.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_4/work/02.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_4/work/03.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_4/work/04.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_4/work/05.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_5/01.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_5/work/01.webp' \
+            'daf2026/assets/images/works/main/main-06/main-06_5/work/02.webp' \
+            'daf2026/assets/images/works/main/main-06/main.webp' \
+            'daf2026/assets/js/app.js' \
+            'daf2026/assets/js/data.js'
 
       - name: 上傳 Theme ZIP
         uses: actions/upload-artifact@v4

@@ -205,6 +205,46 @@
     closeButton.focus({preventScroll: true});
   };
 
+  const renderWorkCarousel = (container, images, labels) => {
+    if (!container) return;
+    let activeIndex = 0;
+    let swipeStartX = null;
+    container.innerHTML = `
+      <div class="work-gallery-carousel" data-work-gallery-carousel aria-label="${labels.gallery}">
+        <div class="work-gallery-stage">
+          <button class="work-gallery-open" type="button" data-work-gallery-open aria-label="${labels.open}">
+            <img class="work-gallery-image" data-work-gallery-image src="${C.assetRoute(images[0].src)}" alt="${images[0].alt}" decoding="async">
+          </button>
+          ${images.length > 1 ? `<button class="work-gallery-arrow is-previous" type="button" data-work-gallery-direction="-1" aria-label="${labels.previous}">‹</button><button class="work-gallery-arrow is-next" type="button" data-work-gallery-direction="1" aria-label="${labels.next}">›</button>` : ""}
+          ${images.length > 1 ? `<div class="gallery-dots work-gallery-dots" aria-label="${isEnglish ? "Image pagination" : "圖片分頁"}">${images.map((_, index) => `<button type="button" data-work-gallery-index="${index}" aria-label="${isEnglish ? `View image ${index + 1}` : `查看第 ${index + 1} 張圖片`}" aria-current="${index === 0 ? "true" : "false"}"></button>`).join("")}</div>` : ""}
+        </div>
+      </div>`;
+    const carousel = container.querySelector("[data-work-gallery-carousel]");
+    const image = carousel.querySelector("[data-work-gallery-image]");
+    const openButton = carousel.querySelector("[data-work-gallery-open]");
+    const update = index => {
+      activeIndex = (index + images.length) % images.length;
+      image.src = C.assetRoute(images[activeIndex].src);
+      image.alt = images[activeIndex].alt;
+      carousel.querySelectorAll("[data-work-gallery-index]").forEach((dot, dotIndex) => dot.setAttribute("aria-current", String(dotIndex === activeIndex)));
+    };
+    carousel.addEventListener("click", event => {
+      const direction = event.target.closest("[data-work-gallery-direction]");
+      const dot = event.target.closest("[data-work-gallery-index]");
+      if (direction) update(activeIndex + Number(direction.dataset.workGalleryDirection));
+      else if (dot) update(Number(dot.dataset.workGalleryIndex));
+    });
+    openButton.addEventListener("click", () => openDetailLightbox(images, activeIndex, openButton, labels));
+    carousel.addEventListener("pointerdown", event => { if (event.pointerType === "touch") swipeStartX = event.clientX; }, {passive: true});
+    carousel.addEventListener("pointerup", event => {
+      if (swipeStartX === null) return;
+      const distance = event.clientX - swipeStartX;
+      if (Math.abs(distance) >= 45) update(activeIndex + (distance < 0 ? 1 : -1));
+      swipeStartX = null;
+    }, {passive: true});
+    carousel.addEventListener("pointercancel", () => { swipeStartX = null; }, {passive: true});
+  };
+
   const renderDetailGallery = (container, images, labels) => {
     if (!container) return;
     container.__detailGalleryCleanup?.();
@@ -374,7 +414,7 @@
       <div class="work-label"><strong class="work-card-title">${textFor(work, "title")}</strong>${artistNamesForWork(work) ? `<span class="work-card-artist">${artistNamesForWork(work)}</span>` : ""}</div>
     </a>`).join("");
 
-  const creatorLinks = creator => [["website", "home", isEnglish ? "Website" : "官方網站"], ["instagram", "instagram", "Instagram"], ["facebook", "facebook", "Facebook"]]
+  const creatorLinks = creator => [["website", "home", isEnglish ? "Website" : "官方網站"], ["instagram", "instagram", "Instagram"], ["facebook", "facebook", "Facebook"], ["threads", "threads", "Threads"]]
     .map(([field, icon, label]) => creator[field] ? `<a href="${creator[field]}" target="_blank" rel="noopener noreferrer" aria-label="${textFor(creator, "name")} ${label}">${C.icon(icon, "")}</a>` : "")
     .join("");
 
@@ -572,14 +612,23 @@
     setDetailField("location", workLocationName(work), "work");
     setDetailText("[data-work-description]", textFor(work, "description"));
     document.querySelector("[data-work-description-section]").hidden = !textFor(work, "description");
-    const screeningProgram = Array.isArray(work.screeningProgram) ? work.screeningProgram : [];
+    const featuredWorks = Array.isArray(work.featuredWorks) ? work.featuredWorks : [];
+    const screeningProgram = featuredWorks.length ? featuredWorks : (Array.isArray(work.screeningProgram) ? work.screeningProgram : []);
     const screeningSection = document.querySelector("[data-work-screening-section]");
     const screeningList = document.querySelector("[data-work-screening-program]");
     screeningSection.hidden = screeningProgram.length === 0;
+    screeningSection.querySelector("h2").textContent = featuredWorks.length
+      ? (isEnglish ? "Performance Lineup" : "出演片單")
+      : (isEnglish ? "SCREENING PROGRAM" : "片單");
     screeningList.innerHTML = screeningProgram.map((item, index) => {
       const title = String(isEnglish ? item.titleEn || "" : item.title || "").trim();
       const artist = String(isEnglish ? item.artistEn || "" : item.artist || "").trim();
       const description = String(isEnglish ? item.descriptionEn || "" : item.description || "").trim();
+      if (featuredWorks.length) return `<button class="opening-performance-list-item" type="button" data-clab-work-id="${item.id}" aria-haspopup="dialog">
+        <span>${item.number || String(index + 1).padStart(2, "0")} · ${artist}</span>
+        <strong>${isEnglish ? title : `《${title}》`}</strong>
+        <i aria-hidden="true">&gt;</i>
+      </button>`;
       return `<article class="work-screening-item">
         <p class="work-screening-number">${String(index + 1).padStart(2, "0")}</p>
         ${title ? `<h3>${isEnglish ? title : `《${title}》`}</h3>` : ""}
@@ -587,6 +636,108 @@
         ${description ? `<div class="work-screening-description">${description.split("\n\n").map(paragraph => `<p>${paragraph}</p>`).join("")}</div>` : ""}
       </article>`;
     }).join("");
+    screeningList.classList.toggle("opening-performance-list", featuredWorks.length > 0);
+
+    if (featuredWorks.length) {
+      const paragraphMarkup = value => String(value || "").split("\n").map(paragraph => paragraph ? `<p>${paragraph}</p>` : "").join("");
+      const localized = (item, field) => isEnglish ? item?.[`${field}En`] || item?.[field] || "" : item?.[field] || item?.[`${field}Zh`] || "";
+      const presentValue = value => {
+        const result = String(value || "").trim();
+        return result && result !== "-" ? result : "";
+      };
+      const layer = document.createElement("div");
+      layer.className = "opening-detail-layer clab-detail-layer";
+      layer.dataset.clabDetailLayer = "";
+      layer.hidden = true;
+      layer.innerHTML = '<article class="opening-detail-panel clab-detail-panel" role="dialog" aria-modal="true" aria-labelledby="clab-detail-title" hidden></article>';
+      document.body.append(layer);
+      const panel = layer.querySelector(".clab-detail-panel");
+      let returnFocus = null;
+
+      const closeClabDetail = () => {
+        closeDismissiblePanel({panel, layer, hideLayer: true});
+        unlockModalPageScroll("opening-detail-open");
+        returnFocus?.focus({preventScroll: true});
+        returnFocus = null;
+      };
+      const creatorMarkup = creator => {
+        const name = localized(creator, "name");
+        const nationality = localized(creator, "nationality");
+        const bio = localized(creator, "bio");
+        const career = localized(creator, "career");
+        const image = normalizeImage(creator.image, `${name} ${isEnglish ? "portrait" : "照片"}`);
+        const links = creatorLinks(creator);
+        let isProductionTeam = false;
+        const biographyMarkup = String(bio || "").split("\n").map(paragraph => {
+          if (!paragraph) return "";
+          if (/^【(?:製作團隊|Production Team)】$/.test(paragraph.trim())) {
+            isProductionTeam = true;
+            return `<p class="clab-production-team-title">${paragraph}</p>`;
+          }
+          return `<p${isProductionTeam ? ' class="clab-production-team-item"' : ""}>${paragraph}</p>`;
+        }).join("");
+        return `<article class="clab-creator-profile ${image ? "has-image" : "has-no-image"}">
+          ${image ? `<div class="opening-performance-media is-artist">${imageMarkup(image, name)}</div>` : ""}
+          <div class="clab-creator-copy">
+            <h4>${name}</h4>
+            ${nationality ? `<p class="opening-performer-meta">${nationality}</p>` : ""}
+            ${bio ? `<div class="clab-creator-biography">${biographyMarkup}</div>` : ""}
+            ${career ? `<section class="opening-detail-section"><h5>${isEnglish ? "Career" : "經歷"}</h5>${paragraphMarkup(career)}</section>` : ""}
+            ${links ? `<div class="opening-performer-links">${links}</div>` : ""}
+          </div>
+        </article>`;
+      };
+      const openClabDetail = (item, trigger) => {
+        returnFocus = trigger;
+        const title = localized(item, "title");
+        const artist = localized(item, "artist");
+        const year = presentValue(item.year);
+        const workType = presentValue(localized(item, "workType"));
+        const medium = presentValue(localized(item, "medium"));
+        const dimensions = presentValue(localized(item, "dimensions"));
+        const locationName = workLocationName(work);
+        const description = localized(item, "description");
+        const credits = localized(item, "credits");
+        const images = (item.images || []).map((image, imageIndex) => normalizeImage(image, `${title} ${isEnglish ? "work image" : "作品圖片"} ${imageIndex + 1}`)).filter(Boolean);
+        const infoRows = [
+          [isEnglish ? "YEAR" : "創作年份", year],
+          [isEnglish ? "TYPE" : "作品類型", workType],
+          [isEnglish ? "MEDIUM" : "創作媒材", medium],
+          [isEnglish ? "DIMENSIONS" : "作品尺寸", dimensions],
+          [isEnglish ? "LOCATION" : "展出地點", locationName]
+        ].filter(([, value]) => value);
+        panel.innerHTML = `<button class="marker-card-close opening-detail-close" type="button" aria-label="${isEnglish ? "Close work details" : "關閉作品詳細資訊"}">×</button>
+          <div class="opening-detail-content clab-detail-content">
+            <header class="opening-detail-header">
+              <p class="opening-performer-number">${item.number}</p>
+              <h3 id="clab-detail-title">${title}</h3>
+              <p class="opening-subperformance-artist">${artist}</p>
+            </header>
+            ${images.length ? '<section class="opening-detail-section clab-work-gallery-section"><div class="gallery clab-work-gallery" data-clab-work-gallery></div></section>' : ""}
+            ${infoRows.length ? `<section class="opening-detail-section"><h4>${isEnglish ? "Work Information" : "作品資訊"}</h4><dl class="detail-meta clab-work-meta">${infoRows.map(([label, value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`).join("")}</dl></section>` : ""}
+            ${description ? `<section class="opening-detail-section"><h4>${isEnglish ? "Work Description" : "作品介紹"}</h4>${paragraphMarkup(description)}</section>` : ""}
+            ${credits ? `<section class="opening-detail-section"><h4>${isEnglish ? "Credits" : "工作分工"}</h4>${paragraphMarkup(credits)}</section>` : ""}
+            ${(item.creators || []).length ? `<section class="opening-detail-section clab-creators"><h4>${isEnglish ? "Artists / Participating Teams" : "藝術家／參與團隊"}</h4>${item.creators.map(creatorMarkup).join("")}</section>` : ""}
+          </div>`;
+        renderWorkCarousel(panel.querySelector("[data-clab-work-gallery]"), images, detailGalleryLabels(title));
+        layer.hidden = false;
+        panel.hidden = false;
+        panel.scrollTop = 0;
+        lockModalPageScroll("opening-detail-open");
+        panel.querySelector(".opening-detail-close").addEventListener("click", closeClabDetail);
+        panel.querySelector(".opening-detail-close").focus({preventScroll: true});
+      };
+      screeningList.addEventListener("click", event => {
+        const trigger = event.target.closest("[data-clab-work-id]");
+        if (!trigger) return;
+        const item = featuredWorks.find(candidate => candidate.id === trigger.dataset.clabWorkId);
+        if (item) openClabDetail(item, trigger);
+      });
+      layer.addEventListener("click", event => { if (event.target === layer) closeClabDetail(); });
+      document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && !layer.hidden && !document.body.classList.contains("detail-lightbox-open")) closeClabDetail();
+      });
+    }
     const images = galleryImagesFor(work, "作品圖片", true);
     const galleryElement = document.querySelector("[data-work-gallery]");
     const gallerySection = document.querySelector("[data-work-gallery-section]");

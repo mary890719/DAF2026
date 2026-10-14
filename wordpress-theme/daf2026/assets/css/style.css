@@ -600,8 +600,17 @@ body[data-page="about"] .page-title, body[data-page="curatorial"] .page-title, b
 }
 .execution-unit {
   display: grid;
-  justify-items: start;
+  grid-template-columns: minmax(180px, 280px) minmax(0, 1fr);
+  align-items: start;
   gap: clamp(28px, 4vw, 48px);
+}
+.execution-unit > :first-child {
+  grid-column: 1;
+  grid-row: 1 / -1;
+}
+.execution-unit > :not(:first-child) {
+  grid-column: 2;
+  justify-self: start;
 }
 .execution-unit-logo {
   display: block;
@@ -618,14 +627,21 @@ body[data-page="about"] .page-title, body[data-page="curatorial"] .page-title, b
 .execution-unit .button {
   margin-top: 0;
 }
+.execution-unit,
+.about-organization-list,
+body[data-page="partners"] .about-sections > .ia-section > h2 {
+  width: min(100%, 1100px);
+  margin-inline: auto;
+}
 .about-organization-list, .curator-profiles {
   display: grid;
   gap: clamp(48px, 7vw, 88px);
 }
-.about-organization-profile,
 .about-organization-profile {
+  display: grid;
   grid-template-columns: minmax(180px, 280px) minmax(0, 1fr);
   align-items: start;
+  gap: clamp(24px, 4vw, 48px);
 }
 .about-organization-profile.is-text-only {
   grid-template-columns: minmax(0, 1fr);
@@ -676,6 +692,14 @@ body[data-page="about"] .page-title, body[data-page="curatorial"] .page-title, b
 }
 .curator-profile-content .button {
   margin-top: var(--space-3);
+}
+.curator-profiles {
+  width: min(100%, var(--reading));
+  margin-inline: auto;
+}
+#curatorial-execution > h2 {
+  width: min(100%, var(--reading));
+  margin-inline: auto;
 }
 .works-anchor-section {
   scroll-margin-top: 129px;
@@ -2200,7 +2224,9 @@ body.work-lightbox-open {
 }
 /* Program */
 .program-sections {
+  width: 100%;
   max-width: 1360px;
+  margin-inline: auto;
 }
 .program-section-heading {
   margin-bottom: var(--space-4);
@@ -3195,6 +3221,10 @@ body.detail-lightbox-open {
   grid-template-columns: minmax(0, 1fr);
   gap: clamp(32px, 5vw, 64px);
 }
+.map-contexts > .ia-section {
+  width: min(100%, 1100px);
+  margin-inline: auto;
+}
 .map-context .map-list-entries {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-2) clamp(20px, 3vw, 40px);
@@ -3288,6 +3318,12 @@ body.detail-lightbox-open {
 }
 .shop-section {
   position: relative;
+}
+.shop-section > h2,
+.shop-list,
+.shop-collaboration-list {
+  width: min(100%, 1128px);
+  margin-inline: auto;
 }
 .shop-section + .shop-section {
   margin-top: var(--space-4);
@@ -3511,9 +3547,11 @@ body.detail-lightbox-open {
 }
 .exhibition-information-layout {
   display: grid;
-  grid-template-columns: minmax(0, 9fr) minmax(0, 11fr);
-  gap: clamp(40px, 6vw, 88px);
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 560px);
+  width: min(100%, 1100px);
+  margin-inline: auto;
+  gap: clamp(32px, 3vw, 48px);
+  align-items: center;
 }
 .exhibition-information-list {
   display: grid;
@@ -3522,6 +3560,10 @@ body.detail-lightbox-open {
 }
 .exhibition-information-list section, .exhibition-map-column {
   min-width: 0;
+}
+.exhibition-map-column {
+  width: min(100%, 560px);
+  justify-self: center;
 }
 .exhibition-information-list h3, .transport-method-grid h3 {
   margin: 0 0 var(--space-3);
@@ -4401,6 +4443,14 @@ body.shop-modal-open {
   }
   .curator-profile-image {
     width: min(100%, 280px);
+  }
+  .execution-unit {
+    grid-template-columns: 1fr;
+  }
+  .execution-unit > :first-child,
+  .execution-unit > :not(:first-child) {
+    grid-column: 1;
+    grid-row: auto;
   }
   .artist-accordion {
     flex-direction: column;

@@ -2816,7 +2816,7 @@
   document.querySelector("#site-footer").innerHTML = C.footer();
   initializeBackToTop();
   if ("serviceWorker" in navigator && location.protocol === "https:" && !/^(?:localhost|127\.0\.0\.1)$/.test(location.hostname)) {
-    navigator.serviceWorker.register(C.assetRoute("sw.js")).catch(error => console.warn("Offline fallback unavailable.", error));
+    navigator.serviceWorker.register(new URL("/sw.js", window.DAF_WP?.homeUrl || location.origin).href, {scope: new URL("/", window.DAF_WP?.homeUrl || location.origin).pathname}).catch(error => console.warn("Offline fallback unavailable.", error));
   }
 
   if (page === "about" && location.hash) {

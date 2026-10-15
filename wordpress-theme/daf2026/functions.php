@@ -18,6 +18,11 @@ function daf2026_theme_setup() {
 add_action( 'after_setup_theme', 'daf2026_theme_setup' );
 
 /**
+ * 載入網站根目錄 Offline Fallback Endpoint。
+ */
+require_once get_template_directory() . '/inc/offline-endpoints.php';
+
+/**
  * 載入既有 Prototype 樣式與 JavaScript。
  */
 function daf2026_enqueue_assets() {

@@ -4541,6 +4541,9 @@ body.shop-modal-open {
   body.map-modal-open {
     overflow: hidden;
   }
+  body.map-modal-open > #app {
+    z-index: 81;
+  }
   .map-ui-layer {
     position: fixed;
     z-index: 100;

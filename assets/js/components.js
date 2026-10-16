@@ -99,7 +99,7 @@ window.DAF_COMPONENTS = (() => {
   const placeholder = (label="圖片 Placeholder", cls="") => `<div class="placeholder ${cls}"><span>${label}</span></div>`;
   const icon = (name, label, cls="") => `<img class="icon ${cls}" src="${assetRoute(`assets/icons/${name}.svg`)}" alt="${label}"${label ? "" : ' aria-hidden="true"'}>`;
   const crumb = (items) => {
-    const trail = [{label: ui().home, href: "index.html"}, ...(Array.isArray(items) ? items : [{label: items}])];
+    const trail = [{label: ui().home, href: localizedRoute("index.html")}, ...(Array.isArray(items) ? items : [{label: items}])];
     return `<nav class="breadcrumb" aria-label="Breadcrumb"><ol>${trail.map((item, index) => {
       const current = index === trail.length - 1;
       return `<li>${current ? `<span aria-current="page">${item.label}</span>` : item.href ? `<a href="${item.href}">${item.label}</a>` : `<span>${item.label}</span>`}</li>`;

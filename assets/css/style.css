@@ -412,7 +412,7 @@ body > #site-header {
   inset: 0 0 auto;
   width: 100%;
 }
-body > #app {
+body > #app, body > main.detail-page {
   padding-top: 86px;
 }
 .site-network-canvas {
@@ -4541,6 +4541,9 @@ body.shop-modal-open {
   body.map-modal-open {
     overflow: hidden;
   }
+  body.map-modal-open > #app {
+    z-index: 81;
+  }
   .map-ui-layer {
     position: fixed;
     z-index: 100;
@@ -5169,7 +5172,7 @@ html.touch-navigation .home-accordion-section.is-touch-sequential .artist-accord
     height: 78px;
     padding-block: 0;
   }
-  body > #app {
+  body > #app, body > main.detail-page {
     padding-top: 78px;
   }
   .ia-section, .home-venues {
@@ -5219,7 +5222,7 @@ html.touch-navigation .home-accordion-section.is-touch-sequential .artist-accord
   html.touch-navigation body.mobile-menu-open .menu-toggle {
     top: 15px;
   }
-  html.touch-navigation body > #app {
+  html.touch-navigation body > #app, html.touch-navigation body > main.detail-page {
     padding-top: 78px;
   }
   html.touch-navigation .hero {

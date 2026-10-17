@@ -101,6 +101,10 @@ function daf2026_get_detail_seo_data( $page_key, $is_english ) {
  * 內容同步自 Prototype 正式 SEO 文案，WordPress 僅負責輸出對應標記。
  */
 function daf2026_get_seo_data() {
+	if ( is_404() ) {
+		return null;
+	}
+
 	$page_uri = is_front_page() ? '' : get_page_uri( get_queried_object_id() );
 	$is_english = 'en' === $page_uri || 0 === strpos( $page_uri, 'en/' );
 	$page_key = $is_english ? preg_replace( '#^en/?#', '', $page_uri ) : $page_uri;

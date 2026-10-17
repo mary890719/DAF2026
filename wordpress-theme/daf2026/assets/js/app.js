@@ -590,14 +590,14 @@
     });
     const areaCrumbs = work.category === "main"
       ? [
-          {label: isEnglish ? "TAIPEI COLLECTIBLE BOTANICAL GARDEN" : "臺北典藏植物園", href: "works.html"}
+          {label: isEnglish ? "TAIPEI COLLECTIBLE BOTANICAL GARDEN" : "臺北典藏植物園", href: C.localizedRoute("works.html")}
         ]
       : work.category === "outdoor"
         ? [
-            {label: isEnglish ? "TAIPEI COLLECTIBLE BOTANICAL GARDEN" : "臺北典藏植物園", href: "works.html"},
-            {label: isEnglish ? "OUTDOOR WORKS" : "戶外作品", href: "works.html#outdoor-works"}
+            {label: isEnglish ? "TAIPEI COLLECTIBLE BOTANICAL GARDEN" : "臺北典藏植物園", href: C.localizedRoute("works.html")},
+            {label: isEnglish ? "OUTDOOR WORKS" : "戶外作品", href: C.localizedRoute("district-works.html#outdoor-works")}
           ]
-        : [{label: isEnglish ? "ART IN STORES" : "藝術入店", href: "district-works.html"}];
+        : [{label: isEnglish ? "ART IN STORES" : "藝術入店", href: C.localizedRoute("district-works.html#art-in-stores")}];
     document.querySelector("#breadcrumb").innerHTML = C.crumb([
       {label: isEnglish ? "WORKS" : "作品介紹"},
       ...areaCrumbs,
@@ -2844,6 +2844,12 @@
   if (page === "district-works") {
     document.querySelector("#works-grid-outdoor").innerHTML = workCards(D.works.filter(work => work.category === "outdoor"));
     document.querySelector("#works-grid-district").innerHTML = workCards(D.works.filter(work => work.category === "district"));
+    if (["#outdoor-works", "#art-in-stores"].includes(location.hash)) {
+      const alignWorksAnchor = () => requestAnimationFrame(() => document.querySelector(location.hash)?.scrollIntoView());
+      if (document.readyState === "complete") alignWorksAnchor();
+      else window.addEventListener("load", alignWorksAnchor, {once: true});
+      document.fonts?.ready.then(alignWorksAnchor);
+    }
   }
   if (page === "program") {
     initializeProgramPage();

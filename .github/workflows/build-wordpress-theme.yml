@@ -28,10 +28,7 @@ jobs:
       - name: 打包 WordPress 本次更新
         run: |
           cd wordpress-theme
-          zip ../daf2026-update-wordpress-v1.zip \
-            'daf2026/404.php' \
-            'daf2026/assets/css/style.css' \
-            'daf2026/functions.php'
+          zip ../daf2026-update-wordpress-v1.zip 'daf2026/assets/js/app.js'
 
       - name: 上傳 Theme ZIP
         uses: actions/upload-artifact@v4

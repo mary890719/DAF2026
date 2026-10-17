@@ -590,14 +590,14 @@
     });
     const areaCrumbs = work.category === "main"
       ? [
-          {label: isEnglish ? "TAIPEI COLLECTIBLE BOTANICAL GARDEN" : "臺北典藏植物園", href: "works.html"}
+          {label: isEnglish ? "TAIPEI COLLECTIBLE BOTANICAL GARDEN" : "臺北典藏植物園", href: C.localizedRoute("works.html")}
         ]
       : work.category === "outdoor"
         ? [
-            {label: isEnglish ? "TAIPEI COLLECTIBLE BOTANICAL GARDEN" : "臺北典藏植物園", href: "works.html"},
-            {label: isEnglish ? "OUTDOOR WORKS" : "戶外作品", href: "works.html#outdoor-works"}
+            {label: isEnglish ? "TAIPEI COLLECTIBLE BOTANICAL GARDEN" : "臺北典藏植物園", href: C.localizedRoute("works.html")},
+            {label: isEnglish ? "OUTDOOR WORKS" : "戶外作品", href: C.localizedRoute("district-works.html#outdoor-works")}
           ]
-        : [{label: isEnglish ? "ART IN STORES" : "藝術入店", href: "district-works.html"}];
+        : [{label: isEnglish ? "ART IN STORES" : "藝術入店", href: C.localizedRoute("district-works.html#art-in-stores")}];
     document.querySelector("#breadcrumb").innerHTML = C.crumb([
       {label: isEnglish ? "WORKS" : "作品介紹"},
       ...areaCrumbs,
@@ -1104,7 +1104,7 @@
       kind: isOpeningRoute ? null : "event",
       id: isOpeningRoute ? null : event.id
     });
-    document.querySelector("#breadcrumb").innerHTML = C.crumb([{label: isEnglish ? "PROGRAM" : "活動節目", href: "program.html"}, {label: textFor(event, "title")}]);
+    document.querySelector("#breadcrumb").innerHTML = C.crumb([{label: isEnglish ? "PROGRAM" : "活動節目", href: C.localizedRoute("program.html")}, {label: textFor(event, "title")}]);
     setDetailText("[data-event-type]", isOpeningPerformance
       ? (isEnglish ? "Performance" : "表演")
       : [event.number, isEnglish ? event.typeEn || event.type : event.type].filter(Boolean).join("｜"));

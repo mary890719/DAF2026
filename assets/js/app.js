@@ -870,9 +870,16 @@
       ? artists.map(creator => {
         const biography = textFor(creator, "bio");
         const career = textFor(creator, "career");
-        return `<article>${textFor(creator, "name") ? `<h3>${textFor(creator, "name")}</h3>` : ""}${textFor(creator, "nationality") ? `<p class="artist-nationality">${textFor(creator, "nationality")}</p>` : ""}${biography ? `<p class="artist-biography">${biography}</p>` : ""}${career ? `<section class="artist-career"><h4>${isEnglish ? "EXPERIENCE" : "經歷"}</h4><p>${career}</p></section>` : ""}${creatorLinks(creator) ? `<div class="artist-links">${creatorLinks(creator)}</div>` : ""}</article>`;
+        return `<article id="${creator.id}">${textFor(creator, "name") ? `<h3>${textFor(creator, "name")}</h3>` : ""}${textFor(creator, "nationality") ? `<p class="artist-nationality">${textFor(creator, "nationality")}</p>` : ""}${biography ? `<p class="artist-biography">${biography}</p>` : ""}${career ? `<section class="artist-career"><h4>${isEnglish ? "EXPERIENCE" : "經歷"}</h4><p>${career}</p></section>` : ""}${creatorLinks(creator) ? `<div class="artist-links">${creatorLinks(creator)}</div>` : ""}</article>`;
       }).join("")
       : `<p class="data-pending">${isEnglish ? "(Information pending)" : "(待補)"}</p>`;
+    const requestedArtistId = decodeURIComponent(location.hash.replace(/^#/, ""));
+    if (requestedArtistId && artists.some(creator => creator.id === requestedArtistId)) {
+      const alignArtistAnchor = () => requestAnimationFrame(() => document.getElementById(requestedArtistId)?.scrollIntoView({block: "start"}));
+      alignArtistAnchor();
+      if (document.readyState !== "complete") window.addEventListener("load", alignArtistAnchor, {once: true});
+      document.fonts?.ready.then(alignArtistAnchor);
+    }
     const previousLink = document.querySelector("[data-work-previous]");
     const nextLink = document.querySelector("[data-work-next]");
     previousLink.hidden = !previous;
@@ -1134,8 +1141,8 @@
       setDetailText(valueSelector, value);
     };
     showConditionalField("[data-event-discussant-row]", "[data-event-discussant]", "discussant", []);
-    showConditionalField("[data-event-artist-row]", "[data-event-artist]", "artist", ["講座", "工作坊", "表演"]);
-    showConditionalField("[data-event-artist-team-row]", "[data-event-artist-team]", "artistTeam", ["講座", "表演"]);
+    showConditionalField("[data-event-artist-row]", "[data-event-artist]", "artist", ["工作坊", "表演"]);
+    showConditionalField("[data-event-artist-team-row]", "[data-event-artist-team]", "artistTeam", ["表演"]);
     const registrationRow = document.querySelector("[data-event-registration-row]");
     if (registrationRow) {
       const registration = ["講座", "工作坊", "導覽"].includes(event.type) ? textFor(event, "registration") : "";
@@ -1165,6 +1172,43 @@
       }
     }
     showConditionalField("[data-event-registration-method-row]", "[data-event-registration-method]", "registrationMethod", ["講座", "工作坊"]);
+    const panelistSection = document.querySelector("[data-event-panelists-section]");
+    const panelistList = document.querySelector("[data-event-panelists]");
+    const panelists = event.type === "講座" && textFor(event, "discussant")
+      ? [{
+          name: textFor(event, "discussant"),
+          biography: textFor(event, "discussantBio"),
+          image: normalizeImage(event.discussantImage, textFor(event, "discussant"))
+        }]
+      : [];
+    if (panelistSection && panelistList && panelists.length) {
+      panelistList.innerHTML = panelists.map(panelist => `<article class="event-panelist-row">
+        ${panelist.image ? `<div class="event-panelist-image">${imageMarkup(panelist.image, panelist.name)}</div>` : ""}
+        <div class="event-panelist-copy"><h3>${panelist.name}</h3>${panelist.biography ? `<p>${panelist.biography}</p>` : ""}</div>
+      </article>`).join("");
+      panelistSection.hidden = false;
+    }
+    const artistsSection = document.querySelector("[data-event-artists-section]");
+    const artistsList = document.querySelector("[data-event-artists]");
+    const eventArtists = event.type === "講座" && Array.isArray(event.artistRefs)
+      ? event.artistRefs.map(reference => {
+          const creator = D.artists.find(item => item.id === reference.artistId);
+          const work = workCatalog.find(item => item.id === reference.workId);
+          return {reference, creator, work};
+        }).filter(({creator}) => creator)
+      : [];
+    if (artistsSection && artistsList && eventArtists.length) {
+      artistsList.innerHTML = eventArtists.map(({reference, creator, work}) => {
+        const name = isEnglish ? reference.nameEn || reference.name : reference.name || reference.nameEn;
+        const url = work ? C.localizedRoute(`work-detail.html?id=${work.id}#${creator.id}`) : "";
+        const image = normalizeImage(creator.image, name);
+        const content = `${image ? `<div class="event-artist-image">${imageMarkup(image, name)}</div>` : ""}<h3>${name}</h3>`;
+        return url
+          ? `<a class="event-artist-card" href="${url}">${content}</a>`
+          : `<article class="event-artist-card is-unlinked">${content}</article>`;
+      }).join("");
+      artistsSection.hidden = false;
+    }
     const descriptionSection = document.querySelector("[data-event-description-section]");
     const descriptionContainer = document.querySelector("[data-event-description]");
     const eventDescription = event.type === "工作坊" ? textFor(event, "description") : "";
@@ -1182,7 +1226,8 @@
       ? event.images.map((image, index) => normalizeImage(image, documentationAlt(index))).filter(Boolean)
       : [];
     const eventGallery = document.querySelector("[data-event-gallery]");
-    renderDetailGallery(eventGallery, recordImages, detailGalleryLabels(textFor(event, "title")));
+    if (recordImages.length) renderWorkCarousel(eventGallery, recordImages, detailGalleryLabels(textFor(event, "title")));
+    else if (eventGallery) eventGallery.replaceChildren();
     document.querySelector("[data-event-gallery-section]").hidden = recordImages.length === 0;
     scheduleMetadataRowAlignment(article);
   };

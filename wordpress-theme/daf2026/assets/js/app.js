@@ -1111,7 +1111,7 @@
       kind: isOpeningRoute ? null : "event",
       id: isOpeningRoute ? null : event.id
     });
-    document.querySelector("#breadcrumb").innerHTML = C.crumb([{label: isEnglish ? "PROGRAM" : "活動節目", href: "program.html"}, {label: textFor(event, "title")}]);
+    document.querySelector("#breadcrumb").innerHTML = C.crumb([{label: isEnglish ? "PROGRAM" : "活動節目", href: C.localizedRoute("program.html")}, {label: textFor(event, "title")}]);
     setDetailText("[data-event-type]", isOpeningPerformance
       ? (isEnglish ? "Performance" : "表演")
       : [event.number, isEnglish ? event.typeEn || event.type : event.type].filter(Boolean).join("｜"));

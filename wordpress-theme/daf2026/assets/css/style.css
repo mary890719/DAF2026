@@ -444,7 +444,7 @@ body > #app, body > main.detail-page, body > main.not-found-page {
   text-align: left;
   margin: 0 0 56px;
 }
-.ia-section > h2, .program-section-heading h2, .works-anchor-section .works-category-title, .detail-information h2, .detail-content h2, .detail-media h2 {
+.ia-section > h2, .program-section-heading h2, .works-anchor-section .works-category-title, .detail-information h2, .detail-content h2, .detail-media h2, .event-panelists h2, .event-artists h2 {
   font-family: var(--font-sans);
   font-size: var(--type-section-title-size);
   font-weight: var(--type-title-weight);
@@ -1893,6 +1893,9 @@ body[data-page="home"] #app > .section {
   padding-top: var(--space-4);
   border-top: var(--border);
 }
+[data-work-artists] > article {
+  scroll-margin-top: 110px;
+}
 .detail-title {
   font-size: 2.5rem;
   margin: 0 0 20px;
@@ -2737,15 +2740,53 @@ body.opening-detail-open {
 .event-detail section + section {
   margin-top: var(--space-5);
 }
+.event-panelist-row {
+  display: grid;
+  grid-template-columns: minmax(160px, 28%) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+  padding-block: var(--space-4);
+  border-top: var(--border);
+}
+.event-panelist-image, .event-artist-image {
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--color-surface);
+}
+.event-panelist-image img, .event-artist-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.event-panelist-copy h3, .event-artist-card h3 {
+  margin: 0;
+}
+.event-panelist-copy p {
+  margin: var(--space-2) 0 0;
+  line-height: var(--type-long-form-line-height);
+  white-space: pre-line;
+}
+.event-artist-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+.event-artist-card {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+  color: inherit;
+}
+.event-artist-card:not(.is-unlinked):hover, .event-artist-card:not(.is-unlinked):focus-visible {
+  color: var(--color-text-secondary);
+}
 .detail-gallery {
   --detail-gallery-gap: var(--space-3);
   display: block;
   min-width: 0;
 }
 .event-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-3);
+  display: block;
   min-width: 0;
 }
 .detail-gallery-row {
@@ -4800,8 +4841,18 @@ body.shop-modal-open {
   .clab-creator-profile .opening-performance-media {
     width: min(100%, 320px);
   }
-  .detail-meta > div, .event-gallery {
+  .detail-meta > div {
     grid-template-columns: 1fr;
+  }
+  .event-panelist-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-3);
+  }
+  .event-panelist-image {
+    width: min(100%, 280px);
+  }
+  .event-artist-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .detail-gallery-item {
     width: 100%;

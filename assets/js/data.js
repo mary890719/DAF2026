@@ -119,7 +119,7 @@ window.DAF_DATA = {
     "id": "artist-04",
     "name": "德里斯．德普特",
     "nameZh": "德里斯．德普特",
-    "nameEn": "Dries Depooter",
+    "nameEn": "Dries Depoorter",
     "nationality": "比利時",
     "bio": "Dries Depoorter 是居於比利時根特的藝術家與創意科技工作者，創作運用人工智慧、監控系統、社群媒體與公開網路資料，探討隱私、身分、監控與數位文化中的倫理問題。他經常將日常科技轉化為帶有幽默與批判性的互動作品，使觀眾直接面對演算法與資料系統如何觀看、分類並影響個人。作品曾於 Barbican、MUTEK、Art Basel、Para Site、Mozilla Festival 等國際機構與藝術節展出。",
     "workId": "main-04",
@@ -128,7 +128,7 @@ window.DAF_DATA = {
     "career": "聯展\n倫敦 Barbican，巴塞隆納 MUTEK Festival / Art Basel，香港 Para Site，舊金山 Mozilla:The Glass Room，比利時 Bozar / FOMU\n\n國際交流 / 演講\nMoMA / TEDx Brussels / KBC / Samsung / Wired / MUTEK Montréal / KIKK Festival",
     "image": {
       "src": "assets/images/artists/artist-04.webp",
-      "alt": "Dries Depooter"
+      "alt": "Dries Depoorter"
     },
     "nationalityZh": "比利時",
     "nationalityEn": "Belgium",
@@ -1738,7 +1738,7 @@ window.DAF_DATA = {
     "number": "04",
     "mapNumber": "04",
     "artist": "德里斯．德普特",
-    "artistEn": "Dries Depooter",
+    "artistEn": "Dries Depoorter",
     "title": "違規穿越馬路",
     "titleEn": "Jaywalking",
     "type": "互動裝置",
@@ -1812,8 +1812,8 @@ window.DAF_DATA = {
     "title": "Belugas’ Sphere",
     "titleEn": "Belugas’ Sphere",
     "type": "互動裝置",
-    "medium": "充氦 Mylar 鋁膜氣球、光線感測器、馬達、壓電式喇叭、電子元件、控制系統與燈光。最終的作品組件與設備規格，將依展覽場地條件與主辦單位協調後確認。",
-    "mediumEn": "helium-filled Mylar inflatables, light sensors, motors, piezo speakers, electronics, control systems, and light. Final component specifications will be confirmed in coordination with the organizer.",
+    "medium": "充氦 Mylar 鋁膜氣球、光線感測器、馬達、壓電式喇叭、電子元件、控制系統與燈光。",
+    "mediumEn": "helium-filled Mylar inflatables, light sensors, motors, piezo speakers, electronics, control systems, and light.",
     "venueId": "venue-main"
   },
   {

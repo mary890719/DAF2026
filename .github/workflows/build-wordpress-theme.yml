@@ -25,11 +25,12 @@ jobs:
           zip -r ../daf2026.zip daf2026 \
             -x '*/node_modules/*' '*/dome備用/*' '*/hero*backup*' '*/Hero*backup*' '*/backup/*' '*/temp/*' '*/tmp/*' '*.bak' '*.tmp'
 
-      - name: 打包首頁預告片首次點擊播放修正
+      - name: 打包正式預告片影片 ID 更新
         run: |
           cd wordpress-theme
-          zip ../daf2026-trailer-autoplay-fix.zip \
-            'daf2026/assets/js/app.js'
+          zip ../daf2026-trailer-video-update.zip \
+            'daf2026/front-page.php' \
+            'daf2026/page-en.php'
 
       - name: 上傳 Theme ZIP
         uses: actions/upload-artifact@v4
@@ -41,6 +42,6 @@ jobs:
       - name: 上傳本次更新 ZIP
         uses: actions/upload-artifact@v4
         with:
-          name: daf2026-trailer-autoplay-fix
-          path: daf2026-trailer-autoplay-fix.zip
+          name: daf2026-trailer-video-update
+          path: daf2026-trailer-video-update.zip
           if-no-files-found: error

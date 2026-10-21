@@ -32,6 +32,15 @@ jobs:
             'daf2026/front-page.php' \
             'daf2026/page-en.php'
 
+      - name: 驗證預告片增量包內容
+        run: |
+          set -e
+          zipinfo -1 daf2026-trailer-video-update.zip | sort > /tmp/daf2026-actual-files.txt
+          printf '%s\\n' 'daf2026/front-page.php' 'daf2026/page-en.php' | sort > /tmp/daf2026-expected-files.txt
+          diff -u /tmp/daf2026-expected-files.txt /tmp/daf2026-actual-files.txt
+          grep -q 'data-youtube-id="RspktCLMWWo"' wordpress-theme/daf2026/front-page.php
+          grep -q 'data-youtube-id="RspktCLMWWo"' wordpress-theme/daf2026/page-en.php
+
       - name: 上傳 Theme ZIP
         uses: actions/upload-artifact@v4
         with:

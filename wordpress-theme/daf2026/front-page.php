@@ -33,7 +33,7 @@ get_header();
 	<section class="section home-trailer" aria-labelledby="home-trailer-title">
 		<div class="container">
 			<h2 class="section-title" id="home-trailer-title">展覽預告片</h2>
-			<div class="home-trailer-player" data-youtube-id="0-3MTkHHeTM">
+			<div class="home-trailer-player" data-youtube-id="RspktCLMWWo">
 				<button class="home-trailer-load" type="button" aria-label="播放展覽預告片">
 					<span class="home-trailer-play" aria-hidden="true">▶</span>
 					<span>播放預告片</span>

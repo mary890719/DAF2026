@@ -25,10 +25,10 @@ jobs:
           zip -r ../daf2026.zip daf2026 \
             -x '*/node_modules/*' '*/dome備用/*' '*/hero*backup*' '*/Hero*backup*' '*/backup/*' '*/temp/*' '*/tmp/*' '*.bak' '*.tmp'
 
-      - name: 打包首頁手風琴與音像之夜修正
+      - name: 打包首頁預告片首次點擊播放修正
         run: |
           cd wordpress-theme
-          zip ../daf2026-accordion-performance-fix.zip \
+          zip ../daf2026-trailer-autoplay-fix.zip \
             'daf2026/assets/js/app.js'
 
       - name: 上傳 Theme ZIP
@@ -41,6 +41,6 @@ jobs:
       - name: 上傳本次更新 ZIP
         uses: actions/upload-artifact@v4
         with:
-          name: daf2026-accordion-performance-fix
-          path: daf2026-accordion-performance-fix.zip
+          name: daf2026-trailer-autoplay-fix
+          path: daf2026-trailer-autoplay-fix.zip
           if-no-files-found: error

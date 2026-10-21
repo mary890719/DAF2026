@@ -963,10 +963,10 @@
     };
     const detailMarkup = record => {
       const {work, artist, name, alternateName, nationality, bio, career, performanceDescription, performanceType, links} = record;
-      const performanceList = (work.performances || []).map(performance => `<button class="opening-performance-list-item" type="button" data-opening-performance-id="${performance.id}"><span>${openingText(performance, "name")}</span><strong>《${openingText(performance, "title")}》</strong><i aria-hidden="true">&gt;</i></button>`).join("");
+      const performanceList = [...(work.performances || [])].sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0)).map(performance => `<button class="opening-performance-list-item" type="button" data-opening-performance-id="${performance.id}"><span>${openingText(performance, "name")}</span><strong>《${openingText(performance, "title")}》</strong><i aria-hidden="true">&gt;</i></button>`).join("");
       const collaborators = (work.collaborators || []).map(collaborator => `<li><strong>${openingText(collaborator, "name")}</strong>${openingText(collaborator, "role") ? `<span>${openingText(collaborator, "role")}</span>` : ""}</li>`).join("");
       const artistMedia = artist?.image?.src
-        ? `<div class="opening-performance-media ${artist.id === "artist-26" ? "is-logo" : "is-artist"}">${imageMarkup(normalizeImage(artist.image, name), name, artist.id === "artist-26" ? "is-logo" : "")}</div>`
+        ? `<div class="opening-performance-media ${artist.id === "artist-27" ? "is-logo" : "is-artist"}">${imageMarkup(normalizeImage(artist.image, name), name, artist.id === "artist-27" ? "is-logo" : "")}</div>`
         : "";
       return `<div class="opening-detail-content">
         <header class="opening-detail-header">
@@ -984,7 +984,7 @@
         ${collaborators ? `<section class="opening-detail-section"><h4>${isEnglish ? "Collaborating Artist" : "合作藝術家"}</h4><ul class="opening-collaborators">${collaborators}</ul></section>` : ""}
       </div>`;
     };
-    const records = D.soundArtists.map(performerRecord);
+    const records = [...D.soundArtists].sort((a, b) => String(a.number).localeCompare(String(b.number))).map(performerRecord);
     container.innerHTML = records.map(record => {
       const {work, name, alternateName, bio, career} = record;
       const isTeam = (work.performances || []).length > 0;

@@ -30,6 +30,17 @@ get_header();
 			<div class="hero-meta hero-observation-target" data-observation-id="details"><span><span class="hero-meta-label">展場｜</span><span class="hero-meta-value">臺北典藏植物園、藝術入店</span></span></div>
 		</div>
 	</section>
+	<section class="section home-trailer" aria-labelledby="home-trailer-title">
+		<div class="container">
+			<h2 class="section-title" id="home-trailer-title">展覽預告片</h2>
+			<div class="home-trailer-player" data-youtube-id="0-3MTkHHeTM">
+				<button class="home-trailer-load" type="button" aria-label="播放展覽預告片">
+					<span class="home-trailer-play" aria-hidden="true">▶</span>
+					<span>播放預告片</span>
+				</button>
+			</div>
+		</div>
+	</section>
 	<section class="section home-venues" id="exhibition-venues" aria-labelledby="exhibition-venues-title"><div class="container"><h2 class="section-title" id="exhibition-venues-title">展覽地點</h2><div class="home-venue-grid"><a class="home-venue-card" href="<?php echo esc_url( home_url( '/works/' ) ); ?>"><span class="home-venue-number">01</span><strong>臺北典藏植物園</strong></a><a class="home-venue-card" href="<?php echo esc_url( home_url( '/district-works/' ) ); ?>"><span class="home-venue-number">02</span><strong>藝術入店</strong></a></div></div></section>
 	<section class="section home-accordion-section"><div class="container"><h2 class="section-title">參展作品</h2><div class="artist-accordion" id="home-artist-accordion" aria-label="參展作品"></div></div></section>
 	<section class="section home-featured-section" id="upcoming-programs"><div class="container"><h2 class="section-title home-featured-title">活動節目</h2><div class="home-featured-track" id="home-upcoming-programs" aria-label="活動節目"></div><div class="home-featured-pagination" data-featured-pagination="home-upcoming-programs" aria-label="活動節目分頁"></div><p class="home-featured-more"><a href="<?php echo esc_url( home_url( '/program/' ) ); ?>">查看全部活動 →</a></p></div></section>

@@ -2211,9 +2211,9 @@
       if (!button) return;
       button.addEventListener("click", () => {
         const iframe = document.createElement("iframe");
-        iframe.src = `https://www.youtube.com/embed/${player.dataset.youtubeId}`;
+        iframe.src = `https://www.youtube.com/embed/${player.dataset.youtubeId}?autoplay=1&playsinline=1`;
         iframe.title = isEnglish ? "DAF2026 exhibition trailer" : "DAF2026 展覽預告片";
-        iframe.allow = "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen";
         iframe.allowFullscreen = true;
         iframe.referrerPolicy = "strict-origin-when-cross-origin";
         player.replaceChildren(iframe);

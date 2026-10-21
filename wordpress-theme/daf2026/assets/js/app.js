@@ -502,7 +502,7 @@
       name: textFor(artist, "name"),
       workTitle: textFor(artist, "workTitle"),
       imageMarkup: artistImageMarkup(artist),
-      detailUrl: linkedWork ? C.localizedRoute(`work-detail.html?id=${linkedWork.id}`) : ""
+      detailUrl: artist.detailUrl || (linkedWork ? C.localizedRoute(`work-detail.html?id=${linkedWork.id}`) : "")
     };
   };
 

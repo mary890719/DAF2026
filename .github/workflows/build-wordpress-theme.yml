@@ -25,15 +25,11 @@ jobs:
           zip -r ../daf2026.zip daf2026 \
             -x '*/node_modules/*' '*/dome備用/*' '*/hero*backup*' '*/Hero*backup*' '*/backup/*' '*/temp/*' '*/tmp/*' '*.bak' '*.tmp'
 
-      - name: 打包 WordPress 10/21 更新
+      - name: 打包首頁手風琴連結修正
         run: |
           cd wordpress-theme
-          zip ../daf2026-update-20261021.zip \
-            'daf2026/front-page.php' \
-            'daf2026/page-en.php' \
-            'daf2026/assets/js/data.js' \
-            'daf2026/assets/js/app.js' \
-            'daf2026/assets/css/style.css'
+          zip ../daf2026-accordion-link-fix.zip \
+            'daf2026/assets/js/app.js'
 
       - name: 上傳 Theme ZIP
         uses: actions/upload-artifact@v4
@@ -45,6 +41,6 @@ jobs:
       - name: 上傳本次更新 ZIP
         uses: actions/upload-artifact@v4
         with:
-          name: daf2026-update-20261021
-          path: daf2026-update-20261021.zip
+          name: daf2026-accordion-link-fix
+          path: daf2026-accordion-link-fix.zip
           if-no-files-found: error

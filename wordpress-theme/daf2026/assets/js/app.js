@@ -490,7 +490,7 @@
   };
 
   const homeArtworkImageMarkup = (artist, {priority = false} = {}) => {
-    const source = D.homeArtworkImages?.[artist.workId];
+    const source = artist.homeImage || D.homeArtworkImages?.[artist.workId];
     if (!source) return C.placeholder(isEnglish ? "Artwork image pending" : "作品圖片待提供");
     return `<img src="${C.assetRoute(source)}" alt="${textFor(artist, "workTitle")} ${isEnglish ? "artwork image" : "作品圖片"}" loading="${priority ? "eager" : "lazy"}" decoding="async" fetchpriority="${priority ? "high" : "low"}">`;
   };
@@ -2164,7 +2164,62 @@
   };
 
   const hydrateHome = () => {
-    document.querySelector("#home-artist-accordion").innerHTML = artistAccordionItems(D.artists.filter(artist => textFor(artist, "name") && D.homeArtworkImages?.[artist.workId]));
+    const existingItems = D.artists.filter(artist => textFor(artist, "name") && D.homeArtworkImages?.[artist.workId]);
+    const clabWork = D.works.find(work => work.id === "main-06");
+    const clabItems = (clabWork?.featuredWorks || []).map(work => ({
+      id: `home-${work.id}`,
+      name: work.artist,
+      nameEn: work.artistEn,
+      workId: work.id,
+      workTitle: work.title,
+      workTitleEn: work.titleEn,
+      homeImage: `assets/images/works/main/main-06/${work.id}/work/01.webp`,
+      detailUrl: C.localizedRoute("work-detail.html?id=main-06")
+    }));
+    const openingRoute = C.localizedRoute("opening-performance.html");
+    const felixArtist = D.artists.find(artist => artist.id === "artist-26");
+    const felixWork = D.soundArtists.find(work => work.id === "performance-01");
+    const fluidNoiseWork = D.soundArtists.find(work => work.id === "performance-02");
+    const performanceItems = [
+      ...(felixArtist && felixWork ? [{
+        ...felixArtist,
+        id: "home-performance-01",
+        workTitle: felixWork.titleZh,
+        workTitleEn: felixWork.titleEn,
+        homeImage: felixArtist.image?.src,
+        detailUrl: openingRoute
+      }] : []),
+      ...[...(fluidNoiseWork?.performances || [])]
+        .sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0))
+        .map(performance => ({
+          id: `home-${performance.id}`,
+          name: performance.nameZh,
+          nameEn: performance.nameEn,
+          workTitle: performance.titleZh,
+          workTitleEn: performance.titleEn,
+          homeImage: performance.performerImage?.src,
+          detailUrl: openingRoute
+        }))
+    ];
+    const clabIndex = existingItems.findIndex(item => item.workId === "main-06");
+    const orderedItems = clabIndex >= 0
+      ? [...existingItems.slice(0, clabIndex + 1), ...clabItems, ...existingItems.slice(clabIndex + 1), ...performanceItems]
+      : [...existingItems, ...clabItems, ...performanceItems];
+    document.querySelector("#home-artist-accordion").innerHTML = artistAccordionItems(orderedItems);
+    document.querySelectorAll("[data-youtube-id]").forEach(player => {
+      const button = player.querySelector(".home-trailer-load");
+      if (!button) return;
+      button.addEventListener("click", () => {
+        const iframe = document.createElement("iframe");
+        iframe.src = `https://www.youtube.com/embed/${player.dataset.youtubeId}`;
+        iframe.title = isEnglish ? "DAF2026 exhibition trailer" : "DAF2026 展覽預告片";
+        iframe.allow = "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.allowFullscreen = true;
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
+        player.replaceChildren(iframe);
+        iframe.focus();
+      }, {once: true});
+    });
     const upcomingSection = document.querySelector("#upcoming-programs");
     const upcomingTrack = document.querySelector("#home-upcoming-programs");
     const renderUpcomingPrograms = () => {

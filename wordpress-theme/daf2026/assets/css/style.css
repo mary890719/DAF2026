@@ -1214,6 +1214,45 @@ body[data-page="home"] #app > .section {
   color: var(--color-text-secondary);
 }
 /* 首頁 */
+.home-trailer-player {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: var(--border);
+  background: var(--color-surface);
+}
+.home-trailer-player iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.home-trailer-load {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-content: center;
+  gap: var(--space-2);
+  border: 0;
+  color: var(--color-text);
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+.home-trailer-load:hover, .home-trailer-load:focus-visible {
+  background: var(--color-bg-secondary);
+}
+.home-trailer-play {
+  display: grid;
+  width: 64px;
+  height: 64px;
+  margin-inline: auto;
+  place-items: center;
+  border: var(--border);
+  border-radius: 50%;
+  padding-left: 4px;
+}
 .home-venue-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

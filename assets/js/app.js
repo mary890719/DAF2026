@@ -490,7 +490,7 @@
   };
 
   const homeArtworkImageMarkup = (artist, {priority = false} = {}) => {
-    const source = D.homeArtworkImages?.[artist.workId];
+    const source = artist.homeImage || D.homeArtworkImages?.[artist.workId];
     if (!source) return C.placeholder(isEnglish ? "Artwork image pending" : "作品圖片待提供");
     return `<img src="${C.assetRoute(source)}" alt="${textFor(artist, "workTitle")} ${isEnglish ? "artwork image" : "作品圖片"}" loading="${priority ? "eager" : "lazy"}" decoding="async" fetchpriority="${priority ? "high" : "low"}">`;
   };
@@ -502,7 +502,7 @@
       name: textFor(artist, "name"),
       workTitle: textFor(artist, "workTitle"),
       imageMarkup: artistImageMarkup(artist),
-      detailUrl: linkedWork ? C.localizedRoute(`work-detail.html?id=${linkedWork.id}`) : ""
+      detailUrl: artist.detailUrl ?? (linkedWork ? C.localizedRoute(`work-detail.html?id=${linkedWork.id}`) : "")
     };
   };
 
@@ -861,7 +861,7 @@
     document.querySelector("[data-work-primary-media]").innerHTML = imageMarkup(
       normalizeImage(primaryArtist?.image, artistImageLabel),
       isEnglish ? "Artist image pending" : "藝術家圖片待提供",
-      `detail-main${primaryArtist?.id === "artist-26" ? " is-logo" : ""}`
+      `detail-main${primaryArtist?.id === "artist-27" ? " is-logo" : ""}`
     );
     const workLinks = document.querySelector("[data-work-links]");
     workLinks.replaceChildren();
@@ -963,10 +963,10 @@
     };
     const detailMarkup = record => {
       const {work, artist, name, alternateName, nationality, bio, career, performanceDescription, performanceType, links} = record;
-      const performanceList = (work.performances || []).map(performance => `<button class="opening-performance-list-item" type="button" data-opening-performance-id="${performance.id}"><span>${openingText(performance, "name")}</span><strong>《${openingText(performance, "title")}》</strong><i aria-hidden="true">&gt;</i></button>`).join("");
+      const performanceList = [...(work.performances || [])].sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0)).map(performance => `<button class="opening-performance-list-item" type="button" data-opening-performance-id="${performance.id}"><span>${openingText(performance, "name")}</span><strong>《${openingText(performance, "title")}》</strong><i aria-hidden="true">&gt;</i></button>`).join("");
       const collaborators = (work.collaborators || []).map(collaborator => `<li><strong>${openingText(collaborator, "name")}</strong>${openingText(collaborator, "role") ? `<span>${openingText(collaborator, "role")}</span>` : ""}</li>`).join("");
       const artistMedia = artist?.image?.src
-        ? `<div class="opening-performance-media ${artist.id === "artist-26" ? "is-logo" : "is-artist"}">${imageMarkup(normalizeImage(artist.image, name), name, artist.id === "artist-26" ? "is-logo" : "")}</div>`
+        ? `<div class="opening-performance-media ${artist.id === "artist-27" ? "is-logo" : "is-artist"}">${imageMarkup(normalizeImage(artist.image, name), name, artist.id === "artist-27" ? "is-logo" : "")}</div>`
         : "";
       return `<div class="opening-detail-content">
         <header class="opening-detail-header">
@@ -984,7 +984,7 @@
         ${collaborators ? `<section class="opening-detail-section"><h4>${isEnglish ? "Collaborating Artist" : "合作藝術家"}</h4><ul class="opening-collaborators">${collaborators}</ul></section>` : ""}
       </div>`;
     };
-    const records = D.soundArtists.map(performerRecord);
+    const records = [...D.soundArtists].sort((a, b) => String(a.number).localeCompare(String(b.number))).map(performerRecord);
     container.innerHTML = records.map(record => {
       const {work, name, alternateName, bio, career} = record;
       const isTeam = (work.performances || []).length > 0;
@@ -1074,7 +1074,7 @@
       if (textFor(event, "artist")) facts.push(`${isEnglish ? "Artist" : "藝術家"}: ${textFor(event, "artist")}`);
       if (textFor(event, "artistTeam")) facts.push(`${isEnglish ? "Artist Team" : "藝術團隊"}: ${textFor(event, "artistTeam")}`);
     } else if (event.type === "表演") {
-      const performerRecords = D.soundArtists.map(work => ({work, name: artistNamesForWork(work)})).filter(record => record.name);
+      const performerRecords = [...D.soundArtists].sort((a, b) => String(a.number).localeCompare(String(b.number))).map(work => ({work, name: artistNamesForWork(work)})).filter(record => record.name);
       const teams = performerRecords.filter(record => (record.work.performances || []).length).map(record => record.name);
       const artists = performerRecords.filter(record => !(record.work.performances || []).length).map(record => record.name);
       if (artists.length) facts.push(`${isEnglish ? "Artist" : "藝術家"}: ${artists.join(isEnglish ? ", " : "、")}`);
@@ -1294,9 +1294,9 @@
     if (scheduleHeading) scheduleHeading.textContent = isEnglish ? "Workshop / Talk" : "工作坊／講座";
     if (guideHeading) guideHeading.textContent = isEnglish ? "Guide Tour" : "現場導覽／Guide Tour";
     if (openingSlot) {
-      const openingWorks = D.soundArtists.flatMap(work => {
+      const openingWorks = [...D.soundArtists].sort((a, b) => String(a.number).localeCompare(String(b.number))).flatMap(work => {
         if (Array.isArray(work.performances) && work.performances.length) {
-          return work.performances.map(performance => ({
+          return [...work.performances].sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0)).map(performance => ({
             title: programLocalizedText(performance, "title"),
             artists: programLocalizedText(performance, "name")
           }));
@@ -2164,7 +2164,62 @@
   };
 
   const hydrateHome = () => {
-    document.querySelector("#home-artist-accordion").innerHTML = artistAccordionItems(D.artists.filter(artist => textFor(artist, "name") && D.homeArtworkImages?.[artist.workId]));
+    const existingItems = D.artists.filter(artist => textFor(artist, "name") && D.homeArtworkImages?.[artist.workId]);
+    const clabWork = D.works.find(work => work.id === "main-06");
+    const clabItems = (clabWork?.featuredWorks || []).map(work => ({
+      id: `home-${work.id}`,
+      name: work.artist,
+      nameEn: work.artistEn,
+      workId: work.id,
+      workTitle: work.title,
+      workTitleEn: work.titleEn,
+      homeImage: `assets/images/works/main/main-06/${work.id}/work/01.webp`,
+      detailUrl: C.localizedRoute("work-detail.html?id=main-06")
+    }));
+    const openingRoute = C.localizedRoute("opening-performance.html");
+    const felixArtist = D.artists.find(artist => artist.id === "artist-26");
+    const felixWork = D.soundArtists.find(work => work.id === "performance-01");
+    const fluidNoiseWork = D.soundArtists.find(work => work.id === "performance-02");
+    const performanceItems = [
+      ...(felixArtist && felixWork ? [{
+        ...felixArtist,
+        id: "home-performance-01",
+        workTitle: felixWork.titleZh,
+        workTitleEn: felixWork.titleEn,
+        homeImage: felixArtist.image?.src,
+        detailUrl: openingRoute
+      }] : []),
+      ...[...(fluidNoiseWork?.performances || [])]
+        .sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0))
+        .map(performance => ({
+          id: `home-${performance.id}`,
+          name: performance.nameZh,
+          nameEn: performance.nameEn,
+          workTitle: performance.titleZh,
+          workTitleEn: performance.titleEn,
+          homeImage: performance.performerImage?.src,
+          detailUrl: openingRoute
+        }))
+    ];
+    const clabIndex = existingItems.findIndex(item => item.workId === "main-06");
+    const orderedItems = clabIndex >= 0
+      ? [...existingItems.slice(0, clabIndex + 1), ...clabItems, ...existingItems.slice(clabIndex + 1), ...performanceItems]
+      : [...existingItems, ...clabItems, ...performanceItems];
+    document.querySelector("#home-artist-accordion").innerHTML = artistAccordionItems(orderedItems);
+    document.querySelectorAll("[data-youtube-id]").forEach(player => {
+      const button = player.querySelector(".home-trailer-load");
+      if (!button) return;
+      button.addEventListener("click", () => {
+        const iframe = document.createElement("iframe");
+        iframe.src = `https://www.youtube.com/embed/${player.dataset.youtubeId}`;
+        iframe.title = isEnglish ? "DAF2026 exhibition trailer" : "DAF2026 展覽預告片";
+        iframe.allow = "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.allowFullscreen = true;
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
+        player.replaceChildren(iframe);
+        iframe.focus();
+      }, {once: true});
+    });
     const upcomingSection = document.querySelector("#upcoming-programs");
     const upcomingTrack = document.querySelector("#home-upcoming-programs");
     const renderUpcomingPrograms = () => {

@@ -701,7 +701,7 @@ window.DAF_DATA = {
     "instagram": "https://www.instagram.com/___vxiwq_3ho/"
   },
   {
-    "id": "artist-26",
+    "id": "artist-27",
     "name": "噪流",
     "nameZh": "噪流",
     "nameEn": "Fluid Noise",
@@ -715,7 +715,7 @@ window.DAF_DATA = {
     "careerEn": "2025\n“avSyncTPE” Audiovisual Creators Meetup (Digital Art Center, Taipei)\n“FluidNoise Practicum Vol. 4 OPEN CALL” Audiovisual Artist Open Call (Digital Art Center, Taipei)\n“~/noize_beginner | Audiovisual Starter Pack” Beginner Workshop (Digital Art Center, Taipei)\n“FluidNoise Lecture EP3: A Beginner’s Guide to Experiencing Audiovisual Art” Talk (Treasure Hill Artist Village)\n\n2024\n“DACU FluidNoise Practicum Vol. 3” Emerging Artist Showcase (Digital Art Center, Taipei)\n\n2023\n“FluidNoise Practicum Vol. 2” Emerging Artist Showcase (Digital Art Center, Taipei)\n“FluidNoise Lecture EP2: Different Perspectives on Audiovisual Art” Talk (Digital Art Center, Taipei)\n“FluidNoise Lecture EP1: Connecting Image and Sound” Talk (Digital Art Center, Taipei)\nLacking Sound Festival × FluidNoise “DiffuSound Vol. 2” Audiovisual Performance (Digital Art Center, Taipei)",
     "membersZh": "吳承儒、張哲瑜、陳亮、陳彥齊、周喚",
     "membersEn": "Cheng-Ru Wu, Che-Yu Chang, Liang Chen, Yen-Chi Chen, Huan Chou",
-    "workId": "performance-01",
+    "workId": "performance-02",
     "workTitle": "",
     "workTitleEn": "",
     "website": "https://fluidnoise.com/about/",
@@ -730,7 +730,7 @@ window.DAF_DATA = {
     "facebook": "https://www.facebook.com/fluidnoise/?locale=zh_TW"
   },
   {
-    "id": "artist-27",
+    "id": "artist-26",
     "name": "Félix-Antoine Morin",
     "nameZh": "Félix-Antoine Morin",
     "nameEn": "Félix-Antoine Morin",
@@ -742,7 +742,7 @@ window.DAF_DATA = {
     "bioEn": "Félix-Antoine Morin is a Canadian sound and visual artist working across electroacoustic composition, video, graphic scores, and immersive media. His practice explores how sound, image, and perception can transform reality into poetic sensory experience. Drawing inspiration from traditional and sacred music, Morin approaches composition through the processual logic of ritual, creating multisensory works that remain in motion and transformation. His work also investigates psychoacoustics, relationships of scale and magnitude, and the subjective interactions that emerge between sound and image. Through these concerns, he constructs fluid perceptual spaces situated between concrete reality and abstraction.",
     "careerZh": "個展\n2022｜由 Melis Bektaş 策展——Karşı Sanat，伊斯坦堡，土耳其。\n2022｜Salihara 藝術中心（Salihara Arts Center），雅加達，印尼。\n\n聯展\n2025｜與 Alexandre Larose 合作 A/V 視聽獨奏演出——關渡光藝術節（KDLAF），國立臺北藝術大學藝術與科技中心，臺北，臺灣。\n2024｜以《Triangle of Darkness》電影配樂獲「Wojciech Juszczak 最佳音樂獎」——ANIMATOR 國際動畫影展，波茲南，波蘭。\n2024｜為 Ivanie Aubin-Malo 舞蹈創作《Wahsipekuk: Au-delà des montagnes》擔任音樂創作——Agora de la danse，蒙特婁，加拿大。\n2023–2024｜每月為 Radio Bloc Oral 創作三小時原創音樂——國際線上／廣播節目。\n2023｜《Symphonie Odonata》——沉浸式聲音裝置，Tunnel Pédestre Boulet，蒙特婁，加拿大。\n2023｜Félix-Antoine Morin 圖像樂譜音樂會，由斯洛維尼亞即興音樂家以雙人組合演出，Zavod Sploh 策劃——康卡爾中心（Cankar Centre），盧比安納，斯洛維尼亞。\n2022｜《Cathartic Quest》——與 Benoît Lachambre 雙人演出——ImPulsTanz 維也納國際舞蹈節，維也納，奧地利。\n2022｜《Asemic Sound Mappings》展覽——利奧波德博物館（Leopold Museum）／ImPulsTanz，維也納，奧地利。\n2021｜沉浸式電聲音樂會——Akousma 藝術節，蒙特婁，加拿大。\n2021｜《Plateforme》，由 Totem Contemporain 演出——NOW! 藝術節，埃森，德國。",
     "careerEn": "SOLO EXHIBITIONS\n2022 | Solo exhibition, curated by Melis Bektaş — Karşı Sanat, Istanbul, Türkiye.\n2022 | Solo exhibition — Salihara Arts Center, Jakarta, Indonesia.\n\nGROUP EXHIBITIONS\n2025 | A/V solo performance in collaboration with Alexandre Larose — Kuan Du Light Art Festival (KDLAF), TNUA Center for Art & Technology, Taipei, Taiwan.\n2024 | Winner of the Wojciech Juszczak Award for Best Music for the soundtrack of Triangle of Darkness — ANIMATOR International Animated Film Festival, Poznań, Poland.\n2024 | Music composition for Ivanie Aubin-Malo’s dance creation Wahsipekuk: Au-delà des montagnes — Agora de la danse, Montréal, Canada.\n2023–2024 | Creation of three hours of original music every month for Radio Bloc Oral — international online/radio broadcast.\n2023 | Symphonie Odonata — immersive sound installation, Tunnel Pédestre Boulet, Montréal, Canada.\n2023 | Concert featuring Félix-Antoine Morin’s graphic scores, performed by duets of Slovenian improvisers and organized by Zavod Sploh — Cankar Centre, Ljubljana, Slovenia.\n2022 | Cathartic Quest — duet performance with Benoît Lachambre — ImPulsTanz – Vienna International Dance Festival, Vienna, Austria.\n2022 | Asemic Sound Mappings — exhibition — Leopold Museum / ImPulsTanz, Vienna, Austria.\n2021 | Immersive electroacoustic concert — Akousma Festival, Montréal, Canada.\n2021 | Plateforme, performed by Totem Contemporain — NOW! Festival, Essen, Germany.\n2020 | Coextensive Ubiquity – Mise en abyme Live — radio performance — Tsonami Festival, Valparaíso, Chile.\n2019 | Solo performance with Chihei Hatakeyama, organized by Toshimaru Nakamura — Ftarri, Tokyo, Japan.\n2019 | Solo performance with VELTZ, Naoki Nomoto and Atsuhiro Ito — KAGURANE, Tokyo, Japan.",
-    "workId": "performance-02",
+    "workId": "performance-01",
     "workTitle": "",
     "workTitleEn": "",
     "website": "https://felixantoinemorin.com/",
@@ -3355,26 +3355,27 @@ window.DAF_DATA = {
 ],
   soundArtists: [
   {
-    "id": "performance-01",
+    "id": "performance-02",
     "type": "sound",
     "category": "performance",
     "area": "開幕表演",
-    "mapNumber": "01",
-    "number": "01",
+    "mapNumber": "02",
+    "number": "02",
     "title": "噪流",
     "titleZh": "噪流",
     "titleEn": "Fluid Noise",
     "workType": "音像表演",
     "workTypeEn": "Audiovisual Performance",
-    "imageFolder": "performance-01",
+    "imageFolder": "performance-02",
     "coverImage": "",
     "images": [],
     "artistIds": [
-      "artist-26"
+      "artist-27"
     ],
     "performances": [
       {
-        "id": "performance-01_1",
+        "id": "performance-02_4",
+        "displayOrder": 4,
         "nameZh": "吳承儒 ( P B )",
         "nameEn": "Cheng-Ru Wu (P B)",
         "nationalityZh": "臺灣",
@@ -3394,22 +3395,23 @@ window.DAF_DATA = {
         "descriptionEn": "“Thiann” derives from the Taiwanese word for “listen.” Through a collection of everyday sounds and visuals gathered across Taiwan—such as broadcasts from rural street vendors and vehicle speed alerts—the performance digitally remixes and modulates these elements to reconstruct daily Taiwanese impressions into a soundscape, interpreting the artist's personal observations and lived reality in Taiwan through live audiovisual performance. ",
         "website": "https://k591238.github.io/PB.github.io/",
         "performerImage": {
-          "src": "assets/images/works/performance/performance-01/performance-01_1/01.webp",
+          "src": "assets/images/works/performance/performance-02/performance-02_4/01.webp",
           "altZh": "吳承儒 ( P B )",
           "altEn": "Cheng-Ru Wu (P B)"
         },
         "workImages": [
-          "assets/images/works/performance/performance-01/performance-01_1/works/01.webp",
-          "assets/images/works/performance/performance-01/performance-01_1/works/02.webp",
-          "assets/images/works/performance/performance-01/performance-01_1/works/03.webp",
-          "assets/images/works/performance/performance-01/performance-01_1/works/04.webp",
-          "assets/images/works/performance/performance-01/performance-01_1/works/05.webp",
-          "assets/images/works/performance/performance-01/performance-01_1/works/06.webp"
+          "assets/images/works/performance/performance-02/performance-02_4/works/01.webp",
+          "assets/images/works/performance/performance-02/performance-02_4/works/02.webp",
+          "assets/images/works/performance/performance-02/performance-02_4/works/03.webp",
+          "assets/images/works/performance/performance-02/performance-02_4/works/04.webp",
+          "assets/images/works/performance/performance-02/performance-02_4/works/05.webp",
+          "assets/images/works/performance/performance-02/performance-02_4/works/06.webp"
         ],
         "instagram": "https://www.instagram.com/pen_bit/"
       },
       {
-        "id": "performance-01_2",
+        "id": "performance-02_3",
+        "displayOrder": 3,
         "nameZh": "張哲瑜",
         "nameEn": "Che-Yu Chang",
         "nationalityZh": "臺灣",
@@ -3429,21 +3431,22 @@ window.DAF_DATA = {
         "descriptionEn": "A scene, a frame.\nSome are landscapes seen before waking, while others are scenes from films I love. The ones left uncategorized may be fragments of memory. Places I may have once been, or places I may never be able to reach.\nThe work is presented through a series of “places,” with an avatar placed within each one, creating a sense of being there, and not being there at the same time.",
         "website": "https://haiphane-duyio.com/",
         "performerImage": {
-          "src": "assets/images/works/performance/performance-01/performance-01_2/01.webp",
+          "src": "assets/images/works/performance/performance-02/performance-02_3/01.webp",
           "altZh": "張哲瑜",
           "altEn": "Che-Yu Chang"
         },
         "workImages": [
-          "assets/images/works/performance/performance-01/performance-01_2/works/01.webp",
-          "assets/images/works/performance/performance-01/performance-01_2/works/02.webp",
-          "assets/images/works/performance/performance-01/performance-01_2/works/03.webp",
-          "assets/images/works/performance/performance-01/performance-01_2/works/04.webp",
-          "assets/images/works/performance/performance-01/performance-01_2/works/05.webp"
+          "assets/images/works/performance/performance-02/performance-02_3/works/01.webp",
+          "assets/images/works/performance/performance-02/performance-02_3/works/02.webp",
+          "assets/images/works/performance/performance-02/performance-02_3/works/03.webp",
+          "assets/images/works/performance/performance-02/performance-02_3/works/04.webp",
+          "assets/images/works/performance/performance-02/performance-02_3/works/05.webp"
         ],
         "instagram": "https://www.instagram.com/duyiosirbed/"
       },
       {
-        "id": "performance-01_3",
+        "id": "performance-02_1",
+        "displayOrder": 1,
         "nameZh": "陳亮",
         "nameEn": "Liang Chen",
         "nationalityZh": "臺灣",
@@ -3452,8 +3455,8 @@ window.DAF_DATA = {
         "bioEn": "Over 30 but still unsettled, a Changhua native.\nDrifting across northern, central, and southern Taiwan since 15.\nAlways idling, lacking skills; constantly shifting, mastering nothing.\nDedicated to highly inefficient experiments with zero practical value to society,\njust searching for random ways to poke at a viewer's consciousness and leave a unique emotional dent.",
         "careerZh": "2018 噪流實習 演出\n2021 JPG 擊樂實驗室 - Digit(s) 演出\n2024 聲響藝術節 - Digit(s) 演出",
         "careerEn": "2018\nPerformance, Lacking Sound Festival Internship Program\n\n2021\nDigit(s) — Performance, JPG Percussion Lab\n\n2024\nDigit(s) — Performance, Sound Art Festival",
-        "titleZh": "田調隨筆 - 2026",
-        "titleEn": "Field Notes 2026",
+        "titleZh": "札記 - 早安台北",
+        "titleEn": "Field Notes – morning Taipei",
         "year": "2026",
         "workTypeZh": "音像表演",
         "workTypeEn": "Audiovisual Performance",
@@ -3463,14 +3466,15 @@ window.DAF_DATA = {
         "descriptionEn": "",
         "website": "",
         "performerImage": {
-          "src": "assets/images/works/performance/performance-01/performance-01_3/01.webp",
+          "src": "assets/images/works/performance/performance-02/performance-02_1/01.webp",
           "altZh": "陳亮",
           "altEn": "Liang Chen"
         },
         "instagram": "https://www.instagram.com/c1c.ll/"
       },
       {
-        "id": "performance-01_4",
+        "id": "performance-02_2",
+        "displayOrder": 2,
         "nameZh": "陳彥齊 x 周喚",
         "nameEn": "Yen-Chi Chen × Huan Chou",
         "nationalityZh": "臺灣",
@@ -3490,7 +3494,7 @@ window.DAF_DATA = {
         "descriptionEn": "This work explores the relationship between surveillance cameras, drones, and the people they observe through a game engine and audiovisual performance.\nThe story takes place in a massive train station late at night. A mysterious figure breaks in and begins to alter the space. Security drones are deployed to track and stop the intruder through their cameras and tracking systems.\nAs intense projection light causes noise and system failures, the altered space remains, along with the fleeting silhouette of the escaping figure.",
         "website": "https://yc-58.com/",
         "performerImage": {
-          "src": "assets/images/works/performance/performance-01/performance-01_4/01.webp",
+          "src": "assets/images/works/performance/performance-02/performance-02_2/01.webp",
           "altZh": "陳彥齊 x 周喚",
           "altEn": "Yen-Chi Chen × Huan Chou"
         },
@@ -3499,12 +3503,12 @@ window.DAF_DATA = {
     ]
   },
   {
-    "id": "performance-02",
+    "id": "performance-01",
     "type": "sound",
     "category": "performance",
     "area": "開幕表演",
-    "mapNumber": "02",
-    "number": "02",
+    "mapNumber": "01",
+    "number": "01",
     "title": "Félix-Antoine Morin",
     "titleZh": "Félix-Antoine Morin",
     "titleEn": "Félix-Antoine Morin",
@@ -3514,11 +3518,11 @@ window.DAF_DATA = {
     "description": "Félix-Antoine Morin（音樂）與 Alexandre Larose（影像）之視聽合作作品",
     "descriptionZh": "Félix-Antoine Morin（音樂）與 Alexandre Larose（影像）之視聽合作作品",
     "descriptionEn": "Audiovisual collaboration between Félix-Antoine Morin (music) and Alexandre Larose (video)",
-    "imageFolder": "performance-02",
+    "imageFolder": "performance-01",
     "coverImage": "",
     "images": [],
     "artistIds": [
-      "artist-27"
+      "artist-26"
     ],
     "collaborators": [
       {

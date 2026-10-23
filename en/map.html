@@ -17,11 +17,17 @@
         <meta name="twitter:image:alt" content="2026 Taipei Digital Art Festival “Grey Autonomous Entity” key visual">
         <link rel="alternate" hreflang="zh-Hant" href="../map.html">
         <link rel="alternate" hreflang="en" href="map.html">
-        <link rel="stylesheet" href="../assets/css/style.css?v=20261012-site-redesign-v1">
+        <link rel="stylesheet" href="../assets/css/style.css?v=20261023-perception-phase1">
+        <script type="importmap">{"imports":{"three":"../assets/vendor/three-0.160.0/three.module.js","three/addons/":"../assets/vendor/three-0.160.0/addons/"}}</script>
     </head>
     <body data-page="map">
         <div id="site-header"></div>
         <main id="app" class="container">
+            <nav class="map-mode-switch" aria-label="Exploration mode">
+                <button type="button" data-perception-mode="map" aria-pressed="true">MAP</button>
+                <button type="button" data-perception-mode="perception" aria-pressed="false">PERCEPTION</button>
+            </nav>
+            <div data-map-view>
             <div id="breadcrumb"></div>
             <h1 class="page-title">MAIN VENUE MAP</h1>
             <div class="map-legend" aria-label="Map legend">
@@ -65,11 +71,34 @@
                 </section>
             </div>
             <nav class="page-bottom-nav back-wrap" aria-label="Page navigation"><a class="button" href="district-map.html">ART IN STORES MAP &gt;</a></nav>
+            </div>
+            <section class="perception-view" data-perception-view hidden aria-label="Perception mode">
+                <div class="perception-mindar-stage" data-perception-tracking-stage aria-hidden="true"></div>
+                <div class="perception-shade" aria-hidden="true"></div>
+                <div class="perception-intro" data-perception-intro>
+                    <p>PERCEPTION</p><h1>PERCEPTION</h1>
+                    <p>This field of view does not understand everything.</p>
+                    <p class="perception-permission-note">Starting Perception requests camera access only. It does not access location, microphone, or motion sensors.</p>
+                    <button class="button" type="button" data-perception-start>START PERCEPTION</button>
+                </div>
+                <div class="perception-runtime" data-perception-runtime hidden>
+                    <p class="perception-state" data-perception-state aria-live="polite">IDLE</p>
+                    <div class="perception-unresolved" aria-hidden="true"><i>·</i><i>+</i><i>0_</i><i>?</i></div>
+                    <svg class="perception-line" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M50 50 L78 50"/></svg>
+                    <article class="perception-entity" data-perception-entity hidden></article>
+                    <div class="perception-error" data-perception-error role="alert" hidden></div>
+                </div>
+                <button class="perception-map-return" type="button" data-perception-return>RETURN TO MAP</button>
+                <div class="perception-debug" data-perception-debug hidden aria-label="Perception debug controls"></div>
+            </section>
         </main>
         <div class="transport-image-lightbox" data-transport-map-viewer role="dialog" aria-modal="true" aria-label="Enlarged transportation route map" hidden><button type="button" class="transport-image-lightbox-close" data-transport-map-close aria-label="Close transportation route map">×</button><img src="../assets/images/map/交通資訊_en.webp" alt="Enlarged transportation route map for Taipei Collectible Botanical Garden"></div>
         <div id="site-footer"></div>
         <script src="../assets/js/data.js?v=20261012-site-redesign-v1"></script>
         <script src="../assets/js/components.js?v=20261012-site-redesign-v1"></script>
         <script src="../assets/js/app.js?v=20261012-site-redesign-v1"></script>
+        <script src="../assets/js/perception-targets.js?v=20261023-perception-phase1"></script>
+        <script src="../assets/js/perception-mindar-adapter.js?v=20261023-perception-phase2a"></script>
+        <script src="../assets/js/perception.js?v=20261023-perception-phase1"></script>
     </body>
 </html>

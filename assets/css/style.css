@@ -5428,17 +5428,38 @@ html.touch-navigation .home-accordion-section.is-touch-sequential .artist-accord
   color: #f4f4f4;
   background: #080808;
 }
-.perception-camera, .perception-shade, .perception-runtime {
+.perception-view[hidden], .perception-view [hidden] {
+  display: none !important;
+}
+.perception-mindar-stage, .perception-shade, .perception-runtime {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
 }
-.perception-camera {
-  object-fit: cover;
+.perception-mindar-stage {
+  z-index: 0;
+  overflow: hidden;
   background: #111;
 }
+.perception-mindar-stage video, .perception-mindar-stage canvas, .perception-mindar-stage > div {
+  position: absolute !important;
+  max-width: none;
+}
+.perception-mindar-stage video {
+  z-index: 0 !important;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.perception-mindar-stage canvas, .perception-mindar-stage > div {
+  z-index: 1 !important;
+  pointer-events: none;
+}
 .perception-shade {
+  z-index: 1;
   pointer-events: none;
   background: linear-gradient(180deg, rgba(0,0,0,.52), transparent 30%, transparent 65%, rgba(0,0,0,.68));
 }
@@ -5473,6 +5494,7 @@ html.touch-navigation .home-accordion-section.is-touch-sequential .artist-accord
   line-height: 1.7;
 }
 .perception-runtime {
+  z-index: 2;
   pointer-events: none;
 }
 .perception-state {

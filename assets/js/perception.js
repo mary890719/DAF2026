@@ -206,7 +206,7 @@
   };
   const buildDebugControls = async () => {
     if (!debugMode) return;
-    const workIds = targetMap.map(target => target.workId).filter(workId => workFor(workId)).slice(0, 3);
+    const workIds = [...new Set(targetMap.map(target => target.workId).filter(workId => workFor(workId)))];
     const controls = [states.IDLE, states.CAMERA_READY, states.SEARCHING, states.MATCHING, ...workIds.map(id => `ENTITY ${numberFor(workFor(id))}`), states.LOST, states.ERROR];
     debugPanel.hidden = false;
     debugPanel.innerHTML = controls.map(label => `<button type="button" data-debug-state="${escapeHtml(label)}">${escapeHtml(label)}</button>`).join("");

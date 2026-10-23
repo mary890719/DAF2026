@@ -87,9 +87,13 @@
   const renderEntity = (workId, side = "left") => {
     const work = workFor(workId);
     if (!work) return showError(labels.startError);
-    const medium = C.localizedText(work, "medium");
     entity.classList.toggle("is-left", side === "right");
     entity.classList.toggle("is-right", side !== "right");
+    if (String(activeWorkId) === String(work.id) && entity.innerHTML) {
+      currentLocation = {type:"artwork", workId:work.id};
+      return setState(states.IDENTIFIED, {workId:work.id});
+    }
+    const medium = C.localizedText(work, "medium");
     entity.innerHTML = `<p>ENTITY ${escapeHtml(numberFor(work))}</p><h2>${escapeHtml(C.localizedText(work, "title"))}</h2><dl>
       <div><dt>${labels.artist}</dt><dd>${escapeHtml(artistFor(work) || "—")}</dd></div>
       ${work.year ? `<div><dt>${labels.year}</dt><dd>${escapeHtml(work.year)}</dd></div>` : ""}

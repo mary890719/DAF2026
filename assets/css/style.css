@@ -175,25 +175,6 @@ input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 11px;
-}
-.site-logo-divider {
-  width: 1px;
-  height: 42px;
-  flex: 0 0 auto;
-  background: var(--color-border-strong);
-}
-.site-logo-name {
-  display: grid;
-  flex: 0 0 auto;
-  gap: 2px;
-  color: var(--color-text);
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.3;
-  letter-spacing: 0;
-  text-align: left;
-  white-space: nowrap;
 }
 .logo span, .placeholder span {
   position: relative;
@@ -1229,6 +1210,7 @@ body[data-page="home"] #app > .section {
   border: 0;
 }
 .home-trailer-load {
+  position: relative;
   display: grid;
   width: 100%;
   height: 100%;
@@ -1236,12 +1218,31 @@ body[data-page="home"] #app > .section {
   gap: var(--space-2);
   border: 0;
   color: var(--color-text);
-  background: transparent;
+  background-color: transparent;
+  background-image: url("https://i.ytimg.com/vi/RspktCLMWWo/hqdefault.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   font: inherit;
   cursor: pointer;
 }
-.home-trailer-load:hover, .home-trailer-load:focus-visible {
-  background: var(--color-bg-secondary);
+.home-trailer-load::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: rgb(0 0 0 / 32%);
+  transition: background-color var(--transition-fast);
+}
+.home-trailer-load > * {
+  position: relative;
+  z-index: 1;
+}
+.home-trailer-load:hover::before {
+  background: rgb(0 0 0 / 44%);
+}
+.home-trailer-load:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: -4px;
 }
 .home-trailer-play {
   display: grid;
@@ -4674,9 +4675,6 @@ body.shop-modal-open {
   }
   .logo.logo-lockup {
     width: 170px;
-  }
-  .logo-lockup .site-logo-divider, .logo-lockup .site-logo-name {
-    display: none;
   }
   .works-category-block.is-district {
     margin-top: 40px;

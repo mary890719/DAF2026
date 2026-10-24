@@ -25,8 +25,9 @@ window.DAF_PERCEPTION_TARGETS = [
   {targetIndex: 22, workId: "district-05", sourceImage: "assets/images/works/district/district-04_2/03.webp", targetKind: "artist-reference-video-frame"},
   {targetIndex: 23, workId: "district-06", sourceImage: "assets/tracking/phase2c-targets/district-06/009_990.jpg", targetKind: "authorized-video-fixed-ui-poc"},
   {targetIndex: 24, workId: "district-13", sourceImage: "assets/images/works/district/district-09/main.webp", targetKind: "artist-reference-video-frame"},
-  {targetIndex: 25, workId: "district-13", sourceImage: "assets/images/works/district/district-09/03.webp", targetKind: "artist-reference-installation-poc"}
+  {targetIndex: 25, workId: "district-13", sourceImage: "assets/images/works/district/district-09/03.webp", targetKind: "artist-reference-installation-poc"},
+  {targetIndex: 26, workId: "district-11", sourceImage: "assets/images/works/district/district-07/main.webp", targetKind: "artist-reference-android-fallback"}
 ];
 
 // `.mind` 尚未產生時保持空值；不可用不存在或未驗證的檔案啟動正式 tracking。
-window.DAF_PERCEPTION_TRACKING_ASSET = "assets/tracking/artworks-phase2d.mind";
+window.DAF_PERCEPTION_TRACKING_ASSET = "assets/tracking/artworks-phase2d-district11.mind";

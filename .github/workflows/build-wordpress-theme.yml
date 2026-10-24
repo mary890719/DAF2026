@@ -27,18 +27,29 @@ jobs:
 
       - name: 打包 Header 與預告片增量更新
         run: |
-          set -e
-          cd wordpress-theme
-          zip ../daf2026-header-trailer-update.zip \\
-            'daf2026/assets/css/style.css' \\
-            'daf2026/assets/js/components.js'
-          cd ..
-          zipinfo -1 daf2026-header-trailer-update.zip | sort > /tmp/actual.txt
-          printf '%s\\n' 'daf2026/assets/css/style.css' 'daf2026/assets/js/components.js' | sort > /tmp/expected.txt
-          diff -u /tmp/expected.txt /tmp/actual.txt
-          grep -q 'RspktCLMWWo/hqdefault.jpg' wordpress-theme/daf2026/assets/css/style.css
-          grep -q 'height: 54px;' wordpress-theme/daf2026/assets/css/style.css
-          grep -q 'height: 44px;' wordpress-theme/daf2026/assets/css/style.css
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile, ZIP_DEFLATED
+
+          root = Path("wordpress-theme")
+          paths = [
+              "daf2026/assets/css/style.css",
+              "daf2026/assets/js/components.js",
+          ]
+          for name in paths:
+              assert (root / name).is_file(), f"缺少檔案: {name}"
+          css = (root / paths[0]).read_text(encoding="utf-8")
+          js = (root / paths[1]).read_text(encoding="utf-8")
+          assert "RspktCLMWWo/hqdefault.jpg" in css
+          assert "height: 54px;" in css and "height: 44px;" in css
+          assert "site-logo-divider" not in js
+          with ZipFile("daf2026-header-trailer-update.zip", "w", ZIP_DEFLATED) as archive:
+              for name in paths:
+                  archive.write(root / name, arcname=name)
+          with ZipFile("daf2026-header-trailer-update.zip") as archive:
+              assert sorted(archive.namelist()) == sorted(paths)
+              print("已驗證增量 ZIP 內容:", archive.namelist())
+          PY
 
       - name: 上傳 Theme ZIP
         uses: actions/upload-artifact@v4

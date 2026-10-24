@@ -15,8 +15,18 @@ window.DAF_PERCEPTION_TARGETS = [
   {targetIndex: 12, workId: "district-03", sourceImage: "assets/tracking/phase2c-targets/district-03/256_203.jpg", targetKind: "authorized-video-frame"},
   {targetIndex: 13, workId: "district-04", sourceImage: "assets/tracking/phase2c-targets/district-04/100_791.jpg", targetKind: "authorized-video-frame"},
   {targetIndex: 14, workId: "district-04", sourceImage: "assets/tracking/phase2c-targets/district-04/167_985.jpg", targetKind: "authorized-video-frame"},
-  {targetIndex: 15, workId: "district-04", sourceImage: "assets/tracking/phase2c-targets/district-04/235_179.jpg", targetKind: "authorized-video-frame"}
+  {targetIndex: 15, workId: "district-04", sourceImage: "assets/tracking/phase2c-targets/district-04/235_179.jpg", targetKind: "authorized-video-frame"},
+  {targetIndex: 16, workId: "main-05", sourceImage: "assets/images/works/main/main-05/01.webp", targetKind: "artist-reference-installation-poc"},
+  {targetIndex: 17, workId: "main-08", sourceImage: "assets/tracking/phase2c-targets/main-08/video-01-008_590.jpg", targetKind: "authorized-video-installation-poc"},
+  {targetIndex: 18, workId: "main-08", sourceImage: "assets/tracking/phase2c-targets/main-08/video-02-022_134.jpg", targetKind: "authorized-video-installation-poc"},
+  {targetIndex: 19, workId: "district-01", sourceImage: "assets/images/works/district/district-01/main.webp", targetKind: "artist-reference-video-frame"},
+  {targetIndex: 20, workId: "district-01", sourceImage: "assets/images/works/district/district-01/03.webp", targetKind: "artist-reference-video-frame"},
+  {targetIndex: 21, workId: "district-05", sourceImage: "assets/images/works/district/district-04_2/main.webp", targetKind: "artist-reference-video-frame"},
+  {targetIndex: 22, workId: "district-05", sourceImage: "assets/images/works/district/district-04_2/03.webp", targetKind: "artist-reference-video-frame"},
+  {targetIndex: 23, workId: "district-06", sourceImage: "assets/tracking/phase2c-targets/district-06/009_990.jpg", targetKind: "authorized-video-fixed-ui-poc"},
+  {targetIndex: 24, workId: "district-13", sourceImage: "assets/images/works/district/district-09/main.webp", targetKind: "artist-reference-video-frame"},
+  {targetIndex: 25, workId: "district-13", sourceImage: "assets/images/works/district/district-09/03.webp", targetKind: "artist-reference-installation-poc"}
 ];
 
 // `.mind` 尚未產生時保持空值；不可用不存在或未驗證的檔案啟動正式 tracking。
-window.DAF_PERCEPTION_TRACKING_ASSET = "assets/tracking/artworks-phase2c.mind";
+window.DAF_PERCEPTION_TRACKING_ASSET = "assets/tracking/artworks-phase2d.mind";

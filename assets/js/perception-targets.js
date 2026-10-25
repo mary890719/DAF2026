@@ -38,8 +38,10 @@ window.DAF_PERCEPTION_TARGETS = [
   {targetIndex: 35, workId: "district-14", sourceImage: "assets/images/works/district/district-10/main.webp", targetKind: "artist-reference-video-installation-poc"},
   {targetIndex: 36, workId: "district-14", sourceImage: "assets/images/works/district/district-10/02.webp", targetKind: "artist-reference-video-installation-poc"},
   {targetIndex: 37, workId: "main-04", sourceImage: "assets/images/works/main/main-04/02.webp", targetKind: "artist-reference-installation-poc"},
-  {targetIndex: 38, workId: "outdoor-01", sourceImage: "assets/images/works/outdoor/outdoor-01/main.webp", targetKind: "artist-reference-installation-poc"}
+  {targetIndex: 38, workId: "outdoor-01", sourceImage: "assets/images/works/outdoor/outdoor-01/main.webp", targetKind: "artist-reference-installation-poc"},
+  {targetIndex: 39, workId: "main-07", sourceImage: "assets/images/works/main/main-07/01.webp", targetKind: "artist-reference-installation-poc"},
+  {targetIndex: 40, workId: "main-07", sourceImage: "assets/images/works/main/main-07/02.webp", targetKind: "artist-reference-installation-poc"}
 ];
 
 // `.mind` 尚未產生時保持空值；不可用不存在或未驗證的檔案啟動正式 tracking。
-window.DAF_PERCEPTION_TRACKING_ASSET = "assets/tracking/artworks-phase2f.mind";
+window.DAF_PERCEPTION_TRACKING_ASSET = "assets/tracking/artworks-phase2g.mind";

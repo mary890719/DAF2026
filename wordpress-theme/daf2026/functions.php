@@ -112,10 +112,10 @@ function daf2026_get_seo_data() {
 
 	$zh = array(
 		'home' => array( '2026 臺北數位藝術節「灰色自動體」', '第21屆臺北數位藝術節以「灰色自動體」為題，於2026年10月31日至11月15日在臺北典藏植物園與藝術入店展出，週一休館。', 'website' ),
-		'about' => array( '關於臺北數位藝術節｜2026 臺北數位藝術節', '認識臺北數位藝術節的發展與數位藝術展演平台定位，並查看2026主展場參觀時間、地點及交通方式。', 'website' ),
+		'about' => array( '關於臺北數位藝術節｜2026 臺北數位藝術節', '認識臺北數位藝術節的發展與數位藝術展演平台定位，並查看2026臺北典藏植物園參觀時間、地點及交通方式。', 'website' ),
 		'curatorial' => array( '灰色自動體：策展論述｜2026 臺北數位藝術節', '2026臺北數位藝術節以「灰色自動體」為主題，關注數位藝術如何回應人工智慧、資訊、生態、生命與非人存在。', 'website' ),
 		'partners' => array( '執行與合作單位｜2026 臺北數位藝術節', '查看2026臺北數位藝術節的執行單位、場地合作、合作單位、贊助單位與多媒體設備贊助。', 'website' ),
-		'map' => array( '臺北典藏植物園展場地圖｜2026 臺北數位藝術節', '查看2026臺北數位藝術節臺北典藏植物園主展場平面圖與作品位置。', 'website' ),
+		'map' => array( '臺北典藏植物園地圖與參觀資訊｜2026 臺北數位藝術節', '查看2026臺北數位藝術節臺北典藏植物園地圖與作品位置。', 'website' ),
 		'district-map' => array( '藝術入店地圖｜2026 臺北數位藝術節', '查看2026臺北數位藝術節藝術入店的作品與合作場域位置。', 'website' ),
 		'shops' => array( '合作店家與合作企劃｜2026 臺北數位藝術節', '查看藝術入店合作店家、場域資訊、營業時間及2026臺北數位藝術節合作企劃。', 'website' ),
 		'works' => array( '參展作品｜2026 臺北數位藝術節', '瀏覽2026臺北數位藝術節於臺北典藏植物園及戶外展區展出的參展作品。', 'website' ),
@@ -123,14 +123,14 @@ function daf2026_get_seo_data() {
 		'program' => array( '活動節目｜2026 臺北數位藝術節', '查看2026臺北數位藝術節的音像之夜、工作坊、藝術家講座與導覽活動資訊。', 'website' ),
 		'event-detail' => array( '活動詳細｜2026 臺北數位藝術節', '2026 臺北數位藝術節活動節目資訊。', 'website' ),
 		'work-detail' => array( '作品詳細｜2026 臺北數位藝術節', '2026 臺北數位藝術節參展作品資訊。', 'article' ),
-		'opening-performance' => array( '音像之夜｜2026 臺北數位藝術節', '音像之夜；藝術團隊噪流、藝術家 Félix-Antoine Morin；2026.10.31，19:00–22:00，臺北典藏植物園－主展場。', 'website' ),
+		'opening-performance' => array( '音像之夜｜2026 臺北數位藝術節', '音像之夜；藝術團隊噪流、藝術家 Félix-Antoine Morin；2026.10.31，19:00–22:00，臺北典藏植物園。', 'website' ),
 	);
 	$en = array(
 		'home' => array( '2026 Taipei Digital Art Festival “Grey Autonomous Entity”', 'The 21st Taipei Digital Art Festival, “Grey Autonomous Entity,” takes place from October 31 to November 15, 2026, at the Taipei Collectible Botanical Garden and across the Art in Stores. Closed on Mondays.', 'website' ),
-		'about' => array( 'About | 2026 Taipei Digital Art Festival', 'Learn about the Taipei Digital Art Festival and find visiting hours, venue information, and transportation details for the 2026 main exhibition.', 'website' ),
+		'about' => array( 'About | 2026 Taipei Digital Art Festival', 'Learn about the Taipei Digital Art Festival and find visiting hours, venue information, and transportation details for Taipei Collectible Botanical Garden.', 'website' ),
 		'curatorial' => array( 'Grey Autonomous Entity: Curatorial Statement | 2026 Taipei Digital Art Festival', 'The 2026 Taipei Digital Art Festival presents “Grey Autonomous Entity,” examining how digital art responds to artificial intelligence, information, ecology, life, and non-human entities.', 'website' ),
 		'partners' => array( 'Execution and Partners | 2026 Taipei Digital Art Festival', 'View the execution team, venue partners, partner organizations, sponsors, and multimedia equipment sponsors of the 2026 Taipei Digital Art Festival.', 'website' ),
-		'map' => array( 'Taipei Collectible Botanical Garden Map | 2026 Taipei Digital Art Festival', 'Explore the main venue floor plan and artwork locations at the Taipei Collectible Botanical Garden.', 'website' ),
+		'map' => array( 'Taipei Collectible Botanical Garden Map | 2026 Taipei Digital Art Festival', 'Explore the map and artwork locations at the Taipei Collectible Botanical Garden.', 'website' ),
 		'district-map' => array( 'Art in Stores Map | 2026 Taipei Digital Art Festival', 'Explore artwork and partner venue locations across the Art in Stores.', 'website' ),
 		'shops' => array( 'Partner Stores and Collaborations | 2026 Taipei Digital Art Festival', 'Explore partner stores, venue information, opening hours, and collaborations across the Art in Stores.', 'website' ),
 		'works' => array( 'Works | 2026 Taipei Digital Art Festival', 'Browse works presented at the Taipei Collectible Botanical Garden and outdoor exhibition areas during the 2026 Taipei Digital Art Festival.', 'website' ),
@@ -138,7 +138,7 @@ function daf2026_get_seo_data() {
 		'program' => array( 'Program | 2026 Taipei Digital Art Festival', 'Explore the 2026 Taipei Digital Art Festival program, including the audiovisual performance, workshops, artist talks, and guided tours.', 'website' ),
 		'event-detail' => array( 'PROGRAM DETAIL｜2026 Taipei Digital Art Festival', 'Program information for the 2026 Taipei Digital Art Festival.', 'website' ),
 		'work-detail' => array( 'WORK DETAIL｜2026 Taipei Digital Art Festival', 'Exhibiting work information for the 2026 Taipei Digital Art Festival.', 'article' ),
-		'opening-performance' => array( 'Audiovisual Performance | 2026 Taipei Digital Art Festival', 'Audiovisual Performance; artist team Fluid Noise and artist Félix-Antoine Morin; October 31, 2026, 19:00–22:00, Taipei Collectible Botanical Garden – Main Venue.', 'website' ),
+		'opening-performance' => array( 'Audiovisual Performance | 2026 Taipei Digital Art Festival', 'Audiovisual Performance; artist team Fluid Noise and artist Félix-Antoine Morin; October 31, 2026, 19:00–22:00, Taipei Collectible Botanical Garden.', 'website' ),
 	);
 
 	$source = $is_english ? $en : $zh;

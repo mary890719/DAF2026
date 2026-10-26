@@ -8,7 +8,7 @@ get_header();
             <div id="breadcrumb"></div>
             <h1 class="page-title">藝術入店地圖</h1>
             <div class="map-legend" aria-label="地圖圖例">
-                <span data-location-type="outdoor"><i aria-hidden="true"></i>主展場戶外</span>
+                <span data-location-type="outdoor"><i aria-hidden="true"></i>臺北典藏植物園戶外</span>
                 <span data-location-type="district"><i aria-hidden="true"></i>藝術入店</span>
             </div>
             <div class="page-sections map-contexts">

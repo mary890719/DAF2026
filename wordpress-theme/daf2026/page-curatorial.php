@@ -29,6 +29,6 @@ get_header();
                                 </div></div>
 </section>
             </article>
-            <nav class="page-bottom-nav back-wrap" aria-label="頁面快速導覽"><a class="button" href="/about/">&lt; 關於臺北數位藝術節</a><a class="button" href="/partners/">單位介紹 &gt;</a></nav>
+            <nav class="page-bottom-nav back-wrap" aria-label="頁面快速導覽"><a class="button" href="/about/">&lt; 關於臺北數位藝術節</a><a class="button" href="/partners/">單位簡介 &gt;</a></nav>
         </main>
 <?php get_footer(); ?>

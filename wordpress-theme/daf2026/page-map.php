@@ -6,16 +6,16 @@ get_header();
 ?>
 <main id="app" class="container">
             <div id="breadcrumb"></div>
-            <h1 class="page-title">主展場地圖</h1>
+            <h1 class="page-title">臺北典藏植物園地圖</h1>
             <div class="map-legend" aria-label="地圖圖例">
                 <span data-location-type="main"><i aria-hidden="true"></i>臺北典藏植物園</span>
             </div>
             <div class="page-sections map-contexts">
 <section class="ia-section map-context" id="garden-map" data-map-context="garden">
-                    <h2><span class="section-number">01</span> 主展場地圖</h2>
+                    <h2><span class="section-number">01</span> 臺北典藏植物園地圖</h2>
                     <div class="map-explorer-layout">
                         <div class="map-map-column"><div class="map-shell map-shell-garden" data-map-id="main">
-                            <div class="map-base-layer"><img class="map-base" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/map/主展場MAP_zh.webp' ); ?>" alt="臺北典藏植物園主展場地圖，包含廁所、服務台、出入口與緊急逃生口資訊"></div>
+                            <div class="map-base-layer"><img class="map-base" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/map/主展場MAP_zh.webp' ); ?>" alt="臺北典藏植物園臺北典藏植物園地圖，包含廁所、服務台、出入口與緊急逃生口資訊"></div>
                             <div class="map-overlay-layer" data-map-markers></div>
                             <div class="map-ui-layer"><article class="marker-card" role="dialog" hidden></article></div>
                         </div></div>

@@ -1292,7 +1292,7 @@
     const guideHeading = document.querySelector(".program-guide-tour .program-section-heading h2");
     if (openingHeading) openingHeading.textContent = isEnglish ? "Audiovisual Performance" : "音像之夜";
     if (scheduleHeading) scheduleHeading.textContent = isEnglish ? "Workshop / Talk" : "工作坊／講座";
-    if (guideHeading) guideHeading.textContent = isEnglish ? "Guide Tour" : "現場導覽／Guide Tour";
+    if (guideHeading) guideHeading.textContent = isEnglish ? "Guide Tour" : "現場導覽";
     if (openingSlot) {
       const openingWorks = D.soundArtists.flatMap(work => {
         if (Array.isArray(work.performances) && work.performances.length) {
@@ -1307,7 +1307,7 @@
         return [{title: textFor(work, "title"), artists: names.join(isEnglish ? ", " : "、")}];
       });
       const openingDate = programDate(openingEvent?.date);
-      openingSlot.innerHTML = `${openingEvent ? `<a class="program-opening-event" href="${C.localizedRoute(programRoute(openingEvent))}"><span>${displayShortDate(openingDate)} ${displayWeekday(openingDate)}</span><time>${programTime(openingEvent)}</time></a>` : ""}<div class="program-opening-works">${openingWorks.map(work => `<article><strong>${work.title}</strong>${work.artists ? `<span>${work.artists}</span>` : ""}</article>`).join("")}</div>`;
+      openingSlot.innerHTML = `${openingEvent ? `<a class="program-opening-event" href="${C.localizedRoute(programRoute(openingEvent))}"><span class="program-opening-date"><strong>${displayShortDate(openingDate)}</strong><small>${displayWeekday(openingDate)}</small></span><time>${programTime(openingEvent)}</time></a>` : ""}<div class="program-opening-works">${openingWorks.map(work => `<article><strong>${work.title}</strong>${work.artists ? `<span>${work.artists}</span>` : ""}</article>`).join("")}</div>`;
     }
     const scheduleEvents = orderedEvents.filter(event => ["工作坊", "講座"].includes(event.type));
     const scheduleDates = ["2026.11.01", "2026.11.08", "2026.11.15"];
@@ -2928,7 +2928,7 @@
     if (legacyMapPages[location.hash]) location.replace(legacyMapPages[location.hash]);
   }
   if (page === "works" && location.hash === "#art-in-stores") location.replace("district-works.html#art-in-stores");
-  const breadcrumbLabels = isEnglish ? {about:"ABOUT TAIPEI DIGITAL ART FESTIVAL", curatorial:"CURATORIAL STATEMENT", partners:"EXECUTION AND PARTNERS", map:"MAIN VENUE MAP", "district-map":"ART IN STORES MAP", shops:"PARTNER STORES", works:"TAIPEI COLLECTIBLE BOTANICAL GARDEN", "district-works":"ART IN STORES", program:"PROGRAM"} : {about:"關於臺北數位藝術節", curatorial:"策展論述", partners:"單位介紹", map:"主展場地圖", "district-map":"藝術入店地圖", shops:"合作店家", works:"臺北典藏植物園", "district-works":"藝術入店", program:"活動節目"};
+  const breadcrumbLabels = isEnglish ? {about:"ABOUT TAIPEI DIGITAL ART FESTIVAL", curatorial:"CURATORIAL STATEMENT", partners:"EXECUTION AND PARTNERS", map:"Taipei Collectible Botanical Garden Map", "district-map":"ART IN STORES MAP", shops:"PARTNER STORES", works:"TAIPEI COLLECTIBLE BOTANICAL GARDEN", "district-works":"ART IN STORES", program:"PROGRAM"} : {about:"關於臺北數位藝術節", curatorial:"策展論述", partners:"單位簡介", map:"臺北典藏植物園地圖", "district-map":"藝術入店地圖", shops:"合作店家", works:"臺北典藏植物園", "district-works":"藝術入店", program:"活動節目"};
   if (breadcrumbLabels[page]) {
     const parent = ["about", "curatorial", "partners"].includes(page) ? (isEnglish ? "ABOUT" : "關於")
       : ["map", "district-map", "shops"].includes(page) ? (isEnglish ? "INFORMATION" : "參觀資訊")

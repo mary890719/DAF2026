@@ -20,10 +20,10 @@ window.DAF_COMPONENTS = (() => {
     {id: "home", label: "首頁", url: "index.html"},
     {id: "about", label: "關於", parentOnly: true, children: [
       ["關於臺北數位藝術節", "about.html"], ["策展論述", "curatorial.html"],
-      ["單位介紹", "partners.html"]
+      ["單位簡介", "partners.html"]
     ]},
     {id: "map", label: "參觀資訊", parentOnly: true, children: [
-      ["主展場地圖", "map.html"], ["藝術入店地圖", "district-map.html"],
+      ["臺北典藏植物園地圖", "map.html"], ["藝術入店地圖", "district-map.html"],
       ["合作店家", "shops.html"]
     ]},
     {id: "works", label: "作品介紹", parentOnly: true, children: [
@@ -35,7 +35,7 @@ window.DAF_COMPONENTS = (() => {
   const navEn = [
     {id:"home",label:"HOME",url:"index.html"},
     {id:"about",label:"ABOUT",parentOnly:true,children:[["ABOUT TAIPEI DIGITAL ART FESTIVAL","about.html"],["CURATORIAL STATEMENT","curatorial.html"],["EXECUTION AND PARTNERS","partners.html"]]},
-    {id:"map",label:"INFORMATION",parentOnly:true,children:[["MAIN VENUE MAP","map.html"],["ART IN STORES MAP","district-map.html"],["PARTNER STORES","shops.html"]]},
+    {id:"map",label:"INFORMATION",parentOnly:true,children:[["Taipei Collectible Botanical Garden Map","map.html"],["ART IN STORES MAP","district-map.html"],["PARTNER STORES","shops.html"]]},
     {id:"works",label:"WORKS",parentOnly:true,children:[["TAIPEI COLLECTIBLE BOTANICAL GARDEN","works.html"],["ART IN STORES","district-works.html"]]},
     {id:"program",label:"PROGRAM",url:"program.html"}
   ];

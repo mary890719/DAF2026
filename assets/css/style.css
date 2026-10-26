@@ -1612,10 +1612,7 @@ body[data-page="home"] #app > .section {
 }
 .about-copy {
   max-width: var(--reading);
-  border: var(--border);
-  border-radius: var(--radius);
   margin: auto;
-  padding: clamp(30px, 6vw, 85px);
   text-align: left;
 }
 .about-copy p {
@@ -2306,10 +2303,16 @@ body.work-lightbox-open {
   color: var(--color-text-secondary);
   font-size: var(--fs-sm);
 }
-.program-opening-event span {
+.program-opening-event .program-opening-date, .program-date-column h4 {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1);
   color: var(--color-text);
-  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
   font-weight: 500;
+}
+.program-opening-date strong {
+  font: inherit;
 }
 .program-opening-works {
   display: grid;
@@ -2328,14 +2331,9 @@ body.work-lightbox-open {
   gap: clamp(24px, 3vw, 48px);
 }
 .program-date-column h4 {
-  display: flex;
-  align-items: baseline;
-  gap: var(--space-1);
   margin: 0 0 var(--space-4);
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  font-weight: 500;
 }
-.program-date-column h4 small {
+.program-opening-date small, .program-date-column h4 small {
   color: var(--color-text-secondary);
   font-size: var(--fs-sm);
   font-weight: 400;
@@ -2759,8 +2757,8 @@ body.opening-detail-open {
 }
 .event-panelist-row {
   display: grid;
-  grid-template-columns: minmax(160px, 28%) minmax(0, 1fr);
-  gap: clamp(24px, 4vw, 48px);
+  grid-template-columns: minmax(0, calc((100% - 3 * var(--space-3)) / 4)) minmax(0, 1fr);
+  gap: var(--space-3);
   align-items: start;
   padding-block: var(--space-4);
   border-top: var(--border);
@@ -4863,7 +4861,7 @@ body.shop-modal-open {
     gap: var(--space-3);
   }
   .event-panelist-image {
-    width: min(100%, 280px);
+    width: calc((100% - var(--space-3)) / 2);
   }
   .event-artist-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));

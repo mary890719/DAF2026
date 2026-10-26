@@ -7,7 +7,7 @@ get_header();
 <main id="app" class="container">
             <div id="breadcrumb"></div>
             <p class="page-label" lang="en">ABOUT</p>
-            <h1 class="page-title">單位介紹</h1>
+            <h1 class="page-title">單位簡介</h1>
             <article class="page-sections about-sections">
 <section class="ia-section" id="organizations">
 <h2>執行單位</h2>

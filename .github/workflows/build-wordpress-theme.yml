@@ -25,24 +25,33 @@ jobs:
           zip -r ../daf2026.zip daf2026 \
             -x '*/node_modules/*' '*/dome備用/*' '*/hero*backup*' '*/Hero*backup*' '*/backup/*' '*/temp/*' '*/tmp/*' '*.bak' '*.tmp'
 
-      - name: 打包業主七項修改增量更新
+      - name: 打包 Header 與 C-LAB 資料增量更新
         run: |
           python3 - <<'PY'
           from pathlib import Path
           from zipfile import ZipFile, ZIP_DEFLATED
           root = Path("wordpress-theme")
-          paths = ["daf2026/assets/css/style.css","daf2026/assets/js/app.js","daf2026/assets/js/components.js","daf2026/assets/js/data.js","daf2026/functions.php","daf2026/page-curatorial.php","daf2026/page-partners.php","daf2026/page-program.php","daf2026/page-map.php","daf2026/page-en-map.php","daf2026/page-district-map.php"]
+          paths = [
+              "daf2026/assets/css/style.css",
+              "daf2026/assets/js/app.js",
+              "daf2026/assets/js/data.js",
+          ]
           for name in paths:
               assert (root / name).is_file(), f"缺少檔案: {name}"
-          with ZipFile("daf2026-owner-seven-updates.zip", "w", ZIP_DEFLATED) as archive:
+          css = (root / paths[0]).read_text(encoding="utf-8")
+          js = (root / paths[1]).read_text(encoding="utf-8")
+          data = (root / paths[2]).read_text(encoding="utf-8")
+          assert "@media (max-width: 1135px)" in css
+          assert 'window.matchMedia("(max-width: 1135px)")' in js
+          assert "html.touch-navigation .site-logo-image" not in css
+          assert '"artistTeam": "C-LAB 未來視覺實驗室"' in data
+          assert '"workId":"main-06"' in data
+          with ZipFile("daf2026-header-clab-update.zip", "w", ZIP_DEFLATED) as archive:
               for name in paths:
                   archive.write(root / name, arcname=name)
-          with ZipFile("daf2026-owner-seven-updates.zip") as archive:
+          with ZipFile("daf2026-header-clab-update.zip") as archive:
               assert sorted(archive.namelist()) == sorted(paths)
-              print("已驗證本次增量檔案:", *archive.namelist(), sep="\\n")
-          assert "MindAR" not in (root / "daf2026/page-map.php").read_text()
-          assert "PERCEPTION" not in (root / "daf2026/page-map.php").read_text()
-          assert "MindAR" not in (root / "daf2026/page-en-map.php").read_text()
+              print("增量 ZIP 已驗證:", *archive.namelist(), sep="\\n")
           PY
 
       - name: 上傳 Theme ZIP
@@ -55,6 +64,6 @@ jobs:
       - name: 上傳本次更新 ZIP
         uses: actions/upload-artifact@v4
         with:
-          name: daf2026-owner-seven-updates
-          path: daf2026-owner-seven-updates.zip
+          name: daf2026-header-clab-update
+          path: daf2026-header-clab-update.zip
           if-no-files-found: error

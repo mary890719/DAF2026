@@ -90,8 +90,8 @@
   };
   const observationState = {x: window.innerWidth / 2, y: window.innerHeight / 2, active: false, mode: "idle"};
   const siteResizeHandlers = new Set();
-  const narrowNavigationMedia = window.matchMedia("(max-width: 1024px)");
-  const touchNavigationWidthMedia = window.matchMedia("(max-width: 1024px)");
+  const narrowNavigationMedia = window.matchMedia("(max-width: 1135px)");
+  const touchNavigationWidthMedia = window.matchMedia("(max-width: 1135px)");
   const touchNavigationMedia = window.matchMedia("(any-pointer: coarse), (any-hover: none)");
   const usesTouchNavigation = () => narrowNavigationMedia.matches || (touchNavigationWidthMedia.matches && (navigator.maxTouchPoints > 0 || touchNavigationMedia.matches));
   const syncTouchNavigationClass = () => document.documentElement.classList.toggle("touch-navigation", usesTouchNavigation());

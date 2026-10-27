@@ -4294,18 +4294,10 @@ body.shop-modal-open {
     font-size: .7em;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1135px) {
   /* Tablet：Header／Touch Navigation 共用核心 */
   .site-header {
     gap: 12px;
-  }
-  .logo {
-    max-width: none;
-    width: 220px;
-    height: 52px;
-  }
-  .site-logo-image {
-    height: 44px;
   }
   .menu-toggle {
     display: grid;
@@ -4359,8 +4351,6 @@ body.shop-modal-open {
     gap: var(--space-3);
   }
   .mobile-menu-logo {
-    width: 220px;
-    height: 52px;
     margin: 0;
   }
   .header-nav-links {
@@ -4459,6 +4449,8 @@ body.shop-modal-open {
   .header-nav :focus-visible {
     outline-color: #000;
   }
+}
+@media (max-width: 1024px) {
   .ia-section, .home-venues {
     scroll-margin-top: 110px;
   }
@@ -4671,9 +4663,6 @@ body.shop-modal-open {
   .work-detail-gallery .work-gallery-stage {
     height: clamp(280px, 52svh, 420px);
   }
-  .logo.logo-lockup {
-    width: 170px;
-  }
   .works-category-block.is-district {
     margin-top: 40px;
   }
@@ -4696,14 +4685,8 @@ body.shop-modal-open {
   .home-venue-card {
     min-height: 156px;
   }
-  .site-logo-image {
-    height: 40px;
-  }
   .header-nav {
     padding: 14px;
-  }
-  .mobile-menu-logo {
-    width: 170px;
   }
   .breadcrumb {
     margin: 28px 0 36px;
@@ -5005,7 +4988,7 @@ body.shop-modal-open {
   text-decoration-thickness: 1px;
   text-underline-offset: .22em;
 }
-@media (min-width: 901px) and (max-width: 1024px) {
+@media (min-width: 901px) and (max-width: 1135px) {
   /* Tablet：漢堡子選單列差異 */
   .nav-submenu-row > .nav-submenu-link {
     min-height: 44px;
@@ -5048,14 +5031,6 @@ body.shop-modal-open {
 html.touch-navigation .site-header {
   gap: 12px;
 }
-html.touch-navigation .site-header > .logo {
-  width: 220px;
-  max-width: none;
-  height: 52px;
-}
-html.touch-navigation .site-logo-image {
-  height: 44px;
-}
 html.touch-navigation .menu-toggle {
   display: grid;
   margin-left: auto;
@@ -5094,8 +5069,6 @@ html.touch-navigation .mobile-menu-header {
   gap: var(--space-3);
 }
 html.touch-navigation .mobile-menu-logo {
-  width: 220px;
-  height: 52px;
   margin: 0;
 }
 html.touch-navigation .header-nav-links {

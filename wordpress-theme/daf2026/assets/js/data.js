@@ -4097,7 +4097,7 @@ const DAF_BUSINESS_HOURS_SCHEDULES = {
   "shop-04": {0:DAF_HOURS(["13:00","18:00"]),1:null,2:null,3:null,4:null,5:null,6:DAF_HOURS(["13:00","18:00"])}
 };
 const DAF_SPECIAL_HOURS = {
-  "store-01": {"2026-10-31":DAF_HOURS(["10:00","22:00"])},
+  "store-01": {"2026-10-31":DAF_HOURS(["10:00","20:30"])},
   "store-03": {"2026-10-31":DAF_HOURS(["10:00","02:00"])},
   "store-05": {"2026-10-31":DAF_HOURS(["13:00","00:00"])},
   "store-08": {"2026-10-31":DAF_HOURS(["12:00","02:00"])},

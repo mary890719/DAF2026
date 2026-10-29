@@ -9,7 +9,7 @@ get_header();
 ?>
 <main id="app" class="container">
             <div id="breadcrumb"></div>
-            <h1 class="page-title">Taipei Collectible Botanical Garden Map</h1>
+            <h1 class="page-title">INFORMATION</h1>
             <div class="map-legend" aria-label="Map legend">
                 <span data-location-type="main"><i aria-hidden="true"></i>Taipei Collectible Botanical Garden Floor Plan</span>
             </div>

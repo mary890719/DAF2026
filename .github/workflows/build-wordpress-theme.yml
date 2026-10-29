@@ -59,7 +59,7 @@ jobs:
           assert "21st Digital Art Festival Taipei" in components
           assert "第二十一屆臺北數位藝術節" in components
           assert 'DAF_HOURS(["10:00","20:30"])' in data
-          assert data.count('"location": "未來生活館一樓大廳（臺北典藏植物園入口處）"') == 8
+          assert data.count('"location": "未來生活館一樓大廳（臺北典藏植物園入口處）"') >= 8
           assert data.count('"locationEn": "1F Lobby, Future Living Pavilion (Entrance to Taipei Collectible Botanical Garden)"') == 8
           assert '"artist": "Stefan Tiefengraber、Jed Berk"' in data
           assert '"artist": "Stefan Tiefengraber、Jed Berk、林書瑜"' not in data

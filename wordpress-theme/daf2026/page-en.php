@@ -11,7 +11,7 @@ get_header();
 	<section class="hero hero-text hero-sequence-active" id="hero-observation" aria-labelledby="hero-title">
 		<div class="hero-background" aria-hidden="true"></div>
 		<div class="hero-copy">
-			<p class="hero-kicker hero-observation-target" data-observation-id="festival">2026 Taipei Digital Art Festival</p>
+			<p class="hero-kicker hero-observation-target" data-observation-id="festival">21st Digital Art Festival Taipei</p>
 			<div class="hero-title-stage hero-logo-prototype hero-observation-target" data-observation-id="title">
 				<video class="hero-title-video" src="<?php echo esc_url( get_template_directory_uri() . '/assets/videos/DAF2026_Hero_Logo.webm' ); ?>" autoplay muted playsinline preload="auto" aria-hidden="true"></video>
 				<h1 id="hero-title" class="hero-title-text">
@@ -19,7 +19,7 @@ get_header();
 					<span class="hero-logo-visual" aria-hidden="true"><span class="hero-logo-blocks"></span><span class="hero-logo-recognition"><span class="hero-logo-recognition-zh hero-logo-scramble" data-final-text="灰色自動體">灰色自動體</span><span class="hero-logo-recognition-en hero-logo-scramble" data-final-text="GRAY AUTONOMOUS ENTITY">GRAY AUTONOMOUS ENTITY</span></span><span class="hero-logo-flash"></span><span class="hero-logo-final"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logos/DAF26LOGO.webp' ); ?>" width="2055" height="593" alt=""></span></span>
 				</h1>
 			</div>
-			<div class="hero-meta hero-observation-target" data-observation-id="details"><span><span class="hero-meta-label">Venue | </span><span class="hero-meta-value">Taipei Collectible Botanical Garden, Art in Stores</span></span></div>
+			<div class="hero-meta hero-observation-target" data-observation-id="details"><span><span class="hero-meta-value">Taipei Collectible Botanical Garden, Art in Stores</span></span></div>
 		</div>
 	</section>
 	<section class="section home-trailer" aria-labelledby="home-trailer-title">

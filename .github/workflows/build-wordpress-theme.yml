@@ -30,50 +30,28 @@ jobs:
           node --check wordpress-theme/daf2026/assets/js/components.js
           node --check wordpress-theme/daf2026/assets/js/data.js
           node --check wordpress-theme/daf2026/assets/js/app.js
-          for file in wordpress-theme/daf2026/page-{map,en-map,district-map,en-district-map,shops,en-shops}.php; do php -l "$file"; done
+          php -l wordpress-theme/daf2026/front-page.php
+          php -l wordpress-theme/daf2026/page-en.php
 
-      - name: 打包本次十一檔增量更新
+      - name: 驗證並打包本次雙語首頁更新
         run: |
           python3 - <<'PY'
           from pathlib import Path
           from zipfile import ZipFile, ZIP_DEFLATED
           root = Path("wordpress-theme")
-          paths = [
-              "daf2026/assets/css/style.css",
-              "daf2026/assets/js/components.js",
-              "daf2026/assets/js/data.js",
-              "daf2026/page-map.php",
-              "daf2026/page-en-map.php",
-              "daf2026/page-district-map.php",
-              "daf2026/page-en-district-map.php",
-              "daf2026/page-shops.php",
-              "daf2026/page-en-shops.php",
-              "daf2026/front-page.php",
-              "daf2026/page-en.php",
-          ]
+          paths = ["daf2026/front-page.php", "daf2026/page-en.php"]
           for name in paths:
               assert (root / name).is_file(), f"Missing: {name}"
-          css = (root / paths[0]).read_text(encoding="utf-8")
-          components = (root / paths[1]).read_text(encoding="utf-8")
-          data = (root / paths[2]).read_text(encoding="utf-8")
-          assert "@media (max-width: 1135px)" in css
-          assert "height: 54px" in css
-          assert "21st Digital Art Festival Taipei" in components
-          assert "第二十一屆臺北數位藝術節" in components
-          assert 'DAF_HOURS(["10:00","20:30"])' in data
-          assert data.count('"location": "未來生活館一樓大廳（臺北典藏植物園入口處）"') >= 8
-          assert data.count('"locationEn": "1F Lobby, Future Living Pavilion (Entrance to Taipei Collectible Botanical Garden)"') == 8
-          assert '"artist": "Stefan Tiefengraber、Jed Berk"' in data
-          assert '"artist": "Stefan Tiefengraber、Jed Berk、林書瑜"' not in data
-          for name in paths[3:]:
-              assert "INFORMATION" in (root / name).read_text(encoding="utf-8")
-          zh_home = (root / "daf2026/front-page.php").read_text(encoding="utf-8")
-          en_home = (root / "daf2026/page-en.php").read_text(encoding="utf-8")
-          assert "第二十一屆臺北數位藝術節" in zh_home
-          assert "21st Digital Art Festival Taipei" in en_home
-          assert 'hero-meta-label">展場｜' not in zh_home
-          assert 'hero-meta-label">Venue |' not in en_home
-          output = "daf2026-20261029-final-hero-footer-program-update.zip"
+          zh = (root / paths[0]).read_text(encoding="utf-8")
+          en = (root / paths[1]).read_text(encoding="utf-8")
+          assert "第二十一屆臺北數位藝術節" in zh
+          assert "21st Digital Art Festival Taipei" in en
+          assert '<span class="hero-meta-label">展場｜</span>' not in zh
+          assert '<span class="hero-meta-label">Venue | </span>' not in en
+          assert "臺北典藏植物園、藝術入店" in zh
+          assert "Taipei Collectible Botanical Garden, Art in Stores" in en
+          assert "DAF2026_Hero_Logo.webm" in zh and "DAF2026_Hero_Logo.webm" in en
+          output = "daf2026-20261029-hero-only-update.zip"
           with ZipFile(output, "w", ZIP_DEFLATED) as archive:
               for name in paths:
                   archive.write(root / name, arcname=name)
@@ -93,6 +71,6 @@ jobs:
       - name: 上傳本次更新 ZIP
         uses: actions/upload-artifact@v4
         with:
-          name: daf2026-20261029-final-hero-footer-program-update
-          path: daf2026-20261029-final-hero-footer-program-update.zip
+          name: daf2026-20261029-hero-only-update
+          path: daf2026-20261029-hero-only-update.zip
           if-no-files-found: error

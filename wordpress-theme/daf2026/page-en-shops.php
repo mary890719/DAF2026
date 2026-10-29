@@ -9,7 +9,7 @@ get_header();
 ?>
 <main id="app" class="container">
             <div id="breadcrumb"></div>
-            <h1 class="page-title">PARTNER STORES</h1>
+            <h1 class="page-title">INFORMATION</h1>
             <div class="page-sections map-contexts">
 <section class="ia-section shop-section" id="art-in-stores">
                     <h2>ART IN STORES</h2>

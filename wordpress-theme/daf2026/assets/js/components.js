@@ -107,9 +107,9 @@ window.DAF_COMPONENTS = (() => {
     const organizationRows = `<div class="container org-grid"><div class="org-row org-row-primary">${DAF_DATA.organizations.slice(0, 3).map(organizationGroup).join("")}</div><div class="org-row org-row-secondary">${DAF_DATA.organizations.slice(3).map(organizationGroup).join("")}</div></div>`;
     const organizationLabel = getCurrentLanguage() === "en" ? "Festival organizations" : "藝術節單位資訊";
     const festivalInfo = getCurrentLanguage() === "en"
-      ? `<div class="footer-festival-info"><strong>2026 Digital Art Festival Taipei</strong><p>Grey Autonomous Entity</p><p>2026.10.31 — 11.15</p><p>Taipei Collectible Botanical Garden、Art in Stores</p></div>`
-      : `<div class="footer-festival-info"><strong>2026 臺北數位藝術節</strong><p>灰色自動體</p><p>2026.10.31 — 11.15</p><p>臺北典藏植物園、藝術入店</p></div>`;
-    return `<section class="footer-festival"><div class="container">${festivalInfo}</div></section><section class="site-organizations" aria-label="${organizationLabel}">${organizationRows}</section><footer class="site-footer"><div class="container site-footer-content"><div class="site-footer-inner"><div class="footer-info"><p class="copyright">© 2026 臺北數位藝術節 Taipei Digital Art Festival. All Rights Reserved.</p></div>${socialLinks}</div></div></footer>`;
+      ? `<div class="footer-festival-info"><strong>21st Digital Art Festival Taipei</strong><p>Grey Autonomous Entity</p><p>2026.10.31 — 11.15</p><p>Taipei Collectible Botanical Garden、Art in Stores</p></div>`
+      : `<div class="footer-festival-info"><strong>第二十一屆臺北數位藝術節</strong><p>灰色自動體</p><p>2026.10.31 — 11.15</p><p>臺北典藏植物園、藝術入店</p></div>`;
+    return `<section class="site-organizations" aria-label="${organizationLabel}">${organizationRows}</section><footer class="site-footer"><div class="container site-footer-content">${festivalInfo}<div class="site-footer-inner"><div class="footer-info"><p class="copyright">© 2026 臺北數位藝術節 Taipei Digital Art Festival. All Rights Reserved.</p></div>${socialLinks}</div></div></footer>`;
   }
   const placeholder = (label="圖片 Placeholder", cls="") => `<div class="placeholder ${cls}"><span>${label}</span></div>`;
   const icon = (name, label, cls="") => `<img class="icon ${cls}" src="${assetRoute(`assets/icons/${name}.svg`)}" alt="${label}"${label ? "" : ' aria-hidden="true"'}>`;

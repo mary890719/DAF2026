@@ -9,7 +9,7 @@ get_header();
 ?>
 <main id="app" class="container">
             <div id="breadcrumb"></div>
-            <h1 class="page-title">ART IN STORES MAP</h1>
+            <h1 class="page-title">INFORMATION</h1>
             <div class="map-legend" aria-label="Map legend">
                 <span data-location-type="outdoor"><i aria-hidden="true"></i>OUTDOOR WORKS</span>
                 <span data-location-type="district"><i aria-hidden="true"></i>ART IN STORES</span>

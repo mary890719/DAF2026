@@ -4064,13 +4064,6 @@ body.transport-map-viewer-open {
 body.shop-modal-open {
   overflow: hidden;
 }
-.footer-festival {
-  color: var(--color-text);
-  background: var(--color-footer);
-  border-top: 1px solid var(--line);
-  margin-top: var(--space-6);
-  padding: clamp(48px, 6vw, 88px) 0;
-}
 .site-organizations {
   color: var(--color-text);
   background: var(--color-footer);

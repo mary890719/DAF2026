@@ -6,6 +6,7 @@ get_header();
 ?>
 <main id="app" class="container">
             <div id="breadcrumb"></div>
+            <p class="page-label" lang="en">INFORMATION</p>
             <h1 class="page-title">合作店家</h1>
             <div class="page-sections map-contexts">
 <section class="ia-section shop-section" id="art-in-stores">

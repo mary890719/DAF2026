@@ -32,7 +32,7 @@ jobs:
           node --check wordpress-theme/daf2026/assets/js/app.js
           for file in wordpress-theme/daf2026/page-{map,en-map,district-map,en-district-map,shops,en-shops}.php; do php -l "$file"; done
 
-      - name: 打包本次九檔增量更新
+      - name: 打包本次十一檔增量更新
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -48,6 +48,8 @@ jobs:
               "daf2026/page-en-district-map.php",
               "daf2026/page-shops.php",
               "daf2026/page-en-shops.php",
+              "daf2026/front-page.php",
+              "daf2026/page-en.php",
           ]
           for name in paths:
               assert (root / name).is_file(), f"Missing: {name}"
@@ -65,7 +67,13 @@ jobs:
           assert '"artist": "Stefan Tiefengraber、Jed Berk、林書瑜"' not in data
           for name in paths[3:]:
               assert "INFORMATION" in (root / name).read_text(encoding="utf-8")
-          output = "daf2026-20261029-footer-information-program-update.zip"
+          zh_home = (root / "daf2026/front-page.php").read_text(encoding="utf-8")
+          en_home = (root / "daf2026/page-en.php").read_text(encoding="utf-8")
+          assert "第二十一屆臺北數位藝術節" in zh_home
+          assert "21st Digital Art Festival Taipei" in en_home
+          assert 'hero-meta-label">展場｜' not in zh_home
+          assert 'hero-meta-label">Venue |' not in en_home
+          output = "daf2026-20261029-final-hero-footer-program-update.zip"
           with ZipFile(output, "w", ZIP_DEFLATED) as archive:
               for name in paths:
                   archive.write(root / name, arcname=name)
@@ -85,6 +93,6 @@ jobs:
       - name: 上傳本次更新 ZIP
         uses: actions/upload-artifact@v4
         with:
-          name: daf2026-20261029-footer-information-program-update
-          path: daf2026-20261029-footer-information-program-update.zip
+          name: daf2026-20261029-final-hero-footer-program-update
+          path: daf2026-20261029-final-hero-footer-program-update.zip
           if-no-files-found: error

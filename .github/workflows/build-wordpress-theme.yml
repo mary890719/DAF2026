@@ -33,38 +33,38 @@ jobs:
           php -l wordpress-theme/daf2026/front-page.php
           php -l wordpress-theme/daf2026/page-en.php
 
-      - name: 驗證並打包歐華酒店作品位置更新
+      - name: 驗證並打包六場藝術家講座更新
         run: |
           python3 - <<'PY'
           from pathlib import Path
           from zipfile import ZipFile, ZIP_DEFLATED
+          import re
           root = Path("wordpress-theme")
-          paths = ["daf2026/assets/js/data.js", "daf2026/assets/js/app.js"]
-          data = (root / paths[0]).read_text(encoding="utf-8")
-          app = (root / paths[1]).read_text(encoding="utf-8")
+          name = "daf2026/assets/js/data.js"
+          data = (root / name).read_text(encoding="utf-8")
           expected = {
-              "district-04": ("一樓大廳", "First-floor lobby"),
-              "district-05": ("外騎樓", "Exterior arcade"),
-              "district-06": ("歐麗蛋糕坊旁", "Beside the O'Le Bakery"),
-              "district-07": ("二樓沙發區旁廊道", "Second-floor corridor beside the sofa area"),
-              "district-08": ("大廳休憩區", "Lobby lounge area"),
+              "talk-01": ("藝術家講座 I｜演算邊界", "Artist Talk I | Algorithmic Boundaries"),
+              "talk-02": ("藝術家講座 II｜非人自動體的形塑", "Artist Talk II | Shaping Non-Human Automatons"),
+              "talk-03": ("藝術家講座 III｜辨識與失認", "Artist Talk III | Recognition and Misrecognition"),
+              "talk-04": ("藝術家講座 IV｜文化的歧義與能動", "Artist Talk IV | Cultural Ambiguity and Agency"),
+              "talk-05": ("藝術家講座 V｜矽基裂隙", "Artist Talk V | Silicon Fissures"),
+              "talk-06": ("藝術家講座 VI｜預設的逸脫", "Artist Talk VI | Departures from the Predetermined"),
           }
-          for work_id, (zh, en) in expected.items():
-              pos = data.find('"id": "' + work_id + '"')
-              assert pos >= 0, f"Missing work: {work_id}"
-              entry = data[pos:pos + 400]
-              assert '"exhibitionLocationZh": "' + zh + '"' in entry, work_id
-              assert '"exhibitionLocationEn": "' + en + '"' in entry, work_id
-          assert 'workLocationName = work =>' in app
-          assert 'join(isEnglish ? " | " : "｜")' in app
-          assert app.count("workLocationName(catalogWork)") == 2
-          assert 'const store = location.type === "district"' in app
-          output = "daf2026-riviera-hotel-location-update.zip"
+          for talk_id, (zh, en) in expected.items():
+              match = re.search(r'"id": "' + talk_id + r'"', data)
+              assert match, talk_id
+              section = data[match.start():match.start() + 500]
+              assert '"title": "' + zh in section, talk_id
+              assert '"titleEn": "' + en in section, talk_id
+          talk6 = data[data.index('"id": "talk-06"'):data.index('"id": "talk-06"') + 7000]
+          assert '"artistId":"artist-18","workId":"district-07","name":"超級浪","nameEn":"Hyper Wave"' in talk6
+          assert '"artist": "陳政維、黃姿婷、Bety Krňanská、超級浪"' in talk6
+          assert '"artistEn": "Cheng-Wei Chen, Tzu-Ting Huang, Bety Krňanská, Hyper Wave"' in talk6
+          output = "daf2026-artist-talks-six-titles-update.zip"
           with ZipFile(output, "w", ZIP_DEFLATED) as archive:
-              for name in paths:
-                  archive.write(root / name, arcname=name)
+              archive.write(root / name, arcname=name)
           with ZipFile(output) as archive:
-              assert sorted(archive.namelist()) == sorted(paths)
+              assert archive.namelist() == [name]
               assert archive.testzip() is None
           print("Verified", output)
           PY
@@ -79,6 +79,6 @@ jobs:
       - name: 上傳本次更新 ZIP
         uses: actions/upload-artifact@v4
         with:
-          name: daf2026-riviera-hotel-location-update
-          path: daf2026-riviera-hotel-location-update.zip
+          name: daf2026-artist-talks-six-titles-update
+          path: daf2026-artist-talks-six-titles-update.zip
           if-no-files-found: error

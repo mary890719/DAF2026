@@ -1821,6 +1821,8 @@ window.DAF_DATA = {
     "artistEn": "Jed Berk",
     "title": "Belugas’ Sphere",
     "titleEn": "Belugas’ Sphere",
+    "maintenanceNote": "每日11:30-13:30為作品維護時間，暫停參觀",
+    "maintenanceNoteEn": "Daily maintenance: 11:30–13:30. The artwork will be temporarily closed to visitors during this period.",
     "type": "互動裝置",
     "medium": "充氦 Mylar 鋁膜氣球、光線感測器、馬達、壓電式喇叭、電子元件、控制系統與燈光。",
     "mediumEn": "helium-filled Mylar inflatables, light sensors, motors, piezo speakers, electronics, control systems, and light.",

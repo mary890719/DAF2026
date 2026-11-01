@@ -1308,6 +1308,8 @@ window.DAF_DATA = {
   },
   {
     "id": "district-04",
+    "exhibitionLocationZh": "一樓大廳",
+    "exhibitionLocationEn": "First-floor lobby",
     "type": "work",
     "category": "district",
     "area": "街區",
@@ -1344,6 +1346,8 @@ window.DAF_DATA = {
   },
   {
     "id": "district-05",
+    "exhibitionLocationZh": "外騎樓",
+    "exhibitionLocationEn": "Exterior arcade",
     "type": "work",
     "category": "district",
     "area": "街區",
@@ -1380,6 +1384,8 @@ window.DAF_DATA = {
   },
   {
     "id": "district-06",
+    "exhibitionLocationZh": "歐麗蛋糕坊旁",
+    "exhibitionLocationEn": "Beside the O'Le Bakery",
     "type": "work",
     "category": "district",
     "area": "街區",
@@ -1416,6 +1422,8 @@ window.DAF_DATA = {
   },
   {
     "id": "district-07",
+    "exhibitionLocationZh": "二樓沙發區旁廊道",
+    "exhibitionLocationEn": "Second-floor corridor beside the sofa area",
     "type": "work",
     "category": "district",
     "area": "街區",
@@ -1446,6 +1454,8 @@ window.DAF_DATA = {
   },
   {
     "id": "district-08",
+    "exhibitionLocationZh": "大廳休憩區",
+    "exhibitionLocationEn": "Lobby lounge area",
     "type": "work",
     "category": "district",
     "area": "街區",

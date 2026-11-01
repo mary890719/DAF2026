@@ -617,6 +617,19 @@
     setDetailField("location", workLocationName(work), "work");
     setDetailText("[data-work-description]", textFor(work, "description"));
     document.querySelector("[data-work-description-section]").hidden = !textFor(work, "description");
+    // 僅在有維護公告的作品顯示備註，並放在作品介紹下方。
+    const maintenanceNote = textFor(work, "maintenanceNote");
+    const existingMaintenanceNote = article.querySelector("[data-work-maintenance-note]");
+    if (existingMaintenanceNote) existingMaintenanceNote.remove();
+    if (maintenanceNote) {
+      const note = document.createElement("p");
+      note.dataset.workMaintenanceNote = "";
+      note.textContent = maintenanceNote;
+      note.style.marginTop = "1rem";
+      note.style.fontWeight = "600";
+      const descriptionSection = article.querySelector("[data-work-description-section]");
+      if (descriptionSection) descriptionSection.insertAdjacentElement("afterend", note);
+    }
     const featuredWorks = Array.isArray(work.featuredWorks) ? work.featuredWorks : [];
     const screeningProgram = featuredWorks.length ? featuredWorks : (Array.isArray(work.screeningProgram) ? work.screeningProgram : []);
     const screeningSection = document.querySelector("[data-work-screening-section]");

@@ -11,7 +11,12 @@
   const venueForWork = work => venueById(work?.venueId)
     || D.venues.find(venue => venue.workIds?.some(workId => String(workId) === String(work?.id)));
   const venueName = venue => isEnglish ? venue?.nameEn || venue?.nameZh : venue?.nameZh || venue?.nameEn;
-  const workLocationName = work => venueName(venueForWork(work)) || work?.location || "-";
+  // 歐華酒店作品使用同一份中英文位置資料；其他作品維持原本店家名稱。
+  const workLocationName = work => {
+    const venue = venueName(venueForWork(work));
+    const detail = isEnglish ? work?.exhibitionLocationEn : work?.exhibitionLocationZh;
+    return detail ? [venue, detail].filter(Boolean).join(isEnglish ? " | " : "｜") : venue || work?.location || "-";
+  };
   const queryId = () => new URLSearchParams(location.search).get("id");
   const seoBrand = isEnglish ? "2026 Taipei Digital Art Festival" : "2026 臺北數位藝術節";
   const seoTitle = title => `${title}${isEnglish ? " | " : "｜"}${seoBrand}`;
@@ -2343,8 +2348,8 @@
       const entries = locations.flatMap(location => location.workIds.map(workById).filter(Boolean).map(work => ({work, location})));
       list.innerHTML = heading + `<div class="map-list-entries">${entries.map(({work, location}) => {
         const venue = venueById(location.venueId);
-        const store = location.type === "district" && venue ? venueName(venue) : "";
         const catalogWork = catalogWorkFor(work);
+        const store = location.type === "district" && venue ? (catalogWork ? workLocationName(catalogWork) : venueName(venue)) : "";
         const districtSubnumber = location.type === "district" ? /^04[_-]([1-5])$/.exec(work.number) : null;
         const indexNumber = districtSubnumber
           ? `<span class="map-list-number is-compound"><span class="map-list-number-circle">04</span><span class="map-list-number-suffix">-${districtSubnumber[1]}</span></span>`
@@ -2568,7 +2573,7 @@
         document.querySelectorAll(".map-list-item").forEach(item => item.classList.toggle("is-active", item.dataset.mapLocationId === location.id));
         const workMarkupFor = work => {
           const catalogWork = catalogWorkFor(work);
-          const store = location.type === "district" && venue ? venueName(venue) : "";
+          const store = location.type === "district" && venue ? (catalogWork ? workLocationName(catalogWork) : venueName(venue)) : "";
           const content = `<span class="marker-work-number">${work.number}</span><span class="marker-work-copy"><span class="marker-work-title-line">${mapTitle(work) ? `<strong>${mapTitle(work)}</strong>` : ""}</span><span class="marker-work-artist">${mapArtist(work)}</span>${store ? `<span class="marker-work-store">${store}</span>` : ""}${catalogWork?.year ? `<span class="marker-work-year">${catalogWork.year}</span>` : ""}</span><span class="marker-work-arrow" aria-hidden="true">&gt;</span>`;
           return catalogWork
             ? `<a class="marker-card-work" href="${C.localizedRoute(`work-detail.html?id=${catalogWork.id}`)}">${content}</a>`

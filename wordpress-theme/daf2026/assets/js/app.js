@@ -617,6 +617,21 @@
     setDetailField("location", workLocationName(work), "work");
     setDetailText("[data-work-description]", textFor(work, "description"));
     document.querySelector("[data-work-description-section]").hidden = !textFor(work, "description");
+    // 僅在有維護公告的作品顯示備註，並放在作品介紹下方。
+    const maintenanceNote = textFor(work, "maintenanceNote");
+    const existingMaintenanceNote = article.querySelector("[data-work-maintenance-note]");
+    if (existingMaintenanceNote) existingMaintenanceNote.remove();
+    if (maintenanceNote) {
+      const note = document.createElement("p");
+      note.dataset.workMaintenanceNote = "";
+      note.textContent = maintenanceNote;
+      note.style.marginTop = "1rem";
+      note.style.fontWeight = "600";
+      const descriptionSection = article.querySelector("[data-work-description-section]");
+      // 將備註接在介紹文字之後，而非整個兩欄區塊之後。
+      const descriptionText = article.querySelector("[data-work-description]");
+      if (descriptionText) descriptionText.insertAdjacentElement("afterend", note);
+    }
     const featuredWorks = Array.isArray(work.featuredWorks) ? work.featuredWorks : [];
     const screeningProgram = featuredWorks.length ? featuredWorks : (Array.isArray(work.screeningProgram) ? work.screeningProgram : []);
     const screeningSection = document.querySelector("[data-work-screening-section]");
@@ -2354,7 +2369,7 @@
         const indexNumber = districtSubnumber
           ? `<span class="map-list-number is-compound"><span class="map-list-number-circle">04</span><span class="map-list-number-suffix">-${districtSubnumber[1]}</span></span>`
           : `<span class="map-list-number">${work.number}</span>`;
-        const content = `${indexNumber}${mapTitle(work) ? `<strong class="map-list-title">${mapTitle(work)}</strong>` : ""}<span class="map-list-artist">${mapArtist(work)}</span>${store ? `<span class="map-list-store">${store}</span>` : ""}`;
+        const content = `${indexNumber}${mapTitle(work) ? `<strong class="map-list-title">${mapTitle(work)}</strong>` : ""}<span class="map-list-artist">${mapArtist(work)}</span>${store ? `<span class="map-list-store">${store}</span>` : ""}${catalogWork && textFor(catalogWork, "maintenanceNote") ? `<span class="map-list-maintenance-note" style="display:block;margin-top:.35rem;font-size:.85em;line-height:1.5">${textFor(catalogWork, "maintenanceNote")}</span>` : ""}`;
         return `<button class="map-list-item" type="button" data-map-location-id="${location.id}"${catalogWork ? ` data-map-work-id="${catalogWork.id}"` : ""} aria-label="${isEnglish ? "Open map information for" : "開啟地圖資訊"} ${mapTitle(work)}">${content}</button>`;
       }).join("")}</div>`;
     });
@@ -2574,7 +2589,7 @@
         const workMarkupFor = work => {
           const catalogWork = catalogWorkFor(work);
           const store = location.type === "district" && venue ? (catalogWork ? workLocationName(catalogWork) : venueName(venue)) : "";
-          const content = `<span class="marker-work-number">${work.number}</span><span class="marker-work-copy"><span class="marker-work-title-line">${mapTitle(work) ? `<strong>${mapTitle(work)}</strong>` : ""}</span><span class="marker-work-artist">${mapArtist(work)}</span>${store ? `<span class="marker-work-store">${store}</span>` : ""}${catalogWork?.year ? `<span class="marker-work-year">${catalogWork.year}</span>` : ""}</span><span class="marker-work-arrow" aria-hidden="true">&gt;</span>`;
+          const content = `<span class="marker-work-number">${work.number}</span><span class="marker-work-copy"><span class="marker-work-title-line">${mapTitle(work) ? `<strong>${mapTitle(work)}</strong>` : ""}</span><span class="marker-work-artist">${mapArtist(work)}</span>${store ? `<span class="marker-work-store">${store}</span>` : ""}${catalogWork?.year ? `<span class="marker-work-year">${catalogWork.year}</span>` : ""}${catalogWork && textFor(catalogWork, "maintenanceNote") ? `<span class="marker-work-maintenance-note" style="display:block;margin-top:.35rem;font-size:.85em;line-height:1.5">${textFor(catalogWork, "maintenanceNote")}</span>` : ""}</span><span class="marker-work-arrow" aria-hidden="true">&gt;</span>`;
           return catalogWork
             ? `<a class="marker-card-work" href="${C.localizedRoute(`work-detail.html?id=${catalogWork.id}`)}">${content}</a>`
             : `<div class="marker-card-work is-pending">${content}</div>`;

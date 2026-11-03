@@ -33,31 +33,30 @@ jobs:
           php -l wordpress-theme/daf2026/front-page.php
           php -l wordpress-theme/daf2026/page-en.php
 
-      - name: 驗證並打包 Jed Berk 維護公告更新
+      - name: 驗證並打包手機 Header CSS 更新
         run: |
           python3 - <<'PY'
           from pathlib import Path
           from zipfile import ZipFile, ZIP_DEFLATED
           root = Path("wordpress-theme")
-          paths = ["daf2026/assets/js/data.js", "daf2026/assets/js/app.js"]
-          data = (root / paths[0]).read_text(encoding="utf-8")
-          app = (root / paths[1]).read_text(encoding="utf-8")
-          zh = '"maintenanceNote": "每日11:30-13:30為作品維護時間，暫停參觀"'
-          en = '"maintenanceNoteEn": "Daily maintenance: 11:30–13:30. The artwork will be temporarily closed to visitors during this period."'
-          assert data.count(zh) == 2, "Expected one note in works and one in mapWorks"
-          assert data.count(en) == 2, "Expected one English note in each collection"
-          assert app.count("data-work-maintenance-note") >= 1
-          assert 'querySelector("[data-work-description]")' in app
-          assert 'insertAdjacentElement("afterend", note)' in app
-          assert "map-list-maintenance-note" in app
-          assert "marker-work-maintenance-note" in app
-          assert 'textFor(catalogWork, "maintenanceNote")' in app
-          output = "daf2026-jed-berk-maintenance-update.zip"
+          name = "daf2026/assets/css/style.css"
+          css = (root / name).read_text(encoding="utf-8")
+          assert css.count("@media (max-width: 1135px)") == 1
+          start = css.index("@media (max-width: 1135px)")
+          block = css[start:start + 850]
+          assert ".site-header > .logo.logo-lockup {" in block
+          assert "max-width: calc(100% - 60px);" in block
+          assert ".site-header > .logo.logo-lockup .site-logo-image {" in block
+          assert "max-width: 100%;" in block
+          assert ".site-header > .menu-toggle {" in block
+          assert "flex: 0 0 48px;" in block
+          assert "height: 54px;" in css
+          assert css.count("{") == css.count("}"), "CSS brace mismatch"
+          output = "daf2026-mobile-header-menu-fix.zip"
           with ZipFile(output, "w", ZIP_DEFLATED) as archive:
-              for name in paths:
-                  archive.write(root / name, arcname=name)
+              archive.write(root / name, arcname=name)
           with ZipFile(output) as archive:
-              assert sorted(archive.namelist()) == sorted(paths)
+              assert archive.namelist() == [name]
               assert archive.testzip() is None
           print("Verified", output)
           PY
@@ -72,6 +71,6 @@ jobs:
       - name: 上傳本次更新 ZIP
         uses: actions/upload-artifact@v4
         with:
-          name: daf2026-jed-berk-maintenance-update
-          path: daf2026-jed-berk-maintenance-update.zip
+          name: daf2026-mobile-header-menu-fix
+          path: daf2026-mobile-header-menu-fix.zip
           if-no-files-found: error

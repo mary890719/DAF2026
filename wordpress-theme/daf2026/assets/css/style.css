@@ -4311,12 +4311,21 @@ body.shop-modal-open {
   }
 }
 @media (max-width: 1135px) {
-  /* Tablet：Header／Touch Navigation 共用核心 */
+  /* Tablet／Mobile：保留選單按鈕所需空間，避免長版 Logo 擠出螢幕。 */
   .site-header {
     gap: 12px;
   }
-  .menu-toggle {
+  .site-header > .logo.logo-lockup {
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: calc(100% - 60px);
+  }
+  .site-header > .logo.logo-lockup .site-logo-image {
+    max-width: 100%;
+  }
+  .site-header > .menu-toggle {
     display: grid;
+    flex: 0 0 48px;
     margin-left: auto;
   }
   .header-tools {

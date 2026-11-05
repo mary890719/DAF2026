@@ -2417,6 +2417,18 @@ body.work-lightbox-open {
   color: var(--color-text-secondary);
   font-size: var(--fs-sm);
 }
+/* 同一天的多個導覽開始時間，排列在日期下方。 */
+.guide-tour-date {
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.guide-tour-date-times {
+  display: block;
+  flex: 0 0 100%;
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
 .program-filter {
   display: flex;
   flex-wrap: wrap;

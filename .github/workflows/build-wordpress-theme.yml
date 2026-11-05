@@ -48,7 +48,7 @@ jobs:
               "daf2026/assets/css/style.css",
           ]
           data, app, css = [(root / p).read_text(encoding="utf-8") for p in paths]
-          assert not re.search(r"}\\s*,\\s*,", data), "Invalid duplicate comma in data.js"
+          assert not re.search(r"}\s*,\s*,", data), "Invalid duplicate comma in data.js"
           expected = {
               "2026.11.07": ["14:00", "15:00", "16:00"],
               "2026.11.08": ["15:00", "16:00"],
@@ -56,7 +56,7 @@ jobs:
               "2026.11.15": ["15:00", "16:00"],
           }
           # 逐筆確認日期及開始時間，避免漏場或多場。
-          matches = re.findall(r'"id": "(tour-[^"]+)"[\\s\\S]{0,480}?"date": "([^"]+)"[\\s\\S]{0,100}?"startTime": "([^"]+)"', data)
+          matches = re.findall(r'"id": "(tour-[^"]+)"[\s\S]{0,480}?"date": "([^"]+)"[\s\S]{0,100}?"startTime": "([^"]+)"', data)
           for date, times in expected.items():
               actual = [start for _, d, start in matches if d == date]
               assert actual == times, f"Tour mismatch {date}: {actual}"

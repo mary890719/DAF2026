@@ -3821,7 +3821,7 @@ window.DAF_DATA = {
       "images": [],
       "route": "event-detail.html?id=tour-03-1400",
       "featured": false
-    },,
+    },
     {
       "id": "tour-03",
       "type": "導覽",
@@ -3839,7 +3839,7 @@ window.DAF_DATA = {
       "images": [],
       "route": "event-detail.html?id=tour-03",
       "featured": false
-    },,
+    },
     {
       "id": "tour-03-1600",
       "type": "導覽",
@@ -3875,7 +3875,7 @@ window.DAF_DATA = {
       "images": [],
       "route": "event-detail.html?id=tour-04",
       "featured": false
-    },,
+    },
     {
       "id": "tour-04-1600",
       "type": "導覽",
@@ -3911,7 +3911,7 @@ window.DAF_DATA = {
       "images": [],
       "route": "event-detail.html?id=tour-05-1400",
       "featured": false
-    },,
+    },
     {
       "id": "tour-05",
       "type": "導覽",
@@ -3929,7 +3929,7 @@ window.DAF_DATA = {
       "images": [],
       "route": "event-detail.html?id=tour-05",
       "featured": false
-    },,
+    },
     {
       "id": "tour-05-1600",
       "type": "導覽",
@@ -3965,7 +3965,7 @@ window.DAF_DATA = {
       "images": [],
       "route": "event-detail.html?id=tour-06",
       "featured": false
-    },,
+    },
     {
       "id": "tour-06-1600",
       "type": "導覽",

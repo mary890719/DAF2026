@@ -33,32 +33,46 @@ jobs:
           php -l wordpress-theme/daf2026/front-page.php
           php -l wordpress-theme/daf2026/page-en.php
 
-      - name: 驗證並打包手機 Header CSS 更新
+      - name: 驗證並打包 11 月現場導覽三檔更新
         run: |
           python3 - <<'PY'
           from pathlib import Path
           from zipfile import ZipFile, ZIP_DEFLATED
+          import re
+
+          # 僅打包本輪導覽修改涉及的三個檔案，保留 Theme 目錄結構。
           root = Path("wordpress-theme")
-          name = "daf2026/assets/css/style.css"
-          css = (root / name).read_text(encoding="utf-8")
-          assert css.count("@media (max-width: 1135px)") == 1
-          start = css.index("@media (max-width: 1135px)")
-          block = css[start:start + 850]
-          assert ".site-header > .logo.logo-lockup {" in block
-          assert "max-width: calc(100% - 60px);" in block
-          assert ".site-header > .logo.logo-lockup .site-logo-image {" in block
-          assert "max-width: 100%;" in block
-          assert ".site-header > .menu-toggle {" in block
-          assert "flex: 0 0 48px;" in block
-          assert "height: 54px;" in css
-          assert css.count("{") == css.count("}"), "CSS brace mismatch"
-          output = "daf2026-mobile-header-menu-fix.zip"
+          paths = [
+              "daf2026/assets/js/data.js",
+              "daf2026/assets/js/app.js",
+              "daf2026/assets/css/style.css",
+          ]
+          data, app, css = [(root / p).read_text(encoding="utf-8") for p in paths]
+          assert not re.search(r"}\\s*,\\s*,", data), "Invalid duplicate comma in data.js"
+          expected = {
+              "2026.11.07": ["14:00", "15:00", "16:00"],
+              "2026.11.08": ["15:00", "16:00"],
+              "2026.11.14": ["14:00", "15:00", "16:00"],
+              "2026.11.15": ["15:00", "16:00"],
+          }
+          # 逐筆確認日期及開始時間，避免漏場或多場。
+          matches = re.findall(r'"id": "(tour-[^"]+)"[\\s\\S]{0,480}?"date": "([^"]+)"[\\s\\S]{0,100}?"startTime": "([^"]+)"', data)
+          for date, times in expected.items():
+              actual = [start for _, d, start in matches if d == date]
+              assert actual == times, f"Tour mismatch {date}: {actual}"
+          assert "const toursByDate = new Map()" in app
+          assert 'events.map(event => event.startTime).filter(Boolean).join("、")' in app
+          assert ".guide-tour-date-times {" in css
+          output = "daf2026-november-guided-tours-update.zip"
           with ZipFile(output, "w", ZIP_DEFLATED) as archive:
-              archive.write(root / name, arcname=name)
+              for name in paths:
+                  archive.write(root / name, arcname=name)
           with ZipFile(output) as archive:
-              assert archive.namelist() == [name]
+              assert sorted(archive.namelist()) == sorted(paths)
               assert archive.testzip() is None
-          print("Verified", output)
+              for name in paths:
+                  assert archive.read(name) == (root / name).read_bytes()
+          print("Verified", output, paths)
           PY
 
       - name: 上傳 Theme ZIP
@@ -71,6 +85,6 @@ jobs:
       - name: 上傳本次更新 ZIP
         uses: actions/upload-artifact@v4
         with:
-          name: daf2026-mobile-header-menu-fix
-          path: daf2026-mobile-header-menu-fix.zip
+          name: daf2026-november-guided-tours-update
+          path: daf2026-november-guided-tours-update.zip
           if-no-files-found: error

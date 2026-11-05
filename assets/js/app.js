@@ -1338,14 +1338,21 @@
     }).join("");
     if (guideSlot) {
       const tours = orderedEvents.filter(event => event.type === "導覽").sort((a, b) => (a.date || "").localeCompare(b.date || "") || (a.startTime || "").localeCompare(b.startTime || ""));
+      // 同一天可能有多個導覽場次：依日期分組，避免重複日期或只顯示第一場時間。
       const firstValue = getter => tours.map(getter).find(Boolean) || "";
-      const time = firstValue(programTime);
       const location = firstValue(event => textFor(event, "location"));
       const registration = firstValue(event => textFor(event, "registration"));
       const guideWeekdays = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
-      guideSlot.innerHTML = `<div class="guide-tour-summary"><div><span>${isEnglish ? "TIME" : "時間"}</span><strong>${time}</strong></div><div><span>${isEnglish ? "LOCATION" : "地點"}</span><strong>${location}</strong></div><div><span>${isEnglish ? "REGISTRATION" : "報名方式"}</span><strong>${registration}</strong></div></div><div class="guide-tour-dates"><h3>${isEnglish ? "GUIDE TOUR DATES" : "導覽日期"}</h3><div>${tours.map(event => {
-        const date = programDate(event.date);
-        return `<div class="guide-tour-date"><strong>${displayShortDate(date) || event.date}</strong><span>${date ? guideWeekdays[date.weekdayIndex] : ""}</span></div>`;
+      const toursByDate = new Map();
+      tours.forEach(event => {
+        if (!toursByDate.has(event.date)) toursByDate.set(event.date, []);
+        toursByDate.get(event.date).push(event);
+      });
+      guideSlot.innerHTML = `<div class="guide-tour-summary"><div><span>${isEnglish ? "TIME" : "時間"}</span><strong>${isEnglish ? "See times by date below" : "各日期場次詳見下方"}</strong></div><div><span>${isEnglish ? "LOCATION" : "地點"}</span><strong>${location}</strong></div><div><span>${isEnglish ? "REGISTRATION" : "報名方式"}</span><strong>${registration}</strong></div></div><div class="guide-tour-dates"><h3>${isEnglish ? "GUIDE TOUR DATES" : "導覽日期"}</h3><div>${[...toursByDate].map(([dateKey, events]) => {
+        const date = programDate(dateKey);
+        // 每個場次以開始時間顯示，與活動方提供的時刻一致。
+        const times = events.map(event => event.startTime).filter(Boolean).join("、");
+        return `<div class="guide-tour-date"><strong>${displayShortDate(date) || dateKey}</strong><span>${date ? guideWeekdays[date.weekdayIndex] : ""}</span><small class="guide-tour-date-times">${times}</small></div>`;
       }).join("")}</div></div>`;
     }
 

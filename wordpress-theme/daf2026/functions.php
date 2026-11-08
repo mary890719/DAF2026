@@ -111,7 +111,7 @@ function daf2026_get_seo_data() {
 	$page_key = $page_key ?: 'home';
 
 	$zh = array(
-		'home' => array( '2026 臺北數位藝術節「灰色自動體」', '第21屆臺北數位藝術節以「灰色自動體」為題，於2026年10月31日至11月15日在臺北典藏植物園與藝術入店展出，週一休館。', 'website' ),
+		'home' => array( '2026 臺北數位藝術節「灰色自動體」', '第21屆臺北數位藝術節以「灰色自動體」為題，於2026年10月31日至11月15日在臺北典藏植物園與藝術入店展出。', 'website' ),
 		'about' => array( '關於臺北數位藝術節｜2026 臺北數位藝術節', '認識臺北數位藝術節的發展與數位藝術展演平台定位，並查看2026臺北典藏植物園參觀時間、地點及交通方式。', 'website' ),
 		'curatorial' => array( '灰色自動體：策展論述｜2026 臺北數位藝術節', '2026臺北數位藝術節以「灰色自動體」為主題，關注數位藝術如何回應人工智慧、資訊、生態、生命與非人存在。', 'website' ),
 		'partners' => array( '執行與合作單位｜2026 臺北數位藝術節', '查看2026臺北數位藝術節的執行單位、場地合作、合作單位、贊助單位與多媒體設備贊助。', 'website' ),
@@ -126,7 +126,7 @@ function daf2026_get_seo_data() {
 		'opening-performance' => array( '音像之夜｜2026 臺北數位藝術節', '音像之夜；藝術團隊噪流、藝術家 Félix-Antoine Morin；2026.10.31，19:00–22:00，臺北典藏植物園。', 'website' ),
 	);
 	$en = array(
-		'home' => array( '2026 Taipei Digital Art Festival “Grey Autonomous Entity”', 'The 21st Taipei Digital Art Festival, “Grey Autonomous Entity,” takes place from October 31 to November 15, 2026, at the Taipei Collectible Botanical Garden and across the Art in Stores. Closed on Mondays.', 'website' ),
+		'home' => array( '2026 Taipei Digital Art Festival “Grey Autonomous Entity”', 'The 21st Taipei Digital Art Festival, “Grey Autonomous Entity,” takes place from October 31 to November 15, 2026, at the Taipei Collectible Botanical Garden and across the Art in Stores.', 'website' ),
 		'about' => array( 'About | 2026 Taipei Digital Art Festival', 'Learn about the Taipei Digital Art Festival and find visiting hours, venue information, and transportation details for Taipei Collectible Botanical Garden.', 'website' ),
 		'curatorial' => array( 'Grey Autonomous Entity: Curatorial Statement | 2026 Taipei Digital Art Festival', 'The 2026 Taipei Digital Art Festival presents “Grey Autonomous Entity,” examining how digital art responds to artificial intelligence, information, ecology, life, and non-human entities.', 'website' ),
 		'partners' => array( 'Execution and Partners | 2026 Taipei Digital Art Festival', 'View the execution team, venue partners, partner organizations, sponsors, and multimedia equipment sponsors of the 2026 Taipei Digital Art Festival.', 'website' ),

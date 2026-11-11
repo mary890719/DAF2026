@@ -927,6 +927,9 @@
     const paragraphMarkup = value => value
       ? value.split("\n").map(paragraph => paragraph ? `<p>${paragraph}</p>` : "").join("")
       : "";
+    const distinctAlternateName = (primary, alternate) => alternate && alternate !== primary && !String(primary).includes(String(alternate))
+      ? alternate
+      : "";
     const performerRecord = work => {
       const artist = artistsForWork(work)[0];
       const name = openingText(artist, "name");
@@ -938,7 +941,7 @@
       const performanceDescription = openingText(work, "description");
       const performanceType = openingText(work, "workType");
       const links = openingLinks(artist);
-      return {work, artist, name, alternateName: alternateName && alternateName !== name ? alternateName : "", nationality, bio, career, members, performanceDescription, performanceType, links};
+      return {work, artist, name, alternateName: distinctAlternateName(name, alternateName), nationality, bio, career, members, performanceDescription, performanceType, links};
     };
     const performanceDetailMarkup = (performance, parentId) => {
       const performanceName = openingText(performance, "name");
@@ -967,9 +970,9 @@
         ${backButton}
         <header class="opening-detail-header">
           <p class="opening-subperformance-artist">${performanceName}</p>
-          ${alternatePerformanceName && alternatePerformanceName !== performanceName ? `<p class="opening-detail-name-en">${alternatePerformanceName}</p>` : ""}
+          ${distinctAlternateName(performanceName, alternatePerformanceName) ? `<p class="opening-detail-name-en">${alternatePerformanceName}</p>` : ""}
           ${performanceTitle ? `<h3 id="opening-detail-title">${performanceTitle}</h3>` : `<h3 id="opening-detail-title">${performanceName}</h3>`}
-          ${alternateTitle && alternateTitle !== performanceTitle ? `<p class="opening-detail-name-en">${alternateTitle}</p>` : ""}
+          ${distinctAlternateName(performanceTitle, alternateTitle) ? `<p class="opening-detail-name-en">${alternateTitle}</p>` : ""}
           ${(performance.year || performanceWorkType || performanceNationality) ? `<p class="opening-performer-meta">${[performance.year, performanceWorkType, performanceNationality].filter(Boolean).join("｜")}</p>` : ""}
         </header>
         ${performerImageMarkup}

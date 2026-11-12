@@ -1106,7 +1106,7 @@ window.DAF_DATA = {
     "year": "2026",
     "workType": "互動裝置",
     "medium": "充氦 Mylar 鋁膜氣球、光線感測器、馬達、壓電式喇叭、電子元件、控制系統與燈光",
-    "description": "《Belugas’ Sphere》重新回望 2008 年作品《Beluga Pod》，將其發展為一個由自主機器實體構成的新型生態系。每一隻白鯨皆以光線為感知與行動的依據，追尋光源，並隨著周遭環境的變化而移動。當光線強度發生改變，牠們的活動與群體行為也隨之演變，逐漸形成流動的隊形、群聚與歌唱，而非依循預先設定的固定編舞。\n觀眾可以透過引入光源介入白鯨的行為，但參與並非必要——即使沒有觀眾介入，白鯨仍持續自主地行動。這群將近二十年前最初被構想出的機器生命，如今彷彿成為正在形成的「機器經濟」中的早期居民，圍繞著能量、彼此的距離與環境條件建立自身的秩序與關係。作品同時向過去與未來凝視：它重新召回一個早期關於自主機器的想像，卻也置身於一個日益受到「具自主行動能力的系統（agentic systems）」所形塑的當代。曾經屬於未來想像的機器，如今正逐漸成為我們所處環境的一部分。",
+    "description": "《白鯨域》重新回望 2008 年作品《Beluga Pod》，將其發展為一個由自主機器實體構成的新型生態系。每一隻白鯨皆以光線為感知與行動的依據，追尋光源，並隨著周遭環境的變化而移動。當光線強度發生改變，牠們的活動與群體行為也隨之演變，逐漸形成流動的隊形、群聚與歌唱，而非依循預先設定的固定編舞。\n觀眾可以透過引入光源介入白鯨的行為，但參與並非必要——即使沒有觀眾介入，白鯨仍持續自主地行動。這群將近二十年前最初被構想出的機器生命，如今彷彿成為正在形成的「機器經濟」中的早期居民，圍繞著能量、彼此的距離與環境條件建立自身的秩序與關係。作品同時向過去與未來凝視：它重新召回一個早期關於自主機器的想像，卻也置身於一個日益受到「具自主行動能力的系統（agentic systems）」所形塑的當代。曾經屬於未來想像的機器，如今正逐漸成為我們所處環境的一部分。",
     "videoUrl": "https://www.youtube.com/watch?v=XTPzJ-lzobo",
     "imageFolder": "main-09",
     "coverImage": "assets/images/works/main/main-09/main.webp",
@@ -1122,7 +1122,7 @@ window.DAF_DATA = {
     ],
     "workTypeEn": "Interactive installation",
     "mediumEn": "helium-filled Mylar inflatables, light sensors, motors, piezo speakers, electronics, control systems, and light",
-    "descriptionZh": "《Belugas’ Sphere》重新回望 2008 年作品《Beluga Pod》，將其發展為一個由自主機器實體構成的新型生態系。每一隻白鯨皆以光線為感知與行動的依據，追尋光源，並隨著周遭環境的變化而移動。當光線強度發生改變，牠們的活動與群體行為也隨之演變，逐漸形成流動的隊形、群聚與歌唱，而非依循預先設定的固定編舞。\n觀眾可以透過引入光源介入白鯨的行為，但參與並非必要——即使沒有觀眾介入，白鯨仍持續自主地行動。這群將近二十年前最初被構想出的機器生命，如今彷彿成為正在形成的「機器經濟」中的早期居民，圍繞著能量、彼此的距離與環境條件建立自身的秩序與關係。作品同時向過去與未來凝視：它重新召回一個早期關於自主機器的想像，卻也置身於一個日益受到「具自主行動能力的系統（agentic systems）」所形塑的當代。曾經屬於未來想像的機器，如今正逐漸成為我們所處環境的一部分。",
+    "descriptionZh": "《白鯨域》重新回望 2008 年作品《Beluga Pod》，將其發展為一個由自主機器實體構成的新型生態系。每一隻白鯨皆以光線為感知與行動的依據，追尋光源，並隨著周遭環境的變化而移動。當光線強度發生改變，牠們的活動與群體行為也隨之演變，逐漸形成流動的隊形、群聚與歌唱，而非依循預先設定的固定編舞。\n觀眾可以透過引入光源介入白鯨的行為，但參與並非必要——即使沒有觀眾介入，白鯨仍持續自主地行動。這群將近二十年前最初被構想出的機器生命，如今彷彿成為正在形成的「機器經濟」中的早期居民，圍繞著能量、彼此的距離與環境條件建立自身的秩序與關係。作品同時向過去與未來凝視：它重新召回一個早期關於自主機器的想像，卻也置身於一個日益受到「具自主行動能力的系統（agentic systems）」所形塑的當代。曾經屬於未來想像的機器，如今正逐漸成為我們所處環境的一部分。",
     "descriptionEn": "Belugas’ Sphere revisits Beluga Pod (2008) as a new ecology of autonomous robotic entities. Each Beluga seeks light and moves in response to its environment. As light intensity changes, their activity and collective behavior evolve, producing shifting formations, flocking, and song rather than fixed choreography. Visitors may influence these behaviors by introducing light, but participation is not required: the Belugas continue to act on their own. First imagined nearly two decades ago, they now resemble early inhabitants of an emerging machine economy, organizing around energy, proximity, and environmental conditions. The installation looks backward and forward at once, returning to an earlier vision of autonomous machines in a present increasingly shaped by agentic systems.",
     "videoUrls": [
       "https://www.youtube.com/watch?v=XTPzJ-lzobo"
@@ -1821,7 +1821,7 @@ window.DAF_DATA = {
     "mapNumber": "09",
     "artist": "傑德．伯克（Jed Berk）",
     "artistEn": "Jed Berk",
-    "title": "Belugas’ Sphere",
+    "title": "白鯨域",
     "titleEn": "Belugas’ Sphere",
     "maintenanceNote": "每日11:30-13:30為作品維護時間，暫停參觀",
     "maintenanceNoteEn": "Daily maintenance: 11:30–13:30. The artwork will be temporarily closed to visitors during this period.",
